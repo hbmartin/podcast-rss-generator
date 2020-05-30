@@ -21,7 +21,7 @@ type Podcast struct {
 	XMLName        xml.Name `xml:"channel"`
 	Title          string   `xml:"title"`
 	Link           string   `xml:"link"`
-	Description    string   `xml:"description"`
+	Description    *Description
 	Category       string   `xml:"category,omitempty"`
 	Cloud          string   `xml:"cloud,omitempty"`
 	Copyright      string   `xml:"copyright,omitempty"`
@@ -42,7 +42,6 @@ type Podcast struct {
 
 	// https://help.apple.com/itc/podcasts_connect/#/itcb54353390
 	IAuthor     string `xml:"itunes:author,omitempty"`
-	ISubtitle   string `xml:"itunes:subtitle,omitempty"`
 	ISummary    *ISummary
 	IBlock      string `xml:"itunes:block,omitempty"`
 	IImage      *IImage
@@ -68,7 +67,9 @@ func New(title, link, description string,
 	return Podcast{
 		Title:         title,
 		Link:          link,
-		Description:   description,
+		Description:   &Description{
+			Text: description,
+		},
 		Generator:     fmt.Sprintf("go podcast v%s (github.com/eduncan911/podcast)", pVersion),
 		PubDate:       parseDateRFC1123Z(pubDate),
 		LastBuildDate: parseDateRFC1123Z(lastBuildDate),
@@ -346,22 +347,6 @@ func (p *Podcast) AddLastBuildDate(datetime *time.Time) {
 	p.LastBuildDate = parseDateRFC1123Z(datetime)
 }
 
-// AddSubTitle adds the iTunes subtitle that is displayed with the title
-// in iTunes.
-//
-// Note that this field should be just a few words long according to Apple.
-// This method will truncate the string to 64 chars if too long with "..."
-func (p *Podcast) AddSubTitle(subTitle string) {
-	count := utf8.RuneCountInString(subTitle)
-	if count == 0 {
-		return
-	}
-	if count > 64 {
-		s := []rune(subTitle)
-		subTitle = string(s[0:61]) + "..."
-	}
-	p.ISubtitle = subTitle
-}
 
 // AddSummary adds the iTunes summary.
 //
