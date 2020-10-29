@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"strconv"
+	"strings"
 	"time"
 	"unicode/utf8"
 
@@ -18,43 +19,76 @@ const (
 
 // Podcast represents a podcast.
 type Podcast struct {
-	XMLName        xml.Name `xml:"channel"`
-	Title          string   `xml:"title"`
-	Link           string   `xml:"link"`
-	Description    *Description
-	Category       string   `xml:"category,omitempty"`
-	Cloud          string   `xml:"cloud,omitempty"`
-	Copyright      string   `xml:"copyright,omitempty"`
-	Docs           string   `xml:"docs,omitempty"`
-	Generator      string   `xml:"generator,omitempty"`
-	Language       string   `xml:"language,omitempty"`
-	LastBuildDate  string   `xml:"lastBuildDate,omitempty"`
-	ManagingEditor string   `xml:"managingEditor,omitempty"`
-	PubDate        string   `xml:"pubDate,omitempty"`
-	Rating         string   `xml:"rating,omitempty"`
-	SkipHours      string   `xml:"skipHours,omitempty"`
-	SkipDays       string   `xml:"skipDays,omitempty"`
-	TTL            int      `xml:"ttl,omitempty"`
-	WebMaster      string   `xml:"webMaster,omitempty"`
+	XMLName xml.Name `xml:"channel"`
+
+	// Title is the show title.
+	//
+	// This is a required tag.
+	//
+	// It’s important to have a clear, concise name for your podcast. Make your
+	// title specific. A show titled Our Community Bulletin is too vague to
+	// attract many subscribers, no matter how compelling the content.
+	//
+	// Pay close attention to the title as Apple Podcasts uses this field fo
+	// search.
+	//
+	// If you include a long list of keywords in an attempt to game podcast
+	// search, your show may be removed from the Apple directory.
+	Title string `xml:"title"`
+
+	// Link is the associated with a podcast.
+	//
+	// Do not specify HTML here.  Use RAW https:// urls.
+	Link string `xml:"link"`
+
+	// Description is text containing one or more sentences describing
+	// your podcast to potential listeners.
+	//
+	// This is a required tag.
+	//
+	// Limit: 4000 characters
+	//
+	// Note that this field is a CDATA encoded field which allows for rich text
+	// such as html links: `<a href="http://www.apple.com">Apple</a>`.
+	//
+	// Use podcast.New(...) to populate this field correctly.
+	Description Description `xml:"description"`
+
+	Category       string `xml:"category,omitempty"`
+	Cloud          string `xml:"cloud,omitempty"`
+	Copyright      string `xml:"copyright,omitempty"`
+	Docs           string `xml:"docs,omitempty"`
+	Generator      string `xml:"generator,omitempty"`
+	Language       string `xml:"language,omitempty"`
+	LastBuildDate  string `xml:"lastBuildDate,omitempty"`
+	ManagingEditor string `xml:"managingEditor,omitempty"`
+	PubDate        string `xml:"pubDate,omitempty"`
 	Image          *Image
+	Rating         string `xml:"rating,omitempty"`
+	SkipHours      string `xml:"skipHours,omitempty"`
+	SkipDays       string `xml:"skipDays,omitempty"`
+	TTL            int    `xml:"ttl,omitempty"`
+	WebMaster      string `xml:"webMaster,omitempty"`
 	TextInput      *TextInput
 	AtomLink       *AtomLink
 
 	// https://help.apple.com/itc/podcasts_connect/#/itcb54353390
 	IAuthor     string `xml:"itunes:author,omitempty"`
+	ISubtitle   string `xml:"itunes:subtitle,omitempty"`
 	ISummary    *ISummary
-	IBlock      string `xml:"itunes:block,omitempty"`
 	IImage      *IImage
-	IDuration   string  `xml:"itunes:duration,omitempty"`
-	IExplicit   string  `xml:"itunes:explicit,omitempty"`
-	IComplete   string  `xml:"itunes:complete,omitempty"`
-	INewFeedURL string  `xml:"itunes:new-feed-url,omitempty"`
-	IType 			string  `xml:"itunes:type,omitempty"`
-	IOwner      *Author // Author is formatted for itunes as-is
+	IExplicit   string `xml:"itunes:explicit,omitempty"`
+	IComplete   string `xml:"itunes:complete,omitempty"`
+	INewFeedURL string `xml:"itunes:new-feed-url,omitempty"`
+	IBlock      string `xml:"itunes:block,omitempty"`
+	IDuration   string `xml:"itunes:duration,omitempty"`
+	IType       *IType
+	IOwner      *Author
 	ICategories []*ICategory
+	ITitle      string `xml:"itunes:title,omitempty"`
 
-	Items []*Item
-
+	// Items is a collection of 0..n episodes for this podcast.
+	Items  []*Item
 	encode func(w io.Writer, o interface{}) error
 }
 
@@ -66,10 +100,8 @@ func New(title, link, description string,
 	pubDate, lastBuildDate *time.Time) Podcast {
 	return Podcast{
 		Title:         title,
+		Description:   parseDescription(description),
 		Link:          link,
-		Description:   &Description{
-			Text: description,
-		},
 		Generator:     fmt.Sprintf("go podcast v%s (github.com/eduncan911/podcast)", pVersion),
 		PubDate:       parseDateRFC1123Z(pubDate),
 		LastBuildDate: parseDateRFC1123Z(lastBuildDate),
@@ -80,7 +112,8 @@ func New(title, link, description string,
 	}
 }
 
-// AddAuthor adds the specified Author to the podcast.
+// AddAuthor adds the specified Author to the podcast's IOwner and
+// Harvard's ManagingEditor tags.
 func (p *Podcast) AddAuthor(name, email string) {
 	if len(email) == 0 {
 		return
@@ -112,76 +145,11 @@ func (p *Podcast) AddAtomLink(href string) {
 // list, if any, including ICategory.
 //
 // Note that Apple iTunes has a specific list of categories that only can be
-// used and will invalidate the feed if deviated from the list.  That list is
-// as follows.
+// used and will invalidate the feed if deviated from the list.  The list
+// changes occassionally.  Please refer to the following link for the updated
+// list:
 //
-//   * Arts
-//     * Design
-//     * Fashion & Beauty
-//     * Food
-//     * Literature
-//     * Performing Arts
-//     * Visual Arts
-//   * Business
-//     * Business News
-//     * Careers
-//     * Investing
-//     * Management & Marketing
-//     * Shopping
-//   * Comedy
-//   * Education
-//     * Education Technology
-//     * Higher Education
-//     * K-12
-//     * Language Courses
-//     * Training
-//   * Games & Hobbies
-//     * Automotive
-//     * Aviation
-//     * Hobbies
-//     * Other Games
-//     * Video Games
-//   * Government & Organizations
-//     * Local
-//     * National
-//     * Non-Profit
-//     * Regional
-//   * Health
-//     * Alternative Health
-//     * Fitness & Nutrition
-//     * Self-Help
-//     * Sexuality
-//   * Kids & Family
-//   * Music
-//   * News & Politics
-//   * Religion & Spirituality
-//     * Buddhism
-//     * Christianity
-//     * Hinduism
-//     * Islam
-//     * Judaism
-//     * Other
-//     * Spirituality
-//   * Science & Medicine
-//     * Medicine
-//     * Natural Sciences
-//     * Social Sciences
-//   * Society & Culture
-//     * History
-//     * Personal Journals
-//     * Philosophy
-//     * Places & Travel
-//   * Sports & Recreation
-//     * Amateur
-//     * College & High School
-//     * Outdoor
-//     * Professional
-//   * Technology
-//     * Gadgets
-//     * Podcasting
-//     * Software How-To
-//     * Tech News
-//   * TV & Film
+// https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12
 func (p *Podcast) AddCategory(category string, subCategories []string) {
 	if len(category) == 0 {
 		return
@@ -239,33 +207,32 @@ func (p *Podcast) AddImage(url string) {
 //
 // Article minimal requirements are:
 //
-//   * Title
-//   * Description
-//   * Link
+//   - Title
+//   - Description
+//   - Link
 //
 // Audio, Video and Downloads minimal requirements are:
 //
-//   * Title
-//   * Description
-//   * Enclosure (HREF, Type and Length all required)
+//   - Title
+//   - Description
+//   - Enclosure (HREF, Type and Length all required)
 //
 // The following fields are always overwritten (don't set them):
 //
-//   * GUID
-//   * PubDateFormatted
-//   * AuthorFormatted
-//   * Enclosure.TypeFormatted
-//   * Enclosure.LengthFormatted
+//   - GUID
+//   - PubDateFormatted
+//   - AuthorFormatted
+//   - Enclosure.TypeFormatted
+//   - Enclosure.LengthFormatted
 //
 // Recommendations:
 //
-//   * Just set the minimal fields: the rest get set for you.
-//   * Always set an Enclosure.Length, to be nice to your downloaders.
-//   * Follow Apple's best practices to enrich your podcasts:
+//   - Just set the minimal fields: the rest get set for you.
+//   - Always set an Enclosure.Length, to be nice to your downloaders.
+//   - Follow Apple's best practices to enrich your podcasts:
 //     https://help.apple.com/itc/podcasts_connect/#/itc2b3780e76
-//   * For specifications of itunes tags, see:
+//   - For specifications of itunes tags, see:
 //     https://help.apple.com/itc/podcasts_connect/#/itcb54353390
-//
 func (p *Podcast) AddItem(i Item) (int, error) {
 	// initial guards for required fields
 	if len(i.Title) == 0 || len(i.Description) == 0 {
@@ -347,6 +314,22 @@ func (p *Podcast) AddLastBuildDate(datetime *time.Time) {
 	p.LastBuildDate = parseDateRFC1123Z(datetime)
 }
 
+// AddSubTitle adds the iTunes subtitle that is displayed with the title
+// in iTunes.
+//
+// Note that this field should be just a few words long according to Apple.
+// This method will truncate the string to 64 chars if too long with "...".
+func (p *Podcast) AddSubTitle(subTitle string) {
+	count := utf8.RuneCountInString(subTitle)
+	if count == 0 {
+		return
+	}
+	if count > 64 {
+		s := []rune(subTitle)
+		subTitle = string(s[0:61]) + "..."
+	}
+	p.ISubtitle = subTitle
+}
 
 // AddSummary adds the iTunes summary.
 //
@@ -439,6 +422,35 @@ var parseAuthorNameEmail = func(a *Author) string {
 	return author
 }
 
+// AddType adds the Apple Podcasts show type.
+func (p *Podcast) AddType(podcastType Type) {
+	p.IType = &IType{Text: podcastType.String()}
+}
+
+// AddChannelType adds the Apple Podcasts show type from a string.
+//
+// Deprecated: use AddType with podcast.Episodic or podcast.Serial.
 func (p *Podcast) AddChannelType(channelType string) {
-	p.IType = channelType
+	if parsed, ok := parseType(channelType); ok {
+		p.IType = &IType{Text: parsed.String()}
+	}
+}
+
+var parseDescription = func(d string) Description {
+	count := utf8.RuneCountInString(d)
+	if count > 4000 {
+		s := []rune(d)
+		d = string(s[0:4000])
+	}
+	return Description(d)
+}
+
+var parseType = func(channelType string) (Type, bool) {
+	switch strings.ToLower(strings.TrimSpace(channelType)) {
+	case Episodic.String():
+		return Episodic, true
+	case Serial.String():
+		return Serial, true
+	}
+	return Episodic, false
 }
