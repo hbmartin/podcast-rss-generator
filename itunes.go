@@ -33,7 +33,7 @@ type ISummary struct {
 	Text    string   `xml:",cdata"`
 }
 
-// IType renders podcast.Type
+// IType renders podcast.PodcastType.
 type IType struct {
 	XMLName xml.Name `xml:"itunes:type"`
 	Text    string   `xml:",chardata"`

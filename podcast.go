@@ -83,7 +83,7 @@ type Podcast struct {
 	IBlock      string `xml:"itunes:block,omitempty"`
 	IDuration   string `xml:"itunes:duration,omitempty"`
 	IType       *IType
-	IOwner      *Author
+	IOwner      *Author `xml:"itunes:owner,omitempty"`
 	ICategories []*ICategory
 	ITitle      string `xml:"itunes:title,omitempty"`
 
@@ -146,7 +146,7 @@ func (p *Podcast) AddAtomLink(href string) {
 //
 // Note that Apple iTunes has a specific list of categories that only can be
 // used and will invalidate the feed if deviated from the list.  The list
-// changes occassionally.  Please refer to the following link for the updated
+// changes occasionally.  Please refer to the following link for the updated
 // list:
 //
 // https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12
@@ -162,15 +162,15 @@ func (p *Podcast) AddCategory(category string, subCategories []string) {
 		p.Category = category
 	}
 
-	icat := ICategory{Text: category}
+	ic := ICategory{Text: category}
 	for _, c := range subCategories {
 		if len(c) == 0 {
 			continue
 		}
-		icat2 := ICategory{Text: c}
-		icat.ICategories = append(icat.ICategories, &icat2)
+		ic2 := ICategory{Text: c}
+		ic.ICategories = append(ic.ICategories, &ic2)
 	}
-	p.ICategories = append(p.ICategories, &icat)
+	p.ICategories = append(p.ICategories, &ic)
 }
 
 // AddImage adds the specified Image to the Podcast.
@@ -423,7 +423,7 @@ var parseAuthorNameEmail = func(a *Author) string {
 }
 
 // AddType adds the Apple Podcasts show type.
-func (p *Podcast) AddType(podcastType Type) {
+func (p *Podcast) AddType(podcastType PodcastType) {
 	p.IType = &IType{Text: podcastType.String()}
 }
 
@@ -445,7 +445,7 @@ var parseDescription = func(d string) Description {
 	return Description(d)
 }
 
-var parseType = func(channelType string) (Type, bool) {
+var parseType = func(channelType string) (PodcastType, bool) {
 	switch strings.ToLower(strings.TrimSpace(channelType)) {
 	case Episodic.String():
 		return Episodic, true

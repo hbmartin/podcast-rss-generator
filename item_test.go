@@ -17,10 +17,7 @@ func TestItemAddSummaryTooLong(t *testing.T) {
 		Link:        "http://example.com/article.html",
 	}
 	summary := ""
-	for {
-		if len(summary) >= 4051 {
-			break
-		}
+	for len(summary) < 4051 {
 		summary += "abc ss 5 "
 	}
 
