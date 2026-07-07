@@ -5,7 +5,7 @@ import (
 	"testing"
 	"unicode/utf8"
 
-	"github.com/eduncan911/podcast"
+	"github.com/hbmartin/podcast-rss-generator/v2"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -56,7 +56,6 @@ func TestItemAddDescriptionLimit(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
@@ -123,7 +122,6 @@ func TestItemAddEpisodeType(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 

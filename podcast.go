@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	pVersion = "1.3.1"
+	pVersion = "2.0.0"
 )
 
 // Podcast represents a podcast.
@@ -88,7 +88,7 @@ type Podcast struct {
 
 	// Items is a collection of 0..n episodes for this podcast.
 	Items  []*Item
-	encode func(w io.Writer, o interface{}) error
+	encode func(w io.Writer, o any) error
 }
 
 // New instantiates a Podcast with required parameters.
@@ -101,7 +101,7 @@ func New(title, link, description string,
 		Title:         title,
 		Description:   parseDescription(description),
 		Link:          link,
-		Generator:     fmt.Sprintf("go podcast v%s (github.com/eduncan911/podcast)", pVersion),
+		Generator:     fmt.Sprintf("go podcast v%s (github.com/hbmartin/podcast-rss-generator/v2)", pVersion),
 		PubDate:       parseDateRFC1123Z(pubDate),
 		LastBuildDate: parseDateRFC1123Z(lastBuildDate),
 		Language:      "en-us",
@@ -408,7 +408,7 @@ type podcastWrapper struct {
 	Channel  *Podcast
 }
 
-func encoder(w io.Writer, o interface{}) error {
+func encoder(w io.Writer, o any) error {
 	e := xml.NewEncoder(w)
 	e.Indent("", "  ")
 	if err := e.Encode(o); err != nil {

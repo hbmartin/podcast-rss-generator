@@ -266,6 +266,7 @@ func (i *Item) AddSummary(summary string) {
 // AddDescription adds a rich-text description tag.
 //
 // Limit: 10000 characters
+// Item descriptions keep Apple's character limit; channel descriptions use bytes.
 //
 // Note that this field is a CDATA encoded field which allows for rich text
 // such as html links: `<a href="http://www.apple.com">Apple</a>`.

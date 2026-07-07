@@ -1,15 +1,15 @@
 // Package podcast generates a fully compliant iTunes and RSS 2.0 podcast feed
-// for GoLang using a simple API.
+// for Go using a simple API.
 //
-// Full documentation with detailed examples located at https://godoc.org/github.com/eduncan911/podcast
+// Full documentation with detailed examples is located at https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2
 //
 // # Usage
 //
-// To use, `go get` and `import` the package like your typical GoLang library.
+// To use, `go get` and `import` the package like your typical Go library.
 //
-//	$ go get -u github.com/eduncan911/podcast
+//	$ go get github.com/hbmartin/podcast-rss-generator/v2@latest
 //
-//	import "github.com/eduncan911/podcast"
+//	import "github.com/hbmartin/podcast-rss-generator/v2"
 //
 // The API exposes a number of method receivers on structs that implements the
 // logic required to comply with the specifications and ensure a compliant feed.
@@ -19,7 +19,7 @@
 // of the heavy lifting by taking the `Item` input and performing
 // validation, overrides and duplicate setters through the feed.
 //
-// Full detailed Examples of the API are at https://godoc.org/github.com/eduncan911/podcast.
+// Full detailed Examples of the API are at https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2.
 //
 // # Contributing
 //
@@ -27,11 +27,10 @@
 //
 // # Go Modules
 //
-// This library is supported on GoLang 1.7 and higher.
+// This library is supported on Go 1.24.0 and higher.
 //
 // We have implemented Go Modules support and the CI pipeline shows it working with
-// new installs, tested with Go 1.13.  To keep 1.7 compatibility, we use
-// `go mod vendor` to maintain the `vendor/` folder for older 1.7 and later runtimes.
+// the toolchain configured by mise.
 //
 // If either runtime has an issue, please create an Issue and I will address.
 //
@@ -53,13 +52,13 @@
 // ran extensively and no issues have come out of them yet (most tests were ran overnight,
 // over about 11 hours with zero crashes).
 //
-// If you wish to help fuzz the inputs, with Go 1.13 or later you can run `go-fuzz` on any
+// If you wish to help fuzz the inputs, with Go 1.24.0 or later you can run `go-fuzz` on any
 // of the inputs.
 //
-//	go get -u github.com/dvyukov/go-fuzz/go-fuzz
-//	go get -u github.com/dvyukov/go-fuzz/go-fuzz-build
-//	go get -u github.com/eduncan911/podcast
-//	cd $GOPATH/src/github.com/eduncan911/podcast
+//	go install github.com/dvyukov/go-fuzz/go-fuzz@latest
+//	go install github.com/dvyukov/go-fuzz/go-fuzz-build@latest
+//	git clone https://github.com/hbmartin/podcast-rss-generator.git
+//	cd podcast-rss-generator
 //	go-fuzz-build
 //	go-fuzz -func FuzzPodcastAddItem
 //
@@ -99,6 +98,11 @@
 // bypass the API methods and use the underlying public properties instead.
 //
 // # Release Notes
+//
+// v2.0.0
+//   - Change module path to github.com/hbmartin/podcast-rss-generator/v2 for semantic import versioning.
+//   - Publish as a Go library module with CI and tag workflows focused on build, vet, lint, and tests.
+//   - Raise the minimum supported Go version to 1.24.0.
 //
 // v1.4.2
 //   - Slim down Go Modules for consumers (#32)

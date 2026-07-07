@@ -27,7 +27,7 @@ When writing or refactoring Go code in this repository, strictly adhere to the f
 
 ### Code Quality
 - Write clean, idiomatic Go code following Go conventions and best practices
-- Use structured logging with logrus for consistent log formatting
+- Use logging only where the library already has an established need and pattern
 - Ensure proper error handling and meaningful error messages
 - Follow the existing code style and patterns in the repository
 
@@ -54,6 +54,8 @@ This project uses golangci-lint with strict formatting rules configured in `.gol
 
 ## Key File References
 
+- Module path: `github.com/hbmartin/podcast-rss-generator/v2`
+- Release model: Go library module, published by pushing a semver tag such as `v2.0.0`
 - Podcast/channel struct and API: `podcast.go`
 - Episode/item struct and API: `item.go`
 - iTunes-specific tag types (`ISummary`, `IImage`, `IType`, `IEpisodeType`, `ICategory`): `itunes.go`

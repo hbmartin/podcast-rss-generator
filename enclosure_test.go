@@ -3,7 +3,7 @@ package podcast_test
 import (
 	"testing"
 
-	"github.com/eduncan911/podcast"
+	"github.com/hbmartin/podcast-rss-generator/v2"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -27,7 +27,6 @@ var enclosureTests = []enclosureTest{
 func TestEnclosureTypes(t *testing.T) {
 	t.Parallel()
 	for _, et := range enclosureTests {
-		et := et
 		t.Run(et.t.String(), func(t *testing.T) {
 			t.Parallel()
 
