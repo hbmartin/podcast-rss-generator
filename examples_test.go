@@ -164,7 +164,7 @@ See more at our website: <a href="http://example.com">example.com</a>
 		item := podcast.Item{
 			Title:       "Episode " + n,
 			Link:        "http://example.com/" + n + ".mp3",
-			Description: "Description for Episode " + n,
+			Description: podcast.Description("Description for Episode " + n),
 			PubDate:     &d,
 		}
 		if _, err := p.AddItem(item); err != nil {

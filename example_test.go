@@ -11,11 +11,9 @@ import (
 )
 
 func Example_httpHandlers() {
-
 	// ResponseWriter example using Podcast.Encode(w io.Writer).
 	//
 	httpHandler := func(w http.ResponseWriter, r *http.Request) {
-
 		// instantiate a new Podcast
 		p := podcast.New(
 			"eduncan911 Podcasts",
@@ -39,7 +37,7 @@ func Example_httpHandlers() {
 			item := podcast.Item{
 				Title:       "Episode " + n,
 				Link:        "http://example.com/" + n + ".mp3",
-				Description: "Description for Episode " + n,
+				Description: podcast.Description("Description for Episode " + n),
 				PubDate:     &d,
 			}
 			item.AddImage("http://example.com/episode-" + n + ".png")
@@ -120,7 +118,6 @@ func Example_httpHandlers() {
 }
 
 func Example_ioWriter() {
-
 	// instantiate a new Podcast
 	p := podcast.New(
 		"Sample Podcasts",
@@ -143,7 +140,7 @@ func Example_ioWriter() {
 		// create an Item
 		item := podcast.Item{
 			Title:       "Episode " + n,
-			Description: "Description for Episode " + n,
+			Description: podcast.Description("Description for Episode " + n),
 			ISubtitle:   "A simple episode " + n,
 			PubDate:     &d,
 		}

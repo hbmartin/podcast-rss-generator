@@ -6,7 +6,7 @@ import "encoding/xml"
 //
 // For iTunes compliance, both Name and Email are required.
 type Author struct {
-	XMLName xml.Name `xml:"itunes:owner"`
-	Name    string   `xml:"itunes:name"`
-	Email   string   `xml:"itunes:email"`
+	XMLName xml.Name
+	Name    string `xml:"itunes:name"`
+	Email   string `xml:"itunes:email"`
 }

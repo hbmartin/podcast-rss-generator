@@ -383,10 +383,7 @@ func TestAddSubTitleTooLong(t *testing.T) {
 	// arrange
 	p := podcast.New("title", "desc", "Link", nil, nil)
 	subTitle := ""
-	for {
-		if len(subTitle) >= 80 {
-			break
-		}
+	for len(subTitle) < 80 {
 		subTitle += "ajd 2 "
 	}
 
@@ -407,10 +404,7 @@ func TestAddSummaryTooLong(t *testing.T) {
 		"Link",
 		nil, nil)
 	summary := ""
-	for {
-		if len(summary) >= 4051 {
-			break
-		}
+	for len(summary) < 4051 {
 		summary += "jax ss 7 "
 	}
 

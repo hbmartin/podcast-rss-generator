@@ -32,3 +32,15 @@ type ISummary struct {
 	XMLName xml.Name `xml:"itunes:summary"`
 	Text    string   `xml:",cdata"`
 }
+
+// IType renders podcast.PodcastType.
+type IType struct {
+	XMLName xml.Name `xml:"itunes:type"`
+	Text    string   `xml:",chardata"`
+}
+
+// IEpisodeType renders podcast.EpisodeType.
+type IEpisodeType struct {
+	XMLName xml.Name `xml:"itunes:episodeType"`
+	Text    string   `xml:",chardata"`
+}
