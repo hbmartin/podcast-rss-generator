@@ -10,6 +10,7 @@ podcast feeds with common Apple Podcasts tags.
 - `podcast.go`: channel/feed type, item validation, XML encoding, public errors.
 - `item.go`: episode/item type and item-level helper methods.
 - `itunes.go`: Apple Podcasts tag helper types.
+- `podcastindex.go`: Podcasting 2.0 (podcast namespace) tag types and setters.
 - `description.go`: CDATA-aware description encoding.
 - `example_test.go` and `examples_test.go`: executable public API examples.
 - `fuzz_test.go`: native Go fuzz target for feed encoding.

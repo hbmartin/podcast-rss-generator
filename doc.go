@@ -49,6 +49,15 @@
 //
 //	go test -run '^$' -fuzz=FuzzPodcastEncode -fuzztime=1m ./...
 //
+// # Podcasting 2.0
+//
+// The package includes partial support for the PodcastIndex "podcast"
+// namespace: podcast:guid, podcast:medium, podcast:locked, and podcast:person
+// at the channel level, and podcast:transcript, podcast:chapters,
+// podcast:person, and podcast:socialInteract at the item level. The
+// xmlns:podcast declaration is added to the <rss> element only when one of
+// these tags is set.
+//
 // # Roadmap
 //
 // Current v2 work focuses on preserving the public API, improving validation
@@ -69,4 +78,6 @@
 // RSS 2.0: https://cyber.harvard.edu/rss/rss.html
 //
 // Podcasts: https://help.apple.com/itc/podcasts_connect/#/itca5b22233
+//
+// Podcast Namespace: https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md
 package podcast

@@ -16,6 +16,67 @@ func newValidItem() podcast.Item {
 	}
 }
 
+func TestAddContentEncodedItem(t *testing.T) {
+	t.Parallel()
+
+	i := newValidItem()
+
+	// empty input is a no-op.
+	i.AddContentEncoded("")
+	assert.Nil(t, i.ContentEncoded)
+
+	// non-empty input populates the field.
+	i.AddContentEncoded(`<p>Show notes with a <a href="https://example.com">link</a></p>`)
+	require.NotNil(t, i.ContentEncoded)
+	assert.Equal(
+		t,
+		`<p>Show notes with a <a href="https://example.com">link</a></p>`,
+		i.ContentEncoded.Text,
+	)
+}
+
+func TestContentEncodedRendersCDATAAndNamespace(t *testing.T) {
+	t.Parallel()
+
+	p := podcast.New("t", "l", "d", zeroDate, zeroDate)
+
+	// Without any content:encoded item, the namespace is not declared.
+	assert.NotContains(t, p.String(), "xmlns:content")
+
+	item := newValidItem()
+	item.AddContentEncoded(`<p>Rich <b>HTML</b> body & more</p>`)
+	_, err := p.AddItem(item)
+	require.NoError(t, err)
+
+	got := p.String()
+	// Namespace is declared on <rss> once an item uses it.
+	assert.Contains(t, got, `xmlns:content="http://purl.org/rss/1.0/modules/content/"`)
+	// The body is wrapped in CDATA so raw HTML (and &) is preserved verbatim.
+	assert.Contains(
+		t,
+		got,
+		"<content:encoded><![CDATA[<p>Rich <b>HTML</b> body & more</p>]]></content:encoded>",
+	)
+}
+
+func TestContentEncodedSnapshotAfterAddItem(t *testing.T) {
+	t.Parallel()
+
+	p := podcast.New("t", "l", "d", zeroDate, zeroDate)
+
+	item := newValidItem()
+	item.AddContentEncoded("<p>original</p>")
+	_, err := p.AddItem(item)
+	require.NoError(t, err)
+
+	// Mutating the caller's item after AddItem must not change the stored feed.
+	item.ContentEncoded.Text = "<p>mutated</p>"
+
+	got := p.String()
+	assert.Contains(t, got, "<![CDATA[<p>original</p>]]>")
+	assert.NotContains(t, got, "mutated")
+}
+
 func TestSetExplicitPodcast(t *testing.T) {
 	t.Parallel()
 

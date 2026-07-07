@@ -4,6 +4,12 @@ All notable changes to this project are documented here.
 
 ## Unreleased
 
+- Add partial Podcasting 2.0 (podcast namespace) support: channel-level
+  `podcast:guid`, `podcast:medium`, `podcast:locked`, and `podcast:person`;
+  item-level `podcast:transcript`, `podcast:chapters`, `podcast:person`, and
+  `podcast:socialInteract`. The `xmlns:podcast` declaration is emitted only
+  when a podcast-namespace tag is set. Includes a dependency-free
+  `NewFeedGUID` helper implementing the spec's UUIDv5 derivation.
 - Add inspectable validation errors for podcast and item failures.
 - Make podcast encoding safe for nil receivers, nil writers, and zero-value
   podcast values.
