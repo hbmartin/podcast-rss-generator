@@ -178,7 +178,7 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
 	        "eduncan911 Podcasts",
 	        "http://eduncan911.com/",
 	        "An example Podcast",
-	        &pubDate, &updatedDate,
+	        pubDate, updatedDate,
 	    )
 	
 	    // add some channel properties
@@ -197,7 +197,7 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
 	            Title:       "Episode " + n,
 	            Link:        "http://example.com/" + n + ".mp3",
 	            Description: "Description for Episode " + n,
-	            PubDate:     &d,
+	            PubDate:     d,
 	        }
 	        item.AddImage("http://example.com/episode-" + n + ".png")
 	        item.AddSummary(`item <a href="http://example.com">example.com</a>`)
@@ -293,7 +293,7 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
 	    "Sample Podcasts",
 	    "http://example.com/",
 	    "An example Podcast",
-	    &createdDate, &updatedDate,
+	    createdDate, updatedDate,
 	)
 	
 	// add some channel properties
@@ -312,7 +312,7 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
 	        Title:       "Episode " + n,
 	        Description: "Description for Episode " + n,
 	        ISubtitle:   "A simple episode " + n,
-	        PubDate:     &d,
+	        PubDate:     d,
 	    }
 	    item.AddImage("http://example.com/episode-" + n + ".png")
 	    item.AddSummary(`item k <a href="http://example.com">example.com</a>`)
@@ -394,8 +394,6 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
 
 ## <a name="pkg-imports">Imported Packages</a>
 
-- [github.com/pkg/errors](https://godoc.org/github.com/pkg/errors)
-
 ## <a name="pkg-index">Index</a>
 * [type AtomLink](#AtomLink)
 * [type Author](#Author)
@@ -410,17 +408,17 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
   * [func (i \*Item) AddDuration(durationInSeconds int64)](#Item.AddDuration)
   * [func (i \*Item) AddEnclosure(url string, enclosureType EnclosureType, lengthInBytes int64)](#Item.AddEnclosure)
   * [func (i \*Item) AddImage(url string)](#Item.AddImage)
-  * [func (i \*Item) AddPubDate(datetime \*time.Time)](#Item.AddPubDate)
+  * [func (i \*Item) AddPubDate(datetime time.Time)](#Item.AddPubDate)
   * [func (i \*Item) AddSummary(summary string)](#Item.AddSummary)
 * [type Podcast](#Podcast)
-  * [func New(title, link, description string, pubDate, lastBuildDate \*time.Time) Podcast](#New)
+  * [func New(title, link, description string, pubDate, lastBuildDate time.Time) Podcast](#New)
   * [func (p \*Podcast) AddAtomLink(href string)](#Podcast.AddAtomLink)
   * [func (p \*Podcast) AddAuthor(name, email string)](#Podcast.AddAuthor)
   * [func (p \*Podcast) AddCategory(category string, subCategories []string)](#Podcast.AddCategory)
   * [func (p \*Podcast) AddImage(url string)](#Podcast.AddImage)
   * [func (p \*Podcast) AddItem(i Item) (int, error)](#Podcast.AddItem)
-  * [func (p \*Podcast) AddLastBuildDate(datetime \*time.Time)](#Podcast.AddLastBuildDate)
-  * [func (p \*Podcast) AddPubDate(datetime \*time.Time)](#Podcast.AddPubDate)
+  * [func (p \*Podcast) AddLastBuildDate(datetime time.Time)](#Podcast.AddLastBuildDate)
+  * [func (p \*Podcast) AddPubDate(datetime time.Time)](#Podcast.AddPubDate)
   * [func (p \*Podcast) AddSubTitle(subTitle string)](#Podcast.AddSubTitle)
   * [func (p \*Podcast) AddSummary(summary string)](#Podcast.AddSummary)
   * [func (p \*Podcast) Bytes() []byte](#Podcast.Bytes)
@@ -502,7 +500,8 @@ EnclosureType specifies the type of the enclosure.
 
 ``` go
 const (
-    M4A EnclosureType = iota
+    EnclosureUnknown EnclosureType = iota
+    M4A
     M4V
     MP4
     MP3
@@ -590,7 +589,7 @@ type Item struct {
     Category         string     `xml:"category,omitempty"`
     Comments         string     `xml:"comments,omitempty"`
     Source           string     `xml:"source,omitempty"`
-    PubDate          *time.Time `xml:"-"`
+    PubDate          time.Time  `xml:"-"`
     PubDateFormatted string     `xml:"pubDate,omitempty"`
     Enclosure        *Enclosure
 
@@ -675,7 +674,7 @@ image files.
 
 ### <a name="Item.AddPubDate">func</a> (\*Item) [AddPubDate](./item.go#L81)
 ``` go
-func (i *Item) AddPubDate(datetime *time.Time)
+func (i *Item) AddPubDate(datetime time.Time)
 ```
 AddPubDate adds the datetime as a parsed PubDate.
 
@@ -687,7 +686,7 @@ UTC time is used by default.
 <summary>Click to expand code.</summary>
 
 ```go
-p := podcast.New("title", "link", "description", nil, nil)
+p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
 	i := podcast.Item{
 	    Title:       "item title",
 	    Description: "item desc",
@@ -696,11 +695,11 @@ p := podcast.New("title", "link", "description", nil, nil)
 	d := pubDate.AddDate(0, 0, -11)
 	
 	// add the pub date
-	i.AddPubDate(&d)
+	i.AddPubDate(d)
 	
 	// before adding
-	if i.PubDate != nil {
-	    fmt.Println(i.PubDateFormatted, *i.PubDate)
+	if !i.PubDate.IsZero() {
+	    fmt.Println(i.PubDateFormatted, i.PubDate)
 	}
 	
 	// this should not override with Podcast.PubDate
@@ -709,7 +708,7 @@ p := podcast.New("title", "link", "description", nil, nil)
 	}
 	
 	// after adding item
-	fmt.Println(i.PubDateFormatted, *i.PubDate)
+	fmt.Println(i.PubDateFormatted, i.PubDate)
 	// Output:
 	// Tue, 24 Jan 2017 08:21:52 +0000 2017-01-24 08:21:52 +0000 UTC
 	// Tue, 24 Jan 2017 08:21:52 +0000 2017-01-24 08:21:52 +0000 UTC
@@ -775,12 +774,12 @@ Podcast represents a podcast.
 ### <a name="New">func</a> [New](./podcast.go#L65-L66)
 ``` go
 func New(title, link, description string,
-    pubDate, lastBuildDate *time.Time) Podcast
+    pubDate, lastBuildDate time.Time) Podcast
 ```
 New instantiates a Podcast with required parameters.
 
-Nil-able fields are optional but recommended as they are formatted
-to the expected proper formats.
+Zero-value time fields default to the current UTC time; non-zero values are
+formatted to the expected proper formats.
 
 #### Example:
 
@@ -791,7 +790,7 @@ to the expected proper formats.
 ti, l, d := "title", "link", "description"
 	
 	// instantiate a new Podcast
-	p := podcast.New(ti, l, d, &pubDate, &updatedDate)
+	p := podcast.New(ti, l, d, pubDate, updatedDate)
 	
 	fmt.Println(p.Title, p.Link, p.Description, p.Language)
 	fmt.Println(p.PubDate, p.LastBuildDate)
@@ -822,7 +821,7 @@ structured iTunes owner contact.
 <summary>Click to expand code.</summary>
 
 ```go
-p := podcast.New("title", "link", "description", nil, nil)
+p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
 	
 	// add the Author
 	p.AddAuthor("the name", "me@test.com")
@@ -931,7 +930,7 @@ as follows.
 <summary>Click to expand code.</summary>
 
 ```go
-p := podcast.New("title", "link", "description", nil, nil)
+p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
 	
 	// add the Category
 	p.AddCategory("Bombay", nil)
@@ -966,7 +965,7 @@ image files.
 <summary>Click to expand code.</summary>
 
 ```go
-p := podcast.New("title", "link", "description", nil, nil)
+p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
 	
 	// add the Image
 	p.AddImage("http://example.com/image.jpg")
@@ -1033,7 +1032,7 @@ Recommendations:
 <summary>Click to expand code.</summary>
 
 ```go
-p := podcast.New("title", "link", "description", &pubDate, &updatedDate)
+p := podcast.New("title", "link", "description", pubDate, updatedDate)
 	p.AddAuthor("the name", "me@test.com")
 	p.AddImage("http://example.com/image.jpg")
 	
@@ -1043,7 +1042,7 @@ p := podcast.New("title", "link", "description", &pubDate, &updatedDate)
 	    Title:       "Episode 1",
 	    Description: "Description for Episode 1",
 	    ISubtitle:   "A simple episode 1",
-	    PubDate:     &date,
+	    PubDate:     date,
 	}
 	item.AddEnclosure(
 	    "http://example.com/1.mp3",
@@ -1075,7 +1074,7 @@ p := podcast.New("title", "link", "description", &pubDate, &updatedDate)
 
 ### <a name="Podcast.AddLastBuildDate">func</a> (\*Podcast) [AddLastBuildDate](./podcast.go#L344)
 ``` go
-func (p *Podcast) AddLastBuildDate(datetime *time.Time)
+func (p *Podcast) AddLastBuildDate(datetime time.Time)
 ```
 AddLastBuildDate adds the datetime as a parsed PubDate.
 
@@ -1087,10 +1086,10 @@ UTC time is used by default.
 <summary>Click to expand code.</summary>
 
 ```go
-p := podcast.New("title", "link", "description", nil, nil)
+p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
 	d := pubDate.AddDate(0, 0, -7)
 	
-	p.AddLastBuildDate(&d)
+	p.AddLastBuildDate(d)
 	
 	fmt.Println(p.LastBuildDate)
 	// Output:
@@ -1101,7 +1100,7 @@ p := podcast.New("title", "link", "description", nil, nil)
 
 ### <a name="Podcast.AddPubDate">func</a> (\*Podcast) [AddPubDate](./podcast.go#L337)
 ``` go
-func (p *Podcast) AddPubDate(datetime *time.Time)
+func (p *Podcast) AddPubDate(datetime time.Time)
 ```
 AddPubDate adds the datetime as a parsed PubDate.
 
@@ -1113,10 +1112,10 @@ UTC time is used by default.
 <summary>Click to expand code.</summary>
 
 ```go
-p := podcast.New("title", "link", "description", nil, nil)
+p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
 	d := pubDate.AddDate(0, 0, -5)
 	
-	p.AddPubDate(&d)
+	p.AddPubDate(d)
 	
 	fmt.Println(p.PubDate)
 	// Output:
@@ -1152,7 +1151,7 @@ such as html links: `<a href="<a href="http://www.apple.com">http://www.apple.co
 <summary>Click to expand code.</summary>
 
 ```go
-p := podcast.New("title", "link", "description", nil, nil)
+p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
 	
 	// add a summary
 	p.AddSummary(`A very cool podcast with a long summary!
@@ -1187,7 +1186,7 @@ p := podcast.New(
 	    "eduncan911 Podcasts",
 	    "http://eduncan911.com/",
 	    "An example Podcast",
-	    &pubDate, &updatedDate,
+	    pubDate, updatedDate,
 	)
 	p.AddAuthor("Jane Doe", "me@janedoe.com")
 	p.AddImage("http://janedoe.com/i.jpg")
@@ -1204,7 +1203,7 @@ p := podcast.New(
 	        Title:       "Episode " + n,
 	        Link:        "http://example.com/" + n + ".mp3",
 	        Description: "Description for Episode " + n,
-	        PubDate:     &d,
+	        PubDate:     d,
 	    }
 	    if _, err := p.AddItem(item); err != nil {
 	        fmt.Println(item.Title, ": error", err.Error())

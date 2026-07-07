@@ -12,7 +12,7 @@ Before you begin:
 
 * **Create PRs against `develop` branch only.** The default branch is `master` for those that use `go get -u`.
 * Check your PR for C.I. testing results once they complete (see **Testing Strategy, Documentation, and Examples** below). Once merged to `develop`, the author (me) will need to create a release branch. `go mod` and Github Releases are tagged from `master` once the release branch is completed.
-* The `README.md` is auto-generated via the `Makefile`.  If you need to update it, please change `doc.go` and/or comments in code.
+* The `README.md` is auto-generated via `mise run readme`.  If you need to update it, please change `doc.go` and/or comments in code.
 
 ## Coding Guidelines
 

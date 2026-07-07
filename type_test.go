@@ -27,7 +27,7 @@ func TestEpisodeTypeStringSpecValues(t *testing.T) {
 func TestAddTypeUsesSpecValue(t *testing.T) {
 	t.Parallel()
 
-	p := podcast.New("title", "link", "description", nil, nil)
+	p := podcast.New("title", "link", "description", zeroDate, zeroDate)
 
 	p.AddType(podcast.Serial)
 
@@ -40,7 +40,7 @@ func TestAddTypeUsesSpecValue(t *testing.T) {
 func TestAddChannelTypeUsesSpecValue(t *testing.T) {
 	t.Parallel()
 
-	p := podcast.New("title", "link", "description", nil, nil)
+	p := podcast.New("title", "link", "description", zeroDate, zeroDate)
 
 	p.AddChannelType(" Serial ")
 

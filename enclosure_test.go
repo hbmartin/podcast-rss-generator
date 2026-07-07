@@ -13,6 +13,7 @@ type enclosureTest struct {
 }
 
 var enclosureTests = []enclosureTest{
+	{podcast.EnclosureUnknown, "application/octet-stream"},
 	{podcast.M4A, "audio/x-m4a"},
 	{podcast.M4V, "video/x-m4v"},
 	{podcast.MP4, "video/mp4"},
@@ -20,7 +21,6 @@ var enclosureTests = []enclosureTest{
 	{podcast.MOV, "video/quicktime"},
 	{podcast.PDF, "application/pdf"},
 	{podcast.EPUB, "document/x-epub"},
-	{podcast.M4A, "audio/x-m4a"},
 	{99, "application/octet-stream"},
 }
 

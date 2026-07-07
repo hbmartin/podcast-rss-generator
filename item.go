@@ -54,7 +54,7 @@ type Item struct {
 	// recommended to set this tag on each item.
 	//
 	// Use item.AddPubDate(...) to populate this field correctly.
-	PubDate *time.Time `xml:"-"`
+	PubDate time.Time `xml:"-"`
 
 	// PubDateFormatted is deprecated.  Do not populate nor read this
 	// string as it will be removed in a future release.
@@ -241,7 +241,7 @@ func (i *Item) AddImage(url string) {
 // AddPubDate adds the datetime as a parsed PubDate.
 //
 // UTC time is used by default.
-func (i *Item) AddPubDate(datetime *time.Time) {
+func (i *Item) AddPubDate(datetime time.Time) {
 	i.PubDate = datetime
 	i.PubDateFormatted = parseDateRFC1123Z(i.PubDate)
 }
@@ -286,7 +286,7 @@ func (i *Item) AddDuration(durationInSeconds int64) {
 	i.IDuration = parseDuration(durationInSeconds)
 }
 
-var parseDuration = func(duration int64) string {
+func parseDuration(duration int64) string {
 	h := duration / 3600
 	duration = duration % 3600
 
@@ -314,8 +314,8 @@ var parseDuration = func(duration int64) string {
 	return fmt.Sprintf("%d:%02d", m, s)
 }
 
-var parseDateRFC1123Z = func(t *time.Time) string {
-	if t != nil && !t.IsZero() {
+func parseDateRFC1123Z(t time.Time) string {
+	if !t.IsZero() {
 		return t.Format(time.RFC1123Z)
 	}
 	return time.Now().UTC().Format(time.RFC1123Z)

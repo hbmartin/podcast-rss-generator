@@ -78,7 +78,7 @@ func FuzzItemAddPubDate(data []byte) int {
 	}
 	i := newItem(data)
 
-	i.AddPubDate(&t)
+	i.AddPubDate(t)
 
 	p := newPodcast(data)
 	if _, err := p.AddItem(i); err != nil {
@@ -199,7 +199,7 @@ func FuzzPodcastAddLastBuildDate(data []byte) int {
 		return 0
 	}
 
-	p.AddLastBuildDate(&t)
+	p.AddLastBuildDate(t)
 
 	var buf bytes.Buffer
 	if err := p.Encode(&buf); err != nil {
@@ -216,7 +216,7 @@ func FuzzPodcastAddPubDate(data []byte) int {
 		return 0
 	}
 
-	p.AddPubDate(&t)
+	p.AddPubDate(t)
 
 	var buf bytes.Buffer
 	if err := p.Encode(&buf); err != nil {
@@ -276,7 +276,7 @@ func newPodcast(data []byte) Podcast {
 		string(data),
 		string(data),
 		string(data),
-		nil, nil)
+		time.Time{}, time.Time{})
 }
 
 func newItem(data []byte) Item {
@@ -292,7 +292,7 @@ func newItem(data []byte) Item {
 	//
 	return Item{
 		Title:       string(data),
-		Description: string(data),
+		Description: Description(string(data)),
 		Link:        string(data),
 	}
 }

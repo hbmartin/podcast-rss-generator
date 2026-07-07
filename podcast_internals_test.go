@@ -6,6 +6,7 @@ import (
 	"io"
 	"strings"
 	"testing"
+	"time"
 	"unicode/utf8"
 
 	"github.com/stretchr/testify/assert"
@@ -32,7 +33,7 @@ func TestEncodeError(t *testing.T) {
 	t.Parallel()
 
 	// arrange
-	p := New("", "", "", nil, nil)
+	p := New("", "", "", time.Time{}, time.Time{})
 	b := []byte{}
 	w := bytes.NewBuffer(b)
 	c := new(chan bool)
