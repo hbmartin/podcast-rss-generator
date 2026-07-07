@@ -46,7 +46,7 @@ type Podcast struct {
 	//
 	// This is a required tag.
 	//
-	// Limit: 4000 characters
+	// Limit: 4000 bytes
 	//
 	// Note that this field is a CDATA encoded field which allows for rich text
 	// such as html links: `<a href="http://www.apple.com">Apple</a>`.
@@ -112,17 +112,22 @@ func New(title, link, description string,
 	}
 }
 
-// AddAuthor adds the specified Author to the podcast's IOwner and
-// Harvard's ManagingEditor tags.
+// AddAuthor adds the specified Author to the podcast's ManagingEditor and
+// iTunes author tags. When both name and email are supplied, it also sets the
+// structured iTunes owner contact.
 func (p *Podcast) AddAuthor(name, email string) {
 	if len(email) == 0 {
 		return
 	}
-	p.ManagingEditor = parseAuthorNameEmail(&Author{
+	a := &Author{
 		Name:  name,
 		Email: email,
-	})
+	}
+	p.ManagingEditor = parseAuthorNameEmail(a)
 	p.IAuthor = p.ManagingEditor
+	if len(name) != 0 {
+		p.IOwner = a
+	}
 }
 
 // AddAtomLink adds a FQDN reference to an atom feed.
@@ -437,12 +442,15 @@ func (p *Podcast) AddChannelType(channelType string) {
 }
 
 var parseDescription = func(d string) Description {
-	count := utf8.RuneCountInString(d)
-	if count > 4000 {
-		s := []rune(d)
-		d = string(s[0:4000])
+	if len(d) <= 4000 {
+		return Description(d)
 	}
-	return Description(d)
+
+	limit := 4000
+	for limit > 0 && !utf8.RuneStart(d[limit]) {
+		limit--
+	}
+	return Description(d[:limit])
 }
 
 var parseType = func(channelType string) (PodcastType, bool) {

@@ -51,18 +51,66 @@ func TestNewNils(t *testing.T) {
 	assert.True(t, now >= p.LastBuildDate)
 }
 
-func TestAddAuthorEmailEmpty(t *testing.T) {
+func TestAddAuthor(t *testing.T) {
 	t.Parallel()
 
-	// arrange
+	tests := []struct {
+		name               string
+		authorName         string
+		email              string
+		wantManagingEditor string
+		wantOwner          bool
+	}{
+		{
+			name:               "name and email set owner",
+			authorName:         "the name",
+			email:              "me@test.com",
+			wantManagingEditor: "me@test.com (the name)",
+			wantOwner:          true,
+		},
+		{
+			name: "empty email ignores author",
+		},
+		{
+			name:               "empty name skips incomplete owner",
+			email:              "me@test.com",
+			wantManagingEditor: "me@test.com",
+		},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			p := podcast.New("title", "link", "description", nil, nil)
+			p.AddAuthor(tt.authorName, tt.email)
+
+			assert.Equal(t, tt.wantManagingEditor, p.ManagingEditor)
+			assert.Equal(t, tt.wantManagingEditor, p.IAuthor)
+			if !tt.wantOwner {
+				assert.Nil(t, p.IOwner)
+				return
+			}
+			if assert.NotNil(t, p.IOwner) {
+				assert.Equal(t, tt.authorName, p.IOwner.Name)
+				assert.Equal(t, tt.email, p.IOwner.Email)
+			}
+		})
+	}
+}
+
+func TestAddAuthorEncodesITunesOwner(t *testing.T) {
+	t.Parallel()
+
 	p := podcast.New("title", "link", "description", nil, nil)
+	p.AddAuthor("the name", "me@test.com")
 
-	// act
-	p.AddAuthor("", "")
-
-	// assert
-	assert.Len(t, p.ManagingEditor, 0)
-	assert.Len(t, p.IAuthor, 0)
+	got := p.String()
+	assert.Contains(t, got, "<itunes:owner>")
+	assert.Contains(t, got, "<itunes:name>the name</itunes:name>")
+	assert.Contains(t, got, "<itunes:email>me@test.com</itunes:email>")
+	assert.Contains(t, got, "</itunes:owner>")
 }
 
 func TestAddAtomLinkHrefEmpty(t *testing.T) {

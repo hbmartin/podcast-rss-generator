@@ -1,6 +1,6 @@
 [![GoDoc](https://godoc.org/github.com/eduncan911/podcast?status.svg)](https://godoc.org/github.com/eduncan911/podcast)
-[![Build Status](https://github.com/eduncan911/podcast/workflows/go-cicd/badge.svg)](https://github.com/eduncan911/podcast/actions?workflow=go-cicd)
-[![Coverage Status](https://coveralls.io/repos/github/eduncan911/podcast/badge.svg?branch=master)](https://coveralls.io/github/eduncan911/podcast?branch=master)
+[![Build Status](https://github.com/eduncan911/podcast/workflows/CI/badge.svg)](https://github.com/eduncan911/podcast/actions?workflow=CI)
+[![Coverage Status](https://codecov.io/gh/eduncan911/podcast/branch/master/graph/badge.svg)](https://codecov.io/gh/eduncan911/podcast)
 [![Go Report Card](https://goreportcard.com/badge/github.com/eduncan911/podcast)](https://goreportcard.com/report/github.com/eduncan911/podcast)
 [![MIT License](https://img.shields.io/npm/l/mediaelement.svg)](https://eduncan911.mit-license.org/)
 
@@ -250,6 +250,10 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
 	//     <itunes:summary><![CDATA[link <a href="http://example.com">example.com</a>]]></itunes:summary>
 	//     <itunes:image href="http://janedoe.com/i.jpg"></itunes:image>
 	//     <itunes:explicit>no</itunes:explicit>
+	//     <itunes:owner>
+	//       <itunes:name>Jane Doe</itunes:name>
+	//       <itunes:email>me@janedoe.com</itunes:email>
+	//     </itunes:owner>
 	//     <item>
 	//       <guid>http://e.com/1.mp3</guid>
 	//       <title>Episode 1</title>
@@ -348,6 +352,10 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
 	//     <itunes:subtitle>A simple Podcast</itunes:subtitle>
 	//     <itunes:summary><![CDATA[link <a href="http://example.com">example.com</a>]]></itunes:summary>
 	//     <itunes:image href="http://example.com/podcast.jpg"></itunes:image>
+	//     <itunes:owner>
+	//       <itunes:name>Jane Doe</itunes:name>
+	//       <itunes:email>jane.doe@example.com</itunes:email>
+	//     </itunes:owner>
 	//     <item>
 	//       <guid>http://example.com/9.mp3</guid>
 	//       <title>Episode 9</title>
@@ -452,9 +460,9 @@ AtomLink represents the Atom reference link.
 ## <a name="Author">type</a> [Author](./author.go#L8-L12)
 ``` go
 type Author struct {
-    XMLName xml.Name `xml:"itunes:owner"`
-    Name    string   `xml:"itunes:name"`
-    Email   string   `xml:"itunes:email"`
+    XMLName xml.Name
+    Name    string `xml:"itunes:name"`
+    Email   string `xml:"itunes:email"`
 }
 ```
 Author represents a named author and email.
@@ -804,7 +812,9 @@ AddAtomLink adds a FQDN reference to an atom feed.
 ``` go
 func (p *Podcast) AddAuthor(name, email string)
 ```
-AddAuthor adds the specified Author to the podcast.
+AddAuthor adds the specified Author to the podcast's ManagingEditor and
+iTunes author tags. When both name and email are supplied, it also sets the
+structured iTunes owner contact.
 
 #### Example:
 
@@ -819,9 +829,15 @@ p := podcast.New("title", "link", "description", nil, nil)
 	
 	fmt.Println(p.ManagingEditor)
 	fmt.Println(p.IAuthor)
+	if p.IOwner != nil {
+	    fmt.Println(p.IOwner.Name)
+	    fmt.Println(p.IOwner.Email)
+	}
 	// Output:
 	// me@test.com (the name)
 	// me@test.com (the name)
+	// the name
+	// me@test.com
 ```
 
 </details>
@@ -1222,6 +1238,10 @@ p := podcast.New(
 	// See more at our website: <a href="http://example.com">example.com</a>
 	// ]]></itunes:summary>
 	//     <itunes:image href="http://janedoe.com/i.jpg"></itunes:image>
+	//     <itunes:owner>
+	//       <itunes:name>Jane Doe</itunes:name>
+	//       <itunes:email>me@janedoe.com</itunes:email>
+	//     </itunes:owner>
 	//     <item>
 	//       <guid>http://example.com/5.mp3</guid>
 	//       <title>Episode 5</title>

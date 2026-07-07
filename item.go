@@ -265,15 +265,15 @@ func (i *Item) AddSummary(summary string) {
 
 // AddDescription adds a rich-text description tag.
 //
-// Limit: 4000 characters
+// Limit: 10000 characters
 //
 // Note that this field is a CDATA encoded field which allows for rich text
 // such as html links: `<a href="http://www.apple.com">Apple</a>`.
 func (i *Item) AddDescription(d string) {
 	count := utf8.RuneCountInString(d)
-	if count > 4000 {
+	if count > 10000 {
 		s := []rune(d)
-		d = string(s[0:4000])
+		d = string(s[0:10000])
 	}
 	i.Description = Description(d)
 }

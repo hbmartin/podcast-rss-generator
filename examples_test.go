@@ -29,9 +29,15 @@ func ExamplePodcast_AddAuthor() {
 
 	fmt.Println(p.ManagingEditor)
 	fmt.Println(p.IAuthor)
+	if p.IOwner != nil {
+		fmt.Println(p.IOwner.Name)
+		fmt.Println(p.IOwner.Email)
+	}
 	// Output:
 	// me@test.com (the name)
 	// me@test.com (the name)
+	// the name
+	// me@test.com
 }
 
 func ExamplePodcast_AddCategory() {
@@ -199,6 +205,10 @@ See more at our website: <a href="http://example.com">example.com</a>
 	// See more at our website: <a href="http://example.com">example.com</a>
 	// ]]></itunes:summary>
 	//     <itunes:image href="http://janedoe.com/i.jpg"></itunes:image>
+	//     <itunes:owner>
+	//       <itunes:name>Jane Doe</itunes:name>
+	//       <itunes:email>me@janedoe.com</itunes:email>
+	//     </itunes:owner>
 	//     <item>
 	//       <guid>http://example.com/5.mp3</guid>
 	//       <title>Episode 5</title>
