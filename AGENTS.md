@@ -35,7 +35,7 @@ When writing or refactoring Go code in this repository, strictly adhere to the f
 - **CRITICAL**: Always run ALL of the following commands before making a commit or opening a PR:
   1. `go fmt ./...` - Format all Go files
   2. `golangci-lint run` - Run all configured linters and formatters
-  3. `Run all unit tests
+  3. Run all unit tests
 - Ensure ALL tests pass AND ALL linting checks pass before committing
 - The project uses golangci-lint with strict formatting rules - code must pass ALL checks
 
@@ -54,20 +54,13 @@ This project uses golangci-lint with strict formatting rules configured in `.gol
 
 ## Key File References
 
-- Main entry: `cmd/podsync/main.go`
-- Config loading: `cmd/podsync/config.go`
-- Feed update: `services/update/updater.go` (episode lifecycle, cleanup)
-- Episode filtering: `services/update/matcher.go`
-- Database: `pkg/db/badger.go`
-- Storage: `pkg/fs/local.go`, `pkg/fs/s3.go`
-- Feed generation: `pkg/feed/xml.go` (RSS, filename handling)
-- Filename migration: `services/migrate/migrate.go`
-- Web server: `services/web/server.go`
-- YouTube builder: `pkg/builder/youtube.go`
-- Vimeo builder: `pkg/builder/vimeo.go`
-- SoundCloud builder: `pkg/builder/soundcloud.go`
-- Twitch builder: `pkg/builder/twitch.go`
-- URL parsing: `pkg/builder/url.go`
-- youtube-dl wrapper: `pkg/ytdl/ytdl.go`
-- Hooks: `pkg/feed/hooks.go`
-- API key rotation: `pkg/feed/key.go`
+- Podcast/channel struct and API: `podcast.go`
+- Episode/item struct and API: `item.go`
+- iTunes-specific tag types (`ISummary`, `IImage`, `IType`, `IEpisodeType`, `ICategory`): `itunes.go`
+- Podcast/episode type enums (`PodcastType`, `EpisodeType`): `type.go`
+- CDATA-safe description field: `description.go`
+- Feed owner/author tag: `author.go`
+- RSS enclosure (media file) tag: `enclosure.go`
+- Channel image tag: `image.go`
+- Atom self-link tag: `atomlink.go`
+- Package-level doc and usage examples: `doc.go`, `example_test.go`, `examples_test.go`

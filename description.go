@@ -5,8 +5,7 @@ import (
 	"strings"
 )
 
-// Description is a 4000 character rich-text field for the channel and
-// podcast description tags.
+// Description is a rich-text field for channel and episode description tags.
 //
 // This is rendered as CDATA which allows for HTML tags such as `<a href="">`.
 type Description string
