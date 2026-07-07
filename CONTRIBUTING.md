@@ -4,7 +4,7 @@
 
 Before you begin:
 
-* Stay compatible with Go 1.7.  Do not use [newer language changes](https://golang.org/doc/go1.13#language) in later versions of Go.
+* Stay compatible with Go 1.24.0 and newer.  Go 1.22+ loop-variable semantics are assumed, so table-driven tests should not shadow range variables.
 * This repo targets 100% code coverage.  See **Testing Strategy, Documentation, and Examples** below for some cool details.
 * Ensure you have the most common golang Linters enabled and running as all PRs run them.
 
@@ -77,7 +77,7 @@ func TestStringError(t *testing.T) {
 	// arrange
 	e := "TestEncodeError error result"
 	p := Podcast{}
-	p.encode = func(w io.Writer, o interface{}) error {
+	p.encode = func(w io.Writer, o any) error {
 		return errors.New(e)
 	}
 

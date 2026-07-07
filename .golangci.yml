@@ -9,6 +9,7 @@ linters:
     - whitespace
     - staticcheck
     - ineffassign
+    - modernize
     - unused
     - errcheck
   exclusions:

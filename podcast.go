@@ -88,7 +88,7 @@ type Podcast struct {
 
 	// Items is a collection of 0..n episodes for this podcast.
 	Items  []*Item
-	encode func(w io.Writer, o interface{}) error
+	encode func(w io.Writer, o any) error
 }
 
 // New instantiates a Podcast with required parameters.
@@ -408,7 +408,7 @@ type podcastWrapper struct {
 	Channel  *Podcast
 }
 
-func encoder(w io.Writer, o interface{}) error {
+func encoder(w io.Writer, o any) error {
 	e := xml.NewEncoder(w)
 	e.Indent("", "  ")
 	if err := e.Encode(o); err != nil {

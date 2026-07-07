@@ -27,11 +27,10 @@
 //
 // # Go Modules
 //
-// This library is supported on GoLang 1.7 and higher.
+// This library is supported on Go 1.24.0 and higher.
 //
 // We have implemented Go Modules support and the CI pipeline shows it working with
-// new installs, tested with Go 1.13.  To keep 1.7 compatibility, we use
-// `go mod vendor` to maintain the `vendor/` folder for older 1.7 and later runtimes.
+// the toolchain configured by mise.
 //
 // If either runtime has an issue, please create an Issue and I will address.
 //
@@ -53,7 +52,7 @@
 // ran extensively and no issues have come out of them yet (most tests were ran overnight,
 // over about 11 hours with zero crashes).
 //
-// If you wish to help fuzz the inputs, with Go 1.13 or later you can run `go-fuzz` on any
+// If you wish to help fuzz the inputs, with Go 1.24.0 or later you can run `go-fuzz` on any
 // of the inputs.
 //
 //	go get -u github.com/dvyukov/go-fuzz/go-fuzz

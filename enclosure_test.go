@@ -27,7 +27,6 @@ var enclosureTests = []enclosureTest{
 func TestEnclosureTypes(t *testing.T) {
 	t.Parallel()
 	for _, et := range enclosureTests {
-		et := et
 		t.Run(et.t.String(), func(t *testing.T) {
 			t.Parallel()
 
