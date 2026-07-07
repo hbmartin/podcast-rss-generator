@@ -22,7 +22,7 @@ When writing or refactoring Go code in this repository, strictly adhere to the f
 
 4. **Testing:**
    - Write table-driven tests for all business logic.
-   - Use the standard `testing` package. Avoid third-party assertion libraries (like `testify`) unless they are already present in the specific package you are editing.
+   - Use the standard `testing` package and `testify`.
    - Name test files `[filename]_test.go`.
 
 ### Code Quality

@@ -34,6 +34,33 @@ jobs:
       - name: Vet
         run: mise run vet
 
+  compat:
+    name: Go compat (${{ matrix.go }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    # Validates the module against the go.mod language floor and the current
+    # stable release, so a newer language/stdlib feature can't silently raise
+    # the minimum Go version consumers need. Uses setup-go rather than mise so
+    # the toolchain can vary independently of the pinned dev version.
+    strategy:
+      fail-fast: false
+      matrix:
+        go:
+          - "1.24" # module floor declared in go.mod
+          - "1.26" # current stable pinned in mise.toml
+
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6.5.0
+        with:
+          go-version: ${{ matrix.go }}
+          check-latest: true
+      - run: go build ./...
+      - run: go vet ./...
+      - run: go test ./...
+
   test:
     name: Race test (Ubuntu)
     runs-on: ubuntu-latest
