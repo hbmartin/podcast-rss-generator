@@ -1,4 +1,4 @@
-module github.com/eduncan911/podcast
+module github.com/hbmartin/podcast-rss-generator/v2
 
 go 1.24.0
 

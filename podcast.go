@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	pVersion = "1.3.1"
+	pVersion = "2.0.0"
 )
 
 // Podcast represents a podcast.
@@ -101,7 +101,7 @@ func New(title, link, description string,
 		Title:         title,
 		Description:   parseDescription(description),
 		Link:          link,
-		Generator:     fmt.Sprintf("go podcast v%s (github.com/eduncan911/podcast)", pVersion),
+		Generator:     fmt.Sprintf("go podcast v%s (github.com/hbmartin/podcast-rss-generator/v2)", pVersion),
 		PubDate:       parseDateRFC1123Z(pubDate),
 		LastBuildDate: parseDateRFC1123Z(lastBuildDate),
 		Language:      "en-us",

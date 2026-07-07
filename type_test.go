@@ -3,7 +3,7 @@ package podcast_test
 import (
 	"testing"
 
-	"github.com/eduncan911/podcast"
+	"github.com/hbmartin/podcast-rss-generator/v2"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -40,11 +40,41 @@ func TestAddTypeUsesSpecValue(t *testing.T) {
 func TestAddChannelTypeUsesSpecValue(t *testing.T) {
 	t.Parallel()
 
-	p := podcast.New("title", "link", "description", zeroDate, zeroDate)
+	tests := []struct {
+		name        string
+		channelType string
+		want        string
+	}{
+		{
+			name:        "episodic",
+			channelType: "episodic",
+			want:        "episodic",
+		},
+		{
+			name:        "serial with surrounding whitespace",
+			channelType: " Serial ",
+			want:        "serial",
+		},
+		{
+			name:        "invalid type leaves value unset",
+			channelType: "invalid",
+		},
+	}
 
-	p.AddChannelType(" Serial ")
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 
-	if assert.NotNil(t, p.IType) {
-		assert.Equal(t, "serial", p.IType.Text)
+			p := podcast.New("title", "link", "description", zeroDate, zeroDate)
+			p.AddChannelType(tt.channelType)
+
+			if tt.want == "" {
+				assert.Nil(t, p.IType)
+				return
+			}
+			if assert.NotNil(t, p.IType) {
+				assert.Equal(t, tt.want, p.IType.Text)
+			}
+		})
 	}
 }

@@ -10,8 +10,8 @@ Before you begin:
 
 ## The Short Short Version
 
-* **Create PRs against `develop` branch only.** The default branch is `master` for those that use `go get -u`.
-* Check your PR for C.I. testing results once they complete (see **Testing Strategy, Documentation, and Examples** below). Once merged to `develop`, the author (me) will need to create a release branch. `go mod` and Github Releases are tagged from `master` once the release branch is completed.
+* **Create PRs against `master`.**
+* Check your PR for C.I. testing results once they complete (see **Testing Strategy, Documentation, and Examples** below). Go module releases are tagged from `master`.
 * The `README.md` is auto-generated via `mise run readme`.  If you need to update it, please change `doc.go` and/or comments in code.
 
 ## Coding Guidelines
@@ -32,7 +32,7 @@ This repo uses [Semantic Versioning](https://semver.org/) for all tags and relea
 
 Be cautious of any public API changes.  Additions are welcome; however, changes and deletions to the public API are greatly discouraged unless required (for example, the April 2019 iTunes' tag changes).
 
-If a breaking change must occur, branch from `develop` like normal and call it out in the PR description.
+If a breaking change must occur, branch from `master` like normal and call it out in the PR description.
 
 ## Testing Strategy, Documentation, and Examples
 
@@ -47,7 +47,7 @@ I use this repository as a showcase of a new testing methodology I called, `Mini
 Surprising, following the 1st and 2nd rules above, in that order, has an enormous amount of benefits:
 
 * Usually covers about 92% to 97% of all code coverage!  Only thing left are some low-hanging internal private methods.
-* Automatic full examples, already written out, and [documented publicly](https://godoc.org/github.com/eduncan911/podcast#pkg-examples) from just writing examples in the 1st step above.  All because you simply used `examples` to test positive outcomes, and not unit tests.
+* Automatic full examples, already written out, and [documented publicly](https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2#pkg-examples) from just writing examples in the 1st step above.  All because you simply used `examples` to test positive outcomes, and not unit tests.
 * You get a feel of how clean (or dirty) your public API is via your IDE's intellitype as you are coding against the public API.
 
 Then you end up focusing on just a few tweaks to that 5% of remaining internal private methods, covering those edge cases and error conditions.
@@ -104,7 +104,7 @@ $ go test -v -cover
 ...
 PASS
 coverage: 100.0% of statements
-ok  	github.com/eduncan911/podcast	0.005s
+ok  	github.com/hbmartin/podcast-rss-generator/v2	0.005s
 ```
 
 You also get to narrow down to individual tests, or even groups of tests:
@@ -114,12 +114,12 @@ $ go test -v -cover -run Example
 ...
 PASS
 coverage: 70.7% of statements
-ok  	github.com/eduncan911/podcast	0.004s
+ok  	github.com/hbmartin/podcast-rss-generator/v2	0.004s
 
 $ go test -v -cover -run Test
 PASS
 coverage: 87.2% of statements
-ok  	github.com/eduncan911/podcast	0.005s
+ok  	github.com/hbmartin/podcast-rss-generator/v2	0.005s
 ```
 
 Did you notice that both Positive tests (Examples) and Negative tests (non-internal) overlap dramatically in code coverage?  This is an added bonus in capturing additional edge cases with minimal testing code.
@@ -132,9 +132,9 @@ One tip is to enable Test-On-Save, with the addition of Show Coverage, of your f
 
 First, check the outcome of each test.  It usually has deep error messages to help debug.
 
-If you want to run the C.I. tests locally, you can see the latest version of C.I. testing here:
+If you want to run the C.I. tests locally, use `mise run check` or see the workflow at:
 
-https://github.com/eduncan911/podcast/blob/master/.github/workflows/go-cicd.yaml#L21
+https://github.com/hbmartin/podcast-rss-generator/blob/master/.github/workflows/ci.yml
 
 ## Thank you!
 
@@ -149,18 +149,15 @@ I branch and publish this repo with the following steps.  Note that [I have auto
 I still prefer to do this manually for now; but, I may move it to a Github action later.
 
 ```
-git checkout develop
+git checkout master
 git checkout -b feature-x
 # commit everything
-# open PR against develop branch
-# squash and merge to develop branch
-git checkout develop
-git pull origin develop
+# open PR against master branch
+# squash and merge to master branch
 git checkout master
 git pull origin master
-# push develop onto of master
-git push origin develop:master
-# Create Release/Tag from Github UI, since it's much prettier
+git tag v2.0.0
+git push origin v2.0.0
 ```
 
 TODO:

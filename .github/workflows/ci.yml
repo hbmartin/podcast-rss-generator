@@ -11,16 +11,24 @@ on:
 
 jobs:
   build:
-    name: Build
-    runs-on: ubuntu-latest
+    name: Build (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     permissions:
       contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
 
     steps:
       - uses: actions/checkout@v6
       - uses: jdx/mise-action@v4
       - run: mise run build
+      - run: mise run vet
 
   test:
     name: Test

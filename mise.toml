@@ -6,9 +6,13 @@ golangci-lint = "2.12.2"
 description = "Build all packages"
 run = "go build ./..."
 
+[tasks.vet]
+description = "Vet all packages"
+run = "go vet ./..."
+
 [tasks.test]
-description = "Run unit tests"
-run = "go test ./..."
+description = "Run unit tests with race detection"
+run = "go test -race ./..."
 
 [tasks.coverage]
 description = "Run tests with coverage"
@@ -27,6 +31,7 @@ description = "Run formatting, linting, and tests"
 run = [
   "mise run fmt",
   "mise run lint",
+  "mise run vet",
   "mise run test",
 ]
 
@@ -34,19 +39,20 @@ run = [
 description = "Regenerate README.md from package docs"
 alias = ["README"]
 run = '''
-repo="eduncan911/podcast"
+repo="hbmartin/podcast-rss-generator"
+module="github.com/$repo/v2"
 godoc2ghmd="github.com/DevotedHealth/godoc2ghmd@v0.0.0-20241011165539-2980f78e3b95"
 tmp=$(mktemp)
 trap 'rm -f "$tmp"' EXIT
 
-go run -mod=mod "$godoc2ghmd" -play -ex "github.com/$repo" > "$tmp"
+go run -mod=mod "$godoc2ghmd" -play -ex "$module" > "$tmp"
 
 {
-  printf '%s\n' "[![GoDoc](https://godoc.org/github.com/$repo?status.svg)](https://godoc.org/github.com/$repo)"
-  printf '%s\n' "[![Build Status](https://github.com/$repo/workflows/CI/badge.svg)](https://github.com/$repo/actions?workflow=CI)"
+  printf '%s\n' "[![Go Reference](https://pkg.go.dev/badge/$module.svg)](https://pkg.go.dev/$module)"
+  printf '%s\n' "[![CI](https://github.com/$repo/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/$repo/actions/workflows/ci.yml)"
   printf '%s\n' "[![Coverage Status](https://codecov.io/gh/$repo/branch/master/graph/badge.svg)](https://codecov.io/gh/$repo)"
-  printf '%s\n' "[![Go Report Card](https://goreportcard.com/badge/github.com/$repo)](https://goreportcard.com/report/github.com/$repo)"
-  printf '%s\n' "[![MIT License](https://img.shields.io/npm/l/mediaelement.svg)](https://eduncan911.mit-license.org/)"
+  printf '%s\n' "[![Go Report Card](https://goreportcard.com/badge/$module)](https://goreportcard.com/report/$module)"
+  printf '%s\n' "[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)"
   printf '\n'
   cat "$tmp"
 } > README.md
