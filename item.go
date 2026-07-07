@@ -171,7 +171,8 @@ type Item struct {
 
 // AddEnclosure adds the downloadable asset to the podcast Item.
 func (i *Item) AddEnclosure(
-	url string, enclosureType EnclosureType, lengthInBytes int64) {
+	url string, enclosureType EnclosureType, lengthInBytes int64,
+) {
 	i.Enclosure = &Enclosure{
 		URL:    url,
 		Type:   enclosureType,

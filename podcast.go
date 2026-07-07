@@ -135,7 +135,8 @@ type Podcast struct {
 // Zero-value time fields default to the current UTC time; non-zero values are
 // formatted to the expected proper formats.
 func New(title, link, description string,
-	pubDate, lastBuildDate time.Time) Podcast {
+	pubDate, lastBuildDate time.Time,
+) Podcast {
 	return Podcast{
 		Title:         title,
 		Description:   parseDescription(description),

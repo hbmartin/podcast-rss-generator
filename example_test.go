@@ -68,7 +68,9 @@ func Example_httpHandlers() {
 
 	rr := httptest.NewRecorder()
 	httpHandler(rr, nil)
-	os.Stdout.Write(rr.Body.Bytes())
+	if _, err := os.Stdout.Write(rr.Body.Bytes()); err != nil {
+		fmt.Println("error writing to stdout:", err.Error())
+	}
 	// Output:
 	// <?xml version="1.0" encoding="UTF-8"?>
 	// <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
@@ -155,7 +157,9 @@ func Example_ioWriter() {
 
 		// add the Item and check for validation errors
 		if _, err := p.AddItem(item); err != nil {
-			os.Stderr.WriteString("item validation error: " + err.Error())
+			if _, writeErr := os.Stderr.WriteString("item validation error: " + err.Error()); writeErr != nil {
+				fmt.Println("error writing to stderr:", writeErr.Error())
+			}
 		}
 	}
 

@@ -1,41 +1,92 @@
 version: "2"
+
 linters:
+  default: none
   enable:
+    - asasalint
+    - asciicheck
+    - bidichk
     - bodyclose
+    - canonicalheader
+    - containedctx
+    - contextcheck
+    - copyloopvar
+    - dupword
+    - durationcheck
+    - errcheck
+    - errchkjson
     - errname
     - errorlint
-    - misspell
-    - nakedret
-    - prealloc
-    - unconvert
-    - whitespace
-    - staticcheck
-    - ineffassign
-    - modernize
-    - unused
-    - errcheck
+    - exhaustive
+    - exptostd
+    - fatcontext
     - forcetypeassert
+    - gocheckcompilerdirectives
+    - gochecknoinits
     - gocritic
+    - gomoddirectives
+    - goprintffuncname
     - gosec
     - govet
+    - ineffassign
+    - intrange
+    - iotamixing
+    - makezero
+    - mirror
+    - misspell
+    - modernize
+    - nakedret
     - nilerr
+    - nilnesserr
+    - nilnil
+    - noctx
     - nolintlint
+    - nosprintfhostport
+    - perfsprint
+    - prealloc
+    - predeclared
+    - reassign
+    - recvcheck
     - revive
+    - rowserrcheck
+    - sqlclosecheck
+    - staticcheck
+    - tagalign
+    - testableexamples
     - testifylint
+    - thelper
+    - tparallel
+    - unconvert
+    - unused
+    - usestdlibvars
+    - usetesting
+    - wastedassign
+    - whitespace
+  settings:
+    errcheck:
+      check-blank: true
+      check-type-assertions: true
+    exhaustive:
+      default-signifies-exhaustive: true
+    nolintlint:
+      require-explanation: true
+      require-specific: true
   exclusions:
     generated: lax
     presets:
       - comments
-      - common-false-positives
-      - legacy
-      - std-error-handling
     paths:
       - bin
       - docs
+
 formatters:
   enable:
     - gofmt
+    - gofumpt
     - goimports
+  settings:
+    gofumpt:
+      extra-rules: true
   exclusions:
     generated: lax
     paths:
@@ -44,5 +95,8 @@ formatters:
       - third_party$
       - builtin$
       - examples$
+
 run:
   timeout: 3m
+  relative-path-mode: gomod
+  modules-download-mode: readonly

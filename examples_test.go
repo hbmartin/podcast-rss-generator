@@ -180,7 +180,9 @@ See more at our website: <a href="http://example.com">example.com</a>
 	}
 
 	// call Podcast.Bytes() to return a byte array
-	os.Stdout.Write(p.Bytes())
+	if _, err := os.Stdout.Write(p.Bytes()); err != nil {
+		fmt.Println("error writing to stdout:", err.Error())
+	}
 
 	// Output:
 	// <?xml version="1.0" encoding="UTF-8"?>
