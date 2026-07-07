@@ -27,7 +27,7 @@ func Example_httpHandlers() {
 		p.AddAtomLink("http://eduncan911.com/feed.rss")
 		p.AddImage("http://janedoe.com/i.jpg")
 		p.AddSummary(`link <a href="http://example.com">example.com</a>`)
-		p.IExplicit = "no"
+		p.SetExplicit(false)
 
 		for i := int64(1); i < 3; i++ {
 			n := strconv.FormatInt(i, 10)
@@ -92,7 +92,7 @@ func Example_httpHandlers() {
 	//     <itunes:author>me@janedoe.com (Jane Doe)</itunes:author>
 	//     <itunes:summary><![CDATA[link <a href="http://example.com">example.com</a>]]></itunes:summary>
 	//     <itunes:image href="http://janedoe.com/i.jpg"></itunes:image>
-	//     <itunes:explicit>no</itunes:explicit>
+	//     <itunes:explicit>false</itunes:explicit>
 	//     <itunes:owner>
 	//       <itunes:name>Jane Doe</itunes:name>
 	//       <itunes:email>me@janedoe.com</itunes:email>

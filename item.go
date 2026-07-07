@@ -90,7 +90,9 @@ type Item struct {
 	// "false" : If you specify false, indicating that the episode does not
 	// contain explicit language or adult content, Apple Podcasts displays
 	// a Clean parental advisory graphic for your episode.
-	IExplicit string `xml:"itunes:explicit,omitempty"`
+	//
+	// Use item.SetExplicit(...) to populate this field correctly.
+	IExplicit *explicitFlag `xml:"itunes:explicit,omitempty"`
 
 	// ITitle is a Situational episode title specific for Apple Podcasts.
 	//
@@ -150,7 +152,9 @@ type Item struct {
 	// removed from Apple Podcasts.
 	//
 	// Specifying any value other than Yes has no effect.
-	IBlock string `xml:"itunes:block,omitempty"`
+	//
+	// Use item.SetBlock(...) to populate this field correctly.
+	IBlock *yesFlag `xml:"itunes:block,omitempty"`
 
 	// As of April 2019, the following tags are no longer listed in iTunes'
 	// supported tags.  However, most are still listed under Harvard's
@@ -239,10 +243,32 @@ func (i *Item) AddEpisodeType(episodeType EpisodeType) {
 // extensions (.jpg, .png), and in the RGB colorspace. To optimize
 // images for mobile devices, Apple recommends compressing your
 // image files.
+//
+// If url is empty this method is a no-op.
 func (i *Item) AddImage(url string) {
 	if len(url) > 0 {
 		i.IImage = &IImage{HREF: url}
 	}
+}
+
+// SetExplicit sets the itunes:explicit parental-advisory flag for the episode.
+// A true value renders "true" (the Explicit badge); a false value renders
+// "false" (the Clean badge). Both are serialized.
+func (i *Item) SetExplicit(explicit bool) {
+	flag := explicitFlag(explicit)
+	i.IExplicit = &flag
+}
+
+// SetBlock sets whether this episode is hidden from the Apple directory. A true
+// value renders "Yes"; a false value omits the tag, which Apple treats as
+// "not blocked".
+func (i *Item) SetBlock(block bool) {
+	if !block {
+		i.IBlock = nil
+		return
+	}
+	flag := yesFlag(true)
+	i.IBlock = &flag
 }
 
 // AddPubDate adds the datetime as a parsed PubDate.
@@ -276,6 +302,8 @@ func (i *Item) AddDescription(d string) {
 }
 
 // AddDuration adds the duration to the iTunes duration field.
+//
+// If durationInSeconds is zero or negative this method is a no-op.
 func (i *Item) AddDuration(durationInSeconds int64) {
 	if durationInSeconds <= 0 {
 		return

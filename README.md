@@ -1,8 +1,12 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/hbmartin/podcast-rss-generator/v2.svg)](https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2)
+[![Latest Release](https://img.shields.io/github/v/release/hbmartin/podcast-rss-generator?sort=semver&logo=github)](https://github.com/hbmartin/podcast-rss-generator/releases/latest)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/hbmartin/podcast-rss-generator?logo=go)](go.mod)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 [![CI](https://github.com/hbmartin/podcast-rss-generator/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/hbmartin/podcast-rss-generator/actions/workflows/ci.yml)
 [![Coverage Status](https://codecov.io/gh/hbmartin/podcast-rss-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/hbmartin/podcast-rss-generator)
 [![Go Report Card](https://goreportcard.com/badge/github.com/hbmartin/podcast-rss-generator/v2)](https://goreportcard.com/report/github.com/hbmartin/podcast-rss-generator/v2)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/hbmartin/podcast-rss-generator/badge)](https://scorecard.dev/viewer/?uri=github.com/hbmartin/podcast-rss-generator)
 
 # podcast
 
