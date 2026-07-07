@@ -4,7 +4,8 @@ import "encoding/xml"
 
 // EnclosureType specifies the type of the enclosure.
 const (
-	M4A EnclosureType = iota
+	EnclosureUnknown EnclosureType = iota
+	M4A
 	M4V
 	MP4
 	MP3

@@ -3,14 +3,13 @@ package podcast
 import (
 	"bytes"
 	"encoding/xml"
+	"errors"
 	"fmt"
 	"io"
 	"strconv"
 	"strings"
 	"time"
 	"unicode/utf8"
-
-	"github.com/pkg/errors"
 )
 
 const (
@@ -94,10 +93,10 @@ type Podcast struct {
 
 // New instantiates a Podcast with required parameters.
 //
-// Nil-able fields are optional but recommended as they are formatted
-// to the expected proper formats.
+// Zero-value time fields default to the current UTC time; non-zero values are
+// formatted to the expected proper formats.
 func New(title, link, description string,
-	pubDate, lastBuildDate *time.Time) Podcast {
+	pubDate, lastBuildDate time.Time) Podcast {
 	return Podcast{
 		Title:         title,
 		Description:   parseDescription(description),
@@ -127,6 +126,8 @@ func (p *Podcast) AddAuthor(name, email string) {
 	p.IAuthor = p.ManagingEditor
 	if len(name) != 0 {
 		p.IOwner = a
+	} else {
+		p.IOwner = nil
 	}
 }
 
@@ -241,7 +242,7 @@ func (p *Podcast) AddImage(url string) {
 func (p *Podcast) AddItem(i Item) (int, error) {
 	// initial guards for required fields
 	if len(i.Title) == 0 || len(i.Description) == 0 {
-		return len(p.Items), errors.New("Title and Description are required")
+		return len(p.Items), errors.New("title and description are required")
 	}
 	if i.Enclosure != nil {
 		if len(i.Enclosure.URL) == 0 {
@@ -308,14 +309,14 @@ func (p *Podcast) AddItem(i Item) (int, error) {
 // AddPubDate adds the datetime as a parsed PubDate.
 //
 // UTC time is used by default.
-func (p *Podcast) AddPubDate(datetime *time.Time) {
+func (p *Podcast) AddPubDate(datetime time.Time) {
 	p.PubDate = parseDateRFC1123Z(datetime)
 }
 
 // AddLastBuildDate adds the datetime as a parsed PubDate.
 //
 // UTC time is used by default.
-func (p *Podcast) AddLastBuildDate(datetime *time.Time) {
+func (p *Podcast) AddLastBuildDate(datetime time.Time) {
 	p.LastBuildDate = parseDateRFC1123Z(datetime)
 }
 
@@ -364,7 +365,7 @@ func (p *Podcast) Bytes() []byte {
 // Encode writes the bytes to the io.Writer stream in RSS 2.0 specification.
 func (p *Podcast) Encode(w io.Writer) error {
 	if _, err := w.Write([]byte("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")); err != nil {
-		return errors.Wrap(err, "podcast.Encode: w.Write return error")
+		return fmt.Errorf("podcast.Encode: w.Write return error: %w", err)
 	}
 
 	atomLink := ""
@@ -394,7 +395,7 @@ func (p *Podcast) String() string {
 // func (p *Podcast) Write(b []byte) (n int, err error) {
 // 	buf := bytes.NewBuffer(b)
 // 	if err := p.Encode(buf); err != nil {
-// 		return 0, errors.Wrap(err, "Write: podcast.encode returned error")
+// 		return 0, fmt.Errorf("Write: podcast.encode returned error: %w", err)
 // 	}
 // 	return buf.Len(), nil
 // }
@@ -407,16 +408,16 @@ type podcastWrapper struct {
 	Channel  *Podcast
 }
 
-var encoder = func(w io.Writer, o interface{}) error {
+func encoder(w io.Writer, o interface{}) error {
 	e := xml.NewEncoder(w)
 	e.Indent("", "  ")
 	if err := e.Encode(o); err != nil {
-		return errors.Wrap(err, "podcast.encoder: e.Encode returned error")
+		return fmt.Errorf("podcast.encoder: e.Encode returned error: %w", err)
 	}
 	return nil
 }
 
-var parseAuthorNameEmail = func(a *Author) string {
+func parseAuthorNameEmail(a *Author) string {
 	var author string
 	if a != nil {
 		author = a.Email
@@ -441,7 +442,7 @@ func (p *Podcast) AddChannelType(channelType string) {
 	}
 }
 
-var parseDescription = func(d string) Description {
+func parseDescription(d string) Description {
 	if len(d) <= 4000 {
 		return Description(d)
 	}
@@ -453,7 +454,7 @@ var parseDescription = func(d string) Description {
 	return Description(d[:limit])
 }
 
-var parseType = func(channelType string) (PodcastType, bool) {
+func parseType(channelType string) (PodcastType, bool) {
 	switch strings.ToLower(strings.TrimSpace(channelType)) {
 	case Episodic.String():
 		return Episodic, true
