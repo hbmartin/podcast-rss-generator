@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"reflect"
 	"strconv"
 	"strings"
 	"time"
@@ -15,6 +16,44 @@ import (
 const (
 	pVersion = "2.0.0"
 )
+
+// Sentinel errors returned by feed and item validation.
+var (
+	ErrPodcastRequired          = errors.New("podcast is required")
+	ErrWriterRequired           = errors.New("writer is required")
+	ErrTitleDescriptionRequired = errors.New("title and description are required")
+	ErrEnclosureURLRequired     = errors.New("enclosure url is required")
+	ErrEnclosureTypeRequired    = errors.New("enclosure type is required")
+	ErrLinkRequired             = errors.New("link is required when not using enclosure")
+)
+
+// ItemValidationError describes why an item could not be added to a podcast.
+type ItemValidationError struct {
+	Title string
+	Err   error
+}
+
+// Error returns a human-readable item validation message.
+func (e *ItemValidationError) Error() string {
+	if e == nil {
+		return ""
+	}
+	if e.Err == nil {
+		return "item validation failed"
+	}
+	if len(e.Title) == 0 {
+		return e.Err.Error()
+	}
+	return fmt.Sprintf("%s: %v", e.Title, e.Err)
+}
+
+// Unwrap returns the underlying validation error.
+func (e *ItemValidationError) Unwrap() error {
+	if e == nil {
+		return nil
+	}
+	return e.Err
+}
 
 // Podcast represents a podcast.
 type Podcast struct {
@@ -168,7 +207,10 @@ func (p *Podcast) AddCategory(category string, subCategories []string) {
 		p.Category = category
 	}
 
-	ic := ICategory{Text: category}
+	ic := ICategory{
+		Text:        category,
+		ICategories: make([]*ICategory, 0, len(subCategories)),
+	}
 	for _, c := range subCategories {
 		if len(c) == 0 {
 			continue
@@ -240,22 +282,25 @@ func (p *Podcast) AddImage(url string) {
 //   - For specifications of itunes tags, see:
 //     https://help.apple.com/itc/podcasts_connect/#/itcb54353390
 func (p *Podcast) AddItem(i Item) (int, error) {
+	if p == nil {
+		return 0, fmt.Errorf("adding item: %w", ErrPodcastRequired)
+	}
+
+	i = cloneItem(i)
+
 	// initial guards for required fields
 	if len(i.Title) == 0 || len(i.Description) == 0 {
-		return len(p.Items), errors.New("title and description are required")
+		return len(p.Items), newItemValidationError(i.Title, ErrTitleDescriptionRequired)
 	}
 	if i.Enclosure != nil {
 		if len(i.Enclosure.URL) == 0 {
-			return len(p.Items),
-				errors.New(i.Title + ": Enclosure.URL is required")
+			return len(p.Items), newItemValidationError(i.Title, ErrEnclosureURLRequired)
 		}
 		if i.Enclosure.Type.String() == enclosureDefault {
-			return len(p.Items),
-				errors.New(i.Title + ": Enclosure.Type is required")
+			return len(p.Items), newItemValidationError(i.Title, ErrEnclosureTypeRequired)
 		}
 	} else if len(i.Link) == 0 {
-		return len(p.Items),
-			errors.New(i.Title + ": Link is required when not using Enclosure")
+		return len(p.Items), newItemValidationError(i.Title, ErrLinkRequired)
 	}
 
 	// corrective actions and overrides
@@ -326,15 +371,10 @@ func (p *Podcast) AddLastBuildDate(datetime time.Time) {
 // Note that this field should be just a few words long according to Apple.
 // This method will truncate the string to 64 chars if too long with "...".
 func (p *Podcast) AddSubTitle(subTitle string) {
-	count := utf8.RuneCountInString(subTitle)
-	if count == 0 {
+	if len(subTitle) == 0 {
 		return
 	}
-	if count > 64 {
-		s := []rune(subTitle)
-		subTitle = string(s[0:61]) + "..."
-	}
-	p.ISubtitle = subTitle
+	p.ISubtitle = truncateRunesWithSuffix(subTitle, 64, "...")
 }
 
 // AddSummary adds the iTunes summary.
@@ -344,16 +384,11 @@ func (p *Podcast) AddSubTitle(subTitle string) {
 // Note that this field is a CDATA encoded field which allows for rich text
 // such as html links: `<a href="http://www.apple.com">Apple</a>`.
 func (p *Podcast) AddSummary(summary string) {
-	count := utf8.RuneCountInString(summary)
-	if count == 0 {
+	if len(summary) == 0 {
 		return
 	}
-	if count > 4000 {
-		s := []rune(summary)
-		summary = string(s[0:4000])
-	}
 	p.ISummary = &ISummary{
-		Text: summary,
+		Text: truncateRunes(summary, 4000),
 	}
 }
 
@@ -364,8 +399,14 @@ func (p *Podcast) Bytes() []byte {
 
 // Encode writes the bytes to the io.Writer stream in RSS 2.0 specification.
 func (p *Podcast) Encode(w io.Writer) error {
+	if p == nil {
+		return fmt.Errorf("encoding podcast: %w", ErrPodcastRequired)
+	}
+	if isNilWriter(w) {
+		return fmt.Errorf("encoding podcast: %w", ErrWriterRequired)
+	}
 	if _, err := w.Write([]byte("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")); err != nil {
-		return fmt.Errorf("podcast.Encode: w.Write return error: %w", err)
+		return fmt.Errorf("writing xml header: %w", err)
 	}
 
 	atomLink := ""
@@ -378,7 +419,11 @@ func (p *Podcast) Encode(w io.Writer) error {
 		Version:  "2.0",
 		Channel:  p,
 	}
-	return p.encode(w, wrapped)
+	encode := p.encode
+	if encode == nil {
+		encode = encoder
+	}
+	return encode(w, wrapped)
 }
 
 // String encodes the Podcast state to a string.
@@ -412,7 +457,7 @@ func encoder(w io.Writer, o any) error {
 	e := xml.NewEncoder(w)
 	e.Indent("", "  ")
 	if err := e.Encode(o); err != nil {
-		return fmt.Errorf("podcast.encoder: e.Encode returned error: %w", err)
+		return fmt.Errorf("encoding xml: %w", err)
 	}
 	return nil
 }
@@ -462,4 +507,69 @@ func parseType(channelType string) (PodcastType, bool) {
 		return Serial, true
 	}
 	return Episodic, false
+}
+
+func newItemValidationError(title string, err error) error {
+	return &ItemValidationError{
+		Title: title,
+		Err:   err,
+	}
+}
+
+func cloneItem(i Item) Item {
+	if i.Enclosure != nil {
+		enclosure := *i.Enclosure
+		i.Enclosure = &enclosure
+	}
+	if i.Author != nil {
+		author := *i.Author
+		i.Author = &author
+	}
+	if i.IImage != nil {
+		image := *i.IImage
+		i.IImage = &image
+	}
+	if i.ISummary != nil {
+		summary := *i.ISummary
+		i.ISummary = &summary
+	}
+	if i.IEpisodeType != nil {
+		episodeType := *i.IEpisodeType
+		i.IEpisodeType = &episodeType
+	}
+	return i
+}
+
+func isNilWriter(w io.Writer) bool {
+	if w == nil {
+		return true
+	}
+	v := reflect.ValueOf(w)
+	switch v.Kind() {
+	case reflect.Chan, reflect.Func, reflect.Interface, reflect.Map, reflect.Pointer, reflect.Slice:
+		return v.IsNil()
+	default:
+		return false
+	}
+}
+
+func truncateRunes(s string, limit int) string {
+	if limit <= 0 {
+		return ""
+	}
+	if utf8.RuneCountInString(s) <= limit {
+		return s
+	}
+	return string([]rune(s)[:limit])
+}
+
+func truncateRunesWithSuffix(s string, limit int, suffix string) string {
+	if utf8.RuneCountInString(s) <= limit {
+		return s
+	}
+	suffixLen := utf8.RuneCountInString(suffix)
+	if suffixLen >= limit {
+		return truncateRunes(suffix, limit)
+	}
+	return truncateRunes(s, limit-suffixLen) + suffix
 }

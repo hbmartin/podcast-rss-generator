@@ -18,6 +18,10 @@ run = "go test -race ./..."
 description = "Run tests with coverage"
 run = "go test -coverprofile=coverage.txt ./..."
 
+[tasks.fuzz-smoke]
+description = "Run the native Go fuzz target briefly"
+run = "go test -run '^$' -fuzz=FuzzPodcastEncode -fuzztime=10s ./..."
+
 [tasks.fmt]
 description = "Format Go files"
 run = "go fmt ./..."

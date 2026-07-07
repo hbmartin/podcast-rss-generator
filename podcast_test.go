@@ -397,6 +397,28 @@ func TestSentinelErrors(t *testing.T) {
 	}
 }
 
+func TestItemValidationErrorFormatting(t *testing.T) {
+	t.Parallel()
+
+	var nilValidationErr *podcast.ItemValidationError
+	assert.Empty(t, nilValidationErr.Error())
+	require.NoError(t, nilValidationErr.Unwrap())
+
+	emptyValidationErr := &podcast.ItemValidationError{}
+	assert.Equal(t, "item validation failed", emptyValidationErr.Error())
+	require.NoError(t, emptyValidationErr.Unwrap())
+
+	untitledValidationErr := &podcast.ItemValidationError{Err: podcast.ErrLinkRequired}
+	assert.Equal(t, podcast.ErrLinkRequired.Error(), untitledValidationErr.Error())
+
+	titledValidationErr := &podcast.ItemValidationError{
+		Title: "episode",
+		Err:   podcast.ErrEnclosureURLRequired,
+	}
+	assert.Equal(t, "episode: enclosure url is required", titledValidationErr.Error())
+	assert.ErrorIs(t, titledValidationErr, podcast.ErrEnclosureURLRequired)
+}
+
 func TestAddItemEnclosureLengthMin(t *testing.T) {
 	t.Parallel()
 

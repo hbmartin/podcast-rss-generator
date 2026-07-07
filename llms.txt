@@ -1,0 +1,34 @@
+# podcast-rss-generator
+
+Go module: `github.com/hbmartin/podcast-rss-generator/v2`
+
+This repository provides package `podcast`, a Go library for generating RSS 2.0
+podcast feeds with common Apple Podcasts tags.
+
+## Key Files
+
+- `podcast.go`: channel/feed type, item validation, XML encoding, public errors.
+- `item.go`: episode/item type and item-level helper methods.
+- `itunes.go`: Apple Podcasts tag helper types.
+- `description.go`: CDATA-aware description encoding.
+- `example_test.go` and `examples_test.go`: executable public API examples.
+- `fuzz_test.go`: native Go fuzz target for feed encoding.
+- `mise.toml`: local task definitions for formatting, linting, testing, and docs.
+
+## Common Commands
+
+```sh
+mise run fmt
+mise run lint
+mise run test
+mise run readme
+mise run fuzz-smoke
+```
+
+## Notes For Agents
+
+- Keep the exported API stable unless the user explicitly asks for a breaking
+  change.
+- Add tests for code changes and new behavior.
+- Regenerate `README.md` after changing package docs or public examples.
+- Do not rely on `vendor/`; dependencies are resolved through Go modules.
