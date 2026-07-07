@@ -765,7 +765,7 @@ func TestEncodeWriterError(t *testing.T) {
 
 	// arrange
 	p := podcast.New("title", "desc", "Link", zeroDate, zeroDate)
-	writeErr := errors.New("it was bad")
+	writeErr := io.ErrClosedPipe
 
 	// act
 	err := p.Encode(&errWriter{err: writeErr})

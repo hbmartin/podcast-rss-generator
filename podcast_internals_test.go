@@ -2,7 +2,6 @@ package podcast
 
 import (
 	"bytes"
-	"errors"
 	"io"
 	"strings"
 	"testing"
@@ -22,17 +21,16 @@ func TestStringError(t *testing.T) {
 	t.Parallel()
 
 	// arrange
-	e := "TestEncodeError error result"
 	p := Podcast{}
 	p.encode = func(_ io.Writer, _ any) error {
-		return errors.New(e)
+		return io.ErrClosedPipe
 	}
 
 	// act
 	r := p.String()
 
 	// assert
-	assert.Contains(t, r, e)
+	assert.Contains(t, r, io.ErrClosedPipe.Error())
 }
 
 func TestEncodeError(t *testing.T) {

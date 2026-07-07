@@ -13,6 +13,8 @@ linters:
     - copyloopvar
     - dupword
     - durationcheck
+    - dupl
+    - err113
     - errcheck
     - errchkjson
     - errname
@@ -21,9 +23,12 @@ linters:
     - exptostd
     - fatcontext
     - forcetypeassert
+    - funlen
     - gocheckcompilerdirectives
     - gochecknoinits
+    - gocognit
     - gocritic
+    - gocyclo
     - gomoddirectives
     - goprintffuncname
     - gosec
@@ -34,6 +39,7 @@ linters:
     - makezero
     - mirror
     - misspell
+    - mnd
     - modernize
     - nakedret
     - nilerr
@@ -53,6 +59,7 @@ linters:
     - staticcheck
     - tagalign
     - testableexamples
+    - testpackage
     - testifylint
     - thelper
     - tparallel
@@ -68,6 +75,9 @@ linters:
       check-type-assertions: true
     exhaustive:
       default-signifies-exhaustive: true
+    funlen:
+      lines: 100
+      statements: 50
     nolintlint:
       require-explanation: true
       require-specific: true
@@ -78,6 +88,10 @@ linters:
     paths:
       - bin
       - docs
+    rules:
+      - path: podcast_internals_test\.go
+        linters:
+          - testpackage
 
 formatters:
   enable:
