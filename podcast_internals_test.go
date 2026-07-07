@@ -234,3 +234,32 @@ func TestParseDescriptionByteLimit(t *testing.T) {
 		})
 	}
 }
+
+func TestClonePointerSlice(t *testing.T) {
+	t.Parallel()
+
+	// empty and nil slices are returned as-is.
+	assert.Nil(t, clonePointerSlice[PPerson](nil))
+	assert.Empty(t, clonePointerSlice([]*PPerson{}))
+
+	// entries are deep-copied and nil entries are dropped.
+	original := &PPerson{Name: "Jane Doe"}
+	cloned := clonePointerSlice([]*PPerson{original, nil})
+
+	assert.Len(t, cloned, 1)
+	assert.NotSame(t, original, cloned[0])
+
+	original.Name = "mutated"
+	assert.Equal(t, "Jane Doe", cloned[0].Name)
+}
+
+func TestHasPodcastElementsSkipsNilItems(t *testing.T) {
+	t.Parallel()
+
+	p := New("t", "l", "d", time.Time{}, time.Time{})
+	p.Items = append(p.Items, nil)
+	assert.False(t, p.hasPodcastElements())
+
+	p.Items = append(p.Items, &Item{PChapters: &PChapters{URL: "u", Type: "t"}})
+	assert.True(t, p.hasPodcastElements())
+}

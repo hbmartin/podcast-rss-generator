@@ -144,6 +144,21 @@ type Podcast struct {
 	ICategories []*ICategory
 	ITitle      string `xml:"itunes:title,omitempty"`
 
+	// Podcasting 2.0 tags: https://podcastindex.org/namespace/1.0
+
+	// PGUID is the podcast:guid tag, a UUIDv5 of the feed URL. Use
+	// SetPodcastGUID to populate it and NewFeedGUID to compute the value.
+	PGUID string `xml:"podcast:guid,omitempty"`
+
+	// PMedium is the podcast:medium tag. Use SetMedium to populate it.
+	PMedium string `xml:"podcast:medium,omitempty"`
+
+	// PLocked is the podcast:locked tag. Use SetLocked to populate it.
+	PLocked *PLocked
+
+	// PPersons are podcast:person credits. Use AddPerson to append them.
+	PPersons []*PPerson
+
 	// Items is a collection of 0..n episodes for this podcast.
 	Items  []*Item
 	encode func(w io.Writer, o any) error
@@ -313,7 +328,9 @@ func (p *Podcast) AddImage(url string) {
 //     https://help.apple.com/itc/podcasts_connect/#/itcb54353390
 //
 // The Item is taken by value and its nested pointer fields (Enclosure, Author,
-// IImage, ISummary, IEpisodeType) are deep-cloned before storage. As a result
+// IImage, ISummary, IEpisodeType, ContentEncoded, PChapters) and pointer
+// slices (PTranscripts, PPersons, PSocialInteracts) are deep-cloned before
+// storage. As a result
 // the stored episode is a snapshot: mutating the caller's Item, or the structs
 // it points at, after AddItem returns does NOT change the feed. Set every
 // field before calling AddItem, or re-add the Item to apply later changes.
@@ -485,10 +502,15 @@ func (p *Podcast) Encode(w io.Writer) error {
 			break
 		}
 	}
+	podcastNS := ""
+	if p.hasPodcastElements() {
+		podcastNS = podcastIndexNS
+	}
 	wrapped := podcastWrapper{
 		ITUNESNS:  "http://www.itunes.com/dtds/podcast-1.0.dtd",
 		ATOMNS:    atomLink,
 		CONTENTNS: contentNS,
+		PODCASTNS: podcastNS,
 		Version:   "2.0",
 		Channel:   p,
 	}
@@ -524,6 +546,7 @@ type podcastWrapper struct {
 	ATOMNS    string   `xml:"xmlns:atom,attr,omitempty"`
 	ITUNESNS  string   `xml:"xmlns:itunes,attr"`
 	CONTENTNS string   `xml:"xmlns:content,attr,omitempty"`
+	PODCASTNS string   `xml:"xmlns:podcast,attr,omitempty"`
 	Channel   *Podcast
 }
 
@@ -689,7 +712,29 @@ func cloneItem(i Item) Item {
 		block := *i.IBlock
 		i.IBlock = &block
 	}
+	if i.PChapters != nil {
+		chapters := *i.PChapters
+		i.PChapters = &chapters
+	}
+	i.PTranscripts = clonePointerSlice(i.PTranscripts)
+	i.PPersons = clonePointerSlice(i.PPersons)
+	i.PSocialInteracts = clonePointerSlice(i.PSocialInteracts)
 	return i
+}
+
+func clonePointerSlice[T any](in []*T) []*T {
+	if len(in) == 0 {
+		return in
+	}
+	out := make([]*T, 0, len(in))
+	for _, e := range in {
+		if e == nil {
+			continue
+		}
+		c := *e
+		out = append(out, &c)
+	}
+	return out
 }
 
 func isNilWriter(w io.Writer) bool {

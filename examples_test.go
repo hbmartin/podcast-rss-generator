@@ -277,3 +277,69 @@ func ExampleItem_AddDuration() {
 	// Output:
 	// 8:53
 }
+
+func Example_podcastNamespace() {
+	p := podcast.New(
+		"Podcasting 2.0 Show",
+		"http://example.com/",
+		"A show using Podcasting 2.0 tags",
+		pubDate, updatedDate,
+	)
+
+	// channel-level Podcasting 2.0 tags
+	p.SetPodcastGUID(podcast.NewFeedGUID("https://example.com/feed.xml"))
+	p.SetMedium(podcast.MediumPodcast)
+	p.SetLocked(true, "editor@example.com")
+	p.AddPerson("Jane Doe", "", "", "", "https://example.com/jane")
+
+	item := podcast.Item{
+		Title:       "Episode 1",
+		Link:        "http://example.com/1",
+		Description: "Description for Episode 1",
+		PubDate:     pubDate,
+	}
+
+	// item-level Podcasting 2.0 tags
+	item.AddTranscript("http://example.com/1/transcript.vtt", "text/vtt", "en", "captions")
+	item.AddChapters("http://example.com/1/chapters.json", "application/json+chapters")
+	item.AddPerson("John Smith", "guest", "", "", "")
+	item.AddSocialInteract(
+		"https://podcastindex.social/@dave/105079274766075912", "activitypub", "@dave",
+	)
+	if _, err := p.AddItem(item); err != nil {
+		fmt.Println(item.Title, ": error", err.Error())
+	}
+
+	if err := p.Encode(os.Stdout); err != nil {
+		fmt.Println("error writing to stdout:", err.Error())
+	}
+
+	// Output:
+	// <?xml version="1.0" encoding="UTF-8"?>
+	// <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0">
+	//   <channel>
+	//     <title>Podcasting 2.0 Show</title>
+	//     <link>http://example.com/</link>
+	//     <description>A show using Podcasting 2.0 tags</description>
+	//     <generator>go podcast v2.0.0 (github.com/hbmartin/podcast-rss-generator/v2)</generator>
+	//     <language>en-us</language>
+	//     <lastBuildDate>Mon, 06 Feb 2017 08:21:52 +0000</lastBuildDate>
+	//     <pubDate>Sat, 04 Feb 2017 08:21:52 +0000</pubDate>
+	//     <podcast:guid>d84ced82-1926-54c0-88c2-bb01dd35d7e3</podcast:guid>
+	//     <podcast:medium>podcast</podcast:medium>
+	//     <podcast:locked owner="editor@example.com">yes</podcast:locked>
+	//     <podcast:person href="https://example.com/jane">Jane Doe</podcast:person>
+	//     <item>
+	//       <guid>http://example.com/1</guid>
+	//       <title>Episode 1</title>
+	//       <link>http://example.com/1</link>
+	//       <description>Description for Episode 1</description>
+	//       <pubDate>Sat, 04 Feb 2017 08:21:52 +0000</pubDate>
+	//       <podcast:transcript url="http://example.com/1/transcript.vtt" type="text/vtt" language="en" rel="captions"></podcast:transcript>
+	//       <podcast:chapters url="http://example.com/1/chapters.json" type="application/json+chapters"></podcast:chapters>
+	//       <podcast:person role="guest">John Smith</podcast:person>
+	//       <podcast:socialInteract uri="https://podcastindex.social/@dave/105079274766075912" protocol="activitypub" accountId="@dave"></podcast:socialInteract>
+	//     </item>
+	//   </channel>
+	// </rss>
+}

@@ -71,6 +71,9 @@ func FuzzPodcastEncode(f *testing.F) {
 		p.AddAtomLink(link)
 		p.AddCategory("Arts", []string{itemTitle, itemDescription})
 		p.AddSummary(description)
+		p.SetPodcastGUID(podcast.NewFeedGUID(link))
+		p.SetLocked(true, itemTitle)
+		p.AddPerson(itemTitle, description, "", enclosureURL, link)
 
 		if date, ok := fuzzDate(dateBytes); ok {
 			p.AddPubDate(date)
@@ -84,6 +87,10 @@ func FuzzPodcastEncode(f *testing.F) {
 		}
 		i.AddImage(enclosureURL)
 		i.AddSummary(itemDescription)
+		i.AddTranscript(enclosureURL, "text/vtt", itemTitle, "captions")
+		i.AddChapters(itemLink, "application/json+chapters")
+		i.AddPerson(itemDescription, itemTitle, "", "", itemLink)
+		i.AddSocialInteract(itemLink, "activitypub", itemTitle)
 		if date, ok := fuzzDate(dateBytes); ok {
 			i.AddPubDate(date)
 		}

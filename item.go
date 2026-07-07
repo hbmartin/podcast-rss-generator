@@ -184,7 +184,25 @@ type Item struct {
 	ISubtitle          string  `xml:"itunes:subtitle,omitempty"`
 	ISummary           *ISummary
 	IImage             *IImage
-	Source             string `xml:"source,omitempty"`
+
+	// Podcasting 2.0 tags: https://podcastindex.org/namespace/1.0
+
+	// PTranscripts are podcast:transcript references. Use AddTranscript to
+	// append them.
+	PTranscripts []*PTranscript
+
+	// PChapters is the podcast:chapters reference. Use AddChapters to
+	// populate it.
+	PChapters *PChapters
+
+	// PPersons are podcast:person credits. Use AddPerson to append them.
+	PPersons []*PPerson
+
+	// PSocialInteracts are podcast:socialInteract references. Use
+	// AddSocialInteract to append them.
+	PSocialInteracts []*PSocialInteract
+
+	Source string `xml:"source,omitempty"`
 }
 
 // AddEnclosure adds the downloadable asset to the podcast Item.

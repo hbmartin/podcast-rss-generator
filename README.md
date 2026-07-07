@@ -22,6 +22,10 @@ import "github.com/hbmartin/podcast-rss-generator/v2"
 
 - **RSS 2.0 + Apple Podcasts.** Emits both the standard RSS channel/item tags and
   the `itunes:` extension tags that Apple Podcasts requires.
+- **Podcasting 2.0 (partial).** Supports the most used `podcast:` namespace tags —
+  `guid`, `medium`, `locked`, and `person` on the channel; `transcript`,
+  `chapters`, `person`, and `socialInteract` on episodes — declaring
+  `xmlns:podcast` only when used.
 - **Validation built in.** `Podcast.AddItem` enforces the required fields for
   articles and audio/video episodes and returns a typed `ItemValidationError`.
 - **Derived fields set for you.** The `Add*` helpers format dates, durations,
@@ -195,6 +199,8 @@ The most commonly used pieces:
 | `Enclosure` / `EnclosureType` | The downloadable media file and its MIME type (`M4A`, `M4V`, `MP4`, `MP3`, `MOV`, `PDF`, `EPUB`). |
 | `PodcastType` | `Episodic` (default) or `Serial`. |
 | `EpisodeType` | `Full` (default), `Trailer`, or `Bonus`. |
+| `Medium` | The `podcast:medium` value (`MediumPodcast`, `MediumMusic`, `MediumVideo`, …). |
+| `PPerson` / `PTranscript` / `PChapters` / `PSocialInteract` / `PLocked` | Podcasting 2.0 `podcast:` namespace tags. |
 | `ItemValidationError` | Typed error explaining why an item was rejected. |
 
 Frequently used methods:
@@ -209,7 +215,10 @@ Frequently used methods:
 | `AddType(podcastType)` | `AddImage(url)` |
 | `AddAtomLink(href)` | `AddEpisode()` |
 | `AddItem(item) (int, error)` | `AddEpisodeType(episodeType)` |
-| `Encode(w)` / `Bytes()` / `String()` | |
+| `SetPodcastGUID(guid)` (see `NewFeedGUID(feedURL)`) | `AddTranscript(url, mimeType, language, rel)` |
+| `SetMedium(medium)` / `SetLocked(locked, ownerEmail)` | `AddChapters(url, mimeType)` |
+| `AddPerson(name, role, group, img, href)` | `AddPerson(name, role, group, img, href)` |
+| `Encode(w)` / `Bytes()` / `String()` | `AddSocialInteract(uri, protocol, accountID)` |
 
 The exported structs remain available for callers that need direct control over
 RSS and Apple Podcasts fields. Prefer the `Add*` methods for any field with
@@ -259,3 +268,4 @@ history.
 - RSS 2.0 specification: <https://cyber.harvard.edu/rss/rss.html>
 - Apple Podcasts requirements: <https://help.apple.com/itc/podcasts_connect/#/itca5b22233>
 - Apple Podcasts category list: <https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12>
+- Podcast Namespace (Podcasting 2.0): <https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md>
