@@ -30,7 +30,7 @@ func TestEnclosureTypes(t *testing.T) {
 		t.Run(et.t.String(), func(t *testing.T) {
 			t.Parallel()
 
-			assert.EqualValues(t, et.expected, et.t.String())
+			assert.Equal(t, et.expected, et.t.String())
 		})
 	}
 }

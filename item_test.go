@@ -105,7 +105,7 @@ func TestItemAddDurationZero(t *testing.T) {
 	i.AddDuration(d)
 
 	// assert
-	assert.EqualValues(t, "", i.IDuration)
+	assert.Empty(t, i.IDuration)
 }
 
 func TestItemAddEpisodeType(t *testing.T) {
@@ -174,5 +174,5 @@ func TestItemAddDurationLessThanZero(t *testing.T) {
 	i.AddDuration(d)
 
 	// assert
-	assert.EqualValues(t, "", i.IDuration)
+	assert.Empty(t, i.IDuration)
 }

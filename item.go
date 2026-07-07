@@ -4,7 +4,6 @@ import (
 	"encoding/xml"
 	"fmt"
 	"time"
-	"unicode/utf8"
 )
 
 // Item represents a single entry in a podcast.
@@ -253,30 +252,19 @@ func (i *Item) AddPubDate(datetime time.Time) {
 // Note that this field is a CDATA encoded field which allows for rich text
 // such as html links: `<a href="http://www.apple.com">Apple</a>`.
 func (i *Item) AddSummary(summary string) {
-	count := utf8.RuneCountInString(summary)
-	if count > 4000 {
-		s := []rune(summary)
-		summary = string(s[0:4000])
-	}
 	i.ISummary = &ISummary{
-		Text: summary,
+		Text: truncateRunes(summary, 4000),
 	}
 }
 
 // AddDescription adds a rich-text description tag.
 //
 // Limit: 10000 characters
-// Item descriptions keep Apple's character limit; channel descriptions use bytes.
 //
 // Note that this field is a CDATA encoded field which allows for rich text
 // such as html links: `<a href="http://www.apple.com">Apple</a>`.
 func (i *Item) AddDescription(d string) {
-	count := utf8.RuneCountInString(d)
-	if count > 10000 {
-		s := []rune(d)
-		d = string(s[0:10000])
-	}
-	i.Description = Description(d)
+	i.Description = Description(truncateRunes(d, 10000))
 }
 
 // AddDuration adds the duration to the iTunes duration field.
@@ -289,10 +277,10 @@ func (i *Item) AddDuration(durationInSeconds int64) {
 
 func parseDuration(duration int64) string {
 	h := duration / 3600
-	duration = duration % 3600
+	duration %= 3600
 
 	m := duration / 60
-	duration = duration % 60
+	duration %= 60
 
 	s := duration
 

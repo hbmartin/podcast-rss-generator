@@ -18,7 +18,7 @@ func TestStringError(t *testing.T) {
 	// arrange
 	e := "TestEncodeError error result"
 	p := Podcast{}
-	p.encode = func(w io.Writer, o any) error {
+	p.encode = func(_ io.Writer, _ any) error {
 		return errors.New(e)
 	}
 

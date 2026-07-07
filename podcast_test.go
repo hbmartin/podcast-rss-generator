@@ -1,12 +1,15 @@
 package podcast_test
 
 import (
+	"bytes"
 	"errors"
+	"io"
 	"testing"
 	"time"
 
 	"github.com/hbmartin/podcast-rss-generator/v2"
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 var (
@@ -26,11 +29,11 @@ func TestNewNonZeroDates(t *testing.T) {
 	p := podcast.New(ti, l, d, createdDate, updatedDate)
 
 	// assert
-	assert.EqualValues(t, ti, p.Title)
-	assert.EqualValues(t, l, p.Link)
-	assert.EqualValues(t, d, p.Description)
-	assert.True(t, createdDate.Format(time.RFC1123Z) >= p.PubDate)
-	assert.True(t, updatedDate.Format(time.RFC1123Z) >= p.LastBuildDate)
+	assert.Equal(t, ti, p.Title)
+	assert.Equal(t, l, p.Link)
+	assert.Equal(t, podcast.Description(d), p.Description)
+	assert.GreaterOrEqual(t, createdDate.Format(time.RFC1123Z), p.PubDate)
+	assert.GreaterOrEqual(t, updatedDate.Format(time.RFC1123Z), p.LastBuildDate)
 }
 
 func TestNewZeroDates(t *testing.T) {
@@ -44,12 +47,12 @@ func TestNewZeroDates(t *testing.T) {
 
 	// assert
 	now := time.Now().UTC().Format(time.RFC1123Z)
-	assert.EqualValues(t, ti, p.Title)
-	assert.EqualValues(t, l, p.Link)
-	assert.EqualValues(t, d, p.Description)
+	assert.Equal(t, ti, p.Title)
+	assert.Equal(t, l, p.Link)
+	assert.Equal(t, podcast.Description(d), p.Description)
 	// ensure time.Now().UTC() is set, or close to it
-	assert.True(t, now >= p.PubDate)
-	assert.True(t, now >= p.LastBuildDate)
+	assert.GreaterOrEqual(t, now, p.PubDate)
+	assert.GreaterOrEqual(t, now, p.LastBuildDate)
 }
 
 func TestAddAuthor(t *testing.T) {
@@ -171,8 +174,8 @@ func TestAddCategoryEmpty(t *testing.T) {
 	p.AddCategory("", nil)
 
 	// assert
-	assert.Len(t, p.ICategories, 0)
-	assert.Len(t, p.Category, 0)
+	assert.Empty(t, p.ICategories)
+	assert.Empty(t, p.Category)
 }
 
 func TestAddCategorySubCatEmpty1(t *testing.T) {
@@ -186,8 +189,8 @@ func TestAddCategorySubCatEmpty1(t *testing.T) {
 
 	// assert
 	assert.Len(t, p.ICategories, 1)
-	assert.EqualValues(t, p.Category, "mycat")
-	assert.Len(t, p.ICategories[0].ICategories, 0)
+	assert.Equal(t, "mycat", p.Category)
+	assert.Empty(t, p.ICategories[0].ICategories)
 }
 
 func TestAddCategorySubCatEmpty2(t *testing.T) {
@@ -201,7 +204,7 @@ func TestAddCategorySubCatEmpty2(t *testing.T) {
 
 	// assert
 	assert.Len(t, p.ICategories, 1)
-	assert.EqualValues(t, p.Category, "mycat")
+	assert.Equal(t, "mycat", p.Category)
 	assert.Len(t, p.ICategories[0].ICategories, 2)
 }
 
@@ -230,11 +233,8 @@ func TestAddItemEmptyTitleDescription(t *testing.T) {
 	added, err := p.AddItem(i)
 
 	// assert
-	assert.EqualValues(t, 0, added)
-	assert.Error(t, err)
-	assert.Contains(t, err.Error(), "title")
-	assert.Contains(t, err.Error(), "description")
-	assert.Contains(t, err.Error(), "required")
+	assert.Equal(t, 0, added)
+	assert.ErrorIs(t, err, podcast.ErrTitleDescriptionRequired)
 }
 
 func TestAddItemEmptyEnclosureURL(t *testing.T) {
@@ -249,9 +249,8 @@ func TestAddItemEmptyEnclosureURL(t *testing.T) {
 	added, err := p.AddItem(i)
 
 	// assert
-	assert.EqualValues(t, 0, added)
-	assert.Error(t, err)
-	assert.Contains(t, err.Error(), "Enclosure.URL is required")
+	assert.Equal(t, 0, added)
+	assert.ErrorIs(t, err, podcast.ErrEnclosureURLRequired)
 }
 
 func TestAddItemEmptyEnclosureType(t *testing.T) {
@@ -266,9 +265,8 @@ func TestAddItemEmptyEnclosureType(t *testing.T) {
 	added, err := p.AddItem(i)
 
 	// assert
-	assert.EqualValues(t, 0, added)
-	assert.Error(t, err)
-	assert.Contains(t, err.Error(), "Enclosure.Type is required")
+	assert.Equal(t, 0, added)
+	assert.ErrorIs(t, err, podcast.ErrEnclosureTypeRequired)
 }
 
 func TestAddItemZeroValueEnclosureType(t *testing.T) {
@@ -286,9 +284,8 @@ func TestAddItemZeroValueEnclosureType(t *testing.T) {
 	added, err := p.AddItem(i)
 
 	// assert
-	assert.EqualValues(t, 0, added)
-	assert.Error(t, err)
-	assert.Contains(t, err.Error(), "Enclosure.Type is required")
+	assert.Equal(t, 0, added)
+	assert.ErrorIs(t, err, podcast.ErrEnclosureTypeRequired)
 }
 
 func TestAddItemEmptyLink(t *testing.T) {
@@ -302,9 +299,102 @@ func TestAddItemEmptyLink(t *testing.T) {
 	added, err := p.AddItem(i)
 
 	// assert
-	assert.EqualValues(t, 0, added)
-	assert.Error(t, err)
-	assert.Contains(t, err.Error(), "Link is required")
+	assert.Equal(t, 0, added)
+	assert.ErrorIs(t, err, podcast.ErrLinkRequired)
+}
+
+func TestSentinelErrors(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name           string
+		makeErr        func() error
+		want           error
+		wantValidation bool
+		wantTitle      string
+	}{
+		{
+			name: "nil podcast",
+			makeErr: func() error {
+				var p *podcast.Podcast
+				_, err := p.AddItem(podcast.Item{})
+				return err
+			},
+			want: podcast.ErrPodcastRequired,
+		},
+		{
+			name: "nil writer",
+			makeErr: func() error {
+				p := podcast.New("title", "link", "description", zeroDate, zeroDate)
+				return p.Encode(nil)
+			},
+			want: podcast.ErrWriterRequired,
+		},
+		{
+			name: "missing title and description",
+			makeErr: func() error {
+				p := podcast.New("title", "link", "description", zeroDate, zeroDate)
+				_, err := p.AddItem(podcast.Item{})
+				return err
+			},
+			want:           podcast.ErrTitleDescriptionRequired,
+			wantValidation: true,
+		},
+		{
+			name: "missing enclosure url",
+			makeErr: func() error {
+				p := podcast.New("title", "link", "description", zeroDate, zeroDate)
+				i := podcast.Item{Title: "episode", Description: "description"}
+				i.AddEnclosure("", podcast.MP3, 1)
+				_, err := p.AddItem(i)
+				return err
+			},
+			want:           podcast.ErrEnclosureURLRequired,
+			wantValidation: true,
+			wantTitle:      "episode",
+		},
+		{
+			name: "missing enclosure type",
+			makeErr: func() error {
+				p := podcast.New("title", "link", "description", zeroDate, zeroDate)
+				i := podcast.Item{Title: "episode", Description: "description"}
+				i.AddEnclosure("https://example.com/episode.mp3", podcast.EnclosureUnknown, 1)
+				_, err := p.AddItem(i)
+				return err
+			},
+			want:           podcast.ErrEnclosureTypeRequired,
+			wantValidation: true,
+			wantTitle:      "episode",
+		},
+		{
+			name: "missing link",
+			makeErr: func() error {
+				p := podcast.New("title", "link", "description", zeroDate, zeroDate)
+				_, err := p.AddItem(podcast.Item{Title: "episode", Description: "description"})
+				return err
+			},
+			want:           podcast.ErrLinkRequired,
+			wantValidation: true,
+			wantTitle:      "episode",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			err := tt.makeErr()
+			require.ErrorIs(t, err, tt.want)
+
+			var validationErr *podcast.ItemValidationError
+			if got := errors.As(err, &validationErr); got != tt.wantValidation {
+				t.Fatalf("errors.As(ItemValidationError) = %v, want %v", got, tt.wantValidation)
+			}
+			if tt.wantValidation && validationErr.Title != tt.wantTitle {
+				t.Fatalf("ItemValidationError.Title = %q, want %q", validationErr.Title, tt.wantTitle)
+			}
+		})
+	}
 }
 
 func TestAddItemEnclosureLengthMin(t *testing.T) {
@@ -319,10 +409,10 @@ func TestAddItemEnclosureLengthMin(t *testing.T) {
 	added, err := p.AddItem(i)
 
 	// assert
-	assert.EqualValues(t, 1, added)
-	assert.NoError(t, err)
+	assert.Equal(t, 1, added)
+	require.NoError(t, err)
 	assert.Len(t, p.Items, 1)
-	assert.EqualValues(t, 0, p.Items[0].Enclosure.Length)
+	assert.Equal(t, int64(0), p.Items[0].Enclosure.Length)
 }
 
 func TestAddItemEnclosureNoLinkOverride(t *testing.T) {
@@ -337,10 +427,10 @@ func TestAddItemEnclosureNoLinkOverride(t *testing.T) {
 	added, err := p.AddItem(i)
 
 	// assert
-	assert.EqualValues(t, 1, added)
-	assert.NoError(t, err)
+	assert.Equal(t, 1, added)
+	require.NoError(t, err)
 	assert.Len(t, p.Items, 1)
-	assert.EqualValues(t, i.Enclosure.URL, p.Items[0].Link)
+	assert.Equal(t, i.Enclosure.URL, p.Items[0].Link)
 }
 
 func TestAddItemEnclosureLinkPresentNoOverride(t *testing.T) {
@@ -357,10 +447,10 @@ func TestAddItemEnclosureLinkPresentNoOverride(t *testing.T) {
 	added, err := p.AddItem(i)
 
 	// assert
-	assert.EqualValues(t, 1, added)
-	assert.NoError(t, err)
+	assert.Equal(t, 1, added)
+	require.NoError(t, err)
 	assert.Len(t, p.Items, 1)
-	assert.EqualValues(t, theLink, p.Items[0].Link)
+	assert.Equal(t, theLink, p.Items[0].Link)
 }
 
 func TestAddItemNoEnclosureGUIDValid(t *testing.T) {
@@ -376,10 +466,10 @@ func TestAddItemNoEnclosureGUIDValid(t *testing.T) {
 	added, err := p.AddItem(i)
 
 	// assert
-	assert.EqualValues(t, 1, added)
-	assert.NoError(t, err)
+	assert.Equal(t, 1, added)
+	require.NoError(t, err)
 	assert.Len(t, p.Items, 1)
-	assert.EqualValues(t, theLink, p.Items[0].GUID)
+	assert.Equal(t, theLink, p.Items[0].GUID)
 }
 
 func TestAddItemWithEnclosureGUIDSet(t *testing.T) {
@@ -401,11 +491,11 @@ func TestAddItemWithEnclosureGUIDSet(t *testing.T) {
 	added, err := p.AddItem(i)
 
 	// assert
-	assert.EqualValues(t, 1, added)
-	assert.NoError(t, err)
+	assert.Equal(t, 1, added)
+	require.NoError(t, err)
 	assert.Len(t, p.Items, 1)
-	assert.EqualValues(t, theGUID, p.Items[0].GUID)
-	assert.EqualValues(t, length, p.Items[0].Enclosure.Length)
+	assert.Equal(t, theGUID, p.Items[0].GUID)
+	assert.Equal(t, int64(length), p.Items[0].Enclosure.Length)
 }
 
 func TestAddItemAuthor(t *testing.T) {
@@ -421,11 +511,11 @@ func TestAddItemAuthor(t *testing.T) {
 	added, err := p.AddItem(i)
 
 	// assert
-	assert.EqualValues(t, 1, added)
-	assert.NoError(t, err)
+	assert.Equal(t, 1, added)
+	require.NoError(t, err)
 	assert.Len(t, p.Items, 1)
-	assert.EqualValues(t, &theAuthor, p.Items[0].Author)
-	assert.EqualValues(t, theAuthor.Email, p.Items[0].IAuthor)
+	assert.Equal(t, &theAuthor, p.Items[0].Author)
+	assert.Equal(t, theAuthor.Email, p.Items[0].IAuthor)
 }
 
 func TestAddItemRootManagingEditorSetsAuthorIAuthor(t *testing.T) {
@@ -441,11 +531,11 @@ func TestAddItemRootManagingEditorSetsAuthorIAuthor(t *testing.T) {
 	added, err := p.AddItem(i)
 
 	// assert
-	assert.EqualValues(t, 1, added)
-	assert.NoError(t, err)
+	assert.Equal(t, 1, added)
+	require.NoError(t, err)
 	assert.Len(t, p.Items, 1)
-	assert.EqualValues(t, theAuthor, p.Items[0].Author.Email)
-	assert.EqualValues(t, theAuthor, p.Items[0].IAuthor)
+	assert.Equal(t, theAuthor, p.Items[0].Author.Email)
+	assert.Equal(t, theAuthor, p.Items[0].IAuthor)
 }
 
 func TestAddItemRootIAuthorSetsAuthorIAuthor(t *testing.T) {
@@ -460,11 +550,60 @@ func TestAddItemRootIAuthorSetsAuthorIAuthor(t *testing.T) {
 	added, err := p.AddItem(i)
 
 	// assert
-	assert.EqualValues(t, 1, added)
-	assert.NoError(t, err)
+	assert.Equal(t, 1, added)
+	require.NoError(t, err)
 	assert.Len(t, p.Items, 1)
-	assert.EqualValues(t, "me@janedoe.com", p.Items[0].Author.Email)
-	assert.EqualValues(t, "me@janedoe.com", p.Items[0].IAuthor)
+	assert.Equal(t, "me@janedoe.com", p.Items[0].Author.Email)
+	assert.Equal(t, "me@janedoe.com", p.Items[0].IAuthor)
+}
+
+func TestAddItemClonesNestedPointers(t *testing.T) {
+	t.Parallel()
+
+	enclosure := &podcast.Enclosure{
+		URL:    "https://example.com/episode.mp3",
+		Type:   podcast.MP3,
+		Length: -1,
+	}
+	author := &podcast.Author{Name: "Jane Doe", Email: "jane@example.com"}
+	image := &podcast.IImage{HREF: "https://example.com/episode.png"}
+	summary := &podcast.ISummary{Text: "original summary"}
+	episodeType := &podcast.IEpisodeType{Text: "full"}
+	i := podcast.Item{
+		Title:        "episode",
+		Description:  "description",
+		Enclosure:    enclosure,
+		Author:       author,
+		IImage:       image,
+		ISummary:     summary,
+		IEpisodeType: episodeType,
+	}
+	p := podcast.New("title", "link", "description", zeroDate, zeroDate)
+
+	added, err := p.AddItem(i)
+
+	assert.Equal(t, 1, added)
+	require.NoError(t, err)
+	assert.Len(t, p.Items, 1)
+	assert.Equal(t, int64(-1), enclosure.Length)
+	assert.Empty(t, enclosure.LengthFormatted)
+	assert.Equal(t, int64(0), p.Items[0].Enclosure.Length)
+
+	enclosure.URL = "https://example.com/changed.mp3"
+	enclosure.Type = podcast.M4A
+	enclosure.Length = 99
+	author.Email = "changed@example.com"
+	image.HREF = "https://example.com/changed.png"
+	summary.Text = "changed summary"
+	episodeType.Text = "bonus"
+
+	assert.Equal(t, "https://example.com/episode.mp3", p.Items[0].Enclosure.URL)
+	assert.Equal(t, podcast.MP3, p.Items[0].Enclosure.Type)
+	assert.Equal(t, int64(0), p.Items[0].Enclosure.Length)
+	assert.Equal(t, "jane@example.com", p.Items[0].Author.Email)
+	assert.Equal(t, "https://example.com/episode.png", p.Items[0].IImage.HREF)
+	assert.Equal(t, "original summary", p.Items[0].ISummary.Text)
+	assert.Equal(t, "full", p.Items[0].IEpisodeType.Text)
 }
 
 func TestAddSubTitleEmpty(t *testing.T) {
@@ -477,7 +616,7 @@ func TestAddSubTitleEmpty(t *testing.T) {
 	p.AddSubTitle("")
 
 	// assert
-	assert.Len(t, p.ISubtitle, 0)
+	assert.Empty(t, p.ISubtitle)
 }
 
 func TestAddSubTitleTooLong(t *testing.T) {
@@ -531,10 +670,72 @@ func TestAddSummaryEmpty(t *testing.T) {
 	assert.Nil(t, p.ISummary)
 }
 
-type errWriter struct{}
+func TestEncodeSafety(t *testing.T) {
+	t.Parallel()
 
-func (w errWriter) Write(p []byte) (n int, err error) {
-	return 0, errors.New("it was bad")
+	t.Run("nil receiver", func(t *testing.T) {
+		t.Parallel()
+
+		var p *podcast.Podcast
+		var buf bytes.Buffer
+
+		err := p.Encode(&buf)
+
+		assert.ErrorIs(t, err, podcast.ErrPodcastRequired)
+	})
+
+	t.Run("nil writer", func(t *testing.T) {
+		t.Parallel()
+
+		p := podcast.New("title", "link", "description", zeroDate, zeroDate)
+
+		err := p.Encode(nil)
+
+		assert.ErrorIs(t, err, podcast.ErrWriterRequired)
+	})
+
+	t.Run("typed nil writer", func(t *testing.T) {
+		t.Parallel()
+
+		p := podcast.New("title", "link", "description", zeroDate, zeroDate)
+		var nilBuffer *bytes.Buffer
+		var w io.Writer = nilBuffer
+
+		err := p.Encode(w)
+
+		assert.ErrorIs(t, err, podcast.ErrWriterRequired)
+	})
+
+	t.Run("zero value uses default encoder", func(t *testing.T) {
+		t.Parallel()
+
+		var p podcast.Podcast
+		var buf bytes.Buffer
+
+		err := p.Encode(&buf)
+
+		require.NoError(t, err)
+		assert.Contains(t, buf.String(), "<rss")
+	})
+}
+
+func TestStringBytesSafety(t *testing.T) {
+	t.Parallel()
+
+	var p *podcast.Podcast
+
+	assert.NotPanics(t, func() {
+		_ = p.String()
+		_ = p.Bytes()
+	})
+}
+
+type errWriter struct {
+	err error
+}
+
+func (w errWriter) Write(_ []byte) (n int, err error) {
+	return 0, w.err
 }
 
 func TestEncodeWriterError(t *testing.T) {
@@ -542,11 +743,12 @@ func TestEncodeWriterError(t *testing.T) {
 
 	// arrange
 	p := podcast.New("title", "desc", "Link", zeroDate, zeroDate)
+	writeErr := errors.New("it was bad")
 
 	// act
-	err := p.Encode(&errWriter{})
+	err := p.Encode(&errWriter{err: writeErr})
 
 	// assert
-	assert.Error(t, err)
-	assert.Contains(t, err.Error(), "w.Write return error")
+	require.ErrorIs(t, err, writeErr)
+	assert.Contains(t, err.Error(), "writing xml header")
 }

@@ -11,11 +11,13 @@ on:
 
 jobs:
   build:
-    name: Build (${{ matrix.os }})
+    name: Cross-platform build (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     permissions:
       contents: read
+    # The OS matrix validates cross-platform compilation and vetting. Race-enabled
+    # tests run on Ubuntu in the test job to keep CI runtime predictable.
     strategy:
       fail-fast: false
       matrix:
@@ -27,11 +29,13 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: jdx/mise-action@v4
-      - run: mise run build
-      - run: mise run vet
+      - name: Build
+        run: mise run build
+      - name: Vet
+        run: mise run vet
 
   test:
-    name: Test
+    name: Race test (Ubuntu)
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:

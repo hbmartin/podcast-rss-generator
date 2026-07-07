@@ -13,7 +13,7 @@ import (
 func Example_httpHandlers() {
 	// ResponseWriter example using Podcast.Encode(w io.Writer).
 	//
-	httpHandler := func(w http.ResponseWriter, r *http.Request) {
+	httpHandler := func(w http.ResponseWriter, _ *http.Request) {
 		// instantiate a new Podcast
 		p := podcast.New(
 			"eduncan911 Podcasts",
