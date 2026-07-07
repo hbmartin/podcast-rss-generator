@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here.
 
+## Unreleased
+
+- Add inspectable validation errors for podcast and item failures.
+- Make podcast encoding safe for nil receivers, nil writers, and zero-value
+  podcast values.
+- Clone nested item pointer fields when adding items to avoid caller-owned
+  state aliasing.
+- Replace legacy go-fuzz targets with native Go fuzzing.
+- Remove vendored test dependencies and refresh the test dependency graph.
+- Expand lint coverage and refresh contributor, README, and agent-facing docs.
+
 ## v2.0.0
 
 - Change module path to `github.com/hbmartin/podcast-rss-generator/v2` for semantic import versioning.

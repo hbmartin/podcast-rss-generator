@@ -31,6 +31,8 @@ const (
 //
 // For new subscribers, Apple Podcasts adds the first episode to their
 // Library, or the entire current season if using seasons.
+//
+//nolint:revive // Preserve the established public API name.
 type PodcastType int
 
 // String returns the Apple Podcasts encoding of the specified PodcastType.

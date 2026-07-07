@@ -2,6 +2,8 @@ version: "2"
 linters:
   enable:
     - bodyclose
+    - errname
+    - errorlint
     - misspell
     - nakedret
     - prealloc
@@ -12,6 +14,14 @@ linters:
     - modernize
     - unused
     - errcheck
+    - forcetypeassert
+    - gocritic
+    - gosec
+    - govet
+    - nilerr
+    - nolintlint
+    - revive
+    - testifylint
   exclusions:
     generated: lax
     presets:

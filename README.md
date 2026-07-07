@@ -4,431 +4,141 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/hbmartin/podcast-rss-generator/v2)](https://goreportcard.com/report/github.com/hbmartin/podcast-rss-generator/v2)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+
+
 # podcast
-Package podcast generates a fully compliant iTunes and RSS 2.0 podcast feed
-for Go using a simple API.
+`import "github.com/hbmartin/podcast-rss-generator/v2"`
+
+* [Overview](#pkg-overview)
+* [Index](#pkg-index)
+* [Examples](#pkg-examples)
+
+## <a name="pkg-overview">Overview</a>
+Package podcast generates RSS 2.0 podcast feeds with common Apple Podcasts
+tags using a small Go API.
 
 Full documentation with detailed examples is located at <a href="https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2">https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2</a>
 
-### Usage
+# Usage
+
 To use, `go get` and `import` the package like your typical Go library.
+
 
 	$ go get github.com/hbmartin/podcast-rss-generator/v2@latest
 	
 	import "github.com/hbmartin/podcast-rss-generator/v2"
 
-The API exposes a number of method receivers on structs that implements the
-logic required to comply with the specifications and ensure a compliant feed.
-A number of overrides occur to help with iTunes visibility of your episodes.
+The API exposes method receivers on feed structs that fill derived RSS and
+Apple Podcasts fields, validate required item fields, and keep generated XML
+consistent.
 
 Notably, the `Podcast.AddItem` function performs most
 of the heavy lifting by taking the `Item` input and performing
 validation, overrides and duplicate setters through the feed.
 
-Full detailed Examples of the API are at <a href="https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2">https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2</a>.
+Detailed examples of the API are at <a href="https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2">https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2</a>.
 
-### Go Modules
+# Contributing
+
+See the CONTRIBUTING.md for all the details.
+
+# Go Modules
+
 This library is supported on Go 1.24.0 and higher.
 
-We have implemented Go Modules support and the CI pipeline shows it working with
-the toolchain configured by mise.
+The repository uses Go modules and a mise-managed toolchain for local and CI
+checks.
 
-If either runtime has an issue, please create an Issue and I will address.
+# Extensibility
 
-### Extensibility
-For version 1.x, you are not restricted in having full control over your feeds.
-You may choose to skip the API methods and instead use the structs directly.  The
-fields have been grouped by RSS 2.0 and iTunes fields with iTunes specific fields
-all prefixed with the letter `I`.
+The exported structs remain available for callers that need direct control
+over RSS and Apple Podcasts fields. Prefer the Add methods for fields with
+formatting, validation, or derived values.
 
-However, do note that the 2.x version currently in progress will break this
-extensibility and enforce API methods going forward. This is to ensure that the feed
-can both be marshalled, and unmarshalled back and forth (current 1.x branch can only
-be unmarshalled - hence the work for 2.x).
+# Fuzzing
 
-### Fuzzing Inputs
-`go-fuzz` has been added in 1.4.1, covering all exported API methods.  They have been
-ran extensively and no issues have come out of them yet (most tests were ran overnight,
-over about 11 hours with zero crashes).
+Native Go fuzzing covers feed encoding with XML-sensitive text, invalid UTF-8,
+long descriptions, enclosure metadata, and date bytes.
 
-If you wish to help fuzz the inputs, with Go 1.24.0 or later you can run `go-fuzz` on any
-of the inputs.
 
-	go install github.com/dvyukov/go-fuzz/go-fuzz@latest
-	go install github.com/dvyukov/go-fuzz/go-fuzz-build@latest
-	git clone https://github.com/hbmartin/podcast-rss-generator.git
-	cd podcast-rss-generator
-	go-fuzz-build
-	go-fuzz -func FuzzPodcastAddItem
+	mise run fuzz-smoke
 
-To obtain a list of available funcs to pass, just run `go-fuzz` without any parameters:
+To run longer fuzzing locally:
 
-	$ go-fuzz
-	2020/02/13 07:27:32 -func flag not provided, but multiple fuzz functions available:
-	FuzzItemAddDuration, FuzzItemAddEnclosure, FuzzItemAddImage, FuzzItemAddPubDate,
-	FuzzItemAddSummary, FuzzPodcastAddAtomLink, FuzzPodcastAddAuthor, FuzzPodcastAddCategory,
-	FuzzPodcastAddImage, FuzzPodcastAddItem, FuzzPodcastAddLastBuildDate, FuzzPodcastAddPubDate,
-	FuzzPodcastAddSubTitle, FuzzPodcastAddSummary, FuzzPodcastBytes, FuzzPodcastEncode,
-	FuzzPodcastNew
 
-If you do find an issue, please raise an issue immediately and I will quickly address.
+	go test -run '^$' -fuzz=FuzzPodcastEncode -fuzztime=1m ./...
 
-### Roadmap
-The 1.x branch is now mostly in maintenance mode, open to PRs.  This means no
-more planned features on the 1.x feature branch is expected. With the success of 6
-iTunes-accepted podcasts I have published with this library, and with the feedback from
-the community, the 1.x releases are now considered stable.
+# Roadmap
 
-The 2.x branch's primary focus is to allow for bi-direction marshalling both ways.
-Currently, the 1.x branch only allows unmarshalling to a serial feed.  An attempt to marshall
-a serialized feed back into a Podcast form will error or not work correctly.  Note that while
-the 2.x branch is targeted to remain backwards compatible, it is true if using the public
-API funcs to set parameters only.  Several of the underlying public fields are being removed
-in order to accommodate the marshalling of serialized data.  Therefore, a version 2.x is denoted
-for this release.
+Current v2 work focuses on preserving the public API, improving validation
+and safety, and keeping generated documentation and examples accurate.
 
-### Versioning
-We use SemVer versioning schema.  You can rest assured that pulling 1.x branches will
-remain backwards compatible now and into the future.
+# Versioning
 
-However, the new 2.x branch, while keeping the same API, is expected break those that
-bypass the API methods and use the underlying public properties instead.
+Releases follow semantic versioning. Public API removals or incompatible
+behavior changes require a new major version.
 
-### Release Notes
-v2.0.0
+# Release Notes
 
-	* Change module path to github.com/hbmartin/podcast-rss-generator/v2 for semantic import versioning.
-	* Publish as a Go library module with CI and tag workflows focused on build, vet, lint, and tests.
-	* Raise the minimum supported Go version to 1.24.0.
+See CHANGELOG.md in the repository for release notes. The changelog is the
+source of truth for published version history.
 
-v1.4.2
+# References
 
-	* Slim down Go Modules for consumers (#32)
-
-v1.4.1
-
-	* Implement fuzz logic testing of exported funcs (#31)
-	* Upgrade CICD Pipeline Tooling (#31)
-	* Update documentation for 1.x and 2.3 (#31)
-	* Allow godoc2ghmd to run without network (#31)
-
-v1.4.0
-
-	* Add Go Modules, Update vendor folder (#26, #25)
-	* Add C.I. GitHub Actions (#25)
-	* Add additional error checks found by linters (#25)
-	* Go Fmt enclosure_test.go (#25)
-
-v1.3.2
-
-	* Correct count len of UTF8 strings (#9)
-	* Implement duration parser (#8)
-	* Fix Github and GoDocs Markdown (#14)
-	* Move podcast.go Private Methods to Respected Files (#12)
-	* Allow providing GUID on Podcast (#15)
-
-v1.3.1
-
-	* increased itunes compliance after feedback from Apple:
-	  - specified what categories should be set with AddCategory().
-	  - enforced title and link as part of Image.
-	* added Podcast.AddAtomLink() for more broad compliance to readers.
-
-v1.3.0
-
-	* fixes Item.Duration being set incorrectly.
-	* changed Item.AddEnclosure() parameter definition (Bytes not Seconds!).
-	* added Item.AddDuration formatting and override.
-	* added more documentation surrounding Item.Enclosure{}
-
-v1.2.1
-
-	* added Podcast.AddSubTitle() and truncating to 64 chars.
-	* added a number of Guards to protect against empty fields.
-
-v1.2.0
-
-	* added Podcast.AddPubDate() and Podcast.AddLastBuildDate() overrides.
-	* added Item.AddImage() to mask some cumbersome addition of IImage.
-	* added Item.AddPubDate to simply datetime setters.
-	* added more examples (mostly around Item struct).
-	* tweaked some documentation.
-
-v1.1.0
-
-	* Enabling CDATA in ISummary fields for Podcast and Channel.
-
-v1.0.0
-
-	* Initial release.
-	* Full documentation, full examples and complete code coverage.
-
-### References
 RSS 2.0: <a href="https://cyber.harvard.edu/rss/rss.html">https://cyber.harvard.edu/rss/rss.html</a>
 
 Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">https://help.apple.com/itc/podcasts_connect/#/itca5b22233</a>
 
-#### Example:
 
-<details>
-<summary>Click to expand code.</summary>
 
-```go
-// ResponseWriter example using Podcast.Encode(w io.Writer).
-	//
-	httpHandler := func(w http.ResponseWriter, r *http.Request) {
-	
-	    // instantiate a new Podcast
-	    p := podcast.New(
-	        "eduncan911 Podcasts",
-	        "http://eduncan911.com/",
-	        "An example Podcast",
-	        pubDate, updatedDate,
-	    )
-	
-	    // add some channel properties
-	    p.AddAuthor("Jane Doe", "me@janedoe.com")
-	    p.AddAtomLink("http://eduncan911.com/feed.rss")
-	    p.AddImage("http://janedoe.com/i.jpg")
-	    p.AddSummary(`link <a href="http://example.com">example.com</a>`)
-	    p.IExplicit = "no"
-	
-	    for i := int64(1); i < 3; i++ {
-	        n := strconv.FormatInt(i, 10)
-	        d := pubDate.AddDate(0, 0, int(i))
-	
-	        // create an Item
-	        item := podcast.Item{
-	            Title:       "Episode " + n,
-	            Link:        "http://example.com/" + n + ".mp3",
-	            Description: "Description for Episode " + n,
-	            PubDate:     d,
-	        }
-	        item.AddImage("http://example.com/episode-" + n + ".png")
-	        item.AddSummary(`item <a href="http://example.com">example.com</a>`)
-	        // add a Download to the Item
-	        item.AddEnclosure("http://e.com/"+n+".mp3", podcast.MP3, 55*(i+1))
-	
-	        // add the Item and check for validation errors
-	        if _, err := p.AddItem(item); err != nil {
-	            fmt.Println(item.Title, ": error", err.Error())
-	            return
-	        }
-	    }
-	
-	    // set the Content Type to that of XML
-	    w.Header().Set("Content-Type", "application/xml")
-	
-	    // finally, Encode and write the Podcast to the ResponseWriter.
-	    //
-	    // a simple pattern is to handle any errors within this check.
-	    // alternatively if using middleware, you can just return
-	    // the Podcast entity as it also implements the io.Writer interface
-	    // that complies with several middleware packages.
-	    if err := p.Encode(w); err != nil {
-	        http.Error(w, err.Error(), http.StatusInternalServerError)
-	    }
-	}
-	
-	rr := httptest.NewRecorder()
-	httpHandler(rr, nil)
-	os.Stdout.Write(rr.Body.Bytes())
-	// Output:
-	// <?xml version="1.0" encoding="UTF-8"?>
-	// <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
-	//   <channel>
-	//     <title>eduncan911 Podcasts</title>
-	//     <link>http://eduncan911.com/</link>
-	//     <description>An example Podcast</description>
-	//     <generator>go podcast v2.0.0 (github.com/hbmartin/podcast-rss-generator/v2)</generator>
-	//     <language>en-us</language>
-	//     <lastBuildDate>Mon, 06 Feb 2017 08:21:52 +0000</lastBuildDate>
-	//     <managingEditor>me@janedoe.com (Jane Doe)</managingEditor>
-	//     <pubDate>Sat, 04 Feb 2017 08:21:52 +0000</pubDate>
-	//     <image>
-	//       <url>http://janedoe.com/i.jpg</url>
-	//       <title>eduncan911 Podcasts</title>
-	//       <link>http://eduncan911.com/</link>
-	//     </image>
-	//     <atom:link href="http://eduncan911.com/feed.rss" rel="self" type="application/rss+xml"></atom:link>
-	//     <itunes:author>me@janedoe.com (Jane Doe)</itunes:author>
-	//     <itunes:summary><![CDATA[link <a href="http://example.com">example.com</a>]]></itunes:summary>
-	//     <itunes:image href="http://janedoe.com/i.jpg"></itunes:image>
-	//     <itunes:explicit>no</itunes:explicit>
-	//     <itunes:owner>
-	//       <itunes:name>Jane Doe</itunes:name>
-	//       <itunes:email>me@janedoe.com</itunes:email>
-	//     </itunes:owner>
-	//     <item>
-	//       <guid>http://e.com/1.mp3</guid>
-	//       <title>Episode 1</title>
-	//       <link>http://example.com/1.mp3</link>
-	//       <description>Description for Episode 1</description>
-	//       <pubDate>Sun, 05 Feb 2017 08:21:52 +0000</pubDate>
-	//       <enclosure url="http://e.com/1.mp3" length="110" type="audio/mpeg"></enclosure>
-	//       <itunes:author>me@janedoe.com (Jane Doe)</itunes:author>
-	//       <itunes:summary><![CDATA[item <a href="http://example.com">example.com</a>]]></itunes:summary>
-	//       <itunes:image href="http://example.com/episode-1.png"></itunes:image>
-	//     </item>
-	//     <item>
-	//       <guid>http://e.com/2.mp3</guid>
-	//       <title>Episode 2</title>
-	//       <link>http://example.com/2.mp3</link>
-	//       <description>Description for Episode 2</description>
-	//       <pubDate>Mon, 06 Feb 2017 08:21:52 +0000</pubDate>
-	//       <enclosure url="http://e.com/2.mp3" length="165" type="audio/mpeg"></enclosure>
-	//       <itunes:author>me@janedoe.com (Jane Doe)</itunes:author>
-	//       <itunes:summary><![CDATA[item <a href="http://example.com">example.com</a>]]></itunes:summary>
-	//       <itunes:image href="http://example.com/episode-2.png"></itunes:image>
-	//     </item>
-	//   </channel>
-	// </rss>
-```
-
-</details>
-
-#### Example:
-
-<details>
-<summary>Click to expand code.</summary>
-
-```go
-// instantiate a new Podcast
-	p := podcast.New(
-	    "Sample Podcasts",
-	    "http://example.com/",
-	    "An example Podcast",
-	    createdDate, updatedDate,
-	)
-	
-	// add some channel properties
-	p.ISubtitle = "A simple Podcast"
-	p.AddSummary(`link <a href="http://example.com">example.com</a>`)
-	p.AddImage("http://example.com/podcast.jpg")
-	p.AddAuthor("Jane Doe", "jane.doe@example.com")
-	p.AddAtomLink("http://example.com/atom.rss")
-	
-	for i := int64(9); i < 11; i++ {
-	    n := strconv.FormatInt(i, 10)
-	    d := pubDate.AddDate(0, 0, int(i))
-	
-	    // create an Item
-	    item := podcast.Item{
-	        Title:       "Episode " + n,
-	        Description: "Description for Episode " + n,
-	        ISubtitle:   "A simple episode " + n,
-	        PubDate:     d,
-	    }
-	    item.AddImage("http://example.com/episode-" + n + ".png")
-	    item.AddSummary(`item k <a href="http://example.com">example.com</a>`)
-	    // add a Download to the Item
-	    item.AddEnclosure("http://example.com/"+n+".mp3", podcast.MP3, 55*(i+1))
-	
-	    // add the Item and check for validation errors
-	    if _, err := p.AddItem(item); err != nil {
-	        os.Stderr.WriteString("item validation error: " + err.Error())
-	    }
-	}
-	
-	// Podcast.Encode writes to an io.Writer
-	if err := p.Encode(os.Stdout); err != nil {
-	    fmt.Println("error writing to stdout:", err.Error())
-	}
-	
-	// Output:
-	// <?xml version="1.0" encoding="UTF-8"?>
-	// <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
-	//   <channel>
-	//     <title>Sample Podcasts</title>
-	//     <link>http://example.com/</link>
-	//     <description>An example Podcast</description>
-	//     <generator>go podcast v2.0.0 (github.com/hbmartin/podcast-rss-generator/v2)</generator>
-	//     <language>en-us</language>
-	//     <lastBuildDate>Mon, 06 Feb 2017 08:21:52 +0000</lastBuildDate>
-	//     <managingEditor>jane.doe@example.com (Jane Doe)</managingEditor>
-	//     <pubDate>Wed, 01 Feb 2017 08:21:52 +0000</pubDate>
-	//     <image>
-	//       <url>http://example.com/podcast.jpg</url>
-	//       <title>Sample Podcasts</title>
-	//       <link>http://example.com/</link>
-	//     </image>
-	//     <atom:link href="http://example.com/atom.rss" rel="self" type="application/rss+xml"></atom:link>
-	//     <itunes:author>jane.doe@example.com (Jane Doe)</itunes:author>
-	//     <itunes:subtitle>A simple Podcast</itunes:subtitle>
-	//     <itunes:summary><![CDATA[link <a href="http://example.com">example.com</a>]]></itunes:summary>
-	//     <itunes:image href="http://example.com/podcast.jpg"></itunes:image>
-	//     <itunes:owner>
-	//       <itunes:name>Jane Doe</itunes:name>
-	//       <itunes:email>jane.doe@example.com</itunes:email>
-	//     </itunes:owner>
-	//     <item>
-	//       <guid>http://example.com/9.mp3</guid>
-	//       <title>Episode 9</title>
-	//       <link>http://example.com/9.mp3</link>
-	//       <description>Description for Episode 9</description>
-	//       <pubDate>Mon, 13 Feb 2017 08:21:52 +0000</pubDate>
-	//       <enclosure url="http://example.com/9.mp3" length="550" type="audio/mpeg"></enclosure>
-	//       <itunes:author>jane.doe@example.com (Jane Doe)</itunes:author>
-	//       <itunes:subtitle>A simple episode 9</itunes:subtitle>
-	//       <itunes:summary><![CDATA[item k <a href="http://example.com">example.com</a>]]></itunes:summary>
-	//       <itunes:image href="http://example.com/episode-9.png"></itunes:image>
-	//     </item>
-	//     <item>
-	//       <guid>http://example.com/10.mp3</guid>
-	//       <title>Episode 10</title>
-	//       <link>http://example.com/10.mp3</link>
-	//       <description>Description for Episode 10</description>
-	//       <pubDate>Tue, 14 Feb 2017 08:21:52 +0000</pubDate>
-	//       <enclosure url="http://example.com/10.mp3" length="605" type="audio/mpeg"></enclosure>
-	//       <itunes:author>jane.doe@example.com (Jane Doe)</itunes:author>
-	//       <itunes:subtitle>A simple episode 10</itunes:subtitle>
-	//       <itunes:summary><![CDATA[item k <a href="http://example.com">example.com</a>]]></itunes:summary>
-	//       <itunes:image href="http://example.com/episode-10.png"></itunes:image>
-	//     </item>
-	//   </channel>
-	// </rss>
-```
-
-</details>
-
-## Table of Contents
-
-* [Imported Packages](#pkg-imports)
-* [Index](#pkg-index)
-* [Examples](#pkg-examples)
-
-## <a name="pkg-imports">Imported Packages</a>
 
 ## <a name="pkg-index">Index</a>
+* [Variables](#pkg-variables)
 * [type AtomLink](#AtomLink)
 * [type Author](#Author)
+* [type Description](#Description)
+  * [func (d Description) MarshalXML(e *xml.Encoder, start xml.StartElement) error](#Description.MarshalXML)
 * [type Enclosure](#Enclosure)
 * [type EnclosureType](#EnclosureType)
   * [func (et EnclosureType) String() string](#EnclosureType.String)
+* [type EpisodeType](#EpisodeType)
+  * [func (et EpisodeType) String() string](#EpisodeType.String)
 * [type ICategory](#ICategory)
+* [type IEpisodeType](#IEpisodeType)
 * [type IImage](#IImage)
 * [type ISummary](#ISummary)
+* [type IType](#IType)
 * [type Image](#Image)
 * [type Item](#Item)
-  * [func (i \*Item) AddDuration(durationInSeconds int64)](#Item.AddDuration)
-  * [func (i \*Item) AddEnclosure(url string, enclosureType EnclosureType, lengthInBytes int64)](#Item.AddEnclosure)
-  * [func (i \*Item) AddImage(url string)](#Item.AddImage)
-  * [func (i \*Item) AddPubDate(datetime time.Time)](#Item.AddPubDate)
-  * [func (i \*Item) AddSummary(summary string)](#Item.AddSummary)
+  * [func (i *Item) AddDescription(d string)](#Item.AddDescription)
+  * [func (i *Item) AddDuration(durationInSeconds int64)](#Item.AddDuration)
+  * [func (i *Item) AddEnclosure(url string, enclosureType EnclosureType, lengthInBytes int64)](#Item.AddEnclosure)
+  * [func (i *Item) AddEpisode()](#Item.AddEpisode)
+  * [func (i *Item) AddEpisodeType(episodeType EpisodeType)](#Item.AddEpisodeType)
+  * [func (i *Item) AddImage(url string)](#Item.AddImage)
+  * [func (i *Item) AddPubDate(datetime time.Time)](#Item.AddPubDate)
+  * [func (i *Item) AddSummary(summary string)](#Item.AddSummary)
+* [type ItemValidationError](#ItemValidationError)
+  * [func (e *ItemValidationError) Error() string](#ItemValidationError.Error)
+  * [func (e *ItemValidationError) Unwrap() error](#ItemValidationError.Unwrap)
 * [type Podcast](#Podcast)
   * [func New(title, link, description string, pubDate, lastBuildDate time.Time) Podcast](#New)
-  * [func (p \*Podcast) AddAtomLink(href string)](#Podcast.AddAtomLink)
-  * [func (p \*Podcast) AddAuthor(name, email string)](#Podcast.AddAuthor)
-  * [func (p \*Podcast) AddCategory(category string, subCategories []string)](#Podcast.AddCategory)
-  * [func (p \*Podcast) AddImage(url string)](#Podcast.AddImage)
-  * [func (p \*Podcast) AddItem(i Item) (int, error)](#Podcast.AddItem)
-  * [func (p \*Podcast) AddLastBuildDate(datetime time.Time)](#Podcast.AddLastBuildDate)
-  * [func (p \*Podcast) AddPubDate(datetime time.Time)](#Podcast.AddPubDate)
-  * [func (p \*Podcast) AddSubTitle(subTitle string)](#Podcast.AddSubTitle)
-  * [func (p \*Podcast) AddSummary(summary string)](#Podcast.AddSummary)
-  * [func (p \*Podcast) Bytes() []byte](#Podcast.Bytes)
-  * [func (p \*Podcast) Encode(w io.Writer) error](#Podcast.Encode)
-  * [func (p \*Podcast) String() string](#Podcast.String)
+  * [func (p *Podcast) AddAtomLink(href string)](#Podcast.AddAtomLink)
+  * [func (p *Podcast) AddAuthor(name, email string)](#Podcast.AddAuthor)
+  * [func (p *Podcast) AddCategory(category string, subCategories []string)](#Podcast.AddCategory)
+  * [func (p *Podcast) AddChannelType(channelType string)](#Podcast.AddChannelType)
+  * [func (p *Podcast) AddImage(url string)](#Podcast.AddImage)
+  * [func (p *Podcast) AddItem(i Item) (int, error)](#Podcast.AddItem)
+  * [func (p *Podcast) AddLastBuildDate(datetime time.Time)](#Podcast.AddLastBuildDate)
+  * [func (p *Podcast) AddPubDate(datetime time.Time)](#Podcast.AddPubDate)
+  * [func (p *Podcast) AddSubTitle(subTitle string)](#Podcast.AddSubTitle)
+  * [func (p *Podcast) AddSummary(summary string)](#Podcast.AddSummary)
+  * [func (p *Podcast) AddType(podcastType PodcastType)](#Podcast.AddType)
+  * [func (p *Podcast) Bytes() []byte](#Podcast.Bytes)
+  * [func (p *Podcast) Encode(w io.Writer) error](#Podcast.Encode)
+  * [func (p *Podcast) String() string](#Podcast.String)
+* [type PodcastType](#PodcastType)
+  * [func (pt PodcastType) String() string](#PodcastType.String)
 * [type TextInput](#TextInput)
 
 #### <a name="pkg-examples">Examples</a>
@@ -446,8 +156,22 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
 * [Package (HttpHandlers)](#example__httpHandlers)
 * [Package (IoWriter)](#example__ioWriter)
 
-#### <a name="pkg-files">Package files</a>
-[atomlink.go](./atomlink.go) [author.go](./author.go) [doc.go](./doc.go) [enclosure.go](./enclosure.go) [image.go](./image.go) [item.go](./item.go) [itunes.go](./itunes.go) [podcast.go](./podcast.go) [textinput.go](./textinput.go) 
+
+## <a name="pkg-variables">Variables</a>
+``` go
+var (
+    ErrPodcastRequired          = errors.New("podcast is required")
+    ErrWriterRequired           = errors.New("writer is required")
+    ErrTitleDescriptionRequired = errors.New("title and description are required")
+    ErrEnclosureURLRequired     = errors.New("enclosure url is required")
+    ErrEnclosureTypeRequired    = errors.New("enclosure type is required")
+    ErrLinkRequired             = errors.New("link is required when not using enclosure")
+)
+```
+Sentinel errors returned by feed and item validation.
+
+
+
 
 ## <a name="AtomLink">type</a> [AtomLink](./atomlink.go#L6-L11)
 ``` go
@@ -457,8 +181,18 @@ type AtomLink struct {
     Rel     string   `xml:"rel,attr"`
     Type    string   `xml:"type,attr"`
 }
+
 ```
 AtomLink represents the Atom reference link.
+
+
+
+
+
+
+
+
+
 
 ## <a name="Author">type</a> [Author](./author.go#L8-L12)
 ``` go
@@ -467,12 +201,49 @@ type Author struct {
     Name    string `xml:"itunes:name"`
     Email   string `xml:"itunes:email"`
 }
+
 ```
 Author represents a named author and email.
 
 For iTunes compliance, both Name and Email are required.
 
-## <a name="Enclosure">type</a> [Enclosure](./enclosure.go#L46-L65)
+
+
+
+
+
+
+
+
+
+## <a name="Description">type</a> [Description](./description.go#L11)
+``` go
+type Description string
+```
+Description is a rich-text field for channel and episode description tags.
+
+This is rendered as CDATA which allows for HTML tags such as `<a href="">`.
+
+
+
+
+
+
+
+
+
+
+### <a name="Description.MarshalXML">func</a> (Description) [MarshalXML](./description.go#L15)
+``` go
+func (d Description) MarshalXML(e *xml.Encoder, start xml.StartElement) error
+```
+MarshalXML renders the description text as CDATA so rich text such as
+`<a href="">` stays valid XML.
+
+
+
+
+## <a name="Enclosure">type</a> [Enclosure](./enclosure.go#L47-L66)
 ``` go
 type Enclosure struct {
     XMLName xml.Name `xml:"enclosure"`
@@ -494,14 +265,25 @@ type Enclosure struct {
     // This field gets overwritten with the API when setting Type.
     TypeFormatted string `xml:"type,attr"`
 }
+
 ```
 Enclosure represents a download enclosure.
 
-## <a name="EnclosureType">type</a> [EnclosureType](./enclosure.go#L21)
+
+
+
+
+
+
+
+
+
+## <a name="EnclosureType">type</a> [EnclosureType](./enclosure.go#L22)
 ``` go
 type EnclosureType int
 ```
 EnclosureType specifies the type of the enclosure.
+
 
 ``` go
 const (
@@ -517,11 +299,57 @@ const (
 ```
 EnclosureType specifies the type of the enclosure.
 
-### <a name="EnclosureType.String">func</a> (EnclosureType) [String](./enclosure.go#L24)
+
+
+
+
+
+
+
+
+
+### <a name="EnclosureType.String">func</a> (EnclosureType) [String](./enclosure.go#L25)
 ``` go
 func (et EnclosureType) String() string
 ```
 String returns the MIME type encoding of the specified EnclosureType.
+
+
+
+
+## <a name="EpisodeType">type</a> [EpisodeType](./type.go#L62)
+``` go
+type EpisodeType int
+```
+EpisodeType specifies whether an episode is full, trailer, or bonus content.
+
+
+``` go
+const (
+    Full EpisodeType = iota
+    Trailer
+    Bonus
+)
+```
+EpisodeType specifies the type of an episode.
+
+
+
+
+
+
+
+
+
+
+### <a name="EpisodeType.String">func</a> (EpisodeType) [String](./type.go#L65)
+``` go
+func (et EpisodeType) String() string
+```
+String returns the Apple Podcasts encoding of the specified EpisodeType.
+
+
+
 
 ## <a name="ICategory">type</a> [ICategory](./itunes.go#L9-L13)
 ``` go
@@ -530,8 +358,37 @@ type ICategory struct {
     Text        string   `xml:"text,attr"`
     ICategories []*ICategory
 }
+
 ```
 ICategory is a 2-tier classification system for iTunes.
+
+
+
+
+
+
+
+
+
+
+## <a name="IEpisodeType">type</a> [IEpisodeType](./itunes.go#L43-L46)
+``` go
+type IEpisodeType struct {
+    XMLName xml.Name `xml:"itunes:episodeType"`
+    Text    string   `xml:",chardata"`
+}
+
+```
+IEpisodeType renders podcast.EpisodeType.
+
+
+
+
+
+
+
+
+
 
 ## <a name="IImage">type</a> [IImage](./itunes.go#L23-L26)
 ``` go
@@ -539,6 +396,7 @@ type IImage struct {
     XMLName xml.Name `xml:"itunes:image"`
     HREF    string   `xml:"href,attr"`
 }
+
 ```
 IImage represents an iTunes image.
 
@@ -549,16 +407,54 @@ extensions (.jpg, .png), and in the RGB colorspace. To optimize
 images for mobile devices, Apple recommends compressing your
 image files.
 
+
+
+
+
+
+
+
+
+
 ## <a name="ISummary">type</a> [ISummary](./itunes.go#L31-L34)
 ``` go
 type ISummary struct {
     XMLName xml.Name `xml:"itunes:summary"`
     Text    string   `xml:",cdata"`
 }
+
 ```
 ISummary is a 4000 character rich-text field for the itunes:summary tag.
 
 This is rendered as CDATA which allows for HTML tags such as `<a href="">`.
+
+
+
+
+
+
+
+
+
+
+## <a name="IType">type</a> [IType](./itunes.go#L37-L40)
+``` go
+type IType struct {
+    XMLName xml.Name `xml:"itunes:type"`
+    Text    string   `xml:",chardata"`
+}
+
+```
+IType renders podcast.PodcastType.
+
+
+
+
+
+
+
+
+
 
 ## <a name="Image">type</a> [Image](./image.go#L13-L21)
 ``` go
@@ -571,6 +467,7 @@ type Image struct {
     Width       int      `xml:"width,omitempty"`
     Height      int      `xml:"height,omitempty"`
 }
+
 ```
 Image represents an image.
 
@@ -581,33 +478,152 @@ extensions (.jpg, .png), and in the RGB colorspace. To optimize
 images for mobile devices, Apple recommends compressing your
 image files.
 
-## <a name="Item">type</a> [Item](./item.go#L27-L51)
+
+
+
+
+
+
+
+
+
+## <a name="Item">type</a> [Item](./item.go#L26-L170)
 ``` go
 type Item struct {
-    XMLName          xml.Name   `xml:"item"`
-    GUID             string     `xml:"guid"`
-    Title            string     `xml:"title"`
-    Link             string     `xml:"link"`
-    Description      string     `xml:"description"`
-    Author           *Author    `xml:"-"`
-    AuthorFormatted  string     `xml:"author,omitempty"`
-    Category         string     `xml:"category,omitempty"`
-    Comments         string     `xml:"comments,omitempty"`
-    Source           string     `xml:"source,omitempty"`
-    PubDate          time.Time  `xml:"-"`
-    PubDateFormatted string     `xml:"pubDate,omitempty"`
-    Enclosure        *Enclosure
+    XMLName xml.Name `xml:"item"`
 
-    // https://help.apple.com/itc/podcasts_connect/#/itcb54353390
-    IAuthor            string `xml:"itunes:author,omitempty"`
-    ISubtitle          string `xml:"itunes:subtitle,omitempty"`
+    // GUID is the episode’s globally unique identifier (GUID). It is
+    // recommended to set this tag on each item.
+    //
+    // It is very important that each episode have a unique GUID and
+    // that it never changes, even if an episode’s metadata, like
+    // title or enclosure URL, do change.
+    GUID string `xml:"guid"`
+
+    // Title is an episode title. It is a required field per iTunes
+    // definitions.
+    Title string `xml:"title"`
+
+    // Link is an episode link URL.
+    //
+    // Do not use HTMl tags.  Only raw URLs such as https:// are allowed.
+    Link string `xml:"link"`
+
+    // Description is text containing one or more sentences describing
+    // your episode to potential listeners.
+    //
+    // Use item.AddDescription(...) to populate this field correctly.
+    Description Description `xml:"description"`
+
+    // PubDate is the date and time when an episode was released. It is
+    // recommended to set this tag on each item.
+    //
+    // Use item.AddPubDate(...) to populate this field correctly.
+    PubDate time.Time `xml:"-"`
+
+    // PubDateFormatted is deprecated.  Do not populate nor read this
+    // string as it will be removed in a future release.
+    PubDateFormatted string `xml:"pubDate,omitempty"`
+
+    // Enclosure is of type podcast.Enclosure. It is a required field per
+    // iTunes definitions.
+    //
+    // Use item.AddEnclosure(...) to populate this field correctly.
+    Enclosure *Enclosure
+
+    // IDuration is the duration of an episode.
+    //
+    // Use item.AddDuration(...) to populate this field correctly.
+    IDuration string `xml:"itunes:duration,omitempty"`
+
+    // IExplicit defines the episode parental advisory information.
+    //
+    // Where the explicit value can be one of the following:
+    //
+    // "true" : If you specify true, indicating the presence of explicit
+    // content, Apple Podcasts displays an Explicit parental advisory
+    // graphic for your episode.
+    // Episodes containing explicit material aren’t available in some Apple
+    // Podcasts territories.
+    //
+    // "false" : If you specify false, indicating that the episode does not
+    // contain explicit language or adult content, Apple Podcasts displays
+    // a Clean parental advisory graphic for your episode.
+    IExplicit string `xml:"itunes:explicit,omitempty"`
+
+    // ITitle is a Situational episode title specific for Apple Podcasts.
+    //
+    // This tag is a string containing a clear concise name of your
+    // episode on Apple Podcasts.
+    //
+    // Don’t specify the episode number or season number in this tag. Instead,
+    // specify those details in the appropriate tags IEpisode and ISeason>.
+    //
+    // Also, don’t repeat the title of your show within your episode title.
+    //
+    // Separating episode and season number from the title makes it possible
+    // for Apple to easily index and order content from all shows.
+    ITitle string `xml:"itunes:title,omitempty"`
+
+    // IEpisode is a Situational tag for the episode number.
+    //
+    // If all your episodes have numbers and you would like them to be ordered
+    // based on them use this tag for each one.
+    //
+    // Episode numbers are optional for type episodic shows, but are
+    // mandatory for serial shows.
+    //
+    // Where episode is a non-zero integer (1, 2, 3, etc.) representing your
+    // episode number.
+    IEpisode string `xml:"itunes:episode,omitempty"`
+
+    // ISeason is a Situational tag for the episode season number.
+    //
+    // If an episode is within a season use this tag.
+    //
+    // Where season is a non-zero integer (1, 2, 3, etc.) representing your
+    // season number.
+    //
+    // To allow the season feature for shows containing a single season, if
+    // only one season exists in the RSS feed, Apple Podcasts doesn’t display
+    // a season number. When you add a second season to the RSS feed, Apple
+    // Podcasts displays the season numbers.
+    ISeason string `xml:"itunes:season,omitempty"`
+
+    // IEpisodeType is a Situational tag for the episode type.
+    //
+    // If an episode is a trailer or bonus content, use this tag.
+    //
+    // Use AddEpisodeType(...) to populate this field correctly.
+    IEpisodeType *IEpisodeType
+
+    // IBlock is a Situational tag to show or hide the status of the episode.
+    //
+    // If you want an episode removed from the Apple directory, use this tag.
+    //
+    // Specifying the tag with a "Yes" value prevents that episode from
+    // appearing in Apple Podcasts.
+    //
+    // For example, you might want to block a specific episode if you know
+    // that its content would otherwise cause the entire podcast to be
+    // removed from Apple Podcasts.
+    //
+    // Specifying any value other than Yes has no effect.
+    IBlock string `xml:"itunes:block,omitempty"`
+
+    Author             *Author `xml:"-"`
+    AuthorFormatted    string  `xml:"author,omitempty"`
+    Category           string  `xml:"category,omitempty"`
+    Comments           string  `xml:"comments,omitempty"`
+    IAuthor            string  `xml:"itunes:author,omitempty"`
+    IIsClosedCaptioned string  `xml:"itunes:isClosedCaptioned,omitempty"`
+    IOrder             string  `xml:"itunes:order,omitempty"`
+    ISubtitle          string  `xml:"itunes:subtitle,omitempty"`
     ISummary           *ISummary
     IImage             *IImage
-    IDuration          string `xml:"itunes:duration,omitempty"`
-    IExplicit          string `xml:"itunes:explicit,omitempty"`
-    IIsClosedCaptioned string `xml:"itunes:isClosedCaptioned,omitempty"`
-    IOrder             string `xml:"itunes:order,omitempty"`
+    Source             string `xml:"source,omitempty"`
 }
+
 ```
 Item represents a single entry in a podcast.
 
@@ -627,43 +643,69 @@ Recommendations:
 - Always set an Enclosure.Length, to be nice to your downloaders.
 - Use Enclosure.Type instead of setting TypeFormatted for valid extensions.
 
-### <a name="Item.AddDuration">func</a> (\*Item) [AddDuration](./item.go#L104)
+
+
+
+
+
+
+
+
+
+### <a name="Item.AddDescription">func</a> (\*Item) [AddDescription](./item.go#L266)
+``` go
+func (i *Item) AddDescription(d string)
+```
+AddDescription adds a rich-text description tag.
+
+Limit: 10000 characters
+
+Note that this field is a CDATA encoded field which allows for rich text
+such as html links: `<a href="<a href="http://www.apple.com">http://www.apple.com</a>">Apple</a>`.
+
+
+
+
+### <a name="Item.AddDuration">func</a> (\*Item) [AddDuration](./item.go#L271)
 ``` go
 func (i *Item) AddDuration(durationInSeconds int64)
 ```
 AddDuration adds the duration to the iTunes duration field.
 
-#### Example:
 
-<details>
-<summary>Click to expand code.</summary>
 
-```go
-i := podcast.Item{
-	    Title:       "item title",
-	    Description: "item desc",
-	    Link:        "item link",
-	}
-	d := int64(533)
-	
-	// add the Duration in Seconds
-	i.AddDuration(d)
-	
-	fmt.Println(i.IDuration)
-	// Output:
-	// 8:53
-```
 
-</details>
-
-### <a name="Item.AddEnclosure">func</a> (\*Item) [AddEnclosure](./item.go#L54-L55)
+### <a name="Item.AddEnclosure">func</a> (\*Item) [AddEnclosure](./item.go#L173-L174)
 ``` go
 func (i *Item) AddEnclosure(
     url string, enclosureType EnclosureType, lengthInBytes int64)
 ```
 AddEnclosure adds the downloadable asset to the podcast Item.
 
-### <a name="Item.AddImage">func</a> (\*Item) [AddImage](./item.go#L72)
+
+
+
+### <a name="Item.AddEpisode">func</a> (\*Item) [AddEpisode](./item.go#L185)
+``` go
+func (i *Item) AddEpisode()
+```
+AddEpisode adds the situational tags with rules to iTunes' episodes.
+Using this function will ensure a properly formatted episode has been
+added to the feed in compliance to iTunes' requirements.
+
+
+
+
+### <a name="Item.AddEpisodeType">func</a> (\*Item) [AddEpisodeType](./item.go#L190)
+``` go
+func (i *Item) AddEpisodeType(episodeType EpisodeType)
+```
+AddEpisodeType adds the Apple Podcasts episode type.
+
+
+
+
+### <a name="Item.AddImage">func</a> (\*Item) [AddImage](./item.go#L234)
 ``` go
 func (i *Item) AddImage(url string)
 ```
@@ -677,7 +719,10 @@ extensions (.jpg, .png), and in the RGB colorspace. To optimize
 images for mobile devices, Apple recommends compressing your
 image files.
 
-### <a name="Item.AddPubDate">func</a> (\*Item) [AddPubDate](./item.go#L81)
+
+
+
+### <a name="Item.AddPubDate">func</a> (\*Item) [AddPubDate](./item.go#L243)
 ``` go
 func (i *Item) AddPubDate(datetime time.Time)
 ```
@@ -685,43 +730,10 @@ AddPubDate adds the datetime as a parsed PubDate.
 
 UTC time is used by default.
 
-#### Example:
 
-<details>
-<summary>Click to expand code.</summary>
 
-```go
-p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
-	i := podcast.Item{
-	    Title:       "item title",
-	    Description: "item desc",
-	    Link:        "item link",
-	}
-	d := pubDate.AddDate(0, 0, -11)
-	
-	// add the pub date
-	i.AddPubDate(d)
-	
-	// before adding
-	if !i.PubDate.IsZero() {
-	    fmt.Println(i.PubDateFormatted, i.PubDate)
-	}
-	
-	// this should not override with Podcast.PubDate
-	if _, err := p.AddItem(i); err != nil {
-	    fmt.Println(err)
-	}
-	
-	// after adding item
-	fmt.Println(i.PubDateFormatted, i.PubDate)
-	// Output:
-	// Tue, 24 Jan 2017 08:21:52 +0000 2017-01-24 08:21:52 +0000 UTC
-	// Tue, 24 Jan 2017 08:21:52 +0000 2017-01-24 08:21:52 +0000 UTC
-```
 
-</details>
-
-### <a name="Item.AddSummary">func</a> (\*Item) [AddSummary](./item.go#L92)
+### <a name="Item.AddSummary">func</a> (\*Item) [AddSummary](./item.go#L254)
 ``` go
 func (i *Item) AddSummary(summary string)
 ```
@@ -732,28 +744,99 @@ Limit: 4000 characters
 Note that this field is a CDATA encoded field which allows for rich text
 such as html links: `<a href="<a href="http://www.apple.com">http://www.apple.com</a>">Apple</a>`.
 
-## <a name="Podcast">type</a> [Podcast](./podcast.go#L20-L59)
+
+
+
+## <a name="ItemValidationError">type</a> [ItemValidationError](./podcast.go#L31-L34)
+``` go
+type ItemValidationError struct {
+    Title string
+    Err   error
+}
+
+```
+ItemValidationError describes why an item could not be added to a podcast.
+
+
+
+
+
+
+
+
+
+
+### <a name="ItemValidationError.Error">func</a> (\*ItemValidationError) [Error](./podcast.go#L37)
+``` go
+func (e *ItemValidationError) Error() string
+```
+Error returns a human-readable item validation message.
+
+
+
+
+### <a name="ItemValidationError.Unwrap">func</a> (\*ItemValidationError) [Unwrap](./podcast.go#L51)
+``` go
+func (e *ItemValidationError) Unwrap() error
+```
+Unwrap returns the underlying validation error.
+
+
+
+
+## <a name="Podcast">type</a> [Podcast](./podcast.go#L59-L131)
 ``` go
 type Podcast struct {
-    XMLName        xml.Name `xml:"channel"`
-    Title          string   `xml:"title"`
-    Link           string   `xml:"link"`
-    Description    string   `xml:"description"`
-    Category       string   `xml:"category,omitempty"`
-    Cloud          string   `xml:"cloud,omitempty"`
-    Copyright      string   `xml:"copyright,omitempty"`
-    Docs           string   `xml:"docs,omitempty"`
-    Generator      string   `xml:"generator,omitempty"`
-    Language       string   `xml:"language,omitempty"`
-    LastBuildDate  string   `xml:"lastBuildDate,omitempty"`
-    ManagingEditor string   `xml:"managingEditor,omitempty"`
-    PubDate        string   `xml:"pubDate,omitempty"`
-    Rating         string   `xml:"rating,omitempty"`
-    SkipHours      string   `xml:"skipHours,omitempty"`
-    SkipDays       string   `xml:"skipDays,omitempty"`
-    TTL            int      `xml:"ttl,omitempty"`
-    WebMaster      string   `xml:"webMaster,omitempty"`
+    XMLName xml.Name `xml:"channel"`
+
+    // Title is the show title.
+    //
+    // This is a required tag.
+    //
+    // It’s important to have a clear, concise name for your podcast. Make your
+    // title specific. A show titled Our Community Bulletin is too vague to
+    // attract many subscribers, no matter how compelling the content.
+    //
+    // Pay close attention to the title as Apple Podcasts uses this field fo
+    // search.
+    //
+    // If you include a long list of keywords in an attempt to game podcast
+    // search, your show may be removed from the Apple directory.
+    Title string `xml:"title"`
+
+    // Link is the associated with a podcast.
+    //
+    // Do not specify HTML here.  Use RAW https:// urls.
+    Link string `xml:"link"`
+
+    // Description is text containing one or more sentences describing
+    // your podcast to potential listeners.
+    //
+    // This is a required tag.
+    //
+    // Limit: 4000 bytes
+    //
+    // Note that this field is a CDATA encoded field which allows for rich text
+    // such as html links: `<a href="http://www.apple.com">Apple</a>`.
+    //
+    // Use podcast.New(...) to populate this field correctly.
+    Description Description `xml:"description"`
+
+    Category       string `xml:"category,omitempty"`
+    Cloud          string `xml:"cloud,omitempty"`
+    Copyright      string `xml:"copyright,omitempty"`
+    Docs           string `xml:"docs,omitempty"`
+    Generator      string `xml:"generator,omitempty"`
+    Language       string `xml:"language,omitempty"`
+    LastBuildDate  string `xml:"lastBuildDate,omitempty"`
+    ManagingEditor string `xml:"managingEditor,omitempty"`
+    PubDate        string `xml:"pubDate,omitempty"`
     Image          *Image
+    Rating         string `xml:"rating,omitempty"`
+    SkipHours      string `xml:"skipHours,omitempty"`
+    SkipDays       string `xml:"skipDays,omitempty"`
+    TTL            int    `xml:"ttl,omitempty"`
+    WebMaster      string `xml:"webMaster,omitempty"`
     TextInput      *TextInput
     AtomLink       *AtomLink
 
@@ -761,22 +844,32 @@ type Podcast struct {
     IAuthor     string `xml:"itunes:author,omitempty"`
     ISubtitle   string `xml:"itunes:subtitle,omitempty"`
     ISummary    *ISummary
-    IBlock      string `xml:"itunes:block,omitempty"`
     IImage      *IImage
-    IDuration   string  `xml:"itunes:duration,omitempty"`
-    IExplicit   string  `xml:"itunes:explicit,omitempty"`
-    IComplete   string  `xml:"itunes:complete,omitempty"`
-    INewFeedURL string  `xml:"itunes:new-feed-url,omitempty"`
-    IOwner      *Author // Author is formatted for itunes as-is
+    IExplicit   string `xml:"itunes:explicit,omitempty"`
+    IComplete   string `xml:"itunes:complete,omitempty"`
+    INewFeedURL string `xml:"itunes:new-feed-url,omitempty"`
+    IBlock      string `xml:"itunes:block,omitempty"`
+    IDuration   string `xml:"itunes:duration,omitempty"`
+    IType       *IType
+    IOwner      *Author `xml:"itunes:owner,omitempty"`
     ICategories []*ICategory
+    ITitle      string `xml:"itunes:title,omitempty"`
 
+    // Items is a collection of 0..n episodes for this podcast.
     Items []*Item
     // contains filtered or unexported fields
 }
+
 ```
 Podcast represents a podcast.
 
-### <a name="New">func</a> [New](./podcast.go#L65-L66)
+
+
+
+
+
+
+### <a name="New">func</a> [New](./podcast.go#L137-L138)
 ``` go
 func New(title, link, description string,
     pubDate, lastBuildDate time.Time) Podcast
@@ -786,33 +879,20 @@ New instantiates a Podcast with required parameters.
 Zero-value time fields default to the current UTC time; non-zero values are
 formatted to the expected proper formats.
 
-#### Example:
 
-<details>
-<summary>Click to expand code.</summary>
 
-```go
-ti, l, d := "title", "link", "description"
-	
-	// instantiate a new Podcast
-	p := podcast.New(ti, l, d, pubDate, updatedDate)
-	
-	fmt.Println(p.Title, p.Link, p.Description, p.Language)
-	fmt.Println(p.PubDate, p.LastBuildDate)
-	// Output:
-	// title link description en-us
-	// Sat, 04 Feb 2017 08:21:52 +0000 Mon, 06 Feb 2017 08:21:52 +0000
-```
 
-</details>
 
-### <a name="Podcast.AddAtomLink">func</a> (\*Podcast) [AddAtomLink](./podcast.go#L94)
+### <a name="Podcast.AddAtomLink">func</a> (\*Podcast) [AddAtomLink](./podcast.go#L174)
 ``` go
 func (p *Podcast) AddAtomLink(href string)
 ```
 AddAtomLink adds a FQDN reference to an atom feed.
 
-### <a name="Podcast.AddAuthor">func</a> (\*Podcast) [AddAuthor](./podcast.go#L82)
+
+
+
+### <a name="Podcast.AddAuthor">func</a> (\*Podcast) [AddAuthor](./podcast.go#L156)
 ``` go
 func (p *Podcast) AddAuthor(name, email string)
 ```
@@ -820,33 +900,10 @@ AddAuthor adds the specified Author to the podcast's ManagingEditor and
 iTunes author tags. When both name and email are supplied, it also sets the
 structured iTunes owner contact.
 
-#### Example:
 
-<details>
-<summary>Click to expand code.</summary>
 
-```go
-p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
-	
-	// add the Author
-	p.AddAuthor("the name", "me@test.com")
-	
-	fmt.Println(p.ManagingEditor)
-	fmt.Println(p.IAuthor)
-	if p.IOwner != nil {
-	    fmt.Println(p.IOwner.Name)
-	    fmt.Println(p.IOwner.Email)
-	}
-	// Output:
-	// me@test.com (the name)
-	// me@test.com (the name)
-	// the name
-	// me@test.com
-```
 
-</details>
-
-### <a name="Podcast.AddCategory">func</a> (\*Podcast) [AddCategory](./podcast.go#L183)
+### <a name="Podcast.AddCategory">func</a> (\*Podcast) [AddCategory](./podcast.go#L198)
 ``` go
 func (p *Podcast) AddCategory(category string, subCategories []string)
 ```
@@ -858,100 +915,27 @@ Calling this method multiple times will APPEND the category to the existing
 list, if any, including ICategory.
 
 Note that Apple iTunes has a specific list of categories that only can be
-used and will invalidate the feed if deviated from the list.  That list is
-as follows.
+used and will invalidate the feed if deviated from the list.  The list
+changes occasionally.  Please refer to the following link for the updated
+list:
 
-	* Arts
-	  * Design
-	  * Fashion & Beauty
-	  * Food
-	  * Literature
-	  * Performing Arts
-	  * Visual Arts
-	* Business
-	  * Business News
-	  * Careers
-	  * Investing
-	  * Management & Marketing
-	  * Shopping
-	* Comedy
-	* Education
-	  * Education Technology
-	  * Higher Education
-	  * K-12
-	  * Language Courses
-	  * Training
-	* Games & Hobbies
-	  * Automotive
-	  * Aviation
-	  * Hobbies
-	  * Other Games
-	  * Video Games
-	* Government & Organizations
-	  * Local
-	  * National
-	  * Non-Profit
-	  * Regional
-	* Health
-	  * Alternative Health
-	  * Fitness & Nutrition
-	  * Self-Help
-	  * Sexuality
-	* Kids & Family
-	* Music
-	* News & Politics
-	* Religion & Spirituality
-	  * Buddhism
-	  * Christianity
-	  * Hinduism
-	  * Islam
-	  * Judaism
-	  * Other
-	  * Spirituality
-	* Science & Medicine
-	  * Medicine
-	  * Natural Sciences
-	  * Social Sciences
-	* Society & Culture
-	  * History
-	  * Personal Journals
-	  * Philosophy
-	  * Places & Travel
-	* Sports & Recreation
-	  * Amateur
-	  * College & High School
-	  * Outdoor
-	  * Professional
-	* Technology
-	  * Gadgets
-	  * Podcasting
-	  * Software How-To
-	  * Tech News
-	* TV & Film
+<a href="https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12">https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12</a>
 
-#### Example:
 
-<details>
-<summary>Click to expand code.</summary>
 
-```go
-p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
-	
-	// add the Category
-	p.AddCategory("Bombay", nil)
-	p.AddCategory("American", []string{"Longhair", "Shorthair"})
-	p.AddCategory("Siamese", nil)
-	
-	fmt.Println(len(p.ICategories), len(p.ICategories[1].ICategories))
-	fmt.Println(p.Category)
-	// Output:
-	// 3 2
-	// Bombay,American,Siamese
+
+### <a name="Podcast.AddChannelType">func</a> (\*Podcast) [AddChannelType](./podcast.go#L484)
+``` go
+func (p *Podcast) AddChannelType(channelType string)
 ```
+AddChannelType adds the Apple Podcasts show type from a string.
 
-</details>
+Deprecated: use AddType with podcast.Episodic or podcast.Serial.
 
-### <a name="Podcast.AddImage">func</a> (\*Podcast) [AddImage](./podcast.go#L214)
+
+
+
+### <a name="Podcast.AddImage">func</a> (\*Podcast) [AddImage](./podcast.go#L232)
 ``` go
 func (p *Podcast) AddImage(url string)
 ```
@@ -964,29 +948,10 @@ extensions (.jpg, .png), and in the RGB colorspace. To optimize
 images for mobile devices, Apple recommends compressing your
 image files.
 
-#### Example:
 
-<details>
-<summary>Click to expand code.</summary>
 
-```go
-p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
-	
-	// add the Image
-	p.AddImage("http://example.com/image.jpg")
-	
-	if p.Image != nil && p.IImage != nil {
-	    fmt.Println(p.Image.URL)
-	    fmt.Println(p.IImage.HREF)
-	}
-	// Output:
-	// http://example.com/image.jpg
-	// http://example.com/image.jpg
-```
 
-</details>
-
-### <a name="Podcast.AddItem">func</a> (\*Podcast) [AddItem](./podcast.go#L267)
+### <a name="Podcast.AddItem">func</a> (\*Podcast) [AddItem](./podcast.go#L284)
 ``` go
 func (p *Podcast) AddItem(i Item) (int, error)
 ```
@@ -1004,80 +969,41 @@ to Podcast and iTunes specifications.
 
 Article minimal requirements are:
 
-	* Title
-	* Description
-	* Link
+
+	- Title
+	- Description
+	- Link
 
 Audio, Video and Downloads minimal requirements are:
 
-	* Title
-	* Description
-	* Enclosure (HREF, Type and Length all required)
+
+	- Title
+	- Description
+	- Enclosure (HREF, Type and Length all required)
 
 The following fields are always overwritten (don't set them):
 
-	* GUID
-	* PubDateFormatted
-	* AuthorFormatted
-	* Enclosure.TypeFormatted
-	* Enclosure.LengthFormatted
+
+	- GUID
+	- PubDateFormatted
+	- AuthorFormatted
+	- Enclosure.TypeFormatted
+	- Enclosure.LengthFormatted
 
 Recommendations:
 
-	* Just set the minimal fields: the rest get set for you.
-	* Always set an Enclosure.Length, to be nice to your downloaders.
-	* Follow Apple's best practices to enrich your podcasts:
+
+	- Just set the minimal fields: the rest get set for you.
+	- Always set an Enclosure.Length, to be nice to your downloaders.
+	- Follow Apple's best practices to enrich your podcasts:
 	  <a href="https://help.apple.com/itc/podcasts_connect/#/itc2b3780e76">https://help.apple.com/itc/podcasts_connect/#/itc2b3780e76</a>
-	* For specifications of itunes tags, see:
+	- For specifications of itunes tags, see:
 	  <a href="https://help.apple.com/itc/podcasts_connect/#/itcb54353390">https://help.apple.com/itc/podcasts_connect/#/itcb54353390</a>
 
-#### Example:
 
-<details>
-<summary>Click to expand code.</summary>
 
-```go
-p := podcast.New("title", "link", "description", pubDate, updatedDate)
-	p.AddAuthor("the name", "me@test.com")
-	p.AddImage("http://example.com/image.jpg")
-	
-	// create an Item
-	date := pubDate.AddDate(0, 0, 77)
-	item := podcast.Item{
-	    Title:       "Episode 1",
-	    Description: "Description for Episode 1",
-	    ISubtitle:   "A simple episode 1",
-	    PubDate:     date,
-	}
-	item.AddEnclosure(
-	    "http://example.com/1.mp3",
-	    podcast.MP3,
-	    183,
-	)
-	item.AddSummary("See more at <a href=\"http://example.com\">Here</a>")
-	
-	// add the Item
-	if _, err := p.AddItem(item); err != nil {
-	    fmt.Println("item validation error: " + err.Error())
-	}
-	
-	if len(p.Items) != 1 {
-	    fmt.Println("expected 1 item in the collection")
-	}
-	pp := p.Items[0]
-	fmt.Println(
-	    pp.GUID, pp.Title, pp.Link, pp.Description, pp.Author,
-	    pp.AuthorFormatted, pp.Category, pp.Comments, pp.Source,
-	    pp.PubDate, pp.PubDateFormatted, *pp.Enclosure,
-	    pp.IAuthor, pp.IDuration, pp.IExplicit, pp.IIsClosedCaptioned,
-	    pp.IOrder, pp.ISubtitle, pp.ISummary)
-	// Output:
-	// http://example.com/1.mp3 Episode 1 http://example.com/1.mp3 Description for Episode 1 &{{ }  me@test.com (the name)}     2017-04-22 08:21:52 +0000 UTC Sat, 22 Apr 2017 08:21:52 +0000 {{ } http://example.com/1.mp3 183 183 audio/mpeg audio/mpeg} me@test.com (the name)     A simple episode 1 &{{ } See more at <a href="http://example.com">Here</a>}
-```
 
-</details>
-
-### <a name="Podcast.AddLastBuildDate">func</a> (\*Podcast) [AddLastBuildDate](./podcast.go#L344)
+### <a name="Podcast.AddLastBuildDate">func</a> (\*Podcast) [AddLastBuildDate](./podcast.go#L364)
 ``` go
 func (p *Podcast) AddLastBuildDate(datetime time.Time)
 ```
@@ -1085,25 +1011,10 @@ AddLastBuildDate adds the datetime as a parsed PubDate.
 
 UTC time is used by default.
 
-#### Example:
 
-<details>
-<summary>Click to expand code.</summary>
 
-```go
-p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
-	d := pubDate.AddDate(0, 0, -7)
-	
-	p.AddLastBuildDate(d)
-	
-	fmt.Println(p.LastBuildDate)
-	// Output:
-	// Sat, 28 Jan 2017 08:21:52 +0000
-```
 
-</details>
-
-### <a name="Podcast.AddPubDate">func</a> (\*Podcast) [AddPubDate](./podcast.go#L337)
+### <a name="Podcast.AddPubDate">func</a> (\*Podcast) [AddPubDate](./podcast.go#L357)
 ``` go
 func (p *Podcast) AddPubDate(datetime time.Time)
 ```
@@ -1111,25 +1022,10 @@ AddPubDate adds the datetime as a parsed PubDate.
 
 UTC time is used by default.
 
-#### Example:
 
-<details>
-<summary>Click to expand code.</summary>
 
-```go
-p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
-	d := pubDate.AddDate(0, 0, -5)
-	
-	p.AddPubDate(d)
-	
-	fmt.Println(p.PubDate)
-	// Output:
-	// Mon, 30 Jan 2017 08:21:52 +0000
-```
 
-</details>
-
-### <a name="Podcast.AddSubTitle">func</a> (\*Podcast) [AddSubTitle](./podcast.go#L353)
+### <a name="Podcast.AddSubTitle">func</a> (\*Podcast) [AddSubTitle](./podcast.go#L373)
 ``` go
 func (p *Podcast) AddSubTitle(subTitle string)
 ```
@@ -1137,9 +1033,12 @@ AddSubTitle adds the iTunes subtitle that is displayed with the title
 in iTunes.
 
 Note that this field should be just a few words long according to Apple.
-This method will truncate the string to 64 chars if too long with "..."
+This method will truncate the string to 64 chars if too long with "...".
 
-### <a name="Podcast.AddSummary">func</a> (\*Podcast) [AddSummary](./podcast.go#L371)
+
+
+
+### <a name="Podcast.AddSummary">func</a> (\*Podcast) [AddSummary](./podcast.go#L386)
 ``` go
 func (p *Podcast) AddSummary(summary string)
 ```
@@ -1150,137 +1049,97 @@ Limit: 4000 characters
 Note that this field is a CDATA encoded field which allows for rich text
 such as html links: `<a href="<a href="http://www.apple.com">http://www.apple.com</a>">Apple</a>`.
 
-#### Example:
 
-<details>
-<summary>Click to expand code.</summary>
 
-```go
-p := podcast.New("title", "link", "description", time.Time{}, time.Time{})
-	
-	// add a summary
-	p.AddSummary(`A very cool podcast with a long summary!
-	
-	See more at our website: <a href="http://example.com">example.com</a>
-	`)
-	
-	if p.ISummary != nil {
-	    fmt.Println(p.ISummary.Text)
-	}
-	// Output:
-	// A very cool podcast with a long summary!
-	//
-	// See more at our website: <a href="http://example.com">example.com</a>
+
+### <a name="Podcast.AddType">func</a> (\*Podcast) [AddType](./podcast.go#L477)
+``` go
+func (p *Podcast) AddType(podcastType PodcastType)
 ```
+AddType adds the Apple Podcasts show type.
 
-</details>
 
-### <a name="Podcast.Bytes">func</a> (\*Podcast) [Bytes](./podcast.go#L386)
+
+
+### <a name="Podcast.Bytes">func</a> (\*Podcast) [Bytes](./podcast.go#L396)
 ``` go
 func (p *Podcast) Bytes() []byte
 ```
 Bytes returns an encoded []byte slice.
 
-#### Example:
 
-<details>
-<summary>Click to expand code.</summary>
 
-```go
-p := podcast.New(
-	    "eduncan911 Podcasts",
-	    "http://eduncan911.com/",
-	    "An example Podcast",
-	    pubDate, updatedDate,
-	)
-	p.AddAuthor("Jane Doe", "me@janedoe.com")
-	p.AddImage("http://janedoe.com/i.jpg")
-	p.AddSummary(`A very cool podcast with a long summary using Bytes()!
-	
-	See more at our website: <a href="http://example.com">example.com</a>
-	`)
-	
-	for i := int64(5); i < 7; i++ {
-	    n := strconv.FormatInt(i, 10)
-	    d := pubDate.AddDate(0, 0, int(i+3))
-	
-	    item := podcast.Item{
-	        Title:       "Episode " + n,
-	        Link:        "http://example.com/" + n + ".mp3",
-	        Description: "Description for Episode " + n,
-	        PubDate:     d,
-	    }
-	    if _, err := p.AddItem(item); err != nil {
-	        fmt.Println(item.Title, ": error", err.Error())
-	        break
-	    }
-	}
-	
-	// call Podcast.Bytes() to return a byte array
-	os.Stdout.Write(p.Bytes())
-	
-	// Output:
-	// <?xml version="1.0" encoding="UTF-8"?>
-	// <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
-	//   <channel>
-	//     <title>eduncan911 Podcasts</title>
-	//     <link>http://eduncan911.com/</link>
-	//     <description>An example Podcast</description>
-	//     <generator>go podcast v2.0.0 (github.com/hbmartin/podcast-rss-generator/v2)</generator>
-	//     <language>en-us</language>
-	//     <lastBuildDate>Mon, 06 Feb 2017 08:21:52 +0000</lastBuildDate>
-	//     <managingEditor>me@janedoe.com (Jane Doe)</managingEditor>
-	//     <pubDate>Sat, 04 Feb 2017 08:21:52 +0000</pubDate>
-	//     <image>
-	//       <url>http://janedoe.com/i.jpg</url>
-	//       <title>eduncan911 Podcasts</title>
-	//       <link>http://eduncan911.com/</link>
-	//     </image>
-	//     <itunes:author>me@janedoe.com (Jane Doe)</itunes:author>
-	//     <itunes:summary><![CDATA[A very cool podcast with a long summary using Bytes()!
-	//
-	// See more at our website: <a href="http://example.com">example.com</a>
-	// ]]></itunes:summary>
-	//     <itunes:image href="http://janedoe.com/i.jpg"></itunes:image>
-	//     <itunes:owner>
-	//       <itunes:name>Jane Doe</itunes:name>
-	//       <itunes:email>me@janedoe.com</itunes:email>
-	//     </itunes:owner>
-	//     <item>
-	//       <guid>http://example.com/5.mp3</guid>
-	//       <title>Episode 5</title>
-	//       <link>http://example.com/5.mp3</link>
-	//       <description>Description for Episode 5</description>
-	//       <pubDate>Sun, 12 Feb 2017 08:21:52 +0000</pubDate>
-	//       <itunes:author>me@janedoe.com (Jane Doe)</itunes:author>
-	//       <itunes:image href="http://janedoe.com/i.jpg"></itunes:image>
-	//     </item>
-	//     <item>
-	//       <guid>http://example.com/6.mp3</guid>
-	//       <title>Episode 6</title>
-	//       <link>http://example.com/6.mp3</link>
-	//       <description>Description for Episode 6</description>
-	//       <pubDate>Mon, 13 Feb 2017 08:21:52 +0000</pubDate>
-	//       <itunes:author>me@janedoe.com (Jane Doe)</itunes:author>
-	//       <itunes:image href="http://janedoe.com/i.jpg"></itunes:image>
-	//     </item>
-	//   </channel>
-	// </rss>
-```
 
-</details>
-
-### <a name="Podcast.Encode">func</a> (\*Podcast) [Encode](./podcast.go#L391)
+### <a name="Podcast.Encode">func</a> (\*Podcast) [Encode](./podcast.go#L401)
 ``` go
 func (p *Podcast) Encode(w io.Writer) error
 ```
 Encode writes the bytes to the io.Writer stream in RSS 2.0 specification.
 
-### <a name="Podcast.String">func</a> (\*Podcast) [String](./podcast.go#L410)
+
+
+
+### <a name="Podcast.String">func</a> (\*Podcast) [String](./podcast.go#L430)
 ``` go
 func (p *Podcast) String() string
 ```
 String encodes the Podcast state to a string.
+
+
+
+
+## <a name="PodcastType">type</a> [PodcastType](./type.go#L36)
+``` go
+type PodcastType int
+```
+PodcastType specifies the type of the podcast.
+
+Its values can be one of the following:
+
+Episodic (default). Specify episodic when episodes are intended to be
+consumed without any specific order. Apple Podcasts will present newest
+episodes first and display the publish date (required) of each episode.
+If organized into seasons, the newest season will be presented first
+- otherwise, episodes will be grouped by year published, newest first.
+
+For new subscribers, Apple Podcasts adds the newest, most recent episode
+in their Library.
+
+Serial. Specify serial when episodes are intended to be consumed in
+sequential order. Apple Podcasts will present the oldest episodes
+first and display the episode numbers (required) of each episode. If
+organized into seasons, the newest season will be presented first and
+<itunes:episode> numbers must be given for each episode.
+
+For new subscribers, Apple Podcasts adds the first episode to their
+Library, or the entire current season if using seasons.
+
+
+``` go
+const (
+    Episodic PodcastType = iota
+    Serial
+)
+```
+Episodic and Serial are the supported PodcastType values.
+
+
+
+
+
+
+
+
+
+
+### <a name="PodcastType.String">func</a> (PodcastType) [String](./type.go#L39)
+``` go
+func (pt PodcastType) String() string
+```
+String returns the Apple Podcasts encoding of the specified PodcastType.
+
+
+
 
 ## <a name="TextInput">type</a> [TextInput](./textinput.go#L6-L12)
 ``` go
@@ -1291,8 +1150,21 @@ type TextInput struct {
     Name        string   `xml:"name"`
     Link        string   `xml:"link"`
 }
+
 ```
 TextInput represents text inputs.
 
-- - -
-Generated by [godoc2ghmd](https://github.com/eduncan911/godoc2ghmd)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

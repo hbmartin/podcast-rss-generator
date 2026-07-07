@@ -6,3 +6,5 @@ suppressions
 workdir
 podcast-fuzz.zip
 reviews_triage/
+.agents/skills/
+skills-lock.json

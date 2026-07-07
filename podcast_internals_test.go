@@ -12,13 +12,19 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+type valueWriter struct{}
+
+func (valueWriter) Write(p []byte) (int, error) {
+	return len(p), nil
+}
+
 func TestStringError(t *testing.T) {
 	t.Parallel()
 
 	// arrange
 	e := "TestEncodeError error result"
 	p := Podcast{}
-	p.encode = func(w io.Writer, o any) error {
+	p.encode = func(_ io.Writer, _ any) error {
 		return errors.New(e)
 	}
 
@@ -43,6 +49,125 @@ func TestEncodeError(t *testing.T) {
 
 	// assert
 	assert.Error(t, err)
+}
+
+func TestIsNilWriter(t *testing.T) {
+	t.Parallel()
+
+	var nilBuffer *bytes.Buffer
+
+	tests := []struct {
+		name string
+		w    io.Writer
+		want bool
+	}{
+		{
+			name: "nil",
+			w:    nil,
+			want: true,
+		},
+		{
+			name: "typed nil",
+			w:    nilBuffer,
+			want: true,
+		},
+		{
+			name: "pointer writer",
+			w:    &bytes.Buffer{},
+		},
+		{
+			name: "value writer",
+			w:    valueWriter{},
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			assert.Equal(t, tt.want, isNilWriter(tt.w))
+		})
+	}
+}
+
+func TestTruncateRunes(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name  string
+		in    string
+		limit int
+		want  string
+	}{
+		{
+			name:  "non-positive limit",
+			in:    "abc",
+			limit: 0,
+			want:  "",
+		},
+		{
+			name:  "within limit",
+			in:    "épisode",
+			limit: 7,
+			want:  "épisode",
+		},
+		{
+			name:  "truncates by runes",
+			in:    "épisode",
+			limit: 3,
+			want:  "épi",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			assert.Equal(t, tt.want, truncateRunes(tt.in, tt.limit))
+		})
+	}
+}
+
+func TestTruncateRunesWithSuffix(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name   string
+		in     string
+		limit  int
+		suffix string
+		want   string
+	}{
+		{
+			name:   "within limit",
+			in:     "short",
+			limit:  10,
+			suffix: "...",
+			want:   "short",
+		},
+		{
+			name:   "suffix reaches limit",
+			in:     "episode",
+			limit:  2,
+			suffix: "...",
+			want:   "..",
+		},
+		{
+			name:   "truncates with suffix",
+			in:     "episode",
+			limit:  5,
+			suffix: "...",
+			want:   "ep...",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			assert.Equal(t, tt.want, truncateRunesWithSuffix(tt.in, tt.limit, tt.suffix))
+		})
+	}
 }
 
 func TestParseDuration(t *testing.T) {
