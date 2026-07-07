@@ -29,6 +29,11 @@ var (
 	ErrEnclosureURLRequired     = errors.New("enclosure url is required")
 	ErrEnclosureTypeRequired    = errors.New("enclosure type is required")
 	ErrLinkRequired             = errors.New("link is required when not using enclosure")
+
+	// Channel-level validation errors returned by Podcast.Validate.
+	ErrChannelTitleRequired       = errors.New("channel title is required")
+	ErrChannelDescriptionRequired = errors.New("channel description is required")
+	ErrChannelLinkRequired        = errors.New("channel link is required")
 )
 
 // ItemValidationError describes why an item could not be added to a podcast.
@@ -115,14 +120,24 @@ type Podcast struct {
 	AtomLink       *AtomLink
 
 	// https://help.apple.com/itc/podcasts_connect/#/itcb54353390
-	IAuthor     string `xml:"itunes:author,omitempty"`
-	ISubtitle   string `xml:"itunes:subtitle,omitempty"`
-	ISummary    *ISummary
-	IImage      *IImage
-	IExplicit   string `xml:"itunes:explicit,omitempty"`
-	IComplete   string `xml:"itunes:complete,omitempty"`
+	IAuthor   string `xml:"itunes:author,omitempty"`
+	ISubtitle string `xml:"itunes:subtitle,omitempty"`
+	ISummary  *ISummary
+	IImage    *IImage
+
+	// IExplicit is the parental-advisory flag. Use SetExplicit to populate it.
+	IExplicit *explicitFlag `xml:"itunes:explicit,omitempty"`
+
+	// IComplete marks the feed as finished (no future episodes). Use
+	// SetComplete to populate it; a false value omits the tag.
+	IComplete *yesFlag `xml:"itunes:complete,omitempty"`
+
 	INewFeedURL string `xml:"itunes:new-feed-url,omitempty"`
-	IBlock      string `xml:"itunes:block,omitempty"`
+
+	// IBlock hides the entire show from the Apple directory. Use SetBlock to
+	// populate it; a false value omits the tag.
+	IBlock *yesFlag `xml:"itunes:block,omitempty"`
+
 	IDuration   string `xml:"itunes:duration,omitempty"`
 	IType       *IType
 	IOwner      *Author `xml:"itunes:owner,omitempty"`
@@ -158,6 +173,9 @@ func New(title, link, description string,
 // AddAuthor adds the specified Author to the podcast's ManagingEditor and
 // iTunes author tags. When both name and email are supplied, it also sets the
 // structured iTunes owner contact.
+//
+// If email is empty this method is a no-op, since email is the required part
+// of an RSS author value.
 func (p *Podcast) AddAuthor(name, email string) {
 	if len(email) == 0 {
 		return
@@ -176,6 +194,8 @@ func (p *Podcast) AddAuthor(name, email string) {
 }
 
 // AddAtomLink adds a FQDN reference to an atom feed.
+//
+// If href is empty this method is a no-op.
 func (p *Podcast) AddAtomLink(href string) {
 	if len(href) == 0 {
 		return
@@ -200,6 +220,9 @@ func (p *Podcast) AddAtomLink(href string) {
 // list:
 //
 // https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12
+//
+// If category is empty this method is a no-op. Empty entries in subCategories
+// are skipped.
 func (p *Podcast) AddCategory(category string, subCategories []string) {
 	if len(category) == 0 {
 		return
@@ -234,6 +257,8 @@ func (p *Podcast) AddCategory(category string, subCategories []string) {
 // extensions (.jpg, .png), and in the RGB colorspace. To optimize
 // images for mobile devices, Apple recommends compressing your
 // image files.
+//
+// If url is empty this method is a no-op.
 func (p *Podcast) AddImage(url string) {
 	if len(url) == 0 {
 		return
@@ -286,6 +311,12 @@ func (p *Podcast) AddImage(url string) {
 //     https://help.apple.com/itc/podcasts_connect/#/itc2b3780e76
 //   - For specifications of itunes tags, see:
 //     https://help.apple.com/itc/podcasts_connect/#/itcb54353390
+//
+// The Item is taken by value and its nested pointer fields (Enclosure, Author,
+// IImage, ISummary, IEpisodeType) are deep-cloned before storage. As a result
+// the stored episode is a snapshot: mutating the caller's Item, or the structs
+// it points at, after AddItem returns does NOT change the feed. Set every
+// field before calling AddItem, or re-add the Item to apply later changes.
 func (p *Podcast) AddItem(i Item) (int, error) {
 	if p == nil {
 		return 0, fmt.Errorf("adding item: %w", ErrPodcastRequired)
@@ -293,19 +324,8 @@ func (p *Podcast) AddItem(i Item) (int, error) {
 
 	i = cloneItem(i)
 
-	// initial guards for required fields
-	if len(i.Title) == 0 || len(i.Description) == 0 {
-		return len(p.Items), newItemValidationError(i.Title, ErrTitleDescriptionRequired)
-	}
-	if i.Enclosure != nil {
-		if len(i.Enclosure.URL) == 0 {
-			return len(p.Items), newItemValidationError(i.Title, ErrEnclosureURLRequired)
-		}
-		if i.Enclosure.Type.String() == enclosureDefault {
-			return len(p.Items), newItemValidationError(i.Title, ErrEnclosureTypeRequired)
-		}
-	} else if len(i.Link) == 0 {
-		return len(p.Items), newItemValidationError(i.Title, ErrLinkRequired)
+	if err := validateItem(i); err != nil {
+		return len(p.Items), err
 	}
 
 	// corrective actions and overrides
@@ -356,6 +376,42 @@ func (p *Podcast) AddItem(i Item) (int, error) {
 	return len(p.Items), nil
 }
 
+// AddItems appends multiple episodes in order by calling AddItem for each. It
+// stops at the first item that fails validation and returns that error along
+// with the number of items successfully stored so far; on success it returns
+// the total item count. Each Item follows the same snapshot semantics as
+// AddItem.
+func (p *Podcast) AddItems(items ...Item) (int, error) {
+	if p == nil {
+		return 0, fmt.Errorf("adding items: %w", ErrPodcastRequired)
+	}
+	for _, item := range items {
+		if _, err := p.AddItem(item); err != nil {
+			return len(p.Items), err
+		}
+	}
+	return len(p.Items), nil
+}
+
+// validateItem enforces the required-field rules shared by AddItem and
+// Podcast.Validate.
+func validateItem(i Item) error {
+	if len(i.Title) == 0 || len(i.Description) == 0 {
+		return newItemValidationError(i.Title, ErrTitleDescriptionRequired)
+	}
+	if i.Enclosure != nil {
+		if len(i.Enclosure.URL) == 0 {
+			return newItemValidationError(i.Title, ErrEnclosureURLRequired)
+		}
+		if i.Enclosure.Type.String() == enclosureDefault {
+			return newItemValidationError(i.Title, ErrEnclosureTypeRequired)
+		}
+	} else if len(i.Link) == 0 {
+		return newItemValidationError(i.Title, ErrLinkRequired)
+	}
+	return nil
+}
+
 // AddPubDate adds the datetime as a parsed PubDate.
 //
 // UTC time is used by default.
@@ -375,6 +431,8 @@ func (p *Podcast) AddLastBuildDate(datetime time.Time) {
 //
 // Note that this field should be just a few words long according to Apple.
 // This method will truncate the string to 64 chars if too long with "...".
+//
+// If subTitle is empty this method is a no-op.
 func (p *Podcast) AddSubTitle(subTitle string) {
 	if len(subTitle) == 0 {
 		return
@@ -388,6 +446,8 @@ func (p *Podcast) AddSubTitle(subTitle string) {
 //
 // Note that this field is a CDATA encoded field which allows for rich text
 // such as html links: `<a href="http://www.apple.com">Apple</a>`.
+//
+// If summary is empty this method is a no-op.
 func (p *Podcast) AddSummary(summary string) {
 	if len(summary) == 0 {
 		return
@@ -483,6 +543,72 @@ func (p *Podcast) AddType(podcastType PodcastType) {
 	p.IType = &IType{Text: podcastType.String()}
 }
 
+// SetExplicit sets the itunes:explicit parental-advisory flag for the show. A
+// true value renders "true" (the Explicit badge); a false value renders
+// "false" (the Clean badge). Both are serialized.
+func (p *Podcast) SetExplicit(explicit bool) {
+	flag := explicitFlag(explicit)
+	p.IExplicit = &flag
+}
+
+// SetComplete marks whether the show is complete, meaning no further episodes
+// will be published. A true value renders "Yes"; a false value omits the tag,
+// which Apple treats as "not complete".
+func (p *Podcast) SetComplete(complete bool) {
+	if !complete {
+		p.IComplete = nil
+		return
+	}
+	flag := yesFlag(true)
+	p.IComplete = &flag
+}
+
+// SetBlock sets whether the entire show is hidden from the Apple directory. A
+// true value renders "Yes"; a false value omits the tag, which Apple treats as
+// "not blocked".
+func (p *Podcast) SetBlock(block bool) {
+	if !block {
+		p.IBlock = nil
+		return
+	}
+	flag := yesFlag(true)
+	p.IBlock = &flag
+}
+
+// Validate reports whether the podcast satisfies the channel- and item-level
+// requirements enforced by this package. It returns nil when the feed is
+// valid, or a joined error aggregating every problem found so callers can
+// surface all of them at once.
+//
+// Channel requirements are Title, Description and Link. Each item is validated
+// with the same rules AddItem applies, so a Podcast assembled entirely through
+// AddItem only needs its channel fields checked here.
+func (p *Podcast) Validate() error {
+	if p == nil {
+		return fmt.Errorf("validating podcast: %w", ErrPodcastRequired)
+	}
+
+	var errs []error
+	if len(p.Title) == 0 {
+		errs = append(errs, ErrChannelTitleRequired)
+	}
+	if len(p.Description) == 0 {
+		errs = append(errs, ErrChannelDescriptionRequired)
+	}
+	if len(p.Link) == 0 {
+		errs = append(errs, ErrChannelLinkRequired)
+	}
+	for _, it := range p.Items {
+		if it == nil {
+			continue
+		}
+		if err := validateItem(*it); err != nil {
+			errs = append(errs, err)
+		}
+	}
+	return errors.Join(errs...)
+}
+
 // AddChannelType adds the Apple Podcasts show type from a string.
 //
 // Deprecated: use AddType with podcast.Episodic or podcast.Serial.
@@ -541,6 +667,14 @@ func cloneItem(i Item) Item {
 	if i.IEpisodeType != nil {
 		episodeType := *i.IEpisodeType
 		i.IEpisodeType = &episodeType
+	}
+	if i.IExplicit != nil {
+		explicit := *i.IExplicit
+		i.IExplicit = &explicit
+	}
+	if i.IBlock != nil {
+		block := *i.IBlock
+		i.IBlock = &block
 	}
 	return i
 }
