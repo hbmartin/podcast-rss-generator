@@ -1,41 +1,106 @@
 version: "2"
+
 linters:
+  default: none
   enable:
+    - asasalint
+    - asciicheck
+    - bidichk
     - bodyclose
+    - canonicalheader
+    - containedctx
+    - contextcheck
+    - copyloopvar
+    - dupword
+    - durationcheck
+    - dupl
+    - err113
+    - errcheck
+    - errchkjson
     - errname
     - errorlint
-    - misspell
-    - nakedret
-    - prealloc
-    - unconvert
-    - whitespace
-    - staticcheck
-    - ineffassign
-    - modernize
-    - unused
-    - errcheck
+    - exhaustive
+    - exptostd
+    - fatcontext
     - forcetypeassert
+    - funlen
+    - gocheckcompilerdirectives
+    - gochecknoinits
+    - gocognit
     - gocritic
+    - gocyclo
+    - gomoddirectives
+    - goprintffuncname
     - gosec
     - govet
+    - ineffassign
+    - intrange
+    - iotamixing
+    - makezero
+    - mirror
+    - misspell
+    - mnd
+    - modernize
+    - nakedret
     - nilerr
+    - nilnesserr
+    - nilnil
+    - noctx
     - nolintlint
+    - nosprintfhostport
+    - perfsprint
+    - prealloc
+    - predeclared
+    - reassign
+    - recvcheck
     - revive
+    - rowserrcheck
+    - sqlclosecheck
+    - staticcheck
+    - tagalign
+    - testableexamples
+    - testpackage
     - testifylint
+    - thelper
+    - tparallel
+    - unconvert
+    - unused
+    - usestdlibvars
+    - usetesting
+    - wastedassign
+    - whitespace
+  settings:
+    errcheck:
+      check-blank: true
+      check-type-assertions: true
+    exhaustive:
+      default-signifies-exhaustive: true
+    funlen:
+      lines: 100
+      statements: 50
+    nolintlint:
+      require-explanation: true
+      require-specific: true
   exclusions:
     generated: lax
     presets:
       - comments
-      - common-false-positives
-      - legacy
-      - std-error-handling
     paths:
       - bin
       - docs
+    rules:
+      - path: podcast_internals_test\.go
+        linters:
+          - testpackage
+
 formatters:
   enable:
     - gofmt
+    - gofumpt
     - goimports
+  settings:
+    gofumpt:
+      extra-rules: true
   exclusions:
     generated: lax
     paths:
@@ -44,5 +109,8 @@ formatters:
       - third_party$
       - builtin$
       - examples$
+
 run:
   timeout: 3m
+  relative-path-mode: gomod
+  modules-download-mode: readonly

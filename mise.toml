@@ -24,7 +24,7 @@ run = "go test -run '^$' -fuzz=FuzzPodcastEncode -fuzztime=10s ./..."
 
 [tasks.fmt]
 description = "Format Go files"
-run = "go fmt ./..."
+run = "golangci-lint fmt"
 
 [tasks.lint]
 description = "Run golangci-lint"

@@ -6,6 +6,13 @@ import (
 	"time"
 )
 
+const (
+	durationMinutesPerHour   int64 = 60
+	durationSecondsPerMinute int64 = 60
+	durationSecondsPerHour         = durationMinutesPerHour * durationSecondsPerMinute
+	durationSingleDigitMax   int64 = 9
+)
+
 // Item represents a single entry in a podcast.
 //
 // Article minimal requirements are:
@@ -171,7 +178,8 @@ type Item struct {
 
 // AddEnclosure adds the downloadable asset to the podcast Item.
 func (i *Item) AddEnclosure(
-	url string, enclosureType EnclosureType, lengthInBytes int64) {
+	url string, enclosureType EnclosureType, lengthInBytes int64,
+) {
 	i.Enclosure = &Enclosure{
 		URL:    url,
 		Type:   enclosureType,
@@ -253,7 +261,7 @@ func (i *Item) AddPubDate(datetime time.Time) {
 // such as html links: `<a href="http://www.apple.com">Apple</a>`.
 func (i *Item) AddSummary(summary string) {
 	i.ISummary = &ISummary{
-		Text: truncateRunes(summary, 4000),
+		Text: truncateRunes(summary, iTunesSummaryRuneLimit),
 	}
 }
 
@@ -264,7 +272,7 @@ func (i *Item) AddSummary(summary string) {
 // Note that this field is a CDATA encoded field which allows for rich text
 // such as html links: `<a href="http://www.apple.com">Apple</a>`.
 func (i *Item) AddDescription(d string) {
-	i.Description = Description(truncateRunes(d, 10000))
+	i.Description = Description(truncateRunes(d, itemDescriptionRuneLimit))
 }
 
 // AddDuration adds the duration to the iTunes duration field.
@@ -276,16 +284,16 @@ func (i *Item) AddDuration(durationInSeconds int64) {
 }
 
 func parseDuration(duration int64) string {
-	h := duration / 3600
-	duration %= 3600
+	h := duration / durationSecondsPerHour
+	duration %= durationSecondsPerHour
 
-	m := duration / 60
-	duration %= 60
+	m := duration / durationSecondsPerMinute
+	duration %= durationSecondsPerMinute
 
 	s := duration
 
 	// HH:MM:SS
-	if h > 9 {
+	if h > durationSingleDigitMax {
 		return fmt.Sprintf("%02d:%02d:%02d", h, m, s)
 	}
 
@@ -295,7 +303,7 @@ func parseDuration(duration int64) string {
 	}
 
 	// MM:SS
-	if m > 9 {
+	if m > durationSingleDigitMax {
 		return fmt.Sprintf("%02d:%02d", m, s)
 	}
 

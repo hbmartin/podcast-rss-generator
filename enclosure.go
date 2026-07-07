@@ -25,6 +25,8 @@ type EnclosureType int
 func (et EnclosureType) String() string {
 	// https://help.apple.com/itc/podcasts_connect/#/itcb54353390
 	switch et {
+	case EnclosureUnknown:
+		return enclosureDefault
 	case M4A:
 		return "audio/x-m4a"
 	case M4V:

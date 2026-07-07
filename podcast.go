@@ -14,7 +14,11 @@ import (
 )
 
 const (
-	pVersion = "2.0.0"
+	pVersion                    = "2.0.0"
+	iTunesSubtitleRuneLimit     = 64
+	iTunesSummaryRuneLimit      = 4000
+	itemDescriptionRuneLimit    = 10000
+	podcastDescriptionByteLimit = 4000
 )
 
 // Sentinel errors returned by feed and item validation.
@@ -135,7 +139,8 @@ type Podcast struct {
 // Zero-value time fields default to the current UTC time; non-zero values are
 // formatted to the expected proper formats.
 func New(title, link, description string,
-	pubDate, lastBuildDate time.Time) Podcast {
+	pubDate, lastBuildDate time.Time,
+) Podcast {
 	return Podcast{
 		Title:         title,
 		Description:   parseDescription(description),
@@ -374,7 +379,7 @@ func (p *Podcast) AddSubTitle(subTitle string) {
 	if len(subTitle) == 0 {
 		return
 	}
-	p.ISubtitle = truncateRunesWithSuffix(subTitle, 64, "...")
+	p.ISubtitle = truncateRunesWithSuffix(subTitle, iTunesSubtitleRuneLimit, "...")
 }
 
 // AddSummary adds the iTunes summary.
@@ -388,7 +393,7 @@ func (p *Podcast) AddSummary(summary string) {
 		return
 	}
 	p.ISummary = &ISummary{
-		Text: truncateRunes(summary, 4000),
+		Text: truncateRunes(summary, iTunesSummaryRuneLimit),
 	}
 }
 
@@ -488,11 +493,11 @@ func (p *Podcast) AddChannelType(channelType string) {
 }
 
 func parseDescription(d string) Description {
-	if len(d) <= 4000 {
+	if len(d) <= podcastDescriptionByteLimit {
 		return Description(d)
 	}
 
-	limit := 4000
+	limit := podcastDescriptionByteLimit
 	for limit > 0 && !utf8.RuneStart(d[limit]) {
 		limit--
 	}
