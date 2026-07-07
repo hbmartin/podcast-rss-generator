@@ -46,7 +46,7 @@ type Podcast struct {
 	//
 	// This is a required tag.
 	//
-	// Limit: 4000 characters
+	// Limit: 4000 bytes
 	//
 	// Note that this field is a CDATA encoded field which allows for rich text
 	// such as html links: `<a href="http://www.apple.com">Apple</a>`.
@@ -442,12 +442,15 @@ func (p *Podcast) AddChannelType(channelType string) {
 }
 
 var parseDescription = func(d string) Description {
-	count := utf8.RuneCountInString(d)
-	if count > 4000 {
-		s := []rune(d)
-		d = string(s[0:4000])
+	if len(d) <= 4000 {
+		return Description(d)
 	}
-	return Description(d)
+
+	limit := 4000
+	for limit > 0 && !utf8.RuneStart(d[limit]) {
+		limit--
+	}
+	return Description(d[:limit])
 }
 
 var parseType = func(channelType string) (PodcastType, bool) {

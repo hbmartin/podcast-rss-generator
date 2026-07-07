@@ -4,7 +4,9 @@ import (
 	"bytes"
 	"errors"
 	"io"
+	"strings"
 	"testing"
+	"unicode/utf8"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -59,4 +61,53 @@ func TestParseDuration(t *testing.T) {
 	assert.Equal(t, "10:00:01", parseDuration(36001))
 	assert.Equal(t, "10:01:00", parseDuration(36060))
 	assert.Equal(t, "10:01:03", parseDuration(36063))
+}
+
+func TestParseDescriptionByteLimit(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name string
+		in   string
+		want string
+	}{
+		{
+			name: "keeps text under limit",
+			in:   "short description",
+			want: "short description",
+		},
+		{
+			name: "truncates ascii at byte limit",
+			in:   strings.Repeat("a", 4001),
+			want: strings.Repeat("a", 4000),
+		},
+		{
+			name: "keeps multibyte rune ending at byte limit",
+			in:   strings.Repeat("a", 3998) + "é" + "b",
+			want: strings.Repeat("a", 3998) + "é",
+		},
+		{
+			name: "drops multibyte rune crossing byte limit",
+			in:   strings.Repeat("a", 3999) + "é",
+			want: strings.Repeat("a", 3999),
+		},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			got := string(parseDescription(tt.in))
+			if got != tt.want {
+				t.Fatalf("parseDescription() = %q, want %q", got, tt.want)
+			}
+			if len(got) > 4000 {
+				t.Fatalf("parseDescription() byte length = %d, want <= 4000", len(got))
+			}
+			if !utf8.ValidString(got) {
+				t.Fatal("parseDescription() returned invalid UTF-8")
+			}
+		})
+	}
 }
