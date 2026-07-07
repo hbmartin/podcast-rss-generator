@@ -478,11 +478,19 @@ func (p *Podcast) Encode(w io.Writer) error {
 	if p.AtomLink != nil {
 		atomLink = "http://www.w3.org/2005/Atom"
 	}
+	contentNS := ""
+	for _, it := range p.Items {
+		if it != nil && it.ContentEncoded != nil {
+			contentNS = contentNamespace
+			break
+		}
+	}
 	wrapped := podcastWrapper{
-		ITUNESNS: "http://www.itunes.com/dtds/podcast-1.0.dtd",
-		ATOMNS:   atomLink,
-		Version:  "2.0",
-		Channel:  p,
+		ITUNESNS:  "http://www.itunes.com/dtds/podcast-1.0.dtd",
+		ATOMNS:    atomLink,
+		CONTENTNS: contentNS,
+		Version:   "2.0",
+		Channel:   p,
 	}
 	encode := p.encode
 	if encode == nil {
@@ -511,11 +519,12 @@ func (p *Podcast) String() string {
 // }
 
 type podcastWrapper struct {
-	XMLName  xml.Name `xml:"rss"`
-	Version  string   `xml:"version,attr"`
-	ATOMNS   string   `xml:"xmlns:atom,attr,omitempty"`
-	ITUNESNS string   `xml:"xmlns:itunes,attr"`
-	Channel  *Podcast
+	XMLName   xml.Name `xml:"rss"`
+	Version   string   `xml:"version,attr"`
+	ATOMNS    string   `xml:"xmlns:atom,attr,omitempty"`
+	ITUNESNS  string   `xml:"xmlns:itunes,attr"`
+	CONTENTNS string   `xml:"xmlns:content,attr,omitempty"`
+	Channel   *Podcast
 }
 
 func encoder(w io.Writer, o any) error {
@@ -659,6 +668,10 @@ func cloneItem(i Item) Item {
 	if i.IImage != nil {
 		image := *i.IImage
 		i.IImage = &image
+	}
+	if i.ContentEncoded != nil {
+		content := *i.ContentEncoded
+		i.ContentEncoded = &content
 	}
 	if i.ISummary != nil {
 		summary := *i.ISummary

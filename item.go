@@ -56,6 +56,13 @@ type Item struct {
 	// Use item.AddDescription(...) to populate this field correctly.
 	Description Description `xml:"description"`
 
+	// ContentEncoded is the optional <content:encoded> element holding the
+	// full rich-HTML body (show notes) for aggregators that prefer it over
+	// <description>.
+	//
+	// Use item.AddContentEncoded(...) to populate this field correctly.
+	ContentEncoded *EncodedContent
+
 	// PubDate is the date and time when an episode was released. It is
 	// recommended to set this tag on each item.
 	//
@@ -299,6 +306,23 @@ func (i *Item) AddSummary(summary string) {
 // such as html links: `<a href="http://www.apple.com">Apple</a>`.
 func (i *Item) AddDescription(d string) {
 	i.Description = Description(truncateRunes(d, itemDescriptionRuneLimit))
+}
+
+// AddContentEncoded adds a <content:encoded> element containing the full,
+// rich-HTML body of the episode (show notes).
+//
+// Unlike Description, which many aggregators render as plain text,
+// content:encoded is defined by the RSS content module to carry markup, so
+// clients such as Apple Podcasts display the formatted HTML – links, lists and
+// paragraphs – as authored. The value is always wrapped in CDATA, so raw HTML
+// is safe to pass.
+//
+// If content is empty this method is a no-op.
+func (i *Item) AddContentEncoded(content string) {
+	if len(content) == 0 {
+		return
+	}
+	i.ContentEncoded = &EncodedContent{Text: content}
 }
 
 // AddDuration adds the duration to the iTunes duration field.
