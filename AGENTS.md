@@ -33,9 +33,9 @@ When writing or refactoring Go code in this repository, strictly adhere to the f
 
 ### Testing and Quality Assurance
 - **CRITICAL**: Always run ALL of the following commands before making a commit or opening a PR:
-  1. `go fmt ./...` - Format all Go files
-  2. `golangci-lint run` - Run all configured linters and formatters
-  3. Run all unit tests
+  1. `mise run fmt` - Format all Go files
+  2. `mise run lint` - Run all configured linters and formatters
+  3. `mise run test` - Run all unit tests
 - Ensure ALL tests pass AND ALL linting checks pass before committing
 - The project uses golangci-lint with strict formatting rules - code must pass ALL checks
 
@@ -50,7 +50,7 @@ This project uses golangci-lint with strict formatting rules configured in `.gol
 - Consistent spacing around assignment operators (`key: value` not `key:value`)
 - Space after commas in function parameters and struct literals
 
-**Always run `go fmt ./...`, `golangci-lint run`, AND `make test` after making ANY code changes to ensure both functionality and formatting are correct before committing.**
+**Always run `mise run fmt`, `mise run lint`, AND `mise run test` after making ANY code changes to ensure both functionality and formatting are correct before committing.**
 
 ## Key File References
 

@@ -18,11 +18,9 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/setup-go@v6
-        with:
-          go-version: 1.25
       - uses: actions/checkout@v6
-      - run: make build
+      - uses: jdx/mise-action@v4
+      - run: mise run build
 
   test:
     name: Test
@@ -32,11 +30,9 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/setup-go@v6
-        with:
-          go-version: 1.25
       - uses: actions/checkout@v6
-      - run: make test
+      - uses: jdx/mise-action@v4
+      - run: mise run test
 
   coverage:
     name: Coverage
@@ -46,12 +42,10 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/setup-go@v6
-        with:
-          go-version: 1.25
       - uses: actions/checkout@v6
+      - uses: jdx/mise-action@v4
       - name: Run tests with coverage
-        run: go test -coverprofile=coverage.txt ./...
+        run: mise run coverage
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v7
         with:
@@ -68,23 +62,9 @@ jobs:
       pull-requests: read
 
     steps:
-      - uses: actions/setup-go@v6
-        with:
-          go-version: 1.25
       - uses: actions/checkout@v6
-      - uses: golangci/golangci-lint-action@v9
+      - uses: jdx/mise-action@v4
+      - run: mise run lint
 
       - name: Go mod
-        env:
-          DIFF_PATH: "go.mod go.sum"
-        run: |
-          go mod tidy
-          DIFF=$(git status --porcelain -- $DIFF_PATH)
-          if [ "$DIFF" ]; then
-            echo
-            echo "These files were modified:"
-            echo
-            echo "$DIFF"
-            echo
-            exit 1
-          fi
+        run: mise run mod-tidy-check
