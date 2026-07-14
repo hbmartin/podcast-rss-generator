@@ -1,0 +1,5376 @@
+{
+    "version": "1.0.0",
+    "segments": [
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 0.0,
+            "endTime": 4.47,
+            "body": "Before we begin today's episode, I wanted to let you know Bright Digit needs your help."
+        },
+        {
+            "startTime": 4.89,
+            "endTime": 16.56,
+            "body": "We're looking for developers to help with several products, of course, I mean iOS development, but also watchOS, Vapor, macOS, HealthKit, SwiftUI, and not just stuff in the Apple and"
+        },
+        {
+            "startTime": 16.56,
+            "endTime": 23.07,
+            "body": "swift space, but also web development, vueJS, TypeScript, Docker, Postgres, and more."
+        },
+        {
+            "startTime": 23.49,
+            "endTime": 29.93,
+            "body": "If you are interested, email me your portfolio or resume to leo@brightdigit.com."
+        },
+        {
+            "startTime": 29.945,
+            "endTime": 32.25,
+            "body": "Again, that's leo@brightdigit.com."
+        },
+        {
+            "startTime": 32.85,
+            "endTime": 36.99,
+            "body": "I'd love to see what you can do and how you can help with our team, but there's more."
+        },
+        {
+            "startTime": 37.56,
+            "endTime": 40.17,
+            "body": "I also have some availability for work as well."
+        },
+        {
+            "startTime": 40.68,
+            "endTime": 50.13,
+            "body": "If your team is strained by too few people or just need someone with my expertise to guide your team, reach out to me at leo@brightdigit.com."
+        },
+        {
+            "startTime": 50.31,
+            "endTime": 50.7,
+            "body": "That's right."
+        },
+        {
+            "startTime": 50.76,
+            "endTime": 53.57,
+            "body": "Email me leo@brightdigit.com."
+        },
+        {
+            "startTime": 53.585,
+            "endTime": 55.685,
+            "body": "We have some availability to help your team."
+        },
+        {
+            "startTime": 56.105,
+            "endTime": 60.125,
+            "body": "So if you just need somebody for temporary part-time contract work, let me know."
+        },
+        {
+            "startTime": 60.185,
+            "endTime": 62.195,
+            "body": "I'd love to see what I can do to help your team."
+        },
+        {
+            "startTime": 62.614,
+            "endTime": 65.884,
+            "body": "Thank you for your time, and I hope you enjoy the rest of today's program."
+        },
+        {
+            "startTime": 69.605,
+            "endTime": 71.645,
+            "body": "Welcome to another episode of Empower Apps."
+        },
+        {
+            "startTime": 71.675,
+            "endTime": 73.145,
+            "body": "I'm your host, Leo Dion."
+        },
+        {
+            "startTime": 73.414,
+            "endTime": 78.065,
+            "body": "Today I am joined by once again at Tim Mitra . Tim, thank you so much for coming back on the show."
+        },
+        {
+            "startTime": 78.065,
+            "endTime": 79.035,
+            "body": "I really appreciate it.."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 79.515,
+            "endTime": 80.685,
+            "body": "Hey, thanks for having me again."
+        },
+        {
+            "startTime": 81.645,
+            "endTime": 82.095,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 82.153,
+            "endTime": 86.152,
+            "body": "In case people don't know you, I'll let you go ahead and introduce yourself and your podcasts."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 87.112,
+            "endTime": 87.652,
+            "body": "Sure."
+        },
+        {
+            "startTime": 87.739,
+            "endTime": 89.911,
+            "body": "I am an again, I'm sort of a creative type."
+        },
+        {
+            "startTime": 89.911,
+            "endTime": 91.702,
+            "body": "I'm a maker tinkerer."
+        },
+        {
+            "startTime": 91.711,
+            "endTime": 98.736,
+            "body": "And for the last 12 years or so, I've been basically working in iOS a little bit of Mac, but mostly iOS primarily around the iPad."
+        },
+        {
+            "startTime": 98.736,
+            "endTime": 99.246,
+            "body": "Similar to you."
+        },
+        {
+            "startTime": 99.246,
+            "endTime": 100.536,
+            "body": "I started because of the iPad."
+        },
+        {
+            "startTime": 102.396,
+            "endTime": 107.016,
+            "body": "it had been doing like development before that, you know, apple reseller, that kind of thing."
+        },
+        {
+            "startTime": 107.016,
+            "endTime": 114.904,
+            "body": "But but the iPhone creating, you know, magic for people on the iPhone was sort of what drove me on the iPad obviously, cuz it was a larger format."
+        },
+        {
+            "startTime": 114.913,
+            "endTime": 119.778,
+            "body": "Yeah, so, you know, spent some time, early time teaching people how to do iOS when it was a new thing."
+        },
+        {
+            "startTime": 119.829,
+            "endTime": 129.199,
+            "body": "And yeah, I've had a chance to work with Apple a few times in a few different careers, but, doing iOS and I think part of the, the idea behind the podcast, we do a couple of them."
+        },
+        {
+            "startTime": 129.379,
+            "endTime": 134.304,
+            "body": "I do one on sci-fi centered around Star Trek and other, but all kinds of other sci-fi."
+        },
+        {
+            "startTime": 134.304,
+            "endTime": 140.399,
+            "body": "But the main PO podcast I think people might know me for is more than just code, which is about iOS development."
+        },
+        {
+            "startTime": 140.459,
+            "endTime": 146.28,
+            "body": "And it's sort of our way of giving back to the community in terms of like, you know, some knowledge that we have."
+        },
+        {
+            "startTime": 147.075,
+            "endTime": 150.885,
+            "body": "App, app, reset, app, app developers, engineers, that kind of stuff."
+        },
+        {
+            "startTime": 150.885,
+            "endTime": 153.849,
+            "body": "And yeah, just, you know, we do it for the people"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 154.629,
+            "endTime": 156.249,
+            "body": "and of course I was recently on there."
+        },
+        {
+            "startTime": 156.279,
+            "endTime": 161.259,
+            "body": "We'll have a link to that episode where we talked about a bunch of stuff, including vr Yeah."
+        },
+        {
+            "startTime": 161.319,
+            "endTime": 163.329,
+            "body": "And floppy disks and stuff."
+        },
+        {
+            "startTime": 163.359,
+            "endTime": 165.549,
+            "body": "So you'll definitely wanna check that one out."
+        },
+        {
+            "startTime": 165.62,
+            "endTime": 166.88,
+            "body": "What are you currently working on right"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 166.88,
+            "endTime": 167.13,
+            "body": "now?"
+        },
+        {
+            "startTime": 167.13,
+            "endTime": 170.524,
+            "body": "I'm currently engineering manager over at Spot Hero in Chicago."
+        },
+        {
+            "startTime": 170.554,
+            "endTime": 173.072,
+            "body": "And  as well as working on some of my own sort of apps."
+        },
+        {
+            "startTime": 173.072,
+            "endTime": 180.599,
+            "body": "I'm trying to do refactor a couple of things using SwiftUI and iCloud, which iCloud and core data that we've talked about before."
+        },
+        {
+            "startTime": 181.139,
+            "endTime": 181.257,
+            "body": "Yep."
+        },
+        {
+            "startTime": 181.257,
+            "endTime": 186.366,
+            "body": "But to be honest with you, I have, I'm currently obsessed with the Red Dead Redemption 2."
+        },
+        {
+            "startTime": 186.381,
+            "endTime": 189.736,
+            "body": "I've been spending way too much time playing that I should be writing code at night."
+        },
+        {
+            "startTime": 189.736,
+            "endTime": 195.206,
+            "body": "But, you know, I tend to write code at night and that's usually what my hobby is, or 3D printing and that kind of stuff, but yeah."
+        },
+        {
+            "startTime": 195.266,
+            "endTime": 195.416,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 195.416,
+            "endTime": 197.366,
+            "body": "I gotta gotta admit, the PlayStation's got me hooked, right."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 198.576,
+            "endTime": 199.126,
+            "body": "Isn't."
+        },
+        {
+            "startTime": 199.461,
+            "endTime": 201.291,
+            "body": "Became like three years old."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 201.351,
+            "endTime": 204.021,
+            "body": "It's many years old, but it's, it's actually really well done."
+        },
+        {
+            "startTime": 204.021,
+            "endTime": 206.21,
+            "body": "It's, it's it's funny, like I was thinking about that last night."
+        },
+        {
+            "startTime": 206.21,
+            "endTime": 210.29,
+            "body": "You know, I remember being a kid in a bowling alley in St."
+        },
+        {
+            "startTime": 210.29,
+            "endTime": 212.7,
+            "body": "Catherines, Ontario, or actually I guess Toronto."
+        },
+        {
+            "startTime": 212.769,
+            "endTime": 219.219,
+            "body": "Seeing Pong for the first time, and then shortly after Pong we got, you know, Pacman and then, oh, space Invaders came after Pong."
+        },
+        {
+            "startTime": 219.219,
+            "endTime": 219.489,
+            "body": "Right."
+        },
+        {
+            "startTime": 219.489,
+            "endTime": 230.969,
+            "body": "So, and those, and you know, so I'm thinking, you know, like in the history of game development, like playing Red Dead Redemption Two or the to Raider titles or Uncharted, you're like, if you're playing, you're in a movie."
+        },
+        {
+            "startTime": 231.604,
+            "endTime": 242.164,
+            "body": "you know, in a sense, like the music's there, the, you know, the guitar, little subtle, you know, western guitar in there and, you know, you're running around on a horse and everything looks pretty, you know, it's animated"
+        },
+        {
+            "startTime": 242.224,
+            "endTime": 255.077,
+            "body": "admittedly, but it looks pretty realistic, you know, and, and we've come a long way from like, sort of eight bit crappy graphics, you know, on a C R T screen, you know, to, to like, you know, 4K stereo surround sound, you know."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 255.527,
+            "endTime": 255.977,
+            "body": "Totally."
+        },
+        {
+            "startTime": 256.067,
+            "endTime": 256.277,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 256.309,
+            "endTime": 259.844,
+            "body": "So, so we had a couple of things we wanted to talk about today."
+        },
+        {
+            "startTime": 259.927,
+            "endTime": 266.369,
+            "body": "One of the things you wanted to talk about was what you think most people are missing when they're developing an app."
+        },
+        {
+            "startTime": 266.373,
+            "endTime": 274.813,
+            "body": "As far as like, just kinda like buzzwords or trends that you see . That you think could be possibly misleading."
+        },
+        {
+            "startTime": 274.949,
+            "endTime": 278.879,
+            "body": "And what you think people should really be be doing when they're building."
+        },
+        {
+            "startTime": 279.389,
+            "endTime": 280.679,
+            "body": "A big project, I guess, or"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 280.679,
+            "endTime": 283.649,
+            "body": "even a small Yeah, I, I think it's true of any, any project you work on."
+        },
+        {
+            "startTime": 283.649,
+            "endTime": 284.009,
+            "body": "I see."
+        },
+        {
+            "startTime": 284.199,
+            "endTime": 290.679,
+            "body": "and this is based on a lot of stuff that I see on, on the interwebs and the socials on the Twitter and the, and the Mastodons and Facebook."
+        },
+        {
+            "startTime": 290.684,
+            "endTime": 297.787,
+            "body": "Well, not so much Facebook, I don't talk to engineers on Facebook, but . I do talk to engineers who work on Facebook, but I don't talk to and people on Facebook about that."
+        },
+        {
+            "startTime": 297.816,
+            "endTime": 305.1,
+            "body": "But yeah, I think the, the, you know, you hear a lot of things like, especially from new users who are just getting into the game, like, what should I, should I do UIKit?"
+        },
+        {
+            "startTime": 305.12,
+            "endTime": 306.27,
+            "body": "Should I do SwiftUI?"
+        },
+        {
+            "startTime": 306.29,
+            "endTime": 308.24,
+            "body": "Should I, you know, should I do Core data?"
+        },
+        {
+            "startTime": 308.24,
+            "endTime": 309.2,
+            "body": "Should I do react?"
+        },
+        {
+            "startTime": 309.2,
+            "endTime": 310.7,
+            "body": "You know, should I do flutter?"
+        },
+        {
+            "startTime": 310.7,
+            "endTime": 311.48,
+            "body": "What should I learn?"
+        },
+        {
+            "startTime": 312.485,
+            "endTime": 320.718,
+            "body": ". And I mean, the reason why my podcast is called More Than Just Code is literally because I believe that there is more than just writing code to building an an app, right?"
+        },
+        {
+            "startTime": 320.718,
+            "endTime": 329.008,
+            "body": "I've said it many times before that, you know, it's, it's writing the code, it's, it's creating the user experience, it's creating surprise and delight is what Apple would like us to do with our apps, right?"
+        },
+        {
+            "startTime": 329.054,
+            "endTime": 331.994,
+            "body": "So there's a lot of, a lot of avenues to building an app."
+        },
+        {
+            "startTime": 331.994,
+            "endTime": 336.584,
+            "body": "You have to think about marketing or even a building, a bu it's kind of like building a little mini business, if you think about it."
+        },
+        {
+            "startTime": 336.589,
+            "endTime": 337.494,
+            "body": "I mean, if you're."
+        },
+        {
+            "startTime": 337.889,
+            "endTime": 343.769,
+            "body": "for the sake of putting an app on the app store, which I've done, I've just put apps up there just for the sake of, of going through the exercise."
+        },
+        {
+            "startTime": 343.808,
+            "endTime": 348.788,
+            "body": "You know, then it, it comes down to, you know, you have to evaluate the, the why."
+        },
+        {
+            "startTime": 348.818,
+            "endTime": 349.808,
+            "body": "Why are you doing this?"
+        },
+        {
+            "startTime": 349.808,
+            "endTime": 350.708,
+            "body": "What's your reason?"
+        },
+        {
+            "startTime": 350.713,
+            "endTime": 354.308,
+            "body": "Are you doing this because you wanna make a living at it?"
+        },
+        {
+            "startTime": 354.308,
+            "endTime": 358.838,
+            "body": "Are you doing this because you want to, you know, build a portfolio, whatever your intent is."
+        },
+        {
+            "startTime": 358.838,
+            "endTime": 360.698,
+            "body": "And that's true of any sort of creative process."
+        },
+        {
+            "startTime": 360.698,
+            "endTime": 364.158,
+            "body": "And I believe that writing code and making apps is a creative process."
+        },
+        {
+            "startTime": 364.158,
+            "endTime": 366.108,
+            "body": "You'd have to sort of evaluate what your intention is."
+        },
+        {
+            "startTime": 366.168,
+            "endTime": 367.428,
+            "body": "Are you just doing it for fun?"
+        },
+        {
+            "startTime": 367.548,
+            "endTime": 368.508,
+            "body": "Are you doing it for profit?"
+        },
+        {
+            "startTime": 368.988,
+            "endTime": 370.068,
+            "body": "You know, what's your motivation?"
+        },
+        {
+            "startTime": 370.068,
+            "endTime": 377.211,
+            "body": "I'm very empathetic to the user or the customer's, clients, you know, and, and calling them users is sort of an engineering term, but maybe we should, we should"
+        },
+        {
+            "startTime": 377.421,
+            "endTime": 380.631,
+            "body": "some, some, some companies I work for, they, they kind of change that terminology."
+        },
+        {
+            "startTime": 380.631,
+            "endTime": 381.891,
+            "body": "We're not allowed to call 'em users, but."
+        },
+        {
+            "startTime": 383.851,
+            "endTime": 385.795,
+            "body": "because it kind of takes the humanity out of them."
+        },
+        {
+            "startTime": 385.822,
+            "endTime": 390.892,
+            "body": "I'm a big advocate for security and for accessibility as one of my big pet peeves."
+        },
+        {
+            "startTime": 390.892,
+            "endTime": 397.102,
+            "body": "And especially since, you know, I'm, I'm wearing an accessibility device, a pair of glasses, you know, got the gray hair going here, right?"
+        },
+        {
+            "startTime": 397.102,
+            "endTime": 409.047,
+            "body": "So, so, you know, I use larger type, you know, so, I've been, you know, I wasn't really big into the dark mode, sort of, you know, the, the xcode with your screen color reversed and all that kinda stuff."
+        },
+        {
+            "startTime": 409.071,
+            "endTime": 413.045,
+            "body": "I still code in, you know, plain old boarding, boring white."
+        },
+        {
+            "startTime": 413.495,
+            "endTime": 418.625,
+            "body": "But I like, you know, I like it sunset that my, my devices all switched to a dark mode, right?"
+        },
+        {
+            "startTime": 418.625,
+            "endTime": 420.155,
+            "body": "I've gone through all my websites."
+        },
+        {
+            "startTime": 420.155,
+            "endTime": 425.32,
+            "body": "I've added dark mode to the website, so that, , you know, at that time of day everything switches and, and that kind of stuff."
+        },
+        {
+            "startTime": 425.32,
+            "endTime": 436.401,
+            "body": "But I think that there's, I think one of the biggest pieces that I find missing in a lot of teams and a lot of apps is that there's a very large percentage of the world that have some sort of impairment"
+        },
+        {
+            "startTime": 436.401,
+            "endTime": 443.321,
+            "body": "in terms of either visual or auditory or, you know, there's, even as you get older, you, you know, we."
+        },
+        {
+            "startTime": 443.756,
+            "endTime": 450.77,
+            "body": "We all get to a point where we need some accessibility devices, and I think that's a huge thing that's missing in a lot of apps."
+        },
+        {
+            "startTime": 450.77,
+            "endTime": 452.72,
+            "body": "And, and of course, you know, there's also the."
+        },
+        {
+            "startTime": 453.89,
+            "endTime": 458.36,
+            "body": "The other, other side of the argument that you hear a lot about is testing, right About, about writing unit tests."
+        },
+        {
+            "startTime": 458.39,
+            "endTime": 466.396,
+            "body": "And it's funny cuz I, I saw a tweet on the weekend and from a friend of ours and I said, you know oh, I thought we were developing apps, not, you know, delivering tests, right?"
+        },
+        {
+            "startTime": 466.396,
+            "endTime": 470.596,
+            "body": "Because it seems to be, there's a lot of emphasis on is it testable code?"
+        },
+        {
+            "startTime": 470.596,
+            "endTime": 475.426,
+            "body": "You know, are we, are we using mvvm simply for the sake of, you know, the story that it's easier to test?"
+        },
+        {
+            "startTime": 475.426,
+            "endTime": 478.006,
+            "body": "Or, or are we doing that because it's a good architectural pattern?"
+        },
+        {
+            "startTime": 478.576,
+            "endTime": 480.286,
+            "body": "I think those are questions that."
+        },
+        {
+            "startTime": 480.372,
+            "endTime": 487.392,
+            "body": "People need to ask themselves, but I remember something, I think it was Brent Simmons said once about one of his apps is, God, don't look at the code under the hood."
+        },
+        {
+            "startTime": 487.512,
+            "endTime": 488.442,
+            "body": "The app looks great."
+        },
+        {
+            "startTime": 488.442,
+            "endTime": 489.222,
+            "body": "People love it."
+        },
+        {
+            "startTime": 489.732,
+            "endTime": 496.482,
+            "body": "You know, it ships, it does, does what it needs to do, but please don't, you know, like I don't look, I'm embarrassed by some of my coding decisions, right?"
+        },
+        {
+            "startTime": 496.902,
+            "endTime": 497.562,
+            "body": "Over the years."
+        },
+        {
+            "startTime": 497.63,
+            "endTime": 503.132,
+            "body": "And there's a few people who, friends of mine who's Mark, mark on our podcast has seen my code and he shakes his head a lot."
+        },
+        {
+            "startTime": 503.742,
+            "endTime": 515.579,
+            "body": "But you know, the the the reality is, is, you know if it, and we talked about on my, I think we talked about on our show the other day, the other day, about the 80 20 rule where, you know, , you don't have to focus on per, per perfection."
+        },
+        {
+            "startTime": 515.579,
+            "endTime": 517.079,
+            "body": "You should focus on progress."
+        },
+        {
+            "startTime": 517.084,
+            "endTime": 517.149,
+            "body": "Yep."
+        },
+        {
+            "startTime": 517.649,
+            "endTime": 517.739,
+            "body": "Right?"
+        },
+        {
+            "startTime": 517.769,
+            "endTime": 521.879,
+            "body": "And, you know, sometimes you just need to ship a product to get it out the door."
+        },
+        {
+            "startTime": 521.956,
+            "endTime": 525.046,
+            "body": "So you know the 80% of the work is done."
+        },
+        {
+            "startTime": 525.346,
+            "endTime": 526.096,
+            "body": "Let's get it out there."
+        },
+        {
+            "startTime": 526.096,
+            "endTime": 526.876,
+            "body": "Let's see what happens."
+        },
+        {
+            "startTime": 526.915,
+            "endTime": 534.097,
+            "body": ". You know, I think another I've been fortunate to work on teams lately that have a good quality assurance group, right?"
+        },
+        {
+            "startTime": 534.097,
+            "endTime": 539.857,
+            "body": "People whose specific job is to just test the apps, make, you know, do the dumb things that the users are gonna do."
+        },
+        {
+            "startTime": 539.857,
+            "endTime": 544.567,
+            "body": "I'm always amazed, like I was tease my QA people that they're stop breaking my app, right?"
+        },
+        {
+            "startTime": 544.927,
+            "endTime": 545.737,
+            "body": "I wrote it, it's fine."
+        },
+        {
+            "startTime": 545.737,
+            "endTime": 546.397,
+            "body": "It works, right?"
+        },
+        {
+            "startTime": 546.487,
+            "endTime": 549.771,
+            "body": "Stop, stop, stop finding the edge cases that, that make things grief."
+        },
+        {
+            "startTime": 549.771,
+            "endTime": 553.191,
+            "body": "But I think that, and it's funny because I've talked to a lot of teams."
+        },
+        {
+            "startTime": 554.526,
+            "endTime": 562.526,
+            "body": "and you know, I was doing the whole interview process for like 18 months and a lot of teams are, you know, I said, who does your qa?"
+        },
+        {
+            "startTime": 562.531,
+            "endTime": 565.416,
+            "body": "Well, our, our dev, our engineers do the QA themselves."
+        },
+        {
+            "startTime": 566.076,
+            "endTime": 567.096,
+            "body": "Bad idea."
+        },
+        {
+            "startTime": 567.096,
+            "endTime": 575.596,
+            "body": "Like, you know, I think you need to have an impartial person who doesn't necessarily understand engineering, who goes in and, and actually tests the device, test the."
+        },
+        {
+            "startTime": 576.271,
+            "endTime": 576.721,
+            "body": "To find"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 576.721,
+            "endTime": 577.061,
+            "body": "the weakness?"
+        },
+        {
+            "startTime": 577.061,
+            "endTime": 583.231,
+            "body": "Well, one of the things I see benefit of QA is like, I don't know, especially if it's a pretty big app."
+        },
+        {
+            "startTime": 583.801,
+            "endTime": 586.051,
+            "body": "I don't know every nook and cranny of that app."
+        },
+        {
+            "startTime": 586.051,
+            "endTime": 589.291,
+            "body": "Like, I don't know, oh, this was supposed to do this."
+        },
+        {
+            "startTime": 589.351,
+            "endTime": 590.371,
+            "body": "Oh, I didn't know that."
+        },
+        {
+            "startTime": 590.376,
+            "endTime": 596.701,
+            "body": "Like I could, I could develop something according to what I think it's supposed to do, but I might not know what the user expects."
+        },
+        {
+            "startTime": 597.121,
+            "endTime": 608.996,
+            "body": "And I think that's like a big problem as far as like, The difference between QA and unit testing, like whereas unit testing, it's just like, oh, just make sure my code runs the way I expect it to."
+        },
+        {
+            "startTime": 608.996,
+            "endTime": 612.027,
+            "body": "But sometimes what you expect is not what you are."
+        },
+        {
+            "startTime": 612.511,
+            "endTime": 613.981,
+            "body": "User or customer expects,"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 613.981,
+            "endTime": 614.341,
+            "body": "right?"
+        },
+        {
+            "startTime": 615.061,
+            "endTime": 615.361,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 615.361,
+            "endTime": 620.671,
+            "body": "And, and the unit test just proves that your logic is sound and, and that, that, you know, it responds well."
+        },
+        {
+            "startTime": 620.851,
+            "endTime": 622.141,
+            "body": "And there's also automation testing."
+        },
+        {
+            "startTime": 622.141,
+            "endTime": 629.581,
+            "body": "I think that's a lot of something that people should consider as well is, is, you know, what happens if I log in repeatedly for 10 minutes or something like that?"
+        },
+        {
+            "startTime": 629.581,
+            "endTime": 630.841,
+            "body": "You know, those kind of Right."
+        },
+        {
+            "startTime": 630.841,
+            "endTime": 632.491,
+            "body": "That's where automation happens, right?"
+        },
+        {
+            "startTime": 632.491,
+            "endTime": 633.691,
+            "body": "And that's where, I mean mm-hmm."
+        },
+        {
+            "startTime": 633.931,
+            "endTime": 634.171,
+            "body": "in."
+        },
+        {
+            "startTime": 634.22,
+            "endTime": 639.929,
+            "body": ". And the other thing too, that that's, it's, it's challenging as you, as your point about QA is, you know, I just transitioned to a new team."
+        },
+        {
+            "startTime": 639.929,
+            "endTime": 642.809,
+            "body": "So it's an, it's an, a mature app that's been developed for a long time."
+        },
+        {
+            "startTime": 642.809,
+            "endTime": 650.612,
+            "body": "And I did the same thing when I joined the bank back, you know, six and a half, seven years ago coming into a code base and nooks and crannies, I mean, like there"
+        },
+        {
+            "startTime": 650.612,
+            "endTime": 653.972,
+            "body": "are parts of the banking app that I never looked at in the six years I was there."
+        },
+        {
+            "startTime": 653.972,
+            "endTime": 654.242,
+            "body": "Right."
+        },
+        {
+            "startTime": 654.242,
+            "endTime": 654.812,
+            "body": "I know."
+        },
+        {
+            "startTime": 655.382,
+            "endTime": 656.222,
+            "body": "I just know there weren't."
+        },
+        {
+            "startTime": 656.222,
+            "endTime": 657.482,
+            "body": "Right, right, right."
+        },
+        {
+            "startTime": 658.232,
+            "endTime": 667.442,
+            "body": "So it's difficult to sort of, it's difficult to sort of transition into a new team where the, the app is mature and I think that may be a challenge, something that people should consider if they, if they move to a big group."
+        },
+        {
+            "startTime": 667.442,
+            "endTime": 668.462,
+            "body": "Right, right."
+        },
+        {
+            "startTime": 668.49,
+            "endTime": 675.295,
+            "body": "It's nice to have Greenfield development where, you know, the, the, we're all only working as SwiftUI and we're only working with the new stuff."
+        },
+        {
+            "startTime": 675.295,
+            "endTime": 676.045,
+            "body": "It's, that's nice."
+        },
+        {
+            "startTime": 676.075,
+            "endTime": 680.185,
+            "body": "But the reality is, you know, in a lot of cases, you're supporting older devices."
+        },
+        {
+            "startTime": 680.185,
+            "endTime": 687.85,
+            "body": "You're working with, you know,  design decisions that may have been, may have worked a while ago, but don't work anymore kind of thing, right?"
+        },
+        {
+            "startTime": 687.85,
+            "endTime": 688.54,
+            "body": "So, mm-hmm."
+        },
+        {
+            "startTime": 688.96,
+            "endTime": 689.23,
+            "body": ". Yeah."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 689.41,
+            "endTime": 689.77,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 690.49,
+            "endTime": 690.97,
+            "body": "Excuse me."
+        },
+        {
+            "startTime": 691.03,
+            "endTime": 705.295,
+            "body": "One of the things I was gonna say is, As far as testing, like I think, I think there's a divide in the community when it comes to the difference between like solo apps and apps that are built with large teams."
+        },
+        {
+            "startTime": 705.355,
+            "endTime": 705.445,
+            "body": "Mm-hmm."
+        },
+        {
+            "startTime": 705.905,
+            "endTime": 714.535,
+            "body": ", because I feel like there's kind of two, two sides that are like talking a different, like, almost like a different language where it's like where you say, oh, like don't look at my code."
+        },
+        {
+            "startTime": 714.535,
+            "endTime": 715.465,
+            "body": "It's horrible."
+        },
+        {
+            "startTime": 715.495,
+            "endTime": 726.655,
+            "body": "Like, That's fine, I guess if you're a solo developer, but if you're on a big team where like several people have to manage it, that's where having testability is even more important, I guess."
+        },
+        {
+            "startTime": 726.715,
+            "endTime": 727.165,
+            "body": "You know what I mean?"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 727.75,
+            "endTime": 727.96,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 727.96,
+            "endTime": 728.95,
+            "body": "Coding standards too."
+        },
+        {
+            "startTime": 728.95,
+            "endTime": 731.2,
+            "body": "I mean, like, you know, you have to agree on, right?"
+        },
+        {
+            "startTime": 731.35,
+            "endTime": 739.473,
+            "body": "I mean, the biggest challenge of moving to a big team, especially as a, as an individual engineer is do you understand the, the requirements for the team?"
+        },
+        {
+            "startTime": 739.473,
+            "endTime": 742.053,
+            "body": "Not, not, I'm not talking about the accepting requirement for the ticket."
+        },
+        {
+            "startTime": 742.053,
+            "endTime": 746.253,
+            "body": "I'm talking about, you know, are we, are we running things like swift land?"
+        },
+        {
+            "startTime": 746.253,
+            "endTime": 748.593,
+            "body": "Are we, you know, cause we, you know, we used to."
+        },
+        {
+            "startTime": 749.018,
+            "endTime": 750.038,
+            "body": "Swift link came along."
+        },
+        {
+            "startTime": 750.038,
+            "endTime": 757.359,
+            "body": "We used to use like a, there was a clang something, or rather we ran an xcode to, okay, clean up our objective C you know, are we leaving, you know you know,"
+        },
+        {
+            "startTime": 757.389,
+            "endTime": 761.848,
+            "body": "are, are, is, are we, you know, bringing up all of our declarations and methods?"
+        },
+        {
+            "startTime": 761.848,
+            "endTime": 763.948,
+            "body": "Are we, are we not using extra white space?"
+        },
+        {
+            "startTime": 763.948,
+            "endTime": 766.198,
+            "body": "Because white space makes it readable as a human."
+        },
+        {
+            "startTime": 766.228,
+            "endTime": 769.708,
+            "body": "Yes, but it's not as a team, maybe we decided to get rid of that."
+        },
+        {
+            "startTime": 769.708,
+            "endTime": 773.308,
+            "body": "You know, we don't, we don't want everything tightened up and less lines of code, as it were."
+        },
+        {
+            "startTime": 773.758,
+            "endTime": 775.438,
+            "body": "Cause white space accounts as a line."
+        },
+        {
+            "startTime": 775.438,
+            "endTime": 775.678,
+            "body": "Right."
+        },
+        {
+            "startTime": 775.683,
+            "endTime": 782.609,
+            "body": "But, And then, you know, are we using, like, I love the the, I guess they're called Kodaco now, the Ray Weder, like folks, right?"
+        },
+        {
+            "startTime": 783.179,
+            "endTime": 788.724,
+            "body": "They used to publish and they, I think they still do publish a swift like swift rules, sort of Swift guidelines."
+        },
+        {
+            "startTime": 788.729,
+            "endTime": 790.824,
+            "body": "They used to do an objective C guidelines as well, right?"
+        },
+        {
+            "startTime": 790.824,
+            "endTime": 790.914,
+            "body": "Yep."
+        },
+        {
+            "startTime": 790.914,
+            "endTime": 794.574,
+            "body": "And sort of the team can look at those recommendations and agree."
+        },
+        {
+            "startTime": 794.574,
+            "endTime": 796.678,
+            "body": "And then is it, what's the one from Realm?"
+        },
+        {
+            "startTime": 796.678,
+            "endTime": 797.718,
+            "body": "Is it Swift Lint?"
+        },
+        {
+            "startTime": 797.816,
+            "endTime": 799.473,
+            "body": "JP and yeah, the JP"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 799.473,
+            "endTime": 801.233,
+            "body": "wrote swiftformat."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 801.423,
+            "endTime": 803.193,
+            "body": "I think Swift format, that's what I'm thinking of."
+        },
+        {
+            "startTime": 803.193,
+            "endTime": 803.523,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 803.523,
+            "endTime": 804.093,
+            "body": "The, the"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 804.093,
+            "endTime": 805.743,
+            "body": "no or Nick Lockwood is swift format."
+        },
+        {
+            "startTime": 805.773,
+            "endTime": 806.583,
+            "body": "Realm is swift"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 806.583,
+            "endTime": 807.093,
+            "body": "Lint, right?"
+        },
+        {
+            "startTime": 807.093,
+            "endTime": 807.293,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 807.333,
+            "endTime": 807.663,
+            "body": "Right."
+        },
+        {
+            "startTime": 807.663,
+            "endTime": 807.933,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 807.933,
+            "endTime": 816.25,
+            "body": "So between the two of those, you know, there's sort of a, and you can accept their suggestions as, as your rules, or you can, or you can use them as guidelines, as I said."
+        },
+        {
+            "startTime": 816.25,
+            "endTime": 816.64,
+            "body": "Right."
+        },
+        {
+            "startTime": 816.643,
+            "endTime": 822.414,
+            "body": "And then decide, your team can decide whether you want to do them and what's nice about those automation process, and you can customize."
+        },
+        {
+            "startTime": 823.054,
+            "endTime": 823.294,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 823.294,
+            "endTime": 828.569,
+            "body": "And these are part of your, your ci your, your, your continued integration, continuous development."
+        },
+        {
+            "startTime": 828.578,
+            "endTime": 830.408,
+            "body": "You can have those as scripts."
+        },
+        {
+            "startTime": 830.408,
+            "endTime": 834.158,
+            "body": "You can either run locally on your machine or you can have them on your build servers that Yep."
+        },
+        {
+            "startTime": 834.248,
+            "endTime": 837.008,
+            "body": "Run the things and reject your PRS based on that."
+        },
+        {
+            "startTime": 837.008,
+            "endTime": 845.235,
+            "body": "And dangers another important tool I think that, that is really nice that, you know, it's like a, an extra engineer looking at, at the quality of your code, right?"
+        },
+        {
+            "startTime": 845.235,
+            "endTime": 847.245,
+            "body": "So yeah, with the rules you put in danger."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 847.995,
+            "endTime": 848.325,
+            "body": "Yep."
+        },
+        {
+            "startTime": 848.535,
+            "endTime": 849.585,
+            "body": "Have you heard of strings?"
+        },
+        {
+            "startTime": 849.585,
+            "endTime": 852.165,
+            "body": "Lint Speaking of accessibility?"
+        },
+        {
+            "startTime": 852.555,
+            "endTime": 852.915,
+            "body": "No."
+        },
+        {
+            "startTime": 853.155,
+            "endTime": 853.545,
+            "body": "What's that one?"
+        },
+        {
+            "startTime": 853.545,
+            "endTime": 857.311,
+            "body": "So strings lint is, it makes sure that you use."
+        },
+        {
+            "startTime": 857.344,
+            "endTime": 859.505,
+            "body": "String dictionaries and mm-hmm."
+        },
+        {
+            "startTime": 859.54,
+            "endTime": 862.902,
+            "body": "Localization for all the strings you use in your ui."
+        },
+        {
+            "startTime": 863.002,
+            "endTime": 863.242,
+            "body": "Oh, yeah."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 863.622,
+            "endTime": 864.682,
+            "body": "Language support's another important one."
+        },
+        {
+            "startTime": 864.682,
+            "endTime": 865.012,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 865.192,
+            "endTime": 865.612,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 866.002,
+            "endTime": 870.322,
+            "body": "Which, if you're interested in accessibility and localization, we've done episodes on that."
+        },
+        {
+            "startTime": 870.442,
+            "endTime": 870.922,
+            "body": "Definitely."
+        },
+        {
+            "startTime": 870.922,
+            "endTime": 871.222,
+            "body": "Check that."
+        },
+        {
+            "startTime": 871.227,
+            "endTime": 871.502,
+            "body": "Oh yeah."
+        },
+        {
+            "startTime": 871.502,
+            "endTime": 872.142,
+            "body": "To check that one out."
+        },
+        {
+            "startTime": 873.022,
+            "endTime": 881.242,
+            "body": "Yeah, cuz I have, I have an app and it's like, I wanna make sure all my strings aren't just a, because you know, when you first start you'll be like, oh, I'm just gonna write these strings and code."
+        },
+        {
+            "startTime": 881.242,
+            "endTime": 887.936,
+            "body": "But then eventually you could start using it'll warn you and say, Hey, you should probably put this in a string dictionary since in your, it's in your ui."
+        },
+        {
+            "startTime": 888.356,
+            "endTime": 890.306,
+            "body": "So I haven't recommend checking that out."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 890.696,
+            "endTime": 896.6,
+            "body": "Yeah, I mean, I've always used localization and all of my apps, the, my early apps were like supporting eight languages."
+        },
+        {
+            "startTime": 896.6,
+            "endTime": 898.73,
+            "body": "One of them was supporting 14, which was just crazy."
+        },
+        {
+            "startTime": 898.73,
+            "endTime": 900.785,
+            "body": "But, Yeah."
+        },
+        {
+            "startTime": 900.875,
+            "endTime": 902.495,
+            "body": "But, but, but it's, it's important."
+        },
+        {
+            "startTime": 902.495,
+            "endTime": 903.825,
+            "body": "I mean, like, you know, we're not, it is important."
+        },
+        {
+            "startTime": 903.825,
+            "endTime": 908.105,
+            "body": "We're not the, it's not English speak people and people who read, you know, left to right."
+        },
+        {
+            "startTime": 908.11,
+            "endTime": 909.095,
+            "body": "I have to think about that for a minute."
+        },
+        {
+            "startTime": 909.545,
+            "endTime": 911.585,
+            "body": "We're not the only people using your app, right?"
+        },
+        {
+            "startTime": 911.585,
+            "endTime": 911.785,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 911.79,
+            "endTime": 914.506,
+            "body": "So so that's another important consideration."
+        },
+        {
+            "startTime": 914.515,
+            "endTime": 915.97,
+            "body": "And obviously a market too."
+        },
+        {
+            "startTime": 915.975,
+            "endTime": 924.34,
+            "body": "I mean, you know, Canada's like a 10th the size of the United States in terms of market, but then China is 10 times, 10 times the US or a hundred times the US I think."
+        },
+        {
+            "startTime": 924.345,
+            "endTime": 925.63,
+            "body": "Right, right, right."
+        },
+        {
+            "startTime": 925.63,
+            "endTime": 932.625,
+            "body": "So, You know, and it's funny cuz we, you know, in in, I worked in Canadian banking and obviously Canada, our two official languages are English and French."
+        },
+        {
+            "startTime": 932.635,
+            "endTime": 933.195,
+            "body": "Right?"
+        },
+        {
+            "startTime": 933.2,
+            "endTime": 933.315,
+            "body": "Right."
+        },
+        {
+            "startTime": 933.315,
+            "endTime": 942.495,
+            "body": "The majority of us speak English, I mean, sorry, French people, but I'm sure in some provinces it's, you know, very French and some, some are bi fully, one province is fully bilingual."
+        },
+        {
+            "startTime": 942.495,
+            "endTime": 942.765,
+            "body": "Right."
+        },
+        {
+            "startTime": 943.455,
+            "endTime": 946.845,
+            "body": "But, you know, so you think, okay, well I need to add English and French into my app."
+        },
+        {
+            "startTime": 946.845,
+            "endTime": 947.175,
+            "body": "Right?"
+        },
+        {
+            "startTime": 947.175,
+            "endTime": 953.715,
+            "body": "What we, what I, we didn't realize was a large, a very large percentage of our users are Chinese."
+        },
+        {
+            "startTime": 954.355,
+            "endTime": 954.915,
+            "body": ", right."
+        },
+        {
+            "startTime": 954.915,
+            "endTime": 955.395,
+            "body": "Okay."
+        },
+        {
+            "startTime": 955.4,
+            "endTime": 961.195,
+            "body": "So, so we had to, we, you know, in the banking app we added English, French, and then we started adding Chinese."
+        },
+        {
+            "startTime": 961.195,
+            "endTime": 970.315,
+            "body": "And that that sort of got, you know, a lot of, lot of people, I mean there were even people in Quebec who are Chinese whose, whose fallback language is French, not English."
+        },
+        {
+            "startTime": 970.825,
+            "endTime": 971.125,
+            "body": "Right?"
+        },
+        {
+            "startTime": 971.13,
+            "endTime": 975.685,
+            "body": "So these are things you sort of, that, that come up in, in, especially in larger ops."
+        },
+        {
+            "startTime": 975.685,
+            "endTime": 983.305,
+            "body": "I mean, I think I was, I was gonna go down this one rabbit hole was that, you know, the banking app was u was used by 6 million people a day."
+        },
+        {
+            "startTime": 984.235,
+            "endTime": 984.595,
+            "body": "right?"
+        },
+        {
+            "startTime": 984.625,
+            "endTime": 987.445,
+            "body": "Like that's huge numbers, right?"
+        },
+        {
+            "startTime": 987.445,
+            "endTime": 988.885,
+            "body": "In terms of people who's using it, right?"
+        },
+        {
+            "startTime": 988.885,
+            "endTime": 994.405,
+            "body": "So I mean, all the more reason that be accessible, support, accessibility, dynamic type and that kind of stuff."
+        },
+        {
+            "startTime": 994.41,
+            "endTime": 994.615,
+            "body": "Right."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 995.725,
+            "endTime": 995.815,
+            "body": "Do"
+        },
+        {
+            "startTime": 995.815,
+            "endTime": 998.815,
+            "body": "you think one, one thing you wanted to talk about, and this gets into."
+        },
+        {
+            "startTime": 999.37,
+            "endTime": 1000.06,
+            "body": "Other cultures."
+        },
+        {
+            "startTime": 1000.06,
+            "endTime": 1003.48,
+            "body": "Other languages as, yeah, multidisciplinary engineering."
+        },
+        {
+            "startTime": 1003.48,
+            "endTime": 1005.61,
+            "body": "What, what, yeah."
+        },
+        {
+            "startTime": 1005.61,
+            "endTime": 1007.63,
+            "body": "What does that mean, I guess, and how do you think that's helpful?"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 1007.63,
+            "endTime": 1008.22,
+            "body": "Did I put that down there?"
+        },
+        {
+            "startTime": 1010.53,
+            "endTime": 1017.685,
+            "body": "? . I think I, yeah, I think, I think what it meant by multi multidisciplinary engineering was what they sometimes call cross-functional engineering as well."
+        },
+        {
+            "startTime": 1017.685,
+            "endTime": 1018.645,
+            "body": "Where Okay."
+        },
+        {
+            "startTime": 1018.727,
+            "endTime": 1021.83,
+            "body": "It's not just an isolated instance where you're in io."
+        },
+        {
+            "startTime": 1022.16,
+            "endTime": 1029.515,
+            "body": "You know, you may be dealing with you may be dealing, you're obviously dealing with endpoints if you do any kind of, any kind of data stored on a network or any kind of user account stuff."
+        },
+        {
+            "startTime": 1029.515,
+            "endTime": 1034.038,
+            "body": "So I think what I meant by that was, was, I'd have to go back to my notes now but I think I meant."
+        },
+        {
+            "startTime": 1035.058,
+            "endTime": 1040.914,
+            "body": "Like, you know thinking about the engineering across CROK teams or across, across different silos, right?"
+        },
+        {
+            "startTime": 1040.919,
+            "endTime": 1043.254,
+            "body": "In terms of like what you're, you're dealing with."
+        },
+        {
+            "startTime": 1043.328,
+            "endTime": 1046.688,
+            "body": "I mean, like I, in my own apps, you know, I write my own APIs, right?"
+        },
+        {
+            "startTime": 1046.693,
+            "endTime": 1048.788,
+            "body": "So I do PHP and my sql."
+        },
+        {
+            "startTime": 1049.068,
+            "endTime": 1049.558,
+            "body": "Okay."
+        },
+        {
+            "startTime": 1049.563,
+            "endTime": 1056.408,
+            "body": "And so, so you, you know, you need, need to know those things and, and you know, then if you've got Android support, you might need to know Kotlin."
+        },
+        {
+            "startTime": 1056.798,
+            "endTime": 1059.258,
+            "body": "You know, have somebody on the team who knows Kotlin, right."
+        },
+        {
+            "startTime": 1059.798,
+            "endTime": 1061.778,
+            "body": "And Java to be able to support those kind of things."
+        },
+        {
+            "startTime": 1061.778,
+            "endTime": 1064.148,
+            "body": "I think that's what I meant by multidisciplinary engineering."
+        },
+        {
+            "startTime": 1064.148,
+            "endTime": 1066.594,
+            "body": "It's not just again, the more than just code comment, right?"
+        },
+        {
+            "startTime": 1067.914,
+            "endTime": 1068.034,
+            "body": "what?"
+        },
+        {
+            "startTime": 1068.068,
+            "endTime": 1069.368,
+            "body": "More than just Iowa's code, I mean,"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 1070.063,
+            "endTime": 1070.423,
+            "body": "Right."
+        },
+        {
+            "startTime": 1070.514,
+            "endTime": 1074.924,
+            "body": "I'm almost surprised at how many iOS tab don't know anything about backend development."
+        },
+        {
+            "startTime": 1074.998,
+            "endTime": 1079.498,
+            "body": "Yeah, but it, I mean, it kind of makes sense if that's all you've been doing."
+        },
+        {
+            "startTime": 1079.498,
+            "endTime": 1088.283,
+            "body": "But what do you, if you were an iOS developer, let's say I was a iOS developer, and I asked you Hey, what should I do?"
+        },
+        {
+            "startTime": 1088.313,
+            "endTime": 1091.373,
+            "body": "What should I learn if I wanted to be branch out?"
+        },
+        {
+            "startTime": 1091.433,
+            "endTime": 1093.533,
+            "body": "Or what would you recommend being"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 1093.773,
+            "endTime": 1094.193,
+            "body": "first up?"
+        },
+        {
+            "startTime": 1094.423,
+            "endTime": 1094.663,
+            "body": "Mm."
+        },
+        {
+            "startTime": 1095.108,
+            "endTime": 1102.6,
+            "body": "Well, I mean, I'm, I'm a fan of PHP from way back when, but the, I think, you know, Python is an important language to Mark, mark Rubin from Morgan."
+        },
+        {
+            "startTime": 1102.6,
+            "endTime": 1104.91,
+            "body": "Just code would be telling you to learn Python for sure."
+        },
+        {
+            "startTime": 1105.33,
+            "endTime": 1106.89,
+            "body": "That's, I think, his favorite language."
+        },
+        {
+            "startTime": 1106.92,
+            "endTime": 1111.48,
+            "body": "I mean, there's things like Go GOs used a lot in, in backend work these days."
+        },
+        {
+            "startTime": 1111.485,
+            "endTime": 1113.25,
+            "body": "No, JS is another important one."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 1113.52,
+            "endTime": 1118.41,
+            "body": "Yeah, I was gonna say node, node type script, because that opens up a whole world type script"
+        },
+        {
+            "startTime": 1118.41,
+            "endTime": 1118.53,
+            "body": "is"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 1118.53,
+            "endTime": 1119.43,
+            "body": "sort of built on top of."
+        },
+        {
+            "startTime": 1119.81,
+            "endTime": 1120.74,
+            "body": "Or is it"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 1121.1,
+            "endTime": 1122.75,
+            "body": "further Java built on top of JavaScript?"
+        },
+        {
+            "startTime": 1122.75,
+            "endTime": 1123.02,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1123.13,
+            "endTime": 1123.53,
+            "body": "Right."
+        },
+        {
+            "startTime": 1123.53,
+            "endTime": 1123.65,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1123.655,
+            "endTime": 1127.85,
+            "body": "But anything like that where you can open the whole world, a web to you right."
+        },
+        {
+            "startTime": 1127.855,
+            "endTime": 1129.636,
+            "body": "Would be super, super useful."
+        },
+        {
+            "startTime": 1129.705,
+            "endTime": 1131.505,
+            "body": "Obviously I'm a big fan of backend"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 1132.285,
+            "endTime": 1134.955,
+            "body": "paper and I was listening to your show with, with Sarah other today, swift."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 1135.49,
+            "endTime": 1137.29,
+            "body": "So like that's an option."
+        },
+        {
+            "startTime": 1137.29,
+            "endTime": 1145.293,
+            "body": "But I mean, that'll, that'll, I think that's good for teaching you how, how to like, query a database or how to like build a rest api."
+        },
+        {
+            "startTime": 1145.353,
+            "endTime": 1152.433,
+            "body": "But as far as like learning another language, I think JavaScript type script would be super helpful cuz then you can like do all sorts of stuff on webpages and things"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 1152.433,
+            "endTime": 1152.793,
+            "body": "like that."
+        },
+        {
+            "startTime": 1153.123,
+            "endTime": 1157.053,
+            "body": "Yeah, I think it's very important to understand the contract between yourself and the backend too."
+        },
+        {
+            "startTime": 1157.053,
+            "endTime": 1157.323,
+            "body": "Right?"
+        },
+        {
+            "startTime": 1157.323,
+            "endTime": 1158.163,
+            "body": "Like, you know."
+        },
+        {
+            "startTime": 1158.223,
+            "endTime": 1158.343,
+            "body": "Right."
+        },
+        {
+            "startTime": 1158.343,
+            "endTime": 1164.962,
+            "body": "We currently, like, you know, when I started iOS, we were doing, you know Pless, which are xml, we were learning how to XML parse."
+        },
+        {
+            "startTime": 1164.962,
+            "endTime": 1165.232,
+            "body": "Right."
+        },
+        {
+            "startTime": 1165.237,
+            "endTime": 1169.62,
+            "body": "And, and then, you know, I think, don't remind me uh, JSON came along and know the horror stories, right?"
+        },
+        {
+            "startTime": 1170.01,
+            "endTime": 1170.13,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1170.16,
+            "endTime": 1174.887,
+            "body": "JSON came along and now we have the json, you know decoding and encoding protocols."
+        },
+        {
+            "startTime": 1174.887,
+            "endTime": 1174.947,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1174.947,
+            "endTime": 1183.436,
+            "body": "We have the, the, you know, And as coder for binary phs, you know, storing them, bringing 'em back to life, re reinflating them if you will."
+        },
+        {
+            "startTime": 1183.505,
+            "endTime": 1192.027,
+            "body": "You know, it kind of reminds me of, of astronauts going to the moon, the way they would dehydrate their food and they would use water to reinflate them, to make them into look a nice mm-hmm."
+        },
+        {
+            "startTime": 1192.267,
+            "endTime": 1192.327,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1192.327,
+            "endTime": 1192.597,
+            "body": "Steak."
+        },
+        {
+            "startTime": 1192.867,
+            "endTime": 1193.257,
+            "body": "Exactly."
+        },
+        {
+            "startTime": 1194.097,
+            "endTime": 1196.085,
+            "body": "But , the, you know, so there's that."
+        },
+        {
+            "startTime": 1196.085,
+            "endTime": 1202.586,
+            "body": "And then, and now we've got the Code Codeable Pro protocol in, in swift to be able to handle that kind of stuff for us."
+        },
+        {
+            "startTime": 1202.586,
+            "endTime": 1208.856,
+            "body": "And yeah, you know, under the hood there's a lot going on, but, you know, from a user point of view, it's, you know, pretty, pretty straightforward."
+        },
+        {
+            "startTime": 1208.861,
+            "endTime": 1215.025,
+            "body": "So, but I think, you know, understanding you know, looking at like under learning about how, you know, basic http works, right?"
+        },
+        {
+            "startTime": 1215.025,
+            "endTime": 1220.575,
+            "body": "Like how, you know, TLS works and encryption, you know, importance of encryption and importance of se."
+        },
+        {
+            "startTime": 1220.815,
+            "endTime": 1227.985,
+            "body": "It leads into the security discussion about, you know, making sure that you're, you're talking to your, your backend correctly."
+        },
+        {
+            "startTime": 1227.985,
+            "endTime": 1230.475,
+            "body": "You're not, you know, exposing secrets."
+        },
+        {
+            "startTime": 1230.48,
+            "endTime": 1236.235,
+            "body": "You're not taking a user of password, for example, and passing around a plain text bad idea, you know?"
+        },
+        {
+            "startTime": 1237.75,
+            "endTime": 1241.5,
+            "body": "You know, there's all kinds of different things that you can do there to, to sort of wreck somebody's day."
+        },
+        {
+            "startTime": 1241.5,
+            "endTime": 1241.77,
+            "body": "Right."
+        },
+        {
+            "startTime": 1241.77,
+            "endTime": 1242.681,
+            "body": "But by yeah."
+        },
+        {
+            "startTime": 1242.821,
+            "endTime": 1250.031,
+            "body": "I, I just, I shuder every time I hear one of these new, oh, so-and-so's been exploited and so-and-so's, you know, change your passwords on this thing."
+        },
+        {
+            "startTime": 1250.031,
+            "endTime": 1254.291,
+            "body": "And, you know, it's getting old, just, it's just, it just scares the heck outta me."
+        },
+        {
+            "startTime": 1254.291,
+            "endTime": 1254.441,
+            "body": "Right."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 1255.641,
+            "endTime": 1260.381,
+            "body": "How do you think project management fits into this as far as."
+        },
+        {
+            "startTime": 1261.521,
+            "endTime": 1262.241,
+            "body": "Take a step back."
+        },
+        {
+            "startTime": 1262.381,
+            "endTime": 1264.161,
+            "body": "We, we talked about helping developers."
+        },
+        {
+            "startTime": 1264.461,
+            "endTime": 1264.551,
+            "body": "Mm-hmm."
+        },
+        {
+            "startTime": 1264.791,
+            "endTime": 1271.211,
+            "body": "learn, but like, as far as for if you're managing a team, like what do you think is the role of a project manager?"
+        },
+        {
+            "startTime": 1271.211,
+            "endTime": 1271.541,
+            "body": "What do you."
+        },
+        {
+            "startTime": 1272.066,
+            "endTime": 1273.236,
+            "body": "They're, they're missing out"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 1273.236,
+            "endTime": 1273.476,
+            "body": "on."
+        },
+        {
+            "startTime": 1274.046,
+            "endTime": 1276.776,
+            "body": "Yeah, it kind of de, it depends on the, depends on the company as well."
+        },
+        {
+            "startTime": 1276.776,
+            "endTime": 1282.866,
+            "body": "Like cuz the different def definitions, like larger companies, like a bank would, would have like that broken down into four different roles."
+        },
+        {
+            "startTime": 1282.866,
+            "endTime": 1286.316,
+            "body": "Whereas a smaller startup might have it like all compacted into one."
+        },
+        {
+            "startTime": 1286.316,
+            "endTime": 1289.466,
+            "body": "But I, I know of an engineer here in Toronto pretty successful."
+        },
+        {
+            "startTime": 1290.306,
+            "endTime": 1295.911,
+            "body": "Solo developer who use uses project management tools just to keep himself on the street and narrow."
+        },
+        {
+            "startTime": 1295.911,
+            "endTime": 1299.301,
+            "body": "And I've thought about doing that, like thought about using tools like Trello."
+        },
+        {
+            "startTime": 1299.354,
+            "endTime": 1303.698,
+            "body": "Like at Koca we use Trello for managing our projects, but also Jira."
+        },
+        {
+            "startTime": 1303.698,
+            "endTime": 1305.108,
+            "body": "I'm a big fan of Jira."
+        },
+        {
+            "startTime": 1305.138,
+            "endTime": 1307.718,
+            "body": "I mean, not a huge fan of mean, it's the tool you use."
+        },
+        {
+            "startTime": 1308.078,
+            "endTime": 1311.828,
+            "body": "I know a friend of mine who's on monday.com who's shaking his fist at the screen right now."
+        },
+        {
+            "startTime": 1311.828,
+            "endTime": 1313.802,
+            "body": "But you know, it's just a matter it, I think."
+        },
+        {
+            "startTime": 1314.152,
+            "endTime": 1318.664,
+            "body": "It allows you to take, and it's part of, sort of agile flow that you want to basically take."
+        },
+        {
+            "startTime": 1318.665,
+            "endTime": 1322.847,
+            "body": "My agile joke by the way, is how do you, how do you eat an elephant?"
+        },
+        {
+            "startTime": 1323.897,
+            "endTime": 1326.117,
+            "body": "You know, one bite at a time, right?"
+        },
+        {
+            "startTime": 1328.392,
+            "endTime": 1334.002,
+            "body": "So you so basically take any large complex job and you break it down into smaller chunks."
+        },
+        {
+            "startTime": 1334.002,
+            "endTime": 1334.182,
+            "body": "Right."
+        },
+        {
+            "startTime": 1334.182,
+            "endTime": 1335.712,
+            "body": "And I think that's what Agile does, right?"
+        },
+        {
+            "startTime": 1335.772,
+            "endTime": 1342.382,
+            "body": "And, and if you're using a tool like using something like Confluence to document what the, what the, the ticket's about."
+        },
+        {
+            "startTime": 1343.192,
+            "endTime": 1348.982,
+            "body": "you know, take the, the actual tasks of what you're gonna put together in terms of an app and break it down into those steps."
+        },
+        {
+            "startTime": 1348.982,
+            "endTime": 1350.272,
+            "body": "What do I need to do first?"
+        },
+        {
+            "startTime": 1350.272,
+            "endTime": 1351.352,
+            "body": "What do I need to do second?"
+        },
+        {
+            "startTime": 1351.382,
+            "endTime": 1351.442,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1351.447,
+            "endTime": 1353.032,
+            "body": "Is a dependency here and there."
+        },
+        {
+            "startTime": 1353.482,
+            "endTime": 1360.842,
+            "body": "So tools like Jira and Trello help you sort of organize all the pieces like you were, I think you were mentioning about you know, Ulysses as an example."
+        },
+        {
+            "startTime": 1360.842,
+            "endTime": 1364.803,
+            "body": "I think my friend Tammy is a big fan of s Scribner for writing, right?"
+        },
+        {
+            "startTime": 1364.823,
+            "endTime": 1365.223,
+            "body": "Mm-hmm."
+        },
+        {
+            "startTime": 1365.308,
+            "endTime": 1369.313,
+            "body": "writing stories, writing novels, writing, you know, Well, it's your short story or a long story."
+        },
+        {
+            "startTime": 1369.313,
+            "endTime": 1369.373,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 1369.553,
+            "endTime": 1371.113,
+            "body": "You, you have to break it down into pieces."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 1371.113,
+            "endTime": 1377.143,
+            "body": "It's way too overwhelming, but you need to gather all your bits and pieces into like a sort of a treasure box and scrapbook them kind of thing."
+        },
+        {
+            "startTime": 1377.323,
+            "endTime": 1378.154,
+            "body": "And I think that's what I think it's."
+        },
+        {
+            "startTime": 1379.063,
+            "endTime": 1381.733,
+            "body": ",  Leo Dion (host): I think Ulysses calls a material sheet, right?"
+        },
+        {
+            "startTime": 1381.763,
+            "endTime": 1382.633,
+            "body": "I think that's the term"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 1382.633,
+            "endTime": 1383.113,
+            "body": "they use."
+        },
+        {
+            "startTime": 1383.163,
+            "endTime": 1383.523,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1383.593,
+            "endTime": 1383.953,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1383.953,
+            "endTime": 1392.803,
+            "body": "So, and Scribner has a sort of like a sort of sketch board kind of place where you kind, you collect all the bits and pieces that are gonna make up your story, your story lines, your character developments mm-hmm."
+        },
+        {
+            "startTime": 1392.883,
+            "endTime": 1393.283,
+            "body": "and that kind of stuff."
+        },
+        {
+            "startTime": 1393.283,
+            "endTime": 1393.643,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1393.643,
+            "endTime": 1397.073,
+            "body": "But I think, I think a tank in those same sort of, kind of criteria."
+        },
+        {
+            "startTime": 1397.09,
+            "endTime": 1398.32,
+            "body": "I do the same thing in my artwork."
+        },
+        {
+            "startTime": 1398.32,
+            "endTime": 1405.25,
+            "body": "I, I break it down into, into what has to happen first, what, you know, I need to gather the supplies I need to, you know, have the stuff."
+        },
+        {
+            "startTime": 1405.87,
+            "endTime": 1409.68,
+            "body": "To go in order to, to basically get the project from one place to another."
+        },
+        {
+            "startTime": 1409.68,
+            "endTime": 1417.928,
+            "body": "And I think that's the same thing's true with, with any kind of mobile development or even websites is, is you need to break it down into small pieces."
+        },
+        {
+            "startTime": 1417.928,
+            "endTime": 1428.29,
+            "body": "Like and maybe this is something that a, a, a young new developer can think about is like, you know, like for instance, I have a, an app on a store or like a tutorial on using Touch id, right?"
+        },
+        {
+            "startTime": 1428.29,
+            "endTime": 1431.74,
+            "body": "So I wanna use Touch id, Hey Lou Leo, I wanna use Touch id right?"
+        },
+        {
+            "startTime": 1432.38,
+            "endTime": 1433.34,
+            "body": ". Well, what do I need to do first?"
+        },
+        {
+            "startTime": 1433.34,
+            "endTime": 1437.36,
+            "body": "Well, first of all, I need to have some sort of app that requires login, right?"
+        },
+        {
+            "startTime": 1437.365,
+            "endTime": 1437.66,
+            "body": "Mm-hmm."
+        },
+        {
+            "startTime": 1437.74,
+            "endTime": 1442.58,
+            "body": ". And so then I have to create a login view, and then I have to create, you know, then I have to be able to handle the username and the password."
+        },
+        {
+            "startTime": 1442.58,
+            "endTime": 1445.64,
+            "body": "And as I said before, you don't want to handle that on Plain Tech."
+        },
+        {
+            "startTime": 1445.64,
+            "endTime": 1447.92,
+            "body": "So now you need to figure out a way to obfuscate."
+        },
+        {
+            "startTime": 1448.445,
+            "endTime": 1449.975,
+            "body": "The input from the user."
+        },
+        {
+            "startTime": 1450.305,
+            "endTime": 1454.865,
+            "body": "And then you need to have a way to talk to, maybe you wanna store something in user defaults key chain."
+        },
+        {
+            "startTime": 1454.895,
+            "endTime": 1455.795,
+            "body": "Okay, that's fine."
+        },
+        {
+            "startTime": 1455.795,
+            "endTime": 1463.625,
+            "body": "Maybe I want to use key chain, so then I have to go and learn about key chain, you know, and, and break down all the pieces that, that you need to do in order to"
+        },
+        {
+            "startTime": 1463.637,
+            "endTime": 1467.807,
+            "body": "facilitate getting to the point where you can actually add touch ID to your screen."
+        },
+        {
+            "startTime": 1467.807,
+            "endTime": 1468.107,
+            "body": "Right?"
+        },
+        {
+            "startTime": 1468.407,
+            "endTime": 1468.707,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1468.822,
+            "endTime": 1476.749,
+            "body": "You know, so and we should probably talk about yak shaving at some point too, but, The, you know, the idea is like you."
+        },
+        {
+            "startTime": 1477.454,
+            "endTime": 1480.034,
+            "body": "You have a complex task to do."
+        },
+        {
+            "startTime": 1480.088,
+            "endTime": 1489.598,
+            "body": "And one of the things we did early, early, early in the days was when we were writing our iOS stuff is, you know, we weren't the experts on it cuz I don't don't think anybody was in the early days, right?"
+        },
+        {
+            "startTime": 1489.598,
+            "endTime": 1498.838,
+            "body": "So one of my junior's jobs was to just scour the web for a solution that's already been written and somebody already written something about this that already does this thing rather than."
+        },
+        {
+            "startTime": 1499.628,
+            "endTime": 1501.218,
+            "body": "trying to invent it yourself, right?"
+        },
+        {
+            "startTime": 1501.398,
+            "endTime": 1504.728,
+            "body": "Like one of the things about security is don't try to invent your own security."
+        },
+        {
+            "startTime": 1504.728,
+            "endTime": 1505.868,
+            "body": "It's already been done."
+        },
+        {
+            "startTime": 1505.868,
+            "endTime": 1506.978,
+            "body": "It's already been proven."
+        },
+        {
+            "startTime": 1507.428,
+            "endTime": 1511.388,
+            "body": "There are best practices, you know, you should, you should probably check that out, right?"
+        },
+        {
+            "startTime": 1511.568,
+            "endTime": 1512.798,
+            "body": "Rather than trying to do it yourself."
+        },
+        {
+            "startTime": 1513.668,
+            "endTime": 1514.455,
+            "body": "But yeah."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 1516.235,
+            "endTime": 1517.135,
+            "body": "Do you use."
+        },
+        {
+            "startTime": 1517.785,
+            "endTime": 1526.345,
+            "body": ". Yeah, so I, I pretty much, I think I mentioned this, I don't know, but I use like a spreadsheet to keep track of my to-do list."
+        },
+        {
+            "startTime": 1526.345,
+            "endTime": 1526.545,
+            "body": "Mm-hmm."
+        },
+        {
+            "startTime": 1526.625,
+            "endTime": 1527.085,
+            "body": ", but when Right."
+        },
+        {
+            "startTime": 1527.375,
+            "endTime": 1535.387,
+            "body": "I've individual repos or projects and GitHub has this now GitLab has, has like their little Jira Yeah."
+        },
+        {
+            "startTime": 1535.637,
+            "endTime": 1544.667,
+            "body": "Trello thing, and then I'll put those individual tasks and then I'll organize those into a Trello board of some sort for like projects, coding projects."
+        },
+        {
+            "startTime": 1544.667,
+            "endTime": 1544.907,
+            "body": "So to."
+        },
+        {
+            "startTime": 1546.362,
+            "endTime": 1546.572,
+            "body": ".  Tim Mitra (guest): Yeah."
+        },
+        {
+            "startTime": 1546.572,
+            "endTime": 1548.492,
+            "body": "I just wanna show you here on, on my phone."
+        },
+        {
+            "startTime": 1548.492,
+            "endTime": 1551.9,
+            "body": "I mean so, you know, like one, one of the things I do in, in, yeah."
+        },
+        {
+            "startTime": 1551.9,
+            "endTime": 1556.28,
+            "body": "So here, like for instance, I've started doing, using my, I dunno if you can get the clear shot of this."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 1556.314,
+            "endTime": 1557.034,
+            "body": "It's too bright."
+        },
+        {
+            "startTime": 1557.034,
+            "endTime": 1557.814,
+            "body": "I can't see it."
+        },
+        {
+            "startTime": 1558.414,
+            "endTime": 1559.014,
+            "body": "Too bright."
+        },
+        {
+            "startTime": 1559.014,
+            "endTime": 1559.164,
+            "body": "There"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 1559.164,
+            "endTime": 1559.554,
+            "body": "we go."
+        },
+        {
+            "startTime": 1559.614,
+            "endTime": 1559.944,
+            "body": "How's that?"
+        },
+        {
+            "startTime": 1559.949,
+            "endTime": 1560.124,
+            "body": "There you go."
+        },
+        {
+            "startTime": 1560.709,
+            "endTime": 1561.009,
+            "body": ", right?"
+        },
+        {
+            "startTime": 1561.009,
+            "endTime": 1566.319,
+            "body": "So you can see that, you know, I've got user stories and I'm using the notes featured to make little check boxes."
+        },
+        {
+            "startTime": 1566.709,
+            "endTime": 1572.949,
+            "body": "And this is just a simple, I broke this, you know, in terms of what I want to refactor in the app is I broke down what it is I want to do."
+        },
+        {
+            "startTime": 1572.949,
+            "endTime": 1583.839,
+            "body": "And just using the notes app, I mean like you don't need to have Jira or Trello to start, you know, like you said, you can use a spreadsheet, you can use a Symboled note, note taking app, right?"
+        },
+        {
+            "startTime": 1584.469,
+            "endTime": 1586.779,
+            "body": "Piece of paper, right, right back of an envelope, literal."
+        },
+        {
+            "startTime": 1587.694,
+            "endTime": 1588.354,
+            "body": ".  Leo Dion (host): Right, right."
+        },
+        {
+            "startTime": 1588.384,
+            "endTime": 1592.704,
+            "body": "Well, and there's something nice about that, cuz then you don't have this feeling of, oh, this is permanent."
+        },
+        {
+            "startTime": 1592.704,
+            "endTime": 1593.844,
+            "body": "I need to save this."
+        },
+        {
+            "startTime": 1593.919,
+            "endTime": 1596.919,
+            "body": "Cause if it's on paper, it's like, okay, I copied it over."
+        },
+        {
+            "startTime": 1596.924,
+            "endTime": 1598.779,
+            "body": "I'm done pro processing it."
+        },
+        {
+            "startTime": 1598.852,
+            "endTime": 1599.932,
+            "body": "Yeah, I can throw it away."
+        },
+        {
+            "startTime": 1600.502,
+            "endTime": 1600.802,
+            "body": "What?"
+        },
+        {
+            "startTime": 1600.952,
+            "endTime": 1601.12,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1601.145,
+            "endTime": 1603.995,
+            "body": "One of the things you wrote down is domain driven design."
+        },
+        {
+            "startTime": 1604.415,
+            "endTime": 1604.655,
+            "body": "What?"
+        },
+        {
+            "startTime": 1604.66,
+            "endTime": 1604.945,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1605.615,
+            "endTime": 1606.125,
+            "body": "What did you mean"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 1606.275,
+            "endTime": 1606.755,
+            "body": "by that, Tim?"
+        },
+        {
+            "startTime": 1606.835,
+            "endTime": 1609.095,
+            "body": "So, so this is, this is something, it's interesting."
+        },
+        {
+            "startTime": 1609.155,
+            "endTime": 1612.845,
+            "body": "It, it came out of our work at Spot Hero, our, our previous cto."
+        },
+        {
+            "startTime": 1612.875,
+            "endTime": 1613.955,
+            "body": "I think he introduced the idea."
+        },
+        {
+            "startTime": 1613.96,
+            "endTime": 1617.795,
+            "body": "I'm not sure if, well, apologies to people at Spot Hero, so it wasn't his idea."
+        },
+        {
+            "startTime": 1617.795,
+            "endTime": 1619.342,
+            "body": "But there's a book by O'Reilly called din."
+        },
+        {
+            "startTime": 1619.732,
+            "endTime": 1621.562,
+            "body": "Domain driven design."
+        },
+        {
+            "startTime": 1621.562,
+            "endTime": 1630.832,
+            "body": "And the idea behind it is one of my favorite things about it is a thing called event storm, where you look at the business logic of your, of your process, right?"
+        },
+        {
+            "startTime": 1630.832,
+            "endTime": 1633.142,
+            "body": "And you kind of break it down."
+        },
+        {
+            "startTime": 1633.382,
+            "endTime": 1640.745,
+            "body": "You break down the, the using an event storm, you break down the sort of processes that go into sorting out a a business thing."
+        },
+        {
+            "startTime": 1641.045,
+            "endTime": 1641.935,
+            "body": "Think of a bus."
+        },
+        {
+            "startTime": 1642.68,
+            "endTime": 1643.25,
+            "body": "What would you do?"
+        },
+        {
+            "startTime": 1643.25,
+            "endTime": 1645.56,
+            "body": "Like maybe a pizza delivery service or something like that?"
+        },
+        {
+            "startTime": 1645.56,
+            "endTime": 1645.89,
+            "body": "Right."
+        },
+        {
+            "startTime": 1646.16,
+            "endTime": 1646.43,
+            "body": "Okay."
+        },
+        {
+            "startTime": 1646.515,
+            "endTime": 1649.905,
+            "body": "You know, so you'd have different parts of your, of your organization."
+        },
+        {
+            "startTime": 1649.905,
+            "endTime": 1657.075,
+            "body": "One is, you know, there's gonna be an order taking system that's going to, you know, describe all the orders, all the parts that make up a good pizza."
+        },
+        {
+            "startTime": 1657.075,
+            "endTime": 1657.405,
+            "body": "Right."
+        },
+        {
+            "startTime": 1657.765,
+            "endTime": 1663.435,
+            "body": "And then you've got your, your kitchen staff that are gonna take the, get the orders, read what kind of pizza the person."
+        },
+        {
+            "startTime": 1664.855,
+            "endTime": 1665.995,
+            "body": "Somebody's gonna have to prepare the dough."
+        },
+        {
+            "startTime": 1666.335,
+            "endTime": 1669.955,
+            "body": "Somebody's gonna have to put all the, the, you know, the pepperoni and the cheese and the sauce on it."
+        },
+        {
+            "startTime": 1670.345,
+            "endTime": 1673.255,
+            "body": "Then there's the oven crew that's gonna have to put it in the oven."
+        },
+        {
+            "startTime": 1673.255,
+            "endTime": 1675.685,
+            "body": "Turn the heat, obviously heat the oven up, right?"
+        },
+        {
+            "startTime": 1676.165,
+            "endTime": 1678.175,
+            "body": "Put the pizza in the oven to make the pizza."
+        },
+        {
+            "startTime": 1678.175,
+            "endTime": 1685.735,
+            "body": "There's gonna be the team that, after the pizza's been made, puts it in the box and hands it to the driver, you know, with the order number on it, for example."
+        },
+        {
+            "startTime": 1686.125,
+            "endTime": 1687.265,
+            "body": "Then there's gonna be a cleanup."
+        },
+        {
+            "startTime": 1687.265,
+            "endTime": 1689.485,
+            "body": "Crew has to go in and clean the plates and clean."
+        },
+        {
+            "startTime": 1690.09,
+            "endTime": 1692.73,
+            "body": "Utensils that were used to make the dough and to make the pizza."
+        },
+        {
+            "startTime": 1692.97,
+            "endTime": 1698.34,
+            "body": "And then you're gonna hand it to a driver who's gonna go and, you know, put it in his car and take it to an address."
+        },
+        {
+            "startTime": 1698.34,
+            "endTime": 1699.84,
+            "body": "Well, where, how does he get to that address?"
+        },
+        {
+            "startTime": 1699.84,
+            "endTime": 1704.19,
+            "body": "We need now we need, you know, an iPhone with a maps app on it to tell him where to go to deliver."
+        },
+        {
+            "startTime": 1704.195,
+            "endTime": 1711.69,
+            "body": "And then he gets the door, he takes a picture of the image and he, so anyway, there's a whole complex thing to just making a pizza."
+        },
+        {
+            "startTime": 1712.05,
+            "endTime": 1712.73,
+            "body": "Right, right."
+        },
+        {
+            "startTime": 1712.83,
+            "endTime": 1714.18,
+            "body": "Or making a pizza app if you want."
+        },
+        {
+            "startTime": 1714.18,
+            "endTime": 1715.29,
+            "body": "Or making a pizza business."
+        },
+        {
+            "startTime": 1715.29,
+            "endTime": 1715.59,
+            "body": "Right."
+        },
+        {
+            "startTime": 1715.98,
+            "endTime": 1725.07,
+            "body": "So, What you do is you in, in the sort of the vein driven de development is you say, okay, let's look at the making of the, the, the bakers, right?"
+        },
+        {
+            "startTime": 1725.07,
+            "endTime": 1727.35,
+            "body": "The people that are actually putting the pizza together."
+        },
+        {
+            "startTime": 1727.35,
+            "endTime": 1727.65,
+            "body": "Right."
+        },
+        {
+            "startTime": 1728.19,
+            "endTime": 1729.12,
+            "body": "That's a domain."
+        },
+        {
+            "startTime": 1729.6,
+            "endTime": 1729.96,
+            "body": "Right?"
+        },
+        {
+            "startTime": 1730.5,
+            "endTime": 1737.22,
+            "body": "And so you look at, we, we sit down and we examine all of the pieces, all of the processes that go into making pizza, right?"
+        },
+        {
+            "startTime": 1737.22,
+            "endTime": 1739.08,
+            "body": "Making the physical pizza itself, right?"
+        },
+        {
+            "startTime": 1739.53,
+            "endTime": 1742.02,
+            "body": "Irrespective of all those other domains that I described, right?"
+        },
+        {
+            "startTime": 1742.65,
+            "endTime": 1745.65,
+            "body": "And you look at that one particular domain and you go through all the sort."
+        },
+        {
+            "startTime": 1745.717,
+            "endTime": 1750.351,
+            "body": "Piece the, the, the, the sequences of, of events that need to happen in order to make a pizza."
+        },
+        {
+            "startTime": 1750.351,
+            "endTime": 1754.341,
+            "body": "And then we look at, well, who is the person who's gonna act on that particular thing?"
+        },
+        {
+            "startTime": 1754.341,
+            "endTime": 1758.511,
+            "body": "Is it an automated process or is it an actual human being who needs to do this?"
+        },
+        {
+            "startTime": 1758.991,
+            "endTime": 1761.781,
+            "body": "You know, like, can we write out, can we write up some coat that'll chop pepperoni?"
+        },
+        {
+            "startTime": 1761.841,
+            "endTime": 1762.471,
+            "body": "I don't think so."
+        },
+        {
+            "startTime": 1762.471,
+            "endTime": 1764.601,
+            "body": "We need to have somebody with a knife to cut the pepperoni."
+        },
+        {
+            "startTime": 1764.601,
+            "endTime": 1764.811,
+            "body": "Right?"
+        },
+        {
+            "startTime": 1764.811,
+            "endTime": 1769.791,
+            "body": "For example, I'm using a bricks and mortar kind of example for, for the sake of science, but yeah."
+        },
+        {
+            "startTime": 1770.991,
+            "endTime": 1778.873,
+            "body": ". So the idea is you, you kind of go through and you examine all of the sort of things that, things, you know, traditional, maybe you have some, some traditional things you've been doing."
+        },
+        {
+            "startTime": 1778.873,
+            "endTime": 1786.283,
+            "body": "So, so far, and this is the only way we can get this to work, we use the, you know, we use a piece of paper and a pencil because that's what we have, right?"
+        },
+        {
+            "startTime": 1786.283,
+            "endTime": 1791.183,
+            "body": "Well, maybe we could use a piece, you know, a notes app or we can use any spreadsheet or we can use something that's search."
+        },
+        {
+            "startTime": 1791.938,
+            "endTime": 1797.038,
+            "body": ", you know, like maybe down the road we might want to, you know, keep track of the orders and go back and see."
+        },
+        {
+            "startTime": 1797.038,
+            "endTime": 1807.538,
+            "body": "Historically, like when it comes to ordering the supplies, how do we know which are the most commonly used pizzas or com most commonly used supplies, which do we have more, need to have more of or less of?"
+        },
+        {
+            "startTime": 1807.543,
+            "endTime": 1807.838,
+            "body": "Right?"
+        },
+        {
+            "startTime": 1808.348,
+            "endTime": 1820.468,
+            "body": "So by examining the sort of domain around what is needs to get done within that particular sphere of, of the work, you can create a design like a, I mean a design in terms of."
+        },
+        {
+            "startTime": 1821.338,
+            "endTime": 1822.778,
+            "body": "The process of development."
+        },
+        {
+            "startTime": 1822.778,
+            "endTime": 1826.858,
+            "body": "You can write the little APIs, you can assign this, you know, create the assignments to people."
+        },
+        {
+            "startTime": 1826.858,
+            "endTime": 1830.698,
+            "body": "You can create user stories to facilitate, you know, the, that thing."
+        },
+        {
+            "startTime": 1830.698,
+            "endTime": 1833.398,
+            "body": "So if you think about, like, so take this back a step."
+        },
+        {
+            "startTime": 1833.398,
+            "endTime": 1837.438,
+            "body": "If this was, Hey, I want to write an iOS app that for ordering pizza, I."
+        },
+        {
+            "startTime": 1837.883,
+            "endTime": 1846.883,
+            "body": "Right now you have by examining the different, like by looking at this one particular domain, we know what is required in that particular domain of the business, right?"
+        },
+        {
+            "startTime": 1846.943,
+            "endTime": 1851.149,
+            "body": "And then we can look, we can go and look at, you know, the, the order takers domain."
+        },
+        {
+            "startTime": 1851.149,
+            "endTime": 1853.999,
+            "body": "We can look at the guy drive in the car domain."
+        },
+        {
+            "startTime": 1853.999,
+            "endTime": 1857.509,
+            "body": "We can look at the guy ordering the supplies to make the pizza."
+        },
+        {
+            "startTime": 1857.509,
+            "endTime": 1860.389,
+            "body": "That's another domain that can be, can be examined."
+        },
+        {
+            "startTime": 1860.389,
+            "endTime": 1862.759,
+            "body": "So you look at, you break down your business into."
+        },
+        {
+            "startTime": 1863.719,
+            "endTime": 1868.729,
+            "body": "Different parts and you put it together, you create a plan to put it together and it's great looking."
+        },
+        {
+            "startTime": 1868.729,
+            "endTime": 1869.869,
+            "body": "Come, yeah, go ahead."
+        },
+        {
+            "startTime": 1870.199,
+            "endTime": 1870.709,
+            "body": "Well, I'm,"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 1871.129,
+            "endTime": 1876.139,
+            "body": "what I'm hearing is a great opportunity to mo modularize your code."
+        },
+        {
+            "startTime": 1876.769,
+            "endTime": 1883.629,
+            "body": "Cause like just listening to your pizza analogy, I'm like, each domain has its own library attached to it."
+        },
+        {
+            "startTime": 1883.629,
+            "endTime": 1883.869,
+            "body": "Right."
+        },
+        {
+            "startTime": 1883.869,
+            "endTime": 1885.739,
+            "body": "And like, like or each"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 1885.744,
+            "endTime": 1886.349,
+            "body": "switch it might be a package."
+        },
+        {
+            "startTime": 1886.349,
+            "endTime": 1887.549,
+            "body": "Package, yeah, exactly."
+        },
+        {
+            "startTime": 1887.789,
+            "endTime": 1887.949,
+            "body": ", right."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 1887.954,
+            "endTime": 1889.879,
+            "body": "And it's all testing within its own."
+        },
+        {
+            "startTime": 1890.149,
+            "endTime": 1890.419,
+            "body": "Its."
+        },
+        {
+            "startTime": 1891.889,
+            "endTime": 1893.899,
+            "body": "set, whatever its own domain."
+        },
+        {
+            "startTime": 1893.979,
+            "endTime": 1894.499,
+            "body": "Yeah, yeah."
+        },
+        {
+            "startTime": 1894.499,
+            "endTime": 1894.799,
+            "body": "Right."
+        },
+        {
+            "startTime": 1894.799,
+            "endTime": 1894.979,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1894.979,
+            "endTime": 1908.089,
+            "body": "As opposed to, because I, I know I've done this accidentally, and by that I mean like, I know it's, it's, it's naturally how you kind of factor things out is like the, the making the pizza does not care about delivering the pizza."
+        },
+        {
+            "startTime": 1908.119,
+            "endTime": 1909.559,
+            "body": "It only cares about making the pizza"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 1909.559,
+            "endTime": 1910.909,
+            "body": "and Well, that's not true."
+        },
+        {
+            "startTime": 1910.909,
+            "endTime": 1911.479,
+            "body": "That's not true."
+        },
+        {
+            "startTime": 1911.809,
+            "endTime": 1912.779,
+            "body": "Well, you know what I mean?"
+        },
+        {
+            "startTime": 1913.384,
+            "endTime": 1920.884,
+            "body": "When you, when you do your examination, you might have the drivers come and tell you, well, you know, Leo, the pizzas are hot when they come outta the oven."
+        },
+        {
+            "startTime": 1921.394,
+            "endTime": 1921.604,
+            "body": "Yeah, okay."
+        },
+        {
+            "startTime": 1921.604,
+            "endTime": 1922.654,
+            "body": "I need a way to handle that."
+        },
+        {
+            "startTime": 1922.654,
+            "endTime": 1922.924,
+            "body": "Right."
+        },
+        {
+            "startTime": 1922.924,
+            "endTime": 1923.854,
+            "body": "So like there, yeah."
+        },
+        {
+            "startTime": 1923.884,
+            "endTime": 1931.384,
+            "body": "So it's, it does help to have cross domain or what we're talking, I understand where the connection, multidisciplinary development, it pays to have those guys in the"
+        },
+        {
+            "startTime": 1931.384,
+            "endTime": 1935.884,
+            "body": "room to have their sort of, because maybe there's a, maybe there's a way of doing it."
+        },
+        {
+            "startTime": 1935.884,
+            "endTime": 1938.134,
+            "body": "And, and if I can go back to the act shaving for a sec."
+        },
+        {
+            "startTime": 1938.134,
+            "endTime": 1941.584,
+            "body": "So do you, you, do you know the story about the ACT shaving, how that comes to being."
+        },
+        {
+            "startTime": 1942.274,
+            "endTime": 1942.544,
+            "body": "I think"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 1942.544,
+            "endTime": 1943.834,
+            "body": "I've heard of it before, but I'll"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 1943.834,
+            "endTime": 1944.794,
+            "body": "let you go ahead and repeat it."
+        },
+        {
+            "startTime": 1944.794,
+            "endTime": 1953.644,
+            "body": "Yeah, so, so it's one of my favorite things about like, when you're developing or thinking about a, an app, an app idea, and it's all, it's kind of like, don't reinvent the wheel, right?"
+        },
+        {
+            "startTime": 1953.644,
+            "endTime": 1953.764,
+            "body": "Mm-hmm."
+        },
+        {
+            "startTime": 1954.304,
+            "endTime": 1957.844,
+            "body": ", or, or you, you know, the ney, you ain't gonna need that kind of thing, right?"
+        },
+        {
+            "startTime": 1957.844,
+            "endTime": 1957.904,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1957.904,
+            "endTime": 1958.204,
+            "body": "Right."
+        },
+        {
+            "startTime": 1958.204,
+            "endTime": 1958.535,
+            "body": "The idea."
+        },
+        {
+            "startTime": 1958.54,
+            "endTime": 1958.904,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1959.404,
+            "endTime": 1962.224,
+            "body": "The idea is I want to get, I want to get Leo a gift, right?"
+        },
+        {
+            "startTime": 1962.344,
+            "endTime": 1969.724,
+            "body": "And, and I know Leo likes, you know, he likes warm clothing cuz he lives in the northern climate and so he, I'm gonna make him a, a yak wool."
+        },
+        {
+            "startTime": 1970.534,
+            "endTime": 1970.864,
+            "body": "right?"
+        },
+        {
+            "startTime": 1971.284,
+            "endTime": 1977.144,
+            "body": "Well, in order to make a yak, woo, it's kinda like a piece of story I just told, but to make a yak wool sweater, I need to have some y."
+        },
+        {
+            "startTime": 1977.929,
+            "endTime": 1978.259,
+            "body": ", right?"
+        },
+        {
+            "startTime": 1978.559,
+            "endTime": 1980.389,
+            "body": "I also need to learn how to knit, right?"
+        },
+        {
+            "startTime": 1980.539,
+            "endTime": 1982.729,
+            "body": "So to make a sweater for, for Leo kind of thing."
+        },
+        {
+            "startTime": 1983.179,
+            "endTime": 1988.309,
+            "body": "So, you know, first of all, so I gotta go and learn how to make, how to knit and develop that skill."
+        },
+        {
+            "startTime": 1988.309,
+            "endTime": 1990.799,
+            "body": "But in the meantime, I need to get this Yaqui."
+        },
+        {
+            "startTime": 1990.804,
+            "endTime": 1992.299,
+            "body": "Well, how do I get the Yaqui?"
+        },
+        {
+            "startTime": 1992.329,
+            "endTime": 1996.529,
+            "body": "Well, I need to go to the store that makes the get, that supplies the Yaqui."
+        },
+        {
+            "startTime": 1996.529,
+            "endTime": 1998.659,
+            "body": "Well, maybe there isn't a store that makes the Yaqui."
+        },
+        {
+            "startTime": 1998.689,
+            "endTime": 2002.409,
+            "body": "Maybe I need to figure out how to make the Yaqui myself."
+        },
+        {
+            "startTime": 2002.414,
+            "endTime": 2004.689,
+            "body": "Well, then I have to go and explore how to make wool."
+        },
+        {
+            "startTime": 2005.624,
+            "endTime": 2006.184,
+            "body": "right?"
+        },
+        {
+            "startTime": 2006.184,
+            "endTime": 2006.744,
+            "body": "Mm-hmm."
+        },
+        {
+            "startTime": 2006.824,
+            "endTime": 2007.224,
+            "body": ", and then mm-hmm."
+        },
+        {
+            "startTime": 2007.304,
+            "endTime": 2015.444,
+            "body": ", you know, how to, how to spin it, how to turn it into yarn, how to, you know, to make the sort of, and put it onto a spool so then I can, you know, knit it with my needing and needles kind of thing."
+        },
+        {
+            "startTime": 2015.444,
+            "endTime": 2015.714,
+            "body": "Right."
+        },
+        {
+            "startTime": 2015.714,
+            "endTime": 2020.754,
+            "body": "Well, you know, okay, so, but where do I get the supplies for the wool?"
+        },
+        {
+            "startTime": 2020.754,
+            "endTime": 2023.394,
+            "body": "Like the raw fiber that makes the wool right."
+        },
+        {
+            "startTime": 2023.394,
+            "endTime": 2026.514,
+            "body": "While I need to go and get that from a yack, right?"
+        },
+        {
+            "startTime": 2027.054,
+            "endTime": 2033.414,
+            "body": "Well, so then, but then I, in order to get the, convert the yack into the yarn, I need to figure out how to shave the."
+        },
+        {
+            "startTime": 2034.824,
+            "endTime": 2035.064,
+            "body": ", right."
+        },
+        {
+            "startTime": 2035.064,
+            "endTime": 2039.504,
+            "body": "And then, well, I don't have a yak here in Toronto and maybe, I don't think you have one in Lansing, Michigan either, maybe."
+        },
+        {
+            "startTime": 2039.564,
+            "endTime": 2039.774,
+            "body": "No."
+        },
+        {
+            "startTime": 2039.804,
+            "endTime": 2043.764,
+            "body": "So we might have to go to a zoo or might have to go to like, you know, might have to go to Tibet or something."
+        },
+        {
+            "startTime": 2043.764,
+            "endTime": 2045.024,
+            "body": "I don't just, I dunno, sorry."
+        },
+        {
+            "startTime": 2045.024,
+            "endTime": 2056.064,
+            "body": "Tibet, if you don't have yaks, but you have to go to Tibet and figure out how to get a yak and grow it and feed it and, you know, make it happy and keep it well enough that it'll keep you in supply of, of yak wall or yak fur."
+        },
+        {
+            "startTime": 2056.064,
+            "endTime": 2056.364,
+            "body": "Right?"
+        },
+        {
+            "startTime": 2056.414,
+            "endTime": 2056.614,
+            "body": "Right."
+        },
+        {
+            "startTime": 2057.054,
+            "endTime": 2068.739,
+            "body": "And so the idea is like, you know, rather than thinking I need you, Find, you know, find someone who already knows how to do the act, will make the act, will get them to come and do it for you."
+        },
+        {
+            "startTime": 2068.859,
+            "endTime": 2071.889,
+            "body": "Or like, you know, don't look, look, look for swift packages."
+        },
+        {
+            "startTime": 2072.309,
+            "endTime": 2077.649,
+            "body": "Look for cocoa pods that do the p the part of the app that you don't need to do the heavy lifting on."
+        },
+        {
+            "startTime": 2077.649,
+            "endTime": 2080.649,
+            "body": "I mentioned before, don't try and write your own security, write stack?"
+        },
+        {
+            "startTime": 2081.129,
+            "endTime": 2086.829,
+            "body": "You wanna basically use a known security stack to, to do key chain is one example of a, of a security stack, right?"
+        },
+        {
+            "startTime": 2087.364,
+            "endTime": 2087.694,
+            "body": "Right."
+        },
+        {
+            "startTime": 2087.764,
+            "endTime": 2090.164,
+            "body": "I'm waiting for Apple to come and fix security for us."
+        },
+        {
+            "startTime": 2091.214,
+            "endTime": 2099.52,
+            "body": ", you know, but yeah, that, that, I think that that that the act, the Apple story's an old computer  fable about or parable about."
+        },
+        {
+            "startTime": 2099.85,
+            "endTime": 2100.03,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2100.09,
+            "endTime": 2101.77,
+            "body": "You know, not trying to build it yourself, right?"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2102.18,
+            "endTime": 2102.67,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2102.67,
+            "endTime": 2103.15,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2103.24,
+            "endTime": 2104.02,
+            "body": "Exactly."
+        },
+        {
+            "startTime": 2104.157,
+            "endTime": 2107.607,
+            "body": "It was funny cuz before the recording we were talking about that Facebook article."
+        },
+        {
+            "startTime": 2108.057,
+            "endTime": 2108.177,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2108.177,
+            "endTime": 2123.165,
+            "body": "And like, if you read that article, it's like, , they built everything themselves and they, yeah, it's, they try to, it tries to come across as victorious, but it doesn't sound sound like that's necessarily the case."
+        },
+        {
+            "startTime": 2123.165,
+            "endTime": 2124.501,
+            "body": "So yeah."
+        },
+        {
+            "startTime": 2124.621,
+            "endTime": 2124.831,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2124.831,
+            "endTime": 2125.671,
+            "body": "I totally agree."
+        },
+        {
+            "startTime": 2125.701,
+            "endTime": 2125.941,
+            "body": "Cool."
+        },
+        {
+            "startTime": 2125.991,
+            "endTime": 2131.232,
+            "body": "So before we close out, I wanted to talk about Apple rumors and history."
+        },
+        {
+            "startTime": 2131.292,
+            "endTime": 2131.352,
+            "body": "Mm."
+        },
+        {
+            "startTime": 2132.042,
+            "endTime": 2139.872,
+            "body": "Because we've, , we've been hearing a lot of rumors about a new, new piece of hardware, which, let me see."
+        },
+        {
+            "startTime": 2139.932,
+            "endTime": 2140.112,
+            "body": "Well,"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2140.112,
+            "endTime": 2145.752,
+            "body": "we, we always, I want to correct you and say we, every year we hear about a new piece of hardware that's coming, right?"
+        },
+        {
+            "startTime": 2145.972,
+            "endTime": 2146.502,
+            "body": "Yeah, that's true."
+        },
+        {
+            "startTime": 2146.562,
+            "endTime": 2149.952,
+            "body": "We're still waiting for the, the 16 gigabyte white apple car, right?"
+        },
+        {
+            "startTime": 2150.372,
+            "endTime": 2150.642,
+            "body": "Yeah,"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2150.642,
+            "endTime": 2151.152,
+            "body": "that's right."
+        },
+        {
+            "startTime": 2151.157,
+            "endTime": 2151.602,
+            "body": "That's right."
+        },
+        {
+            "startTime": 2151.602,
+            "endTime": 2157.812,
+            "body": "This might, so this might be out if it, if it's out after it's been announced, which is mm-hmm."
+        },
+        {
+            "startTime": 2157.892,
+            "endTime": 2158.652,
+            "body": "is a possibility."
+        },
+        {
+            "startTime": 2158.652,
+            "endTime": 2160.362,
+            "body": "We won't have to cut this part, but we'll see."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2162.432,
+            "endTime": 2163.242,
+            "body": "so it won't be out."
+        },
+        {
+            "startTime": 2163.242,
+            "endTime": 2164.142,
+            "body": "It won't be out in March."
+        },
+        {
+            "startTime": 2164.142,
+            "endTime": 2164.652,
+            "body": "Trust me."
+        },
+        {
+            "startTime": 2165.222,
+            "endTime": 2165.372,
+            "body": "You"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2165.372,
+            "endTime": 2165.882,
+            "body": "don't think so?"
+        },
+        {
+            "startTime": 2166.212,
+            "endTime": 2167.022,
+            "body": "No, I don't think so."
+        },
+        {
+            "startTime": 2167.082,
+            "endTime": 2168.642,
+            "body": "You don't think it's gonna be the March event thing?"
+        },
+        {
+            "startTime": 2168.672,
+            "endTime": 2168.972,
+            "body": "Okay."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2169.002,
+            "endTime": 2169.302,
+            "body": "No."
+        },
+        {
+            "startTime": 2169.302,
+            "endTime": 2170.832,
+            "body": "It sounds like a WW d c thing."
+        },
+        {
+            "startTime": 2170.832,
+            "endTime": 2174.612,
+            "body": "I was listening to Jim, Jim Del Rumpel and Dave Mark talk about it on their show the other day."
+        },
+        {
+            "startTime": 2174.612,
+            "endTime": 2175.512,
+            "body": "I think that was a good call."
+        },
+        {
+            "startTime": 2175.512,
+            "endTime": 2177.812,
+            "body": "It's probably gonna be a WW C thing and the whole over."
+        },
+        {
+            "startTime": 2178.977,
+            "endTime": 2181.407,
+            "body": "I was talking to Daniel Steinberg on, on na on about it."
+        },
+        {
+            "startTime": 2181.407,
+            "endTime": 2186.717,
+            "body": "It's, it sound, I, it's probably gonna be like the central theme of Wwc wwdc, right?"
+        },
+        {
+            "startTime": 2186.717,
+            "endTime": 2189.717,
+            "body": "This year it's gonna be all about this, this device we're talking about."
+        },
+        {
+            "startTime": 2189.722,
+            "endTime": 2190.017,
+            "body": "Right?"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2190.077,
+            "endTime": 2191.787,
+            "body": "We're all gonna be using reality kit."
+        },
+        {
+            "startTime": 2191.875,
+            "endTime": 2192.055,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2192.535,
+            "endTime": 2195.745,
+            "body": "So I don't Did you listen to ATP at all?"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2195.775,
+            "endTime": 2196.665,
+            "body": "I didn't, no, I didn't."
+        },
+        {
+            "startTime": 2196.665,
+            "endTime": 2201.715,
+            "body": "I, I listened to it a couple of weeks ago when they talked about M one s, but I haven't listened or Mastodon, but I haven't listened since."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2202.295,
+            "endTime": 2202.785,
+            "body": "Okay."
+        },
+        {
+            "startTime": 2202.785,
+            "endTime": 2203.105,
+            "body": "Okay."
+        },
+        {
+            "startTime": 2203.275,
+            "endTime": 2205.345,
+            "body": "Yeah, I mean, they, they did a pretty good job."
+        },
+        {
+            "startTime": 2206.365,
+            "endTime": 2210.235,
+            "body": "talking about how rumors and new platforms typically go."
+        },
+        {
+            "startTime": 2210.505,
+            "endTime": 2210.595,
+            "body": "Mm-hmm."
+        },
+        {
+            "startTime": 2210.84,
+            "endTime": 2216.89,
+            "body": "and the story with the iPad, the story with the Apple Watch, and like how it was rumored and what the market was at that time."
+        },
+        {
+            "startTime": 2216.898,
+            "endTime": 2218.453,
+            "body": "I thought they did a, did a great job."
+        },
+        {
+            "startTime": 2218.613,
+            "endTime": 2219.223,
+            "body": "Mm-hmm."
+        },
+        {
+            "startTime": 2219.288,
+            "endTime": 2223.198,
+            "body": "Kind of talking about how these XR glasses are gonna fit into it."
+        },
+        {
+            "startTime": 2223.198,
+            "endTime": 2227.378,
+            "body": "Pro reality, reality pro deluxe max.com."
+        },
+        {
+            "startTime": 2227.398,
+            "endTime": 2228.118,
+            "body": ", but like Ultra."
+        },
+        {
+            "startTime": 2228.688,
+            "endTime": 2229.288,
+            "body": "You've got Ultra."
+        },
+        {
+            "startTime": 2229.293,
+            "endTime": 2229.498,
+            "body": "Ultra, yeah."
+        },
+        {
+            "startTime": 2229.498,
+            "endTime": 2230.638,
+            "body": "Sorry, I forgot about the new one."
+        },
+        {
+            "startTime": 2230.698,
+            "endTime": 2231.208,
+            "body": "Ultra."
+        },
+        {
+            "startTime": 2231.298,
+            "endTime": 2232.438,
+            "body": "They still haven't done Deluxe."
+        },
+        {
+            "startTime": 2232.438,
+            "endTime": 2233.488,
+            "body": "I'm waiting for deluxe."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2233.998,
+            "endTime": 2234.658,
+            "body": "Looking forward to that."
+        },
+        {
+            "startTime": 2234.658,
+            "endTime": 2236.128,
+            "body": "I don't think Apple does Deluxe."
+        },
+        {
+            "startTime": 2236.578,
+            "endTime": 2237.478,
+            "body": "They don't do Deluxe."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2237.508,
+            "endTime": 2237.748,
+            "body": "Okay."
+        },
+        {
+            "startTime": 2237.748,
+            "endTime": 2239.968,
+            "body": "No, no, not yet."
+        },
+        {
+            "startTime": 2240.043,
+            "endTime": 2240.853,
+            "body": "Never say never."
+        },
+        {
+            "startTime": 2240.858,
+            "endTime": 2241.136,
+            "body": "Right."
+        },
+        {
+            "startTime": 2241.136,
+            "endTime": 2241.437,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2241.967,
+            "endTime": 2243.437,
+            "body": ". So we, yeah."
+        },
+        {
+            "startTime": 2243.467,
+            "endTime": 2248.327,
+            "body": "I mean, it seems to, we, we talked about this on, on more than just code."
+        },
+        {
+            "startTime": 2248.427,
+            "endTime": 2248.917,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2249.197,
+            "endTime": 2253.427,
+            "body": "But my big whole thing was like, I don't see the market for it, especially where Apple is at."
+        },
+        {
+            "startTime": 2253.877,
+            "endTime": 2253.997,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2254.085,
+            "endTime": 2256.695,
+            "body": "Especially with games and bus business being the two."
+        },
+        {
+            "startTime": 2257.985,
+            "endTime": 2263.055,
+            "body": ", they want to do Microsoft teams with VR or they want to do games with vr."
+        },
+        {
+            "startTime": 2263.055,
+            "endTime": 2263.145,
+            "body": "Mm-hmm."
+        },
+        {
+            "startTime": 2263.222,
+            "endTime": 2263.312,
+            "body": "Right."
+        },
+        {
+            "startTime": 2263.402,
+            "endTime": 2270.495,
+            "body": "Apple's not very good at either of those markets and it's kind of troubling trying to figure out where they're trying to position this."
+        },
+        {
+            "startTime": 2270.496,
+            "endTime": 2271.306,
+            "body": "Well, yeah."
+        },
+        {
+            "startTime": 2271.306,
+            "endTime": 2272.746,
+            "body": "What do, what's kind of your thoughts on, well,"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2272.746,
+            "endTime": 2274.726,
+            "body": "I want to take part a couple of things you said there, right?"
+        },
+        {
+            "startTime": 2274.756,
+            "endTime": 2280.336,
+            "body": "What one thing about Apple not being very good at any, you an insert thing here, right?"
+        },
+        {
+            "startTime": 2280.606,
+            "endTime": 2280.876,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2280.982,
+            "endTime": 2287.672,
+            "body": "And we talked about this on more than just code many, many times, but I honestly believe Apple leads from behind, right?"
+        },
+        {
+            "startTime": 2288.392,
+            "endTime": 2288.842,
+            "body": "Apple."
+        },
+        {
+            "startTime": 2288.842,
+            "endTime": 2291.452,
+            "body": "If you think about it, think about it for a minute, right?"
+        },
+        {
+            "startTime": 2291.482,
+            "endTime": 2293.522,
+            "body": "Apple has done some amazing things."
+        },
+        {
+            "startTime": 2293.527,
+            "endTime": 2298.802,
+            "body": "They've, they've turned the world on its ear with the iPhone, the iPod, you know, all kinds of different things."
+        },
+        {
+            "startTime": 2299.402,
+            "endTime": 2303.502,
+            "body": "But Apple, generally speaking, Innovate."
+        },
+        {
+            "startTime": 2303.722,
+            "endTime": 2308.642,
+            "body": "I mean, they innovate, but they didn't innovate the idea of something every single time."
+        },
+        {
+            "startTime": 2308.732,
+            "endTime": 2309.122,
+            "body": "Right?"
+        },
+        {
+            "startTime": 2309.212,
+            "endTime": 2310.262,
+            "body": "They're never the first."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2310.442,
+            "endTime": 2310.862,
+            "body": "They're never"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2310.862,
+            "endTime": 2311.252,
+            "body": "the first."
+        },
+        {
+            "startTime": 2311.252,
+            "endTime": 2314.852,
+            "body": "They're never the first, but they're generally one, one of the best, if not the best."
+        },
+        {
+            "startTime": 2314.852,
+            "endTime": 2315.182,
+            "body": "Right."
+        },
+        {
+            "startTime": 2315.262,
+            "endTime": 2318.952,
+            "body": "Because they take the time to look at something."
+        },
+        {
+            "startTime": 2319.957,
+            "endTime": 2322.297,
+            "body": "work out all the sort of kinks that they can see."
+        },
+        {
+            "startTime": 2322.297,
+            "endTime": 2331.057,
+            "body": "I mean, there's obviously, there's always loose ends and there's always kinks and there's always gonna be like, you know, 10% or 20% of society's not gonna be happy with what they've done, but, or think it's too"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2331.062,
+            "endTime": 2331.627,
+            "body": "expensive."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2331.687,
+            "endTime": 2332.137,
+            "body": "But, yeah."
+        },
+        {
+            "startTime": 2332.437,
+            "endTime": 2333.217,
+            "body": "Well, yeah."
+        },
+        {
+            "startTime": 2333.517,
+            "endTime": 2337.087,
+            "body": "Given, given it's too expensive, you know, he said the guy with the ultra watch on, right."
+        },
+        {
+            "startTime": 2337.662,
+            "endTime": 2339.523,
+            "body": "But you, but but."
+        },
+        {
+            "startTime": 2340.978,
+            "endTime": 2341.881,
+            "body": ", you know yeah."
+        },
+        {
+            "startTime": 2341.911,
+            "endTime": 2348.811,
+            "body": "You, you, they, they, they take an idea and they, you know, and it's been this like, you know, from the Apple two computer, right?"
+        },
+        {
+            "startTime": 2349.351,
+            "endTime": 2353.911,
+            "body": "Was something that Steve Wazniak saw in home brew and saw in the world."
+        },
+        {
+            "startTime": 2353.916,
+            "endTime": 2358.621,
+            "body": "He didn't invent the, the portable computer, but he invented the portable computer, right?"
+        },
+        {
+            "startTime": 2359.131,
+            "endTime": 2360.241,
+            "body": "And then you got the Mac."
+        },
+        {
+            "startTime": 2360.491,
+            "endTime": 2370.121,
+            "body": "Well, the Mac was not it was innovative as a package and it was innovative from a concept of the bicycle for the mind, but it was all Xerox park's work, right?"
+        },
+        {
+            "startTime": 2370.121,
+            "endTime": 2373.361,
+            "body": "So it was, so it was Windows, windows, the menu and all that kind of stuff."
+        },
+        {
+            "startTime": 2373.721,
+            "endTime": 2375.191,
+            "body": "All that desktop metaphor."
+        },
+        {
+            "startTime": 2375.191,
+            "endTime": 2375.761,
+            "body": "That was all."
+        },
+        {
+            "startTime": 2375.761,
+            "endTime": 2377.861,
+            "body": "That all came from Xerox Park, right?"
+        },
+        {
+            "startTime": 2378.281,
+            "endTime": 2379.361,
+            "body": "Then you get into iPod."
+        },
+        {
+            "startTime": 2379.366,
+            "endTime": 2389.596,
+            "body": "Well, iPod was a reaction to all the MP3 players that were out there that, you know, Tearing up the market back in, in like, was that the nineties, early nineties, mid nineties?"
+        },
+        {
+            "startTime": 2389.596,
+            "endTime": 2389.626,
+            "body": "Mm."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2389.926,
+            "endTime": 2390.706,
+            "body": "No, not even."
+        },
+        {
+            "startTime": 2390.706,
+            "endTime": 2391.816,
+            "body": "I would say early aughts."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2392.416,
+            "endTime": 2392.716,
+            "body": "Yes."
+        },
+        {
+            "startTime": 2392.926,
+            "endTime": 2394.936,
+            "body": "Oh, 2000."
+        },
+        {
+            "startTime": 2395.536,
+            "endTime": 2398.206,
+            "body": "So, I mean, so, so they, so Apple didn't invent."
+        },
+        {
+            "startTime": 2398.791,
+            "endTime": 2406.621,
+            "body": "MP3 players, but they, they entered the iPod, which was sort of their take on a better, a better MP3 player."
+        },
+        {
+            "startTime": 2406.621,
+            "endTime": 2406.831,
+            "body": "Right."
+        },
+        {
+            "startTime": 2406.831,
+            "endTime": 2413.521,
+            "body": "And then they, they, the little nanos and the shuffles, they, that was to sort of squash all the other MP3 players out there."
+        },
+        {
+            "startTime": 2413.911,
+            "endTime": 2414.691,
+            "body": "So that was cool."
+        },
+        {
+            "startTime": 2414.691,
+            "endTime": 2414.871,
+            "body": "Right."
+        },
+        {
+            "startTime": 2414.871,
+            "endTime": 2418.951,
+            "body": "And then that went along great and, and iPod was doing pretty cool."
+        },
+        {
+            "startTime": 2418.956,
+            "endTime": 2422.461,
+            "body": "And it wasn't until they bought another piece of software, I'm trying to remember the name of havoc."
+        },
+        {
+            "startTime": 2423.646,
+            "endTime": 2424.816,
+            "body": "Snap NP or something like that."
+        },
+        {
+            "startTime": 2424.816,
+            "endTime": 2429.316,
+            "body": "I forget what it was, but it actually, it actually was an app that ran on your Mac sound."
+        },
+        {
+            "startTime": 2430.636,
+            "endTime": 2431.686,
+            "body": "I've, I've got it behind me."
+        },
+        {
+            "startTime": 2431.686,
+            "endTime": 2433.336,
+            "body": "I'm just, so, I'm just, you're talking about iTunes?"
+        },
+        {
+            "startTime": 2433.966,
+            "endTime": 2435.646,
+            "body": "No, well, it became iTunes."
+        },
+        {
+            "startTime": 2435.716,
+            "endTime": 2436.366,
+            "body": "Right, right, right."
+        },
+        {
+            "startTime": 2436.366,
+            "endTime": 2436.846,
+            "body": "That's what I meant."
+        },
+        {
+            "startTime": 2436.846,
+            "endTime": 2437.116,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2437.446,
+            "endTime": 2437.626,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2437.631,
+            "endTime": 2445.639,
+            "body": "So they bought, they acquired this company that had built this software that let you rip your C, your C your CD music into, into MP3s, right?"
+        },
+        {
+            "startTime": 2445.639,
+            "endTime": 2446.079,
+            "body": "Mm-hmm."
+        },
+        {
+            "startTime": 2446.159,
+            "endTime": 2446.239,
+            "body": ". Okay."
+        },
+        {
+            "startTime": 2446.239,
+            "endTime": 2447.409,
+            "body": "And then feed them onto your thing."
+        },
+        {
+            "startTime": 2447.409,
+            "endTime": 2450.049,
+            "body": "So they, so iTunes became a way to create."
+        },
+        {
+            "startTime": 2451.159,
+            "endTime": 2455.269,
+            "body": "MP3s that you can put on and man eventually manage your, your iPods."
+        },
+        {
+            "startTime": 2455.299,
+            "endTime": 2461.689,
+            "body": "And it wasn't until Apple rolled that iTunes out onto Windows that the iPod really took off."
+        },
+        {
+            "startTime": 2462.139,
+            "endTime": 2463.079,
+            "body": "Yes, yes."
+        },
+        {
+            "startTime": 2463.084,
+            "endTime": 2463.369,
+            "body": "Right."
+        },
+        {
+            "startTime": 2463.374,
+            "endTime": 2469.939,
+            "body": "Because we talked about the other day that, you know, 5% of the market is Apple, the rest is Windows, or most of his windows, 85% is Windows."
+        },
+        {
+            "startTime": 2469.939,
+            "endTime": 2470.179,
+            "body": "Right."
+        },
+        {
+            "startTime": 2470.179,
+            "endTime": 2470.719,
+            "body": "So that's mm-hmm."
+        },
+        {
+            "startTime": 2470.729,
+            "endTime": 2470.76,
+            "body": ", so that's mm-hmm."
+        },
+        {
+            "startTime": 2471.049,
+            "endTime": 2471.769,
+            "body": "a huge market."
+        },
+        {
+            "startTime": 2471.769,
+            "endTime": 2473.569,
+            "body": "It's kinda like I was talking about China earlier, right?"
+        },
+        {
+            "startTime": 2473.869,
+            "endTime": 2474.559,
+            "body": "Yeah, yeah."
+        },
+        {
+            "startTime": 2474.559,
+            "endTime": 2474.56,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2475.189,
+            "endTime": 2477.199,
+            "body": ". So that was what put the iPod on the map."
+        },
+        {
+            "startTime": 2477.229,
+            "endTime": 2479.059,
+            "body": "Now all of a sudden everybody had an iPad."
+        },
+        {
+            "startTime": 2479.059,
+            "endTime": 2479.569,
+            "body": "It didn't matter."
+        },
+        {
+            "startTime": 2479.809,
+            "endTime": 2480.949,
+            "body": "Or sorry, iPod."
+        },
+        {
+            "startTime": 2480.954,
+            "endTime": 2481.219,
+            "body": "iPod."
+        },
+        {
+            "startTime": 2481.249,
+            "endTime": 2481.519,
+            "body": "Correct."
+        },
+        {
+            "startTime": 2481.519,
+            "endTime": 2482.059,
+            "body": "You correct me."
+        },
+        {
+            "startTime": 2482.059,
+            "endTime": 2482.299,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2482.809,
+            "endTime": 2484.639,
+            "body": "Everybody had an iPod, you know."
+        },
+        {
+            "startTime": 2484.716,
+            "endTime": 2489.167,
+            "body": "And and that sort of, you know, and then the next thing next, I remember driving to McElroy."
+        },
+        {
+            "startTime": 2489.167,
+            "endTime": 2494.567,
+            "body": "I was told this story a thousand times with my wife to down to San Francisco, and she says like, what do you think the new thing is gonna be?"
+        },
+        {
+            "startTime": 2494.567,
+            "endTime": 2500.027,
+            "body": "And I think, well, I've been hearing rumors of a phone, but I have no idea what Apple's gonna do with a cell phone."
+        },
+        {
+            "startTime": 2500.027,
+            "endTime": 2501.017,
+            "body": "Like, why bother?"
+        },
+        {
+            "startTime": 2501.017,
+            "endTime": 2501.887,
+            "body": "They're making a cell phone."
+        },
+        {
+            "startTime": 2502.697,
+            "endTime": 2502.907,
+            "body": "Right."
+        },
+        {
+            "startTime": 2502.907,
+            "endTime": 2503.897,
+            "body": "And then it turned out well."
+        },
+        {
+            "startTime": 2503.897,
+            "endTime": 2504.107,
+            "body": "Okay."
+        },
+        {
+            "startTime": 2504.107,
+            "endTime": 2508.547,
+            "body": "It's not just a cell phone, it's a phone, it's an HomePod, it's, you know, or it's an iPod."
+        },
+        {
+            "startTime": 2508.552,
+            "endTime": 2510.257,
+            "body": "And it's an iPod and it's an internet device, right."
+        },
+        {
+            "startTime": 2510.287,
+            "endTime": 2512.117,
+            "body": "As as the famous, the classic, the"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2512.117,
+            "endTime": 2512.807,
+            "body": "classic three"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2512.807,
+            "endTime": 2513.167,
+            "body": "things."
+        },
+        {
+            "startTime": 2513.167,
+            "endTime": 2513.467,
+            "body": "Yes."
+        },
+        {
+            "startTime": 2513.527,
+            "endTime": 2514.337,
+            "body": "Yeah, the three things."
+        },
+        {
+            "startTime": 2514.337,
+            "endTime": 2514.577,
+            "body": "One more."
+        },
+        {
+            "startTime": 2514.577,
+            "endTime": 2515.207,
+            "body": "Yeah, one more thing."
+        },
+        {
+            "startTime": 2515.207,
+            "endTime": 2521.927,
+            "body": "And there's three things and one more thing, but you know, so that, that became the, that sort of tipped apple on it."
+        },
+        {
+            "startTime": 2521.927,
+            "endTime": 2530.927,
+            "body": "I mean, so as you go through every sort of thing that, think about anything that apple's done other than Apple silicone, well, apple silicone was kind of like AMD's technology."
+        },
+        {
+            "startTime": 2531.587,
+            "endTime": 2534.287,
+            "body": "Is it AMD that makes the, the arm."
+        },
+        {
+            "startTime": 2535.157,
+            "endTime": 2535.907,
+            "body": "Arm, sorry, arm."
+        },
+        {
+            "startTime": 2535.907,
+            "endTime": 2536.447,
+            "body": "That's what I'm thinking of."
+        },
+        {
+            "startTime": 2536.447,
+            "endTime": 2537.017,
+            "body": "Thank you Arm."
+        },
+        {
+            "startTime": 2537.027,
+            "endTime": 2537.267,
+            "body": "Mm-hmm."
+        },
+        {
+            "startTime": 2537.347,
+            "endTime": 2538.457,
+            "body": ", it's arm technology."
+        },
+        {
+            "startTime": 2538.457,
+            "endTime": 2538.757,
+            "body": "Right?"
+        },
+        {
+            "startTime": 2538.827,
+            "endTime": 2544.007,
+            "body": "And, and even the multi-touch device that we have on our iPhones and our iPads, that was invented by somebody else as well, right?"
+        },
+        {
+            "startTime": 2544.007,
+            "endTime": 2544.067,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2544.067,
+            "endTime": 2548.417,
+            "body": "So Apple's good at putting together a synergy of, of."
+        },
+        {
+            "startTime": 2548.822,
+            "endTime": 2552.362,
+            "body": "Ideas in such a way that it makes sense to the majority of people."
+        },
+        {
+            "startTime": 2552.632,
+            "endTime": 2557.582,
+            "body": "It improves the quality of their life, which is why people buy apple, mu apple stuff."
+        },
+        {
+            "startTime": 2557.882,
+            "endTime": 2561.572,
+            "body": "They don't buy the gigahertz, they don't buy the megawatts, you know, they buy very much."
+        },
+        {
+            "startTime": 2561.572,
+            "endTime": 2564.302,
+            "body": "So yeah, this makes me feel good, right?"
+        },
+        {
+            "startTime": 2564.512,
+            "endTime": 2564.752,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2564.932,
+            "endTime": 2570.842,
+            "body": "And, and Apple cares about me feeling good and looking good with my ultra watch on my wrist, which just looks really sexy, right?"
+        },
+        {
+            "startTime": 2570.842,
+            "endTime": 2571.592,
+            "body": "It does look good."
+        },
+        {
+            "startTime": 2572.042,
+            "endTime": 2576.823,
+            "body": ",  Leo Dion (host): I just upgraded speaking with, I just upgraded to a series seven from a series."
+        },
+        {
+            "startTime": 2577.163,
+            "endTime": 2578.443,
+            "body": "Six, I think."
+        },
+        {
+            "startTime": 2578.683,
+            "endTime": 2578.983,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2579.073,
+            "endTime": 2583.943,
+            "body": "And the watch size, I'm just like, oh my gosh, I can't, because I went from 40 to 45."
+        },
+        {
+            "startTime": 2583.943,
+            "endTime": 2584.803,
+            "body": "Oh, the smaller size to the bigger one."
+        },
+        {
+            "startTime": 2584.803,
+            "endTime": 2585.193,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2585.403,
+            "endTime": 2585.793,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2585.793,
+            "endTime": 2588.673,
+            "body": "And I'm like, I couldn't even imagine going into an ultra."
+        },
+        {
+            "startTime": 2588.678,
+            "endTime": 2588.943,
+            "body": "So"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2589.003,
+            "endTime": 2590.473,
+            "body": "it's actually not that much bigger."
+        },
+        {
+            "startTime": 2590.473,
+            "endTime": 2591.043,
+            "body": "It's thicker."
+        },
+        {
+            "startTime": 2591.048,
+            "endTime": 2592.273,
+            "body": "It's heavier, right."
+        },
+        {
+            "startTime": 2592.273,
+            "endTime": 2595.033,
+            "body": "It's, I mean, it's thicker this way than, but, and it is."
+        },
+        {
+            "startTime": 2595.093,
+            "endTime": 2595.453,
+            "body": "It is."
+        },
+        {
+            "startTime": 2595.513,
+            "endTime": 2595.843,
+            "body": "It is."
+        },
+        {
+            "startTime": 2595.873,
+            "endTime": 2604.093,
+            "body": "It took a while for my wrist to get used to it, but physically, like size-wise, what I love about this is, for me, I'm almost nervous about cracking the edge of."
+        },
+        {
+            "startTime": 2605.353,
+            "endTime": 2607.813,
+            "body": "my phone on the, on a brick as I walk through a doorway."
+        },
+        {
+            "startTime": 2607.843,
+            "endTime": 2608.023,
+            "body": "Right."
+        },
+        {
+            "startTime": 2608.023,
+            "endTime": 2609.973,
+            "body": "Well this has got like a titan, titanium ridge all over."
+        },
+        {
+            "startTime": 2609.973,
+            "endTime": 2610.633,
+            "body": "That's one of my watches."
+        },
+        {
+            "startTime": 2611.173,
+            "endTime": 2611.293,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2611.293,
+            "endTime": 2615.043,
+            "body": "And for me, the big, the big selling point for me is the one button to get activities going."
+        },
+        {
+            "startTime": 2615.943,
+            "endTime": 2617.113,
+            "body": "Oh, you know, nice."
+        },
+        {
+            "startTime": 2617.113,
+            "endTime": 2619.303,
+            "body": "The activity button where I think it's called that."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2619.313,
+            "endTime": 2619.873,
+            "body": "Yeah, yeah, yeah."
+        },
+        {
+            "startTime": 2619.873,
+            "endTime": 2621.223,
+            "body": "No, I know exactly what you mean."
+        },
+        {
+            "startTime": 2621.316,
+            "endTime": 2621.436,
+            "body": "I'm"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2621.441,
+            "endTime": 2625.876,
+            "body": "not a huge, I'm, to be honest with you, I wear a watch every day, but, but watch is not my thing."
+        },
+        {
+            "startTime": 2625.876,
+            "endTime": 2628.156,
+            "body": "I mean, the watch os was a real disappointment."
+        },
+        {
+            "startTime": 2629.626,
+            "endTime": 2631.546,
+            "body": "Watch os 1.0 was a real disappointment."
+        },
+        {
+            "startTime": 2631.551,
+            "endTime": 2631.846,
+            "body": "Right."
+        },
+        {
+            "startTime": 2632.491,
+            "endTime": 2632.761,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2632.898,
+            "endTime": 2637.038,
+            "body": "Going back, talking about the headset, like okay, like the, the"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2637.038,
+            "endTime": 2638.688,
+            "body": "one thing that, so we're talking about VR goggles."
+        },
+        {
+            "startTime": 2638.688,
+            "endTime": 2640.218,
+            "body": "I don't think we've actually said that to people."
+        },
+        {
+            "startTime": 2640.218,
+            "endTime": 2643.548,
+            "body": "We're talking about the VR sort of a reality."
+        },
+        {
+            "startTime": 2643.548,
+            "endTime": 2647.038,
+            "body": "Reality vr, that's what we be called vr, just wanna be clear with people."
+        },
+        {
+            "startTime": 2647.106,
+            "endTime": 2651.156,
+            "body": ". Leo Dion (host): So one of the points I made on ATP was that like, and we're talking about these guys"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2651.156,
+            "endTime": 2653.466,
+            "body": "here, the a augmented reality device."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2653.616,
+            "endTime": 2654.156,
+            "body": "Exactly."
+        },
+        {
+            "startTime": 2654.156,
+            "endTime": 2655.596,
+            "body": "They look exactly like that."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2655.596,
+            "endTime": 2655.806,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2656.016,
+            "endTime": 2657.456,
+            "body": "It's gonna be exactly this."
+        },
+        {
+            "startTime": 2657.486,
+            "endTime": 2657.666,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2657.966,
+            "endTime": 2658.116,
+            "body": "The"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2658.116,
+            "endTime": 2662.671,
+            "body": "one thing they said was like, multitouch was a big killer feature of the iPhone."
+        },
+        {
+            "startTime": 2662.711,
+            "endTime": 2662.861,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2662.891,
+            "endTime": 2666.551,
+            "body": "That made it more like, okay, now I see why this is such a"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2666.551,
+            "endTime": 2666.791,
+            "body": "big deal."
+        },
+        {
+            "startTime": 2666.791,
+            "endTime": 2669.45,
+            "body": "Also, the biggest downfall, cuz, I mean, have you ever tried to type on an."
+        },
+        {
+            "startTime": 2669.459,
+            "endTime": 2669.789,
+            "body": "?   Yeah."
+        },
+        {
+            "startTime": 2669.789,
+            "endTime": 2674.499,
+            "body": "Why ? Well, cuz I mean, like, why did they have to make a, a keyboard for it if it was so good?"
+        },
+        {
+            "startTime": 2675.699,
+            "endTime": 2676.539,
+            "body": ", like, I have Right."
+        },
+        {
+            "startTime": 2677.259,
+            "endTime": 2678.849,
+            "body": "You know, I have the magic keyboard here and I"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2678.849,
+            "endTime": 2679.269,
+            "body": "love it."
+        },
+        {
+            "startTime": 2679.269,
+            "endTime": 2680.019,
+            "body": "Well, I miss that."
+        },
+        {
+            "startTime": 2680.109,
+            "endTime": 2681.399,
+            "body": "I mean, I miss tactile."
+        },
+        {
+            "startTime": 2681.849,
+            "endTime": 2684.939,
+            "body": "I mean, there is benefits to how Blackberry did it, but it Yeah."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2684.999,
+            "endTime": 2686.399,
+            "body": "In any case, I don't know."
+        },
+        {
+            "startTime": 2689.169,
+            "endTime": 2689.799,
+            "body": "It's good and bad."
+        },
+        {
+            "startTime": 2689.799,
+            "endTime": 2691.029,
+            "body": "I mean, I, I, you know, I right."
+        },
+        {
+            "startTime": 2691.109,
+            "endTime": 2691.379,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2691.389,
+            "endTime": 2691.789,
+            "body": "Well,"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2691.789,
+            "endTime": 2693.359,
+            "body": "and, but I think that's the thing is like the."
+        },
+        {
+            "startTime": 2694.199,
+            "endTime": 2703.479,
+            "body": ", even with multitouch and losing a physical keyboard, like they way overcame with the snappiness and, and the great, the, the great ux."
+        },
+        {
+            "startTime": 2703.523,
+            "endTime": 2704.233,
+            "body": "Lately the auto,"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2704.233,
+            "endTime": 2705.233,
+            "body": "you see that is awful."
+        },
+        {
+            "startTime": 2705.923,
+            "endTime": 2707.273,
+            "body": "What's that said lately?"
+        },
+        {
+            "startTime": 2707.278,
+            "endTime": 2708.353,
+            "body": "The autocorrect is awful."
+        },
+        {
+            "startTime": 2708.358,
+            "endTime": 2710.303,
+            "body": "Like it's just, it's just lost its mind."
+        },
+        {
+            "startTime": 2710.308,
+            "endTime": 2715.613,
+            "body": "I wish it was a way to reset your, your library of auto, of your auto complete nonsense,"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2715.613,
+            "endTime": 2715.883,
+            "body": "right?"
+        },
+        {
+            "startTime": 2716.063,
+            "endTime": 2716.153,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2716.153,
+            "endTime": 2716.423,
+            "body": "Yes."
+        },
+        {
+            "startTime": 2716.423,
+            "endTime": 2717.023,
+            "body": "Exactly."
+        },
+        {
+            "startTime": 2717.023,
+            "endTime": 2717.683,
+            "body": "Exactly."
+        },
+        {
+            "startTime": 2717.704,
+            "endTime": 2720.329,
+            "body": "But like even with like the dynamic island, like."
+        },
+        {
+            "startTime": 2721.274,
+            "endTime": 2725.894,
+            "body": "I didn't buy a new iPhone, but it's like impressive how apple's like, oh, you did okay."
+        },
+        {
+            "startTime": 2725.894,
+            "endTime": 2727.844,
+            "body": "But you're like, you saw that presentation."
+        },
+        {
+            "startTime": 2727.844,
+            "endTime": 2732.734,
+            "body": "You're like, oh, apple always comes up with some clever workaround for some physical."
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2732.854,
+            "endTime": 2735.764,
+            "body": "Well, can I tell you about some of the problems with the dynamic island?"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2736.274,
+            "endTime": 2737.114,
+            "body": "Not, not yet."
+        },
+        {
+            "startTime": 2737.144,
+            "endTime": 2738.614,
+            "body": "I wanna, I want to go back to the headset."
+        },
+        {
+            "startTime": 2739.004,
+            "endTime": 2740.105,
+            "body": "I wanna go back to the headset."
+        },
+        {
+            "startTime": 2740.159,
+            "endTime": 2740.399,
+            "body": "But"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2740.399,
+            "endTime": 2743.879,
+            "body": "like my recommendations, don't buy more than one headset, 1.0."
+        },
+        {
+            "startTime": 2745.484,
+            "endTime": 2746.264,
+            "body": ".  Leo Dion (host): Yeah, right."
+        },
+        {
+            "startTime": 2746.264,
+            "endTime": 2748.299,
+            "body": "We'll, going back to the Apple Watch or the home phone."
+        },
+        {
+            "startTime": 2748.299,
+            "endTime": 2748.389,
+            "body": "Well,"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2748.389,
+            "endTime": 2749.259,
+            "body": "no, not so much that."
+        },
+        {
+            "startTime": 2749.739,
+            "endTime": 2749.979,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2749.979,
+            "endTime": 2751.929,
+            "body": "It comes back to, we'll get to my point in a minute."
+        },
+        {
+            "startTime": 2752.199,
+            "endTime": 2752.469,
+            "body": "Sorry."
+        },
+        {
+            "startTime": 2752.529,
+            "endTime": 2752.763,
+            "body": "Continue."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2752.78,
+            "endTime": 2760.05,
+            "body": "But like, do you think that there, what, what could possibly be like a killer feature that would make these more substantial that than like"
+        },
+        {
+            "startTime": 2760.154,
+            "endTime": 2768.554,
+            "body": "Then the current sets of VR headsets mean because like I had, I had like, I had this Windows Mobile smartphone before the iPhone came out."
+        },
+        {
+            "startTime": 2768.554,
+            "endTime": 2772.754,
+            "body": "And like my Windows Mobile, I'm not talking the one that was actually half decent looking."
+        },
+        {
+            "startTime": 2772.754,
+            "endTime": 2776.504,
+            "body": "I'm talking like basically was Windows 98 on a phone?"
+        },
+        {
+            "startTime": 2776.864,
+            "endTime": 2777.584,
+            "body": "It was garbage."
+        },
+        {
+            "startTime": 2777.589,
+            "endTime": 2778.484,
+            "body": "You had to have I remember those."
+        },
+        {
+            "startTime": 2778.484,
+            "endTime": 2778.694,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2778.934,
+            "endTime": 2782.324,
+            "body": "And then people who are like, oh, how are they gonna make the iPhone any better than this?"
+        },
+        {
+            "startTime": 2782.324,
+            "endTime": 2783.524,
+            "body": "And then they like totally."
+        },
+        {
+            "startTime": 2784.119,
+            "endTime": 2798.249,
+            "body": "And like to me, like that's, that's the only thing I could see is like, they have something that is going to be like, we're gonna look back and be like, oh my gosh, the ocul Oculus is so old and like, it's so janky and like Apple"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 2798.249,
+            "endTime": 2798.819,
+            "body": "totally new."
+        },
+        {
+            "startTime": 2798.819,
+            "endTime": 2800.049,
+            "body": "It doesn't even come in titanium."
+        },
+        {
+            "startTime": 2800.049,
+            "endTime": 2800.559,
+            "body": "Exactly."
+        },
+        {
+            "startTime": 2800.559,
+            "endTime": 2800.829,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 2801.899,
+            "endTime": 2804.159,
+            "body": "with the, with the orange button on the side, right?"
+        },
+        {
+            "startTime": 2804.249,
+            "endTime": 2804.459,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2804.552,
+            "endTime": 2809.082,
+            "body": "What could be the thing that like, like Apple could do with these that's, it's gonna be."
+        },
+        {
+            "startTime": 2809.717,
+            "endTime": 2810.377,
+            "body": "Oh, that's it."
+        },
+        {
+            "startTime": 2810.437,
+            "endTime": 2811.457,
+            "body": "Now I, Andrew, get it."
+        },
+        {
+            "startTime": 2811.517,
+            "endTime": 2813.377,
+            "body": "Like, what could I, I can't even think of it."
+        },
+        {
+            "startTime": 2814.337,
+            "endTime": 2817.157,
+            "body": ".  Tim Mitra (guest): Well, I mean, we talked about that the other day too, is, is the watch."
+        },
+        {
+            "startTime": 2817.217,
+            "endTime": 2821.387,
+            "body": "You know, initially the watch was not a fitness device, but it is a fitness device."
+        },
+        {
+            "startTime": 2821.387,
+            "endTime": 2826.247,
+            "body": "I mean, it's totally like I bought, I bought the four because of the EKG again, when I talked about the gray hair."
+        },
+        {
+            "startTime": 2826.247,
+            "endTime": 2826.547,
+            "body": "Right."
+        },
+        {
+            "startTime": 2826.637,
+            "endTime": 2828.527,
+            "body": "You know, the EKGs important to me, right?"
+        },
+        {
+            "startTime": 2828.532,
+            "endTime": 2828.967,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2828.967,
+            "endTime": 2828.968,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2829.056,
+            "endTime": 2830.736,
+            "body": "Blood is an important thing."
+        },
+        {
+            "startTime": 2830.966,
+            "endTime": 2835.376,
+            "body": "Not so much to me, but like the last couple of years, people getting covid blood was a huge thing."
+        },
+        {
+            "startTime": 2835.376,
+            "endTime": 2836.346,
+            "body": "Right, right."
+        },
+        {
+            "startTime": 2836.355,
+            "endTime": 2843.893,
+            "body": "Blood oxygen levels, but, or, you know I, I'm not a lady so I really can't speak to cycle tracking, but I'm sure that's an important thing."
+        },
+        {
+            "startTime": 2843.893,
+            "endTime": 2843.983,
+            "body": "Right."
+        },
+        {
+            "startTime": 2843.983,
+            "endTime": 2852.713,
+            "body": "I mean, I've, I've tried to get, I've tried to get my wife pregnant and that was a chore, you know, with, with thermometers and log books and yeah."
+        },
+        {
+            "startTime": 2852.713,
+            "endTime": 2855.023,
+            "body": "I mean, please solve that problem for me."
+        },
+        {
+            "startTime": 2855.023,
+            "endTime": 2856.133,
+            "body": "Apple, thank you very much."
+        },
+        {
+            "startTime": 2856.133,
+            "endTime": 2857.504,
+            "body": "Right, ? I think, I think that you."
+        },
+        {
+            "startTime": 2858.429,
+            "endTime": 2863.796,
+            "body": "Again, I think we also agreed to agree that we are not the target market for this product."
+        },
+        {
+            "startTime": 2863.796,
+            "endTime": 2871.258,
+            "body": "You and I, but but I, I don't know, like, I think I, I riffed on the idea of, of maybe, you know, heads up navigation."
+        },
+        {
+            "startTime": 2871.271,
+            "endTime": 2875.261,
+            "body": "You know, golf maybe tells you how far the hole is from your, from your putt, right?"
+        },
+        {
+            "startTime": 2875.261,
+            "endTime": 2876.458,
+            "body": "Or your, or your shot."
+        },
+        {
+            "startTime": 2876.458,
+            "endTime": 2888.153,
+            "body": "Maybe it's used, you know, can be used in, in industry where, you know, like warehouse management or, I think I, I remember seeing an early I ar example back in the early days of the iPhone where you held up your camera."
+        },
+        {
+            "startTime": 2888.878,
+            "endTime": 2890.918,
+            "body": "I think it was like Yelp, right?"
+        },
+        {
+            "startTime": 2890.918,
+            "endTime": 2897.998,
+            "body": "And it showed like you could hold it up and move it around like this and it would show you like, okay, there's a pizza restaurant over there and there's an Italian restaurant over there and yeah."
+        },
+        {
+            "startTime": 2898.003,
+            "endTime": 2898.088,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2898.088,
+            "endTime": 2904.868,
+            "body": "And as you sort of, it sort of figured out where you were pointing based on the G P s, what was in front of you, maybe that's something to do."
+        },
+        {
+            "startTime": 2904.868,
+            "endTime": 2905.228,
+            "body": "Heads up."
+        },
+        {
+            "startTime": 2905.843,
+            "endTime": 2912.092,
+            "body": ", maybe it's heads, maybe it's like hey, you know, you're reading your text messages, there's a telephone pole you're walking into, right?"
+        },
+        {
+            "startTime": 2912.092,
+            "endTime": 2916.382,
+            "body": "Like, like maybe it's, maybe it's heads up navigation for pedestrians or bike rider."
+        },
+        {
+            "startTime": 2916.472,
+            "endTime": 2919.022,
+            "body": "Maybe you're riding a bike and it gives you like a heads up display, right?"
+        },
+        {
+            "startTime": 2919.462,
+            "endTime": 2920.152,
+            "body": "That's true."
+        },
+        {
+            "startTime": 2920.163,
+            "endTime": 2926.806,
+            "body": "Or maybe, yeah, I mean, or like in the gaming thing, maybe you can play like Red Dead redemption as if you're."
+        },
+        {
+            "startTime": 2927.631,
+            "endTime": 2929.461,
+            "body": "The actual environment of that world."
+        },
+        {
+            "startTime": 2929.461,
+            "endTime": 2931.681,
+            "body": "I mean, I dunno if you've ever seen the world, but it's huge."
+        },
+        {
+            "startTime": 2931.681,
+            "endTime": 2936.601,
+            "body": "Like, it goes on, like, you know, it takes you 20 minutes to go from one town to the other, riding a horse."
+        },
+        {
+            "startTime": 2936.601,
+            "endTime": 2939.181,
+            "body": "I mean, it literally, like, it does that, you know?"
+        },
+        {
+            "startTime": 2939.751,
+            "endTime": 2939.811,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2939.816,
+            "endTime": 2944.114,
+            "body": "So, I mean, from a gaming point of view, I think there's, there's, there's opportunities there."
+        },
+        {
+            "startTime": 2944.141,
+            "endTime": 2944.681,
+            "body": "Heads up."
+        },
+        {
+            "startTime": 2944.741,
+            "endTime": 2957.617,
+            "body": "I mean, like maybe a doctor could be wearing it and just sort of like, look at you and maybe he put some sensors on you and he can just look at you and see that your heart's like,  properly working or, or your blood ox is not good or Right."
+        },
+        {
+            "startTime": 2957.617,
+            "endTime": 2962.717,
+            "body": "I mean, I'm thinking, I can think of any number of ways that, that AR and VR could be used."
+        },
+        {
+            "startTime": 2962.717,
+            "endTime": 2966.137,
+            "body": "I mean, I, I think, joked with you about the fact that people were having relations."
+        },
+        {
+            "startTime": 2966.707,
+            "endTime": 2968.657,
+            "body": "Using VR back in the early days."
+        },
+        {
+            "startTime": 2969.267,
+            "endTime": 2970.147,
+            "body": "Right, right, right, right."
+        },
+        {
+            "startTime": 2970.152,
+            "endTime": 2973.387,
+            "body": "Devices that you could, wearable devices that would stimulate whatever."
+        },
+        {
+            "startTime": 2973.392,
+            "endTime": 2973.487,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2974.297,
+            "endTime": 2974.537,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2974.537,
+            "endTime": 2983.135,
+            "body": "I mean, so, so where, I mean, architectural engineering, I can think of tons of different ways that, that it'll, it'll improve things."
+        },
+        {
+            "startTime": 2983.135,
+            "endTime": 2988.685,
+            "body": "I mean, I don't know whether it'll take a long time before the law lets us do it, but maybe you wear the headset when you're driving."
+        },
+        {
+            "startTime": 2988.945,
+            "endTime": 2989.615,
+            "body": "Right, right."
+        },
+        {
+            "startTime": 2989.615,
+            "endTime": 2993.665,
+            "body": "Maybe, maybe it puts your speed in your, and, you know, things right in front of me."
+        },
+        {
+            "startTime": 2993.875,
+            "endTime": 2995.785,
+            "body": "My concern about it is like the whole."
+        },
+        {
+            "startTime": 2996.665,
+            "endTime": 3005.245,
+            "body": "and like I was telling you about my, my, my nephew's place, they had to move all the furniture out of the way when they had the Oculus on because you're gonna hurt yourself, right?"
+        },
+        {
+            "startTime": 3005.605,
+            "endTime": 3005.842,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 3005.842,
+            "endTime": 3006.779,
+            "body": "My concern is when"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 3006.779,
+            "endTime": 3009.299,
+            "body": "you're out, but then you have crash detection on your Apple Watch."
+        },
+        {
+            "startTime": 3009.299,
+            "endTime": 3011.009,
+            "body": "So, but that's"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 3011.009,
+            "endTime": 3011.529,
+            "body": "after the fact."
+        },
+        {
+            "startTime": 3012.404,
+            "endTime": 3016.484,
+            "body": "You, it's too, I think it's already too late to prevent the accident if you've already had it."
+        },
+        {
+            "startTime": 3016.484,
+            "endTime": 3016.694,
+            "body": "Right."
+        },
+        {
+            "startTime": 3019.034,
+            "endTime": 3030.611,
+            "body": ", you know, or, but, but, but then again, like we also talked about, you know, may, maybe it's an experiential thing, maybe you know, Trevor Noah at the, at the Grammy Award is wearing a Grammy's just happened this weekend, but he's"
+        },
+        {
+            "startTime": 3030.611,
+            "endTime": 3036.041,
+            "body": "wearing a headset that lets you go and have a conversation with Beyonce as if you're in the room with Beyonce."
+        },
+        {
+            "startTime": 3036.071,
+            "endTime": 3036.341,
+            "body": "Right."
+        },
+        {
+            "startTime": 3036.386,
+            "endTime": 3036.476,
+            "body": "Right."
+        },
+        {
+            "startTime": 3036.806,
+            "endTime": 3047.516,
+            "body": "Maybe it, maybe it's concerts like now, instead of going to a physical concert to see a band play, you know, you can actually experience that through a VR like you put on the headset."
+        },
+        {
+            "startTime": 3047.546,
+            "endTime": 3051.116,
+            "body": "Now you're in, you know, you're in the stadium, you're, you know, with all the other."
+        },
+        {
+            "startTime": 3051.476,
+            "endTime": 3054.686,
+            "body": "Avatars, you know all the emojis in the audience, right?"
+        },
+        {
+            "startTime": 3054.686,
+            "endTime": 3055.016,
+            "body": "Yeah, yeah."
+        },
+        {
+            "startTime": 3055.021,
+            "endTime": 3057.236,
+            "body": "Instead of having audience members, it'll be all emojis."
+        },
+        {
+            "startTime": 3057.241,
+            "endTime": 3065.696,
+            "body": "You right Mark is wrong about importance of emojis, but you know, maybe that may, maybe we all, maybe we all attend WWE Z this way."
+        },
+        {
+            "startTime": 3065.696,
+            "endTime": 3067.706,
+            "body": "Maybe they're gonna have a developer kit and they'll ship."
+        },
+        {
+            "startTime": 3067.711,
+            "endTime": 3068.366,
+            "body": "That would make total"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 3068.366,
+            "endTime": 3069.926,
+            "body": "sense as if they do that."
+        },
+        {
+            "startTime": 3070.006,
+            "endTime": 3070.496,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 3070.501,
+            "endTime": 3072.986,
+            "body": "Like especially if you think they're gonna announce it in June that."
+        },
+        {
+            "startTime": 3073.381,
+            "endTime": 3073.771,
+            "body": "That would,"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 3074.011,
+            "endTime": 3079.681,
+            "body": "well, I mean, I mean, June, I can tell you from, I mean as you know, I, I've done some work for Apple."
+        },
+        {
+            "startTime": 3079.681,
+            "endTime": 3085.981,
+            "body": "I can tell you that leading up to WW wwc is the big, I mean, Phil Schiller talked about this."
+        },
+        {
+            "startTime": 3085.981,
+            "endTime": 3087.601,
+            "body": "This is the big pin."
+        },
+        {
+            "startTime": 3087.631,
+            "endTime": 3091.051,
+            "body": "That's their Christmas, that's their, everything leads up to wwc."
+        },
+        {
+            "startTime": 3091.056,
+            "endTime": 3091.501,
+            "body": "Right?"
+        },
+        {
+            "startTime": 3091.711,
+            "endTime": 3091.951,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 3092.641,
+            "endTime": 3094.741,
+            "body": "You know, that's when all the stuff gets"
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 3094.741,
+            "endTime": 3094.921,
+            "body": "out."
+        },
+        {
+            "startTime": 3095.101,
+            "endTime": 3095.381,
+            "body": "We'll see."
+        },
+        {
+            "startTime": 3095.381,
+            "endTime": 3095.541,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 3095.551,
+            "endTime": 3096.061,
+            "body": "We'll see."
+        },
+        {
+            "startTime": 3096.661,
+            "endTime": 3098.621,
+            "body": "Tim, thank you so much for coming on the show."
+        },
+        {
+            "startTime": 3098.665,
+            "endTime": 3100.165,
+            "body": "Where can people find you?"
+        },
+        {
+            "speaker": "Tim Mitra (guest)",
+            "startTime": 3100.223,
+            "endTime": 3107.333,
+            "body": "I'm generally on Twitter and Mastodon as timmitra, Tim Mitra is my name, and that's how I, you can find me on the Twitter machine."
+        },
+        {
+            "startTime": 3107.386,
+            "endTime": 3110.226,
+            "body": "You can listen to me on more than just Code podcast mt."
+        },
+        {
+            "startTime": 3110.231,
+            "endTime": 3111.271,
+            "body": "jc.fm."
+        },
+        {
+            "startTime": 3111.29,
+            "endTime": 3112.25,
+            "body": "I'm on Podcast."
+        },
+        {
+            "startTime": 3112.255,
+            "endTime": 3112.63,
+            "body": "Podcast."
+        },
+        {
+            "startTime": 3113.18,
+            "endTime": 3115.121,
+            "body": "And that's podcast.com."
+        },
+        {
+            "startTime": 3115.145,
+            "endTime": 3119.161,
+            "body": "As well you can find me on LinkedIn if you'll, you know, look for me IT Guy Canada."
+        },
+        {
+            "startTime": 3119.586,
+            "endTime": 3123.438,
+            "body": "And yeah, those are pretty much the places to find me that, that I hang out."
+        },
+        {
+            "startTime": 3123.438,
+            "endTime": 3127.368,
+            "body": "I also hang out on a few Slack channels, some of, some of the iOS folks, slack channels."
+        },
+        {
+            "startTime": 3127.968,
+            "endTime": 3129.913,
+            "body": "We have a Slack channel for our own podcast as well."
+        },
+        {
+            "startTime": 3129.918,
+            "endTime": 3135.482,
+            "body": "And I also work with the folks over at Kodaco, so one of the technical letters and sometimes writer over there."
+        },
+        {
+            "startTime": 3135.482,
+            "endTime": 3138.28,
+            "body": "So you can find me on the Ray Wenderlich Kodeco forums."
+        },
+        {
+            "speaker": "Leo Dion (host)",
+            "startTime": 3140.065,
+            "endTime": 3142.405,
+            "body": "Thank you so much, friend Tim, for coming on the show."
+        },
+        {
+            "startTime": 3142.405,
+            "endTime": 3143.545,
+            "body": "I really appreciate it."
+        },
+        {
+            "startTime": 3143.574,
+            "endTime": 3144.026,
+            "body": "Thanks for having me."
+        },
+        {
+            "startTime": 3144.216,
+            "endTime": 3147.506,
+            "body": "If people wanna find me online, I'm at Leo g Dion."
+        },
+        {
+            "startTime": 3147.506,
+            "endTime": 3148.866,
+            "body": "My company is BrightDigit."
+        },
+        {
+            "startTime": 3148.886,
+            "endTime": 3150.836,
+            "body": "Take some time to like and subscribe."
+        },
+        {
+            "startTime": 3150.836,
+            "endTime": 3154.496,
+            "body": "If you're watching this on YouTube, this is a podcast, please."
+        },
+        {
+            "startTime": 3154.771,
+            "endTime": 3159.29,
+            "body": "Put it, review and I look forward to talking to you again in a couple of weeks."
+        },
+        {
+            "startTime": 3159.29,
+            "endTime": 3160.13,
+            "body": "Thanks for joining us."
+        },
+        {
+            "startTime": 3160.13,
+            "endTime": 3160.8,
+            "body": "Bye everyone."
+        }
+    ]
+}

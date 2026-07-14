@@ -1,0 +1,2010 @@
+{
+    "version": "1.0.0",
+    "segments": [
+        {
+            "speaker": "Speaker 1",
+            "startTime": 0,
+            "body": "I will confess that I had a terrifying nightmare about artificial intelligence run amok and, taking revenge for my naysayerisms."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 11,
+            "body": "Okay. Well, this is a good segue."
+        },
+        {
+            "speaker": "Speaker 1",
+            "startTime": 14,
+            "body": "Is it? Okay."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 15,
+            "body": "It is. Is a good segue. So I was going to, I was gonna apologize for hold on just a moment. Discord is making me fill out another form before I it's waving at me saying you have to do these things before you can talk. Okay."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 29,
+            "body": "I agree to the rules. Yes. Fine. Good. I'm just I'm just Power"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 31,
+            "body": "of attorney."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 32,
+            "body": "Yes. Attorney. Right. Exactly. Okay."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 36,
+            "body": "Something about putting this court in my will. I don't know. I whatever. I got it memorized. Fine."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 41,
+            "body": "I was going to apologize to you before I I was going to say that what I'm about to say is a lead up for our topic tonight, But you would be right to not believe it, which is, anyway, I was going back to the AI duomerism. And I I made the mistake of doing some some research after our episode on a r AI duomerism. I'm like, and that mistake was, surely, it can't be dispatched. Surely, like, we have created a caricature of these people. And the answer is we have not created a caricature."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 74,
+            "body": "They have created a caricature of themselves, and it is truly the the these these fears of AI taking over the planet are so ill founded. And what and one of the and I know I'm sorry, Adam. I know I've dragged you into some of these. I I you know, sending you links to podcasts and so on that gaps not been through under any condition. And is the thing that I find so frustrating that we were hitting on a bit in that episode, but it's actually kind of the theme of of our conversation tonight, is I feel like people don't that there's we're so accustomed to being in the virtual world, They actually don't understand how the physical one works in some really basic ways."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 114,
+            "body": "And all of these fears are of these large language models spilling into the physical world. And it's like, actually, the physical world is really fickle and hard, and lots of stuff goes wrong all of the time. And for essentially every single thing in your life, physical thing in your life, there are a bunch of people that have worked behind the scenes to get that thing to you, to get that thing mined, farmed, manufactured, transported. It's like there's so much that's involved. And I feel like we've lost our curiosity for that at some level."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 152,
+            "body": "You know what I mean?"
+        },
+        {
+            "speaker": "Speaker 1",
+            "startTime": 153,
+            "body": "Certainly. Our and our appreciation for that, just because it happened so magically. Absolutely."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 158,
+            "body": "It happened so magically. And these folks have done at, like, at so many different layers of the supply chain, have done such a terrific job. And I think that we the only disservice that we've done is we don't talk about it. And then, you know, you get these supply chain disruptions and so on. People would begin to appreciate it."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 175,
+            "body": "But I think so for us at Oxide, you know, we talk about building a hardware and building the software, and that's all true. But there's actually another thing that we've also been building. With a a third thing, we are building the process by which we create this thing. We are building the the manufacturing, the supply chain, the logistics. And a lot of that stuff is not seen because it doesn't, like, the the the very fact that the artifact has showed up and powers on and is present."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 204,
+            "body": "It's like that job is done. So it's very easy to not appreciate it, but it is absolutely essential. I mean, it's, you, you cannot overstate how important this is. All of this is to get the thing that we've got. So I'm really excited that we've got a bunch of those folks today that are with us who have, and we we heard from from Kate last time on on on the spy chain issues, Kate and Kirsten."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 233,
+            "body": "And we got the the kind of the extended operations team here in the form of of CJ and and Eric, and the in addition to Kate and Kirsten, and so we get I I really first of all, welcome to all of you. It's so great to have you here. Thank you very much. I think, actually, if we don't mind, I think we might actually start with a question that came up online when we posted the rack. So we tweeted the photo of of the rack of, kind of the first little rack coming off the line and shipping."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 265,
+            "body": "And someone out there in the Internet was like, oh my God, don't tell me your eyes. Is that how you're gonna ship this thing? Please tell me you've thought about how you're gonna ship it. You're like, oh my God, have we thought about how we're gonna ship? So I wonder if we might start there because the crate is its own act of engineering."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 284,
+            "body": "It's it the and and, Adam, you've seen the crate out here. Yeah. I'm not sure"
+        },
+        {
+            "speaker": "Speaker 1",
+            "startTime": 289,
+            "body": "and I've even uncrated some of our racks, and and didn't get run over by it or crushed by it or anything like that."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 297,
+            "body": "And the the crate is really pretty amazing. So, Kate, is that is that a reasonable place to start in terms of, like, starting with the with the crate? Yeah. There's obviously a lot to talk about."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 305,
+            "body": "That's kind of the final mile, and there's a couple of things we wanna talk about. But I think we can start there. It's a fun story. But mainly, I wanna highlight, it's really the team. The operations team has been phenomenal to work with, and we come from our breadth of different backgrounds and experiences."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 320,
+            "body": "And the main point is that we've now built one rack, and that's awesome. We've built 1 of 1 that are exactly the same. And so now it's how do we go scale that? How do we repeat it? What does that mean in terms of lessons learned through this first build and then process improvements and scalability that we're gonna go work on as a team?"
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 337,
+            "body": "And so we've brainstormed as an operations team. Some of the topics we wanna hit on today, and you hit the nail on the head. Crate and packaging is actually a huge portion of work that we have done to date. That was a surprising portion of work. And so I'll let, CJ and Kirsten jump in on that because I kind of owned that piece of the puzzle."
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 360,
+            "body": "Yeah. So I I can start on the the initial part of the crate design, and then, CJ helped, and has been doing a lot with some of the shock and vibe and, things like that with the crate out in California. So, you know, we initially reached out to 3 crate vendors. These were vendors who have done crates for other large, rack manufacturers. So we wanted someone that has done this in the past and does this consistently, and we had some specific requirements."
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 396,
+            "body": "Our rack is, of course, quite sizable. It's very tall. So we're pushing the 102 inch limit that we can do, in order to go into a truck and then if we were to fly these as well. So between the size, the height, and the weight, we had some very specific requirements. We also wanted to ship the doors and the side panels in the crate, but not attached to the rack, so we needed storage spaces for those as well."
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 423,
+            "body": "We had some some concerns with the ramp and making sure that that was gonna be sturdy enough for, say, 3,000 or so pounds, of brute force being pushed up bit. So did an initial PowerPoint actually design of what I kind of wanted the crate to look like, and then sent that to the vendors, and said, hey. Can you build something like this? Needs to meet certain standard shipping standards, be able to withstand shipping and shock and those kind of things. So we went ahead."
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 453,
+            "body": "We got 3 prototypes from 3 different vendors. Knowing the first round wasn't gonna be perfect, nobody had actually seen the rack before. It was just kind of telling them, what requirements would be and then their well, so I kinda put those 3 through the test, narrowed it down to 2, manufacturers to go forward with and do another round of edits to it, some things we didn't think of beforehand, looking for input from them as well. And then, you know, over time, just from working with the 2 vendors, ease of working with them, response time, other things that they could do for us, suggestions to add. We've kind of, been focusing in just more or less on one right now for the time being."
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 501,
+            "body": "It is closest to where we're doing some of the packaging testing as well. So that's how that crate design came about, and then I know CJ has been working with our current crate vendor on even additional updates and changes and tweaks here and there."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 516,
+            "body": "And so, Kirsten, the k the crate that we had out in Austin when we did that that first pre compliance run, 15 years ago Yeah. Whatever that was. It feels like I think it was was that only is that only a year ago?"
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 529,
+            "body": "I don't even know Does not"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 530,
+            "body": "make sense."
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 530,
+            "body": "Honestly, I don't even think it was a year ago. It it feels like That 5."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 534,
+            "body": "How is that? It was in December, I I feel like."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 538,
+            "body": "No. No. No. We did November. Was running in Austin."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 540,
+            "body": "CJ, when was that?"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 541,
+            "body": "Was that That was,"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 542,
+            "body": "yeah, July of last year."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 544,
+            "body": "That was a year ago. Wow."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 545,
+            "body": "Which is wild."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 546,
+            "body": "Okay. But but, you I mean, that feels like it was 5 years ago. You I mean, it might have been 5 years ago. Right? Okay."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 551,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 552,
+            "body": "I'm not a 100% sure it was a year ago. It could be 2 years ago."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 554,
+            "body": "Or 5. The is so the, the crate that we had so it was kinda my first exposure to the crate. I mean, it's got the first time we had, like, our first initial proto rack together."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 564,
+            "body": "Yes. Yep."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 565,
+            "body": "And I remember being, like and it here's this is an example of, like, one of the many problems that I just had not thought about at all. And and, of course, you all had spent a lot of time thinking about this."
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 577,
+            "body": "So I was like, oh, right."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 578,
+            "body": "Of course. Like, we have to, like you can't just, like, put it in a box, dummy. Like, you actually need it to it to have a property into your crate. And I I just started looking at that crate. I'm like, wow."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 587,
+            "body": "This thing's amazing. And you're like, no. We've got a lot of issues with this. I'm like, oh, okay. This is not never mind."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 592,
+            "body": "This is not amazing. We've got a lot of work. We've got a lot of room for improvement."
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 595,
+            "body": "Yeah. I mean, just the sheer mass of our what we're putting in there, you know, some of these crate vendors are used to maybe just nailing in and not nailing and screwing. So, you know, we had suggested some things, but they they sent what they thought we needed. There were nails popping out and, you know, wooden boards and dividers on the inside that would show up and attach So that first rat crate, there was a lot of editing that was done to it. Sorry."
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 626,
+            "body": "We actually used of time and extra extra wooden screws in that first crate and and the one after"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 634,
+            "body": "it. Yeah. And and then so because in and so we that one we iterated on quite a bit. I mean, that we think we kinda stuck with that initial design, I guess, CJ, but we I know we we improved it a lot."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 647,
+            "body": "Yeah. More or less. I mean, I guess that's what I would say generally about packaging is, like, it is a whole thing. Like, it is a universe. Like, I mean, people get degrees in it."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 655,
+            "body": "I and, you know, frankly, in my supply chain experience is not something I've dealt with directly a lot, but, where I picked it up was just on some of the shock and buy testing to make sure that, you know, when we ship a product that it, arrives intact and, and useful. And so we actually ended up switching crate vendors from the initial, the initial crate that we had way back when. So now we're with, Larson packaging is who we shipped with for the first, customer shipment. And, that creates come a long way. I mean, and and, you know, as we get experience pushing a crate, a rack in and out of a crate, there's"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 690,
+            "body": "Yes."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 690,
+            "body": "Usability, there's ergonomic improvements. And so it's definitely come a long way, but, that's certainly something that we put in the things we did right. Was Kirsten going out and getting, you know, multiple bids, multiple designs from multiple vendors. So Yeah."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 704,
+            "body": "That's interesting. Very, very well. Well, one thing I definitely appreciate is when we were loading the rack in here in Emeryville to go to compliance, that little the the the ramp was not totally flushed with the floor. There was that little lip. And, Josh, I feel like we because we're sitting with you and, Josh and Steve and, we had we definitely had, like, a bunch of folks."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 724,
+            "body": "It took a bunch of us to get that thing over the lip, if I recall correctly. Aaron, I think you were out as well."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 730,
+            "body": "Oh, yeah. I mean, it's, I feel like I'm always afraid that the next thing we're gonna have to get smart on is OSHA because, like, you know, the initial create, like, pushing, you know, \u00a324100 of steel up that wooden ramp, was was trying to say the least. I know, you know,"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 747,
+            "body": "the email in my inbox, r e, July 11th podcast. Like, oh,"
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 750,
+            "body": "oh, right."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 752,
+            "body": "But now it's got metal it's got metal runners to help us, you know, get it up the ramp. So it's, you know, the flip side of that, the door ramp is now super heavy, like a 2 person lift for sure, But, but it's much better now."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 763,
+            "body": "Well and so there's an important thing in there too in terms of because one of the the things that we were hoping to do was be able to ship the sleds in the rack, which, like, that is I mean, we've been able to pull that off, which to me is terrific because if you can't ship the sleds in the rack, then you've got a whole bunch of other logistic challenges you gotta go deal with."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 784,
+            "body": "Yeah. We had not done that. And that was the focus of some of the early shock and vibe testing was because we'd always shipped the rack separate from the the sleds. Even the side cars. We shipped those separately."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 795,
+            "body": "If you recall, in boxes on pallets. And so some of the focus of the early shock and pipe testing was, does this thing survive, you know, crate fully loaded into the crate? And, it did. It actually it held up for the the crate did not, but the rack was fine. So that was, that was good."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 812,
+            "body": "What and this is one of those things where this has a real tangible effect on the one of the things we wanna optimize for is the latency from that rack arriving to being able to provision VMs and have developers productive. And if you gotta debox everything, that adds a huge latency. I mean, there's a and there's so many challenges with deboxing. What's"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 834,
+            "body": "huge physically as well. I mean, do you do you recall when we received the first one in pieces in boxes like it took up half of the warehouse floor."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 845,
+            "body": "Right,"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 845,
+            "body": "because you can't really stack them very high when they're in individual cardboard things. It's like 32 weirdly shaped servers and 2 giant switches in addition to the crate with the rack. It was a lot of floor space."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 857,
+            "body": "And so CJ, you said that you that this is like, this kind of logistics of this size was was something that was new for you, and then it's just like entire discipline behind it. I feel like that's happening all the time. I mean, that that happens all the time for all of us, but I especially feel on the operations team, you all are constantly vectoring into, like, okay, well, I'm gonna learn a lot about this today. I'm gonna, like, I'm going into yet another aspect of getting this thing manufactured or developed or shipped."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 884,
+            "body": "Yeah. Totally. I I would say packaging specifically is just one of those things where you just sort of take it for granted. You know? I mean, there's there's companies out there that, you know, really put a lot of effort into packaging, but, you know, you order something from Amazon or whatever, it just shows up in a brown box with some, you know, air, air packets or whatever, you don't really think about it."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 903,
+            "body": "But when it's a very expensive computer, like, there's just a lot to consider and and you definitely wanna test it first. So"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 910,
+            "body": "Yeah. Brian,"
+        },
+        {
+            "speaker": "Speaker 1",
+            "startTime": 910,
+            "body": "there's this there's that moment in soul of the new machine when the boss says, well, I guess I better design the power cable. It does sort of it's reminiscent of that, like this, extremely important piece of logistics that goes unseen."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 923,
+            "body": "Totally. And I feel like a a, you know, a big part of it was actually seeing I mean, on the one hand, you can kinda spec the stuff out, but the boy, seeing is really believing in terms of of understanding where these pain points are, and being able to iterate"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 937,
+            "body": "on that."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 939,
+            "body": "You know, one of the things that that I think has been really clutch for us, and and, Kate, I know that that you feel strongly about this as well that we have been able to do so much of this in person. And the fact that our contract manufacturer, Benchmark Electronics, is is is onshore, is actually is in Minnesota. And the fact that we've been able to be physically with the crate and be physically on the manufacturing line has been really, really important. Do you wanna maybe speak to the importance of that a bit?"
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 970,
+            "body": "Yeah. Definitely. Being US based and having that close time zone has been, hands down, one of the best decisions we've, we made at Oxide when we were selecting SCM to go through the engineering build phases and into production with. That really it's not just that alone. I think hiring Eric to be on-site in Minnesota right there, able to go to Rochester throughout the build phases and especially throughout this final stretch going through the PVT build and getting ready to ship has been absolutely crucial to our success."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 1004,
+            "body": "It's the right person on-site during the launch. It's not just, a warm body there. Eric has done a phenomenal job building that relationship with Benchmark and knowing the right people to go to when we hit an issue, when we need rework accomplished, or when we need some heroic effort at quarter end. Like, having Eric there has been such a big part of that success story."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1026,
+            "body": "Well, so maybe this Eric, this is a great segue to you. First of all, I have been told that I I don't I you and I have not been in Rochester together, but I have been told that, like, Eric, you are like the mayor of Rochester known in every establishment. I that you gotta."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1043,
+            "body": "Yeah. Yeah. I guess so. I guess that's a that's a that's a nice compliment. They've been a they've been a great team great team to work with, I think."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1050,
+            "body": "So CJ CJ mentioned something earlier. You know? I mean, it's not just packaging, but everything we're doing, every aspect just to pull the back pull this back a little bit. I mean, everything we're doing at Oxide is learning as we go. I think a lot of the hardware team probably gets frustrated with me."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1065,
+            "body": "They probably know my battle cry of, like, requirements and documentation, and we wanna do that. But as soon as I say that, I'm being the biggest hypocrite because we've been lacking a lot of that But to be able to build something like that when you don't have the documentation, you don't know what you're doing. You know the direction you wanna go, but you can't tell them do this. That can be challenging. And so we're lucky to have a like, with Benchmark, it's been, a joy to work with them, and they've welcomed us in, I think, across the board, not just me, but all the hardware team that's been there, all the software team that's come in to bring up over the past to almost 2 years, I think has has really helped create that relationship and that partnership, build a process together."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1116,
+            "body": "Like you said early on, Brian, at the opening of the of the podcast here is, being able to define and document what we are building and build that process to make something, not just one time, but make it try to make it twice."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1129,
+            "body": "Well, yeah. And I mean and that's the challenge when you're doing this new product introduction NBI. You really which honestly is not what most manufacturers do. Right? I mean, it is its own and you can I I I've got, like, total new appreciation for why it you need a manufacturer who really understands what NPI entails?"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1148,
+            "body": "Because it entails a lot of figuring it out, and and fine tuning, and and not and and finding things that are massively wrong and fixing them. And, Erica, maybe that that give and take with them has been really, really important. Do you wanna maybe talk about some of the things that that you were able to to just being there with the manufacturer, and, you were able to kinda discover, and and soon as we were building this thing? There's so many of them."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1182,
+            "body": "Yeah. I think the I think one of the first things is, so I'm new to electronics manufacturing. So a lot of the hardware team has helped kinda get me up to speed there, but being on-site, just trying to be an asset for oxide. And then I have a manufacturing background, but in metals manufacturing and or areas, but not electronics manufacturing. It's been absolutely eye opening."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1202,
+            "body": "It's a it's a really cool area, to be in. But, I think some of the I'd say some of the challenges, or some of the benefits of being on-site is, just having some continuity, especially during that NPI to production phase. The NPI to production hand off is always challenging. I don't care what company you're at, can be a challenging time. So we went through that in November."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1228,
+            "body": "Well, October, November is when we kind of forced that function. And, when we talked earlier today, we said, man, that was one of the best things I think we did as a company is to try to do DVT with a production mindset. So we were able to transition all of our, like, engineering documentation, at least over to production. Aaron Hartwig and Nathaniel and a lot of the team have been critical in pushing ECOs or engineering change orders over to document start that initial documentation and foundation of our system. So being there to when where there isn't a process, that's been helpful."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1265,
+            "body": "I remember during DVT, we didn't have we never built a sidecar, really. I mean, I think even the NPI team had put, like, a half of 1 together or one together. We'd never built a rack. So we're just looking at assembly drawings and, like, the next day, we were creating a documentation, creating, like, word documents and saying, here's how we think this goes together. I mean, we're not building a spaceship."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1286,
+            "body": "I mean, not to take it's not that complicated, but you can look into somebody drawing and the higher level drawing. So this is the stuff how it should go together, and then we pushed it to the floor. And that was our documentation for, like, the next day. And we kinda lived hand to mouth to that like that during DVT. So being on-site for that was really helpful."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1304,
+            "body": "I don't see how that could have been accomplished remotely. It could have been done. It just would have been much more slow. So"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1312,
+            "body": "And much more air front. Right? We've been a lot of more we just would have had a lot. And, you know, one of the challenges you've got as a start up building a physical thing is that we're trying to move quickly, but also with rigor. I mean, it's it's it's our classic urgency and rigor trade off, which, I mean, you all were were right at the intersection of that, it feels like, every day."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1333,
+            "body": "Like, how do we build the right rigorous scalable process, and also how do we do it right now? It's like, well, okay. Something's gonna have to give. And but it feels like something different had to give every day. It's really, the kind of a constant balance that that you were having to hit."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1347,
+            "body": "I think, you know, Kate I told Kate, I said, you know, even if you're down there for 5 minutes and you're able to push something forward that would have saved, like, 2 days. Even if you're down there, so you're not always engaged, there's not always something going. But if you're down there where you can push something forward and be there involved for 5 minutes, it's definitely worth the trip. That beautiful drive down 52. But, you know, just another another and just to just one quick highlight of that."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1372,
+            "body": "So, you know, Josh has been, you know, instrumental in the manufacturing side on the software side, which has been great. He's extremely patient with me. But one of those things, like, I I remember telling Josh, I said, if I can just be down there and if you just need me to press a button, and I didn't do that from here. It's like, well, oh, that's how computers work. Oh, okay."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1389,
+            "body": "I see. But he would but he was if there's just anything we can do, if it's just making sure a cable's in or something like that, just even that having that on-site presence is, I think, helpful. And again, the goal is really I think, Brian, like, with anyone in operations, at least my MO is make sure we're not blocking anything. If there's anything keeping our engineers in the way from doing their job, that's that's what we need to do in operations, I think, if we had a mission statement."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1419,
+            "body": "So, hopefully, we're doing that."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1420,
+            "body": "Hopefully, we're doing that."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1421,
+            "body": "Totally. Oh, oh, god. Absolutely. Well, I I mean, I think to me, what has been so exciting about this is it is such a tight collaboration between the the operations, our hardware engineering team, and our software engineering team. So, like, we get everyone and, you know, the manufacturing software, Eric, is a great example where everything comes together."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1441,
+            "body": "And and, Nathaniel, you and and Eric were kind of constantly, you know, fine tuning this in terms of the of the of the process on-site as you were doing some production engineering and, you know, then getting that feedback back to Josh. So when we, we mentioned this in in previous episodes, but we wrote all of our own manufacturing software and which is one of those decisions that may seem, ill advised. But it's one of those that was boy, was that the right decision? I mean, can you I just I don't know. I I the alternative is unbaffable, I think, at this point."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1470,
+            "body": "I think we we we have had so I've appreciated so many gains from controlling that entire stack, to actually, like, programming the at the programming station, being able to do the rack level testing, being able to have all that software, But it does require a contract manufacturer that's really gonna be, willing to be amenable to that. Because it I mean, Eric, I haven't dealt with, I mean, we've been, I think, very lucky with this relationship with Benchmark. I got to imagine this is somewhat unusual to, where we to have a manufacturer that allows us to have such a a close relationship with them."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1506,
+            "body": "Definitely. I've been in their shoes. I've been the you know, I've been on the supplier side, and then that's the last thing I wanted was a customer hanging out out there. So I've tried to been I've tried to be cognizant of that and try to be a good neighbor. Like, from afar, I think we'd be a lot more aggressive because it's a more transactional relationship, you know, if we're just doing it over email."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1527,
+            "body": "But when you have to kinda you live where you eat a little bit, I wanna you wanna make sure you're doing well by them and I think, CJ, you had a a phrase that you were that you used somewhere. I'm trying to think from your long term relationship here. Think of your nugget of wisdom, if you're"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 1547,
+            "body": "Some tier supplier. That one."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1549,
+            "body": "It doesn't matter. I'll I'll figure."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1551,
+            "body": "No. No. That one was Why"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1554,
+            "body": "why are you Oh, gosh."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 1556,
+            "body": "I'll find it."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1556,
+            "body": "Anyways, Ignacio had a good one. Just kinda long term. Don't oh, you can't surge relationships. Yeah. Quote CJ now."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1563,
+            "body": "And you can't have you can't surge relations. You can't, you know, take advantage of you have no foundational you can't insert it. So, you know, documentations you did. And this so I I think that's that's so true. So we tried to build that foundation again, and that's not that's not one person."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1580,
+            "body": "That's all of Oxide. That's what I'm really proud to work with this team is everybody that comes on-site. It's kinda like your you know, when your your kids go somewhere, you want them to behave well without you telling them, and then not that there's maybe a weird relationship there. But, like, everyone in Oxide, it's like our family. Everyone in our family speaks and holds, makes a very good example for for oxide wherever we go, and I'm I'm really happy with that."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1606,
+            "body": "And I think that really gets a lot of equity when we ask for stuff. And we've tried to because we there has been a lot of surging. There's been a lot of fits and starts. Again, that equity has allowed us to Totally. I think, get us over the bubble and say, alright."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1621,
+            "body": "Well, we're good on the good times, but we're good in the bad times as well. I think we got a strong relationship there."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1630,
+            "body": "Yeah. That is really interesting. That actually I I I have to say I'm very makes me very proud to hear that that, I mean, certainly, I feel the same way that we, all the said from the beginning that this the team that is bonded by mutual trust and the fact that we can all kinda trust one another to be on the point of that relationship and represent one another well. And that's really interesting here. And, Eric, tell me about this."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1654,
+            "body": "Somewhere along the line, you gave a speech that became the stuff of legend. Aaron, I feel you were there You were reporting the can you I I obviously, you know, we're not gonna be able to to really re recapture it. But, can you give us the gist of that? Because this is when you were, I think, speaking to some of the benchmark folks, and, keeping their spirits high."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1677,
+            "body": "I don't I don't it was nothing special. It was, an opportune moment just to say thank you to the team. So I didn't I think Aaron was maybe a little bit of hyperbole there, or maybe he was just, chiding. But, no, I I think it was just an opportunity to say thank you to the team. They had an informal photo op out in front of the rack, and, it was just a good time."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1696,
+            "body": "We hadn't had everyone together like that. So it was again, it was just a time for us to you know, who I think Eric was there. I think, I think Aaron was there. And I think RFK, it might have been during the Sam the Samtech cable. Talk to you if I'm not mistaken."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1712,
+            "body": "But"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1716,
+            "body": "When I think just like getting an when you are manufacturing something, getting everybody because we we it's very important to us that everybody has bought into this, and that everyone feels like that because they are. Everyone is an important step of the process. And if we've got someone in manufacturing who is observing that something is not being done correctly, we want to empower them to say, hey. Wait a minute. This could be why are you doing it this way?"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1737,
+            "body": "Like, this could be done a lot better. And I think, Eric, you really have to have that that strong relationship in order that"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 1743,
+            "body": "I I mean, I'm aware. I'm not gonna mention any names on the benchmark side, but I'm aware of at least a handful of people like that we now talk about by name that are just like even just line technicians or whatever that are perhaps more observant than we expected someone would be that didn't work here. You know, like, taking it all very seriously and, you know, to to raising process issues and concerns and doing a really good job. That's been, I mean, I haven't actually physically been to benchmark, but it's been very fulfilling even remotely to to see people getting so involved."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1778,
+            "body": "Well Yeah. We were Sorry. Go ahead."
+        },
+        {
+            "speaker": "Speaker 9",
+            "startTime": 1781,
+            "body": "We were putting together, I mean, the the rack to ship couple weeks ago, and, like, each as as we were doing the final, like, assembly and testing and the operators are, like, cheering as we're, you know, going, oh, we got another good one. We have another good one, you know, as we're kind of doing our final assembly of everything. And it's like they're invested,"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1800,
+            "body": "which is pretty sweet. That is terrific. Which is good because we have we together have had all sorts of hurdles. So, I"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1811,
+            "body": "I feel like we we gotta talk"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1812,
+            "body": "about some of the the the the bullets over the ear that I know we've we've spent we certainly talked about some of them in the past, but I think there's some that we've not talked. I feel like did we I don't think we have talked about the sidecar heat sink issue before here. Happy, Adam?"
+        },
+        {
+            "speaker": "Speaker 1",
+            "startTime": 1825,
+            "body": "I don't think so. But I I know we've chatted about it offline, but not I don't think on the show."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1830,
+            "body": "I Kirsten, do you wanna or Kate, we had that that near death experience. There have been so many of them, but we this is a a kind of a a concrete embodiment of the low level details that we have to deal with. So they kinda the the the backstory is that we had heat sinks. CJ, just to your point about, like, logistics being its own entire discipline, we had heat sinks that were showing up slightly warped. And these are these heat sinks are big."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1858,
+            "body": "They they're these are the heat sinks for the sidecar. They're really big."
+        },
+        {
+            "speaker": "Speaker 1",
+            "startTime": 1861,
+            "body": "The sidecar is the is the rack switch powered by Tofino 2. And and would I mean, they're really big. I mean, how much does that heat sink weigh?"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1870,
+            "body": "It actually does not weigh very much at all. Oh, really? That's yeah. That is the the it looks like it's in fact, it is so large that you think yourself that way. And it I"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 1881,
+            "body": "think it's just a"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 1884,
+            "body": "piece of aluminum foil in a funny shape."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1888,
+            "body": "Yeah. And I I'm sure I I don't Kate, I'm sure you know the exact I mean, that's actually a big part of it, actually, Adam, was reducing the weight of that thing. This This is the moment arm crisis to you. You were the moment arm crisis when Sure. You were among many other crises."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1902,
+            "body": "Would the that heat sink was gonna be so large that if we shipped with the heat sink on, there was a concern that the moment arm, would be so long and heavy that it would require a very small amount of force at the outside of the heat sink to crack the PCB. Nathaniel, am I am I describing that problem adequately enough?"
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 1921,
+            "body": "Yeah. I think so. I'm I'm you know, I'd only pretend to be an elect or a mechanical engineer. But, yes, that sounds right."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1928,
+            "body": "Sorry. Okay. So do"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 1929,
+            "body": "you mean because it extends I missed this. Because it extends out. So, like, it's anchored in the center, and then it's effectively a lever hanging out the side like a diving board."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1939,
+            "body": "Yeah. So it it it would"
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 1940,
+            "body": "like and that, you know, this is a 4th 4 or 5000 BGA part. So, like, there are 4 or 5000 balls underneath that thing. So this is a big part. Right? It's like All"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 1949,
+            "body": "all of which have to stay connected."
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 1951,
+            "body": "Yeah. And so if you if you put a lever and attach it and then, like, start cranking on it, you're likely to break, some of the balls, especially out at the corner."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1962,
+            "body": "But getting so that this is a big heat thing. And then, okay. Great. We problem solved. It's like, well, you've solved one problem, but now we've got actually gotta make it it's actually important that that this heat sink show up and not be damaged."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 1976,
+            "body": "And, Kirsten, do you yeah. Kate, you wanna talk about some of the issues that we had with that thing?"
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 1979,
+            "body": "Yeah. I think Yeah. I can just, I can start with a few. I know Kate, we were kinda tag teaming this issue with, the team in China. So it wasn't just a flatness issue."
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 1990,
+            "body": "They were also being received with a lot of bent fins. So we had the 2 issues that we were dealing with. They were warped, much out of spec. And then the fins on the egg mostly on the edges were all bent in. So it was 2 things."
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 2007,
+            "body": "It was if it's flat enough or can we get it flat enough? And then can we manipulate these fins back to being straight or good enough to use? And we we honestly were having some issues getting in touch with the China team and getting the responses that we needed. So we ended up getting in touch with their one of their US based, manufacturing plants, And that manufacturing plant manager took on our case, got everything set up, and there were a lot of late night calls for us because we had to make sure everybody, you know, we had people in China, people in California, people on the East Coast. So just getting everybody aligned and going through these issues 1 by 1, we were looking at, I can't remember the exact number of vent heat sinks, but, you know, we were short to what we needed."
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 2058,
+            "body": "We did not have the time to manufacture new ones. We didn't have a solution at the time for what was actually wrong with them. Was it a shipping issue? Was it happening in shipping? The fins definitely were."
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 2070,
+            "body": "The flatness issue, was it a design issue or was that happening in shipping as well? And if I remember correctly, the US based manufacturing plant did fix some of them for us. This was it was, like, 5 years ago as well, but I I think it was, like, December."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2087,
+            "body": "Yeah. I don't recognize this. Yeah. I know. I guess, my god."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2091,
+            "body": "This is like a"
+        },
+        {
+            "speaker": "Speaker 5",
+            "startTime": 2092,
+            "body": "But, yeah, there was there was a lot of teamwork, between their US based manufacturing plant who really had nothing to do with the issue. These were coming out of China, but, they stepped in and helped us until that issue was fixed, until we had what we needed to get through the next phase of manufacturing. And then we've we've had follow-up calls since, the packaging that these are shipping in now is crazy. I saw a picture of it the other day."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2118,
+            "body": "Oh, yeah. It's"
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 2119,
+            "body": "It's so ironic. This comes back to packaging design again."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2123,
+            "body": "Yeah. It does."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 2123,
+            "body": "A whole engineering aspect that I think was maybe overlooked by our supplier on the original shipment for the size of these. It created some really robust packaging with, like, a metal plate that it sits on just to ship here. And in parallel, I work on more permanent design changes that would address the flatness and warping issue in transit. But it just speaks to the criticality of shock and vibe testing and packaging design and all of that that goes with the end stage logistics of shipping a product."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2154,
+            "body": "Well and this is one of those too, like, when you have something like this that is showing up damaged, it's you know, you you would go back to that relationship, because it's kinda natural for a manufacturer to be, like, I don't know. It was good when it left here. So it's, like, I think you should be talking to your logistics provider or your shipper. And, you know, that that can be a it's a real challenge because you got kind of this third party in between figuring out, like, alright. What did go?"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2177,
+            "body": "And, you know, what do you expect to certain things you have to expect to go wrong in shipping, and what do you kind of accommodate there, and then whose responsibility is it? And with something like this, it's like and I feel like they can this is true for many, many components in the oxide rack, but it's like, we actually need this to work. Like, we don't have this is the this is the supplier for this. We gotta get this figured out. And it, yeah."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2201,
+            "body": "Someone's saying in the chat. It's like, this is like, it worked on my laptop of manufacturing. Absolutely. It was in good shape when it left the factory. And then you're you're left being, like, the thing that did this, like, fed I we know what FedEx and UPS."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2215,
+            "body": "We know that they're awesome powers for the destruction of things, and seems to be outside of that. So That's all. We need to figure out a better impact."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 2222,
+            "body": "Us being a startup and defining every process, even operation processes from the ground up. So a piece of this is our quality control. So we now do 100% IQC inspection it speaks to the processes we're building out about quality in and it it speaks to the processes we're building out about quality in our 4 walls or benchmarks 4 walls at RCM and then upstream manufacturing quality control and the processes we wanna put in place to kind of enhance that robustness and the incoming quality we receive of components."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2260,
+            "body": "Totally. And with the eye at at every level of, like, we're trying to ship a quality product here. We're not trying to, like, blame people. We're trying to actually ship a quality product. And that's the that that's kind of the challenge up and down here, and as getting all these different kind of kind of layers in there."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2276,
+            "body": "Maybe I and CJ, I know we have talked about this but not, I think, with you here. I do you know, definitely a wrench that got thrown into the works was this issue with the part being mistuffed on the shark fin rev d. And it then you ended up with a new challenge thrown in your lap of, like, we've gotta get how many did we get reworked? I wanna say 1200, something like that. Yeah."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 2299,
+            "body": "We gotta I think we gotta give"
+        },
+        {
+            "speaker": "Speaker 1",
+            "startTime": 2300,
+            "body": "a little more context on on shark fin and Rev A and driven parts stuffing."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 2307,
+            "body": "Sure. Sure."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2308,
+            "body": "Yeah. Tell the story."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2309,
+            "body": "We have a shark fin, which is the PCB that connects all of the U. 2 SSDs to the main board. So we have 10 of those per server. And so we were doing bring up and wasn't working so well. And we troubleshot that Diana."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2323,
+            "body": "We didn't hadn't messed with the design that much. And so we ended up figuring out the w's figured out, there's a part, that is mismarked because it's the wrong part. It's not the right part for this ref des. We use that part elsewhere on the design, but not in this specific ref."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 2338,
+            "body": "Was this when I was there in the office at 2 in the morning, and the light came on funny, and then the computer wouldn't boost? Is that? No. That was Yeah. No."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2347,
+            "body": "I think No."
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 2348,
+            "body": "Was that it? You were the harbinger."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2350,
+            "body": "Yes. Yeah. Josh has been the harbinger for so much that it's hard to keep track."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 2354,
+            "body": "He's been the I didn't get it to work, and I wanted"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2358,
+            "body": "to go to bed."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 2359,
+            "body": "Right. I think I wrote a few short messages about that into chat. And then when I woke up at, like, 11 in the morning the next day, it's like, company over, very s."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2369,
+            "body": "Like"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2369,
+            "body": "Yeah. Yeah. Right. I do remember that. Right?"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2371,
+            "body": "You're like, hey, Josh. It was not just you. The good news is it was not just you. The bad news is"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 2375,
+            "body": "Which, in fact,"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 2376,
+            "body": "not you. Just not you. Not just you."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2379,
+            "body": "That's Yeah. It the I had re I forgot I forgot you hit that the night before. And, yeah, that was a wild morning as we realized that we had this thing just didn't work, and everyone is afraid that it's them. And it turns out, Nathaniel began to do an actual optical inspection of the board. And, Nathaniel, I think, as I recall, like, you fortunately did get lucky in terms of, like, the one of the first parts you started on is, like, well, that one is not the right one."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2404,
+            "body": "That's the"
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 2405,
+            "body": "right one. Playing which one of these is not like the others with the the parts just quick, and it happened to be, like, in the first three that I looked at. So and I I had I had a current gen shark fin and a last gen shark fin. And so it was kinda easy to hop back and forth under the microscope and read the the markings. But, you know, these parts are small."
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 2424,
+            "body": "And and, you know, the the markings on, like, a a SOT 223 or whatever these are, aren't super clear. And so, you know, you're kinda looking like NEE and NEF and trying to make sure you, you know, match. But, anyway, we found, you know, I don't I think it was like an inverter instead of an and gate or something like that. So"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2442,
+            "body": "Yeah. If memory serves, correct marking would have been double e, like electrical interference. Incorrect marking would have been CJ like my name. So that was Yes."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2450,
+            "body": "I believe I was gonna have pointed that out to you, CJ. You are. Yeah. If you see CJ, you have the wrong part."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2455,
+            "body": "This is a problem. This is a problem. So I I mean, that was a wild weekend, and, of course, you know, just to kinda bring back the importance of the relationships. Eric, it was a weekend that he had air force reserves duty. But he had built up the strength of the relationship such that, you know, anyone could have stepped into his boots, gone up to Rochester, and helped, push that through."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2477,
+            "body": "And, just to kinda clarify the you can't search for relationships. Eric and I kind of went through a list of military a fourisms that apply just as much in a startup. And, you can't search relationships is definitely one of them, you know, where because Eric was there on-site, becoming the mayor, winning the darts league at roosters, etcetera."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2498,
+            "body": "I did not the darts league. I did not. You know, that makes a lot of sense. I would not play darts against Eric, something not for mine. That I"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2509,
+            "body": "That that might be, that might be apocryphal, but regardless,"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2513,
+            "body": "don't try to walk it back. It's not like if you know if he's DM ing you furiously being like, camp is never gonna play me for I'm never gonna play him for money anyway. So, no, there's no way. He's he strikes me as a good darts player. So I darts."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2525,
+            "body": "Exactly. I feel like I'd be totally hustled. And so so to speak, Jay, when you say you can't surge a relationship, could you elaborate on what you mean? Right? I think I think that's a really important point."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2535,
+            "body": "I think it just means, like, you have to pay attention to relationship and invest it all the time. Because when the bad times come, that's a bad time. That's not a great time to start suddenly To"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2544,
+            "body": "build the relationship. Yeah."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2545,
+            "body": "To build it. And so, you know, Eric, there's a guy, Bruce Wessels. He's, I think he's the Minnesota division, channel manager there. You know, Eric's built up a great relationship with him at benchmark. And when we had this moment of need, because I mean, as you well remember, this was like super critical timing wise for us to get to compliance And, like, Bruce Wessels was on-site on a Saturday, you know, helping expedite and calling people that needed to be called and pushing things through."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2576,
+            "body": "And so that would not have happened if Eric hadn't been there for the better part of 6 months regularly, building those relationships."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2584,
+            "body": "Building those relationships. Yeah. When I think also when we had, you know, we had this sort of challenge with the heat sink, one of the challenges was that we didn't have a great we didn't really have a relationship. Right? I mean, it was the and actually, it really should be said that, kudos to our investors at Eclipse who have always volunteered to help any way they can, and they actually, like, wait a minute."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2604,
+            "body": "I actually think we can make an executive introduction over there. And it was really clutch to actually get that issue resolved. But, CJ, so I think that was an example where we learned the hard way. It's like, yeah. We actually we really need to have these relationships in place before things go wrong, before you yeah."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2621,
+            "body": "The the"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2622,
+            "body": "Totally. Because they will. There'll be something. Right?"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2623,
+            "body": "I mean, in this"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2624,
+            "body": "case, it was literally a couple of reels got received and with the wrong part number marking on them. You know? And that's it ends up on the SMT machine and that's what gets put on the circuit board. So small things like that, they do happen. And that's when you really need to lean on those."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2640,
+            "body": "I, I do have, another, we were talking about the side car heat sink packaging and just to kinda, it's just amazing to me, like having gone through all of this, the things that we were for sure, like this is gonna be a problem. Like the M dot twos. Right. We didn't think those little clips were gonna hold up to shock and vibe and like, totally fine. Not a single, not a single and that 2 came on done."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2660,
+            "body": "You know, all the things that we thought were going to be problems in shock and vibe or in packaging testing were totally fine. And I think that just speaks to, you know, the importance of, testing, not just on the product itself, but, you know, also on, other aspects of of delivering it."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2675,
+            "body": "And those m.2s, which we said that is a custom connector that we that's a 3 d printed, connector, I think. Right? So Yeah. Absolutely. Yeah."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2682,
+            "body": "I actually am a little surprised that those."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2686,
+            "body": "Eric and I were just like, no way. Did you check how many did you check on? We looked at all of them. They're fine."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2690,
+            "body": "Yeah. How many did you check? Did you check them all? The"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2693,
+            "body": "I did. I looked at every single gimlet. It was they were fine."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2696,
+            "body": "Could you talk maybe a little bit about the drop test? Because I, I I actually did not realize fully what was entailed in that until I saw one of the victim Gimlets back here in Emeryville. It's like Yeah. What has happened to this thing?"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2709,
+            "body": "It's alarming. Right? So we did 2 kinds of packaging tests. We did the crate, which was, like, the foremost concern because, you know, we wanted to make sure that we could ship that and have that good customer experience. And that actually was fine."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2718,
+            "body": "Crate, not so fine, but, you know, we're working on that. But then we also did some individual shipper type tests. Cause you know, there may be a day when we need to say ship a, an individual gimlet to a customer. And so we want to make sure that that box withstands the the the vagaries of distribution, if you will. And so we took 6 gimlets, put them in boxes that we had designed, and we ran them through a standard, ASTM D 4169 test procedure."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2748,
+            "body": "And part of that,"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2748,
+            "body": "you know, they have, which is the proper space. I mean,"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2751,
+            "body": "not outer space, only like 12 inches. I wasn't a very far drop. And 5 of the 6 gimlets got bent pretty badly out of shape on the front where, you know, the u dot 2 slide in. And so, you know, we've shipped many, many gimlets across the country and never encountered that. But in this instance, you know, where you have the standard test profile and you wanna have, like, a higher level of assurance that it won't happen when it shows up at a customer's doorstep, we've actually changed the design of that packing patching material to, to account for that."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2784,
+            "body": "And just again, to speak to the whole, like it's a whole universe, the, the material selection, you know, you can actually choose the foam to dampen certain frequent. I mean, it is like insane what you can do with packaging, but, but, yeah, that's that's what happened to those gimlets, unfortunately. But, that is why we test."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2804,
+            "body": "Well, or fortunately, the way they they will live the rest of their lives on Iraq because they all work. I mean, demos are functional. They just they've been a little bit disfigured. I don't think they had to go back into Iraq."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 2812,
+            "body": "Yeah. Exactly. They go they cook good on the on the desk that we also dropped. Yeah. That's true."
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 2818,
+            "body": "But I think before we get too far away from shark fins, I did wanna, like, bring up a little story where I think CJ flew into Minnesota and picked up a box of shark fins from a courier on, like, a Sunday night in a parking lot. Right?"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2832,
+            "body": "Of a gas station. Correct. It was definitely very drug deal like."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 2835,
+            "body": "It just switched"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 2836,
+            "body": "taxis before"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2838,
+            "body": "No. I did not. I was not super OPSEC concerned, but Steve had booked a courier through Delta Dash. And it just, like, you know, next flight out of SFO to SP."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2849,
+            "body": "Oh, god. And I just yeah. So I did the hand off here at Emeryville. That was shady. And it's like, okay."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 2857,
+            "body": "I mean, it's literally just"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2858,
+            "body": "a text message. Like, hey, I'm in a gray Honda Civic. And it's like, okay."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2862,
+            "body": "Yeah. That is where it was."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 2863,
+            "body": "Is this just, like, a Uber for people that happen to wanna fly to somewhere else in the US and and are willing to, like, have the cost defrayed by carrying something expensive? Is that"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2874,
+            "body": "Yes. That's the whole business model. It's Wow. Desperate companies mostly, I would imagine, like Yeah. Situations like what we were in."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2882,
+            "body": "And, you know, like, nothing else is an option. Like FedEx is just not gonna get there. Yeah. It was not yes. They're not gonna get there."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2887,
+            "body": "And so you gotta go with these, these couriers. That was that was pretty wild. That was pretty wild."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2893,
+            "body": "I I did, like, I wanted to take a photo of this just because it felt so casual. And I'm like, if I'm about to handle the like, if I'm just handing the future of the company off to someone who's just like, you did what exactly? I'm like, I don't know. He took the box. Like, wait."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2907,
+            "body": "This is a stranger on the street. So I took a selfie with him, which was probably, you know, to I think he's just like, alright. Can I go do my job now? And she's just like, sorry. You know what you're doing."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2917,
+            "body": "But it got there and it got there, because we had to get all the shark fins there, and then we had to get them all back. So we we had everything had to take a lap, which was a lot of work."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2926,
+            "body": "Yeah. It was a wild few days, and of course, you know, the call comes out of Friday afternoon, so that's that's always when it comes. Right? But it was, it was a wild few days for sure."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2935,
+            "body": "I think there've been a a a lot of those where we had a kind of some new crisis to I mean, there's a degree to which you're kinda constantly I mean, we wanna have things structurally in place so we have fewer crises, obviously. But then there's just these crises. You just don't the the the plan cannot be to have zero crises. Things are gonna go wrong, CJ, or your point."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2955,
+            "body": "Yeah. I I think, just like working with folks, we talked about the value of partnership and the flexibility that I can give you. I think another place that we've benefited from some good flexibility is, CECO, our logistics partner. They've moved racks across the country for several times. That's also in the bucket of things we did, I think right."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 2975,
+            "body": "Was reach out to a 3PL third party logistics partner early. We were, I think Kate and Garrison were talking to them last summer and we kind of got that relationship established. Brian, I remember standing next to you being like, when on the day we shipped to compliance. You know, it was, like, whatever it was, 5 or 6 AM. Like, if this guy doesn't show up, and they showed up."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 2994,
+            "body": "It was It was"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 2995,
+            "body": "5:59 AM, and you're like, if this guy doesn't show up in the next minute, I'm gonna light him up and his boss. I was like, man, I hope for this guy, like, please show up right now. I just for for your own sake, just so he and he but he showed up right on time. It was great."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 3007,
+            "body": "Yeah. They've been fantastic. They they were our you know, they delivered the first rack. You know, it's it's great when you can work with a company that is small, takes you seriously. You know?"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 3016,
+            "body": "I think with some of the larger carriers, it's hard to even break through to a human to talk to sometimes. But CECO's definitely, done a great job, and and partner with us and and being flexible."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3028,
+            "body": "Yeah. That is that that is awesome. And so in terms of how do you kind of vet a logistics partner like that? I mean, in terms of, of finding the right gigs, does feel like this felt like a problem that you, we had to get way ahead of. So how do you how does one bet that?"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 3045,
+            "body": "Yeah. I think where you look for 1st is, like, industry experience. And so we look for, logistics companies that had experience moving data center racks, And that is something that CECO does quite a bit of. So that I think that was a big part of it. And I think from there, it's, it's all the standard things we look for in any supplier, you know, partnership as a value, transparency, all of those things."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 3070,
+            "body": "And I think just the ability, the fact that we were able to give, you know, SECO a trial run there with those early shipments really just build confidence in the, in that we'd made the right choice."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3080,
+            "body": "Yeah. Totally. And I I think the the the transparency also, it feels like it isn't necessarily, like,"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 3096,
+            "body": "you know, there's like a smooth veneer in logistics where it's like, you have this like tracking portal and you get like a GPS locator and you think it's all like very organized, but logistics and freight brokerage in particular, it is like the wild, wild west. Like it is, they are managing a lot below the water surface for us and they keep it super simple, you know, like, yeah. Brian, I think you mentioned about Twitter outage a couple weekends ago and how the, GPS tracking of our first rack was, like, your entertainment for the weekend. I think it was probably for all of us."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3127,
+            "body": "Yeah. Yeah. Yeah. Absolutely. Yeah."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3129,
+            "body": "No. I totally appreciate that. That that transparency was was was terrific. And I think it also just, like, looking for, again, that kind of that sense of of collaboration up and down the supply chain. So when things do go wrong, we can actually work together to get this thing get this stuff diagnosed and and fixed."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3147,
+            "body": "Yeah. I I do a yeah."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 3149,
+            "body": "Sorry. One other thing I wanted to thank Eric Austin and, Nathaniel Huffman because when we were looking at how we're gonna move this thing, you know, it's a 3 \u00a31,000 box with a expensive computer. And we tried offloading it off a truck once with a pallet Jack, and I think someone literally almost died. So we were like, let's not do that again. And so we were like, okay, well, how do you find a forklift and an operator?"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 3171,
+            "body": "And Google search was giving me tons of results for like forklift rental companies, which, despite Ryan, RFK's protests, we were like, no. We're gonna find an operator. But Eric and Nathaniel, having worked on big equipment before, were like, hey. The thing you're looking for is a rigging company. And so if you ever need to move something unusually shaped and heavy, a rigging company is the thing you should search for."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 3194,
+            "body": "And we"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3194,
+            "body": "use Hatton's company."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 3195,
+            "body": "Yeah. And Hatton's they're in the bay area. They're just down the road. They're always on time and do a great job. Not cheap."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 3203,
+            "body": "I will say that, but they're great."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3206,
+            "body": "Alright. Yeah. The looking for for rigging. I I like that. So in terms of some of the other I mean, Eric, you being on-site, I know that there was a lot of debugging of the manufacturing line that we've done."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3221,
+            "body": "Do you wanna speak a little bit to that? Because I I think some of the things that have been interesting in me anyway have been where we have seen an opportunity to both, debug how we manufacture it a little bit, but then also generate better software, so we we don't have some of the problems we've had. Could you could you elaborate on some of the stuff we've done there?"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3243,
+            "body": "Sure. And I may, phone phone a couple friends here. I think a lot of it has been like, so early on, I think, Nathaniel, maybe it was it October with I think it was Josh. We kinda hashed out, like, what does the programming station look like, I think, from a manufacturing standpoint. And, I I put a bomb together which had computer, and then Nathan said, maybe I'll maybe I'll flush this out a little bit."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3269,
+            "body": "And he did, and actually created, some things that were actually meaningful to programming as well as Josh with the software side. And, I think working through that was there was a lot of urgency at least on my end to know how this process works. So one, we could communicate that to benchmark, So we could at least tell them notionally what we're trying to do here and how we're trying to ship a product and tell them that we know what we are shipping is a good product, or it can operate. So I think through that process was just trying to get one through the line. I think the chassis level programming, just to use that as an example, I think was, a really good example of trying to debug process that really didn't exist in anyone's mind, and then, I think, again, through the great strides of, a lot of the software team, with, like, RM and and Josh."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3320,
+            "body": "And we had those meetings on, like, what does our test process look like? And just kind of outlining that. And, Brian, you were on those meetings. And, that was that was extremely helpful to work through something that didn't exist and just put it out there and just try to execute on something and use that as a foundation to figure out what doesn't work and then kind of plow through that. Again, I think there are a lot of points where we reached a standstill, and that's where it was a big help."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3347,
+            "body": "Like, the the double e's coming out to benchmark to, kinda work through that process a little bit. They have a little bit more software experience that can help. They They're able to communicate what they were seeing on the hardware side and then kinda communicate that back to Josh so we could we could do fixes real time, and we really saw an acceleration in that process probably over the last couple of months. So that's just on the software side. But on on the on the hardware side or just on the on the mechanicals, we were still you know, even in the PBT up until 2 weeks ago, we are we're still on the front edge of freedom to some extent on assembling a rack."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3384,
+            "body": "We had never fully done that in a production process, so we were finding out as we went through things where parts need to be different, placed differently on a bomb, for example. Now last year, CJ and I, who were talking, said, you know, it's not gonna be a frame, you know, a huge weldment. That's not gonna keep us from shipping. It's probably gonna be be, like, a fastener or something small. And usually that's what bites you in the ass."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3406,
+            "body": "I hate to say it. It's something small that you you can you might be able to replace, but it could be something that's a custom manufacturing component. Like I said, things you're not always at the front edge of your mind, like packaging, but those are things that will keep you from shipping a part product to a customer or a complete product to a customer. So, I think it's just a matter of working through each one of those things deliberately and then, knowing what you need to fix. Lack of a better Yeah."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3435,
+            "body": "And so"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3435,
+            "body": "I don't know if that answers"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3436,
+            "body": "your question. Yeah. There's a bunch of follow ups. So one it's a term that we've we talked about a lot is PBT, DBT, EBT, or I should say EBT, DBT, PBT. It's in that order."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3446,
+            "body": "Do you wanna kinda talk about what those different phases mean and what we are trying to accomplish in each of those different phases of of product development?"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3455,
+            "body": "Yeah. Sure. So well, I mean, on the on the EBT with the engineering validation phase, I mean, maybe I don't know if maybe I see just looking at the engineers. Nathaniel or Aaron, if you wanna talk to that"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3465,
+            "body": "You're trying not to blow anything up. And what yeah. Yeah."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3469,
+            "body": "Exactly. Yeah. Just making sure we're not seeing smoke. But then we go into our, development, phase. That's the d there."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3478,
+            "body": "And that is working on basically you know, just for lack of a better term or just to simplify, it's it's like kind of a dress rehearsal for production. And so we're walking through at least have an understanding and a framework of what your manufacturing processes work and the manufacturing processes are and even your test processes. So we still had some, I think, I wanna think, we still had some low level programming in place, Nathaniel, correct, in November? We did, I believe. Right?"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3508,
+            "body": "Yeah. Right? Yeah. I'm sorry. Just like Oh, we yeah."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3511,
+            "body": "We cert"
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 3512,
+            "body": "we certainly had stuff for the small boards. I I don't remember"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3516,
+            "body": "Not a good chassis level, though. I don't think we didn't have anything in place. I don't think Shark Fan fans and stuff like that."
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 3521,
+            "body": "But we we had sort of validated the programming station pieces and all of that."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3527,
+            "body": "Josh is now only wanna talk about barcode readers and your adventures with barcode readers. Barcode readers, sometimes correct."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3536,
+            "body": "Yeah. I mean I think they were fine."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3539,
+            "body": "They got once you got the good one, I thought the good one was good. Yeah."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3541,
+            "body": "There is I was surprised at the extent to which the good one, which was much more expensive was like it was actually much better than the shit one which was merely expensive."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3555,
+            "body": "Yes. Like Right."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3556,
+            "body": "Like,"
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 3556,
+            "body": "yeah, that $200 gets you a lot of a lot of change there."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3560,
+            "body": "Right."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3560,
+            "body": "But it's $200 on top of already $200"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3563,
+            "body": "or whatever."
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 3563,
+            "body": "Oh, sure."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3563,
+            "body": "Like, it's like double the cost and but it does actually work then. Which is the the basic one is fine if you're scanning milk bottles, I feel like. Like things that are large and flat and you can angle them correctly and there's no glare. And then the good expensive one, they're all what what they're all Are"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3584,
+            "body": "you sure this is not like gamma? These are all like zebra barcodes? They're all"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3587,
+            "body": "like zebra barcode scanner thingies. The good ones have like lasers in them, I feel like. Instead of just,"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3595,
+            "body": "I thought,"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3595,
+            "body": "bleaky LEDs."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3597,
+            "body": "Instead of like LEDs. Yeah. Yeah."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3600,
+            "body": "And the the laser ones are quite good."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3603,
+            "body": "But you were building all the apparatus to scan the barcode and actually the I'll I'll and when we say programmer, by the way, we're saying programmer stations a lot. We're not talking about a human programmer. We're talking about the Right. Loading bits onto the various parts of, of either a compute sled or a switch."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3623,
+            "body": "Yes. From my perspective, the manufacturing process has been part software engineering and part IT department. I feel like because we look after I think it's now up to 10 or 12 desktops that we had to spec out."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3640,
+            "body": "Yeah. We"
+        },
+        {
+            "speaker": "Speaker 7",
+            "startTime": 3640,
+            "body": "have 11 or 12 out there now. Right?"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3642,
+            "body": "Yeah. So there's, like, a standard keyboard and mouse and and little Dell Optiplex desktop and monitor and and a barcode scanner and a USB hub and a handful of programming probes and they're all connected to a VPN so that we can manage them remotely and so on."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3665,
+            "body": "Yeah. Which which has been terrific because we can actually watch what's happening remotely."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3669,
+            "body": "Yeah. I've never been to the manufacturing site myself, which has been, been relying on the goodwill of other people to go out there and push buttons. But we've been able to do most of the complex debugging stuff remotely, I think, at this"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3687,
+            "body": "point. Yeah. Which is which is well, so just to speak on that real quick, we've had, I think the the litmus test has been, you know, can someone like me, programming. And Josh has created such a seamless interface that UI is fantastic and it's in Sun Microsystems font is what I learned, which is really cool. So I mean, all of the detail there and I think I'm really when we hand this over to the test engineers on the main at at Benchmark, they are able to program it with little to no instruction."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3719,
+            "body": "And, you know, so the debugging piece is next with that foundational piece of just can it get to a working state. I mean, just the like I said, the interface is"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3731,
+            "body": "When also getting getting that kind of feedback from, like, where the interface is not helping us do the right thing. And if if, like, if someone does the wrong thing accidentally, kind of our view is, like, okay. What what could we do systematically and in the software to guide you to do the right thing? Make it harder and harder to do the wrong thing? And, Josh, I think you got you got software that makes it it does make it really hard to do the wrong thing."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3752,
+            "body": "It's pretty pretty great."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3756,
+            "body": "Yeah. I I mean, I think I feel like it's, anything with a person a person who's using the computer is really easy, like a user interface, user experience thing, and it's tempting to not think too hard about that. It's like, well, it's just manufacturing. Right? It's not the the customer is not gonna sit in front of this thing, but we didn't treat it that way."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3781,
+            "body": "We put our back into it organizationally, I think, and, so there's a lot of polish, and also there's a lot of logging and telemetry. So we were able to when we had a couple of times where something I remember during the shark fin thing, we found that there were a couple of shark fins that had the wrong barcode programmed into the ROM. Only about, like, out of 1200, it would have only been about 5. Pretty good rate already, but we're able to go back through the logs and see which sequence of buttons pressing and barcode scanning and programming had occurred. I think we'd figured out that it was basically that the it was not clear enough to the user that the screen hadn't advanced, that they had forgotten to push some button or something."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3827,
+            "body": "So we're able to, correct that, I think, in the flow and come up with a, like the system won't silently ignore a valid barcode scan in that screen anymore."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3841,
+            "body": "Josh, was there we"
+        },
+        {
+            "speaker": "Speaker 1",
+            "startTime": 3841,
+            "body": "were seeing when you when you do barcodes,"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 3843,
+            "body": "that's what it was."
+        },
+        {
+            "speaker": "Speaker 1",
+            "startTime": 3844,
+            "body": "What Josh, when we were re doing the whole send it, you know, send it, fix it, send it back, is this when the alarm would go off on the programming station or the scanning station we had?"
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 3855,
+            "body": "Yes. The I see."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3856,
+            "body": "The the siren. That was I added the siren for the, because we had this list of, barcodes that we had seen and then I guess a list that we had not seen, but which must have existed because they've been manufactured by benchmark. And then if one of those showed up when they were when we were getting them out of boxes, the the computer would, start screeching."
+        },
+        {
+            "speaker": "Speaker 1",
+            "startTime": 3883,
+            "body": "Well, to to your point, either Steve, the CEO was was doing this, scanning it, hearing the alarm, and taking some action. I asked him what the alarm meant, and he said he had no idea. So, clearly,"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3895,
+            "body": "put, put the one in the, that you're hauling in, in the quarantine bid."
+        },
+        {
+            "speaker": "Speaker 1",
+            "startTime": 3898,
+            "body": "That's right. Well, how about that? I mean, he, he, he, it was, it was simplified enough where without understanding the problem, we can all take the appropriate action."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3907,
+            "body": "There you go. It's a big red flashing. Yeah. That's, that was fun. That was a, I feel like that was a last minute thing we did that weekend when we realized that we were going to have to, yeah."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3924,
+            "body": "Disassemble all of the things that have been manufactured and pull the the 1200. Well, I guess it it was only 700 or 800 of them had been sent to us in boxes?"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3937,
+            "body": "Yes. And this is where we had, this is where we engage, I believe, the child labor in particular to do the the the scanning."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3946,
+            "body": "Members of your family, though, so legal. Like, that's the"
+        },
+        {
+            "speaker": "Speaker 1",
+            "startTime": 3949,
+            "body": "It's like it's a part"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3950,
+            "body": "of you. Yeah. Yeah."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 3951,
+            "body": "Right. As as OSHA is pouring over this call, wondering whether to forward on to the Department of Labor, please do not forward this to your colleagues, the Department of Labor."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 3959,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 3960,
+            "body": "Shark fins weigh less than 1 third of a pound, I would think, not \u00a33,000. So I don't think there were any savings."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 3966,
+            "body": "Josh, when you're talking about putting the effort into building a good user experience for our programming stations and our test software, I think that really speaks to the same thread we've been touching on a lot, but our relationship with Benchmark, we've treated them, like, we kind of we're saying in the ops team selling to your suppliers and inverting the sales relationship. So I think that goes hand in hand with good documentation. How do you build this? Good user experience for the manufacturing line operators? And it just helps us build goodwill when we have things like yield issues or reworks we need done."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 4002,
+            "body": "We're able to speak to and give clear direction to the manufacturing team at Benchmark on what needs to be done. And I think a lot of that goes to the work we've done in the test and programming stations."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4014,
+            "body": "Yeah. And I think Kate also points out that, like, we just, Josh, your point about, like, really taking this seriously in the manufacturing software and understanding how we can improve it at every turn. That to me is, like, having all of us own the ultimately, if you have a manufacturing problem, it's all of our responsibilities. And I think, Kate, that's the the the moments that I've enjoyed the most is when we've got all of these everyone across the company working together to solve one of these problems, and everyone kinda bringing their own expertise to bear. But it's really, really important that you that one not be used manufacturing as someone else's problem."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4049,
+            "body": "Because that it that to me would be a recipe for total disaster. And you can see how some of these relationships go poorly when people don't own the relationship. They just want someone else to just make it for them. Like, it's really not the way it works."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 4061,
+            "body": "Part of a lot of NPIs with various factories, and this team we've built at Oxide is the closest relationship between hardware, software, and operation slash manufacturing that I've seen. Like, we we all work together. We know who to go to. If there's an issue with a certain subassembly or a certain thing, we go directly to the software engineer, directly to the double e who worked on that, and that's pretty cool."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4085,
+            "body": "Yeah. I think it's been outstanding. I think it's been it it's only been the only way to be able to pull this off. I mean, I just cannot imagine having doing it any other way at this point because we've really needed we've needed that kinda cross connection, and it's really but, you know, I would honestly, as though others are kinda contemplating building in the physical world, it's like, this is the approach that we would really recommend taking. Because, if you just go out there and try to find a contract manufacturer, you are are it's already gonna be a recipe for disaster."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4114,
+            "body": "You really need to take a more holistic approach, and kind of a a broad team wide approach. So what, what what are some other, Kate, really kind of other things we wanna hit on in terms of I mean, it's been such an odyssey. I feel like every day has had its own new challenge ahead of us. But So"
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 4135,
+            "body": "I think we've touched on a lot of the things that we got right that allowed us to achieve this milestone of shipping the rack and some of the trade offs along the way. I think we'd be remiss on our value of transparency to not also touch on some of the things we could improve on or do better and reflect back. So one thing that I think of is our 1st customership schedule. We had a very optimistic schedule in the beginning, and we've probably had series of schedule slips along the way. I recall going out on maternity leave in November of 2021 thinking I was gonna miss 1st customer ship while I was gone."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 4172,
+            "body": "I was a year too soon, it turns out. But"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 4176,
+            "body": "We we we waited for you."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4177,
+            "body": "Yeah. Exactly. We just felt it would have been rude"
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 4179,
+            "body": "to do that. Eric said a really great quote, which is actually a general patent quote. A good plan violently executed now is better than a perfect plan next week. So I think we were always operating under information we had at hand and with optimism to make the next right decision. And I think that served us well as as we were going through this NPI while also building a startup with every process from the ground up."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4206,
+            "body": "Yeah. And I kinda feel like unscheduled is actually good, a good point because I, my personal feeling in that is like, you've gotta keep the stuff schedules aggressive, and then understand that they're gonna slip for things that you can't control. And but if you don't keep if if you don't keep the schedule, you have to keep the schedule aggressive enough to force yourself to hit the issues earlier rather than later. But you don't wanna have a schedule that everyone knows unrealistic, or, I mean, you it's a balance for sure. So we did slip, but, you know, a lot of the slips I felt were, you know, we you look at how much we achieved in the time we had."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4239,
+            "body": "It's it's kind of remarkable."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 4240,
+            "body": "Yes. Exactly. And I think at the time, we hadn't even gone through compliance testing, which we've we've done a whole episode talking about that as well. But there's a lot we've learned between November 2021 and today, and I think it's amazing what we've accomplished."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4258,
+            "body": "Totally. I mean, I yeah. God. Just like I'm just like We've had"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4263,
+            "body": "we've had a lot of a lot of I think it's literally a lot of fits and starts. One of the frustrating things, like, you try to get other entities to create a schedule. And a lot of times when we're asking whether it's supplier or any of our supply base or any other external entities for a schedule. We're not asking for it down to the detail. We just want notionally, like, what is your estimate?"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4284,
+            "body": "When do you think we're gonna be done? And, of course, there's always caveats and notions of it's gonna move, but you got a plan for what you think it is. What is the information that we have today? And we've we've done that. We've also had to go back to the drawing board a lot of the times with Bench, and it's like we kinda kinda keep to dig dig into that or and not just Bench, but other suppliers too."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4307,
+            "body": "We kinda dig into that well a bit, you know, and I just I wanted to take a moment here. Oh, the oxide team is we're we're flat. But, you know, the ops team is structured, I think, also fairly flat, but we got Kate as our fearless leader. One thing that we've noticed, I think, as a team and just to, just recognize, you know, a lot of the times when we go other other suppliers, one were a start up. I've worked with other start ups at other companies."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4336,
+            "body": "One like and sometimes you don't take them maybe as serious as seriously. Like, oh, where are they? You know, we oxide tries to punch above our weight, and sometimes we're successful, and sometimes we we we punch ourselves. But I but I I think we're able to do that because, you know, Kate comes across, and she's going toe to toe with people that have been in the industry maybe for 30 or 40 years. And Kate comes across with, great composure, great professionalism, and a great communicator, which is, something that I'm not able to do."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4370,
+            "body": "And, it really helps to have her voice, add some legitimacy. And I think, again, that helps build that equity back up. So we only, you know, we only pull her out, you know, when we need to. And so there's some legitimacy with her involvement, but I think that's been also a big saving grace and, you know, as she's like you said, hey. These are 30 something and going toe to toe with folks that are and not toe to toe in a in a confrontational way, but just able to again come across as a great representative for OcSite."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4403,
+            "body": "And I think, again, that's been that's been a huge huge, reason for our success here. So"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4410,
+            "body": "Yeah. Huge win."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4411,
+            "body": "Yeah. Like I said, Jeez, I I think you said on the other, on your on the Oxide and Friends, I think, last week, you were saying we have a lot of new employees, but it seems like everyone's been here for since day 1, but I know Kate's been here since fairly early on and helped build this team. So we mentioned that today, and there's a lot of people that we owe success to at Oxide. And Kate's kinda helped kinda formulate this operations team and this road map, and it's it's really exciting to see where it can go over the, you know, over the next Well,"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4439,
+            "body": "and I see if"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4440,
+            "body": "we can go to first."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4441,
+            "body": "Yeah. I I think just to kinda pile on here, I think that that one Kate, something culturally that you said very early was this idea of of not siloing and people working together on a problem across the company. And I think that we the culture that we have really reflects that. It was that was really a very, very important ethos to build within the team."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 4462,
+            "body": "Thank you. I couldn't agree more. I think it's been, like, a mini w degree in some regards and mini I mean, degree sitting through all of the design meetings, but I think it has made us all stronger as a team to understand the challenges ahead when we go to scale manufacturing."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4481,
+            "body": "Totally. And then I I also feel like that some of the things that we saw, and I just love it where we kinda saw these opportunities to I mean, Eric, I was reminded when, we had some power stage issues that Eric Austin was debugging, and there were some specific software that he's, like, kinda we could you know, the part can actually, we can actually have the ability to kinda pulse these rails to determine how the how these individual phases are doing. And, the ability for us to kinda turn around and integrate that software and get that on the manufacturing line all relatively quickly was, I thought, really neat, and and the kind of thing that we've we've been able to do somewhat uniquely."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4522,
+            "body": "Absolutely. I mean, you know, we got a lot of looks. What was it almost? I think it was the end of 21. Gosh."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4527,
+            "body": "I think it was end of 21 when we met and we talked about, you know, ICT and like they're giving us quotes for ICT. So we were so far away from that. I think Oxit said, we're gonna build our own test. And so we're still doing that. It's but it's been really cool in, in to see how we've built things on the fly."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4544,
+            "body": "You know, as we came up with issues within 2 weeks, you know, we just did, like, the DRAM test that we did, for the early on. We implemented here just within the last couple weeks. I thought that was pretty amazing, and that was done within"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4557,
+            "body": "I don't know what"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4558,
+            "body": "the timeline to launch there was, but it was days. I think it's by the time we had hardware out that Josh sent out and, software set up to be able to test that. So being able to have that flexibility, and to push that underline is is really fantastic. And I know one thing, I think Nathaniel's already he mentioned today, he's going through and starting to define that process for Gimlet, and we're gonna do that similarly for, you know, sidecar and make sure that we have at least those blocks filled out within the manufacturing process. So we can say, we know what we wanna do here, at least architecturally."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4592,
+            "body": "What do we wanna fill in here? What is the equipment? What people do we need, to make that successful with software? How can we make Josh sleep less? You know, get him down to 3 hours of sleep."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 4604,
+            "body": "Not not possible. But I mean, it is. The 2 clock the 2 clock hands are already pressed together at this point."
+        },
+        {
+            "speaker": "Speaker 3",
+            "startTime": 4611,
+            "body": "That was"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4611,
+            "body": "not a mustache, or whatever. Yeah. Yeah. I I I think that's what's really cool about working with a startup. I mean, coming from other companies, where you're stayed by processes and, you know, process can be enabling, but they can also be suffocating at the same time."
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4628,
+            "body": "So I think we're starting to find that I think that find that balance where we can still move really fast, but know what we did. Because you don't wanna move fast. Like, what the hell did we just do to get here? At least we have some understanding of there's some breadcrumbs at least to know where we where we where we came from, which is really cool."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 4643,
+            "body": "Totally. And insisting on control too of of lots of the environment has been really helpful. Like, the DRM testing that you mentioned, we did get done in just a couple of days, but it didn't actually have to send hardware out for that. We're able to do that with the existing platform. It was just software changes and like we added a new flow to the menu stuff and that was pretty much it."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 4663,
+            "body": "And I think we've had a few things like that where we've been able to because it's like it's our computer that sits on the on the bench at the on the line and we're able to like control the whole like the OS and then the all the UI software and all of the programming stuff is software that we've written or or open source stuff that we've imported basically. Like, it's not like we're it's not like this is a Windows PC that had to have some particular binary blob installed on it from each manufacturer, and they all have to compete for USB ports or something. Like, it's"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4696,
+            "body": "There is no Windows PC at this manufacturer."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 4698,
+            "body": "There is. There's not even a frame buffer, actually, right now."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4701,
+            "body": "There is not a that's right. That's right. Yeah. There were I Josh, I know there was a moment when you and I were debugging, USB issues. I'm like, we I mean, USB does end up being load bearing for us as a company."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4714,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 4714,
+            "body": "But it's pretty good now."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4716,
+            "body": "It is coming out. Yeah. It is. We got a lot. We do"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 4719,
+            "body": "you know the the first commit on on the manufacturing software was I think August 9th last year? Last year is 2022."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4729,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 4729,
+            "body": "So it's, like, less than a year since that got underway, which doesn't feel right, but, it's ostensibly correct. We have solved a number of USB bugs in in in that in defeating 11 months."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4742,
+            "body": "We have solved a number. Yes. No. It's been I and and it's, again, one of these things. It's, like, was a very it was very tough to do it that way."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4750,
+            "body": "But then the dividend is, yeah, we need to add a new test in manufacturing because we're you know, we I think we mentioned last time that we're seeing, bend pins on these prospect connectors, and we wanted to be able to add this this dim testing, then that actually we can turn around really, really quickly and add that stuff."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 4766,
+            "body": "Able to add, control of the bench power supply, which is a GPIO pin just with a with a one of those Adafruit USB GPIO FTDI dongle things, which"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4778,
+            "body": "is like a a couple"
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 4780,
+            "body": "of dollars and and a couple of wires. So that was pretty good. Like, USB, not the greatest, but flexible. And works now. Works now."
+        },
+        {
+            "speaker": "Speaker 6",
+            "startTime": 4791,
+            "body": "Touch wood. Duncet, why would you invite the peril?"
+        },
+        {
+            "speaker": "Speaker 8",
+            "startTime": 4793,
+            "body": "Why would"
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4793,
+            "body": "I I know. I know. I know. Alright. I'm sorry."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4796,
+            "body": "We're gonna be spending the next end end months debugging USB problems. Yep. But it actually has been great to to completely control our fate in that regard, and I would like to believe then it allows us to, as a, again, as a team, react to that next crisis really quickly, and be able to to do what we need to go do to to ship a high quality product and to ship it repeatedly and to get that and, also, I think what the thing I'm really looking forward to, Kate, is getting all the feedback back into our processes. We, as inevitably, we will discover things that we can improve, and getting all that, improved over time is gonna be a lot of fun."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 4835,
+            "body": "Yeah. It's definitely just beginning, like, we mentioned at the top of this call that we've shipped 1 of 1 that are the same rev in terms of the revision of the PCBs. And so it's now about going and making that a repeatable process, taking the lessons learned, doing that post mortem feedback analysis, quality improvement, yield improvement. It's honestly the most exciting part for the ops team. Although the journey here has been very fun as well."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4867,
+            "body": "Yeah. No. We've got it it's gonna be a especially as we scale this out, it's gonna be a lot of fun. And we got the definitely the right foundation to do it, and especially the right team to go do it. So, I I think, Kate, if you had, kind of advice for other, startups that are kinda contemplating, in in the kind of hardware space would will be,"
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 4889,
+            "body": "thoughtful. Is removing the silos across teams and getting operations as close to engineering as possible. I think that's been the biggest win for us. Building domestic for engineering build cycles has been life changing compared to I was in a period where I was doing 2 weeks on, 2 weeks off between Asia and the US during an MPI, and this time around has been much, much better. And then the other important thing, I think, is just the quality of the team."
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 4918,
+            "body": "So the breadth of experience from different industries, different backgrounds across the operations team has really served us very, very well. And also, I will shout out that we plan to open source our ops policies and procedures. They're not all polished and ready for that quite yet, but something that I don't think there's enough of in this space. We all leaned on prior experiences and our opinions and best practices that we have from industry knowledge, but I don't think there's a lot of reference material out there for operations, policies, and procedures."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4954,
+            "body": "Yeah. I think you're right. And I'm excited for Kate for us to get this out there because, again, I think that we the service that we can do to other folks aside from offering our wisdom, and I certainly agree with everything that that that you said there. I think that we can, really show what we're doing and show all the kind of the hard work that's involved, and hopefully inspire others to do something similar. Because this is I think it's fair to say that this is a domain that has not had much open source."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4980,
+            "body": "When you're in, people do not open their their manufacturing processes really that much at all. And, but there's a lot of value in doing it. So we're really looking forward to getting that out there. Alright. Well, this has been exciting."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 4996,
+            "body": "Thank you so much to the the team for for joining us here. I mean, this has just been, again, a terrific journey so far. We're really excited to go, scale this out and really appreciate, all of your wisdom. And, again, it's I even though we've got a colleague who says that she's gonna puke on me, if she ever hears me says it, teamwork makes the dream work. So sorry, Megan."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 5020,
+            "body": "Come My"
+        },
+        {
+            "speaker": "Speaker 4",
+            "startTime": 5020,
+            "body": "4 year old does that now. It's a good one. Teamwork makes a dream work."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 5025,
+            "body": "I love that one. I love that one. I think that that's great. I I don't care how corny it is. Teamwork does make the dream work, and it's we got a great team here."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 5032,
+            "body": "It's been a lot of fun. Alright. Well, thank you very much, everybody, and thanks for the the the the the tails from the manufacturing line, as always. And, Erica, thank you especially for all the hard work you've done on-site there, in Rochester, and, don't play darts against Eric or money. Alright."
+        },
+        {
+            "speaker": "Speaker 2",
+            "startTime": 5051,
+            "body": "Thanks, everybody."
+        }
+    ]
+}

@@ -1,0 +1,1495 @@
+{
+    "version": "1.0.0",
+    "segments": [
+        {
+            "startTime": 1.46,
+            "endTime": 4.49,
+            "body": "Welcome to another episode of the map escaping podcast."
+        },
+        {
+            "startTime": 4.5,
+            "endTime": 8.3,
+            "body": "My name is Daniel and this podcast is going to be a little bit different,"
+        },
+        {
+            "startTime": 8.31,
+            "endTime": 11.18,
+            "body": "it's just me in the studio here today and by studio,"
+        },
+        {
+            "startTime": 11.18,
+            "endTime": 12.71,
+            "body": "I mean my home office,"
+        },
+        {
+            "startTime": 12.72,
+            "endTime": 23.14,
+            "body": "which is simply a spare bedroom in a house where I hang up a bunch of blankets and soft things around the room when I record to help sort of take the edge off the sound to take take away some of the vibration."
+        },
+        {
+            "startTime": 23.31,
+            "endTime": 25.31,
+            "body": "So so let me start by introducing myself."
+        },
+        {
+            "startTime": 25.32,
+            "endTime": 26.14,
+            "body": "My name is Daniel,"
+        },
+        {
+            "startTime": 26.15,
+            "endTime": 27.11,
+            "body": "like I said before,"
+        },
+        {
+            "startTime": 27.12,
+            "endTime": 28.47,
+            "body": "I'm 45 years old,"
+        },
+        {
+            "startTime": 28.48,
+            "endTime": 31.768,
+            "body": "born and raised in new Zealand and I've been living in Denmark for the last 12 years."
+        },
+        {
+            "startTime": 31.798,
+            "endTime": 32.528,
+            "body": "I have a son,"
+        },
+        {
+            "startTime": 32.538,
+            "endTime": 34.688,
+            "body": "a daughter and a wife and a cat called Coco."
+        },
+        {
+            "startTime": 34.768,
+            "endTime": 36.498,
+            "body": "And I recently quit my job."
+        },
+        {
+            "startTime": 36.508,
+            "endTime": 37.958,
+            "body": "I quit my job as a G."
+        },
+        {
+            "startTime": 37.958,
+            "endTime": 38.068,
+            "body": "I."
+        },
+        {
+            "startTime": 38.068,
+            "endTime": 38.588,
+            "body": "S."
+        },
+        {
+            "startTime": 38.678,
+            "endTime": 40.898,
+            "body": "Specialist slash consultant."
+        },
+        {
+            "startTime": 41.118,
+            "endTime": 45.838,
+            "body": "Let's not go into exactly what that job title means because it's it's very very broad,"
+        },
+        {
+            "startTime": 45.848,
+            "endTime": 48.638,
+            "body": "but I'm not just quitting that particular job,"
+        },
+        {
+            "startTime": 48.648,
+            "endTime": 50.528,
+            "body": "I'm quitting being a G."
+        },
+        {
+            "startTime": 50.528,
+            "endTime": 50.638,
+            "body": "I."
+        },
+        {
+            "startTime": 50.638,
+            "endTime": 50.888,
+            "body": "S."
+        },
+        {
+            "startTime": 50.898,
+            "endTime": 52.668,
+            "body": "Specialist slash consultant."
+        },
+        {
+            "startTime": 52.678,
+            "endTime": 54.848,
+            "body": "This is a big step when you're 45 years old,"
+        },
+        {
+            "startTime": 54.888,
+            "endTime": 59.788,
+            "body": "I think maybe later on in another podcast episode I can go into the details of where I'm going from here,"
+        },
+        {
+            "startTime": 59.808,
+            "endTime": 61.586,
+            "body": "but let's folk on quitting the job,"
+        },
+        {
+            "startTime": 61.586,
+            "endTime": 62.606,
+            "body": "quitting being a G."
+        },
+        {
+            "startTime": 62.606,
+            "endTime": 62.686,
+            "body": "I."
+        },
+        {
+            "startTime": 62.686,
+            "endTime": 62.936,
+            "body": "S."
+        },
+        {
+            "startTime": 62.946,
+            "endTime": 66.316,
+            "body": "Specialist slash consultant after 12 years in the industry,"
+        },
+        {
+            "startTime": 66.486,
+            "endTime": 68.506,
+            "body": "an industry that I was really excited to join."
+        },
+        {
+            "startTime": 68.516,
+            "endTime": 69.586,
+            "body": "How did I get here?"
+        },
+        {
+            "startTime": 69.596,
+            "endTime": 72.216,
+            "body": "Or the truth is what got me here was being bored."
+        },
+        {
+            "startTime": 72.336,
+            "endTime": 75.936,
+            "body": "I got really tired of doing boring work of solving boring problems,"
+        },
+        {
+            "startTime": 75.966,
+            "endTime": 81.056,
+            "body": "but let's let's take a minute just to define what boring means or perhaps what I think it means."
+        },
+        {
+            "startTime": 81.196,
+            "endTime": 81.416,
+            "body": "Well,"
+        },
+        {
+            "startTime": 81.416,
+            "endTime": 83.856,
+            "body": "firstly everyone gets to decide what's boring for them,"
+        },
+        {
+            "startTime": 83.866,
+            "endTime": 85.016,
+            "body": "boring is personal,"
+        },
+        {
+            "startTime": 85.026,
+            "endTime": 86.096,
+            "body": "it's not universal,"
+        },
+        {
+            "startTime": 86.106,
+            "endTime": 88.616,
+            "body": "boring is not the same as unimportant."
+        },
+        {
+            "startTime": 88.696,
+            "endTime": 91.824,
+            "body": "And I think of boring being the opposite of adventurous."
+        },
+        {
+            "startTime": 91.844,
+            "endTime": 97.264,
+            "body": "When I finished high school in New Zealand I went to an outdoor recreation school where we trained to be outdoor guides."
+        },
+        {
+            "startTime": 97.274,
+            "endTime": 101.264,
+            "body": "So I spent two years doing this and I specialized in rock climbing and whitewater kayaking."
+        },
+        {
+            "startTime": 101.274,
+            "endTime": 114.014,
+            "body": "And at that school we had to think very hard about what an adventure was and when we were having an adventure and who we should take on an adventure and we sort of loosely defined adventure as being when the outcome was uncertain."
+        },
+        {
+            "startTime": 114.024,
+            "endTime": 121.022,
+            "body": "So I think of boring is not adventurous boring is when the outcome is clear and you're not having an adventure."
+        },
+        {
+            "startTime": 121.032,
+            "endTime": 123.582,
+            "body": "But the thing about boring is is that it works,"
+        },
+        {
+            "startTime": 123.592,
+            "endTime": 126.002,
+            "body": "it saves us from decision fatigue."
+        },
+        {
+            "startTime": 126.012,
+            "endTime": 127.572,
+            "body": "It's one less thing to think about,"
+        },
+        {
+            "startTime": 127.582,
+            "endTime": 129.642,
+            "body": "and boring is often desirable."
+        },
+        {
+            "startTime": 129.652,
+            "endTime": 133.792,
+            "body": "There are lots of things in my professional life that I want to be boring to be routine,"
+        },
+        {
+            "startTime": 133.792,
+            "endTime": 140.982,
+            "body": "to be predictable and boring can be really motivating if you if you let it be and boring can also be a sign that you've evolved that you're,"
+        },
+        {
+            "startTime": 140.982,
+            "endTime": 142.002,
+            "body": "that you have moved on,"
+        },
+        {
+            "startTime": 142.062,
+            "endTime": 154.61,
+            "body": "that this what this task that you've been doing is no longer enough that you need something else and for me boring turned into frustration and it turned into apathy and it led to me quitting my job and wanting to move away from being a G."
+        },
+        {
+            "startTime": 154.61,
+            "endTime": 154.69,
+            "body": "I."
+        },
+        {
+            "startTime": 154.69,
+            "endTime": 154.95,
+            "body": "S."
+        },
+        {
+            "startTime": 154.96,
+            "endTime": 156.75,
+            "body": "Specialist slash consultant."
+        },
+        {
+            "startTime": 156.78,
+            "endTime": 158.32,
+            "body": "So after 12 years I'm done,"
+        },
+        {
+            "startTime": 158.36,
+            "endTime": 159.39,
+            "body": "I'm ready to move on."
+        },
+        {
+            "startTime": 159.53,
+            "endTime": 163.77,
+            "body": "I want to share a few things that I've learned on my journey in the hope that will help you on your journey."
+        },
+        {
+            "startTime": 163.78,
+            "endTime": 166.1,
+            "body": "So like all good internet content creators,"
+        },
+        {
+            "startTime": 166.1,
+            "endTime": 168.4,
+            "body": "I've made a list and I know what you're thinking."
+        },
+        {
+            "startTime": 168.41,
+            "endTime": 168.99,
+            "body": "Great."
+        },
+        {
+            "startTime": 169.0,
+            "endTime": 171.1,
+            "body": "Another list on the internet awesome."
+        },
+        {
+            "startTime": 171.17,
+            "endTime": 177.2,
+            "body": "But in this particular case it was really difficult to weave a story around these points that that I wanted to share with you."
+        },
+        {
+            "startTime": 177.21,
+            "endTime": 179.138,
+            "body": "So list seemed like a gray option."
+        },
+        {
+            "startTime": 179.138,
+            "endTime": 181.748,
+            "body": "It was an easy way for me to organize my thoughts."
+        },
+        {
+            "startTime": 181.798,
+            "endTime": 185.368,
+            "body": "Now I I realize I might end up contradicting myself from time to time,"
+        },
+        {
+            "startTime": 185.368,
+            "endTime": 190.748,
+            "body": "but I hope you'll see past that and sort of look for for the deeper meaning and what I'm trying to convey here."
+        },
+        {
+            "startTime": 190.758,
+            "endTime": 197.398,
+            "body": "So the first thing on my list is boring work won't necessarily too interesting work at times during my career,"
+        },
+        {
+            "startTime": 197.398,
+            "endTime": 200.458,
+            "body": "I found myself thinking if I get really good at doing this boring work,"
+        },
+        {
+            "startTime": 200.468,
+            "endTime": 204.938,
+            "body": "someone will see how good I am at doing it and they'll give me more interesting problems to solve."
+        },
+        {
+            "startTime": 204.948,
+            "endTime": 206.998,
+            "body": "I think this is a really naive approach."
+        },
+        {
+            "startTime": 207.008,
+            "endTime": 211.016,
+            "body": "I think this is A variation of waiting to be picked,"
+        },
+        {
+            "startTime": 211.026,
+            "endTime": 212.256,
+            "body": "waiting to be discovered."
+        },
+        {
+            "startTime": 212.326,
+            "endTime": 217.236,
+            "body": "I don't think I no longer think it's good enough just to do good work or great work."
+        },
+        {
+            "startTime": 217.246,
+            "endTime": 220.396,
+            "body": "I think you need to be an advocate for yourself and the work that you're doing."
+        },
+        {
+            "startTime": 220.396,
+            "endTime": 223.226,
+            "body": "I think you need to market yourself and the work that you're doing."
+        },
+        {
+            "startTime": 223.236,
+            "endTime": 224.566,
+            "body": "I think you need to be proactive,"
+        },
+        {
+            "startTime": 224.566,
+            "endTime": 226.686,
+            "body": "go out and look for interesting tasks,"
+        },
+        {
+            "startTime": 226.696,
+            "endTime": 228.226,
+            "body": "interesting problems to solve."
+        },
+        {
+            "startTime": 228.236,
+            "endTime": 229.966,
+            "body": "And my approach of just thinking,"
+        },
+        {
+            "startTime": 229.966,
+            "endTime": 231.916,
+            "body": "if I get really good at doing this boring work,"
+        },
+        {
+            "startTime": 231.926,
+            "endTime": 234.836,
+            "body": "someone will see me that there was a bad strategy."
+        },
+        {
+            "startTime": 234.846,
+            "endTime": 235.946,
+            "body": "If I could go back in time,"
+        },
+        {
+            "startTime": 235.946,
+            "endTime": 236.986,
+            "body": "I would do things differently."
+        },
+        {
+            "startTime": 236.996,
+            "endTime": 245.314,
+            "body": "# two on my It kind of leads on from from number one and this is getting good at something typically leads to doing more of that thing."
+        },
+        {
+            "startTime": 245.324,
+            "endTime": 248.204,
+            "body": "So be intentional about what you want to excel in."
+        },
+        {
+            "startTime": 248.234,
+            "endTime": 250.194,
+            "body": "If you want to be a great cartographer,"
+        },
+        {
+            "startTime": 250.204,
+            "endTime": 253.324,
+            "body": "look for opportunities to do more photography."
+        },
+        {
+            "startTime": 253.354,
+            "endTime": 255.474,
+            "body": "If you don't want to go down that path,"
+        },
+        {
+            "startTime": 255.484,
+            "endTime": 256.124,
+            "body": "don't do it."
+        },
+        {
+            "startTime": 256.194,
+            "endTime": 260.204,
+            "body": "Be intentional about what you decide you want to excel in."
+        },
+        {
+            "startTime": 260.354,
+            "endTime": 267.284,
+            "body": "It will lead to more opportunities to do that thing and of course you can influence this if you want to be great at python,"
+        },
+        {
+            "startTime": 267.302,
+            "endTime": 268.242,
+            "body": "do more python,"
+        },
+        {
+            "startTime": 268.292,
+            "endTime": 269.912,
+            "body": "it will lead to you doing more python."
+        },
+        {
+            "startTime": 269.922,
+            "endTime": 270.932,
+            "body": "If you don't want to do this,"
+        },
+        {
+            "startTime": 270.932,
+            "endTime": 272.082,
+            "body": "don't do it."
+        },
+        {
+            "startTime": 272.092,
+            "endTime": 273.682,
+            "body": "It sounds really silly when I say it,"
+        },
+        {
+            "startTime": 273.692,
+            "endTime": 274.982,
+            "body": "but later on in my career,"
+        },
+        {
+            "startTime": 274.982,
+            "endTime": 276.212,
+            "body": "I found myself trapped."
+        },
+        {
+            "startTime": 276.212,
+            "endTime": 280.152,
+            "body": "Like I got really good at doing this one particular task."
+        },
+        {
+            "startTime": 280.162,
+            "endTime": 285.332,
+            "body": "And so I quickly found myself in a box where that the opportunity was to do more of that particular task."
+        },
+        {
+            "startTime": 285.342,
+            "endTime": 288.422,
+            "body": "And after a while it became boring and I wanted to evolve and move on."
+        },
+        {
+            "startTime": 288.432,
+            "endTime": 289.792,
+            "body": "But I felt stuck."
+        },
+        {
+            "startTime": 289.802,
+            "endTime": 294.932,
+            "body": "I wasn't intentional enough about where I was going and what I wanted to excel at."
+        },
+        {
+            "startTime": 294.942,
+            "endTime": 296.822,
+            "body": "So number three on my list is high."
+        },
+        {
+            "startTime": 296.84,
+            "endTime": 299.21,
+            "body": "Have more empathy for the professionals that I work with."
+        },
+        {
+            "startTime": 299.22,
+            "endTime": 302.09,
+            "body": "Maybe you've said a variation of this in your professional life,"
+        },
+        {
+            "startTime": 302.09,
+            "endTime": 304.97,
+            "body": "something like it's all points lines and polygons to me,"
+        },
+        {
+            "startTime": 305.0,
+            "endTime": 308.53,
+            "body": "this shows absolutely no empathy for the work that others are doing."
+        },
+        {
+            "startTime": 308.54,
+            "endTime": 311.88,
+            "body": "And each time I said that I painted myself into a corner,"
+        },
+        {
+            "startTime": 311.94,
+            "endTime": 313.03,
+            "body": "I basically told people,"
+        },
+        {
+            "startTime": 313.03,
+            "endTime": 316.17,
+            "body": "unless it was about points lines and polygons don't talk to this guy."
+        },
+        {
+            "startTime": 316.24,
+            "endTime": 320.92,
+            "body": "This was a huge mistake and I'm sure has led to so many missed opportunities."
+        },
+        {
+            "startTime": 320.94,
+            "endTime": 323.07,
+            "body": "And apart from that it's kind of selfish."
+        },
+        {
+            "startTime": 323.08,
+            "endTime": 324.7,
+            "body": "It's a really selfish thing to say."
+        },
+        {
+            "startTime": 324.79,
+            "endTime": 329.388,
+            "body": "I didn't like it when other people belittle my craft and yet I willingly did the same thing to them."
+        },
+        {
+            "startTime": 329.398,
+            "endTime": 330.958,
+            "body": "So later on I got better at this."
+        },
+        {
+            "startTime": 330.968,
+            "endTime": 331.728,
+            "body": "But at the start,"
+        },
+        {
+            "startTime": 331.738,
+            "endTime": 332.868,
+            "body": "I was terrible at this."
+        },
+        {
+            "startTime": 332.868,
+            "endTime": 334.578,
+            "body": "I was so focused on what I was doing,"
+        },
+        {
+            "startTime": 334.578,
+            "endTime": 340.388,
+            "body": "that I couldn't see the overlap between what I was the work that I was doing and what other people were doing huge mistake."
+        },
+        {
+            "startTime": 340.398,
+            "endTime": 341.448,
+            "body": "If I could go back in time,"
+        },
+        {
+            "startTime": 341.448,
+            "endTime": 342.508,
+            "body": "I would be better at this,"
+        },
+        {
+            "startTime": 342.578,
+            "endTime": 345.748,
+            "body": "I would show more empathy for the other professionals that I'm working with,"
+        },
+        {
+            "startTime": 345.758,
+            "endTime": 350.338,
+            "body": "I would do a better job of understanding who I'm talking to and where they are trying to go."
+        },
+        {
+            "startTime": 350.348,
+            "endTime": 352.548,
+            "body": "So speaking of where they're trying to go,"
+        },
+        {
+            "startTime": 352.558,
+            "endTime": 358.306,
+            "body": "number four on my list is I would think more about where I was trying to go knowing that it was a moving target,"
+        },
+        {
+            "startTime": 358.386,
+            "endTime": 360.196,
+            "body": "that the goal wouldn't always be the same,"
+        },
+        {
+            "startTime": 360.196,
+            "endTime": 361.976,
+            "body": "that it would change and evolve over time."
+        },
+        {
+            "startTime": 361.976,
+            "endTime": 366.156,
+            "body": "But just understanding that I was on a journey would have been really helpful to me."
+        },
+        {
+            "startTime": 366.166,
+            "endTime": 369.456,
+            "body": "It seems to me that people that have a goal are more likely to reach it,"
+        },
+        {
+            "startTime": 369.466,
+            "endTime": 372.426,
+            "body": "but just wandering in the wilderness hoping things will work out."
+        },
+        {
+            "startTime": 372.426,
+            "endTime": 378.446,
+            "body": "Just seems like a really sort of passive approach to such an important part of your life when you think about your career path."
+        },
+        {
+            "startTime": 378.456,
+            "endTime": 382.206,
+            "body": "And also people would like to help you in the same way that you want to help them,"
+        },
+        {
+            "startTime": 382.216,
+            "endTime": 385.056,
+            "body": "but they can't do that unless they know how to help you."
+        },
+        {
+            "startTime": 385.156,
+            "endTime": 387.714,
+            "body": "If you you can't say I am going in this direction,"
+        },
+        {
+            "startTime": 387.724,
+            "endTime": 389.064,
+            "body": "I need these things,"
+        },
+        {
+            "startTime": 389.074,
+            "endTime": 390.474,
+            "body": "can you help me with that?"
+        },
+        {
+            "startTime": 390.484,
+            "endTime": 392.604,
+            "body": "But then no one knows how to help you."
+        },
+        {
+            "startTime": 392.624,
+            "endTime": 398.164,
+            "body": "They can't help you even if they want to and they want to help you who doesn't want to see somebody else succeed."
+        },
+        {
+            "startTime": 398.294,
+            "endTime": 400.524,
+            "body": "Number five on my list is network."
+        },
+        {
+            "startTime": 400.534,
+            "endTime": 401.624,
+            "body": "I'm a total introvert,"
+        },
+        {
+            "startTime": 401.634,
+            "endTime": 402.724,
+            "body": "I can't change this,"
+        },
+        {
+            "startTime": 402.724,
+            "endTime": 404.184,
+            "body": "I wouldn't want to change this,"
+        },
+        {
+            "startTime": 404.194,
+            "endTime": 405.364,
+            "body": "but if I could go back in time,"
+        },
+        {
+            "startTime": 405.364,
+            "endTime": 409.124,
+            "body": "I would force myself to be more social with my colleagues at the start,"
+        },
+        {
+            "startTime": 409.134,
+            "endTime": 413.814,
+            "body": "I didn't understand that socializing was an investment in the people that I work with,"
+        },
+        {
+            "startTime": 413.824,
+            "endTime": 421.452,
+            "body": "It was a way of connecting to them and making me feel connected to something more than just my day to day tasks because I was so terrible at this,"
+        },
+        {
+            "startTime": 421.462,
+            "endTime": 427.122,
+            "body": "it often left me feeling isolated and you might already feel isolated if you're a specialist,"
+        },
+        {
+            "startTime": 427.132,
+            "endTime": 431.532,
+            "body": "it might be difficult to find sparring people that you can spar with people that can help you,"
+        },
+        {
+            "startTime": 431.572,
+            "endTime": 434.122,
+            "body": "people that understand the task that that you're doing."
+        },
+        {
+            "startTime": 434.182,
+            "endTime": 440.402,
+            "body": "The combination of technical isolation and social isolation at work that this is a bad combination,"
+        },
+        {
+            "startTime": 440.422,
+            "endTime": 441.822,
+            "body": "this is something to avoid."
+        },
+        {
+            "startTime": 441.832,
+            "endTime": 442.972,
+            "body": "If I could go back in time,"
+        },
+        {
+            "startTime": 442.972,
+            "endTime": 445.23,
+            "body": "I would tell myself to be more social,"
+        },
+        {
+            "startTime": 445.24,
+            "endTime": 446.62,
+            "body": "see it as an investment."
+        },
+        {
+            "startTime": 446.65,
+            "endTime": 448.97,
+            "body": "So number six on my list is mentorship."
+        },
+        {
+            "startTime": 448.98,
+            "endTime": 450.03,
+            "body": "I would get a mentor,"
+        },
+        {
+            "startTime": 450.04,
+            "endTime": 450.95,
+            "body": "I would find someone,"
+        },
+        {
+            "startTime": 450.95,
+            "endTime": 455.57,
+            "body": "I trusted someone who would tell it like it is someone who has either been there before,"
+        },
+        {
+            "startTime": 455.58,
+            "endTime": 462.51,
+            "body": "who was on a similar journey and I would ask them questions and I would actively look for feedback and when I say feedback,"
+        },
+        {
+            "startTime": 462.52,
+            "endTime": 465.11,
+            "body": "I think some people mistake when they ask for feedback,"
+        },
+        {
+            "startTime": 465.11,
+            "endTime": 467.28,
+            "body": "what they're actually looking for is reassurance."
+        },
+        {
+            "startTime": 467.34,
+            "endTime": 469.03,
+            "body": "Reassurance is fantastic."
+        },
+        {
+            "startTime": 469.03,
+            "endTime": 470.38,
+            "body": "We all need reassurance,"
+        },
+        {
+            "startTime": 470.42,
+            "endTime": 472.36,
+            "body": "but it is not the same as feedback,"
+        },
+        {
+            "startTime": 472.37,
+            "endTime": 474.05,
+            "body": "I would actively look for fee,"
+        },
+        {
+            "startTime": 474.068,
+            "endTime": 475.868,
+            "body": "feedback from my mentor,"
+        },
+        {
+            "startTime": 476.098,
+            "endTime": 479.028,
+            "body": "I could have saved so much time and frustration."
+        },
+        {
+            "startTime": 479.038,
+            "endTime": 480.718,
+            "body": "If I found someone who could guide me,"
+        },
+        {
+            "startTime": 480.838,
+            "endTime": 485.078,
+            "body": "you don't have to learn everything the hard way and if you can't stand on the shoulders of giants,"
+        },
+        {
+            "startTime": 485.078,
+            "endTime": 486.858,
+            "body": "at least follow in their footsteps."
+        },
+        {
+            "startTime": 486.958,
+            "endTime": 491.358,
+            "body": "So the second thing on my list is sometimes it's just not a good fit."
+        },
+        {
+            "startTime": 491.368,
+            "endTime": 493.678,
+            "body": "If you try on some shoes and they don't fit,"
+        },
+        {
+            "startTime": 493.688,
+            "endTime": 495.168,
+            "body": "it's not your feet that are wrong."
+        },
+        {
+            "startTime": 495.178,
+            "endTime": 496.108,
+            "body": "It's the shoes,"
+        },
+        {
+            "startTime": 496.228,
+            "endTime": 497.478,
+            "body": "the shoes don't fit you."
+        },
+        {
+            "startTime": 497.488,
+            "endTime": 502.358,
+            "body": "You need another pair of shoes walking in those shoes that don't fit you for years and years,"
+        },
+        {
+            "startTime": 502.358,
+            "endTime": 505.086,
+            "body": "hoping that things will is not a good idea."
+        },
+        {
+            "startTime": 505.096,
+            "endTime": 507.096,
+            "body": "I did this and it was a mistake."
+        },
+        {
+            "startTime": 507.106,
+            "endTime": 509.826,
+            "body": "Now I understand that changing your job,"
+        },
+        {
+            "startTime": 509.826,
+            "endTime": 513.516,
+            "body": "changing your career is not as trivial as finding new shoes."
+        },
+        {
+            "startTime": 513.526,
+            "endTime": 514.936,
+            "body": "These are two very different things,"
+        },
+        {
+            "startTime": 514.936,
+            "endTime": 517.246,
+            "body": "but I hope you understand where I'm trying to go here,"
+        },
+        {
+            "startTime": 517.256,
+            "endTime": 522.856,
+            "body": "spending years of your life trying to force a round peg through a square hole is a bad idea."
+        },
+        {
+            "startTime": 522.866,
+            "endTime": 525.976,
+            "body": "And sure there's this idea of job crafting where it is."
+        },
+        {
+            "startTime": 525.986,
+            "endTime": 526.356,
+            "body": "Yeah,"
+        },
+        {
+            "startTime": 526.366,
+            "endTime": 528.086,
+            "body": "you were given a square hole,"
+        },
+        {
+            "startTime": 528.096,
+            "endTime": 529.406,
+            "body": "but you can change the whole,"
+        },
+        {
+            "startTime": 529.406,
+            "endTime": 530.726,
+            "body": "you can make it a different shape."
+        },
+        {
+            "startTime": 530.726,
+            "endTime": 533.126,
+            "body": "Maybe you can make it the same shape as what you are."
+        },
+        {
+            "startTime": 533.144,
+            "endTime": 533.954,
+            "body": "That's up to you,"
+        },
+        {
+            "startTime": 533.964,
+            "endTime": 535.934,
+            "body": "but sometimes knowing when to quit,"
+        },
+        {
+            "startTime": 535.944,
+            "endTime": 538.034,
+            "body": "knowing when this is just not a good fit."
+        },
+        {
+            "startTime": 538.044,
+            "endTime": 545.124,
+            "body": "The job doesn't fit me and not just accepting that learning to dance with it instead of beating yourself up over it."
+        },
+        {
+            "startTime": 545.134,
+            "endTime": 547.884,
+            "body": "So number seven is sometimes it's just not a good fit."
+        },
+        {
+            "startTime": 547.894,
+            "endTime": 552.044,
+            "body": "So number eight on my list is this You don't get to decide what is broken."
+        },
+        {
+            "startTime": 552.094,
+            "endTime": 553.764,
+            "body": "If your job is to help someone,"
+        },
+        {
+            "startTime": 553.774,
+            "endTime": 555.324,
+            "body": "If you are in service,"
+        },
+        {
+            "startTime": 555.334,
+            "endTime": 557.434,
+            "body": "working in service of someone else,"
+        },
+        {
+            "startTime": 557.554,
+            "endTime": 559.994,
+            "body": "they decide what is broken as a professional,"
+        },
+        {
+            "startTime": 560.004,
+            "endTime": 562.604,
+            "body": "your job is to guide them to help them under."
+        },
+        {
+            "startTime": 562.802,
+            "endTime": 564.012,
+            "body": "And the pros and cons."
+        },
+        {
+            "startTime": 564.032,
+            "endTime": 565.542,
+            "body": "You can show them other options."
+        },
+        {
+            "startTime": 565.552,
+            "endTime": 573.312,
+            "body": "You might even decide to poke at the thing that you think is broken to agitate it and the hope of making it so painful that they are forced to move."
+        },
+        {
+            "startTime": 573.322,
+            "endTime": 575.232,
+            "body": "There's a lot of different strategies here."
+        },
+        {
+            "startTime": 575.232,
+            "endTime": 575.802,
+            "body": "But the point is,"
+        },
+        {
+            "startTime": 575.802,
+            "endTime": 577.952,
+            "body": "you don't get to decide what is broken."
+        },
+        {
+            "startTime": 578.152,
+            "endTime": 579.492,
+            "body": "If they think it's not broken,"
+        },
+        {
+            "startTime": 579.492,
+            "endTime": 580.572,
+            "body": "then it's not broken."
+        },
+        {
+            "startTime": 580.762,
+            "endTime": 585.592,
+            "body": "And this might sound like a variation of that old saying that the customer is always right."
+        },
+        {
+            "startTime": 585.602,
+            "endTime": 587.552,
+            "body": "It's not that's not what I'm saying."
+        },
+        {
+            "startTime": 587.552,
+            "endTime": 591.422,
+            "body": "They're not always right understanding that you don't decide what is broken."
+        },
+        {
+            "startTime": 591.462,
+            "endTime": 596.56,
+            "body": "The client does Is recognizing that you can't change someone who's not ready to change."
+        },
+        {
+            "startTime": 596.57,
+            "endTime": 598.14,
+            "body": "So you can market to them."
+        },
+        {
+            "startTime": 598.15,
+            "endTime": 602.06,
+            "body": "You can try and make change happen if they don't think it's broken,"
+        },
+        {
+            "startTime": 602.11,
+            "endTime": 606.31,
+            "body": "it's not broken and forcing someone to change who's not ready to change."
+        },
+        {
+            "startTime": 606.32,
+            "endTime": 610.85,
+            "body": "It doesn't want to change is simply going to create a lot of unnecessary tension,"
+        },
+        {
+            "startTime": 610.86,
+            "endTime": 613.86,
+            "body": "frustration and at the end of the day everyone loses."
+        },
+        {
+            "startTime": 613.95,
+            "endTime": 615.37,
+            "body": "It doesn't have to be like that."
+        },
+        {
+            "startTime": 615.38,
+            "endTime": 616.22,
+            "body": "So that's it."
+        },
+        {
+            "startTime": 616.23,
+            "endTime": 616.92,
+            "body": "That's me."
+        },
+        {
+            "startTime": 616.94,
+            "endTime": 619.16,
+            "body": "That's where I'm at now on 45,"
+        },
+        {
+            "startTime": 619.17,
+            "endTime": 621.65,
+            "body": "been working in the geospatial industry for 12."
+        },
+        {
+            "startTime": 622.188,
+            "endTime": 626.378,
+            "body": "I'm looking to make a dramatic career shift and if I could go back in time,"
+        },
+        {
+            "startTime": 626.388,
+            "endTime": 627.678,
+            "body": "I would do these eight things,"
+        },
+        {
+            "startTime": 627.678,
+            "endTime": 629.348,
+            "body": "I would tell myself these eight things."
+        },
+        {
+            "startTime": 629.378,
+            "endTime": 633.008,
+            "body": "So I'm telling you this because in the hope that will help you on your journey."
+        },
+        {
+            "startTime": 633.018,
+            "endTime": 634.148,
+            "body": "So this is my journey."
+        },
+        {
+            "startTime": 634.198,
+            "endTime": 636.248,
+            "body": "These are the things I've learned along the way."
+        },
+        {
+            "startTime": 636.258,
+            "endTime": 636.508,
+            "body": "Now,"
+        },
+        {
+            "startTime": 636.518,
+            "endTime": 638.838,
+            "body": "I realize I might have contradicted myself."
+        },
+        {
+            "startTime": 638.848,
+            "endTime": 642.148,
+            "body": "I realized that there will always be exceptions to the rule."
+        },
+        {
+            "startTime": 642.158,
+            "endTime": 645.028,
+            "body": "I'm not saying all of these things will apply to you."
+        },
+        {
+            "startTime": 645.038,
+            "endTime": 648.058,
+            "body": "I'm merely saying this is what I have learned along the way."
+        },
+        {
+            "startTime": 648.068,
+            "endTime": 651.278,
+            "body": "I hope that it helps you on your way on your journey."
+        },
+        {
+            "startTime": 651.296,
+            "endTime": 651.486,
+            "body": "So,"
+        },
+        {
+            "startTime": 651.486,
+            "endTime": 653.326,
+            "body": "I really want this episode to be the first,"
+        },
+        {
+            "startTime": 653.326,
+            "endTime": 657.316,
+            "body": "in a short mini series of episodes are kind of behind the scenes,"
+        },
+        {
+            "startTime": 657.316,
+            "endTime": 658.806,
+            "body": "look at different topics."
+        },
+        {
+            "startTime": 658.816,
+            "endTime": 659.186,
+            "body": "So,"
+        },
+        {
+            "startTime": 659.186,
+            "endTime": 659.576,
+            "body": "obviously,"
+        },
+        {
+            "startTime": 659.576,
+            "endTime": 661.736,
+            "body": "this one has been about my career,"
+        },
+        {
+            "startTime": 661.746,
+            "endTime": 664.506,
+            "body": "the fact that I've quit my job and I'm moving on."
+        },
+        {
+            "startTime": 664.516,
+            "endTime": 667.176,
+            "body": "I would also like to create a short episode,"
+        },
+        {
+            "startTime": 667.186,
+            "endTime": 667.576,
+            "body": "kind of,"
+        },
+        {
+            "startTime": 667.576,
+            "endTime": 668.276,
+            "body": "behind the scenes,"
+        },
+        {
+            "startTime": 668.276,
+            "endTime": 669.366,
+            "body": "look at this podcast,"
+        },
+        {
+            "startTime": 669.376,
+            "endTime": 670.436,
+            "body": "how it gets created,"
+        },
+        {
+            "startTime": 670.446,
+            "endTime": 672.326,
+            "body": "maybe touch on the marketing side of it,"
+        },
+        {
+            "startTime": 672.336,
+            "endTime": 674.186,
+            "body": "and perhaps another episode about what?"
+        },
+        {
+            "startTime": 674.186,
+            "endTime": 675.006,
+            "body": "How is this?"
+        },
+        {
+            "startTime": 675.016,
+            "endTime": 676.346,
+            "body": "Where am I going now?"
+        },
+        {
+            "startTime": 676.356,
+            "endTime": 680.84,
+            "body": "What what is the career path going to look like or where do I where am I trying to get to?"
+        },
+        {
+            "startTime": 681.19,
+            "endTime": 682.57,
+            "body": "This is a work in progress,"
+        },
+        {
+            "startTime": 682.58,
+            "endTime": 687.05,
+            "body": "I won't let it interrupt the typical weekly episodes that you're used to."
+        },
+        {
+            "startTime": 687.05,
+            "endTime": 688.46,
+            "body": "This will be something extra."
+        },
+        {
+            "startTime": 688.47,
+            "endTime": 690.53,
+            "body": "So if you've got this far in the episode,"
+        },
+        {
+            "startTime": 690.54,
+            "endTime": 691.42,
+            "body": "if you're still listening,"
+        },
+        {
+            "startTime": 691.42,
+            "endTime": 693.65,
+            "body": "I wonder if I could ask you for a favor."
+        },
+        {
+            "startTime": 693.65,
+            "endTime": 695.78,
+            "body": "I need help with with two things at the moment."
+        },
+        {
+            "startTime": 695.79,
+            "endTime": 700.09,
+            "body": "The first thing I'd like to ask your help with is growing this podcast."
+        },
+        {
+            "startTime": 700.1,
+            "endTime": 703.05,
+            "body": "So if you know someone that might find this podcast useful,"
+        },
+        {
+            "startTime": 703.05,
+            "endTime": 703.63,
+            "body": "helpful,"
+        },
+        {
+            "startTime": 703.68,
+            "endTime": 704.4,
+            "body": "entertaining,"
+        },
+        {
+            "startTime": 704.41,
+            "endTime": 705.14,
+            "body": "whatever,"
+        },
+        {
+            "startTime": 705.15,
+            "endTime": 706.1,
+            "body": "please share it with them."
+        },
+        {
+            "startTime": 706.11,
+            "endTime": 707.56,
+            "body": "Maybe you work at a university,"
+        },
+        {
+            "startTime": 707.56,
+            "endTime": 709.16,
+            "body": "maybe you have access to a website."
+        },
+        {
+            "startTime": 709.16,
+            "endTime": 709.43,
+            "body": "Maybe,"
+        },
+        {
+            "startTime": 709.43,
+            "endTime": 709.9,
+            "body": "you know,"
+        },
+        {
+            "startTime": 709.91,
+            "endTime": 710.68,
+            "body": "community,"
+        },
+        {
+            "startTime": 710.72,
+            "endTime": 712.32,
+            "body": "share a link to the podcast with them."
+        },
+        {
+            "startTime": 712.33,
+            "endTime": 715.88,
+            "body": "It would make a humongous difference to me and I would really appreciate it."
+        },
+        {
+            "startTime": 715.93,
+            "endTime": 720.58,
+            "body": "The second thing I'd like to ask your help with is I'm working with a company called Open Cage."
+        },
+        {
+            "startTime": 720.59,
+            "endTime": 726.02,
+            "body": "I'm good friends with the founder and together we're going to promote open street map projects."
+        },
+        {
+            "startTime": 726.03,
+            "endTime": 727.12,
+            "body": "So open cages,"
+        },
+        {
+            "startTime": 727.12,
+            "endTime": 728.31,
+            "body": "a geo coder,"
+        },
+        {
+            "startTime": 728.38,
+            "endTime": 730.25,
+            "body": "It runs on open street map data."
+        },
+        {
+            "startTime": 730.27,
+            "endTime": 733.9,
+            "body": "And this is a way of open cage giving something back to the community."
+        },
+        {
+            "startTime": 733.96,
+            "endTime": 740.09,
+            "body": "So the idea is that we find projects that are built on or around open street and we celebrate them."
+        },
+        {
+            "startTime": 740.09,
+            "endTime": 741.53,
+            "body": "We give them some exposure."
+        },
+        {
+            "startTime": 741.53,
+            "endTime": 742.77,
+            "body": "We tell people about them with."
+        },
+        {
+            "startTime": 742.78,
+            "endTime": 744.92,
+            "body": "The idea is to help people discover these projects."
+        },
+        {
+            "startTime": 744.92,
+            "endTime": 746.02,
+            "body": "Maybe they could get involved."
+        },
+        {
+            "startTime": 746.02,
+            "endTime": 746.95,
+            "body": "Maybe they can help."
+        },
+        {
+            "startTime": 746.96,
+            "endTime": 748.33,
+            "body": "Maybe they can push it forwards."
+        },
+        {
+            "startTime": 748.37,
+            "endTime": 751.5,
+            "body": "So there'll be a link to this in the show notes of this episode."
+        },
+        {
+            "startTime": 751.51,
+            "endTime": 753.62,
+            "body": "But if you don't want to follow the link and you know,"
+        },
+        {
+            "startTime": 753.62,
+            "endTime": 756.99,
+            "body": "of an open street map project that you think is worth talking about,"
+        },
+        {
+            "startTime": 757.0,
+            "endTime": 760.02,
+            "body": "you can either tweet at open cage or at Manscaping."
+        },
+        {
+            "startTime": 760.03,
+            "endTime": 760.65,
+            "body": "Okay."
+        },
+        {
+            "startTime": 760.66,
+            "endTime": 761.39,
+            "body": "That's it for me."
+        },
+        {
+            "startTime": 761.4,
+            "endTime": 763.63,
+            "body": "Thank you very much for listening all the way to the end."
+        },
+        {
+            "startTime": 763.72,
+            "endTime": 764.57,
+            "body": "I really appreciate it."
+        },
+        {
+            "startTime": 764.58,
+            "endTime": 767.08,
+            "body": "I hope this was helpful and we'll talk again soon."
+        },
+        {
+            "startTime": 767.09,
+            "endTime": 767.52,
+            "body": "Bye."
+        }
+    ]
+}

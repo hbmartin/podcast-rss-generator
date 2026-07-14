@@ -1,0 +1,4373 @@
+1
+00:00:00,000 --> 00:00:04,470
+Leo Dion (host): Before we begin today's episode, I wanted to let you know Bright Digit needs your help.
+
+2
+00:00:04,890 --> 00:00:16,560
+We're looking for developers to help with several products, of course, I mean iOS development,
+but also watchOS, Vapor, macOS, HealthKit, SwiftUI, and not just stuff in the Apple and
+
+3
+00:00:16,560 --> 00:00:23,070
+swift space, but also web development, vueJS, TypeScript, Docker, Postgres, and more.
+
+4
+00:00:23,490 --> 00:00:29,930
+If you are interested, email me your portfolio or resume to leo@brightdigit.com.
+
+5
+00:00:29,945 --> 00:00:32,250
+Again, that's leo@brightdigit.com.
+
+6
+00:00:32,850 --> 00:00:36,990
+I'd love to see what you can do and how you can help with our team, but there's more.
+
+7
+00:00:37,560 --> 00:00:40,170
+I also have some availability for work as well.
+
+8
+00:00:40,680 --> 00:00:50,130
+If your team is strained by too few people or just need someone with my
+expertise to guide your team, reach out to me at leo@brightdigit.com.
+
+9
+00:00:50,310 --> 00:00:50,700
+That's right.
+
+10
+00:00:50,760 --> 00:00:53,570
+Email me leo@brightdigit.com.
+
+11
+00:00:53,585 --> 00:00:55,685
+We have some availability to help your team.
+
+12
+00:00:56,105 --> 00:01:00,125
+So if you just need somebody for temporary part-time contract work, let me know.
+
+13
+00:01:00,185 --> 00:01:02,195
+I'd love to see what I can do to help your team.
+
+14
+00:01:02,614 --> 00:01:05,884
+Thank you for your time, and I hope you enjoy the rest of today's program.
+
+15
+00:01:09,605 --> 00:01:11,645
+Welcome to another episode of Empower Apps.
+
+16
+00:01:11,675 --> 00:01:13,145
+I'm your host, Leo Dion.
+
+17
+00:01:13,414 --> 00:01:18,065
+Today I am joined by once again at Tim Mitra . Tim, thank you so much for coming back on the show.
+
+18
+00:01:18,065 --> 00:01:19,035
+I really appreciate it..
+
+19
+00:01:19,515 --> 00:01:20,685
+Tim Mitra (guest): Hey, thanks for having me again.
+
+20
+00:01:21,645 --> 00:01:22,095
+Yeah.
+
+21
+00:01:22,153 --> 00:01:26,152
+Leo Dion (host): In case people don't know you, I'll let you go ahead and introduce yourself and your podcasts.
+
+22
+00:01:27,112 --> 00:01:27,652
+Tim Mitra (guest): Sure.
+
+23
+00:01:27,739 --> 00:01:29,911
+I am an again, I'm sort of a creative type.
+
+24
+00:01:29,911 --> 00:01:31,702
+I'm a maker tinkerer.
+
+25
+00:01:31,711 --> 00:01:38,736
+And for the last 12 years or so, I've been basically working in
+iOS a little bit of Mac, but mostly iOS primarily around the iPad.
+
+26
+00:01:38,736 --> 00:01:39,246
+Similar to you.
+
+27
+00:01:39,246 --> 00:01:40,536
+I started because of the iPad.
+
+28
+00:01:42,396 --> 00:01:47,016
+it had been doing like development before that, you know, apple reseller, that kind of thing.
+
+29
+00:01:47,016 --> 00:01:54,904
+But but the iPhone creating, you know, magic for people on the iPhone was
+sort of what drove me on the iPad obviously, cuz it was a larger format.
+
+30
+00:01:54,913 --> 00:01:59,778
+Yeah, so, you know, spent some time, early time teaching people how to do iOS when it was a new thing.
+
+31
+00:01:59,829 --> 00:02:09,199
+And yeah, I've had a chance to work with Apple a few times in a few different careers, but,
+doing iOS and I think part of the, the idea behind the podcast, we do a couple of them.
+
+32
+00:02:09,379 --> 00:02:14,304
+I do one on sci-fi centered around Star Trek and other, but all kinds of other sci-fi.
+
+33
+00:02:14,304 --> 00:02:20,399
+But the main PO podcast I think people might know me for is more than just code, which is about iOS development.
+
+34
+00:02:20,459 --> 00:02:26,280
+And it's sort of our way of giving back to the community in terms of like, you know, some knowledge that we have.
+
+35
+00:02:27,075 --> 00:02:30,885
+App, app, reset, app, app developers, engineers, that kind of stuff.
+
+36
+00:02:30,885 --> 00:02:33,849
+And yeah, just, you know, we do it for the people
+
+37
+00:02:34,629 --> 00:02:36,249
+Leo Dion (host): and of course I was recently on there.
+
+38
+00:02:36,279 --> 00:02:41,259
+We'll have a link to that episode where we talked about a bunch of stuff, including vr Yeah.
+
+39
+00:02:41,319 --> 00:02:43,329
+And floppy disks and stuff.
+
+40
+00:02:43,359 --> 00:02:45,549
+So you'll definitely wanna check that one out.
+
+41
+00:02:45,620 --> 00:02:46,880
+What are you currently working on right
+
+42
+00:02:46,880 --> 00:02:47,130
+Tim Mitra (guest): now?
+
+43
+00:02:47,130 --> 00:02:50,524
+I'm currently engineering manager over at Spot Hero in Chicago.
+
+44
+00:02:50,554 --> 00:02:53,072
+And  as well as working on some of my own sort of apps.
+
+45
+00:02:53,072 --> 00:03:00,599
+I'm trying to do refactor a couple of things using SwiftUI and
+iCloud, which iCloud and core data that we've talked about before.
+
+46
+00:03:01,139 --> 00:03:01,257
+Yep.
+
+47
+00:03:01,257 --> 00:03:06,366
+But to be honest with you, I have, I'm currently obsessed with the Red Dead Redemption 2.
+
+48
+00:03:06,381 --> 00:03:09,736
+I've been spending way too much time playing that I should be writing code at night.
+
+49
+00:03:09,736 --> 00:03:15,206
+But, you know, I tend to write code at night and that's usually
+what my hobby is, or 3D printing and that kind of stuff, but yeah.
+
+50
+00:03:15,266 --> 00:03:15,416
+Yeah.
+
+51
+00:03:15,416 --> 00:03:17,366
+I gotta gotta admit, the PlayStation's got me hooked, right.
+
+52
+00:03:18,576 --> 00:03:19,126
+Leo Dion (host): Isn't.
+
+53
+00:03:19,461 --> 00:03:21,291
+Became like three years old.
+
+54
+00:03:21,351 --> 00:03:24,021
+Tim Mitra (guest): It's many years old, but it's, it's actually really well done.
+
+55
+00:03:24,021 --> 00:03:26,210
+It's, it's it's funny, like I was thinking about that last night.
+
+56
+00:03:26,210 --> 00:03:30,290
+You know, I remember being a kid in a bowling alley in St.
+
+57
+00:03:30,290 --> 00:03:32,700
+Catherines, Ontario, or actually I guess Toronto.
+
+58
+00:03:32,769 --> 00:03:39,219
+Seeing Pong for the first time, and then shortly after Pong we
+got, you know, Pacman and then, oh, space Invaders came after Pong.
+
+59
+00:03:39,219 --> 00:03:39,489
+Right.
+
+60
+00:03:39,489 --> 00:03:50,969
+So, and those, and you know, so I'm thinking, you know, like in the history of game development, like playing
+Red Dead Redemption Two or the to Raider titles or Uncharted, you're like, if you're playing, you're in a movie.
+
+61
+00:03:51,604 --> 00:04:02,164
+you know, in a sense, like the music's there, the, you know, the guitar, little subtle, you know, western guitar
+in there and, you know, you're running around on a horse and everything looks pretty, you know, it's animated
+
+62
+00:04:02,224 --> 00:04:15,077
+admittedly, but it looks pretty realistic, you know, and, and we've come a long way from like, sort of eight bit
+crappy graphics, you know, on a C R T screen, you know, to, to like, you know, 4K stereo surround sound, you know.
+
+63
+00:04:15,527 --> 00:04:15,977
+Leo Dion (host): Totally.
+
+64
+00:04:16,067 --> 00:04:16,277
+Yeah.
+
+65
+00:04:16,309 --> 00:04:19,844
+So, so we had a couple of things we wanted to talk about today.
+
+66
+00:04:19,927 --> 00:04:26,369
+One of the things you wanted to talk about was what you think most people are missing when they're developing an app.
+
+67
+00:04:26,373 --> 00:04:34,813
+As far as like, just kinda like buzzwords or trends that you see . That you think could be possibly misleading.
+
+68
+00:04:34,949 --> 00:04:38,879
+And what you think people should really be be doing when they're building.
+
+69
+00:04:39,389 --> 00:04:40,679
+A big project, I guess, or
+
+70
+00:04:40,679 --> 00:04:43,649
+Tim Mitra (guest): even a small Yeah, I, I think it's true of any, any project you work on.
+
+71
+00:04:43,649 --> 00:04:44,009
+I see.
+
+72
+00:04:44,199 --> 00:04:50,679
+and this is based on a lot of stuff that I see on, on the interwebs
+and the socials on the Twitter and the, and the Mastodons and Facebook.
+
+73
+00:04:50,684 --> 00:04:57,787
+Well, not so much Facebook, I don't talk to engineers on Facebook, but . I do talk to
+engineers who work on Facebook, but I don't talk to and people on Facebook about that.
+
+74
+00:04:57,816 --> 00:05:05,100
+But yeah, I think the, the, you know, you hear a lot of things like, especially from
+new users who are just getting into the game, like, what should I, should I do UIKit?
+
+75
+00:05:05,120 --> 00:05:06,270
+Should I do SwiftUI?
+
+76
+00:05:06,290 --> 00:05:08,240
+Should I, you know, should I do Core data?
+
+77
+00:05:08,240 --> 00:05:09,200
+Should I do react?
+
+78
+00:05:09,200 --> 00:05:10,700
+You know, should I do flutter?
+
+79
+00:05:10,700 --> 00:05:11,480
+What should I learn?
+
+80
+00:05:12,485 --> 00:05:20,718
+. And I mean, the reason why my podcast is called More Than Just Code is literally because
+I believe that there is more than just writing code to building an an app, right?
+
+81
+00:05:20,718 --> 00:05:29,008
+I've said it many times before that, you know, it's, it's writing the code, it's, it's creating the user
+experience, it's creating surprise and delight is what Apple would like us to do with our apps, right?
+
+82
+00:05:29,054 --> 00:05:31,994
+So there's a lot of, a lot of avenues to building an app.
+
+83
+00:05:31,994 --> 00:05:36,584
+You have to think about marketing or even a building, a bu it's
+kind of like building a little mini business, if you think about it.
+
+84
+00:05:36,589 --> 00:05:37,494
+I mean, if you're.
+
+85
+00:05:37,889 --> 00:05:43,769
+for the sake of putting an app on the app store, which I've done, I've
+just put apps up there just for the sake of, of going through the exercise.
+
+86
+00:05:43,808 --> 00:05:48,788
+You know, then it, it comes down to, you know, you have to evaluate the, the why.
+
+87
+00:05:48,818 --> 00:05:49,808
+Why are you doing this?
+
+88
+00:05:49,808 --> 00:05:50,708
+What's your reason?
+
+89
+00:05:50,713 --> 00:05:54,308
+Are you doing this because you wanna make a living at it?
+
+90
+00:05:54,308 --> 00:05:58,838
+Are you doing this because you want to, you know, build a portfolio, whatever your intent is.
+
+91
+00:05:58,838 --> 00:06:00,698
+And that's true of any sort of creative process.
+
+92
+00:06:00,698 --> 00:06:04,158
+And I believe that writing code and making apps is a creative process.
+
+93
+00:06:04,158 --> 00:06:06,108
+You'd have to sort of evaluate what your intention is.
+
+94
+00:06:06,168 --> 00:06:07,428
+Are you just doing it for fun?
+
+95
+00:06:07,548 --> 00:06:08,508
+Are you doing it for profit?
+
+96
+00:06:08,988 --> 00:06:10,068
+You know, what's your motivation?
+
+97
+00:06:10,068 --> 00:06:17,211
+I'm very empathetic to the user or the customer's, clients, you know, and, and
+calling them users is sort of an engineering term, but maybe we should, we should
+
+98
+00:06:17,421 --> 00:06:20,631
+some, some, some companies I work for, they, they kind of change that terminology.
+
+99
+00:06:20,631 --> 00:06:21,891
+We're not allowed to call 'em users, but.
+
+100
+00:06:23,851 --> 00:06:25,795
+because it kind of takes the humanity out of them.
+
+101
+00:06:25,822 --> 00:06:30,892
+I'm a big advocate for security and for accessibility as one of my big pet peeves.
+
+102
+00:06:30,892 --> 00:06:37,102
+And especially since, you know, I'm, I'm wearing an accessibility
+device, a pair of glasses, you know, got the gray hair going here, right?
+
+103
+00:06:37,102 --> 00:06:49,047
+So, so, you know, I use larger type, you know, so, I've been, you know, I wasn't really big into the
+dark mode, sort of, you know, the, the xcode with your screen color reversed and all that kinda stuff.
+
+104
+00:06:49,071 --> 00:06:53,045
+I still code in, you know, plain old boarding, boring white.
+
+105
+00:06:53,495 --> 00:06:58,625
+But I like, you know, I like it sunset that my, my devices all switched to a dark mode, right?
+
+106
+00:06:58,625 --> 00:07:00,155
+I've gone through all my websites.
+
+107
+00:07:00,155 --> 00:07:05,320
+I've added dark mode to the website, so that, , you know, at
+that time of day everything switches and, and that kind of stuff.
+
+108
+00:07:05,320 --> 00:07:16,401
+But I think that there's, I think one of the biggest pieces that I find missing in a lot of teams and
+a lot of apps is that there's a very large percentage of the world that have some sort of impairment
+
+109
+00:07:16,401 --> 00:07:23,321
+in terms of either visual or auditory or, you know, there's, even as you get older, you, you know, we.
+
+110
+00:07:23,756 --> 00:07:30,770
+We all get to a point where we need some accessibility devices,
+and I think that's a huge thing that's missing in a lot of apps.
+
+111
+00:07:30,770 --> 00:07:32,720
+And, and of course, you know, there's also the.
+
+112
+00:07:33,890 --> 00:07:38,360
+The other, other side of the argument that you hear a lot about is testing, right About, about writing unit tests.
+
+113
+00:07:38,390 --> 00:07:46,396
+And it's funny cuz I, I saw a tweet on the weekend and from a friend of ours and I said,
+you know oh, I thought we were developing apps, not, you know, delivering tests, right?
+
+114
+00:07:46,396 --> 00:07:50,596
+Because it seems to be, there's a lot of emphasis on is it testable code?
+
+115
+00:07:50,596 --> 00:07:55,426
+You know, are we, are we using mvvm simply for the sake of, you know, the story that it's easier to test?
+
+116
+00:07:55,426 --> 00:07:58,006
+Or, or are we doing that because it's a good architectural pattern?
+
+117
+00:07:58,576 --> 00:08:00,286
+I think those are questions that.
+
+118
+00:08:00,372 --> 00:08:07,392
+People need to ask themselves, but I remember something, I think it was Brent Simmons
+said once about one of his apps is, God, don't look at the code under the hood.
+
+119
+00:08:07,512 --> 00:08:08,442
+The app looks great.
+
+120
+00:08:08,442 --> 00:08:09,222
+People love it.
+
+121
+00:08:09,732 --> 00:08:16,482
+You know, it ships, it does, does what it needs to do, but please don't, you
+know, like I don't look, I'm embarrassed by some of my coding decisions, right?
+
+122
+00:08:16,902 --> 00:08:17,562
+Over the years.
+
+123
+00:08:17,630 --> 00:08:23,132
+And there's a few people who, friends of mine who's Mark, mark
+on our podcast has seen my code and he shakes his head a lot.
+
+124
+00:08:23,742 --> 00:08:35,579
+But you know, the the the reality is, is, you know if it, and we talked about on my, I think we talked about on our show
+the other day, the other day, about the 80 20 rule where, you know, , you don't have to focus on per, per perfection.
+
+125
+00:08:35,579 --> 00:08:37,079
+You should focus on progress.
+
+126
+00:08:37,084 --> 00:08:37,149
+Yep.
+
+127
+00:08:37,649 --> 00:08:37,739
+Right?
+
+128
+00:08:37,769 --> 00:08:41,879
+And, you know, sometimes you just need to ship a product to get it out the door.
+
+129
+00:08:41,956 --> 00:08:45,046
+So you know the 80% of the work is done.
+
+130
+00:08:45,346 --> 00:08:46,096
+Let's get it out there.
+
+131
+00:08:46,096 --> 00:08:46,876
+Let's see what happens.
+
+132
+00:08:46,915 --> 00:08:54,097
+. You know, I think another I've been fortunate to work on teams lately that have a good quality assurance group, right?
+
+133
+00:08:54,097 --> 00:08:59,857
+People whose specific job is to just test the apps, make, you know, do the dumb things that the users are gonna do.
+
+134
+00:08:59,857 --> 00:09:04,567
+I'm always amazed, like I was tease my QA people that they're stop breaking my app, right?
+
+135
+00:09:04,927 --> 00:09:05,737
+I wrote it, it's fine.
+
+136
+00:09:05,737 --> 00:09:06,397
+It works, right?
+
+137
+00:09:06,487 --> 00:09:09,771
+Stop, stop, stop finding the edge cases that, that make things grief.
+
+138
+00:09:09,771 --> 00:09:13,191
+But I think that, and it's funny because I've talked to a lot of teams.
+
+139
+00:09:14,526 --> 00:09:22,526
+and you know, I was doing the whole interview process for like 18
+months and a lot of teams are, you know, I said, who does your qa?
+
+140
+00:09:22,531 --> 00:09:25,416
+Well, our, our dev, our engineers do the QA themselves.
+
+141
+00:09:26,076 --> 00:09:27,096
+Bad idea.
+
+142
+00:09:27,096 --> 00:09:35,596
+Like, you know, I think you need to have an impartial person who doesn't necessarily
+understand engineering, who goes in and, and actually tests the device, test the.
+
+143
+00:09:36,271 --> 00:09:36,721
+To find
+
+144
+00:09:36,721 --> 00:09:37,061
+Leo Dion (host): the weakness?
+
+145
+00:09:37,061 --> 00:09:43,231
+Well, one of the things I see benefit of QA is like, I don't know, especially if it's a pretty big app.
+
+146
+00:09:43,801 --> 00:09:46,051
+I don't know every nook and cranny of that app.
+
+147
+00:09:46,051 --> 00:09:49,291
+Like, I don't know, oh, this was supposed to do this.
+
+148
+00:09:49,351 --> 00:09:50,371
+Oh, I didn't know that.
+
+149
+00:09:50,376 --> 00:09:56,701
+Like I could, I could develop something according to what I think
+it's supposed to do, but I might not know what the user expects.
+
+150
+00:09:57,121 --> 00:10:08,996
+And I think that's like a big problem as far as like, The difference between QA and unit testing,
+like whereas unit testing, it's just like, oh, just make sure my code runs the way I expect it to.
+
+151
+00:10:08,996 --> 00:10:12,027
+But sometimes what you expect is not what you are.
+
+152
+00:10:12,511 --> 00:10:13,981
+User or customer expects,
+
+153
+00:10:13,981 --> 00:10:14,341
+Tim Mitra (guest): right?
+
+154
+00:10:15,061 --> 00:10:15,361
+Yeah.
+
+155
+00:10:15,361 --> 00:10:20,671
+And, and the unit test just proves that your logic is sound and, and that, that, you know, it responds well.
+
+156
+00:10:20,851 --> 00:10:22,141
+And there's also automation testing.
+
+157
+00:10:22,141 --> 00:10:29,581
+I think that's a lot of something that people should consider as well is, is, you
+know, what happens if I log in repeatedly for 10 minutes or something like that?
+
+158
+00:10:29,581 --> 00:10:30,841
+You know, those kind of Right.
+
+159
+00:10:30,841 --> 00:10:32,491
+That's where automation happens, right?
+
+160
+00:10:32,491 --> 00:10:33,691
+And that's where, I mean mm-hmm.
+
+161
+00:10:33,931 --> 00:10:34,171
+in.
+
+162
+00:10:34,220 --> 00:10:39,929
+. And the other thing too, that that's, it's, it's challenging as you,
+as your point about QA is, you know, I just transitioned to a new team.
+
+163
+00:10:39,929 --> 00:10:42,809
+So it's an, it's an, a mature app that's been developed for a long time.
+
+164
+00:10:42,809 --> 00:10:50,612
+And I did the same thing when I joined the bank back, you know, six and a half,
+seven years ago coming into a code base and nooks and crannies, I mean, like there
+
+165
+00:10:50,612 --> 00:10:53,972
+are parts of the banking app that I never looked at in the six years I was there.
+
+166
+00:10:53,972 --> 00:10:54,242
+Right.
+
+167
+00:10:54,242 --> 00:10:54,812
+I know.
+
+168
+00:10:55,382 --> 00:10:56,222
+I just know there weren't.
+
+169
+00:10:56,222 --> 00:10:57,482
+Right, right, right.
+
+170
+00:10:58,232 --> 00:11:07,442
+So it's difficult to sort of, it's difficult to sort of transition into a new team where the, the app is mature
+and I think that may be a challenge, something that people should consider if they, if they move to a big group.
+
+171
+00:11:07,442 --> 00:11:08,462
+Right, right.
+
+172
+00:11:08,490 --> 00:11:15,295
+It's nice to have Greenfield development where, you know, the, the, we're
+all only working as SwiftUI and we're only working with the new stuff.
+
+173
+00:11:15,295 --> 00:11:16,045
+It's, that's nice.
+
+174
+00:11:16,075 --> 00:11:20,185
+But the reality is, you know, in a lot of cases, you're supporting older devices.
+
+175
+00:11:20,185 --> 00:11:27,850
+You're working with, you know,  design decisions that may have been, may
+have worked a while ago, but don't work anymore kind of thing, right?
+
+176
+00:11:27,850 --> 00:11:28,540
+So, mm-hmm.
+
+177
+00:11:28,960 --> 00:11:29,230
+. Yeah.
+
+178
+00:11:29,410 --> 00:11:29,770
+Leo Dion (host): Yeah.
+
+179
+00:11:30,490 --> 00:11:30,970
+Excuse me.
+
+180
+00:11:31,030 --> 00:11:45,295
+One of the things I was gonna say is, As far as testing, like I think, I think there's a divide in the
+community when it comes to the difference between like solo apps and apps that are built with large teams.
+
+181
+00:11:45,355 --> 00:11:45,445
+Mm-hmm.
+
+182
+00:11:45,905 --> 00:11:54,535
+, because I feel like there's kind of two, two sides that are like talking a different, like,
+almost like a different language where it's like where you say, oh, like don't look at my code.
+
+183
+00:11:54,535 --> 00:11:55,465
+It's horrible.
+
+184
+00:11:55,495 --> 00:12:06,655
+Like, That's fine, I guess if you're a solo developer, but if you're on a big team where like
+several people have to manage it, that's where having testability is even more important, I guess.
+
+185
+00:12:06,715 --> 00:12:07,165
+You know what I mean?
+
+186
+00:12:07,750 --> 00:12:07,960
+Tim Mitra (guest): Yeah.
+
+187
+00:12:07,960 --> 00:12:08,950
+Coding standards too.
+
+188
+00:12:08,950 --> 00:12:11,200
+I mean, like, you know, you have to agree on, right?
+
+189
+00:12:11,350 --> 00:12:19,473
+I mean, the biggest challenge of moving to a big team, especially as a, as an
+individual engineer is do you understand the, the requirements for the team?
+
+190
+00:12:19,473 --> 00:12:22,053
+Not, not, I'm not talking about the accepting requirement for the ticket.
+
+191
+00:12:22,053 --> 00:12:26,253
+I'm talking about, you know, are we, are we running things like swift land?
+
+192
+00:12:26,253 --> 00:12:28,593
+Are we, you know, cause we, you know, we used to.
+
+193
+00:12:29,018 --> 00:12:30,038
+Swift link came along.
+
+194
+00:12:30,038 --> 00:12:37,359
+We used to use like a, there was a clang something, or rather we ran an xcode
+to, okay, clean up our objective C you know, are we leaving, you know you know,
+
+195
+00:12:37,389 --> 00:12:41,848
+are, are, is, are we, you know, bringing up all of our declarations and methods?
+
+196
+00:12:41,848 --> 00:12:43,948
+Are we, are we not using extra white space?
+
+197
+00:12:43,948 --> 00:12:46,198
+Because white space makes it readable as a human.
+
+198
+00:12:46,228 --> 00:12:49,708
+Yes, but it's not as a team, maybe we decided to get rid of that.
+
+199
+00:12:49,708 --> 00:12:53,308
+You know, we don't, we don't want everything tightened up and less lines of code, as it were.
+
+200
+00:12:53,758 --> 00:12:55,438
+Cause white space accounts as a line.
+
+201
+00:12:55,438 --> 00:12:55,678
+Right.
+
+202
+00:12:55,683 --> 00:13:02,609
+But, And then, you know, are we using, like, I love the the, I
+guess they're called Kodaco now, the Ray Weder, like folks, right?
+
+203
+00:13:03,179 --> 00:13:08,724
+They used to publish and they, I think they still do publish a swift like swift rules, sort of Swift guidelines.
+
+204
+00:13:08,729 --> 00:13:10,824
+They used to do an objective C guidelines as well, right?
+
+205
+00:13:10,824 --> 00:13:10,914
+Yep.
+
+206
+00:13:10,914 --> 00:13:14,574
+And sort of the team can look at those recommendations and agree.
+
+207
+00:13:14,574 --> 00:13:16,678
+And then is it, what's the one from Realm?
+
+208
+00:13:16,678 --> 00:13:17,718
+Is it Swift Lint?
+
+209
+00:13:17,816 --> 00:13:19,473
+JP and yeah, the JP
+
+210
+00:13:19,473 --> 00:13:21,233
+Leo Dion (host): wrote swiftformat.
+
+211
+00:13:21,423 --> 00:13:23,193
+Tim Mitra (guest): I think Swift format, that's what I'm thinking of.
+
+212
+00:13:23,193 --> 00:13:23,523
+Yeah.
+
+213
+00:13:23,523 --> 00:13:24,093
+The, the
+
+214
+00:13:24,093 --> 00:13:25,743
+Leo Dion (host): no or Nick Lockwood is swift format.
+
+215
+00:13:25,773 --> 00:13:26,583
+Realm is swift
+
+216
+00:13:26,583 --> 00:13:27,093
+Tim Mitra (guest): Lint, right?
+
+217
+00:13:27,093 --> 00:13:27,293
+Yeah.
+
+218
+00:13:27,333 --> 00:13:27,663
+Right.
+
+219
+00:13:27,663 --> 00:13:27,933
+Yeah.
+
+220
+00:13:27,933 --> 00:13:36,250
+So between the two of those, you know, there's sort of a, and you can accept their
+suggestions as, as your rules, or you can, or you can use them as guidelines, as I said.
+
+221
+00:13:36,250 --> 00:13:36,640
+Right.
+
+222
+00:13:36,643 --> 00:13:42,414
+And then decide, your team can decide whether you want to do them and
+what's nice about those automation process, and you can customize.
+
+223
+00:13:43,054 --> 00:13:43,294
+Yeah.
+
+224
+00:13:43,294 --> 00:13:48,569
+And these are part of your, your ci your, your, your continued integration, continuous development.
+
+225
+00:13:48,578 --> 00:13:50,408
+You can have those as scripts.
+
+226
+00:13:50,408 --> 00:13:54,158
+You can either run locally on your machine or you can have them on your build servers that Yep.
+
+227
+00:13:54,248 --> 00:13:57,008
+Run the things and reject your PRS based on that.
+
+228
+00:13:57,008 --> 00:14:05,235
+And dangers another important tool I think that, that is really nice that, you
+know, it's like a, an extra engineer looking at, at the quality of your code, right?
+
+229
+00:14:05,235 --> 00:14:07,245
+So yeah, with the rules you put in danger.
+
+230
+00:14:07,995 --> 00:14:08,325
+Leo Dion (host): Yep.
+
+231
+00:14:08,535 --> 00:14:09,585
+Have you heard of strings?
+
+232
+00:14:09,585 --> 00:14:12,165
+Lint Speaking of accessibility?
+
+233
+00:14:12,555 --> 00:14:12,915
+No.
+
+234
+00:14:13,155 --> 00:14:13,545
+What's that one?
+
+235
+00:14:13,545 --> 00:14:17,311
+So strings lint is, it makes sure that you use.
+
+236
+00:14:17,344 --> 00:14:19,505
+String dictionaries and mm-hmm.
+
+237
+00:14:19,540 --> 00:14:22,902
+Localization for all the strings you use in your ui.
+
+238
+00:14:23,002 --> 00:14:23,242
+Oh, yeah.
+
+239
+00:14:23,622 --> 00:14:24,682
+Tim Mitra (guest): Language support's another important one.
+
+240
+00:14:24,682 --> 00:14:25,012
+Yeah.
+
+241
+00:14:25,192 --> 00:14:25,612
+Leo Dion (host): Yeah.
+
+242
+00:14:26,002 --> 00:14:30,322
+Which, if you're interested in accessibility and localization, we've done episodes on that.
+
+243
+00:14:30,442 --> 00:14:30,922
+Definitely.
+
+244
+00:14:30,922 --> 00:14:31,222
+Check that.
+
+245
+00:14:31,227 --> 00:14:31,502
+Oh yeah.
+
+246
+00:14:31,502 --> 00:14:32,142
+To check that one out.
+
+247
+00:14:33,022 --> 00:14:41,242
+Yeah, cuz I have, I have an app and it's like, I wanna make sure all my strings aren't just a, because
+you know, when you first start you'll be like, oh, I'm just gonna write these strings and code.
+
+248
+00:14:41,242 --> 00:14:47,936
+But then eventually you could start using it'll warn you and say, Hey, you
+should probably put this in a string dictionary since in your, it's in your ui.
+
+249
+00:14:48,356 --> 00:14:50,306
+So I haven't recommend checking that out.
+
+250
+00:14:50,696 --> 00:14:56,600
+Tim Mitra (guest): Yeah, I mean, I've always used localization and all
+of my apps, the, my early apps were like supporting eight languages.
+
+251
+00:14:56,600 --> 00:14:58,730
+One of them was supporting 14, which was just crazy.
+
+252
+00:14:58,730 --> 00:15:00,785
+But, Yeah.
+
+253
+00:15:00,875 --> 00:15:02,495
+But, but, but it's, it's important.
+
+254
+00:15:02,495 --> 00:15:03,825
+I mean, like, you know, we're not, it is important.
+
+255
+00:15:03,825 --> 00:15:08,105
+We're not the, it's not English speak people and people who read, you know, left to right.
+
+256
+00:15:08,110 --> 00:15:09,095
+I have to think about that for a minute.
+
+257
+00:15:09,545 --> 00:15:11,585
+We're not the only people using your app, right?
+
+258
+00:15:11,585 --> 00:15:11,785
+Yeah.
+
+259
+00:15:11,790 --> 00:15:14,506
+So so that's another important consideration.
+
+260
+00:15:14,515 --> 00:15:15,970
+And obviously a market too.
+
+261
+00:15:15,975 --> 00:15:24,340
+I mean, you know, Canada's like a 10th the size of the United States in terms of
+market, but then China is 10 times, 10 times the US or a hundred times the US I think.
+
+262
+00:15:24,345 --> 00:15:25,630
+Right, right, right.
+
+263
+00:15:25,630 --> 00:15:32,625
+So, You know, and it's funny cuz we, you know, in in, I worked in Canadian
+banking and obviously Canada, our two official languages are English and French.
+
+264
+00:15:32,635 --> 00:15:33,195
+Right?
+
+265
+00:15:33,200 --> 00:15:33,315
+Right.
+
+266
+00:15:33,315 --> 00:15:42,495
+The majority of us speak English, I mean, sorry, French people, but I'm sure in some provinces
+it's, you know, very French and some, some are bi fully, one province is fully bilingual.
+
+267
+00:15:42,495 --> 00:15:42,765
+Right.
+
+268
+00:15:43,455 --> 00:15:46,845
+But, you know, so you think, okay, well I need to add English and French into my app.
+
+269
+00:15:46,845 --> 00:15:47,175
+Right?
+
+270
+00:15:47,175 --> 00:15:53,715
+What we, what I, we didn't realize was a large, a very large percentage of our users are Chinese.
+
+271
+00:15:54,355 --> 00:15:54,915
+, right.
+
+272
+00:15:54,915 --> 00:15:55,395
+Okay.
+
+273
+00:15:55,400 --> 00:16:01,195
+So, so we had to, we, you know, in the banking app we added English, French, and then we started adding Chinese.
+
+274
+00:16:01,195 --> 00:16:10,315
+And that that sort of got, you know, a lot of, lot of people, I mean there were even
+people in Quebec who are Chinese whose, whose fallback language is French, not English.
+
+275
+00:16:10,825 --> 00:16:11,125
+Right?
+
+276
+00:16:11,130 --> 00:16:15,685
+So these are things you sort of, that, that come up in, in, especially in larger ops.
+
+277
+00:16:15,685 --> 00:16:23,305
+I mean, I think I was, I was gonna go down this one rabbit hole was
+that, you know, the banking app was u was used by 6 million people a day.
+
+278
+00:16:24,235 --> 00:16:24,595
+right?
+
+279
+00:16:24,625 --> 00:16:27,445
+Like that's huge numbers, right?
+
+280
+00:16:27,445 --> 00:16:28,885
+In terms of people who's using it, right?
+
+281
+00:16:28,885 --> 00:16:34,405
+So I mean, all the more reason that be accessible, support, accessibility, dynamic type and that kind of stuff.
+
+282
+00:16:34,410 --> 00:16:34,615
+Right.
+
+283
+00:16:35,725 --> 00:16:35,815
+Leo Dion (host): Do
+
+284
+00:16:35,815 --> 00:16:38,815
+you think one, one thing you wanted to talk about, and this gets into.
+
+285
+00:16:39,370 --> 00:16:40,060
+Other cultures.
+
+286
+00:16:40,060 --> 00:16:43,480
+Other languages as, yeah, multidisciplinary engineering.
+
+287
+00:16:43,480 --> 00:16:45,610
+What, what, yeah.
+
+288
+00:16:45,610 --> 00:16:47,630
+What does that mean, I guess, and how do you think that's helpful?
+
+289
+00:16:47,630 --> 00:16:48,220
+Tim Mitra (guest): Did I put that down there?
+
+290
+00:16:50,530 --> 00:16:57,685
+? . I think I, yeah, I think, I think what it meant by multi multidisciplinary
+engineering was what they sometimes call cross-functional engineering as well.
+
+291
+00:16:57,685 --> 00:16:58,645
+Where Okay.
+
+292
+00:16:58,727 --> 00:17:01,830
+It's not just an isolated instance where you're in io.
+
+293
+00:17:02,160 --> 00:17:09,515
+You know, you may be dealing with you may be dealing, you're obviously dealing with endpoints
+if you do any kind of, any kind of data stored on a network or any kind of user account stuff.
+
+294
+00:17:09,515 --> 00:17:14,038
+So I think what I meant by that was, was, I'd have to go back to my notes now but I think I meant.
+
+295
+00:17:15,058 --> 00:17:20,914
+Like, you know thinking about the engineering across CROK teams or across, across different silos, right?
+
+296
+00:17:20,919 --> 00:17:23,254
+In terms of like what you're, you're dealing with.
+
+297
+00:17:23,328 --> 00:17:26,688
+I mean, like I, in my own apps, you know, I write my own APIs, right?
+
+298
+00:17:26,693 --> 00:17:28,788
+So I do PHP and my sql.
+
+299
+00:17:29,068 --> 00:17:29,558
+Okay.
+
+300
+00:17:29,563 --> 00:17:36,408
+And so, so you, you know, you need, need to know those things and, and you
+know, then if you've got Android support, you might need to know Kotlin.
+
+301
+00:17:36,798 --> 00:17:39,258
+You know, have somebody on the team who knows Kotlin, right.
+
+302
+00:17:39,798 --> 00:17:41,778
+And Java to be able to support those kind of things.
+
+303
+00:17:41,778 --> 00:17:44,148
+I think that's what I meant by multidisciplinary engineering.
+
+304
+00:17:44,148 --> 00:17:46,594
+It's not just again, the more than just code comment, right?
+
+305
+00:17:47,914 --> 00:17:48,034
+what?
+
+306
+00:17:48,068 --> 00:17:49,368
+More than just Iowa's code, I mean,
+
+307
+00:17:50,063 --> 00:17:50,423
+Leo Dion (host): Right.
+
+308
+00:17:50,514 --> 00:17:54,924
+I'm almost surprised at how many iOS tab don't know anything about backend development.
+
+309
+00:17:54,998 --> 00:17:59,498
+Yeah, but it, I mean, it kind of makes sense if that's all you've been doing.
+
+310
+00:17:59,498 --> 00:18:08,283
+But what do you, if you were an iOS developer, let's say I was a iOS developer, and I asked you Hey, what should I do?
+
+311
+00:18:08,313 --> 00:18:11,373
+What should I learn if I wanted to be branch out?
+
+312
+00:18:11,433 --> 00:18:13,533
+Or what would you recommend being
+
+313
+00:18:13,773 --> 00:18:14,193
+Tim Mitra (guest): first up?
+
+314
+00:18:14,423 --> 00:18:14,663
+Mm.
+
+315
+00:18:15,108 --> 00:18:22,600
+Well, I mean, I'm, I'm a fan of PHP from way back when, but the, I think,
+you know, Python is an important language to Mark, mark Rubin from Morgan.
+
+316
+00:18:22,600 --> 00:18:24,910
+Just code would be telling you to learn Python for sure.
+
+317
+00:18:25,330 --> 00:18:26,890
+That's, I think, his favorite language.
+
+318
+00:18:26,920 --> 00:18:31,480
+I mean, there's things like Go GOs used a lot in, in backend work these days.
+
+319
+00:18:31,485 --> 00:18:33,250
+No, JS is another important one.
+
+320
+00:18:33,520 --> 00:18:38,410
+Leo Dion (host): Yeah, I was gonna say node, node type script, because that opens up a whole world type script
+
+321
+00:18:38,410 --> 00:18:38,530
+is
+
+322
+00:18:38,530 --> 00:18:39,430
+Tim Mitra (guest): sort of built on top of.
+
+323
+00:18:39,810 --> 00:18:40,740
+Or is it
+
+324
+00:18:41,100 --> 00:18:42,750
+Leo Dion (host): further Java built on top of JavaScript?
+
+325
+00:18:42,750 --> 00:18:43,020
+Yeah.
+
+326
+00:18:43,130 --> 00:18:43,530
+Right.
+
+327
+00:18:43,530 --> 00:18:43,650
+Yeah.
+
+328
+00:18:43,655 --> 00:18:47,850
+But anything like that where you can open the whole world, a web to you right.
+
+329
+00:18:47,855 --> 00:18:49,636
+Would be super, super useful.
+
+330
+00:18:49,705 --> 00:18:51,505
+Obviously I'm a big fan of backend
+
+331
+00:18:52,285 --> 00:18:54,955
+Tim Mitra (guest): paper and I was listening to your show with, with Sarah other today, swift.
+
+332
+00:18:55,490 --> 00:18:57,290
+Leo Dion (host): So like that's an option.
+
+333
+00:18:57,290 --> 00:19:05,293
+But I mean, that'll, that'll, I think that's good for teaching you
+how, how to like, query a database or how to like build a rest api.
+
+334
+00:19:05,353 --> 00:19:12,433
+But as far as like learning another language, I think JavaScript type script would
+be super helpful cuz then you can like do all sorts of stuff on webpages and things
+
+335
+00:19:12,433 --> 00:19:12,793
+Tim Mitra (guest): like that.
+
+336
+00:19:13,123 --> 00:19:17,053
+Yeah, I think it's very important to understand the contract between yourself and the backend too.
+
+337
+00:19:17,053 --> 00:19:17,323
+Right?
+
+338
+00:19:17,323 --> 00:19:18,163
+Like, you know.
+
+339
+00:19:18,223 --> 00:19:18,343
+Right.
+
+340
+00:19:18,343 --> 00:19:24,962
+We currently, like, you know, when I started iOS, we were doing,
+you know Pless, which are xml, we were learning how to XML parse.
+
+341
+00:19:24,962 --> 00:19:25,232
+Right.
+
+342
+00:19:25,237 --> 00:19:29,620
+And, and then, you know, I think, don't remind me uh, JSON came along and know the horror stories, right?
+
+343
+00:19:30,010 --> 00:19:30,130
+Yeah.
+
+344
+00:19:30,160 --> 00:19:34,887
+JSON came along and now we have the json, you know decoding and encoding protocols.
+
+345
+00:19:34,887 --> 00:19:34,947
+Yeah.
+
+346
+00:19:34,947 --> 00:19:43,436
+We have the, the, you know, And as coder for binary phs, you know,
+storing them, bringing 'em back to life, re reinflating them if you will.
+
+347
+00:19:43,505 --> 00:19:52,027
+You know, it kind of reminds me of, of astronauts going to the moon, the way they would dehydrate
+their food and they would use water to reinflate them, to make them into look a nice mm-hmm.
+
+348
+00:19:52,267 --> 00:19:52,327
+Yeah.
+
+349
+00:19:52,327 --> 00:19:52,597
+Steak.
+
+350
+00:19:52,867 --> 00:19:53,257
+Exactly.
+
+351
+00:19:54,097 --> 00:19:56,085
+But , the, you know, so there's that.
+
+352
+00:19:56,085 --> 00:20:02,586
+And then, and now we've got the Code Codeable Pro protocol in, in swift to be able to handle that kind of stuff for us.
+
+353
+00:20:02,586 --> 00:20:08,856
+And yeah, you know, under the hood there's a lot going on, but, you know,
+from a user point of view, it's, you know, pretty, pretty straightforward.
+
+354
+00:20:08,861 --> 00:20:15,025
+So, but I think, you know, understanding you know, looking at
+like under learning about how, you know, basic http works, right?
+
+355
+00:20:15,025 --> 00:20:20,575
+Like how, you know, TLS works and encryption, you know, importance of encryption and importance of se.
+
+356
+00:20:20,815 --> 00:20:27,985
+It leads into the security discussion about, you know, making
+sure that you're, you're talking to your, your backend correctly.
+
+357
+00:20:27,985 --> 00:20:30,475
+You're not, you know, exposing secrets.
+
+358
+00:20:30,480 --> 00:20:36,235
+You're not taking a user of password, for example, and passing around a plain text bad idea, you know?
+
+359
+00:20:37,750 --> 00:20:41,500
+You know, there's all kinds of different things that you can do there to, to sort of wreck somebody's day.
+
+360
+00:20:41,500 --> 00:20:41,770
+Right.
+
+361
+00:20:41,770 --> 00:20:42,681
+But by yeah.
+
+362
+00:20:42,821 --> 00:20:50,031
+I, I just, I shuder every time I hear one of these new, oh, so-and-so's been
+exploited and so-and-so's, you know, change your passwords on this thing.
+
+363
+00:20:50,031 --> 00:20:54,291
+And, you know, it's getting old, just, it's just, it just scares the heck outta me.
+
+364
+00:20:54,291 --> 00:20:54,441
+Right.
+
+365
+00:20:55,641 --> 00:21:00,381
+Leo Dion (host): How do you think project management fits into this as far as.
+
+366
+00:21:01,521 --> 00:21:02,241
+Take a step back.
+
+367
+00:21:02,381 --> 00:21:04,161
+We, we talked about helping developers.
+
+368
+00:21:04,461 --> 00:21:04,551
+Mm-hmm.
+
+369
+00:21:04,791 --> 00:21:11,211
+learn, but like, as far as for if you're managing a team, like what do you think is the role of a project manager?
+
+370
+00:21:11,211 --> 00:21:11,541
+What do you.
+
+371
+00:21:12,066 --> 00:21:13,236
+They're, they're missing out
+
+372
+00:21:13,236 --> 00:21:13,476
+Tim Mitra (guest): on.
+
+373
+00:21:14,046 --> 00:21:16,776
+Yeah, it kind of de, it depends on the, depends on the company as well.
+
+374
+00:21:16,776 --> 00:21:22,866
+Like cuz the different def definitions, like larger companies, like a
+bank would, would have like that broken down into four different roles.
+
+375
+00:21:22,866 --> 00:21:26,316
+Whereas a smaller startup might have it like all compacted into one.
+
+376
+00:21:26,316 --> 00:21:29,466
+But I, I know of an engineer here in Toronto pretty successful.
+
+377
+00:21:30,306 --> 00:21:35,911
+Solo developer who use uses project management tools just to keep himself on the street and narrow.
+
+378
+00:21:35,911 --> 00:21:39,301
+And I've thought about doing that, like thought about using tools like Trello.
+
+379
+00:21:39,354 --> 00:21:43,698
+Like at Koca we use Trello for managing our projects, but also Jira.
+
+380
+00:21:43,698 --> 00:21:45,108
+I'm a big fan of Jira.
+
+381
+00:21:45,138 --> 00:21:47,718
+I mean, not a huge fan of mean, it's the tool you use.
+
+382
+00:21:48,078 --> 00:21:51,828
+I know a friend of mine who's on monday.com who's shaking his fist at the screen right now.
+
+383
+00:21:51,828 --> 00:21:53,802
+But you know, it's just a matter it, I think.
+
+384
+00:21:54,152 --> 00:21:58,664
+It allows you to take, and it's part of, sort of agile flow that you want to basically take.
+
+385
+00:21:58,665 --> 00:22:02,847
+My agile joke by the way, is how do you, how do you eat an elephant?
+
+386
+00:22:03,897 --> 00:22:06,117
+You know, one bite at a time, right?
+
+387
+00:22:08,392 --> 00:22:14,002
+So you so basically take any large complex job and you break it down into smaller chunks.
+
+388
+00:22:14,002 --> 00:22:14,182
+Right.
+
+389
+00:22:14,182 --> 00:22:15,712
+And I think that's what Agile does, right?
+
+390
+00:22:15,772 --> 00:22:22,382
+And, and if you're using a tool like using something like Confluence to document what the, what the, the ticket's about.
+
+391
+00:22:23,192 --> 00:22:28,982
+you know, take the, the actual tasks of what you're gonna put
+together in terms of an app and break it down into those steps.
+
+392
+00:22:28,982 --> 00:22:30,272
+What do I need to do first?
+
+393
+00:22:30,272 --> 00:22:31,352
+What do I need to do second?
+
+394
+00:22:31,382 --> 00:22:31,442
+Yeah.
+
+395
+00:22:31,447 --> 00:22:33,032
+Is a dependency here and there.
+
+396
+00:22:33,482 --> 00:22:40,842
+So tools like Jira and Trello help you sort of organize all the pieces like
+you were, I think you were mentioning about you know, Ulysses as an example.
+
+397
+00:22:40,842 --> 00:22:44,803
+I think my friend Tammy is a big fan of s Scribner for writing, right?
+
+398
+00:22:44,823 --> 00:22:45,223
+Mm-hmm.
+
+399
+00:22:45,308 --> 00:22:49,313
+writing stories, writing novels, writing, you know, Well, it's your short story or a long story.
+
+400
+00:22:49,313 --> 00:22:49,373
+Yeah.
+
+401
+00:22:49,553 --> 00:22:51,113
+Leo Dion (host): You, you have to break it down into pieces.
+
+402
+00:22:51,113 --> 00:22:57,143
+Tim Mitra (guest): It's way too overwhelming, but you need to gather all your bits
+and pieces into like a sort of a treasure box and scrapbook them kind of thing.
+
+403
+00:22:57,323 --> 00:22:58,154
+And I think that's what I think it's.
+
+404
+00:22:59,063 --> 00:23:01,733
+, 
+Leo Dion (host): I think Ulysses calls a material sheet, right?
+
+405
+00:23:01,763 --> 00:23:02,633
+I think that's the term
+
+406
+00:23:02,633 --> 00:23:03,113
+Tim Mitra (guest): they use.
+
+407
+00:23:03,163 --> 00:23:03,523
+Yeah.
+
+408
+00:23:03,593 --> 00:23:03,953
+Yeah.
+
+409
+00:23:03,953 --> 00:23:12,803
+So, and Scribner has a sort of like a sort of sketch board kind of place where you kind, you collect all
+the bits and pieces that are gonna make up your story, your story lines, your character developments mm-hmm.
+
+410
+00:23:12,883 --> 00:23:13,283
+and that kind of stuff.
+
+411
+00:23:13,283 --> 00:23:13,643
+Yeah.
+
+412
+00:23:13,643 --> 00:23:17,073
+But I think, I think a tank in those same sort of, kind of criteria.
+
+413
+00:23:17,090 --> 00:23:18,320
+I do the same thing in my artwork.
+
+414
+00:23:18,320 --> 00:23:25,250
+I, I break it down into, into what has to happen first, what, you know,
+I need to gather the supplies I need to, you know, have the stuff.
+
+415
+00:23:25,870 --> 00:23:29,680
+To go in order to, to basically get the project from one place to another.
+
+416
+00:23:29,680 --> 00:23:37,928
+And I think that's the same thing's true with, with any kind of mobile
+development or even websites is, is you need to break it down into small pieces.
+
+417
+00:23:37,928 --> 00:23:48,290
+Like and maybe this is something that a, a, a young new developer can think about is like, you
+know, like for instance, I have a, an app on a store or like a tutorial on using Touch id, right?
+
+418
+00:23:48,290 --> 00:23:51,740
+So I wanna use Touch id, Hey Lou Leo, I wanna use Touch id right?
+
+419
+00:23:52,380 --> 00:23:53,340
+. Well, what do I need to do first?
+
+420
+00:23:53,340 --> 00:23:57,360
+Well, first of all, I need to have some sort of app that requires login, right?
+
+421
+00:23:57,365 --> 00:23:57,660
+Mm-hmm.
+
+422
+00:23:57,740 --> 00:24:02,580
+. And so then I have to create a login view, and then I have to create,
+you know, then I have to be able to handle the username and the password.
+
+423
+00:24:02,580 --> 00:24:05,640
+And as I said before, you don't want to handle that on Plain Tech.
+
+424
+00:24:05,640 --> 00:24:07,920
+So now you need to figure out a way to obfuscate.
+
+425
+00:24:08,445 --> 00:24:09,975
+The input from the user.
+
+426
+00:24:10,305 --> 00:24:14,865
+And then you need to have a way to talk to, maybe you wanna store something in user defaults key chain.
+
+427
+00:24:14,895 --> 00:24:15,795
+Okay, that's fine.
+
+428
+00:24:15,795 --> 00:24:23,625
+Maybe I want to use key chain, so then I have to go and learn about key chain,
+you know, and, and break down all the pieces that, that you need to do in order to
+
+429
+00:24:23,637 --> 00:24:27,807
+facilitate getting to the point where you can actually add touch ID to your screen.
+
+430
+00:24:27,807 --> 00:24:28,107
+Right?
+
+431
+00:24:28,407 --> 00:24:28,707
+Yeah.
+
+432
+00:24:28,822 --> 00:24:36,749
+You know, so and we should probably talk about yak shaving at some point too, but, The, you know, the idea is like you.
+
+433
+00:24:37,454 --> 00:24:40,034
+You have a complex task to do.
+
+434
+00:24:40,088 --> 00:24:49,598
+And one of the things we did early, early, early in the days was when we were writing our iOS stuff is,
+you know, we weren't the experts on it cuz I don't don't think anybody was in the early days, right?
+
+435
+00:24:49,598 --> 00:24:58,838
+So one of my junior's jobs was to just scour the web for a solution that's already been written
+and somebody already written something about this that already does this thing rather than.
+
+436
+00:24:59,628 --> 00:25:01,218
+trying to invent it yourself, right?
+
+437
+00:25:01,398 --> 00:25:04,728
+Like one of the things about security is don't try to invent your own security.
+
+438
+00:25:04,728 --> 00:25:05,868
+It's already been done.
+
+439
+00:25:05,868 --> 00:25:06,978
+It's already been proven.
+
+440
+00:25:07,428 --> 00:25:11,388
+There are best practices, you know, you should, you should probably check that out, right?
+
+441
+00:25:11,568 --> 00:25:12,798
+Rather than trying to do it yourself.
+
+442
+00:25:13,668 --> 00:25:14,455
+But yeah.
+
+443
+00:25:16,235 --> 00:25:17,135
+Leo Dion (host): Do you use.
+
+444
+00:25:17,785 --> 00:25:26,345
+. Yeah, so I, I pretty much, I think I mentioned this, I don't
+know, but I use like a spreadsheet to keep track of my to-do list.
+
+445
+00:25:26,345 --> 00:25:26,545
+Mm-hmm.
+
+446
+00:25:26,625 --> 00:25:27,085
+, but when Right.
+
+447
+00:25:27,375 --> 00:25:35,387
+I've individual repos or projects and GitHub has this now GitLab has, has like their little Jira Yeah.
+
+448
+00:25:35,637 --> 00:25:44,667
+Trello thing, and then I'll put those individual tasks and then I'll organize
+those into a Trello board of some sort for like projects, coding projects.
+
+449
+00:25:44,667 --> 00:25:44,907
+So to.
+
+450
+00:25:46,362 --> 00:25:46,572
+. 
+Tim Mitra (guest): Yeah.
+
+451
+00:25:46,572 --> 00:25:48,492
+I just wanna show you here on, on my phone.
+
+452
+00:25:48,492 --> 00:25:51,900
+I mean so, you know, like one, one of the things I do in, in, yeah.
+
+453
+00:25:51,900 --> 00:25:56,280
+So here, like for instance, I've started doing, using my, I dunno if you can get the clear shot of this.
+
+454
+00:25:56,314 --> 00:25:57,034
+Leo Dion (host): It's too bright.
+
+455
+00:25:57,034 --> 00:25:57,814
+I can't see it.
+
+456
+00:25:58,414 --> 00:25:59,014
+Too bright.
+
+457
+00:25:59,014 --> 00:25:59,164
+There
+
+458
+00:25:59,164 --> 00:25:59,554
+Tim Mitra (guest): we go.
+
+459
+00:25:59,614 --> 00:25:59,944
+How's that?
+
+460
+00:25:59,949 --> 00:26:00,124
+There you go.
+
+461
+00:26:00,709 --> 00:26:01,009
+, right?
+
+462
+00:26:01,009 --> 00:26:06,319
+So you can see that, you know, I've got user stories and I'm using the notes featured to make little check boxes.
+
+463
+00:26:06,709 --> 00:26:12,949
+And this is just a simple, I broke this, you know, in terms of what I
+want to refactor in the app is I broke down what it is I want to do.
+
+464
+00:26:12,949 --> 00:26:23,839
+And just using the notes app, I mean like you don't need to have Jira or Trello to start, you know,
+like you said, you can use a spreadsheet, you can use a Symboled note, note taking app, right?
+
+465
+00:26:24,469 --> 00:26:26,779
+Piece of paper, right, right back of an envelope, literal.
+
+466
+00:26:27,694 --> 00:26:28,354
+. 
+Leo Dion (host): Right, right.
+
+467
+00:26:28,384 --> 00:26:32,704
+Well, and there's something nice about that, cuz then you don't have this feeling of, oh, this is permanent.
+
+468
+00:26:32,704 --> 00:26:33,844
+I need to save this.
+
+469
+00:26:33,919 --> 00:26:36,919
+Cause if it's on paper, it's like, okay, I copied it over.
+
+470
+00:26:36,924 --> 00:26:38,779
+I'm done pro processing it.
+
+471
+00:26:38,852 --> 00:26:39,932
+Yeah, I can throw it away.
+
+472
+00:26:40,502 --> 00:26:40,802
+What?
+
+473
+00:26:40,952 --> 00:26:41,120
+Yeah.
+
+474
+00:26:41,145 --> 00:26:43,995
+One of the things you wrote down is domain driven design.
+
+475
+00:26:44,415 --> 00:26:44,655
+What?
+
+476
+00:26:44,660 --> 00:26:44,945
+Yeah.
+
+477
+00:26:45,615 --> 00:26:46,125
+What did you mean
+
+478
+00:26:46,275 --> 00:26:46,755
+Tim Mitra (guest): by that, Tim?
+
+479
+00:26:46,835 --> 00:26:49,095
+So, so this is, this is something, it's interesting.
+
+480
+00:26:49,155 --> 00:26:52,845
+It, it came out of our work at Spot Hero, our, our previous cto.
+
+481
+00:26:52,875 --> 00:26:53,955
+I think he introduced the idea.
+
+482
+00:26:53,960 --> 00:26:57,795
+I'm not sure if, well, apologies to people at Spot Hero, so it wasn't his idea.
+
+483
+00:26:57,795 --> 00:26:59,342
+But there's a book by O'Reilly called din.
+
+484
+00:26:59,732 --> 00:27:01,562
+Domain driven design.
+
+485
+00:27:01,562 --> 00:27:10,832
+And the idea behind it is one of my favorite things about it is a thing called
+event storm, where you look at the business logic of your, of your process, right?
+
+486
+00:27:10,832 --> 00:27:13,142
+And you kind of break it down.
+
+487
+00:27:13,382 --> 00:27:20,745
+You break down the, the using an event storm, you break down the
+sort of processes that go into sorting out a a business thing.
+
+488
+00:27:21,045 --> 00:27:21,935
+Think of a bus.
+
+489
+00:27:22,680 --> 00:27:23,250
+What would you do?
+
+490
+00:27:23,250 --> 00:27:25,560
+Like maybe a pizza delivery service or something like that?
+
+491
+00:27:25,560 --> 00:27:25,890
+Right.
+
+492
+00:27:26,160 --> 00:27:26,430
+Okay.
+
+493
+00:27:26,515 --> 00:27:29,905
+You know, so you'd have different parts of your, of your organization.
+
+494
+00:27:29,905 --> 00:27:37,075
+One is, you know, there's gonna be an order taking system that's going to,
+you know, describe all the orders, all the parts that make up a good pizza.
+
+495
+00:27:37,075 --> 00:27:37,405
+Right.
+
+496
+00:27:37,765 --> 00:27:43,435
+And then you've got your, your kitchen staff that are gonna
+take the, get the orders, read what kind of pizza the person.
+
+497
+00:27:44,855 --> 00:27:45,995
+Somebody's gonna have to prepare the dough.
+
+498
+00:27:46,335 --> 00:27:49,955
+Somebody's gonna have to put all the, the, you know, the pepperoni and the cheese and the sauce on it.
+
+499
+00:27:50,345 --> 00:27:53,255
+Then there's the oven crew that's gonna have to put it in the oven.
+
+500
+00:27:53,255 --> 00:27:55,685
+Turn the heat, obviously heat the oven up, right?
+
+501
+00:27:56,165 --> 00:27:58,175
+Put the pizza in the oven to make the pizza.
+
+502
+00:27:58,175 --> 00:28:05,735
+There's gonna be the team that, after the pizza's been made, puts it in the box
+and hands it to the driver, you know, with the order number on it, for example.
+
+503
+00:28:06,125 --> 00:28:07,265
+Then there's gonna be a cleanup.
+
+504
+00:28:07,265 --> 00:28:09,485
+Crew has to go in and clean the plates and clean.
+
+505
+00:28:10,090 --> 00:28:12,730
+Utensils that were used to make the dough and to make the pizza.
+
+506
+00:28:12,970 --> 00:28:18,340
+And then you're gonna hand it to a driver who's gonna go and, you know, put it in his car and take it to an address.
+
+507
+00:28:18,340 --> 00:28:19,840
+Well, where, how does he get to that address?
+
+508
+00:28:19,840 --> 00:28:24,190
+We need now we need, you know, an iPhone with a maps app on it to tell him where to go to deliver.
+
+509
+00:28:24,195 --> 00:28:31,690
+And then he gets the door, he takes a picture of the image and he,
+so anyway, there's a whole complex thing to just making a pizza.
+
+510
+00:28:32,050 --> 00:28:32,730
+Right, right.
+
+511
+00:28:32,830 --> 00:28:34,180
+Or making a pizza app if you want.
+
+512
+00:28:34,180 --> 00:28:35,290
+Or making a pizza business.
+
+513
+00:28:35,290 --> 00:28:35,590
+Right.
+
+514
+00:28:35,980 --> 00:28:45,070
+So, What you do is you in, in the sort of the vein driven de development
+is you say, okay, let's look at the making of the, the, the bakers, right?
+
+515
+00:28:45,070 --> 00:28:47,350
+The people that are actually putting the pizza together.
+
+516
+00:28:47,350 --> 00:28:47,650
+Right.
+
+517
+00:28:48,190 --> 00:28:49,120
+That's a domain.
+
+518
+00:28:49,600 --> 00:28:49,960
+Right?
+
+519
+00:28:50,500 --> 00:28:57,220
+And so you look at, we, we sit down and we examine all of the
+pieces, all of the processes that go into making pizza, right?
+
+520
+00:28:57,220 --> 00:28:59,080
+Making the physical pizza itself, right?
+
+521
+00:28:59,530 --> 00:29:02,020
+Irrespective of all those other domains that I described, right?
+
+522
+00:29:02,650 --> 00:29:05,650
+And you look at that one particular domain and you go through all the sort.
+
+523
+00:29:05,717 --> 00:29:10,351
+Piece the, the, the, the sequences of, of events that need to happen in order to make a pizza.
+
+524
+00:29:10,351 --> 00:29:14,341
+And then we look at, well, who is the person who's gonna act on that particular thing?
+
+525
+00:29:14,341 --> 00:29:18,511
+Is it an automated process or is it an actual human being who needs to do this?
+
+526
+00:29:18,991 --> 00:29:21,781
+You know, like, can we write out, can we write up some coat that'll chop pepperoni?
+
+527
+00:29:21,841 --> 00:29:22,471
+I don't think so.
+
+528
+00:29:22,471 --> 00:29:24,601
+We need to have somebody with a knife to cut the pepperoni.
+
+529
+00:29:24,601 --> 00:29:24,811
+Right?
+
+530
+00:29:24,811 --> 00:29:29,791
+For example, I'm using a bricks and mortar kind of example for, for the sake of science, but yeah.
+
+531
+00:29:30,991 --> 00:29:38,873
+. So the idea is you, you kind of go through and you examine all of the sort of things that,
+things, you know, traditional, maybe you have some, some traditional things you've been doing.
+
+532
+00:29:38,873 --> 00:29:46,283
+So, so far, and this is the only way we can get this to work, we use the, you
+know, we use a piece of paper and a pencil because that's what we have, right?
+
+533
+00:29:46,283 --> 00:29:51,183
+Well, maybe we could use a piece, you know, a notes app or we
+can use any spreadsheet or we can use something that's search.
+
+534
+00:29:51,938 --> 00:29:57,038
+, you know, like maybe down the road we might want to, you know, keep track of the orders and go back and see.
+
+535
+00:29:57,038 --> 00:30:07,538
+Historically, like when it comes to ordering the supplies, how do we know which are the most commonly
+used pizzas or com most commonly used supplies, which do we have more, need to have more of or less of?
+
+536
+00:30:07,543 --> 00:30:07,838
+Right?
+
+537
+00:30:08,348 --> 00:30:20,468
+So by examining the sort of domain around what is needs to get done within that particular
+sphere of, of the work, you can create a design like a, I mean a design in terms of.
+
+538
+00:30:21,338 --> 00:30:22,778
+The process of development.
+
+539
+00:30:22,778 --> 00:30:26,858
+You can write the little APIs, you can assign this, you know, create the assignments to people.
+
+540
+00:30:26,858 --> 00:30:30,698
+You can create user stories to facilitate, you know, the, that thing.
+
+541
+00:30:30,698 --> 00:30:33,398
+So if you think about, like, so take this back a step.
+
+542
+00:30:33,398 --> 00:30:37,438
+If this was, Hey, I want to write an iOS app that for ordering pizza, I.
+
+543
+00:30:37,883 --> 00:30:46,883
+Right now you have by examining the different, like by looking at this one particular
+domain, we know what is required in that particular domain of the business, right?
+
+544
+00:30:46,943 --> 00:30:51,149
+And then we can look, we can go and look at, you know, the, the order takers domain.
+
+545
+00:30:51,149 --> 00:30:53,999
+We can look at the guy drive in the car domain.
+
+546
+00:30:53,999 --> 00:30:57,509
+We can look at the guy ordering the supplies to make the pizza.
+
+547
+00:30:57,509 --> 00:31:00,389
+That's another domain that can be, can be examined.
+
+548
+00:31:00,389 --> 00:31:02,759
+So you look at, you break down your business into.
+
+549
+00:31:03,719 --> 00:31:08,729
+Different parts and you put it together, you create a plan to put it together and it's great looking.
+
+550
+00:31:08,729 --> 00:31:09,869
+Come, yeah, go ahead.
+
+551
+00:31:10,199 --> 00:31:10,709
+Well, I'm,
+
+552
+00:31:11,129 --> 00:31:16,139
+Leo Dion (host): what I'm hearing is a great opportunity to mo modularize your code.
+
+553
+00:31:16,769 --> 00:31:23,629
+Cause like just listening to your pizza analogy, I'm like, each domain has its own library attached to it.
+
+554
+00:31:23,629 --> 00:31:23,869
+Right.
+
+555
+00:31:23,869 --> 00:31:25,739
+And like, like or each
+
+556
+00:31:25,744 --> 00:31:26,349
+Tim Mitra (guest): switch it might be a package.
+
+557
+00:31:26,349 --> 00:31:27,549
+Package, yeah, exactly.
+
+558
+00:31:27,789 --> 00:31:27,949
+, right.
+
+559
+00:31:27,954 --> 00:31:29,879
+Leo Dion (host): And it's all testing within its own.
+
+560
+00:31:30,149 --> 00:31:30,419
+Its.
+
+561
+00:31:31,889 --> 00:31:33,899
+set, whatever its own domain.
+
+562
+00:31:33,979 --> 00:31:34,499
+Yeah, yeah.
+
+563
+00:31:34,499 --> 00:31:34,799
+Right.
+
+564
+00:31:34,799 --> 00:31:34,979
+Yeah.
+
+565
+00:31:34,979 --> 00:31:48,089
+As opposed to, because I, I know I've done this accidentally, and by that I mean like, I know it's, it's, it's
+naturally how you kind of factor things out is like the, the making the pizza does not care about delivering the pizza.
+
+566
+00:31:48,119 --> 00:31:49,559
+It only cares about making the pizza
+
+567
+00:31:49,559 --> 00:31:50,909
+Tim Mitra (guest): and Well, that's not true.
+
+568
+00:31:50,909 --> 00:31:51,479
+That's not true.
+
+569
+00:31:51,809 --> 00:31:52,779
+Well, you know what I mean?
+
+570
+00:31:53,384 --> 00:32:00,884
+When you, when you do your examination, you might have the drivers come and
+tell you, well, you know, Leo, the pizzas are hot when they come outta the oven.
+
+571
+00:32:01,394 --> 00:32:01,604
+Yeah, okay.
+
+572
+00:32:01,604 --> 00:32:02,654
+I need a way to handle that.
+
+573
+00:32:02,654 --> 00:32:02,924
+Right.
+
+574
+00:32:02,924 --> 00:32:03,854
+So like there, yeah.
+
+575
+00:32:03,884 --> 00:32:11,384
+So it's, it does help to have cross domain or what we're talking, I understand where
+the connection, multidisciplinary development, it pays to have those guys in the
+
+576
+00:32:11,384 --> 00:32:15,884
+room to have their sort of, because maybe there's a, maybe there's a way of doing it.
+
+577
+00:32:15,884 --> 00:32:18,134
+And, and if I can go back to the act shaving for a sec.
+
+578
+00:32:18,134 --> 00:32:21,584
+So do you, you, do you know the story about the ACT shaving, how that comes to being.
+
+579
+00:32:22,274 --> 00:32:22,544
+I think
+
+580
+00:32:22,544 --> 00:32:23,834
+Leo Dion (host): I've heard of it before, but I'll
+
+581
+00:32:23,834 --> 00:32:24,794
+Tim Mitra (guest): let you go ahead and repeat it.
+
+582
+00:32:24,794 --> 00:32:33,644
+Yeah, so, so it's one of my favorite things about like, when you're developing or thinking
+about a, an app, an app idea, and it's all, it's kind of like, don't reinvent the wheel, right?
+
+583
+00:32:33,644 --> 00:32:33,764
+Mm-hmm.
+
+584
+00:32:34,304 --> 00:32:37,844
+, or, or you, you know, the ney, you ain't gonna need that kind of thing, right?
+
+585
+00:32:37,844 --> 00:32:37,904
+Yeah.
+
+586
+00:32:37,904 --> 00:32:38,204
+Right.
+
+587
+00:32:38,204 --> 00:32:38,535
+The idea.
+
+588
+00:32:38,540 --> 00:32:38,904
+Yeah.
+
+589
+00:32:39,404 --> 00:32:42,224
+The idea is I want to get, I want to get Leo a gift, right?
+
+590
+00:32:42,344 --> 00:32:49,724
+And, and I know Leo likes, you know, he likes warm clothing cuz he lives
+in the northern climate and so he, I'm gonna make him a, a yak wool.
+
+591
+00:32:50,534 --> 00:32:50,864
+right?
+
+592
+00:32:51,284 --> 00:32:57,144
+Well, in order to make a yak, woo, it's kinda like a piece of story
+I just told, but to make a yak wool sweater, I need to have some y.
+
+593
+00:32:57,929 --> 00:32:58,259
+, right?
+
+594
+00:32:58,559 --> 00:33:00,389
+I also need to learn how to knit, right?
+
+595
+00:33:00,539 --> 00:33:02,729
+So to make a sweater for, for Leo kind of thing.
+
+596
+00:33:03,179 --> 00:33:08,309
+So, you know, first of all, so I gotta go and learn how to make, how to knit and develop that skill.
+
+597
+00:33:08,309 --> 00:33:10,799
+But in the meantime, I need to get this Yaqui.
+
+598
+00:33:10,804 --> 00:33:12,299
+Well, how do I get the Yaqui?
+
+599
+00:33:12,329 --> 00:33:16,529
+Well, I need to go to the store that makes the get, that supplies the Yaqui.
+
+600
+00:33:16,529 --> 00:33:18,659
+Well, maybe there isn't a store that makes the Yaqui.
+
+601
+00:33:18,689 --> 00:33:22,409
+Maybe I need to figure out how to make the Yaqui myself.
+
+602
+00:33:22,414 --> 00:33:24,689
+Well, then I have to go and explore how to make wool.
+
+603
+00:33:25,624 --> 00:33:26,184
+right?
+
+604
+00:33:26,184 --> 00:33:26,744
+Mm-hmm.
+
+605
+00:33:26,824 --> 00:33:27,224
+, and then mm-hmm.
+
+606
+00:33:27,304 --> 00:33:35,444
+, you know, how to, how to spin it, how to turn it into yarn, how to, you know, to make the sort of,
+and put it onto a spool so then I can, you know, knit it with my needing and needles kind of thing.
+
+607
+00:33:35,444 --> 00:33:35,714
+Right.
+
+608
+00:33:35,714 --> 00:33:40,754
+Well, you know, okay, so, but where do I get the supplies for the wool?
+
+609
+00:33:40,754 --> 00:33:43,394
+Like the raw fiber that makes the wool right.
+
+610
+00:33:43,394 --> 00:33:46,514
+While I need to go and get that from a yack, right?
+
+611
+00:33:47,054 --> 00:33:53,414
+Well, so then, but then I, in order to get the, convert the yack into the yarn, I need to figure out how to shave the.
+
+612
+00:33:54,824 --> 00:33:55,064
+, right.
+
+613
+00:33:55,064 --> 00:33:59,504
+And then, well, I don't have a yak here in Toronto and maybe,
+I don't think you have one in Lansing, Michigan either, maybe.
+
+614
+00:33:59,564 --> 00:33:59,774
+No.
+
+615
+00:33:59,804 --> 00:34:03,764
+So we might have to go to a zoo or might have to go to like, you know, might have to go to Tibet or something.
+
+616
+00:34:03,764 --> 00:34:05,024
+I don't just, I dunno, sorry.
+
+617
+00:34:05,024 --> 00:34:16,064
+Tibet, if you don't have yaks, but you have to go to Tibet and figure out how to get a yak and grow it and feed
+it and, you know, make it happy and keep it well enough that it'll keep you in supply of, of yak wall or yak fur.
+
+618
+00:34:16,064 --> 00:34:16,364
+Right?
+
+619
+00:34:16,414 --> 00:34:16,614
+Right.
+
+620
+00:34:17,054 --> 00:34:28,739
+And so the idea is like, you know, rather than thinking I need you, Find, you know, find someone
+who already knows how to do the act, will make the act, will get them to come and do it for you.
+
+621
+00:34:28,859 --> 00:34:31,889
+Or like, you know, don't look, look, look for swift packages.
+
+622
+00:34:32,309 --> 00:34:37,649
+Look for cocoa pods that do the p the part of the app that you don't need to do the heavy lifting on.
+
+623
+00:34:37,649 --> 00:34:40,649
+I mentioned before, don't try and write your own security, write stack?
+
+624
+00:34:41,129 --> 00:34:46,829
+You wanna basically use a known security stack to, to do key chain is one example of a, of a security stack, right?
+
+625
+00:34:47,364 --> 00:34:47,694
+Right.
+
+626
+00:34:47,764 --> 00:34:50,164
+I'm waiting for Apple to come and fix security for us.
+
+627
+00:34:51,214 --> 00:34:59,520
+, you know, but yeah, that, that, I think that that that the act,
+the Apple story's an old computer  fable about or parable about.
+
+628
+00:34:59,850 --> 00:35:00,030
+Yeah.
+
+629
+00:35:00,090 --> 00:35:01,770
+You know, not trying to build it yourself, right?
+
+630
+00:35:02,180 --> 00:35:02,670
+Leo Dion (host): Yeah.
+
+631
+00:35:02,670 --> 00:35:03,150
+Yeah.
+
+632
+00:35:03,240 --> 00:35:04,020
+Exactly.
+
+633
+00:35:04,157 --> 00:35:07,607
+It was funny cuz before the recording we were talking about that Facebook article.
+
+634
+00:35:08,057 --> 00:35:08,177
+Yeah.
+
+635
+00:35:08,177 --> 00:35:23,165
+And like, if you read that article, it's like, , they built everything themselves and they, yeah, it's, they
+try to, it tries to come across as victorious, but it doesn't sound sound like that's necessarily the case.
+
+636
+00:35:23,165 --> 00:35:24,501
+So yeah.
+
+637
+00:35:24,621 --> 00:35:24,831
+Yeah.
+
+638
+00:35:24,831 --> 00:35:25,671
+I totally agree.
+
+639
+00:35:25,701 --> 00:35:25,941
+Cool.
+
+640
+00:35:25,991 --> 00:35:31,232
+So before we close out, I wanted to talk about Apple rumors and history.
+
+641
+00:35:31,292 --> 00:35:31,352
+Mm.
+
+642
+00:35:32,042 --> 00:35:39,872
+Because we've, , we've been hearing a lot of rumors about a new, new piece of hardware, which, let me see.
+
+643
+00:35:39,932 --> 00:35:40,112
+Well,
+
+644
+00:35:40,112 --> 00:35:45,752
+Tim Mitra (guest): we, we always, I want to correct you and say we,
+every year we hear about a new piece of hardware that's coming, right?
+
+645
+00:35:45,972 --> 00:35:46,502
+Yeah, that's true.
+
+646
+00:35:46,562 --> 00:35:49,952
+We're still waiting for the, the 16 gigabyte white apple car, right?
+
+647
+00:35:50,372 --> 00:35:50,642
+Yeah,
+
+648
+00:35:50,642 --> 00:35:51,152
+Leo Dion (host): that's right.
+
+649
+00:35:51,157 --> 00:35:51,602
+That's right.
+
+650
+00:35:51,602 --> 00:35:57,812
+This might, so this might be out if it, if it's out after it's been announced, which is mm-hmm.
+
+651
+00:35:57,892 --> 00:35:58,652
+is a possibility.
+
+652
+00:35:58,652 --> 00:36:00,362
+We won't have to cut this part, but we'll see.
+
+653
+00:36:02,432 --> 00:36:03,242
+Tim Mitra (guest): so it won't be out.
+
+654
+00:36:03,242 --> 00:36:04,142
+It won't be out in March.
+
+655
+00:36:04,142 --> 00:36:04,652
+Trust me.
+
+656
+00:36:05,222 --> 00:36:05,372
+You
+
+657
+00:36:05,372 --> 00:36:05,882
+Leo Dion (host): don't think so?
+
+658
+00:36:06,212 --> 00:36:07,022
+No, I don't think so.
+
+659
+00:36:07,082 --> 00:36:08,642
+You don't think it's gonna be the March event thing?
+
+660
+00:36:08,672 --> 00:36:08,972
+Okay.
+
+661
+00:36:09,002 --> 00:36:09,302
+Tim Mitra (guest): No.
+
+662
+00:36:09,302 --> 00:36:10,832
+It sounds like a WW d c thing.
+
+663
+00:36:10,832 --> 00:36:14,612
+I was listening to Jim, Jim Del Rumpel and Dave Mark talk about it on their show the other day.
+
+664
+00:36:14,612 --> 00:36:15,512
+I think that was a good call.
+
+665
+00:36:15,512 --> 00:36:17,812
+It's probably gonna be a WW C thing and the whole over.
+
+666
+00:36:18,977 --> 00:36:21,407
+I was talking to Daniel Steinberg on, on na on about it.
+
+667
+00:36:21,407 --> 00:36:26,717
+It's, it sound, I, it's probably gonna be like the central theme of Wwc wwdc, right?
+
+668
+00:36:26,717 --> 00:36:29,717
+This year it's gonna be all about this, this device we're talking about.
+
+669
+00:36:29,722 --> 00:36:30,017
+Right?
+
+670
+00:36:30,077 --> 00:36:31,787
+Leo Dion (host): We're all gonna be using reality kit.
+
+671
+00:36:31,875 --> 00:36:32,055
+Yeah.
+
+672
+00:36:32,535 --> 00:36:35,745
+So I don't Did you listen to ATP at all?
+
+673
+00:36:35,775 --> 00:36:36,665
+Tim Mitra (guest): I didn't, no, I didn't.
+
+674
+00:36:36,665 --> 00:36:41,715
+I, I listened to it a couple of weeks ago when they talked about M one
+s, but I haven't listened or Mastodon, but I haven't listened since.
+
+675
+00:36:42,295 --> 00:36:42,785
+Leo Dion (host): Okay.
+
+676
+00:36:42,785 --> 00:36:43,105
+Okay.
+
+677
+00:36:43,275 --> 00:36:45,345
+Yeah, I mean, they, they did a pretty good job.
+
+678
+00:36:46,365 --> 00:36:50,235
+talking about how rumors and new platforms typically go.
+
+679
+00:36:50,505 --> 00:36:50,595
+Mm-hmm.
+
+680
+00:36:50,840 --> 00:36:56,890
+and the story with the iPad, the story with the Apple Watch, and
+like how it was rumored and what the market was at that time.
+
+681
+00:36:56,898 --> 00:36:58,453
+I thought they did a, did a great job.
+
+682
+00:36:58,613 --> 00:36:59,223
+Mm-hmm.
+
+683
+00:36:59,288 --> 00:37:03,198
+Kind of talking about how these XR glasses are gonna fit into it.
+
+684
+00:37:03,198 --> 00:37:07,378
+Pro reality, reality pro deluxe max.com.
+
+685
+00:37:07,398 --> 00:37:08,118
+, but like Ultra.
+
+686
+00:37:08,688 --> 00:37:09,288
+You've got Ultra.
+
+687
+00:37:09,293 --> 00:37:09,498
+Ultra, yeah.
+
+688
+00:37:09,498 --> 00:37:10,638
+Sorry, I forgot about the new one.
+
+689
+00:37:10,698 --> 00:37:11,208
+Ultra.
+
+690
+00:37:11,298 --> 00:37:12,438
+They still haven't done Deluxe.
+
+691
+00:37:12,438 --> 00:37:13,488
+I'm waiting for deluxe.
+
+692
+00:37:13,998 --> 00:37:14,658
+Tim Mitra (guest): Looking forward to that.
+
+693
+00:37:14,658 --> 00:37:16,128
+I don't think Apple does Deluxe.
+
+694
+00:37:16,578 --> 00:37:17,478
+They don't do Deluxe.
+
+695
+00:37:17,508 --> 00:37:17,748
+Leo Dion (host): Okay.
+
+696
+00:37:17,748 --> 00:37:19,968
+No, no, not yet.
+
+697
+00:37:20,043 --> 00:37:20,853
+Never say never.
+
+698
+00:37:20,858 --> 00:37:21,136
+Right.
+
+699
+00:37:21,136 --> 00:37:21,437
+Yeah.
+
+700
+00:37:21,967 --> 00:37:23,437
+. So we, yeah.
+
+701
+00:37:23,467 --> 00:37:28,327
+I mean, it seems to, we, we talked about this on, on more than just code.
+
+702
+00:37:28,427 --> 00:37:28,917
+Yeah.
+
+703
+00:37:29,197 --> 00:37:33,427
+But my big whole thing was like, I don't see the market for it, especially where Apple is at.
+
+704
+00:37:33,877 --> 00:37:33,997
+Yeah.
+
+705
+00:37:34,085 --> 00:37:36,695
+Especially with games and bus business being the two.
+
+706
+00:37:37,985 --> 00:37:43,055
+, they want to do Microsoft teams with VR or they want to do games with vr.
+
+707
+00:37:43,055 --> 00:37:43,145
+Mm-hmm.
+
+708
+00:37:43,222 --> 00:37:43,312
+Right.
+
+709
+00:37:43,402 --> 00:37:50,495
+Apple's not very good at either of those markets and it's kind of
+troubling trying to figure out where they're trying to position this.
+
+710
+00:37:50,496 --> 00:37:51,306
+Well, yeah.
+
+711
+00:37:51,306 --> 00:37:52,746
+What do, what's kind of your thoughts on, well,
+
+712
+00:37:52,746 --> 00:37:54,726
+Tim Mitra (guest): I want to take part a couple of things you said there, right?
+
+713
+00:37:54,756 --> 00:38:00,336
+What one thing about Apple not being very good at any, you an insert thing here, right?
+
+714
+00:38:00,606 --> 00:38:00,876
+Yeah.
+
+715
+00:38:00,982 --> 00:38:07,672
+And we talked about this on more than just code many, many times, but I honestly believe Apple leads from behind, right?
+
+716
+00:38:08,392 --> 00:38:08,842
+Apple.
+
+717
+00:38:08,842 --> 00:38:11,452
+If you think about it, think about it for a minute, right?
+
+718
+00:38:11,482 --> 00:38:13,522
+Apple has done some amazing things.
+
+719
+00:38:13,527 --> 00:38:18,802
+They've, they've turned the world on its ear with the iPhone, the iPod, you know, all kinds of different things.
+
+720
+00:38:19,402 --> 00:38:23,502
+But Apple, generally speaking, Innovate.
+
+721
+00:38:23,722 --> 00:38:28,642
+I mean, they innovate, but they didn't innovate the idea of something every single time.
+
+722
+00:38:28,732 --> 00:38:29,122
+Right?
+
+723
+00:38:29,212 --> 00:38:30,262
+They're never the first.
+
+724
+00:38:30,442 --> 00:38:30,862
+Leo Dion (host): They're never
+
+725
+00:38:30,862 --> 00:38:31,252
+Tim Mitra (guest): the first.
+
+726
+00:38:31,252 --> 00:38:34,852
+They're never the first, but they're generally one, one of the best, if not the best.
+
+727
+00:38:34,852 --> 00:38:35,182
+Right.
+
+728
+00:38:35,262 --> 00:38:38,952
+Because they take the time to look at something.
+
+729
+00:38:39,957 --> 00:38:42,297
+work out all the sort of kinks that they can see.
+
+730
+00:38:42,297 --> 00:38:51,057
+I mean, there's obviously, there's always loose ends and there's always kinks and there's always gonna be
+like, you know, 10% or 20% of society's not gonna be happy with what they've done, but, or think it's too
+
+731
+00:38:51,062 --> 00:38:51,627
+Leo Dion (host): expensive.
+
+732
+00:38:51,687 --> 00:38:52,137
+Tim Mitra (guest): But, yeah.
+
+733
+00:38:52,437 --> 00:38:53,217
+Well, yeah.
+
+734
+00:38:53,517 --> 00:38:57,087
+Given, given it's too expensive, you know, he said the guy with the ultra watch on, right.
+
+735
+00:38:57,662 --> 00:38:59,523
+But you, but but.
+
+736
+00:39:00,978 --> 00:39:01,881
+, you know yeah.
+
+737
+00:39:01,911 --> 00:39:08,811
+You, you, they, they, they take an idea and they, you know, and
+it's been this like, you know, from the Apple two computer, right?
+
+738
+00:39:09,351 --> 00:39:13,911
+Was something that Steve Wazniak saw in home brew and saw in the world.
+
+739
+00:39:13,916 --> 00:39:18,621
+He didn't invent the, the portable computer, but he invented the portable computer, right?
+
+740
+00:39:19,131 --> 00:39:20,241
+And then you got the Mac.
+
+741
+00:39:20,491 --> 00:39:30,121
+Well, the Mac was not it was innovative as a package and it was innovative from
+a concept of the bicycle for the mind, but it was all Xerox park's work, right?
+
+742
+00:39:30,121 --> 00:39:33,361
+So it was, so it was Windows, windows, the menu and all that kind of stuff.
+
+743
+00:39:33,721 --> 00:39:35,191
+All that desktop metaphor.
+
+744
+00:39:35,191 --> 00:39:35,761
+That was all.
+
+745
+00:39:35,761 --> 00:39:37,861
+That all came from Xerox Park, right?
+
+746
+00:39:38,281 --> 00:39:39,361
+Then you get into iPod.
+
+747
+00:39:39,366 --> 00:39:49,596
+Well, iPod was a reaction to all the MP3 players that were out there that, you know,
+Tearing up the market back in, in like, was that the nineties, early nineties, mid nineties?
+
+748
+00:39:49,596 --> 00:39:49,626
+Mm.
+
+749
+00:39:49,926 --> 00:39:50,706
+Leo Dion (host): No, not even.
+
+750
+00:39:50,706 --> 00:39:51,816
+I would say early aughts.
+
+751
+00:39:52,416 --> 00:39:52,716
+Tim Mitra (guest): Yes.
+
+752
+00:39:52,926 --> 00:39:54,936
+Oh, 2000.
+
+753
+00:39:55,536 --> 00:39:58,206
+So, I mean, so, so they, so Apple didn't invent.
+
+754
+00:39:58,791 --> 00:40:06,621
+MP3 players, but they, they entered the iPod, which was sort of their take on a better, a better MP3 player.
+
+755
+00:40:06,621 --> 00:40:06,831
+Right.
+
+756
+00:40:06,831 --> 00:40:13,521
+And then they, they, the little nanos and the shuffles, they,
+that was to sort of squash all the other MP3 players out there.
+
+757
+00:40:13,911 --> 00:40:14,691
+So that was cool.
+
+758
+00:40:14,691 --> 00:40:14,871
+Right.
+
+759
+00:40:14,871 --> 00:40:18,951
+And then that went along great and, and iPod was doing pretty cool.
+
+760
+00:40:18,956 --> 00:40:22,461
+And it wasn't until they bought another piece of software, I'm trying to remember the name of havoc.
+
+761
+00:40:23,646 --> 00:40:24,816
+Snap NP or something like that.
+
+762
+00:40:24,816 --> 00:40:29,316
+I forget what it was, but it actually, it actually was an app that ran on your Mac sound.
+
+763
+00:40:30,636 --> 00:40:31,686
+I've, I've got it behind me.
+
+764
+00:40:31,686 --> 00:40:33,336
+I'm just, so, I'm just, you're talking about iTunes?
+
+765
+00:40:33,966 --> 00:40:35,646
+No, well, it became iTunes.
+
+766
+00:40:35,716 --> 00:40:36,366
+Right, right, right.
+
+767
+00:40:36,366 --> 00:40:36,846
+That's what I meant.
+
+768
+00:40:36,846 --> 00:40:37,116
+Yeah.
+
+769
+00:40:37,446 --> 00:40:37,626
+Yeah.
+
+770
+00:40:37,631 --> 00:40:45,639
+So they bought, they acquired this company that had built this software
+that let you rip your C, your C your CD music into, into MP3s, right?
+
+771
+00:40:45,639 --> 00:40:46,079
+Mm-hmm.
+
+772
+00:40:46,159 --> 00:40:46,239
+. Okay.
+
+773
+00:40:46,239 --> 00:40:47,409
+And then feed them onto your thing.
+
+774
+00:40:47,409 --> 00:40:50,049
+So they, so iTunes became a way to create.
+
+775
+00:40:51,159 --> 00:40:55,269
+MP3s that you can put on and man eventually manage your, your iPods.
+
+776
+00:40:55,299 --> 00:41:01,689
+And it wasn't until Apple rolled that iTunes out onto Windows that the iPod really took off.
+
+777
+00:41:02,139 --> 00:41:03,079
+Yes, yes.
+
+778
+00:41:03,084 --> 00:41:03,369
+Right.
+
+779
+00:41:03,374 --> 00:41:09,939
+Because we talked about the other day that, you know, 5% of the market
+is Apple, the rest is Windows, or most of his windows, 85% is Windows.
+
+780
+00:41:09,939 --> 00:41:10,179
+Right.
+
+781
+00:41:10,179 --> 00:41:10,719
+So that's mm-hmm.
+
+782
+00:41:10,729 --> 00:41:10,760
+, so that's mm-hmm.
+
+783
+00:41:11,049 --> 00:41:11,769
+a huge market.
+
+784
+00:41:11,769 --> 00:41:13,569
+It's kinda like I was talking about China earlier, right?
+
+785
+00:41:13,869 --> 00:41:14,559
+Yeah, yeah.
+
+786
+00:41:14,559 --> 00:41:14,560
+Yeah.
+
+787
+00:41:15,189 --> 00:41:17,199
+. So that was what put the iPod on the map.
+
+788
+00:41:17,229 --> 00:41:19,059
+Now all of a sudden everybody had an iPad.
+
+789
+00:41:19,059 --> 00:41:19,569
+It didn't matter.
+
+790
+00:41:19,809 --> 00:41:20,949
+Or sorry, iPod.
+
+791
+00:41:20,954 --> 00:41:21,219
+iPod.
+
+792
+00:41:21,249 --> 00:41:21,519
+Correct.
+
+793
+00:41:21,519 --> 00:41:22,059
+You correct me.
+
+794
+00:41:22,059 --> 00:41:22,299
+Yeah.
+
+795
+00:41:22,809 --> 00:41:24,639
+Everybody had an iPod, you know.
+
+796
+00:41:24,716 --> 00:41:29,167
+And and that sort of, you know, and then the next thing next, I remember driving to McElroy.
+
+797
+00:41:29,167 --> 00:41:34,567
+I was told this story a thousand times with my wife to down to San
+Francisco, and she says like, what do you think the new thing is gonna be?
+
+798
+00:41:34,567 --> 00:41:40,027
+And I think, well, I've been hearing rumors of a phone, but I have no idea what Apple's gonna do with a cell phone.
+
+799
+00:41:40,027 --> 00:41:41,017
+Like, why bother?
+
+800
+00:41:41,017 --> 00:41:41,887
+They're making a cell phone.
+
+801
+00:41:42,697 --> 00:41:42,907
+Right.
+
+802
+00:41:42,907 --> 00:41:43,897
+And then it turned out well.
+
+803
+00:41:43,897 --> 00:41:44,107
+Okay.
+
+804
+00:41:44,107 --> 00:41:48,547
+It's not just a cell phone, it's a phone, it's an HomePod, it's, you know, or it's an iPod.
+
+805
+00:41:48,552 --> 00:41:50,257
+And it's an iPod and it's an internet device, right.
+
+806
+00:41:50,287 --> 00:41:52,117
+As as the famous, the classic, the
+
+807
+00:41:52,117 --> 00:41:52,807
+Leo Dion (host): classic three
+
+808
+00:41:52,807 --> 00:41:53,167
+Tim Mitra (guest): things.
+
+809
+00:41:53,167 --> 00:41:53,467
+Yes.
+
+810
+00:41:53,527 --> 00:41:54,337
+Yeah, the three things.
+
+811
+00:41:54,337 --> 00:41:54,577
+One more.
+
+812
+00:41:54,577 --> 00:41:55,207
+Yeah, one more thing.
+
+813
+00:41:55,207 --> 00:42:01,927
+And there's three things and one more thing, but you know, so that, that became the, that sort of tipped apple on it.
+
+814
+00:42:01,927 --> 00:42:10,927
+I mean, so as you go through every sort of thing that, think about anything that apple's
+done other than Apple silicone, well, apple silicone was kind of like AMD's technology.
+
+815
+00:42:11,587 --> 00:42:14,287
+Is it AMD that makes the, the arm.
+
+816
+00:42:15,157 --> 00:42:15,907
+Arm, sorry, arm.
+
+817
+00:42:15,907 --> 00:42:16,447
+That's what I'm thinking of.
+
+818
+00:42:16,447 --> 00:42:17,017
+Thank you Arm.
+
+819
+00:42:17,027 --> 00:42:17,267
+Mm-hmm.
+
+820
+00:42:17,347 --> 00:42:18,457
+, it's arm technology.
+
+821
+00:42:18,457 --> 00:42:18,757
+Right?
+
+822
+00:42:18,827 --> 00:42:24,007
+And, and even the multi-touch device that we have on our iPhones
+and our iPads, that was invented by somebody else as well, right?
+
+823
+00:42:24,007 --> 00:42:24,067
+Yeah.
+
+824
+00:42:24,067 --> 00:42:28,417
+So Apple's good at putting together a synergy of, of.
+
+825
+00:42:28,822 --> 00:42:32,362
+Ideas in such a way that it makes sense to the majority of people.
+
+826
+00:42:32,632 --> 00:42:37,582
+It improves the quality of their life, which is why people buy apple, mu apple stuff.
+
+827
+00:42:37,882 --> 00:42:41,572
+They don't buy the gigahertz, they don't buy the megawatts, you know, they buy very much.
+
+828
+00:42:41,572 --> 00:42:44,302
+So yeah, this makes me feel good, right?
+
+829
+00:42:44,512 --> 00:42:44,752
+Yeah.
+
+830
+00:42:44,932 --> 00:42:50,842
+And, and Apple cares about me feeling good and looking good with
+my ultra watch on my wrist, which just looks really sexy, right?
+
+831
+00:42:50,842 --> 00:42:51,592
+It does look good.
+
+832
+00:42:52,042 --> 00:42:56,823
+, 
+Leo Dion (host): I just upgraded speaking with, I just upgraded to a series seven from a series.
+
+833
+00:42:57,163 --> 00:42:58,443
+Six, I think.
+
+834
+00:42:58,683 --> 00:42:58,983
+Yeah.
+
+835
+00:42:59,073 --> 00:43:03,943
+And the watch size, I'm just like, oh my gosh, I can't, because I went from 40 to 45.
+
+836
+00:43:03,943 --> 00:43:04,803
+Oh, the smaller size to the bigger one.
+
+837
+00:43:04,803 --> 00:43:05,193
+Yeah.
+
+838
+00:43:05,403 --> 00:43:05,793
+Yeah.
+
+839
+00:43:05,793 --> 00:43:08,673
+And I'm like, I couldn't even imagine going into an ultra.
+
+840
+00:43:08,678 --> 00:43:08,943
+So
+
+841
+00:43:09,003 --> 00:43:10,473
+Tim Mitra (guest): it's actually not that much bigger.
+
+842
+00:43:10,473 --> 00:43:11,043
+It's thicker.
+
+843
+00:43:11,048 --> 00:43:12,273
+It's heavier, right.
+
+844
+00:43:12,273 --> 00:43:15,033
+It's, I mean, it's thicker this way than, but, and it is.
+
+845
+00:43:15,093 --> 00:43:15,453
+It is.
+
+846
+00:43:15,513 --> 00:43:15,843
+It is.
+
+847
+00:43:15,873 --> 00:43:24,093
+It took a while for my wrist to get used to it, but physically, like size-wise,
+what I love about this is, for me, I'm almost nervous about cracking the edge of.
+
+848
+00:43:25,353 --> 00:43:27,813
+my phone on the, on a brick as I walk through a doorway.
+
+849
+00:43:27,843 --> 00:43:28,023
+Right.
+
+850
+00:43:28,023 --> 00:43:29,973
+Well this has got like a titan, titanium ridge all over.
+
+851
+00:43:29,973 --> 00:43:30,633
+That's one of my watches.
+
+852
+00:43:31,173 --> 00:43:31,293
+Yeah.
+
+853
+00:43:31,293 --> 00:43:35,043
+And for me, the big, the big selling point for me is the one button to get activities going.
+
+854
+00:43:35,943 --> 00:43:37,113
+Oh, you know, nice.
+
+855
+00:43:37,113 --> 00:43:39,303
+The activity button where I think it's called that.
+
+856
+00:43:39,313 --> 00:43:39,873
+Leo Dion (host): Yeah, yeah, yeah.
+
+857
+00:43:39,873 --> 00:43:41,223
+No, I know exactly what you mean.
+
+858
+00:43:41,316 --> 00:43:41,436
+I'm
+
+859
+00:43:41,441 --> 00:43:45,876
+Tim Mitra (guest): not a huge, I'm, to be honest with you, I wear a watch every day, but, but watch is not my thing.
+
+860
+00:43:45,876 --> 00:43:48,156
+I mean, the watch os was a real disappointment.
+
+861
+00:43:49,626 --> 00:43:51,546
+Watch os 1.0 was a real disappointment.
+
+862
+00:43:51,551 --> 00:43:51,846
+Right.
+
+863
+00:43:52,491 --> 00:43:52,761
+Yeah.
+
+864
+00:43:52,898 --> 00:43:57,038
+Leo Dion (host): Going back, talking about the headset, like okay, like the, the
+
+865
+00:43:57,038 --> 00:43:58,688
+Tim Mitra (guest): one thing that, so we're talking about VR goggles.
+
+866
+00:43:58,688 --> 00:44:00,218
+I don't think we've actually said that to people.
+
+867
+00:44:00,218 --> 00:44:03,548
+We're talking about the VR sort of a reality.
+
+868
+00:44:03,548 --> 00:44:07,038
+Reality vr, that's what we be called vr, just wanna be clear with people.
+
+869
+00:44:07,106 --> 00:44:11,156
+. Leo Dion (host): So one of the points I made on ATP was that like, and we're talking about these guys
+
+870
+00:44:11,156 --> 00:44:13,466
+Tim Mitra (guest): here, the a augmented reality device.
+
+871
+00:44:13,616 --> 00:44:14,156
+Leo Dion (host): Exactly.
+
+872
+00:44:14,156 --> 00:44:15,596
+They look exactly like that.
+
+873
+00:44:15,596 --> 00:44:15,806
+Tim Mitra (guest): Yeah.
+
+874
+00:44:16,016 --> 00:44:17,456
+It's gonna be exactly this.
+
+875
+00:44:17,486 --> 00:44:17,666
+Yeah.
+
+876
+00:44:17,966 --> 00:44:18,116
+The
+
+877
+00:44:18,116 --> 00:44:22,671
+Leo Dion (host): one thing they said was like, multitouch was a big killer feature of the iPhone.
+
+878
+00:44:22,711 --> 00:44:22,861
+Yeah.
+
+879
+00:44:22,891 --> 00:44:26,551
+That made it more like, okay, now I see why this is such a
+
+880
+00:44:26,551 --> 00:44:26,791
+Tim Mitra (guest): big deal.
+
+881
+00:44:26,791 --> 00:44:29,450
+Also, the biggest downfall, cuz, I mean, have you ever tried to type on an.
+
+882
+00:44:29,459 --> 00:44:29,789
+? 
+
+Yeah.
+
+883
+00:44:29,789 --> 00:44:34,499
+Why ? Well, cuz I mean, like, why did they have to make a, a keyboard for it if it was so good?
+
+884
+00:44:35,699 --> 00:44:36,539
+, like, I have Right.
+
+885
+00:44:37,259 --> 00:44:38,849
+You know, I have the magic keyboard here and I
+
+886
+00:44:38,849 --> 00:44:39,269
+Leo Dion (host): love it.
+
+887
+00:44:39,269 --> 00:44:40,019
+Well, I miss that.
+
+888
+00:44:40,109 --> 00:44:41,399
+I mean, I miss tactile.
+
+889
+00:44:41,849 --> 00:44:44,939
+I mean, there is benefits to how Blackberry did it, but it Yeah.
+
+890
+00:44:44,999 --> 00:44:46,399
+Tim Mitra (guest): In any case, I don't know.
+
+891
+00:44:49,169 --> 00:44:49,799
+It's good and bad.
+
+892
+00:44:49,799 --> 00:44:51,029
+I mean, I, I, you know, I right.
+
+893
+00:44:51,109 --> 00:44:51,379
+Yeah.
+
+894
+00:44:51,389 --> 00:44:51,789
+Well,
+
+895
+00:44:51,789 --> 00:44:53,359
+Leo Dion (host): and, but I think that's the thing is like the.
+
+896
+00:44:54,199 --> 00:45:03,479
+, even with multitouch and losing a physical keyboard, like they way
+overcame with the snappiness and, and the great, the, the great ux.
+
+897
+00:45:03,523 --> 00:45:04,233
+Lately the auto,
+
+898
+00:45:04,233 --> 00:45:05,233
+Tim Mitra (guest): you see that is awful.
+
+899
+00:45:05,923 --> 00:45:07,273
+What's that said lately?
+
+900
+00:45:07,278 --> 00:45:08,353
+The autocorrect is awful.
+
+901
+00:45:08,358 --> 00:45:10,303
+Like it's just, it's just lost its mind.
+
+902
+00:45:10,308 --> 00:45:15,613
+I wish it was a way to reset your, your library of auto, of your auto complete nonsense,
+
+903
+00:45:15,613 --> 00:45:15,883
+Leo Dion (host): right?
+
+904
+00:45:16,063 --> 00:45:16,153
+Yeah.
+
+905
+00:45:16,153 --> 00:45:16,423
+Yes.
+
+906
+00:45:16,423 --> 00:45:17,023
+Exactly.
+
+907
+00:45:17,023 --> 00:45:17,683
+Exactly.
+
+908
+00:45:17,704 --> 00:45:20,329
+But like even with like the dynamic island, like.
+
+909
+00:45:21,274 --> 00:45:25,894
+I didn't buy a new iPhone, but it's like impressive how apple's like, oh, you did okay.
+
+910
+00:45:25,894 --> 00:45:27,844
+But you're like, you saw that presentation.
+
+911
+00:45:27,844 --> 00:45:32,734
+You're like, oh, apple always comes up with some clever workaround for some physical.
+
+912
+00:45:32,854 --> 00:45:35,764
+Tim Mitra (guest): Well, can I tell you about some of the problems with the dynamic island?
+
+913
+00:45:36,274 --> 00:45:37,114
+Leo Dion (host): Not, not yet.
+
+914
+00:45:37,144 --> 00:45:38,614
+I wanna, I want to go back to the headset.
+
+915
+00:45:39,004 --> 00:45:40,105
+I wanna go back to the headset.
+
+916
+00:45:40,159 --> 00:45:40,399
+But
+
+917
+00:45:40,399 --> 00:45:43,879
+Tim Mitra (guest): like my recommendations, don't buy more than one headset, 1.0.
+
+918
+00:45:45,484 --> 00:45:46,264
+. 
+Leo Dion (host): Yeah, right.
+
+919
+00:45:46,264 --> 00:45:48,299
+We'll, going back to the Apple Watch or the home phone.
+
+920
+00:45:48,299 --> 00:45:48,389
+Well,
+
+921
+00:45:48,389 --> 00:45:49,259
+Tim Mitra (guest): no, not so much that.
+
+922
+00:45:49,739 --> 00:45:49,979
+Yeah.
+
+923
+00:45:49,979 --> 00:45:51,929
+It comes back to, we'll get to my point in a minute.
+
+924
+00:45:52,199 --> 00:45:52,469
+Sorry.
+
+925
+00:45:52,529 --> 00:45:52,763
+Continue.
+
+926
+00:45:52,780 --> 00:46:00,050
+Leo Dion (host): But like, do you think that there, what, what could possibly
+be like a killer feature that would make these more substantial that than like
+
+927
+00:46:00,154 --> 00:46:08,554
+Then the current sets of VR headsets mean because like I had, I had
+like, I had this Windows Mobile smartphone before the iPhone came out.
+
+928
+00:46:08,554 --> 00:46:12,754
+And like my Windows Mobile, I'm not talking the one that was actually half decent looking.
+
+929
+00:46:12,754 --> 00:46:16,504
+I'm talking like basically was Windows 98 on a phone?
+
+930
+00:46:16,864 --> 00:46:17,584
+It was garbage.
+
+931
+00:46:17,589 --> 00:46:18,484
+You had to have I remember those.
+
+932
+00:46:18,484 --> 00:46:18,694
+Yeah.
+
+933
+00:46:18,934 --> 00:46:22,324
+And then people who are like, oh, how are they gonna make the iPhone any better than this?
+
+934
+00:46:22,324 --> 00:46:23,524
+And then they like totally.
+
+935
+00:46:24,119 --> 00:46:38,249
+And like to me, like that's, that's the only thing I could see is like, they have something that is going to be
+like, we're gonna look back and be like, oh my gosh, the ocul Oculus is so old and like, it's so janky and like Apple
+
+936
+00:46:38,249 --> 00:46:38,819
+Tim Mitra (guest): totally new.
+
+937
+00:46:38,819 --> 00:46:40,049
+It doesn't even come in titanium.
+
+938
+00:46:40,049 --> 00:46:40,559
+Exactly.
+
+939
+00:46:40,559 --> 00:46:40,829
+Yeah.
+
+940
+00:46:41,899 --> 00:46:44,159
+Leo Dion (host): with the, with the orange button on the side, right?
+
+941
+00:46:44,249 --> 00:46:44,459
+Yeah.
+
+942
+00:46:44,552 --> 00:46:49,082
+What could be the thing that like, like Apple could do with these that's, it's gonna be.
+
+943
+00:46:49,717 --> 00:46:50,377
+Oh, that's it.
+
+944
+00:46:50,437 --> 00:46:51,457
+Now I, Andrew, get it.
+
+945
+00:46:51,517 --> 00:46:53,377
+Like, what could I, I can't even think of it.
+
+946
+00:46:54,337 --> 00:46:57,157
+. 
+Tim Mitra (guest): Well, I mean, we talked about that the other day too, is, is the watch.
+
+947
+00:46:57,217 --> 00:47:01,387
+You know, initially the watch was not a fitness device, but it is a fitness device.
+
+948
+00:47:01,387 --> 00:47:06,247
+I mean, it's totally like I bought, I bought the four because of the EKG again, when I talked about the gray hair.
+
+949
+00:47:06,247 --> 00:47:06,547
+Right.
+
+950
+00:47:06,637 --> 00:47:08,527
+You know, the EKGs important to me, right?
+
+951
+00:47:08,532 --> 00:47:08,967
+Yeah.
+
+952
+00:47:08,967 --> 00:47:08,968
+Yeah.
+
+953
+00:47:09,056 --> 00:47:10,736
+Blood is an important thing.
+
+954
+00:47:10,966 --> 00:47:15,376
+Not so much to me, but like the last couple of years, people getting covid blood was a huge thing.
+
+955
+00:47:15,376 --> 00:47:16,346
+Right, right.
+
+956
+00:47:16,355 --> 00:47:23,893
+Blood oxygen levels, but, or, you know I, I'm not a lady so I really
+can't speak to cycle tracking, but I'm sure that's an important thing.
+
+957
+00:47:23,893 --> 00:47:23,983
+Right.
+
+958
+00:47:23,983 --> 00:47:32,713
+I mean, I've, I've tried to get, I've tried to get my wife pregnant and
+that was a chore, you know, with, with thermometers and log books and yeah.
+
+959
+00:47:32,713 --> 00:47:35,023
+I mean, please solve that problem for me.
+
+960
+00:47:35,023 --> 00:47:36,133
+Apple, thank you very much.
+
+961
+00:47:36,133 --> 00:47:37,504
+Right, ? I think, I think that you.
+
+962
+00:47:38,429 --> 00:47:43,796
+Again, I think we also agreed to agree that we are not the target market for this product.
+
+963
+00:47:43,796 --> 00:47:51,258
+You and I, but but I, I don't know, like, I think I, I riffed on the idea of, of maybe, you know, heads up navigation.
+
+964
+00:47:51,271 --> 00:47:55,261
+You know, golf maybe tells you how far the hole is from your, from your putt, right?
+
+965
+00:47:55,261 --> 00:47:56,458
+Or your, or your shot.
+
+966
+00:47:56,458 --> 00:48:08,153
+Maybe it's used, you know, can be used in, in industry where, you know, like warehouse management or, I think
+I, I remember seeing an early I ar example back in the early days of the iPhone where you held up your camera.
+
+967
+00:48:08,878 --> 00:48:10,918
+I think it was like Yelp, right?
+
+968
+00:48:10,918 --> 00:48:17,998
+And it showed like you could hold it up and move it around like this and it would show you like,
+okay, there's a pizza restaurant over there and there's an Italian restaurant over there and yeah.
+
+969
+00:48:18,003 --> 00:48:18,088
+Yeah.
+
+970
+00:48:18,088 --> 00:48:24,868
+And as you sort of, it sort of figured out where you were pointing based
+on the G P s, what was in front of you, maybe that's something to do.
+
+971
+00:48:24,868 --> 00:48:25,228
+Heads up.
+
+972
+00:48:25,843 --> 00:48:32,092
+, maybe it's heads, maybe it's like hey, you know, you're reading your
+text messages, there's a telephone pole you're walking into, right?
+
+973
+00:48:32,092 --> 00:48:36,382
+Like, like maybe it's, maybe it's heads up navigation for pedestrians or bike rider.
+
+974
+00:48:36,472 --> 00:48:39,022
+Maybe you're riding a bike and it gives you like a heads up display, right?
+
+975
+00:48:39,462 --> 00:48:40,152
+That's true.
+
+976
+00:48:40,163 --> 00:48:46,806
+Or maybe, yeah, I mean, or like in the gaming thing, maybe you can play like Red Dead redemption as if you're.
+
+977
+00:48:47,631 --> 00:48:49,461
+The actual environment of that world.
+
+978
+00:48:49,461 --> 00:48:51,681
+I mean, I dunno if you've ever seen the world, but it's huge.
+
+979
+00:48:51,681 --> 00:48:56,601
+Like, it goes on, like, you know, it takes you 20 minutes to go from one town to the other, riding a horse.
+
+980
+00:48:56,601 --> 00:48:59,181
+I mean, it literally, like, it does that, you know?
+
+981
+00:48:59,751 --> 00:48:59,811
+Yeah.
+
+982
+00:48:59,816 --> 00:49:04,114
+So, I mean, from a gaming point of view, I think there's, there's, there's opportunities there.
+
+983
+00:49:04,141 --> 00:49:04,681
+Heads up.
+
+984
+00:49:04,741 --> 00:49:17,617
+I mean, like maybe a doctor could be wearing it and just sort of like, look at you and maybe he put some sensors on you
+and he can just look at you and see that your heart's like,  properly working or, or your blood ox is not good or Right.
+
+985
+00:49:17,617 --> 00:49:22,717
+I mean, I'm thinking, I can think of any number of ways that, that AR and VR could be used.
+
+986
+00:49:22,717 --> 00:49:26,137
+I mean, I, I think, joked with you about the fact that people were having relations.
+
+987
+00:49:26,707 --> 00:49:28,657
+Using VR back in the early days.
+
+988
+00:49:29,267 --> 00:49:30,147
+Right, right, right, right.
+
+989
+00:49:30,152 --> 00:49:33,387
+Devices that you could, wearable devices that would stimulate whatever.
+
+990
+00:49:33,392 --> 00:49:33,487
+Yeah.
+
+991
+00:49:34,297 --> 00:49:34,537
+Yeah.
+
+992
+00:49:34,537 --> 00:49:43,135
+I mean, so, so where, I mean, architectural engineering, I can think
+of tons of different ways that, that it'll, it'll improve things.
+
+993
+00:49:43,135 --> 00:49:48,685
+I mean, I don't know whether it'll take a long time before the law
+lets us do it, but maybe you wear the headset when you're driving.
+
+994
+00:49:48,945 --> 00:49:49,615
+Right, right.
+
+995
+00:49:49,615 --> 00:49:53,665
+Maybe, maybe it puts your speed in your, and, you know, things right in front of me.
+
+996
+00:49:53,875 --> 00:49:55,785
+My concern about it is like the whole.
+
+997
+00:49:56,665 --> 00:50:05,245
+and like I was telling you about my, my, my nephew's place, they had to move all the furniture
+out of the way when they had the Oculus on because you're gonna hurt yourself, right?
+
+998
+00:50:05,605 --> 00:50:05,842
+Yeah.
+
+999
+00:50:05,842 --> 00:50:06,779
+My concern is when
+
+1000
+00:50:06,779 --> 00:50:09,299
+Leo Dion (host): you're out, but then you have crash detection on your Apple Watch.
+
+1001
+00:50:09,299 --> 00:50:11,009
+So, but that's
+
+1002
+00:50:11,009 --> 00:50:11,529
+Tim Mitra (guest): after the fact.
+
+1003
+00:50:12,404 --> 00:50:16,484
+You, it's too, I think it's already too late to prevent the accident if you've already had it.
+
+1004
+00:50:16,484 --> 00:50:16,694
+Right.
+
+1005
+00:50:19,034 --> 00:50:30,611
+, you know, or, but, but, but then again, like we also talked about, you know, may, maybe it's an experiential thing,
+maybe you know, Trevor Noah at the, at the Grammy Award is wearing a Grammy's just happened this weekend, but he's
+
+1006
+00:50:30,611 --> 00:50:36,041
+wearing a headset that lets you go and have a conversation with Beyonce as if you're in the room with Beyonce.
+
+1007
+00:50:36,071 --> 00:50:36,341
+Right.
+
+1008
+00:50:36,386 --> 00:50:36,476
+Right.
+
+1009
+00:50:36,806 --> 00:50:47,516
+Maybe it, maybe it's concerts like now, instead of going to a physical concert to see a band
+play, you know, you can actually experience that through a VR like you put on the headset.
+
+1010
+00:50:47,546 --> 00:50:51,116
+Now you're in, you know, you're in the stadium, you're, you know, with all the other.
+
+1011
+00:50:51,476 --> 00:50:54,686
+Avatars, you know all the emojis in the audience, right?
+
+1012
+00:50:54,686 --> 00:50:55,016
+Yeah, yeah.
+
+1013
+00:50:55,021 --> 00:50:57,236
+Instead of having audience members, it'll be all emojis.
+
+1014
+00:50:57,241 --> 00:51:05,696
+You right Mark is wrong about importance of emojis, but you know,
+maybe that may, maybe we all, maybe we all attend WWE Z this way.
+
+1015
+00:51:05,696 --> 00:51:07,706
+Maybe they're gonna have a developer kit and they'll ship.
+
+1016
+00:51:07,711 --> 00:51:08,366
+That would make total
+
+1017
+00:51:08,366 --> 00:51:09,926
+Leo Dion (host): sense as if they do that.
+
+1018
+00:51:10,006 --> 00:51:10,496
+Yeah.
+
+1019
+00:51:10,501 --> 00:51:12,986
+Like especially if you think they're gonna announce it in June that.
+
+1020
+00:51:13,381 --> 00:51:13,771
+That would,
+
+1021
+00:51:14,011 --> 00:51:19,681
+Tim Mitra (guest): well, I mean, I mean, June, I can tell you
+from, I mean as you know, I, I've done some work for Apple.
+
+1022
+00:51:19,681 --> 00:51:25,981
+I can tell you that leading up to WW wwc is the big, I mean, Phil Schiller talked about this.
+
+1023
+00:51:25,981 --> 00:51:27,601
+This is the big pin.
+
+1024
+00:51:27,631 --> 00:51:31,051
+That's their Christmas, that's their, everything leads up to wwc.
+
+1025
+00:51:31,056 --> 00:51:31,501
+Right?
+
+1026
+00:51:31,711 --> 00:51:31,951
+Yeah.
+
+1027
+00:51:32,641 --> 00:51:34,741
+You know, that's when all the stuff gets
+
+1028
+00:51:34,741 --> 00:51:34,921
+Leo Dion (host): out.
+
+1029
+00:51:35,101 --> 00:51:35,381
+We'll see.
+
+1030
+00:51:35,381 --> 00:51:35,541
+Yeah.
+
+1031
+00:51:35,551 --> 00:51:36,061
+We'll see.
+
+1032
+00:51:36,661 --> 00:51:38,621
+Tim, thank you so much for coming on the show.
+
+1033
+00:51:38,665 --> 00:51:40,165
+Where can people find you?
+
+1034
+00:51:40,223 --> 00:51:47,333
+Tim Mitra (guest): I'm generally on Twitter and Mastodon as timmitra, Tim
+Mitra is my name, and that's how I, you can find me on the Twitter machine.
+
+1035
+00:51:47,386 --> 00:51:50,226
+You can listen to me on more than just Code podcast mt.
+
+1036
+00:51:50,231 --> 00:51:51,271
+jc.fm.
+
+1037
+00:51:51,290 --> 00:51:52,250
+I'm on Podcast.
+
+1038
+00:51:52,255 --> 00:51:52,630
+Podcast.
+
+1039
+00:51:53,180 --> 00:51:55,121
+And that's podcast.com.
+
+1040
+00:51:55,145 --> 00:51:59,161
+As well you can find me on LinkedIn if you'll, you know, look for me IT Guy Canada.
+
+1041
+00:51:59,586 --> 00:52:03,438
+And yeah, those are pretty much the places to find me that, that I hang out.
+
+1042
+00:52:03,438 --> 00:52:07,368
+I also hang out on a few Slack channels, some of, some of the iOS folks, slack channels.
+
+1043
+00:52:07,968 --> 00:52:09,913
+We have a Slack channel for our own podcast as well.
+
+1044
+00:52:09,918 --> 00:52:15,482
+And I also work with the folks over at Kodaco, so one of the technical letters and sometimes writer over there.
+
+1045
+00:52:15,482 --> 00:52:18,280
+So you can find me on the Ray Wenderlich Kodeco forums.
+
+1046
+00:52:20,065 --> 00:52:22,405
+Leo Dion (host): Thank you so much, friend Tim, for coming on the show.
+
+1047
+00:52:22,405 --> 00:52:23,545
+I really appreciate it.
+
+1048
+00:52:23,574 --> 00:52:24,026
+Thanks for having me.
+
+1049
+00:52:24,216 --> 00:52:27,506
+If people wanna find me online, I'm at Leo g Dion.
+
+1050
+00:52:27,506 --> 00:52:28,866
+My company is BrightDigit.
+
+1051
+00:52:28,886 --> 00:52:30,836
+Take some time to like and subscribe.
+
+1052
+00:52:30,836 --> 00:52:34,496
+If you're watching this on YouTube, this is a podcast, please.
+
+1053
+00:52:34,771 --> 00:52:39,290
+Put it, review and I look forward to talking to you again in a couple of weeks.
+
+1054
+00:52:39,290 --> 00:52:40,130
+Thanks for joining us.
+
+1055
+00:52:40,130 --> 00:52:40,800
+Bye everyone.

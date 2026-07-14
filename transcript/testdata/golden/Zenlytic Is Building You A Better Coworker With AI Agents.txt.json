@@ -1,0 +1,3640 @@
+{
+    "version": "1.0.0",
+    "segments": [
+        {
+            "startTime": 0.0,
+            "endTime": 15.359,
+            "body": "Hello, and welcome to the Data Engineering Podcast, the show about modern data management."
+        },
+        {
+            "startTime": 16.42,
+            "endTime": 21.899,
+            "body": "This episode is supported by Code Comments, an original podcast from Red Hat. As someone who"
+        },
+        {
+            "startTime": 21.899,
+            "endTime": 30.039,
+            "body": "listens to the Data Engineering Podcast, you know that the road from tool selection to production readiness is anything but smooth or straight. In Code Comments, host"
+        },
+        {
+            "startTime": 30.039,
+            "endTime": 34.96,
+            "body": "Jamie Parker, Red Hatter and experienced engineer, shares the journey of technologists from across"
+        },
+        {
+            "startTime": 34.96,
+            "endTime": 39.579,
+            "body": "the industry and their hard-won lessons in implementing new technologies. I listened to"
+        },
+        {
+            "startTime": 39.579,
+            "endTime": 43.659,
+            "body": "the recent episode, Transforming Your Database, and appreciated the valuable advice on how to"
+        },
+        {
+            "startTime": 43.659,
+            "endTime": 48.439,
+            "body": "approach the selection and integration of new databases and applications and the impact on team dynamics."
+        },
+        {
+            "startTime": 49.479,
+            "endTime": 52.719,
+            "body": "There are three seasons of great episodes and new ones landing everywhere you listen"
+        },
+        {
+            "startTime": 52.719,
+            "endTime": 53.42,
+            "body": "to podcasts."
+        },
+        {
+            "startTime": 53.84,
+            "endTime": 58.42,
+            "body": "Search for Code Comments in your podcast player or go to dataengineeringpodcast.com slash"
+        },
+        {
+            "startTime": 58.42,
+            "endTime": 59.979,
+            "body": "Code Comments today to subscribe."
+        },
+        {
+            "startTime": 60.42,
+            "endTime": 62.6,
+            "body": "My thanks to the team at Code Comments for their support."
+        },
+        {
+            "startTime": 62.799,
+            "endTime": 67.28,
+            "body": "Your host is Tobias Macy, and today I'm interviewing Ryan Jansen and Paul Blankley"
+        },
+        {
+            "startTime": 67.28,
+            "endTime": 71.939,
+            "body": "about their experiences building AI-powered data agents for interacting with your data at Zenlytics."
+        },
+        {
+            "startTime": 72.159,
+            "endTime": 74.019,
+            "body": "So, Ryan, can you start by introducing yourself?"
+        },
+        {
+            "startTime": 75.019,
+            "endTime": 79.319,
+            "body": "Yeah, so I am the CEO of Zenlytic and one of the two co-founders,"
+        },
+        {
+            "startTime": 79.48,
+            "endTime": 83.28,
+            "body": "but Paul's really the brains behind the operation, so I'll let him introduce himself better."
+        },
+        {
+            "startTime": 84.28,
+            "endTime": 88.799,
+            "body": "Yep, Ryan's too kind. I'm Paul, I'm Ryan's co-founder and the CTO of Zenlytic, and yeah,"
+        },
+        {
+            "startTime": 88.859,
+            "endTime": 90.54,
+            "body": "really excited to be chatting today."
+        },
+        {
+            "startTime": 91.48,
+            "endTime": 95.299,
+            "body": "And going back to you, Ryan, do you remember how you first got started working in data"
+        },
+        {
+            "startTime": 95.299,
+            "endTime": 95.819,
+            "body": "and AI?"
+        },
+        {
+            "startTime": 96.54,
+            "endTime": 101.439,
+            "body": "So I've always been a big nerd, and I was an engineer at the start of my career. I actually"
+        },
+        {
+            "startTime": 101.439,
+            "endTime": 105.879,
+            "body": "became an investor for a long time. And the fund that I was actually"
+        },
+        {
+            "startTime": 105.879,
+            "endTime": 110.78,
+            "body": "starting or looking at when I decided to leave the fund was at the time called a big data fund."
+        },
+        {
+            "startTime": 111.519,
+            "endTime": 116.7,
+            "body": "And I was doing the research for this fund and I kind of saw how far the hardware had come since"
+        },
+        {
+            "startTime": 116.7,
+            "endTime": 122.34,
+            "body": "I was an engineer and the capabilities of data analytics. And I was just so amazed by not only"
+        },
+        {
+            "startTime": 122.34,
+            "endTime": 126.799,
+            "body": "how far it had come, but also that it seemed to be accelerating."
+        },
+        {
+            "startTime": 127.319,
+            "endTime": 131.419,
+            "body": "And I knew then that I couldn't just be an investor in this tech and I had to participate."
+        },
+        {
+            "startTime": 132.039,
+            "endTime": 136.719,
+            "body": "And that was years ago. But today, I guess we'd call that AI. And I've been pretty much heavily"
+        },
+        {
+            "startTime": 136.719,
+            "endTime": 141.039,
+            "body": "involved in the data stack ever since. So I guess it's more of a just passion for the space than"
+        },
+        {
+            "startTime": 141.039,
+            "endTime": 153.159,
+            "body": "anything else. And Paul, do you remember your introduction to data and AI? Oh, yeah. My first ever real job was I worked on Roche's math team. Roche is a big"
+        },
+        {
+            "startTime": 153.159,
+            "endTime": 157.58,
+            "body": "pharmaceutical company. I worked on the team that built the algorithms that run their blood glucose"
+        },
+        {
+            "startTime": 157.58,
+            "endTime": 164.599,
+            "body": "meters. And I remember, you know, the thing itself looks really simple, but it is incredible how many"
+        },
+        {
+            "startTime": 164.599,
+            "endTime": 166.12,
+            "body": "and the diversity"
+        },
+        {
+            "startTime": 166.12,
+            "endTime": 169.46,
+            "body": "of the different algorithms they have that actually need to work together to actually"
+        },
+        {
+            "startTime": 169.46,
+            "endTime": 173.24,
+            "body": "make that work. And I was like, this is incredible. It's like really good technology"
+        },
+        {
+            "startTime": 173.24,
+            "endTime": 177.96,
+            "body": "is indistinguishable from magic. And I was like, this stuff is amazing. And I wanted to go and"
+        },
+        {
+            "startTime": 177.96,
+            "endTime": 181.86,
+            "body": "learn more about it. So went off to grad school. And that's actually where Ryan and I met."
+        },
+        {
+            "startTime": 182.68,
+            "endTime": 186.879,
+            "body": "So we studied in grad school right when"
+        },
+        {
+            "startTime": 186.879,
+            "endTime": 190.96,
+            "body": "Transformers was first coming out. So it was in 2017, right when Google released the Attention"
+        },
+        {
+            "startTime": 190.96,
+            "endTime": 196.06,
+            "body": "is All You Need paper. And we actually had a class where the professor was kind of like,"
+        },
+        {
+            "startTime": 196.12,
+            "endTime": 201.3,
+            "body": "hey, we're going to talk about this other stuff. But this new NLP paper came out that kind of"
+        },
+        {
+            "startTime": 201.3,
+            "endTime": 210.219,
+            "body": "changes everything. So we're just going to talk about about that and it was a really cool time to be to be studying not not the robots in disguise transformers because that would"
+        },
+        {
+            "startTime": 210.219,
+            "endTime": 218.36,
+            "body": "have put you at the 1980s yep that's true i um i am i'm not quite that old so it had to be the the"
+        },
+        {
+            "startTime": 218.36,
+            "endTime": 230.979,
+            "body": "google bert and gpt3 precursor transformers oh i'm old enough to remember the original transformers and the AI winter between the two as well. Absolutely. And got to say, by the way, thanks for having us on"
+        },
+        {
+            "startTime": 230.979,
+            "endTime": 235.34,
+            "body": "again. This is, I think the only podcast that Paul and I have ever been on twice. And it's such a"
+        },
+        {
+            "startTime": 235.34,
+            "endTime": 239.96,
+            "body": "pleasure to come back as well, because this is, you know, one of our very favorite podcasts in"
+        },
+        {
+            "startTime": 239.96,
+            "endTime": 250.139,
+            "body": "the entire data space. So thanks again so much for hosting us. Absolutely. And thank you for coming back. And I'm glad you've enjoyed it. And so to that note, I'll also mention, as you said, you've"
+        },
+        {
+            "startTime": 250.139,
+            "endTime": 253.599,
+            "body": "been on before. So I'll add a link in the show notes to your previous appearance so that we don't"
+        },
+        {
+            "startTime": 253.599,
+            "endTime": 257.48,
+            "body": "have to go all the way into the history of Zenlytic and what it is and how it works. And instead,"
+        },
+        {
+            "startTime": 257.54,
+            "endTime": 262.18,
+            "body": "we can carry forward with what you're doing now. So for people who didn't listen to that yet or who"
+        },
+        {
+            "startTime": 262.18,
+            "endTime": 272.379,
+            "body": "haven't paused and gone back to that and then come back to it here, can you just give a quick overview about what Zenlytic is and then move into the role that AI is playing in your platform as of today?"
+        },
+        {
+            "startTime": 273.8,
+            "endTime": 274.48,
+            "body": "Yeah, absolutely."
+        },
+        {
+            "startTime": 274.74,
+            "endTime": 281.079,
+            "body": "Zenlytic is a business intelligence platform that uses the power of large language models to make self-service a reality."
+        },
+        {
+            "startTime": 281.079,
+            "endTime": 288.339,
+            "body": "We like to say we're the world's first self-serve BI platform, which is a little bit cheeky because BI tools have been saying this for a really long time."
+        },
+        {
+            "startTime": 288.939,
+            "endTime": 294.36,
+            "body": "We think this time it actually is different because large language models provide an interface that"
+        },
+        {
+            "startTime": 294.36,
+            "endTime": 299.779,
+            "body": "can actually comprehend what people are saying and have the sort of back and forth you need to"
+        },
+        {
+            "startTime": 299.779,
+            "endTime": 305.6,
+            "body": "make that work. And we'll talk about that a lot today as we get into sort of how we work with this data"
+        },
+        {
+            "startTime": 305.6,
+            "endTime": 310.959,
+            "body": "agent. But the core thing we do is we have all the normal BI features for the dashboarding,"
+        },
+        {
+            "startTime": 311.079,
+            "endTime": 315.639,
+            "body": "stuff like that. But the real exciting thing is that at the core of it, we have a data agent"
+        },
+        {
+            "startTime": 315.639,
+            "endTime": 321.16,
+            "body": "that's able to effectively use the whole tool for you and kind of be an analyst that just helps you"
+        },
+        {
+            "startTime": 321.16,
+            "endTime": 324.439,
+            "body": "with all the questions you have about your data and helps steer you in the right direction,"
+        },
+        {
+            "startTime": 324.439,
+            "endTime": 325.8,
+            "body": "even if you don't know where stuff is."
+        },
+        {
+            "startTime": 326.899,
+            "endTime": 332.98,
+            "body": "The interesting differentiator there too, I think, is that you're starting with the"
+        },
+        {
+            "startTime": 332.98,
+            "endTime": 339.8,
+            "body": "conversational approach being the de facto mode of interacting with the platform, whereas"
+        },
+        {
+            "startTime": 339.8,
+            "endTime": 345.319,
+            "body": "there are a number of business intelligence platforms that are bolting AI onto the experience"
+        },
+        {
+            "startTime": 345.319,
+            "endTime": 351.199,
+            "body": "with a foundational capability of being able to interact with SQL engines, write SQL,"
+        },
+        {
+            "startTime": 351.62,
+            "endTime": 355.92,
+            "body": "or in the case of Looker, write something that's sort of like SQL and then generate SQL from that"
+        },
+        {
+            "startTime": 355.92,
+            "endTime": 361.439,
+            "body": "and have all these charts. And then from there, as an afterthought, or maybe not an afterthought,"
+        },
+        {
+            "startTime": 361.56,
+            "endTime": 367.759,
+            "body": "but as a second order concern, having AI provide this conversational interface,"
+        },
+        {
+            "startTime": 367.86,
+            "endTime": 368.68,
+            "body": "either for just saying,"
+        },
+        {
+            "startTime": 368.98,
+            "endTime": 369.98,
+            "body": "what are the charts that I have?"
+        },
+        {
+            "startTime": 369.98,
+            "endTime": 371.8,
+            "body": "Or maybe even being able to generate charts."
+        },
+        {
+            "startTime": 371.959,
+            "endTime": 373.379,
+            "body": "But I'm just curious what you see"
+        },
+        {
+            "startTime": 373.379,
+            "endTime": 377.56,
+            "body": "as the fundamental shift in AI"
+        },
+        {
+            "startTime": 377.56,
+            "endTime": 380.879,
+            "body": "being the first class concern of the platform"
+        },
+        {
+            "startTime": 380.879,
+            "endTime": 384.399,
+            "body": "as opposed to a bolt on after the fact"
+        },
+        {
+            "startTime": 384.399,
+            "endTime": 385.899,
+            "body": "and some of the ways that that transforms"
+        },
+        {
+            "startTime": 385.899,
+            "endTime": 387.699,
+            "body": "the overall end-user experience?"
+        },
+        {
+            "startTime": 389.459,
+            "endTime": 390.56,
+            "body": "Yeah, great question."
+        },
+        {
+            "startTime": 391.06,
+            "endTime": 396.42,
+            "body": "That is absolutely correct that we consider this to be the principal use case of the platform."
+        },
+        {
+            "startTime": 396.74,
+            "endTime": 399.019,
+            "body": "And that extends to more than just the UI, though."
+        },
+        {
+            "startTime": 399.079,
+            "endTime": 403.98,
+            "body": "So I think it actually requires us to rethink a lot of things about how a BI platform is"
+        },
+        {
+            "startTime": 403.98,
+            "endTime": 407.62,
+            "body": "built, all the way down to how the data model works, for instance."
+        },
+        {
+            "startTime": 407.62,
+            "endTime": 417.439,
+            "body": "And how you think about, like you said, there's a very principled discussion there around text-to-SQL versus data model-based LLM modeling."
+        },
+        {
+            "startTime": 417.699,
+            "endTime": 419.699,
+            "body": "And there's been a lot of discussion around that."
+        },
+        {
+            "startTime": 419.98,
+            "endTime": 422.56,
+            "body": "And we fall very firmly in the latter camp."
+        },
+        {
+            "startTime": 423.139,
+            "endTime": 426.56,
+            "body": "But yeah, basically, we had to build this thing from the ground up with the intent of"
+        },
+        {
+            "startTime": 426.56,
+            "endTime": 428.06,
+            "body": "making it work for LLMs."
+        },
+        {
+            "startTime": 428.56,
+            "endTime": 430.36,
+            "body": "That doesn't mean that it's not a fully featured platform."
+        },
+        {
+            "startTime": 430.579,
+            "endTime": 435.04,
+            "body": "We have all of the sort of best in class sort of business intelligence stuff in there."
+        },
+        {
+            "startTime": 435.12,
+            "endTime": 438.56,
+            "body": "We built that out before we even built out the LLM functionality fully."
+        },
+        {
+            "startTime": 438.939,
+            "endTime": 444.639,
+            "body": "But all of those things have been built to integrate seamlessly with a data agent so"
+        },
+        {
+            "startTime": 444.639,
+            "endTime": 445.1,
+            "body": "that they"
+        },
+        {
+            "startTime": 445.1,
+            "endTime": 446.379,
+            "body": "can sort of feed into each other."
+        },
+        {
+            "startTime": 446.74,
+            "endTime": 451.319,
+            "body": "And to give you an example of that, of course, we have a great dashboard experience, but"
+        },
+        {
+            "startTime": 451.319,
+            "endTime": 454.259,
+            "body": "those dashboards are integrated in each direction with the data agents."
+        },
+        {
+            "startTime": 454.56,
+            "endTime": 460.12,
+            "body": "So in the dashboard to chat paradigm, you could actually go and sort of take any dashboard"
+        },
+        {
+            "startTime": 460.12,
+            "endTime": 463.779,
+            "body": "tile, ask a question from here and be instantly interrogating that in chat."
+        },
+        {
+            "startTime": 464.379,
+            "endTime": 468.6,
+            "body": "Or vice versa, the agent is able to search across your dashboards, actually create new"
+        },
+        {
+            "startTime": 468.6,
+            "endTime": 471.04,
+            "body": "dashboards, understands a lot about the existing data assets."
+        },
+        {
+            "startTime": 471.319,
+            "endTime": 477.139,
+            "body": "So I guess our philosophy there is that you have to have a tight coupling of all of the"
+        },
+        {
+            "startTime": 477.139,
+            "endTime": 480.639,
+            "body": "various ways that one would want to use the tool, and they'd have to all agree."
+        },
+        {
+            "startTime": 480.759,
+            "endTime": 483.16,
+            "body": "And that's why we think it makes sense to have this in one platform."
+        },
+        {
+            "startTime": 483.459,
+            "endTime": 488.68,
+            "body": "If this is sort of fragmented across multiple tools, we all know the challenges with getting"
+        },
+        {
+            "startTime": 488.68,
+            "endTime": 492.98,
+            "body": "those tools to agree on the single source of truth and what the data actually is."
+        },
+        {
+            "startTime": 493.459,
+            "endTime": 499.839,
+            "body": "We all know that a self-serve user needs training, doesn't want to log into multiple platforms,"
+        },
+        {
+            "startTime": 499.839,
+            "endTime": 504.12,
+            "body": "doesn't want to learn multiple platforms. So there's lots of reasons why it makes sense to"
+        },
+        {
+            "startTime": 504.12,
+            "endTime": 505.54,
+            "body": "unify this into one experience."
+        },
+        {
+            "startTime": 506.079,
+            "endTime": 506.899,
+            "body": "But yes, absolutely."
+        },
+        {
+            "startTime": 507.22,
+            "endTime": 510.8,
+            "body": "That whole experience was sort of built with LLMs in mind."
+        },
+        {
+            "startTime": 511.1,
+            "endTime": 512.96,
+            "body": "And I think the extension of that is that"
+        },
+        {
+            "startTime": 512.96,
+            "endTime": 515.179,
+            "body": "we're not afraid to look different"
+        },
+        {
+            "startTime": 515.179,
+            "endTime": 517.62,
+            "body": "from a conventional BI platform."
+        },
+        {
+            "startTime": 517.919,
+            "endTime": 519.519,
+            "body": "And something we believe is that"
+        },
+        {
+            "startTime": 519.519,
+            "endTime": 521.139,
+            "body": "probably things are going to look differently,"
+        },
+        {
+            "startTime": 521.62,
+            "endTime": 523.12,
+            "body": "say two, three years from now,"
+        },
+        {
+            "startTime": 523.539,
+            "endTime": 530.139,
+            "body": "in terms of how you interact with your data than they do today. And we expect a lot of innovations and a lot of different software"
+        },
+        {
+            "startTime": 530.139,
+            "endTime": 536.24,
+            "body": "verticals because of AI. But I think in particular, we're willing to go and make this tool look"
+        },
+        {
+            "startTime": 536.24,
+            "endTime": 540.519,
+            "body": "different to make sure that it delivers an elegant, intuitive experience for the self-serve user."
+        },
+        {
+            "startTime": 541.62,
+            "endTime": 546.179,
+            "body": "The one thing I'd add to that too, is that a big distinction that we think about is that"
+        },
+        {
+            "startTime": 546.179,
+            "endTime": 551.22,
+            "body": "all the kind of incumbents, like you said, will be bolting on AI stuff and they'll be kind of"
+        },
+        {
+            "startTime": 551.22,
+            "endTime": 555.299,
+            "body": "like helpful co-pilots. They'll help you change colors on line charts. Those are all great and"
+        },
+        {
+            "startTime": 555.299,
+            "endTime": 559.399,
+            "body": "helpful features. The difference is that we are really building a data agent, something that's"
+        },
+        {
+            "startTime": 559.399,
+            "endTime": 563.82,
+            "body": "not just going to be a co-pilot, but more like a co-worker. You can delegate a task, tell it to go"
+        },
+        {
+            "startTime": 563.82,
+            "endTime": 569.74,
+            "body": "build a dashboard for you, tell it you need to allocate some more budget and you're not sure where to start and"
+        },
+        {
+            "startTime": 569.74,
+            "endTime": 573.659,
+            "body": "have it sort of coach you through it. This is what we've got. This is what you can look at."
+        },
+        {
+            "startTime": 574.059,
+            "endTime": 578.379,
+            "body": "So it's really about that co-worker versus co-pilot, especially on the long-term view of"
+        },
+        {
+            "startTime": 578.379,
+            "endTime": 583.96,
+            "body": "things. Yeah. And I definitely want to dig more into that distinction of data agent versus chat"
+        },
+        {
+            "startTime": 583.96,
+            "endTime": 585.639,
+            "body": "bot. But before we go too far"
+        },
+        {
+            "startTime": 585.639,
+            "endTime": 592.519,
+            "body": "down that path, I'm interested in an overview of what you see as being the key stages and"
+        },
+        {
+            "startTime": 592.519,
+            "endTime": 599.799,
+            "body": "transitional events in your overall AI journey, and some of the ways that the drastic and fast"
+        },
+        {
+            "startTime": 599.799,
+            "endTime": 605.759,
+            "body": "moving change in the industry has influenced your overall trajectory?"
+        },
+        {
+            "startTime": 607.2,
+            "endTime": 607.539,
+            "body": "Yeah, that is a great question."
+        },
+        {
+            "startTime": 613.539,
+            "endTime": 613.72,
+            "body": "And I think, you know, the drastic and fast moving changes mean that you have to be really,"
+        },
+        {
+            "startTime": 615.139,
+            "endTime": 615.279,
+            "body": "really dynamic when building these things."
+        },
+        {
+            "startTime": 619.6,
+            "endTime": 620.179,
+            "body": "And our architecture as a result has changed pretty dramatically since we first built it."
+        },
+        {
+            "startTime": 624.139,
+            "endTime": 629.46,
+            "body": "You know, as the capabilities of the models get higher, the things that are fundamentally possible with them just change. And you need to like change the architecture and the tools you"
+        },
+        {
+            "startTime": 629.46,
+            "endTime": 634.399,
+            "body": "build around the models as a result. So we've had, you know, already, I think three distinct times"
+        },
+        {
+            "startTime": 634.399,
+            "endTime": 639.799,
+            "body": "that we've had to basically like rebuild it kind of. Yeah, definitely very fast moving. And it's"
+        },
+        {
+            "startTime": 639.799,
+            "endTime": 643.08,
+            "body": "really important to stay up to date too, because it moves so fast. If you're not staying up to"
+        },
+        {
+            "startTime": 643.08,
+            "endTime": 648.0,
+            "body": "date with it, you're going to fall behind quickly. It's been a really interesting journey for us because when"
+        },
+        {
+            "startTime": 648.0,
+            "endTime": 653.86,
+            "body": "we started building this, it was before GPT 3.5 existed or whatever sort of a modern large"
+        },
+        {
+            "startTime": 653.86,
+            "endTime": 659.179,
+            "body": "language model is. But at the time we were using like the early, early versions of that. So like,"
+        },
+        {
+            "startTime": 659.419,
+            "endTime": 663.559,
+            "body": "you know, open source models like Google's BERT, for instance, and this is the land before time,"
+        },
+        {
+            "startTime": 663.559,
+            "endTime": 671.919,
+            "body": "but they had some basic language understanding capabilities. And I'd say a general sort of progression for us is that those"
+        },
+        {
+            "startTime": 671.919,
+            "endTime": 676.32,
+            "body": "early, early models had, we had to put a lot of guardrails in. We had to really limit what the"
+        },
+        {
+            "startTime": 676.32,
+            "endTime": 681.259,
+            "body": "models are capable of doing basically. And then over time, as the models became more performant,"
+        },
+        {
+            "startTime": 681.559,
+            "endTime": 684.82,
+            "body": "we could take some of those guardrails off and that allowed us to be more flexible, more powerful."
+        },
+        {
+            "startTime": 687.32,
+            "endTime": 692.12,
+            "body": "We were constantly rethinking the architecture as we were doing that to make sure that it worked really, really well. But it's a little bit like the, there's a famous"
+        },
+        {
+            "startTime": 692.12,
+            "endTime": 697.539,
+            "body": "paper called The Bitter Lesson by Richard Sutton that talks about how, you know, it's better to"
+        },
+        {
+            "startTime": 697.539,
+            "endTime": 702.259,
+            "body": "let machine learning models do the flexible stuff, basically, instead of trying to hard code things"
+        },
+        {
+            "startTime": 702.259,
+            "endTime": 707.539,
+            "body": "around it. That can give you like a short term burst, but like long run, it's like the models, the performance of the model"
+        },
+        {
+            "startTime": 707.539,
+            "endTime": 711.799,
+            "body": "will be dictated by the growth of the model capabilities, I guess. And then it's kind of"
+        },
+        {
+            "startTime": 711.799,
+            "endTime": 715.799,
+            "body": "interesting, because it's like, along that progression, you also have to ask yourself,"
+        },
+        {
+            "startTime": 716.039,
+            "endTime": 721.48,
+            "body": "what's not going to change? You know, what's going to stay the same? And one good example of that is"
+        },
+        {
+            "startTime": 721.48,
+            "endTime": 729.899,
+            "body": "what I mentioned earlier, which is, you know, using text-to-SQL versus using sort of some sort of data model powered paradigm for the LLMs."
+        },
+        {
+            "startTime": 730.639,
+            "endTime": 734.84,
+            "body": "And, you know, we have a strong belief that that is not going to change for the foreseeable"
+        },
+        {
+            "startTime": 734.84,
+            "endTime": 735.179,
+            "body": "future."
+        },
+        {
+            "startTime": 735.36,
+            "endTime": 738.08,
+            "body": "I don't think text-to-SQL is going to get bitter lessened."
+        },
+        {
+            "startTime": 738.34,
+            "endTime": 742.919,
+            "body": "I think that you can debate about the accuracy, for instance, and maybe we could see models"
+        },
+        {
+            "startTime": 742.919,
+            "endTime": 748.96,
+            "body": "getting good enough in the future that, you know, Texas SQL is possible. But even if that's the case,"
+        },
+        {
+            "startTime": 749.759,
+            "endTime": 754.159,
+            "body": "there's still other issues around it. First and foremost, data governance and security is really,"
+        },
+        {
+            "startTime": 754.159,
+            "endTime": 758.0,
+            "body": "really difficult with those sorts of models. Secondly, it's really difficult to give those"
+        },
+        {
+            "startTime": 758.0,
+            "endTime": 762.72,
+            "body": "models enough context to really answer the question. So let's assume we can make a Texas"
+        },
+        {
+            "startTime": 762.72,
+            "endTime": 765.279,
+            "body": "SQL algorithm that's superhuman. Let's say it's as good of a SQL writer as Paul is., if you, let's, let's assume we could make a Texas SQL algorithm that's superhuman."
+        },
+        {
+            "startTime": 765.279,
+            "endTime": 768.2,
+            "body": "Let's, let's say it's as good of a SQL writer as Paul is."
+        },
+        {
+            "startTime": 768.379,
+            "endTime": 776.58,
+            "body": "And, you know, if you were to take Paul and drop him into a random data warehouse and say, tell us our conversion rate without any context, he'd probably get it wrong too."
+        },
+        {
+            "startTime": 777.019,
+            "endTime": 777.179,
+            "body": "Right."
+        },
+        {
+            "startTime": 777.279,
+            "endTime": 783.74,
+            "body": "So, you know, you can eventually start building in context layers and things like that, but that eventually starts to look a lot like some sort of data model anyways."
+        },
+        {
+            "startTime": 784.039,
+            "endTime": 788.419,
+            "body": "So it's, it's been interesting to sort of, you know, really pay attention to, we have to work at a fast"
+        },
+        {
+            "startTime": 788.419,
+            "endTime": 791.139,
+            "body": "moving environment, but we're also paying attention to the things that won't change."
+        },
+        {
+            "startTime": 791.96,
+            "endTime": 795.519,
+            "body": "Absolutely. That's definitely one of the lessons that keeps getting reinforced"
+        },
+        {
+            "startTime": 795.519,
+            "endTime": 800.5,
+            "body": "throughout my career and in conversation with a lot of other people is that if you focus on"
+        },
+        {
+            "startTime": 800.5,
+            "endTime": 806.059,
+            "body": "the fundamentals, that will carry you much farther than if you try to chase after"
+        },
+        {
+            "startTime": 806.059,
+            "endTime": 811.34,
+            "body": "the new shiny thing, because you're never going to understand how it works, why it works the way"
+        },
+        {
+            "startTime": 811.34,
+            "endTime": 817.32,
+            "body": "it does, how to apply it properly if you don't have that foundational knowledge of the core"
+        },
+        {
+            "startTime": 817.32,
+            "endTime": 828.44,
+            "body": "computer science principles, systems design, systems architecture. Yeah, totally. And in your mad dash journey through the land of AI, I'm curious,"
+        },
+        {
+            "startTime": 828.58,
+            "endTime": 833.58,
+            "body": "what are some of the dead ends that you've run into and some of the challenges that still persist"
+        },
+        {
+            "startTime": 833.58,
+            "endTime": 838.36,
+            "body": "now as you have gone through these generational shifts in the language model capabilities?"
+        },
+        {
+            "startTime": 839.34,
+            "endTime": 846.139,
+            "body": "So, I mean, there's many. So I'll just give little a little sampling one that i think is a is a common"
+        },
+        {
+            "startTime": 846.139,
+            "endTime": 852.74,
+            "body": "one that we sort of had to really learn from is that whenever you try to nest the large language"
+        },
+        {
+            "startTime": 852.74,
+            "endTime": 856.44,
+            "body": "models so it's like you have you know we have an agent which basically means there's one at the top"
+        },
+        {
+            "startTime": 856.44,
+            "endTime": 860.879,
+            "body": "that sort of makes decisions and use these different tools whenever you have it use a tool"
+        },
+        {
+            "startTime": 860.879,
+            "endTime": 866.32,
+            "body": "that also has a large language model in it, it pretty much never works."
+        },
+        {
+            "startTime": 867.279,
+            "endTime": 872.639,
+            "body": "It always seems like a good idea, but really there's just fundamental differences in context"
+        },
+        {
+            "startTime": 872.639,
+            "endTime": 877.7,
+            "body": "of what the kind of sub-agent knows. And that it just kind of doesn't work really as a result."
+        },
+        {
+            "startTime": 878.24,
+            "endTime": 885.5,
+            "body": "It just doesn't feel good as a human using it. So that's definitely one of them. And there are many. The other thing that I think is"
+        },
+        {
+            "startTime": 885.5,
+            "endTime": 891.32,
+            "body": "talked about a lot more is a lot of these systems have a fundamental search problem."
+        },
+        {
+            "startTime": 892.059,
+            "endTime": 896.539,
+            "body": "I think we do a pretty good job at that now, but that's one of the areas that,"
+        },
+        {
+            "startTime": 896.74,
+            "endTime": 902.32,
+            "body": "you know, it seems like it's just straightforward. You're going to ask an AI and it knows stuff. And"
+        },
+        {
+            "startTime": 902.32,
+            "endTime": 908.0,
+            "body": "it's like, well, how does it know stuff? It has to search some very large corp of information to be able to know the right"
+        },
+        {
+            "startTime": 908.0,
+            "endTime": 912.379,
+            "body": "context at the right time. And that itself is also a hard problem that you have to solve when"
+        },
+        {
+            "startTime": 912.379,
+            "endTime": 916.679,
+            "body": "we're building these systems. So that's one that if someone is thinking about building a system"
+        },
+        {
+            "startTime": 916.679,
+            "endTime": 919.84,
+            "body": "like that, think long and hard about how you're actually going to do the search piece of it,"
+        },
+        {
+            "startTime": 919.879,
+            "endTime": 923.899,
+            "body": "because that part is really important too. Yeah. And more generally think long and hard"
+        },
+        {
+            "startTime": 923.899,
+            "endTime": 925.44,
+            "body": "about how you will help"
+        },
+        {
+            "startTime": 925.44,
+            "endTime": 926.879,
+            "body": "the model deal with ambiguity."
+        },
+        {
+            "startTime": 927.36,
+            "endTime": 930.6,
+            "body": "I'd say a lot of the things in the re in the, one of the big jumps from demo"
+        },
+        {
+            "startTime": 930.6,
+            "endTime": 935.12,
+            "body": "land to the real world is that literally a hundred percent of the people that are"
+        },
+        {
+            "startTime": 935.12,
+            "endTime": 939.36,
+            "body": "using this sort of technology in the real world, they have lots of ambiguous,"
+        },
+        {
+            "startTime": 939.36,
+            "endTime": 942.86,
+            "body": "slightly overlapping definitions in their data, and sometimes it's hard"
+        },
+        {
+            "startTime": 942.86,
+            "endTime": 944.419,
+            "body": "for a human to navigate that as well."
+        },
+        {
+            "startTime": 944.659,
+            "endTime": 948.059,
+            "body": "But that's something that actually is, is very difficult for LLM to do."
+        },
+        {
+            "startTime": 948.659,
+            "endTime": 952.74,
+            "body": "Other interesting one, which comes up over and over again in many domains,"
+        },
+        {
+            "startTime": 953.22,
+            "endTime": 958.779,
+            "body": "is that LLMs have not yet gotten great at long-term planning. So there's a fundamental"
+        },
+        {
+            "startTime": 958.779,
+            "endTime": 963.539,
+            "body": "problem with LLMs that they just kind of add the next token based on the previous tokens. And"
+        },
+        {
+            "startTime": 963.539,
+            "endTime": 966.46,
+            "body": "as those sort of keep going forward,"
+        },
+        {
+            "startTime": 967.019,
+            "endTime": 970.08,
+            "body": "tiny errors in those little token choices can compound over time"
+        },
+        {
+            "startTime": 970.08,
+            "endTime": 973.679,
+            "body": "to lead to a very wide range of results if you're doing something,"
+        },
+        {
+            "startTime": 974.1,
+            "endTime": 975.879,
+            "body": "if you're looking for the far ahead in the future."
+        },
+        {
+            "startTime": 976.039,
+            "endTime": 977.259,
+            "body": "If you're writing something with lots of tokens,"
+        },
+        {
+            "startTime": 977.759,
+            "endTime": 980.639,
+            "body": "which means looking ahead far in the future means writing lots of tokens,"
+        },
+        {
+            "startTime": 981.2,
+            "endTime": 982.659,
+            "body": "you can get a lot of that drift happening"
+        },
+        {
+            "startTime": 982.659,
+            "endTime": 985.24,
+            "body": "that can lead to undesirable outputs,"
+        },
+        {
+            "startTime": 985.299,
+            "endTime": 989.96,
+            "body": "basically. So it's hard to make them look really, really far ahead. That's actually one of the ways"
+        },
+        {
+            "startTime": 989.96,
+            "endTime": 995.639,
+            "body": "where data agents can come in and help self-correct that. Digging into that data agent concept,"
+        },
+        {
+            "startTime": 996.12,
+            "endTime": 1002.24,
+            "body": "I'm curious if you can provide a little bit more color as to what that term signifies,"
+        },
+        {
+            "startTime": 1002.24,
+            "endTime": 1007.039,
+            "body": "both from a semantic perspective, but also from the technological"
+        },
+        {
+            "startTime": 1007.039,
+            "endTime": 1014.34,
+            "body": "requirements to be able to build and support that type of functionality, particularly in comparison"
+        },
+        {
+            "startTime": 1014.34,
+            "endTime": 1018.98,
+            "body": "with the chatbot interfaces that people have grown to be very accustomed to in the past couple of"
+        },
+        {
+            "startTime": 1018.98,
+            "endTime": 1025.74,
+            "body": "years. Yeah, for sure. The big difference, the way I see it, is that a chatbot is tokens in,"
+        },
+        {
+            "startTime": 1025.839,
+            "endTime": 1029.98,
+            "body": "tokens out. It's kind of an open-loop system where you specify an input, it gives you an output."
+        },
+        {
+            "startTime": 1030.46,
+            "endTime": 1032.859,
+            "body": "That's what leads to those sort of long-term planning issues, for instance."
+        },
+        {
+            "startTime": 1033.259,
+            "endTime": 1039.019,
+            "body": "What a chatbot does differently is that it's actually usually an architecture of a number"
+        },
+        {
+            "startTime": 1039.019,
+            "endTime": 1044.94,
+            "body": "of LLM calls that's chained together in a closed-loop way, is how I'd fundamentally describe"
+        },
+        {
+            "startTime": 1044.94,
+            "endTime": 1045.22,
+            "body": "that. It's a I'd fundamentally describe that."
+        },
+        {
+            "startTime": 1045.98,
+            "endTime": 1047.799,
+            "body": "It's a little bit like, so, you know, like I said,"
+        },
+        {
+            "startTime": 1047.819,
+            "endTime": 1049.319,
+            "body": "before I was an investor, I was an engineer,"
+        },
+        {
+            "startTime": 1049.88,
+            "endTime": 1052.42,
+            "body": "and I have a double E by education, electrical engineer."
+        },
+        {
+            "startTime": 1052.9,
+            "endTime": 1054.259,
+            "body": "And when I was studying double E,"
+        },
+        {
+            "startTime": 1054.359,
+            "endTime": 1056.64,
+            "body": "everyone was crazy about these things called PID loops."
+        },
+        {
+            "startTime": 1056.9,
+            "endTime": 1058.42,
+            "body": "I don't know if you all have heard of PID loops before."
+        },
+        {
+            "startTime": 1059.24,
+            "endTime": 1062.92,
+            "body": "PID loops are the things that keep airplane autopilot,"
+        },
+        {
+            "startTime": 1062.92,
+            "endTime": 1065.66,
+            "body": "like, stable, or they're the things that keep thermostats,"
+        },
+        {
+            "startTime": 1065.779,
+            "endTime": 1070.099,
+            "body": "that make thermostats work. It's just one little closed loop feedback. And it's a very simple"
+        },
+        {
+            "startTime": 1070.099,
+            "endTime": 1076.14,
+            "body": "thing. When I was going to school in the early 2000s, this was kind of a new thing, but they're"
+        },
+        {
+            "startTime": 1076.14,
+            "endTime": 1080.579,
+            "body": "very, very powerful. They unlock a lot of what was kind of almost like AI at the time."
+        },
+        {
+            "startTime": 1081.2,
+            "endTime": 1087.94,
+            "body": "What does that mean for data agents and for LLMs in general? What it means is that"
+        },
+        {
+            "startTime": 1087.94,
+            "endTime": 1093.359,
+            "body": "what the LLM will do is it will actually build a plan at the start, and it will actually execute"
+        },
+        {
+            "startTime": 1093.359,
+            "endTime": 1098.299,
+            "body": "those step by step. And every step along the way, it will pause and reflect and say, okay, wait,"
+        },
+        {
+            "startTime": 1098.4,
+            "endTime": 1102.68,
+            "body": "did I achieve this step well? Do I need to change the plan at all? Do I need to go back and revisit"
+        },
+        {
+            "startTime": 1102.68,
+            "endTime": 1105.319,
+            "body": "earlier steps? And it'll sequentially go all the way through that."
+        },
+        {
+            "startTime": 1105.44,
+            "endTime": 1109.039,
+            "body": "And once it's assessed that it's actually completed the task, it will again sort of"
+        },
+        {
+            "startTime": 1109.039,
+            "endTime": 1113.619,
+            "body": "look at the whole chain of tasks in a way and say, all right, did I achieve what I set"
+        },
+        {
+            "startTime": 1113.619,
+            "endTime": 1114.72,
+            "body": "out to do in the first place?"
+        },
+        {
+            "startTime": 1114.96,
+            "endTime": 1117.42,
+            "body": "And if it's no, then they can go back and iterate, for instance."
+        },
+        {
+            "startTime": 1117.96,
+            "endTime": 1121.799,
+            "body": "You know, that basic architecture allows for lots of other really interesting things."
+        },
+        {
+            "startTime": 1122.779,
+            "endTime": 1125.16,
+            "body": "You know, it allows for tool usage, for instance."
+        },
+        {
+            "startTime": 1125.359,
+            "endTime": 1127.359,
+            "body": "So generally data agents are given"
+        },
+        {
+            "startTime": 1127.359,
+            "endTime": 1129.039,
+            "body": "sort of a toolkit of things that they can do"
+        },
+        {
+            "startTime": 1129.039,
+            "endTime": 1130.7,
+            "body": "in their universe that provides them feedback."
+        },
+        {
+            "startTime": 1131.14,
+            "endTime": 1132.96,
+            "body": "And as they progress through these steps,"
+        },
+        {
+            "startTime": 1132.96,
+            "endTime": 1135.019,
+            "body": "they choose the most appropriate tool for the job."
+        },
+        {
+            "startTime": 1135.24,
+            "endTime": 1136.119,
+            "body": "And that tool could be anything."
+        },
+        {
+            "startTime": 1136.259,
+            "endTime": 1138.079,
+            "body": "So like in the context of Zoe, our analyst,"
+        },
+        {
+            "startTime": 1138.079,
+            "endTime": 1141.539,
+            "body": "that tool, you know, writing a semantic query"
+        },
+        {
+            "startTime": 1141.539,
+            "endTime": 1142.4,
+            "body": "could be a tool."
+        },
+        {
+            "startTime": 1142.859,
+            "endTime": 1145.079,
+            "body": "Or clarifying an ambiguous question could be a tool."
+        },
+        {
+            "startTime": 1145.5,
+            "endTime": 1149.779,
+            "body": "In this paradigm, asking someone for help is actually a tool for the agent."
+        },
+        {
+            "startTime": 1150.46,
+            "endTime": 1154.259,
+            "body": "And the agent will actually go through, build a plan, use those tools, and iterate on that"
+        },
+        {
+            "startTime": 1154.259,
+            "endTime": 1158.779,
+            "body": "feedback in a closed-loop way, which keeps it on track and consistent all the way through."
+        },
+        {
+            "startTime": 1159.779,
+            "endTime": 1161.119,
+            "body": "Is there anything else you'd add there, Paul?"
+        },
+        {
+            "startTime": 1161.859,
+            "endTime": 1168.22,
+            "body": "Yeah, I think the sort of TLDR is that agents plan ahead while chatbots react."
+        },
+        {
+            "startTime": 1168.779,
+            "endTime": 1169.88,
+            "body": "Agents use tools."
+        },
+        {
+            "startTime": 1170.039,
+            "endTime": 1172.279,
+            "body": "Chatbots are just, like Ryan said, tokens in, tokens out."
+        },
+        {
+            "startTime": 1172.4,
+            "endTime": 1173.099,
+            "body": "Just write text."
+        },
+        {
+            "startTime": 1173.519,
+            "endTime": 1177.22,
+            "body": "And agents can iterate, which is really important, especially in data."
+        },
+        {
+            "startTime": 1177.319,
+            "endTime": 1181.16,
+            "body": "Because if you've ever answered a lot of these questions, you'll go make an assumption about"
+        },
+        {
+            "startTime": 1181.16,
+            "endTime": 1188.759,
+            "body": "how something works, run a query, get that thing back and be like, okay, well, I guess I didn't understand how that thing works. Make a change, try again."
+        },
+        {
+            "startTime": 1189.099,
+            "endTime": 1193.42,
+            "body": "And then you sort of iterate yourself to finding the actual solution. Agents are able to do that"
+        },
+        {
+            "startTime": 1193.42,
+            "endTime": 1199.2,
+            "body": "as well, where a chatbot would just create the query and be like, here you go. So the agent"
+        },
+        {
+            "startTime": 1199.2,
+            "endTime": 1204.759,
+            "body": "harness gives you a lot of abilities for it to feel more like talking to a person because it's"
+        },
+        {
+            "startTime": 1204.759,
+            "endTime": 1205.279,
+            "body": "able to correct its mistakes just like a person because it's able to correct"
+        },
+        {
+            "startTime": 1205.279,
+            "endTime": 1210.799,
+            "body": "its mistakes just like a person is. And the neat thing is that agents are kind of the next big"
+        },
+        {
+            "startTime": 1210.799,
+            "endTime": 1216.279,
+            "body": "thing. I think the next big step in LLM research and the history of it is actually right when some"
+        },
+        {
+            "startTime": 1216.279,
+            "endTime": 1220.539,
+            "body": "of the really great models first started coming out last year, people experimented and were really"
+        },
+        {
+            "startTime": 1220.539,
+            "endTime": 1226.599,
+            "body": "excited about agents. And you might've heard of auto GPPT or BabyAGI and these are some of the very first sort of agents."
+        },
+        {
+            "startTime": 1227.24,
+            "endTime": 1228.779,
+            "body": "And those, you know, kind of like,"
+        },
+        {
+            "startTime": 1228.88,
+            "endTime": 1230.779,
+            "body": "they couldn't make them go all the way basically."
+        },
+        {
+            "startTime": 1230.779,
+            "endTime": 1233.2,
+            "body": "And they kind of fell out of like, out of hype or whatever."
+        },
+        {
+            "startTime": 1233.42,
+            "endTime": 1234.819,
+            "body": "And people kind of moved on"
+        },
+        {
+            "startTime": 1234.819,
+            "endTime": 1236.64,
+            "body": "and they started experimenting with other things."
+        },
+        {
+            "startTime": 1236.64,
+            "endTime": 1238.88,
+            "body": "And there was kind of like a mini agent winter"
+        },
+        {
+            "startTime": 1238.88,
+            "endTime": 1240.539,
+            "body": "through most of last year."
+        },
+        {
+            "startTime": 1241.079,
+            "endTime": 1242.88,
+            "body": "We, you know, we kind of stuck at it."
+        },
+        {
+            "startTime": 1242.9,
+            "endTime": 1244.38,
+            "body": "I think we might have an easier problem"
+        },
+        {
+            "startTime": 1244.38,
+            "endTime": 1249.24,
+            "body": "than a generalized agent because we have a narrow domain problem, but we just kept using architecture like that"
+        },
+        {
+            "startTime": 1249.24,
+            "endTime": 1254.859,
+            "body": "and plugging away and it works well for us. But then sort of interestingly to our surprise,"
+        },
+        {
+            "startTime": 1254.96,
+            "endTime": 1259.94,
+            "body": "to everyone's surprise, these agentic architectures started becoming more popular and more"
+        },
+        {
+            "startTime": 1259.94,
+            "endTime": 1269.9,
+            "body": "performant again, even over the last few months. And, you know, a good example of that would have been devin.ai as a software writing agent, for instance. And, you know, I think now we've reached"
+        },
+        {
+            "startTime": 1269.9,
+            "endTime": 1275.68,
+            "body": "a point where people have proven that these agents actually outperform basic chatbots. So like a GPT"
+        },
+        {
+            "startTime": 1275.68,
+            "endTime": 1282.46,
+            "body": "3.5 with an agent architecture can generally outperform GPT-4 on most benchmarks with vanilla"
+        },
+        {
+            "startTime": 1282.46,
+            "endTime": 1288.119,
+            "body": "tokens in tokens out. You know, Andrew Ng says that like, you could see GPT-4 on most benchmarks with vanilla tokens in, tokens out. You know, Andrew Ng says that, like, you could see GPT-5 level quality performance today."
+        },
+        {
+            "startTime": 1288.519,
+            "endTime": 1289.88,
+            "body": "It's just GPT-4 with an agent."
+        },
+        {
+            "startTime": 1290.039,
+            "endTime": 1291.2,
+            "body": "He's kind of extending that analogy."
+        },
+        {
+            "startTime": 1292.079,
+            "endTime": 1296.2,
+            "body": "So I think the world is kind of really waking up to the fact that this is the right way"
+        },
+        {
+            "startTime": 1296.2,
+            "endTime": 1297.22,
+            "body": "to work with these tools."
+        },
+        {
+            "startTime": 1297.779,
+            "endTime": 1300.819,
+            "body": "And I suspect that we'll be seeing a lot more deployment of that going forward."
+        },
+        {
+            "startTime": 1300.96,
+            "endTime": 1308.24,
+            "body": "I know if I was starting some sort of AI powered software tool right now, you know, I would, whatever it would be, I absolutely would be using an agentic architecture"
+        },
+        {
+            "startTime": 1308.24,
+            "endTime": 1317.5,
+            "body": "for it. Data lakes are notoriously complex. For data engineers who battle to build and scale high"
+        },
+        {
+            "startTime": 1317.5,
+            "endTime": 1322.359,
+            "body": "quality data workflows on the data lake, Starburst is an end-to-end data lakehouse platform built on"
+        },
+        {
+            "startTime": 1322.359,
+            "endTime": 1330.16,
+            "body": "Trino, the query engine Apache Iceberg was designed for. Starburst has complete support for all table formats including Apache Iceberg,"
+        },
+        {
+            "startTime": 1330.299,
+            "endTime": 1336.16,
+            "body": "Hive, and Delta Lake. And Starburst is trusted by teams of all sizes, including Comcast and DoorDash."
+        },
+        {
+            "startTime": 1336.779,
+            "endTime": 1341.24,
+            "body": "Want to see Starburst in action? Go to dataengineeringpodcast.com slash starburst"
+        },
+        {
+            "startTime": 1341.24,
+            "endTime": 1358.94,
+            "body": "today and get $500 in credits to try Starburst Galaxy, the easiest and being able to have the AI model have this feedback loop,"
+        },
+        {
+            "startTime": 1358.94,
+            "endTime": 1364.099,
+            "body": "understand the contextual elements of the conversation that it is engaged in,"
+        },
+        {
+            "startTime": 1364.519,
+            "endTime": 1367.279,
+            "body": "understanding the goals of the task that it is engaged in, understanding the goals of the task"
+        },
+        {
+            "startTime": 1367.279,
+            "endTime": 1372.18,
+            "body": "that has been assigned. I'm wondering if you can talk to some of the supporting infrastructure"
+        },
+        {
+            "startTime": 1372.18,
+            "endTime": 1380.46,
+            "body": "that's necessary to be able to allow these very flighty, if you will, models to have the"
+        },
+        {
+            "startTime": 1380.46,
+            "endTime": 1386.0,
+            "body": "appropriate context and the appropriate semantic reasoning to be able to carry on these"
+        },
+        {
+            "startTime": 1386.0,
+            "endTime": 1392.46,
+            "body": "longer interchanges and actually achieve the stated goal? Yeah, that's a great question."
+        },
+        {
+            "startTime": 1392.74,
+            "endTime": 1398.18,
+            "body": "There's a lot of different components to that architecture as well. So it's like the search"
+        },
+        {
+            "startTime": 1398.18,
+            "endTime": 1404.66,
+            "body": "component to be able to give it the right context at the right time. It's curating the tools very"
+        },
+        {
+            "startTime": 1404.66,
+            "endTime": 1406.96,
+            "body": "well. So those tools are like atomic and"
+        },
+        {
+            "startTime": 1406.96,
+            "endTime": 1411.619,
+            "body": "they're, you know, it's clear to it what they're going to do every time. And then one of the really"
+        },
+        {
+            "startTime": 1411.619,
+            "endTime": 1417.92,
+            "body": "important aspects is the feedback loop itself. It's like, how do you give it feedback when it's"
+        },
+        {
+            "startTime": 1417.92,
+            "endTime": 1423.299,
+            "body": "made a mistake in a way that's really easy for it to understand and keep it on, on mission,"
+        },
+        {
+            "startTime": 1423.519,
+            "endTime": 1426.88,
+            "body": "kind of. That's a harness that we've had to develop internally."
+        },
+        {
+            "startTime": 1427.539,
+            "endTime": 1429.619,
+            "body": "And it's been where we've spent a lot of time"
+        },
+        {
+            "startTime": 1429.619,
+            "endTime": 1432.4,
+            "body": "to really be able to increase performance in the agent"
+        },
+        {
+            "startTime": 1432.4,
+            "endTime": 1435.5,
+            "body": "is how we've been able to have that feedback step"
+        },
+        {
+            "startTime": 1435.5,
+            "endTime": 1437.42,
+            "body": "and let it sort of self-correct."
+        },
+        {
+            "startTime": 1438.64,
+            "endTime": 1440.819,
+            "body": "One thing that's become increasingly clear"
+        },
+        {
+            "startTime": 1440.819,
+            "endTime": 1442.92,
+            "body": "over the past year, a year ago,"
+        },
+        {
+            "startTime": 1442.96,
+            "endTime": 1443.839,
+            "body": "I think everyone was saying,"
+        },
+        {
+            "startTime": 1443.92,
+            "endTime": 1444.88,
+            "body": "who can build the best model?"
+        },
+        {
+            "startTime": 1448.92,
+            "endTime": 1453.559,
+            "body": "And there's a wide range of sort of quality of models as well. You know, if you had OpenAI leading the pack, and then there's a number of various levels of quality"
+        },
+        {
+            "startTime": 1453.559,
+            "endTime": 1461.299,
+            "body": "beneath that. Fast forward to today, and we have a number of different models that are all kind of"
+        },
+        {
+            "startTime": 1461.299,
+            "endTime": 1468.64,
+            "body": "comparable in terms of their capabilities. And, you know And if you take an off-the-shelf model from OpenAI or Gemini or Clot,"
+        },
+        {
+            "startTime": 1468.859,
+            "endTime": 1473.18,
+            "body": "they all have really high-quality models that perform more or less the same."
+        },
+        {
+            "startTime": 1473.18,
+            "endTime": 1476.88,
+            "body": "And I think people are realizing that the current architecture"
+        },
+        {
+            "startTime": 1476.88,
+            "endTime": 1479.579,
+            "body": "is kind of reaching the top of the S-curve."
+        },
+        {
+            "startTime": 1479.96,
+            "endTime": 1482.48,
+            "body": "The compute itself is somewhat commoditized,"
+        },
+        {
+            "startTime": 1482.539,
+            "endTime": 1490.0,
+            "body": "and people are starting to realize that the really standout performance from LLMs is going to come from two things, really. First,"
+        },
+        {
+            "startTime": 1490.0,
+            "endTime": 1494.64,
+            "body": "from the right sort of harnesses that can use and interact with these models. And secondly,"
+        },
+        {
+            "startTime": 1494.64,
+            "endTime": 1498.799,
+            "body": "is the right sort of interfaces to make it elegant and easy to use. So it's really"
+        },
+        {
+            "startTime": 1498.799,
+            "endTime": 1501.44,
+            "body": "the application layer is where the innovation is happening now."
+        },
+        {
+            "startTime": 1502.48,
+            "endTime": 1511.359,
+            "body": "Yeah. And one thing I'd add to that too, is that you kind of know if you have a good architecture, if every time OpenAI or Anthropic"
+        },
+        {
+            "startTime": 1511.359,
+            "endTime": 1515.359,
+            "body": "releases something, you're thinking, oh yeah, if they make it better, this is going to be a huge"
+        },
+        {
+            "startTime": 1515.359,
+            "endTime": 1521.38,
+            "body": "boost. If you're worried about their model improvements killing your business, then you"
+        },
+        {
+            "startTime": 1521.38,
+            "endTime": 1534.94,
+            "body": "probably don't have the right structure around it. The other element of AI and data agents that you mentioned earlier is the concept of the appropriate data model and domain model"
+        },
+        {
+            "startTime": 1534.94,
+            "endTime": 1545.48,
+            "body": "so that the agent has the appropriate search space for being able to appropriately understand the nature of the request and in the business intelligence space in"
+        },
+        {
+            "startTime": 1545.48,
+            "endTime": 1550.64,
+            "body": "particular understand the semantics of the data that it has been tasked with querying"
+        },
+        {
+            "startTime": 1550.64,
+            "endTime": 1558.859,
+            "body": "one of the primary interfaces for providing context to models has been the outgrowth of"
+        },
+        {
+            "startTime": 1558.859,
+            "endTime": 1563.22,
+            "body": "retrieval augmented generation where you have to generate these embeddings for being able to put"
+        },
+        {
+            "startTime": 1563.22,
+            "endTime": 1565.48,
+            "body": "this into a vector search space you don't necessarily want to have to generate these embeddings for being able to put this into a vector search space."
+        },
+        {
+            "startTime": 1570.019,
+            "endTime": 1570.5,
+            "body": "You don't necessarily want to have to embed all of your data because that can get very expensive."
+        },
+        {
+            "startTime": 1577.0,
+            "endTime": 1583.18,
+            "body": "And I'm wondering if you can just talk to some of the ways that you're thinking about the types of modeling and how to provide that context, as well as how to reduce the burden on end users"
+        },
+        {
+            "startTime": 1583.18,
+            "endTime": 1586.64,
+            "body": "for being able to feed the appropriate context to the agent"
+        },
+        {
+            "startTime": 1586.64,
+            "endTime": 1593.64,
+            "body": "to be able to get the appropriate requests back? Yeah, that's a great question. The way we handle"
+        },
+        {
+            "startTime": 1593.64,
+            "endTime": 1599.819,
+            "body": "it now is that the semantics are defined along with the actual definitions of the metrics."
+        },
+        {
+            "startTime": 1600.319,
+            "endTime": 1605.5,
+            "body": "So you can add context on how to use a table or a view."
+        },
+        {
+            "startTime": 1605.72,
+            "endTime": 1609.339,
+            "body": "You can add context on when to use this revenue metric instead of that one."
+        },
+        {
+            "startTime": 1609.579,
+            "endTime": 1612.4,
+            "body": "And all of that gets shown to the model."
+        },
+        {
+            "startTime": 1612.94,
+            "endTime": 1617.24,
+            "body": "And then the model is able to make pretty sophisticated decisions on when to choose"
+        },
+        {
+            "startTime": 1617.24,
+            "endTime": 1621.0,
+            "body": "one versus the other, because it has that context that's internal to your business."
+        },
+        {
+            "startTime": 1621.0,
+            "endTime": 1629.039,
+            "body": "So when you ask it a question, it actually sort of knows the business context around what the metrics mean, what the tables mean and how to use them."
+        },
+        {
+            "startTime": 1629.42,
+            "endTime": 1634.44,
+            "body": "So, and then actually serving that context to the model involves, uh, not just the vectors,"
+        },
+        {
+            "startTime": 1634.44,
+            "endTime": 1639.099,
+            "body": "but also, you know, like sort of traditional like keyword search as well. A hybrid model we found"
+        },
+        {
+            "startTime": 1639.099,
+            "endTime": 1644.619,
+            "body": "works, works best. Yeah. Uh, all of this functionality is wrapped up together in,"
+        },
+        {
+            "startTime": 1644.619,
+            "endTime": 1646.48,
+            "body": "in analytics cognitive layer."
+        },
+        {
+            "startTime": 1646.48,
+            "endTime": 1651.359,
+            "body": "And what the cognitive layer is, is an evolution of the semantic layer. And I guess recently"
+        },
+        {
+            "startTime": 1651.359,
+            "endTime": 1655.92,
+            "body": "popularized by Looker, but it's been around for 30 years or something like that. And what the"
+        },
+        {
+            "startTime": 1655.92,
+            "endTime": 1660.16,
+            "body": "cognitive layer does is it takes all of that semantic layer functionality where you can encode"
+        },
+        {
+            "startTime": 1660.96,
+            "endTime": 1666.72,
+            "body": "metrics in a sort of YAML, SQL kind of way. It takes all of that functionality,"
+        },
+        {
+            "startTime": 1667.16,
+            "endTime": 1672.319,
+            "body": "but then it also adds in all of this necessary agentic LLM harness, all these things we've been"
+        },
+        {
+            "startTime": 1672.319,
+            "endTime": 1676.98,
+            "body": "talking about. So adding in those search capabilities, adding in special ways to have"
+        },
+        {
+            "startTime": 1676.98,
+            "endTime": 1682.359,
+            "body": "feedback loops, both hidden feedback loops, as well as publicly with the end user to make a data"
+        },
+        {
+            "startTime": 1682.359,
+            "endTime": 1688.339,
+            "body": "agent paradigm really, really effective. And those things all get combined together in a really elegant way inside the cognitive"
+        },
+        {
+            "startTime": 1688.339,
+            "endTime": 1688.7,
+            "body": "layer."
+        },
+        {
+            "startTime": 1689.38,
+            "endTime": 1692.44,
+            "body": "And that's also where the context is captured."
+        },
+        {
+            "startTime": 1692.599,
+            "endTime": 1696.72,
+            "body": "And that's, you know, it understands the nature of the various metrics you're using and what"
+        },
+        {
+            "startTime": 1696.72,
+            "endTime": 1697.88,
+            "body": "sort of dimensions you slice them by."
+        },
+        {
+            "startTime": 1698.0,
+            "endTime": 1701.24,
+            "body": "And all the business context is encoded inside that layer as well."
+        },
+        {
+            "startTime": 1702.72,
+            "endTime": 1707.44,
+            "body": "One of the other interesting aspects of the current state of AI"
+        },
+        {
+            "startTime": 1707.44,
+            "endTime": 1713.68,
+            "body": "in this point in time, both in industry and in the kind of society at large, is that there's a"
+        },
+        {
+            "startTime": 1713.68,
+            "endTime": 1718.42,
+            "body": "high degree of variability in terms of the either levels of skepticism among some people or"
+        },
+        {
+            "startTime": 1718.42,
+            "endTime": 1724.66,
+            "body": "enthusiasm and misplaced attributions of skill on the other end of the spectrum. And I'm curious"
+        },
+        {
+            "startTime": 1724.66,
+            "endTime": 1725.519,
+            "body": "what you have seen as some of the spectrum. And I'm curious what you have"
+        },
+        {
+            "startTime": 1725.519,
+            "endTime": 1731.119,
+            "body": "seen as some of the aspects of customer education that have been necessary to help them understand"
+        },
+        {
+            "startTime": 1731.119,
+            "endTime": 1737.319,
+            "body": "the realities of what AI can and can't do and some of the skepticism that maybe they do need"
+        },
+        {
+            "startTime": 1737.319,
+            "endTime": 1743.099,
+            "body": "to bring to bear in those interactions. Yeah, definitely. I think there's plenty"
+        },
+        {
+            "startTime": 1743.099,
+            "endTime": 1745.46,
+            "body": "examples in both directions. I think a good"
+        },
+        {
+            "startTime": 1745.46,
+            "endTime": 1751.92,
+            "body": "way to start is that there are some people who have just unbelievably high expectations for what"
+        },
+        {
+            "startTime": 1751.92,
+            "endTime": 1757.839,
+            "body": "it's able to do. They'll come in and they'll say like, hey, so show me my revenue last week and"
+        },
+        {
+            "startTime": 1757.839,
+            "endTime": 1763.48,
+            "body": "compare that to the average of all my competitors. And you're like, we can't go and get your"
+        },
+        {
+            "startTime": 1763.48,
+            "endTime": 1765.66,
+            "body": "competitor's revenue information."
+        },
+        {
+            "startTime": 1766.9,
+            "endTime": 1767.779,
+            "body": "Nobody can really do that."
+        },
+        {
+            "startTime": 1769.519,
+            "endTime": 1769.579,
+            "body": "But it's like some people come in with like,"
+        },
+        {
+            "startTime": 1771.759,
+            "endTime": 1772.339,
+            "body": "oh, it's going to magically find my competitor's revenue for me."
+        },
+        {
+            "startTime": 1774.559,
+            "endTime": 1774.64,
+            "body": "So it's like you definitely have to caveat kind of,"
+        },
+        {
+            "startTime": 1776.44,
+            "endTime": 1776.519,
+            "body": "this is just the data that you have."
+        },
+        {
+            "startTime": 1778.119,
+            "endTime": 1778.2,
+            "body": "If you don't have this data, it's going to tell you,"
+        },
+        {
+            "startTime": 1780.279,
+            "endTime": 1781.38,
+            "body": "hey, we don't have this data."
+        },
+        {
+            "startTime": 1783.74,
+            "endTime": 1783.799,
+            "body": "And then there's also like the product side of it."
+        },
+        {
+            "startTime": 1785.98,
+            "endTime": 1786.4,
+            "body": "Like how can we sort of do a better job,"
+        },
+        {
+            "startTime": 1791.44,
+            "endTime": 1796.18,
+            "body": "not just us whenever we onboard people to temper their expectations, but also make the product interpretable. So it's like, the first thing is just like a human, it's not going to be perfect."
+        },
+        {
+            "startTime": 1796.18,
+            "endTime": 1800.72,
+            "body": "There's going to be times where, you know, you ask for the last three months, it understands that"
+        },
+        {
+            "startTime": 1800.72,
+            "endTime": 1808.74,
+            "body": "as like the rolling last three months, instead of like the last three full complete months. There's a lot of sort of situations where it might not do exactly what you"
+        },
+        {
+            "startTime": 1808.74,
+            "endTime": 1813.14,
+            "body": "think it's going to do. And that's why the cognitive layer gives us the ability to show you"
+        },
+        {
+            "startTime": 1813.14,
+            "endTime": 1818.259,
+            "body": "graphically, like in the UI, you know, this is the date range it chose. And since those are all"
+        },
+        {
+            "startTime": 1818.259,
+            "endTime": 1823.9,
+            "body": "inputs and then the SQL gets compiled, it can never lie about that. So you can all, you always"
+        },
+        {
+            "startTime": 1823.9,
+            "endTime": 1825.559,
+            "body": "have this ability to audit it without having to look at SQL, which means that, you know, it can never lie about that. So you can always have this ability to audit it without"
+        },
+        {
+            "startTime": 1825.559,
+            "endTime": 1829.519,
+            "body": "having to look at SQL, which means that, you know, it's going to, you ask it to go pull revenue,"
+        },
+        {
+            "startTime": 1829.619,
+            "endTime": 1834.16,
+            "body": "you'll see it pulls net instead of gross, and you can swap those if you want to swap them."
+        },
+        {
+            "startTime": 1834.42,
+            "endTime": 1839.819,
+            "body": "Because it will, you know, clarify, make some assumptions. And having that interpretability"
+        },
+        {
+            "startTime": 1839.819,
+            "endTime": 1845.92,
+            "body": "piece is really important in terms of being able to close the gap on between what you asked for"
+        },
+        {
+            "startTime": 1845.92,
+            "endTime": 1851.42,
+            "body": "and what it kind of understood. Yeah. Paul's keyword there is audit,"
+        },
+        {
+            "startTime": 1851.539,
+            "endTime": 1856.16,
+            "body": "which I think is really important because I think a lot of people, even building LL applications,"
+        },
+        {
+            "startTime": 1856.16,
+            "endTime": 1863.16,
+            "body": "have not fully internalized this yet, which is the LLM needs to give you feedback at a level"
+        },
+        {
+            "startTime": 1863.16,
+            "endTime": 1869.72,
+            "body": "that you can understand. And I think that's where a lot of these sort of, you know, divergences or expectations"
+        },
+        {
+            "startTime": 1869.72,
+            "endTime": 1873.299,
+            "body": "come from is people think the LLM will do everything for them."
+        },
+        {
+            "startTime": 1873.539,
+            "endTime": 1877.339,
+            "body": "I like to think of it more as like a supervisory kind of, you know, you're the supervisor of"
+        },
+        {
+            "startTime": 1877.339,
+            "endTime": 1880.72,
+            "body": "the LLM and you ask it for things and it gives you an output and you can review and, you"
+        },
+        {
+            "startTime": 1880.72,
+            "endTime": 1882.079,
+            "body": "know, just keep iterating from there."
+        },
+        {
+            "startTime": 1882.759,
+            "endTime": 1885.68,
+            "body": "And a great example, if you take, you if you take OpenAI Code Interpreter,"
+        },
+        {
+            "startTime": 1886.42,
+            "endTime": 1890.96,
+            "body": "that's a notebook. It's generating Python and people will go on there and they'll ask questions"
+        },
+        {
+            "startTime": 1890.96,
+            "endTime": 1895.4,
+            "body": "and they'll write pretty good Python for them. But that Python still makes mistakes. And if you're"
+        },
+        {
+            "startTime": 1895.4,
+            "endTime": 1900.119,
+            "body": "not a great Python developer yourself, it's really hard for you to catch where it goes wrong in"
+        },
+        {
+            "startTime": 1900.119,
+            "endTime": 1907.099,
+            "body": "sometimes very dangerous ways. So a big part of the way that we approach this is that that level of feedback for the self-serve user"
+        },
+        {
+            "startTime": 1907.099,
+            "endTime": 1909.119,
+            "body": "is in a language they can understand."
+        },
+        {
+            "startTime": 1909.24,
+            "endTime": 1911.319,
+            "body": "It's speaking the metrics and slices and filters"
+        },
+        {
+            "startTime": 1911.319,
+            "endTime": 1912.819,
+            "body": "in a very understandable way,"
+        },
+        {
+            "startTime": 1913.2,
+            "endTime": 1915.279,
+            "body": "the same way that they're used to in a BI platform."
+        },
+        {
+            "startTime": 1916.279,
+            "endTime": 1917.5,
+            "body": "And then other side I'd say is true."
+        },
+        {
+            "startTime": 1917.579,
+            "endTime": 1919.759,
+            "body": "We get the skeptics and we get the over-enthusiastic people,"
+        },
+        {
+            "startTime": 1919.9,
+            "endTime": 1921.0,
+            "body": "but it's actually funny."
+        },
+        {
+            "startTime": 1921.0,
+            "endTime": 1923.88,
+            "body": "I think it's easy to deal with the skeptics"
+        },
+        {
+            "startTime": 1923.88,
+            "endTime": 1929.72,
+            "body": "because we get them on a product demo and I think the product demo speaks for itself, frankly. I think"
+        },
+        {
+            "startTime": 1929.72,
+            "endTime": 1933.779,
+            "body": "that people see the capabilities and they realize that it's not all smoke and mirrors at that point."
+        },
+        {
+            "startTime": 1935.14,
+            "endTime": 1939.859,
+            "body": "In your space of business intelligence, where the information that you're giving back to people"
+        },
+        {
+            "startTime": 1939.859,
+            "endTime": 1946.599,
+            "body": "is likely to lead to some sort of decision, whether that's in terms of roadmap or a product"
+        },
+        {
+            "startTime": 1946.599,
+            "endTime": 1952.019,
+            "body": "purchase or the ways that you're thinking about allocation of revenue or income."
+        },
+        {
+            "startTime": 1952.759,
+            "endTime": 1956.299,
+            "body": "And also the fact that AIs can often get things wrong."
+        },
+        {
+            "startTime": 1956.4,
+            "endTime": 1958.96,
+            "body": "You pointed out that it only has your data to work from."
+        },
+        {
+            "startTime": 1959.059,
+            "endTime": 1962.019,
+            "body": "So there's a certain amount of guardrails built in automatically."
+        },
+        {
+            "startTime": 1962.339,
+            "endTime": 1969.96,
+            "body": "But as everyone who has been in this industry long enough knows, it's very easy to lie with data. And so I'm curious how you've approached some of that"
+        },
+        {
+            "startTime": 1969.96,
+            "endTime": 1975.96,
+            "body": "guidance in decision making, as well as providing appropriate caveats to the end user to say,"
+        },
+        {
+            "startTime": 1976.119,
+            "endTime": 1980.66,
+            "body": "this is what we've come back with. This is how we think this is interpretable,"
+        },
+        {
+            "startTime": 1980.66,
+            "endTime": 1983.98,
+            "body": "but maybe don't go ahead and write out that check quite yet."
+        },
+        {
+            "startTime": 1983.98,
+            "endTime": 1985.059,
+            "body": "interpretable, but maybe don't go ahead and write out that check quite yet."
+        },
+        {
+            "startTime": 1991.9,
+            "endTime": 1992.42,
+            "body": "Yeah. A big piece of that is the part kind of right when it's about to answer your question,"
+        },
+        {
+            "startTime": 1997.839,
+            "endTime": 2002.279,
+            "body": "where it's going to kind of, just like a really good human does, is it tells you what it understood you as saying and what it's going to do as a result. That part right there solves a lot of"
+        },
+        {
+            "startTime": 2002.279,
+            "endTime": 2006.98,
+            "body": "the problems because a lot of the times, you know, a good human will do that. And then the person will stop them right there and say, Oh, wait a"
+        },
+        {
+            "startTime": 2006.98,
+            "endTime": 2012.42,
+            "body": "minute. Nope. I meant this thing instead of that thing. Just that explaining part really helps kind"
+        },
+        {
+            "startTime": 2012.42,
+            "endTime": 2016.859,
+            "body": "of make sure things are on track and you're, you know, in the same kind of headspace or universe"
+        },
+        {
+            "startTime": 2016.859,
+            "endTime": 2020.92,
+            "body": "as the person asking the question. And then the other one really is leaning on the, that"
+        },
+        {
+            "startTime": 2020.92,
+            "endTime": 2026.16,
+            "body": "interpretability piece, being able to just hover over and see, okay, it picked this metric from here."
+        },
+        {
+            "startTime": 2026.599,
+            "endTime": 2027.859,
+            "body": "Because one of the advantages we have"
+        },
+        {
+            "startTime": 2027.859,
+            "endTime": 2030.559,
+            "body": "is since we have the full BI platform available,"
+        },
+        {
+            "startTime": 2030.7,
+            "endTime": 2032.039,
+            "body": "people see stuff on dashboards."
+        },
+        {
+            "startTime": 2032.2,
+            "endTime": 2033.18,
+            "body": "They're like, oh yeah, I know."
+        },
+        {
+            "startTime": 2033.38,
+            "endTime": 2035.38,
+            "body": "I see that metric on all my kind of main dashboards."
+        },
+        {
+            "startTime": 2035.92,
+            "endTime": 2037.44,
+            "body": "That's the one I was looking for."
+        },
+        {
+            "startTime": 2037.88,
+            "endTime": 2039.42,
+            "body": "And they are able to kind of understand"
+        },
+        {
+            "startTime": 2039.42,
+            "endTime": 2041.7,
+            "body": "how what they ask for relates to what they see"
+        },
+        {
+            "startTime": 2041.7,
+            "endTime": 2043.88,
+            "body": "on a day-to-day basis on the dashboards."
+        },
+        {
+            "startTime": 2044.579,
+            "endTime": 2049.119,
+            "body": "Yeah, even an extension of that is the chatbot will even suggest those dashboards if there are"
+        },
+        {
+            "startTime": 2049.119,
+            "endTime": 2050.48,
+            "body": "pre-built data assets available."
+        },
+        {
+            "startTime": 2050.8,
+            "endTime": 2054.199,
+            "body": "You start asking questions and they're like, you know, I can answer this, but do you want"
+        },
+        {
+            "startTime": 2054.199,
+            "endTime": 2055.82,
+            "body": "to look at the dashboard that your team has already built?"
+        },
+        {
+            "startTime": 2055.82,
+            "endTime": 2059.8,
+            "body": "So it actually promotes the human activity over the chatbot answer first."
+        },
+        {
+            "startTime": 2060.519,
+            "endTime": 2071.42,
+            "body": "And I think generally speaking, this is one of those things where that application layer comes into play. And a lot of the solutions to these problems are not going to be building better models, they're going to be building better interfaces."
+        },
+        {
+            "startTime": 2072.599,
+            "endTime": 2085.92,
+            "body": "For that UI element, another challenge in the business intelligence space is understanding what is an appropriate visualization to use for a particular set of data and the axes along which it is being represented."
+        },
+        {
+            "startTime": 2086.34,
+            "endTime": 2091.219,
+            "body": "And I'm curious what you see as maybe some of the potential of multimodality in the AI"
+        },
+        {
+            "startTime": 2091.219,
+            "endTime": 2096.44,
+            "body": "models to be able to address some of that challenge of what visualization do I want"
+        },
+        {
+            "startTime": 2096.44,
+            "endTime": 2100.559,
+            "body": "to present and what is that actually going to convey to the person or how confusing is"
+        },
+        {
+            "startTime": 2100.559,
+            "endTime": 2102.8,
+            "body": "this going to be because there are 10,000 colors?"
+        },
+        {
+            "startTime": 2103.96,
+            "endTime": 2104.4,
+            "body": "Oh, totally."
+        },
+        {
+            "startTime": 2106.619,
+            "endTime": 2111.239,
+            "body": "That's why we have the system right now, I think works generally pretty well is we have sort of like a deterministic,"
+        },
+        {
+            "startTime": 2111.46,
+            "endTime": 2115.82,
+            "body": "hey, you know, it's this, like these dimensions with these categories, with this many categories,"
+        },
+        {
+            "startTime": 2115.82,
+            "endTime": 2121.179,
+            "body": "this is like, you know, the best way to visualize it. That's like the first step always. And then"
+        },
+        {
+            "startTime": 2121.179,
+            "endTime": 2125.4,
+            "body": "the person can ask for whatever they want. And they can ask for whatever they want and they can ask for whatever they want."
+        },
+        {
+            "startTime": 2125.48,
+            "endTime": 2130.659,
+            "body": "If they want to make the entire thing, just shades of green, they can do that and it will do it for"
+        },
+        {
+            "startTime": 2130.659,
+            "endTime": 2135.42,
+            "body": "them. So it definitely can go off the rails in terms of you ask for a visualization that doesn't"
+        },
+        {
+            "startTime": 2135.42,
+            "endTime": 2143.099,
+            "body": "make sense. It will get it for you. But we have a pretty good setup for getting, it will default"
+        },
+        {
+            "startTime": 2143.099,
+            "endTime": 2145.099,
+            "body": "pick a visualization that makes sense for you. And then"
+        },
+        {
+            "startTime": 2145.099,
+            "endTime": 2148.88,
+            "body": "if you want to go from there, you can go wherever you want to go from there."
+        },
+        {
+            "startTime": 2149.88,
+            "endTime": 2153.82,
+            "body": "Yeah. And the other philosophy, our philosophy here takes a page foot at a Tufty's book. And"
+        },
+        {
+            "startTime": 2153.82,
+            "endTime": 2159.619,
+            "body": "I think that in a word, I'd say we just try to be boring. It doesn't lead to the, you know,"
+        },
+        {
+            "startTime": 2159.619,
+            "endTime": 2162.94,
+            "body": "the craziest visualizations or anything like that. You're going to see a lot of bar plots,"
+        },
+        {
+            "startTime": 2163.0,
+            "endTime": 2170.579,
+            "body": "a lot of line plots, a lot of basic tables, but at the end of the day, it kills me inside. I love sexy database, but"
+        },
+        {
+            "startTime": 2170.579,
+            "endTime": 2174.84,
+            "body": "at the end of the day, it conveys the information they're looking for most effectively."
+        },
+        {
+            "startTime": 2175.96,
+            "endTime": 2183.659,
+            "body": "And in your experience of building Zenlytic and continually investing in the AI capabilities and"
+        },
+        {
+            "startTime": 2183.659,
+            "endTime": 2186.039,
+            "body": "this data agent functionality, what are some of"
+        },
+        {
+            "startTime": 2186.039,
+            "endTime": 2190.32,
+            "body": "the most interesting or innovative or unexpected ways that you've seen that feature set used?"
+        },
+        {
+            "startTime": 2191.44,
+            "endTime": 2195.96,
+            "body": "That's one of the coolest things about building stuff with AI is that you see it used in ways"
+        },
+        {
+            "startTime": 2195.96,
+            "endTime": 2202.539,
+            "body": "that you really, really did not expect. Like we had one customer use it and they were like,"
+        },
+        {
+            "startTime": 2202.599,
+            "endTime": 2205.44,
+            "body": "okay, you know, show me the top 10 accounts by like, you"
+        },
+        {
+            "startTime": 2205.44,
+            "endTime": 2209.38,
+            "body": "know, most amount that they owe us in the last three months or something like that. I want to"
+        },
+        {
+            "startTime": 2209.38,
+            "endTime": 2213.059,
+            "body": "see all the uninvoiced accounts. And we were like, okay, that makes sense. And then they were like,"
+        },
+        {
+            "startTime": 2213.519,
+            "endTime": 2219.139,
+            "body": "draft emails using the invoice details of all of these accounts, asking for them to pay the money"
+        },
+        {
+            "startTime": 2219.139,
+            "endTime": 2223.48,
+            "body": "and don't be, you know, too aggressive, but you know, be firm. And then it just like went through"
+        },
+        {
+            "startTime": 2223.48,
+            "endTime": 2229.659,
+            "body": "and got all the, you know, invoice details for everything and like drafted the emails for them. And I was like, that's,"
+        },
+        {
+            "startTime": 2229.739,
+            "endTime": 2235.599,
+            "body": "that's pretty crazy. I did not expect that to be how people would use it. So we see, we see a lot"
+        },
+        {
+            "startTime": 2235.599,
+            "endTime": 2241.079,
+            "body": "around the unstructured text data. Yeah. That's the other fun thing too, is, uh, what I would call"
+        },
+        {
+            "startTime": 2241.079,
+            "endTime": 2245.76,
+            "body": "the, the journey into semi-structured into semi-structured data."
+        },
+        {
+            "startTime": 2249.0,
+            "endTime": 2249.039,
+            "body": "And we see people actually kind of like work around this right now,"
+        },
+        {
+            "startTime": 2252.619,
+            "endTime": 2252.719,
+            "body": "which is interesting, where they will take textual data,"
+        },
+        {
+            "startTime": 2255.86,
+            "endTime": 2256.159,
+            "body": "they'll take news articles, they'll take white papers or whatever,"
+        },
+        {
+            "startTime": 2258.84,
+            "endTime": 2259.099,
+            "body": "and they'll store them inside of a data warehouse."
+        },
+        {
+            "startTime": 2262.179,
+            "endTime": 2262.46,
+            "body": "So they can use the chatbot to go and not only access that,"
+        },
+        {
+            "startTime": 2264.239,
+            "endTime": 2264.88,
+            "body": "but also manipulate the text in one step."
+        },
+        {
+            "startTime": 2267.76,
+            "endTime": 2268.48,
+            "body": "And I think it's cool that we're actually starting to see the lines blurring a little bit."
+        },
+        {
+            "startTime": 2272.88,
+            "endTime": 2277.76,
+            "body": "That's a good example of semi-structured. You can go all the way to full unstructured. I think one of the weird things about working in our industry is that the nature of data has sort of changed."
+        },
+        {
+            "startTime": 2278.32,
+            "endTime": 2282.4,
+            "body": "And like two years ago, data would have been a table or it would have been a spreadsheet or"
+        },
+        {
+            "startTime": 2282.4,
+            "endTime": 2290.059,
+            "body": "something like that. And now data can be a PDF or a set of meeting notes or a YouTube video. Those are all data now."
+        },
+        {
+            "startTime": 2290.679,
+            "endTime": 2294.739,
+            "body": "So we're really excited about what the future is going to bring. And we're fully prepared to,"
+        },
+        {
+            "startTime": 2294.739,
+            "endTime": 2301.0,
+            "body": "you know, embrace that future of the broader definition of data. Let me put it that way."
+        },
+        {
+            "startTime": 2302.179,
+            "endTime": 2307.579,
+            "body": "In that line of your example, Paul, of being able to draft those emails, it also brought"
+        },
+        {
+            "startTime": 2307.579,
+            "endTime": 2313.679,
+            "body": "to mind the earlier notes of what differentiates a data agent from a chatbot is the fact that"
+        },
+        {
+            "startTime": 2313.679,
+            "endTime": 2316.5,
+            "body": "it has access to tools and understands how to use them."
+        },
+        {
+            "startTime": 2316.92,
+            "endTime": 2322.099,
+            "body": "I'm wondering what you see as some of the future evolution of the tools that are in"
+        },
+        {
+            "startTime": 2322.099,
+            "endTime": 2330.28,
+            "body": "the toolbox for that agent and some of the ways that you're thinking about the interfaces that you might expose so that other people can plug new tools in that"
+        },
+        {
+            "startTime": 2330.28,
+            "endTime": 2336.86,
+            "body": "you didn't think of yet? Yeah, that is a great question. I think this is something that all BI"
+        },
+        {
+            "startTime": 2336.86,
+            "endTime": 2340.94,
+            "body": "tools have tried to do at some point and never really successfully. I don't know if you remember"
+        },
+        {
+            "startTime": 2340.94,
+            "endTime": 2345.199,
+            "body": "Looker's Action Hub. Good idea. It's just hard to make that actually work in practice."
+        },
+        {
+            "startTime": 2350.0,
+            "endTime": 2351.019,
+            "body": "I think it's finally possible to make those things work with large language models."
+        },
+        {
+            "startTime": 2354.699,
+            "endTime": 2358.84,
+            "body": "We don't, like, you know, I don't have the perfect idea of exactly how that's going to look, but, you know, I can definitely see a world where you're like, hey, you know,"
+        },
+        {
+            "startTime": 2358.9,
+            "endTime": 2361.159,
+            "body": "how should I be adjusting spend for this campaign?"
+        },
+        {
+            "startTime": 2361.32,
+            "endTime": 2362.5,
+            "body": "And it's like, well, this is how it's done."
+        },
+        {
+            "startTime": 2362.579,
+            "endTime": 2363.78,
+            "body": "This is how other campaigns have done."
+        },
+        {
+            "startTime": 2364.039,
+            "endTime": 2366.88,
+            "body": "I'd recommend, you know, adjusting it up a little bit because it's doing well."
+        },
+        {
+            "startTime": 2367.219,
+            "endTime": 2370.679,
+            "body": "You'd say, great, go do that for me. OAuth screen pops up. You're like, yep,"
+        },
+        {
+            "startTime": 2371.079,
+            "endTime": 2375.199,
+            "body": "log in Facebook. There you go. It took the action for me. I can definitely see a world where that's,"
+        },
+        {
+            "startTime": 2375.199,
+            "endTime": 2387.159,
+            "body": "that's the case. And it's limited not by its integrations with things as so much as it's limited by like, what OAuth do you have for your internal tools?"
+        },
+        {
+            "startTime": 2387.88,
+            "endTime": 2394.079,
+            "body": "Um, and that's possible. Like, I mean, what I described is really complicated to create,"
+        },
+        {
+            "startTime": 2394.239,
+            "endTime": 2398.32,
+            "body": "right. But it's actually possible now for the first time with large language models. And I"
+        },
+        {
+            "startTime": 2398.32,
+            "endTime": 2404.199,
+            "body": "think as they get better and more consistent and people, you know, use ChatGPT, ask it to browse"
+        },
+        {
+            "startTime": 2404.199,
+            "endTime": 2405.26,
+            "body": "the web for them and just kind of"
+        },
+        {
+            "startTime": 2405.26,
+            "endTime": 2410.239,
+            "body": "trust that it did a reasonably good job of summarizing that, you know, webpage. As trust"
+        },
+        {
+            "startTime": 2410.239,
+            "endTime": 2414.88,
+            "body": "builds to any underlying models, then people will be more comfortable saying, yeah, go and adjust"
+        },
+        {
+            "startTime": 2414.88,
+            "endTime": 2420.92,
+            "body": "the spend for this campaign for me. A great example of that actually is,"
+        },
+        {
+            "startTime": 2421.82,
+            "endTime": 2426.139,
+            "body": "you know, as Paul said, it's challenging, but but versions of that exist today, right? And if you"
+        },
+        {
+            "startTime": 2426.139,
+            "endTime": 2434.539,
+            "body": "look at how OpenAI characterizes GPTs, the GPT store and their earlier API for it, that API was"
+        },
+        {
+            "startTime": 2434.539,
+            "endTime": 2438.159,
+            "body": "expressed in natural language. So you wouldn't actually go and say, hey, make a token request"
+        },
+        {
+            "startTime": 2438.159,
+            "endTime": 2444.3,
+            "body": "to HubSpot to pull XYZ in a JSON. You'd just say, get ourselves from HubSpot. And that would"
+        },
+        {
+            "startTime": 2444.3,
+            "endTime": 2447.739,
+            "body": "actually use the necessary API docs in HubSpot to go and connect and"
+        },
+        {
+            "startTime": 2447.739,
+            "endTime": 2451.34,
+            "body": "make that request, even though it's characterized in natural language."
+        },
+        {
+            "startTime": 2452.119,
+            "endTime": 2457.639,
+            "body": "So yeah, I think one of the big bottlenecks to those application stores really blossoming"
+        },
+        {
+            "startTime": 2457.639,
+            "endTime": 2460.079,
+            "body": "is that those connections are hard to build and maintain."
+        },
+        {
+            "startTime": 2460.659,
+            "endTime": 2465.119,
+            "body": "So if we can make that more elegantly, it opens up a whole new world of possibilities"
+        },
+        {
+            "startTime": 2465.119,
+            "endTime": 2473.4,
+            "body": "and so in your experience of building zenlytic working very closely in this ai ecosystem what"
+        },
+        {
+            "startTime": 2473.4,
+            "endTime": 2476.739,
+            "body": "are some of the most interesting or unexpected or challenging lessons that you've each learned"
+        },
+        {
+            "startTime": 2476.739,
+            "endTime": 2484.82,
+            "body": "in the process i think i think one of the big ones is it's like just how many mistakes you"
+        },
+        {
+            "startTime": 2484.82,
+            "endTime": 2485.88,
+            "body": "have to make to like figure"
+        },
+        {
+            "startTime": 2485.88,
+            "endTime": 2486.3,
+            "body": "it out."
+        },
+        {
+            "startTime": 2486.4,
+            "endTime": 2489.099,
+            "body": "All this stuff is, is just bleeding edge."
+        },
+        {
+            "startTime": 2489.099,
+            "endTime": 2493.519,
+            "body": "Like you're kind of off the map for, you know, how do you evaluate these systems?"
+        },
+        {
+            "startTime": 2493.519,
+            "endTime": 2496.199,
+            "body": "Cause they do different things every time."
+        },
+        {
+            "startTime": 2496.199,
+            "endTime": 2497.739,
+            "body": "Basically, how do you make them consistent?"
+        },
+        {
+            "startTime": 2497.739,
+            "endTime": 2501.34,
+            "body": "Because again, they do different things, you know, they're non-deterministic."
+        },
+        {
+            "startTime": 2501.659,
+            "endTime": 2505.5,
+            "body": "There's a lot of stuff that we've had to build and figure out internally."
+        },
+        {
+            "startTime": 2506.639,
+            "endTime": 2509.5,
+            "body": "And part of that too is that one of the big differences"
+        },
+        {
+            "startTime": 2509.5,
+            "endTime": 2513.86,
+            "body": "is that before, if you show a demo of something,"
+        },
+        {
+            "startTime": 2513.92,
+            "endTime": 2515.539,
+            "body": "it means you can pretty much do it at scale."
+        },
+        {
+            "startTime": 2515.679,
+            "endTime": 2516.639,
+            "body": "You just pay Amazon more money."
+        },
+        {
+            "startTime": 2517.32,
+            "endTime": 2520.32,
+            "body": "But that kind of turns on its head with AI."
+        },
+        {
+            "startTime": 2520.579,
+            "endTime": 2522.059,
+            "body": "Everyone can kind of show the same demo,"
+        },
+        {
+            "startTime": 2522.179,
+            "endTime": 2523.0,
+            "body": "but the real question is,"
+        },
+        {
+            "startTime": 2523.099,
+            "endTime": 2529.94,
+            "body": "can you actually do it for a real data warehouse or whatever your actual problem domain is? Being able to go from"
+        },
+        {
+            "startTime": 2529.94,
+            "endTime": 2535.639,
+            "body": "showing a good demo to actually working well on real data warehouses for production use cases is"
+        },
+        {
+            "startTime": 2535.639,
+            "endTime": 2540.8,
+            "body": "a really big jump. And we've had to do a lot of engineering to be able to get there."
+        },
+        {
+            "startTime": 2541.28,
+            "endTime": 2546.519,
+            "body": "So definitely surprising the difference between how easy it is to do a"
+        },
+        {
+            "startTime": 2546.519,
+            "endTime": 2552.28,
+            "body": "demo versus how hard it is to make this work really in production. Yeah. Yeah. The tech is"
+        },
+        {
+            "startTime": 2552.28,
+            "endTime": 2557.159,
+            "body": "deceptively hard. It's, it's the kind of thing, uh, I mean, it's, it's funny. Paul talks about,"
+        },
+        {
+            "startTime": 2557.239,
+            "endTime": 2561.4,
+            "body": "Hey, you, you, you, you know, we're off the map here. And I remember my journey was like at the"
+        },
+        {
+            "startTime": 2561.4,
+            "endTime": 2565.48,
+            "body": "start of all this amazingly fast developments happening"
+        },
+        {
+            "startTime": 2565.48,
+            "endTime": 2566.559,
+            "body": "in AI."
+        },
+        {
+            "startTime": 2566.559,
+            "endTime": 2569.46,
+            "body": "First, you're excited and you're like, this is great."
+        },
+        {
+            "startTime": 2569.46,
+            "endTime": 2570.46,
+            "body": "We're off the map."
+        },
+        {
+            "startTime": 2570.46,
+            "endTime": 2571.46,
+            "body": "This is all brand new technology."
+        },
+        {
+            "startTime": 2571.46,
+            "endTime": 2573.5,
+            "body": "And then very quickly realize like, this is terrible."
+        },
+        {
+            "startTime": 2573.5,
+            "endTime": 2575.28,
+            "body": "We're off the map."
+        },
+        {
+            "startTime": 2575.28,
+            "endTime": 2578.239,
+            "body": "There's really no known paradigm for working with this tech."
+        },
+        {
+            "startTime": 2578.239,
+            "endTime": 2586.86,
+            "body": "And AI is especially dangerous for that because it makes it look like it could be easy. And I think there's a really"
+        },
+        {
+            "startTime": 2586.86,
+            "endTime": 2592.78,
+            "body": "common misconception with a lot of people that you just kind of throw an API in somewhere and"
+        },
+        {
+            "startTime": 2592.78,
+            "endTime": 2597.38,
+            "body": "you're calling LLM and suddenly that just sprinkles little star emojis over the whole product,"
+        },
+        {
+            "startTime": 2597.46,
+            "endTime": 2604.42,
+            "body": "basically. But this is a fundamentally new way of interacting with computers. And there's no"
+        },
+        {
+            "startTime": 2604.42,
+            "endTime": 2606.059,
+            "body": "rulebook for it. There's no playbook."
+        },
+        {
+            "startTime": 2606.699,
+            "endTime": 2609.44,
+            "body": "And yeah, you really have to build everything from the ground up. You have to build tooling"
+        },
+        {
+            "startTime": 2609.44,
+            "endTime": 2615.96,
+            "body": "from the ground up. You have to build methodologies from the ground up. And I think people don't"
+        },
+        {
+            "startTime": 2615.96,
+            "endTime": 2625.559,
+            "body": "realize how difficult of a problem space it is. And what I mean by that is you, you have, when, when you add something like, you know, textual inputs to a"
+        },
+        {
+            "startTime": 2625.559,
+            "endTime": 2632.079,
+            "body": "product, you added an unconstrained input space. And, you know, in our case, in many cases,"
+        },
+        {
+            "startTime": 2632.48,
+            "endTime": 2637.48,
+            "body": "there's also generally an unconstrained output space. And in our case, there's a huge sort of"
+        },
+        {
+            "startTime": 2637.48,
+            "endTime": 2642.139,
+            "body": "range of different types of data in the middle of those two, you know, from input to output."
+        },
+        {
+            "startTime": 2643.039,
+            "endTime": 2645.4,
+            "body": "And when you're, when you're building a space like that"
+        },
+        {
+            "startTime": 2645.4,
+            "endTime": 2648.9,
+            "body": "it's it's it's actually very hard to build a product that can capture those unconstrained"
+        },
+        {
+            "startTime": 2648.9,
+            "endTime": 2655.219,
+            "body": "but like capture all of that at one spot so uh i would say that it has been pretty awesome"
+        },
+        {
+            "startTime": 2655.219,
+            "endTime": 2660.219,
+            "body": "learning experience and i feel like we've had to you know be very very creative along the way to"
+        },
+        {
+            "startTime": 2660.219,
+            "endTime": 2666.539,
+            "body": "invent a lot of the stuff that we've done but uh it's been a lot of fun too. Yeah, really been a rewarding experience too."
+        },
+        {
+            "startTime": 2667.28,
+            "endTime": 2668.94,
+            "body": "And not to mention all of the time"
+        },
+        {
+            "startTime": 2668.94,
+            "endTime": 2671.0,
+            "body": "you've had to spend hunting down GPUs"
+        },
+        {
+            "startTime": 2671.0,
+            "endTime": 2672.219,
+            "body": "so that you can actually run the inference."
+        },
+        {
+            "startTime": 2674.219,
+            "endTime": 2676.099,
+            "body": "Well, there might be LPUs soon."
+        },
+        {
+            "startTime": 2676.34,
+            "endTime": 2678.139,
+            "body": "We'll see how well Grok does."
+        },
+        {
+            "startTime": 2680.48,
+            "endTime": 2683.42,
+            "body": "Yeah, that I guess is another point of curiosity"
+        },
+        {
+            "startTime": 2683.42,
+            "endTime": 2712.019,
+            "body": "is what you've seen as the scalability in terms of cost for actually being able to run this inference, particularly given that there's going to be highly bursty workloads, given the nature of your end user experience, where maybe somebody is having an hour long conversation with their chatbot and somebody else just has a single one-off back and forth. And just the way that you think about the overall cost of executing a model for inference and how to"
+        },
+        {
+            "startTime": 2712.019,
+            "endTime": 2717.94,
+            "body": "reduce the overall load on the system so that you're offloading that work as quickly as possible"
+        },
+        {
+            "startTime": 2717.94,
+            "endTime": 2765.179,
+            "body": "to some of the lower resource models. Yeah, that's a really good question. I think from our perspective, it definitely matters, but it matters less because we are a B2B product, which means that we also charge a lot more money. We were not making like 15 cents on each user. And what that means is that we have more budget to make the highest comprehension, biggest and best model in as many use cases as we can because it's got to work flawlessly and people are willing to pay for it if they will genuinely have a really good experience with it. So definitely index more on like maximize experience, not at all costs, but,"
+        },
+        {
+            "startTime": 2765.179,
+            "endTime": 2770.539,
+            "body": "but even if costs are high, it's better to have costs high and a great experience than cost lower"
+        },
+        {
+            "startTime": 2770.539,
+            "endTime": 2775.719,
+            "body": "and a meh experience. Yeah. Highest quality of model and just large numbers of tokens. So,"
+        },
+        {
+            "startTime": 2775.82,
+            "endTime": 2780.84,
+            "body": "I mean, agentic approaches take more tokens and like in our case, for example, before Zoe,"
+        },
+        {
+            "startTime": 2780.94,
+            "endTime": 2785.719,
+            "body": "the chat bot ever replies to your question. She's already had extensive conversations"
+        },
+        {
+            "startTime": 2785.719,
+            "endTime": 2787.94,
+            "body": "with the cognitive layer back and forth under the hood"
+        },
+        {
+            "startTime": 2787.94,
+            "endTime": 2789.139,
+            "body": "and then goes and has the conversation."
+        },
+        {
+            "startTime": 2789.34,
+            "endTime": 2793.059,
+            "body": "So, you know, we definitely take the gold-plated approach,"
+        },
+        {
+            "startTime": 2793.199,
+            "endTime": 2795.78,
+            "body": "but I'm not that worried about it."
+        },
+        {
+            "startTime": 2795.84,
+            "endTime": 2799.019,
+            "body": "And not only because, you know, we're a SaaS product,"
+        },
+        {
+            "startTime": 2799.26,
+            "endTime": 2800.98,
+            "body": "but also because those costs"
+        },
+        {
+            "startTime": 2800.98,
+            "endTime": 2802.86,
+            "body": "have been decreasing dramatically, right?"
+        },
+        {
+            "startTime": 2802.94,
+            "endTime": 2805.199,
+            "body": "And even we just saw"
+        },
+        {
+            "startTime": 2805.199,
+            "endTime": 2809.539,
+            "body": "GPT-4 will get released and that slashed the cost of high performance models in half. And,"
+        },
+        {
+            "startTime": 2809.659,
+            "endTime": 2813.539,
+            "body": "you know, we see an order of magnitude change every 12 months or something, and it just keeps"
+        },
+        {
+            "startTime": 2813.539,
+            "endTime": 2817.579,
+            "body": "getting cheaper and cheaper. And, you know, I think that it's going to become essentially free"
+        },
+        {
+            "startTime": 2817.579,
+            "endTime": 2823.659,
+            "body": "before too long. It reminds me a lot of, I always compare the AI era to the mobile era,"
+        },
+        {
+            "startTime": 2823.88,
+            "endTime": 2829.0,
+            "body": "because that's like the last big wave that I could think of. But it reminds me a lot of, I compare, I always compare the AI era to the mobile era because I, uh, that's like the last big wave that I could think of, but it reminds me a lot of at the start of the mobile"
+        },
+        {
+            "startTime": 2829.0,
+            "endTime": 2832.86,
+            "body": "era, they had this kind of, you probably forgotten, but they had this optimized kind of internet,"
+        },
+        {
+            "startTime": 2832.86,
+            "endTime": 2837.039,
+            "body": "right. Where there's like, you know, low, low res images. Yeah, that's right. Exactly. The"
+        },
+        {
+            "startTime": 2837.039,
+            "endTime": 2841.599,
+            "body": "mobile web, because it was too expensive to get data into a phone and, you know, it was really"
+        },
+        {
+            "startTime": 2841.599,
+            "endTime": 2847.199,
+            "body": "expensive at the time. And, you know, that feels like a silly consideration now. And like, you don't even think about that, but, you know, I think"
+        },
+        {
+            "startTime": 2847.199,
+            "endTime": 2852.659,
+            "body": "we'll probably see the same transition happen with LLMs as well. Yep. No, I, I very much remember"
+        },
+        {
+            "startTime": 2852.659,
+            "endTime": 2857.559,
+            "body": "mobile web and reading books about how to write your HTML so that it will render on a mobile phone."
+        },
+        {
+            "startTime": 2857.559,
+            "endTime": 2863.179,
+            "body": "And then HTML5 was the new amazing thing. And now it's just background noise. Yeah, totally."
+        },
+        {
+            "startTime": 2861.48,
+            "endTime": 2862.039,
+            "body": "and now it's just background noise."
+        },
+        {
+            "startTime": 2863.159,
+            "endTime": 2864.3,
+            "body": "Yeah, totally."
+        },
+        {
+            "startTime": 2865.0,
+            "endTime": 2865.96,
+            "body": "A hundred percent."
+        },
+        {
+            "startTime": 2871.099,
+            "endTime": 2873.98,
+            "body": "And so for people who are building systems and products, what are the cases where an AI agent is the wrong choice"
+        },
+        {
+            "startTime": 2873.98,
+            "endTime": 2876.079,
+            "body": "and it's just too much time and energy invested"
+        },
+        {
+            "startTime": 2876.079,
+            "endTime": 2877.32,
+            "body": "for not enough return?"
+        },
+        {
+            "startTime": 2878.46,
+            "endTime": 2881.34,
+            "body": "I think it's not just that the return might not be high,"
+        },
+        {
+            "startTime": 2881.46,
+            "endTime": 2883.739,
+            "body": "it's that it might just not make sense in your application."
+        },
+        {
+            "startTime": 2884.34,
+            "endTime": 2889.38,
+            "body": "Like I think a good example is a tool I use every single day, which is GitHub Copilot. It's amazing."
+        },
+        {
+            "startTime": 2889.559,
+            "endTime": 2894.039,
+            "body": "You just, you know, type a few lines. It offers to complete them for you. It's great. It's not a,"
+        },
+        {
+            "startTime": 2894.119,
+            "endTime": 2899.44,
+            "body": "it's not an agent and nor should it be. It's very helpful as just like get some general context"
+        },
+        {
+            "startTime": 2899.44,
+            "endTime": 2903.76,
+            "body": "about where you are, what code you've been looking at, sees the rest of your file, offers you a very"
+        },
+        {
+            "startTime": 2903.76,
+            "endTime": 2909.079,
+            "body": "reasonable completion. That's a great product that should not be an AI agent. There's plenty of other products"
+        },
+        {
+            "startTime": 2909.079,
+            "endTime": 2914.219,
+            "body": "out there like that. So I would say it's really about what kind of products you're building and"
+        },
+        {
+            "startTime": 2914.219,
+            "endTime": 2921.239,
+            "body": "building a good experience for the user. And as you continue to build and evolve your product"
+        },
+        {
+            "startTime": 2921.239,
+            "endTime": 2925.88,
+            "body": "and your platform and keep pace with the AI ecosystem, what are some of the things you"
+        },
+        {
+            "startTime": 2925.88,
+            "endTime": 2930.179,
+            "body": "have planned for the near to medium term or any particular projects or problem areas you're"
+        },
+        {
+            "startTime": 2930.179,
+            "endTime": 2936.599,
+            "body": "excited to explore? I think the biggest one for us is we've seen, like we talked about earlier,"
+        },
+        {
+            "startTime": 2936.699,
+            "endTime": 2942.179,
+            "body": "a lot of people using unstructured data, whether they're sticking news articles in Snowflake,"
+        },
+        {
+            "startTime": 2942.579,
+            "endTime": 2945.119,
+            "body": "you know, or like reading invoice details and having a draft"
+        },
+        {
+            "startTime": 2945.119,
+            "endTime": 2950.3,
+            "body": "emails. We've seen a lot of people ask about more textual data. So I think a big thing that we're"
+        },
+        {
+            "startTime": 2950.3,
+            "endTime": 2955.48,
+            "body": "thinking about, and we're going to be, you know, improving a lot is the product experience working"
+        },
+        {
+            "startTime": 2955.48,
+            "endTime": 2961.28,
+            "body": "on text data. Because that's one thing that, like Ryan said, it's changed the definition of data,"
+        },
+        {
+            "startTime": 2961.28,
+            "endTime": 2965.179,
+            "body": "more people are expecting it to be able to not just sum up some"
+        },
+        {
+            "startTime": 2965.179,
+            "endTime": 2970.639,
+            "body": "values in a transactions table, but also to actually understand documents and what's going"
+        },
+        {
+            "startTime": 2970.639,
+            "endTime": 2976.159,
+            "body": "on in their business. Yeah, plus one to that. And I would say maybe this is a very near-term"
+        },
+        {
+            "startTime": 2976.159,
+            "endTime": 2979.679,
+            "body": "future plan for us because it's in the product today. But one thing that I'm personally very"
+        },
+        {
+            "startTime": 2979.679,
+            "endTime": 2988.26,
+            "body": "excited about is adding in advanced analytics capabilities to Z analytics. So those are new tools for the"
+        },
+        {
+            "startTime": 2988.26,
+            "endTime": 2993.36,
+            "body": "data agent, for the chatbot. And you see kind of two halves of this market right now, right? You"
+        },
+        {
+            "startTime": 2993.36,
+            "endTime": 2998.0,
+            "body": "see the BI platforms, they're kind of bolting on these agents for retrieving data or the chatbots"
+        },
+        {
+            "startTime": 2998.0,
+            "endTime": 3004.019,
+            "body": "for retrieving data. And you see a lot of these chatbot-only tools that are focused on writing"
+        },
+        {
+            "startTime": 3004.019,
+            "endTime": 3005.599,
+            "body": "notebooks. And Code Interpreter is one"
+        },
+        {
+            "startTime": 3005.599,
+            "endTime": 3010.159,
+            "body": "of them, but there's all these tools for writing analytics when you upload a CSV."
+        },
+        {
+            "startTime": 3011.36,
+            "endTime": 3014.48,
+            "body": "It feels strange to me that those are two separate things, and that should be an end-to-end"
+        },
+        {
+            "startTime": 3014.48,
+            "endTime": 3021.36,
+            "body": "workflow. And now in Tenlytic, you can actually pull governed data from the BI tool, and that will"
+        },
+        {
+            "startTime": 3021.36,
+            "endTime": 3025.179,
+            "body": "be directly used with the advanced analytics tool to write"
+        },
+        {
+            "startTime": 3025.179,
+            "endTime": 3030.8,
+            "body": "Python against it and produce an end-to-end result. I don't think it's not that far off."
+        },
+        {
+            "startTime": 3030.88,
+            "endTime": 3034.36,
+            "body": "I mean, this is kind of like running now, but it's something that we're really excited about."
+        },
+        {
+            "startTime": 3035.239,
+            "endTime": 3043.079,
+            "body": "Are there any other aspects of this concept of data agents and AI agents and the ways that you"
+        },
+        {
+            "startTime": 3043.079,
+            "endTime": 3046.519,
+            "body": "are applying that functionality to Zenlytic and"
+        },
+        {
+            "startTime": 3046.519,
+            "endTime": 3049.82,
+            "body": "the overall space of business intelligence that we didn't discuss yet that you'd like to cover"
+        },
+        {
+            "startTime": 3049.82,
+            "endTime": 3055.619,
+            "body": "before we close out the show? No, I think that's pretty much everything. The main TLDR is that"
+        },
+        {
+            "startTime": 3055.619,
+            "endTime": 3061.639,
+            "body": "we're really working to make this a co-worker for you. Someone that you can delegate some tasks to,"
+        },
+        {
+            "startTime": 3061.9,
+            "endTime": 3065.579,
+            "body": "have it just go off, accomplish the things you need, give you the information you need to make good decisions."
+        },
+        {
+            "startTime": 3066.3,
+            "endTime": 3068.119,
+            "body": "That's what we're laser focused on doing."
+        },
+        {
+            "startTime": 3068.92,
+            "endTime": 3069.019,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 3069.3,
+            "endTime": 3070.579,
+            "body": "I would just say the only thing is"
+        },
+        {
+            "startTime": 3070.579,
+            "endTime": 3071.88,
+            "body": "I'd like to extend an open invitation"
+        },
+        {
+            "startTime": 3071.88,
+            "endTime": 3074.42,
+            "body": "to anyone to geek out about this technology."
+        },
+        {
+            "startTime": 3074.619,
+            "endTime": 3077.36,
+            "body": "If you are building with this,"
+        },
+        {
+            "startTime": 3077.539,
+            "endTime": 3078.84,
+            "body": "I mean, my recommendations would be first,"
+        },
+        {
+            "startTime": 3079.28,
+            "endTime": 3082.5,
+            "body": "I wouldn't start an AI project in 2024"
+        },
+        {
+            "startTime": 3082.5,
+            "endTime": 3084.28,
+            "body": "without making it a data agent project."
+        },
+        {
+            "startTime": 3084.639,
+            "endTime": 3085.96,
+            "body": "Then I think the secret to making"
+        },
+        {
+            "startTime": 3085.96,
+            "endTime": 3091.96,
+            "body": "data agents work well is providing a really great environment for them to do their job in. I think"
+        },
+        {
+            "startTime": 3091.96,
+            "endTime": 3095.699,
+            "body": "are two of the takeaways on how to make these work. But if anyone wants to chat more about that,"
+        },
+        {
+            "startTime": 3095.98,
+            "endTime": 3101.139,
+            "body": "please hit us up. All right. Well, for anybody who does want to follow up on that offer and keep"
+        },
+        {
+            "startTime": 3101.139,
+            "endTime": 3104.699,
+            "body": "track of the work that you and your teams are doing, I'll have you add your preferred contact"
+        },
+        {
+            "startTime": 3104.699,
+            "endTime": 3108.679,
+            "body": "information to the show notes. And as the final question, I'd like to get"
+        },
+        {
+            "startTime": 3108.679,
+            "endTime": 3113.019,
+            "body": "your perspective on what you see as being the biggest gap in the tooling or technology that's"
+        },
+        {
+            "startTime": 3113.019,
+            "endTime": 3120.38,
+            "body": "available for data management. And I'll also say, or AI today. I think I'll give two quick ones."
+        },
+        {
+            "startTime": 3120.8,
+            "endTime": 3125.42,
+            "body": "On AI, it's mostly about the evaluations of the models. It's probably, it's mostly about like the evaluations of the models. Like"
+        },
+        {
+            "startTime": 3125.42,
+            "endTime": 3129.94,
+            "body": "it's very difficult to evaluate non-deterministic things. And that's, that's a big gap in the"
+        },
+        {
+            "startTime": 3129.94,
+            "endTime": 3133.5,
+            "body": "tooling right now. Like there's some, you know, early products that are starting to do a good"
+        },
+        {
+            "startTime": 3133.5,
+            "endTime": 3139.199,
+            "body": "job at it, but definitely, definitely a big gap on the AI side is in the evaluations on the data"
+        },
+        {
+            "startTime": 3139.199,
+            "endTime": 3144.659,
+            "body": "side. I think there's a really exciting advantage, like a really exciting product to be built, uh,"
+        },
+        {
+            "startTime": 3144.659,
+            "endTime": 3145.519,
+            "body": "in the, in the like transformation layer, because there's a lot of gr like a really exciting product to be built uh in the in the like"
+        },
+        {
+            "startTime": 3145.519,
+            "endTime": 3150.32,
+            "body": "transformation layer because there's a lot of grungy work in data transformation if you've done"
+        },
+        {
+            "startTime": 3150.32,
+            "endTime": 3154.48,
+            "body": "that before like it's just you know you're you're pulling information you're like why is this order"
+        },
+        {
+            "startTime": 3154.48,
+            "endTime": 3158.88,
+            "body": "id not showing up in this table but it's showing up in the previous one is it a timing thing is it"
+        },
+        {
+            "startTime": 3158.88,
+            "endTime": 3162.8,
+            "body": "you know some other filter that's being applied like there's just so much grungy work of like"
+        },
+        {
+            "startTime": 3162.8,
+            "endTime": 3170.139,
+            "body": "running the very same query with slightly different order IDs over and over and over again, pushing that work off to a data"
+        },
+        {
+            "startTime": 3170.139,
+            "endTime": 3175.26,
+            "body": "agent to let it just iterate on that and then come back and be like, this is why I think the thing is"
+        },
+        {
+            "startTime": 3175.26,
+            "endTime": 3179.659,
+            "body": "not present. That would be, that would be incredible. So I think that's, that's a big"
+        },
+        {
+            "startTime": 3179.659,
+            "endTime": 3183.84,
+            "body": "opportunity that I'm sure the big, you know, transformation providers are all working on,"
+        },
+        {
+            "startTime": 3183.98,
+            "endTime": 3185.199,
+            "body": "but that's a really exciting one."
+        },
+        {
+            "startTime": 3186.159,
+            "endTime": 3186.76,
+            "body": "All right."
+        },
+        {
+            "startTime": 3186.86,
+            "endTime": 3188.84,
+            "body": "Well, thank you both for taking the time today"
+        },
+        {
+            "startTime": 3188.84,
+            "endTime": 3190.34,
+            "body": "to join me and share the work"
+        },
+        {
+            "startTime": 3190.34,
+            "endTime": 3191.539,
+            "body": "that you've been doing at Zenlytic"
+        },
+        {
+            "startTime": 3191.539,
+            "endTime": 3194.719,
+            "body": "and your experiences of building these AI agents."
+        },
+        {
+            "startTime": 3194.88,
+            "endTime": 3196.519,
+            "body": "It's definitely a very interesting space."
+        },
+        {
+            "startTime": 3196.639,
+            "endTime": 3197.719,
+            "body": "It's great to hear people"
+        },
+        {
+            "startTime": 3197.719,
+            "endTime": 3199.599,
+            "body": "who are pushing the forefront of that."
+        },
+        {
+            "startTime": 3199.739,
+            "endTime": 3201.159,
+            "body": "So I appreciate all the time and energy"
+        },
+        {
+            "startTime": 3201.159,
+            "endTime": 3202.539,
+            "body": "that you're both putting into"
+        },
+        {
+            "startTime": 3202.539,
+            "endTime": 3204.179,
+            "body": "making business intelligence"
+        },
+        {
+            "startTime": 3204.179,
+            "endTime": 3205.679,
+            "body": "a more self-serve experience."
+        },
+        {
+            "startTime": 3206.059,
+            "endTime": 3207.219,
+            "body": "And I hope you enjoy the rest of your day."
+        },
+        {
+            "startTime": 3207.9,
+            "endTime": 3208.559,
+            "body": "Thanks, Tobias."
+        },
+        {
+            "startTime": 3208.639,
+            "endTime": 3209.32,
+            "body": "Thanks for having us on."
+        },
+        {
+            "startTime": 3209.739,
+            "endTime": 3210.48,
+            "body": "Thanks a ton, Tobias."
+        },
+        {
+            "startTime": 3210.639,
+            "endTime": 3211.219,
+            "body": "Been a pleasure."
+        },
+        {
+            "startTime": 3217.86,
+            "endTime": 3218.86,
+            "body": "Thank you for listening."
+        },
+        {
+            "startTime": 3219.32,
+            "endTime": 3223.76,
+            "body": "Don't forget to check out our other shows, Podcast.init, which covers the Python language,"
+        },
+        {
+            "startTime": 3223.76,
+            "endTime": 3226.519,
+            "body": "its community, and the innovative ways it is being used."
+        },
+        {
+            "startTime": 3226.739,
+            "endTime": 3231.38,
+            "body": "And the Machine Learning Podcast, which helps you go from idea to production with machine learning."
+        },
+        {
+            "startTime": 3231.84,
+            "endTime": 3238.0,
+            "body": "Visit the site at dataengineeringpodcast.com to subscribe to the show, sign up for the mailing list, and read the show notes."
+        },
+        {
+            "startTime": 3238.48,
+            "endTime": 3241.88,
+            "body": "And if you've learned something or tried out a project from the show, then tell us about it."
+        },
+        {
+            "startTime": 3242.42,
+            "endTime": 3245.26,
+            "body": "Email hosts at dataengineeringpodcast.com"
+        },
+        {
+            "startTime": 3245.26,
+            "endTime": 3249.44,
+            "body": "with your story. And to help other people find the show, please leave a review on Apple"
+        },
+        {
+            "startTime": 3249.44,
+            "endTime": 3251.44,
+            "body": "Podcasts and tell your friends and coworkers."
+        }
+    ]
+}

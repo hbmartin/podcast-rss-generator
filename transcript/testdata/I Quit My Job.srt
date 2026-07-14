@@ -1,0 +1,1192 @@
+1
+00:00:01,460 --> 00:00:04,490
+Welcome to another episode of the map escaping podcast.
+
+2
+00:00:04,500 --> 00:00:08,300
+My name is Daniel and this podcast is going to be a little bit different,
+
+3
+00:00:08,310 --> 00:00:11,180
+it's just me in the studio here today and by studio,
+
+4
+00:00:11,180 --> 00:00:12,710
+I mean my home office,
+
+5
+00:00:12,720 --> 00:00:23,140
+which is simply a spare bedroom in a house where I hang up a bunch of blankets and soft things around the room when I record to help sort of take the edge off the sound to take take away some of the vibration.
+
+6
+00:00:23,310 --> 00:00:25,310
+So so let me start by introducing myself.
+
+7
+00:00:25,320 --> 00:00:26,140
+My name is Daniel,
+
+8
+00:00:26,150 --> 00:00:27,110
+like I said before,
+
+9
+00:00:27,120 --> 00:00:28,470
+I'm 45 years old,
+
+10
+00:00:28,480 --> 00:00:31,768
+born and raised in new Zealand and I've been living in Denmark for the last 12 years.
+
+11
+00:00:31,798 --> 00:00:32,528
+I have a son,
+
+12
+00:00:32,538 --> 00:00:34,688
+a daughter and a wife and a cat called Coco.
+
+13
+00:00:34,768 --> 00:00:36,498
+And I recently quit my job.
+
+14
+00:00:36,508 --> 00:00:37,958
+I quit my job as a G.
+
+15
+00:00:37,958 --> 00:00:38,068
+I.
+
+16
+00:00:38,068 --> 00:00:38,588
+S.
+
+17
+00:00:38,678 --> 00:00:40,898
+Specialist slash consultant.
+
+18
+00:00:41,118 --> 00:00:45,838
+Let's not go into exactly what that job title means because it's it's very very broad,
+
+19
+00:00:45,848 --> 00:00:48,638
+but I'm not just quitting that particular job,
+
+20
+00:00:48,648 --> 00:00:50,528
+I'm quitting being a G.
+
+21
+00:00:50,528 --> 00:00:50,638
+I.
+
+22
+00:00:50,638 --> 00:00:50,888
+S.
+
+23
+00:00:50,898 --> 00:00:52,668
+Specialist slash consultant.
+
+24
+00:00:52,678 --> 00:00:54,848
+This is a big step when you're 45 years old,
+
+25
+00:00:54,888 --> 00:00:59,788
+I think maybe later on in another podcast episode I can go into the details of where I'm going from here,
+
+26
+00:00:59,808 --> 00:01:01,586
+but let's folk on quitting the job,
+
+27
+00:01:01,586 --> 00:01:02,606
+quitting being a G.
+
+28
+00:01:02,606 --> 00:01:02,686
+I.
+
+29
+00:01:02,686 --> 00:01:02,936
+S.
+
+30
+00:01:02,946 --> 00:01:06,316
+Specialist slash consultant after 12 years in the industry,
+
+31
+00:01:06,486 --> 00:01:08,506
+an industry that I was really excited to join.
+
+32
+00:01:08,516 --> 00:01:09,586
+How did I get here?
+
+33
+00:01:09,596 --> 00:01:12,216
+Or the truth is what got me here was being bored.
+
+34
+00:01:12,336 --> 00:01:15,936
+I got really tired of doing boring work of solving boring problems,
+
+35
+00:01:15,966 --> 00:01:21,056
+but let's let's take a minute just to define what boring means or perhaps what I think it means.
+
+36
+00:01:21,196 --> 00:01:21,416
+Well,
+
+37
+00:01:21,416 --> 00:01:23,856
+firstly everyone gets to decide what's boring for them,
+
+38
+00:01:23,866 --> 00:01:25,016
+boring is personal,
+
+39
+00:01:25,026 --> 00:01:26,096
+it's not universal,
+
+40
+00:01:26,106 --> 00:01:28,616
+boring is not the same as unimportant.
+
+41
+00:01:28,696 --> 00:01:31,824
+And I think of boring being the opposite of adventurous.
+
+42
+00:01:31,844 --> 00:01:37,264
+When I finished high school in New Zealand I went to an outdoor recreation school where we trained to be outdoor guides.
+
+43
+00:01:37,274 --> 00:01:41,264
+So I spent two years doing this and I specialized in rock climbing and whitewater kayaking.
+
+44
+00:01:41,274 --> 00:01:54,014
+And at that school we had to think very hard about what an adventure was and when we were having an adventure and who we should take on an adventure and we sort of loosely defined adventure as being when the outcome was uncertain.
+
+45
+00:01:54,024 --> 00:02:01,022
+So I think of boring is not adventurous boring is when the outcome is clear and you're not having an adventure.
+
+46
+00:02:01,032 --> 00:02:03,582
+But the thing about boring is is that it works,
+
+47
+00:02:03,592 --> 00:02:06,002
+it saves us from decision fatigue.
+
+48
+00:02:06,012 --> 00:02:07,572
+It's one less thing to think about,
+
+49
+00:02:07,582 --> 00:02:09,642
+and boring is often desirable.
+
+50
+00:02:09,652 --> 00:02:13,792
+There are lots of things in my professional life that I want to be boring to be routine,
+
+51
+00:02:13,792 --> 00:02:20,982
+to be predictable and boring can be really motivating if you if you let it be and boring can also be a sign that you've evolved that you're,
+
+52
+00:02:20,982 --> 00:02:22,002
+that you have moved on,
+
+53
+00:02:22,062 --> 00:02:34,610
+that this what this task that you've been doing is no longer enough that you need something else and for me boring turned into frustration and it turned into apathy and it led to me quitting my job and wanting to move away from being a G.
+
+54
+00:02:34,610 --> 00:02:34,690
+I.
+
+55
+00:02:34,690 --> 00:02:34,950
+S.
+
+56
+00:02:34,960 --> 00:02:36,750
+Specialist slash consultant.
+
+57
+00:02:36,780 --> 00:02:38,320
+So after 12 years I'm done,
+
+58
+00:02:38,360 --> 00:02:39,390
+I'm ready to move on.
+
+59
+00:02:39,530 --> 00:02:43,770
+I want to share a few things that I've learned on my journey in the hope that will help you on your journey.
+
+60
+00:02:43,780 --> 00:02:46,100
+So like all good internet content creators,
+
+61
+00:02:46,100 --> 00:02:48,400
+I've made a list and I know what you're thinking.
+
+62
+00:02:48,410 --> 00:02:48,990
+Great.
+
+63
+00:02:49,000 --> 00:02:51,100
+Another list on the internet awesome.
+
+64
+00:02:51,170 --> 00:02:57,200
+But in this particular case it was really difficult to weave a story around these points that that I wanted to share with you.
+
+65
+00:02:57,210 --> 00:02:59,138
+So list seemed like a gray option.
+
+66
+00:02:59,138 --> 00:03:01,748
+It was an easy way for me to organize my thoughts.
+
+67
+00:03:01,798 --> 00:03:05,368
+Now I I realize I might end up contradicting myself from time to time,
+
+68
+00:03:05,368 --> 00:03:10,748
+but I hope you'll see past that and sort of look for for the deeper meaning and what I'm trying to convey here.
+
+69
+00:03:10,758 --> 00:03:17,398
+So the first thing on my list is boring work won't necessarily too interesting work at times during my career,
+
+70
+00:03:17,398 --> 00:03:20,458
+I found myself thinking if I get really good at doing this boring work,
+
+71
+00:03:20,468 --> 00:03:24,938
+someone will see how good I am at doing it and they'll give me more interesting problems to solve.
+
+72
+00:03:24,948 --> 00:03:26,998
+I think this is a really naive approach.
+
+73
+00:03:27,008 --> 00:03:31,016
+I think this is A variation of waiting to be picked,
+
+74
+00:03:31,026 --> 00:03:32,256
+waiting to be discovered.
+
+75
+00:03:32,326 --> 00:03:37,236
+I don't think I no longer think it's good enough just to do good work or great work.
+
+76
+00:03:37,246 --> 00:03:40,396
+I think you need to be an advocate for yourself and the work that you're doing.
+
+77
+00:03:40,396 --> 00:03:43,226
+I think you need to market yourself and the work that you're doing.
+
+78
+00:03:43,236 --> 00:03:44,566
+I think you need to be proactive,
+
+79
+00:03:44,566 --> 00:03:46,686
+go out and look for interesting tasks,
+
+80
+00:03:46,696 --> 00:03:48,226
+interesting problems to solve.
+
+81
+00:03:48,236 --> 00:03:49,966
+And my approach of just thinking,
+
+82
+00:03:49,966 --> 00:03:51,916
+if I get really good at doing this boring work,
+
+83
+00:03:51,926 --> 00:03:54,836
+someone will see me that there was a bad strategy.
+
+84
+00:03:54,846 --> 00:03:55,946
+If I could go back in time,
+
+85
+00:03:55,946 --> 00:03:56,986
+I would do things differently.
+
+86
+00:03:56,996 --> 00:04:05,314
+# two on my It kind of leads on from from number one and this is getting good at something typically leads to doing more of that thing.
+
+87
+00:04:05,324 --> 00:04:08,204
+So be intentional about what you want to excel in.
+
+88
+00:04:08,234 --> 00:04:10,194
+If you want to be a great cartographer,
+
+89
+00:04:10,204 --> 00:04:13,324
+look for opportunities to do more photography.
+
+90
+00:04:13,354 --> 00:04:15,474
+If you don't want to go down that path,
+
+91
+00:04:15,484 --> 00:04:16,124
+don't do it.
+
+92
+00:04:16,194 --> 00:04:20,204
+Be intentional about what you decide you want to excel in.
+
+93
+00:04:20,354 --> 00:04:27,284
+It will lead to more opportunities to do that thing and of course you can influence this if you want to be great at python,
+
+94
+00:04:27,302 --> 00:04:28,242
+do more python,
+
+95
+00:04:28,292 --> 00:04:29,912
+it will lead to you doing more python.
+
+96
+00:04:29,922 --> 00:04:30,932
+If you don't want to do this,
+
+97
+00:04:30,932 --> 00:04:32,082
+don't do it.
+
+98
+00:04:32,092 --> 00:04:33,682
+It sounds really silly when I say it,
+
+99
+00:04:33,692 --> 00:04:34,982
+but later on in my career,
+
+100
+00:04:34,982 --> 00:04:36,212
+I found myself trapped.
+
+101
+00:04:36,212 --> 00:04:40,152
+Like I got really good at doing this one particular task.
+
+102
+00:04:40,162 --> 00:04:45,332
+And so I quickly found myself in a box where that the opportunity was to do more of that particular task.
+
+103
+00:04:45,342 --> 00:04:48,422
+And after a while it became boring and I wanted to evolve and move on.
+
+104
+00:04:48,432 --> 00:04:49,792
+But I felt stuck.
+
+105
+00:04:49,802 --> 00:04:54,932
+I wasn't intentional enough about where I was going and what I wanted to excel at.
+
+106
+00:04:54,942 --> 00:04:56,822
+So number three on my list is high.
+
+107
+00:04:56,840 --> 00:04:59,210
+Have more empathy for the professionals that I work with.
+
+108
+00:04:59,220 --> 00:05:02,090
+Maybe you've said a variation of this in your professional life,
+
+109
+00:05:02,090 --> 00:05:04,970
+something like it's all points lines and polygons to me,
+
+110
+00:05:05,000 --> 00:05:08,530
+this shows absolutely no empathy for the work that others are doing.
+
+111
+00:05:08,540 --> 00:05:11,880
+And each time I said that I painted myself into a corner,
+
+112
+00:05:11,940 --> 00:05:13,030
+I basically told people,
+
+113
+00:05:13,030 --> 00:05:16,170
+unless it was about points lines and polygons don't talk to this guy.
+
+114
+00:05:16,240 --> 00:05:20,920
+This was a huge mistake and I'm sure has led to so many missed opportunities.
+
+115
+00:05:20,940 --> 00:05:23,070
+And apart from that it's kind of selfish.
+
+116
+00:05:23,080 --> 00:05:24,700
+It's a really selfish thing to say.
+
+117
+00:05:24,790 --> 00:05:29,388
+I didn't like it when other people belittle my craft and yet I willingly did the same thing to them.
+
+118
+00:05:29,398 --> 00:05:30,958
+So later on I got better at this.
+
+119
+00:05:30,968 --> 00:05:31,728
+But at the start,
+
+120
+00:05:31,738 --> 00:05:32,868
+I was terrible at this.
+
+121
+00:05:32,868 --> 00:05:34,578
+I was so focused on what I was doing,
+
+122
+00:05:34,578 --> 00:05:40,388
+that I couldn't see the overlap between what I was the work that I was doing and what other people were doing huge mistake.
+
+123
+00:05:40,398 --> 00:05:41,448
+If I could go back in time,
+
+124
+00:05:41,448 --> 00:05:42,508
+I would be better at this,
+
+125
+00:05:42,578 --> 00:05:45,748
+I would show more empathy for the other professionals that I'm working with,
+
+126
+00:05:45,758 --> 00:05:50,338
+I would do a better job of understanding who I'm talking to and where they are trying to go.
+
+127
+00:05:50,348 --> 00:05:52,548
+So speaking of where they're trying to go,
+
+128
+00:05:52,558 --> 00:05:58,306
+number four on my list is I would think more about where I was trying to go knowing that it was a moving target,
+
+129
+00:05:58,386 --> 00:06:00,196
+that the goal wouldn't always be the same,
+
+130
+00:06:00,196 --> 00:06:01,976
+that it would change and evolve over time.
+
+131
+00:06:01,976 --> 00:06:06,156
+But just understanding that I was on a journey would have been really helpful to me.
+
+132
+00:06:06,166 --> 00:06:09,456
+It seems to me that people that have a goal are more likely to reach it,
+
+133
+00:06:09,466 --> 00:06:12,426
+but just wandering in the wilderness hoping things will work out.
+
+134
+00:06:12,426 --> 00:06:18,446
+Just seems like a really sort of passive approach to such an important part of your life when you think about your career path.
+
+135
+00:06:18,456 --> 00:06:22,206
+And also people would like to help you in the same way that you want to help them,
+
+136
+00:06:22,216 --> 00:06:25,056
+but they can't do that unless they know how to help you.
+
+137
+00:06:25,156 --> 00:06:27,714
+If you you can't say I am going in this direction,
+
+138
+00:06:27,724 --> 00:06:29,064
+I need these things,
+
+139
+00:06:29,074 --> 00:06:30,474
+can you help me with that?
+
+140
+00:06:30,484 --> 00:06:32,604
+But then no one knows how to help you.
+
+141
+00:06:32,624 --> 00:06:38,164
+They can't help you even if they want to and they want to help you who doesn't want to see somebody else succeed.
+
+142
+00:06:38,294 --> 00:06:40,524
+Number five on my list is network.
+
+143
+00:06:40,534 --> 00:06:41,624
+I'm a total introvert,
+
+144
+00:06:41,634 --> 00:06:42,724
+I can't change this,
+
+145
+00:06:42,724 --> 00:06:44,184
+I wouldn't want to change this,
+
+146
+00:06:44,194 --> 00:06:45,364
+but if I could go back in time,
+
+147
+00:06:45,364 --> 00:06:49,124
+I would force myself to be more social with my colleagues at the start,
+
+148
+00:06:49,134 --> 00:06:53,814
+I didn't understand that socializing was an investment in the people that I work with,
+
+149
+00:06:53,824 --> 00:07:01,452
+It was a way of connecting to them and making me feel connected to something more than just my day to day tasks because I was so terrible at this,
+
+150
+00:07:01,462 --> 00:07:07,122
+it often left me feeling isolated and you might already feel isolated if you're a specialist,
+
+151
+00:07:07,132 --> 00:07:11,532
+it might be difficult to find sparring people that you can spar with people that can help you,
+
+152
+00:07:11,572 --> 00:07:14,122
+people that understand the task that that you're doing.
+
+153
+00:07:14,182 --> 00:07:20,402
+The combination of technical isolation and social isolation at work that this is a bad combination,
+
+154
+00:07:20,422 --> 00:07:21,822
+this is something to avoid.
+
+155
+00:07:21,832 --> 00:07:22,972
+If I could go back in time,
+
+156
+00:07:22,972 --> 00:07:25,230
+I would tell myself to be more social,
+
+157
+00:07:25,240 --> 00:07:26,620
+see it as an investment.
+
+158
+00:07:26,650 --> 00:07:28,970
+So number six on my list is mentorship.
+
+159
+00:07:28,980 --> 00:07:30,030
+I would get a mentor,
+
+160
+00:07:30,040 --> 00:07:30,950
+I would find someone,
+
+161
+00:07:30,950 --> 00:07:35,570
+I trusted someone who would tell it like it is someone who has either been there before,
+
+162
+00:07:35,580 --> 00:07:42,510
+who was on a similar journey and I would ask them questions and I would actively look for feedback and when I say feedback,
+
+163
+00:07:42,520 --> 00:07:45,110
+I think some people mistake when they ask for feedback,
+
+164
+00:07:45,110 --> 00:07:47,280
+what they're actually looking for is reassurance.
+
+165
+00:07:47,340 --> 00:07:49,030
+Reassurance is fantastic.
+
+166
+00:07:49,030 --> 00:07:50,380
+We all need reassurance,
+
+167
+00:07:50,420 --> 00:07:52,360
+but it is not the same as feedback,
+
+168
+00:07:52,370 --> 00:07:54,050
+I would actively look for fee,
+
+169
+00:07:54,068 --> 00:07:55,868
+feedback from my mentor,
+
+170
+00:07:56,098 --> 00:07:59,028
+I could have saved so much time and frustration.
+
+171
+00:07:59,038 --> 00:08:00,718
+If I found someone who could guide me,
+
+172
+00:08:00,838 --> 00:08:05,078
+you don't have to learn everything the hard way and if you can't stand on the shoulders of giants,
+
+173
+00:08:05,078 --> 00:08:06,858
+at least follow in their footsteps.
+
+174
+00:08:06,958 --> 00:08:11,358
+So the second thing on my list is sometimes it's just not a good fit.
+
+175
+00:08:11,368 --> 00:08:13,678
+If you try on some shoes and they don't fit,
+
+176
+00:08:13,688 --> 00:08:15,168
+it's not your feet that are wrong.
+
+177
+00:08:15,178 --> 00:08:16,108
+It's the shoes,
+
+178
+00:08:16,228 --> 00:08:17,478
+the shoes don't fit you.
+
+179
+00:08:17,488 --> 00:08:22,358
+You need another pair of shoes walking in those shoes that don't fit you for years and years,
+
+180
+00:08:22,358 --> 00:08:25,086
+hoping that things will is not a good idea.
+
+181
+00:08:25,096 --> 00:08:27,096
+I did this and it was a mistake.
+
+182
+00:08:27,106 --> 00:08:29,826
+Now I understand that changing your job,
+
+183
+00:08:29,826 --> 00:08:33,516
+changing your career is not as trivial as finding new shoes.
+
+184
+00:08:33,526 --> 00:08:34,936
+These are two very different things,
+
+185
+00:08:34,936 --> 00:08:37,246
+but I hope you understand where I'm trying to go here,
+
+186
+00:08:37,256 --> 00:08:42,856
+spending years of your life trying to force a round peg through a square hole is a bad idea.
+
+187
+00:08:42,866 --> 00:08:45,976
+And sure there's this idea of job crafting where it is.
+
+188
+00:08:45,986 --> 00:08:46,356
+Yeah,
+
+189
+00:08:46,366 --> 00:08:48,086
+you were given a square hole,
+
+190
+00:08:48,096 --> 00:08:49,406
+but you can change the whole,
+
+191
+00:08:49,406 --> 00:08:50,726
+you can make it a different shape.
+
+192
+00:08:50,726 --> 00:08:53,126
+Maybe you can make it the same shape as what you are.
+
+193
+00:08:53,144 --> 00:08:53,954
+That's up to you,
+
+194
+00:08:53,964 --> 00:08:55,934
+but sometimes knowing when to quit,
+
+195
+00:08:55,944 --> 00:08:58,034
+knowing when this is just not a good fit.
+
+196
+00:08:58,044 --> 00:09:05,124
+The job doesn't fit me and not just accepting that learning to dance with it instead of beating yourself up over it.
+
+197
+00:09:05,134 --> 00:09:07,884
+So number seven is sometimes it's just not a good fit.
+
+198
+00:09:07,894 --> 00:09:12,044
+So number eight on my list is this You don't get to decide what is broken.
+
+199
+00:09:12,094 --> 00:09:13,764
+If your job is to help someone,
+
+200
+00:09:13,774 --> 00:09:15,324
+If you are in service,
+
+201
+00:09:15,334 --> 00:09:17,434
+working in service of someone else,
+
+202
+00:09:17,554 --> 00:09:19,994
+they decide what is broken as a professional,
+
+203
+00:09:20,004 --> 00:09:22,604
+your job is to guide them to help them under.
+
+204
+00:09:22,802 --> 00:09:24,012
+And the pros and cons.
+
+205
+00:09:24,032 --> 00:09:25,542
+You can show them other options.
+
+206
+00:09:25,552 --> 00:09:33,312
+You might even decide to poke at the thing that you think is broken to agitate it and the hope of making it so painful that they are forced to move.
+
+207
+00:09:33,322 --> 00:09:35,232
+There's a lot of different strategies here.
+
+208
+00:09:35,232 --> 00:09:35,802
+But the point is,
+
+209
+00:09:35,802 --> 00:09:37,952
+you don't get to decide what is broken.
+
+210
+00:09:38,152 --> 00:09:39,492
+If they think it's not broken,
+
+211
+00:09:39,492 --> 00:09:40,572
+then it's not broken.
+
+212
+00:09:40,762 --> 00:09:45,592
+And this might sound like a variation of that old saying that the customer is always right.
+
+213
+00:09:45,602 --> 00:09:47,552
+It's not that's not what I'm saying.
+
+214
+00:09:47,552 --> 00:09:51,422
+They're not always right understanding that you don't decide what is broken.
+
+215
+00:09:51,462 --> 00:09:56,560
+The client does Is recognizing that you can't change someone who's not ready to change.
+
+216
+00:09:56,570 --> 00:09:58,140
+So you can market to them.
+
+217
+00:09:58,150 --> 00:10:02,060
+You can try and make change happen if they don't think it's broken,
+
+218
+00:10:02,110 --> 00:10:06,310
+it's not broken and forcing someone to change who's not ready to change.
+
+219
+00:10:06,320 --> 00:10:10,850
+It doesn't want to change is simply going to create a lot of unnecessary tension,
+
+220
+00:10:10,860 --> 00:10:13,860
+frustration and at the end of the day everyone loses.
+
+221
+00:10:13,950 --> 00:10:15,370
+It doesn't have to be like that.
+
+222
+00:10:15,380 --> 00:10:16,220
+So that's it.
+
+223
+00:10:16,230 --> 00:10:16,920
+That's me.
+
+224
+00:10:16,940 --> 00:10:19,160
+That's where I'm at now on 45,
+
+225
+00:10:19,170 --> 00:10:21,650
+been working in the geospatial industry for 12.
+
+226
+00:10:22,188 --> 00:10:26,378
+I'm looking to make a dramatic career shift and if I could go back in time,
+
+227
+00:10:26,388 --> 00:10:27,678
+I would do these eight things,
+
+228
+00:10:27,678 --> 00:10:29,348
+I would tell myself these eight things.
+
+229
+00:10:29,378 --> 00:10:33,008
+So I'm telling you this because in the hope that will help you on your journey.
+
+230
+00:10:33,018 --> 00:10:34,148
+So this is my journey.
+
+231
+00:10:34,198 --> 00:10:36,248
+These are the things I've learned along the way.
+
+232
+00:10:36,258 --> 00:10:36,508
+Now,
+
+233
+00:10:36,518 --> 00:10:38,838
+I realize I might have contradicted myself.
+
+234
+00:10:38,848 --> 00:10:42,148
+I realized that there will always be exceptions to the rule.
+
+235
+00:10:42,158 --> 00:10:45,028
+I'm not saying all of these things will apply to you.
+
+236
+00:10:45,038 --> 00:10:48,058
+I'm merely saying this is what I have learned along the way.
+
+237
+00:10:48,068 --> 00:10:51,278
+I hope that it helps you on your way on your journey.
+
+238
+00:10:51,296 --> 00:10:51,486
+So,
+
+239
+00:10:51,486 --> 00:10:53,326
+I really want this episode to be the first,
+
+240
+00:10:53,326 --> 00:10:57,316
+in a short mini series of episodes are kind of behind the scenes,
+
+241
+00:10:57,316 --> 00:10:58,806
+look at different topics.
+
+242
+00:10:58,816 --> 00:10:59,186
+So,
+
+243
+00:10:59,186 --> 00:10:59,576
+obviously,
+
+244
+00:10:59,576 --> 00:11:01,736
+this one has been about my career,
+
+245
+00:11:01,746 --> 00:11:04,506
+the fact that I've quit my job and I'm moving on.
+
+246
+00:11:04,516 --> 00:11:07,176
+I would also like to create a short episode,
+
+247
+00:11:07,186 --> 00:11:07,576
+kind of,
+
+248
+00:11:07,576 --> 00:11:08,276
+behind the scenes,
+
+249
+00:11:08,276 --> 00:11:09,366
+look at this podcast,
+
+250
+00:11:09,376 --> 00:11:10,436
+how it gets created,
+
+251
+00:11:10,446 --> 00:11:12,326
+maybe touch on the marketing side of it,
+
+252
+00:11:12,336 --> 00:11:14,186
+and perhaps another episode about what?
+
+253
+00:11:14,186 --> 00:11:15,006
+How is this?
+
+254
+00:11:15,016 --> 00:11:16,346
+Where am I going now?
+
+255
+00:11:16,356 --> 00:11:20,840
+What what is the career path going to look like or where do I where am I trying to get to?
+
+256
+00:11:21,190 --> 00:11:22,570
+This is a work in progress,
+
+257
+00:11:22,580 --> 00:11:27,050
+I won't let it interrupt the typical weekly episodes that you're used to.
+
+258
+00:11:27,050 --> 00:11:28,460
+This will be something extra.
+
+259
+00:11:28,470 --> 00:11:30,530
+So if you've got this far in the episode,
+
+260
+00:11:30,540 --> 00:11:31,420
+if you're still listening,
+
+261
+00:11:31,420 --> 00:11:33,650
+I wonder if I could ask you for a favor.
+
+262
+00:11:33,650 --> 00:11:35,780
+I need help with with two things at the moment.
+
+263
+00:11:35,790 --> 00:11:40,090
+The first thing I'd like to ask your help with is growing this podcast.
+
+264
+00:11:40,100 --> 00:11:43,050
+So if you know someone that might find this podcast useful,
+
+265
+00:11:43,050 --> 00:11:43,630
+helpful,
+
+266
+00:11:43,680 --> 00:11:44,400
+entertaining,
+
+267
+00:11:44,410 --> 00:11:45,140
+whatever,
+
+268
+00:11:45,150 --> 00:11:46,100
+please share it with them.
+
+269
+00:11:46,110 --> 00:11:47,560
+Maybe you work at a university,
+
+270
+00:11:47,560 --> 00:11:49,160
+maybe you have access to a website.
+
+271
+00:11:49,160 --> 00:11:49,430
+Maybe,
+
+272
+00:11:49,430 --> 00:11:49,900
+you know,
+
+273
+00:11:49,910 --> 00:11:50,680
+community,
+
+274
+00:11:50,720 --> 00:11:52,320
+share a link to the podcast with them.
+
+275
+00:11:52,330 --> 00:11:55,880
+It would make a humongous difference to me and I would really appreciate it.
+
+276
+00:11:55,930 --> 00:12:00,580
+The second thing I'd like to ask your help with is I'm working with a company called Open Cage.
+
+277
+00:12:00,590 --> 00:12:06,020
+I'm good friends with the founder and together we're going to promote open street map projects.
+
+278
+00:12:06,030 --> 00:12:07,120
+So open cages,
+
+279
+00:12:07,120 --> 00:12:08,310
+a geo coder,
+
+280
+00:12:08,380 --> 00:12:10,250
+It runs on open street map data.
+
+281
+00:12:10,270 --> 00:12:13,900
+And this is a way of open cage giving something back to the community.
+
+282
+00:12:13,960 --> 00:12:20,090
+So the idea is that we find projects that are built on or around open street and we celebrate them.
+
+283
+00:12:20,090 --> 00:12:21,530
+We give them some exposure.
+
+284
+00:12:21,530 --> 00:12:22,770
+We tell people about them with.
+
+285
+00:12:22,780 --> 00:12:24,920
+The idea is to help people discover these projects.
+
+286
+00:12:24,920 --> 00:12:26,020
+Maybe they could get involved.
+
+287
+00:12:26,020 --> 00:12:26,950
+Maybe they can help.
+
+288
+00:12:26,960 --> 00:12:28,330
+Maybe they can push it forwards.
+
+289
+00:12:28,370 --> 00:12:31,500
+So there'll be a link to this in the show notes of this episode.
+
+290
+00:12:31,510 --> 00:12:33,620
+But if you don't want to follow the link and you know,
+
+291
+00:12:33,620 --> 00:12:36,990
+of an open street map project that you think is worth talking about,
+
+292
+00:12:37,000 --> 00:12:40,020
+you can either tweet at open cage or at Manscaping.
+
+293
+00:12:40,030 --> 00:12:40,650
+Okay.
+
+294
+00:12:40,660 --> 00:12:41,390
+That's it for me.
+
+295
+00:12:41,400 --> 00:12:43,630
+Thank you very much for listening all the way to the end.
+
+296
+00:12:43,720 --> 00:12:44,570
+I really appreciate it.
+
+297
+00:12:44,580 --> 00:12:47,080
+I hope this was helpful and we'll talk again soon.
+
+298
+00:12:47,090 --> 00:12:47,520
+Bye.
+

@@ -1,0 +1,2956 @@
+{
+    "version": "1.0.0",
+    "segments": [
+        {
+            "speaker": "Michael",
+            "startTime": 0.038,
+            "endTime": 3.938,
+            "body": "Hello, and welcome to Postgres FM, a new weekly show"
+        },
+        {
+            "startTime": 3.938,
+            "endTime": 5.368,
+            "body": "about all things PostgreSQL."
+        },
+        {
+            "startTime": 5.948,
+            "endTime": 9.428,
+            "body": "I am Michael I'm from pgMustard, and this is my co-host Nikolay"
+        },
+        {
+            "startTime": 9.728,
+            "endTime": 11.348,
+            "body": "founder of Postgres AI."
+        },
+        {
+            "startTime": 11.618,
+            "endTime": 12.268,
+            "body": "Hello Nikolay."
+        },
+        {
+            "startTime": 12.268,
+            "endTime": 12.938,
+            "body": "How're you doing?"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 13.388,
+            "endTime": 14.768,
+            "body": "Hello, doing great."
+        },
+        {
+            "startTime": 15.218,
+            "endTime": 15.758,
+            "body": "How are you?"
+        },
+        {
+            "startTime": 15.968,
+            "endTime": 18.728,
+            "body": "I'm still, I'm still traveling, still traveling right now."
+        },
+        {
+            "startTime": 18.733,
+            "endTime": 20.048,
+            "body": "And Prague prag is beautiful."
+        },
+        {
+            "startTime": 20.048,
+            "endTime": 23.498,
+            "body": "So let's, let's talk about some Postgres stuff."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 24.358,
+            "endTime": 27.263,
+            "body": "Oh, so good, very jealous, but also I'm, I'm in the UK and"
+        },
+        {
+            "startTime": 27.263,
+            "endTime": 28.973,
+            "body": "it's about 28 degrees at the moment."
+        },
+        {
+            "startTime": 28.973,
+            "endTime": 30.893,
+            "body": "So it feels like summer finally."
+        },
+        {
+            "startTime": 31.553,
+            "endTime": 37.163,
+            "body": "Yes, so today I was keen to talk about hosting of Postgres."
+        },
+        {
+            "startTime": 37.163,
+            "endTime": 42.611,
+            "body": "So specifically, when should people choose a managed Postgres service"
+        },
+        {
+            "startTime": 42.671,
+            "endTime": 44.771,
+            "body": "versus DIY or do it yourself?"
+        },
+        {
+            "startTime": 44.921,
+            "endTime": 47.951,
+            "body": "Should people even be considering do it yourself these days, if"
+        },
+        {
+            "startTime": 47.951,
+            "endTime": 50.281,
+            "body": "they opt for managed, what are the best options out there?"
+        },
+        {
+            "startTime": 50.281,
+            "endTime": 51.031,
+            "body": "That kind of thing."
+        },
+        {
+            "startTime": 51.511,
+            "endTime": 51.991,
+            "body": "So, yeah."
+        },
+        {
+            "startTime": 52.041,
+            "endTime": 53.871,
+            "body": "I'm really keen to hear your thoughts on this."
+        },
+        {
+            "startTime": 53.931,
+            "endTime": 55.191,
+            "body": "What are you seeing at the moment?"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 55.701,
+            "endTime": 59.746,
+            "body": "My thoughts are we should always go the DIY path."
+        },
+        {
+            "startTime": 59.926,
+            "endTime": 63.706,
+            "body": "We should always compile kernel of Linux, and so on."
+        },
+        {
+            "startTime": 63.826,
+            "endTime": 67.686,
+            "body": "I'm joking of course, but the opinion's changing actually, right?"
+        },
+        {
+            "startTime": 67.686,
+            "endTime": 75.291,
+            "body": "Because, if you are DBA back in 2005 to 10 and you see something which"
+        },
+        {
+            "startTime": 75.341,
+            "endTime": 79.931,
+            "body": "replaces part of your work, uh, probably you will, you will be very skeptical."
+        },
+        {
+            "startTime": 80.591,
+            "endTime": 80.861,
+            "body": "Right?"
+        },
+        {
+            "startTime": 81.251,
+            "endTime": 81.911,
+            "body": "What do you think?"
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 81.961,
+            "endTime": 82.591,
+            "body": "Well, yeah."
+        },
+        {
+            "startTime": 82.641,
+            "endTime": 86.701,
+            "body": "So I deal probably with more smaller companies, startups, generally."
+        },
+        {
+            "startTime": 87.826,
+            "endTime": 91.576,
+            "body": "And I can't think of the last time I saw somebody starting a new project"
+        },
+        {
+            "startTime": 91.966,
+            "endTime": 97.001,
+            "body": "DIY, but I do hear and see about it a lot more in larger companies."
+        },
+        {
+            "startTime": 97.006,
+            "endTime": 100.121,
+            "body": "And some of those startups that are getting big, they're starting to"
+        },
+        {
+            "startTime": 100.511,
+            "endTime": 104.631,
+            "body": "consider, maybe for cost reasons, maybe for a little bit more control."
+        },
+        {
+            "startTime": 105.001,
+            "endTime": 108.036,
+            "body": "They're starting to consider taking things, if not completely"
+        },
+        {
+            "startTime": 108.036,
+            "endTime": 112.696,
+            "body": "DIY at least, you know, still on Amazon, but not RDS, for example."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 113.746,
+            "endTime": 118.086,
+            "body": "Have you seen ever like a company who started, like 10 or 15 years ago."
+        },
+        {
+            "startTime": 118.086,
+            "endTime": 120.806,
+            "body": "And they started with self-managed Postgres and then"
+        },
+        {
+            "startTime": 120.806,
+            "endTime": 122.416,
+            "body": "moved to RDS or something."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 122.476,
+            "endTime": 122.896,
+            "body": "Yes."
+        },
+        {
+            "startTime": 122.901,
+            "endTime": 126.666,
+            "body": "So I think I actually saw them blog about it recently, so I think it's"
+        },
+        {
+            "startTime": 126.666,
+            "endTime": 132.871,
+            "body": "okay to mention that the team at Auto Trader, which is a big, secondhand"
+        },
+        {
+            "startTime": 132.871,
+            "endTime": 137.171,
+            "body": "car, online dealership in the UK, I think they're in the process of,"
+        },
+        {
+            "startTime": 137.171,
+            "endTime": 141.171,
+            "body": "or maybe now have completed their migration to Google Cloud SQL, from"
+        },
+        {
+            "startTime": 141.171,
+            "endTime": 146.061,
+            "body": "what I believe were, if not completely self-hosted then self-managed databases."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 146.606,
+            "endTime": 149.306,
+            "body": "I saw a couple of examples as well, uh, including"
+        },
+        {
+            "startTime": 149.306,
+            "endTime": 150.626,
+            "body": "some very large companies."
+        },
+        {
+            "startTime": 150.626,
+            "endTime": 154.386,
+            "body": "And, I've noticed that they just understand that, managing Postgres"
+        },
+        {
+            "startTime": 154.406,
+            "endTime": 156.956,
+            "body": "probably is very difficult."
+        },
+        {
+            "startTime": 157.406,
+            "endTime": 162.496,
+            "body": "Also, I think it depends on how big your databases and workload, if you manage"
+        },
+        {
+            "startTime": 162.496,
+            "endTime": 166.546,
+            "body": "to split for example, to microservices and you have dozens of databases, it's"
+        },
+        {
+            "startTime": 166.546,
+            "endTime": 173.021,
+            "body": "easier for you to go to RDS because limits are quite far  so, so, but if you"
+        },
+        {
+            "startTime": 173.021,
+            "endTime": 177.951,
+            "body": "have very heavily loaded huge database, probably it'll be challenging because, for"
+        },
+        {
+            "startTime": 177.951,
+            "endTime": 184.231,
+            "body": "example, discs on RDS, regular RDS, they are like network attached, EBS volumes."
+        },
+        {
+            "startTime": 184.261,
+            "endTime": 189.291,
+            "body": "So if they're not local and so latency is a bit higher, of course."
+        },
+        {
+            "startTime": 190.131,
+            "endTime": 194.751,
+            "body": "So, it's tricky, but I saw examples, the specifically microservice"
+        },
+        {
+            "startTime": 194.781,
+            "endTime": 196.521,
+            "body": "architecture and very big company."
+        },
+        {
+            "startTime": 196.941,
+            "endTime": 200.841,
+            "body": "They decided by purpose to get rid of any self-managed, but"
+        },
+        {
+            "startTime": 201.501,
+            "endTime": 203.421,
+            "body": "as usual, it takes many years."
+        },
+        {
+            "startTime": 203.721,
+            "endTime": 205.671,
+            "body": "So it's a combination usually."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 206.541,
+            "endTime": 209.801,
+            "body": "Well, so that's a good, like, is that almost a rule of thumb that"
+        },
+        {
+            "startTime": 209.891,
+            "endTime": 215.456,
+            "body": "if somebody's got either one or a lot of smaller databases, there's probably"
+        },
+        {
+            "startTime": 215.516,
+            "endTime": 219.196,
+            "body": "not a good, are there any good reasons if I've got one or lots of smaller"
+        },
+        {
+            "startTime": 219.196,
+            "endTime": 222.136,
+            "body": "databases to not use a managed service?"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 223.756,
+            "endTime": 229.796,
+            "body": "Well, I think, if you consider some already grown company, you have many"
+        },
+        {
+            "startTime": 229.796,
+            "endTime": 232.616,
+            "body": "databases, probably like two big reasons."
+        },
+        {
+            "startTime": 232.621,
+            "endTime": 237.541,
+            "body": "I see first is, to move, small databases to manage services and"
+        },
+        {
+            "startTime": 237.691,
+            "endTime": 241.691,
+            "body": "just not to think about backing up, replication of the follower about,"
+        },
+        {
+            "startTime": 242.021,
+            "endTime": 244.511,
+            "body": "but also there is another big reason."
+        },
+        {
+            "startTime": 244.621,
+            "endTime": 250.076,
+            "body": "This reason understood usually by upper management, not by DBAs"
+        },
+        {
+            "startTime": 250.076,
+            "endTime": 253.646,
+            "body": "because DBAs usually think like, let's do everything yourself."
+        },
+        {
+            "startTime": 254.036,
+            "endTime": 255.836,
+            "body": "Like, let's keep it in our hand."
+        },
+        {
+            "startTime": 255.886,
+            "endTime": 261.286,
+            "body": "Yeah, let's have access to PGDATA and so on, or like process list and so on."
+        },
+        {
+            "startTime": 261.706,
+            "endTime": 267.916,
+            "body": "But upper management thinks like it's, it's better to rely on, Amazon or Google"
+        },
+        {
+            "startTime": 268.246,
+            "endTime": 273.946,
+            "body": "engineers and their infrastructure in terms of backups and, uh, related"
+        },
+        {
+            "startTime": 274.426,
+            "endTime": 281.296,
+            "body": "like RPO RTO related service level objective objectives, instead of"
+        },
+        {
+            "startTime": 281.596,
+            "endTime": 286.096,
+            "body": "trying to hire a lot of good experts, it's very hard to find good experts"
+        },
+        {
+            "startTime": 286.096,
+            "endTime": 288.646,
+            "body": "and scale the process of their work."
+        },
+        {
+            "startTime": 289.036,
+            "endTime": 292.696,
+            "body": "So this second reason, I think it's for bigger companies."
+        },
+        {
+            "startTime": 292.696,
+            "endTime": 293.656,
+            "body": "It's very important."
+        },
+        {
+            "startTime": 293.746,
+            "endTime": 300.436,
+            "body": "Uh that's why like, like RDS and others are growing."
+        },
+        {
+            "startTime": 300.556,
+            "endTime": 304.096,
+            "body": "I think I don't, I don't have numbers, unfortunately, but I think,"
+        },
+        {
+            "startTime": 304.126,
+            "endTime": 310.391,
+            "body": "from, as you said, like, everyone is on managed already, but not"
+        },
+        {
+            "startTime": 310.391,
+            "endTime": 311.681,
+            "body": "everyone, actually, not everyone."
+        },
+        {
+            "startTime": 312.791,
+            "endTime": 316.621,
+            "body": "And sometimes people go back actually sometimes, but not often."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 317.876,
+            "endTime": 321.266,
+            "body": "Yeah in well, could you give us, do you know any, any examples or"
+        },
+        {
+            "startTime": 321.266,
+            "endTime": 322.856,
+            "body": "the reasons why they went backwards."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 323.416,
+            "endTime": 325.211,
+            "body": "Well, the price is big reason."
+        },
+        {
+            "startTime": 325.216,
+            "endTime": 325.841,
+            "body": "Of course."
+        },
+        {
+            "startTime": 325.841,
+            "endTime": 330.191,
+            "body": "If you manage Postgres yourself, for example, on EC2 instances and you, you"
+        },
+        {
+            "startTime": 330.196,
+            "endTime": 334.041,
+            "body": "can have one year, three year contracts, there are ways to optimize the price and"
+        },
+        {
+            "startTime": 334.611,
+            "endTime": 337.681,
+            "body": "it's will be definitely, cheaper than RDS."
+        },
+        {
+            "startTime": 337.681,
+            "endTime": 342.206,
+            "body": "So then you can do additional infrastructure optimization, in terms"
+        },
+        {
+            "startTime": 342.226,
+            "endTime": 348.056,
+            "body": "of backups and various clones, for non-production use and so on so it's it's"
+        },
+        {
+            "startTime": 348.056,
+            "endTime": 353.211,
+            "body": "of course, like much cheaper, like I would say roughly like up to two times cheaper,"
+        },
+        {
+            "startTime": 353.721,
+            "endTime": 356.571,
+            "body": "but cost is sometimes not a big driver."
+        },
+        {
+            "startTime": 356.931,
+            "endTime": 360.681,
+            "body": "I think it will change by the way we are in the beginning of some crisis coming."
+        },
+        {
+            "startTime": 360.681,
+            "endTime": 365.976,
+            "body": "So maybe reasons will like reasoning will start changing  but, uh, also"
+        },
+        {
+            "startTime": 366.216,
+            "endTime": 370.806,
+            "body": "moving back sometimes like a weaker reason is, uh, pure technical."
+        },
+        {
+            "startTime": 370.806,
+            "endTime": 376.536,
+            "body": "So to, to troubleshoot some weird things, it's not a fun when you go to RDS and"
+        },
+        {
+            "startTime": 376.746,
+            "endTime": 381.426,
+            "body": "say something like we have an issue and their engineers say it's a Postgres issue."
+        },
+        {
+            "startTime": 381.546,
+            "endTime": 386.066,
+            "body": "You go to Postgres  experts, even sometimes to, to Postgres mailing"
+        },
+        {
+            "startTime": 386.066,
+            "endTime": 387.956,
+            "body": "list or some various chats."
+        },
+        {
+            "startTime": 388.286,
+            "endTime": 391.436,
+            "body": "And they say RDS is not Postgres."
+        },
+        {
+            "startTime": 392.216,
+            "endTime": 398.066,
+            "body": "Work with RDS not fun to be between if very, very difficult incidents"
+        },
+        {
+            "startTime": 398.126,
+            "endTime": 400.946,
+            "body": "happen and you don't have full access."
+        },
+        {
+            "startTime": 400.946,
+            "endTime": 403.466,
+            "body": "So I've been there a couple of times with my clients."
+        },
+        {
+            "startTime": 403.466,
+            "endTime": 404.576,
+            "body": "It's like, it's not fun."
+        },
+        {
+            "startTime": 405.236,
+            "endTime": 410.936,
+            "body": "so this is a technical reason to move back to and take full control, but you need"
+        },
+        {
+            "startTime": 410.936,
+            "endTime": 414.176,
+            "body": "to have very strong experts to do that."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 414.176,
+            "endTime": 415.676,
+            "body": "Really good point about the, about"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 415.706,
+            "endTime": 416.336,
+            "body": "Oh, there is."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 416.456,
+            "endTime": 416.546,
+            "body": "and"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 417.376,
+            "endTime": 420.371,
+            "body": "Third reason there is third reason as various extensions and"
+        },
+        {
+            "startTime": 420.371,
+            "endTime": 422.831,
+            "body": "capabilities that RDS doesn't offer."
+        },
+        {
+            "startTime": 423.311,
+            "endTime": 423.551,
+            "body": "Right."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 423.941,
+            "endTime": 425.471,
+            "body": "This is the one I wanted to bring up."
+        },
+        {
+            "startTime": 425.471,
+            "endTime": 431.381,
+            "body": "I think this is more of a reason to start on a DIY or maybe, maybe one of"
+        },
+        {
+            "startTime": 431.386,
+            "endTime": 435.311,
+            "body": "the only reasons to start on DIY is if you really want an extension that"
+        },
+        {
+            "startTime": 435.341,
+            "endTime": 439.361,
+            "body": "isn't supplied by the managed service part of it that you want to go with?"
+        },
+        {
+            "startTime": 439.781,
+            "endTime": 443.356,
+            "body": "I am seeing some of the newer ones really aggressively go after"
+        },
+        {
+            "startTime": 443.356,
+            "endTime": 445.186,
+            "body": "installing lots of the extensions."
+        },
+        {
+            "startTime": 445.486,
+            "endTime": 449.536,
+            "body": "But if until a few years ago, a lot of them really didn't have"
+        },
+        {
+            "startTime": 449.566,
+            "endTime": 451.156,
+            "body": "even some of the contrib modules."
+        },
+        {
+            "startTime": 451.161,
+            "endTime": 456.016,
+            "body": "I think as an example, I, I think Heroku still doesn't let people install"
+        },
+        {
+            "startTime": 456.046,
+            "endTime": 458.176,
+            "body": "auto_explain, which comes with Postgres."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 458.926,
+            "endTime": 462.851,
+            "body": "Heroku unfortunately, there were recently big discussions on Hacker News."
+        },
+        {
+            "startTime": 462.851,
+            "endTime": 466.936,
+            "body": "So why Heroku  has not been developed and it's a pity because it was a pioneer"
+        },
+        {
+            "startTime": 466.936,
+            "endTime": 469.076,
+            "body": "of managed Postgres many years ago."
+        },
+        {
+            "startTime": 469.076,
+            "endTime": 470.156,
+            "body": "It was so great."
+        },
+        {
+            "startTime": 470.506,
+            "endTime": 475.181,
+            "body": "But then they started to after acquisition by Salesforce, I guess they"
+        },
+        {
+            "startTime": 475.181,
+            "endTime": 476.801,
+            "body": "started to lag in terms of pricing."
+        },
+        {
+            "startTime": 476.801,
+            "endTime": 482.921,
+            "body": "I remember helping several companies, at least two, migrate to RDS just because"
+        },
+        {
+            "startTime": 482.921,
+            "endTime": 484.901,
+            "body": "of pricing and also capabilities."
+        },
+        {
+            "startTime": 485.511,
+            "endTime": 486.541,
+            "body": "I have currently."
+        },
+        {
+            "startTime": 487.386,
+            "endTime": 491.376,
+            "body": "Three clients who want to migrate and they say, let's postpone a little bit"
+        },
+        {
+            "startTime": 491.376,
+            "endTime": 495.946,
+            "body": "implementation of, cloning stuff we Postgres AI are developing because we are"
+        },
+        {
+            "startTime": 495.946,
+            "endTime": 497.961,
+            "body": "in the process of migrating off Heroku."
+        },
+        {
+            "startTime": 498.471,
+            "endTime": 502.611,
+            "body": "So, so I don't see anyone who is migrating to Heroku , unfortunately, but Heroku"
+        },
+        {
+            "startTime": 502.611,
+            "endTime": 505.881,
+            "body": "was great back to like 10 years ago."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 506.586,
+            "endTime": 509.226,
+            "body": "Well, I still think they have some features that others don't."
+        },
+        {
+            "startTime": 509.316,
+            "endTime": 511.656,
+            "body": "So I think they, they come with better defaults."
+        },
+        {
+            "startTime": 511.661,
+            "endTime": 516.081,
+            "body": "So once you upgrade off the smallest instance, they keep changing your various"
+        },
+        {
+            "startTime": 516.086,
+            "endTime": 520.071,
+            "body": "settings to keep up with your instance size in a better way, I think, than"
+        },
+        {
+            "startTime": 520.071,
+            "endTime": 522.791,
+            "body": "some of the bigger ones like, uh, RDS."
+        },
+        {
+            "startTime": 523.281,
+            "endTime": 527.546,
+            "body": "I had a, a friend recently moved from Heroku to Crunchy Bridge,"
+        },
+        {
+            "startTime": 527.551,
+            "endTime": 528.986,
+            "body": "which is one of the newer ones."
+        },
+        {
+            "startTime": 529.046,
+            "endTime": 530.656,
+            "body": "A lot of the team behind Heroku."
+        },
+        {
+            "startTime": 530.926,
+            "endTime": 533.686,
+            "body": "I was really surprised by some of the defaults still there."
+        },
+        {
+            "startTime": 533.691,
+            "endTime": 536.986,
+            "body": "And the, there was, not as good documentation, but"
+        },
+        {
+            "startTime": 537.016,
+            "endTime": 538.636,
+            "body": "everything else looks amazing."
+        },
+        {
+            "startTime": 539.036,
+            "endTime": 542.516,
+            "body": "But he ended up migrating back to Heroku and upping his instance size."
+        },
+        {
+            "startTime": 542.516,
+            "endTime": 546.116,
+            "body": "I think he thought some of the reliability was, was on the Heroku"
+        },
+        {
+            "startTime": 546.116,
+            "endTime": 549.086,
+            "body": "side, but it turned out it might have been something he was doing instead."
+        },
+        {
+            "startTime": 549.416,
+            "endTime": 553.356,
+            "body": "So it was interesting to see somebody that does rely on some of"
+        },
+        {
+            "startTime": 553.361,
+            "endTime": 557.756,
+            "body": "the Heroku features, really valuing those and ending up migrating back."
+        },
+        {
+            "startTime": 557.996,
+            "endTime": 560.636,
+            "body": "And the other thing I think they do that most of the others don't"
+        },
+        {
+            "startTime": 560.636,
+            "endTime": 566.066,
+            "body": "do nicely yet, at least is major version upgrades, mostly for you."
+        },
+        {
+            "startTime": 566.306,
+            "endTime": 569.656,
+            "body": "Uh, now I think they require a little bit of downtime, but, I only just recently"
+        },
+        {
+            "startTime": 569.656,
+            "endTime": 571.486,
+            "body": "saw that added to Google Cloud SQL."
+        },
+        {
+            "startTime": 571.486,
+            "endTime": 574.306,
+            "body": "So I thought that was quite a nice thing that they still do that others don't."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 574.991,
+            "endTime": 578.851,
+            "body": "Well, good thing here is that, the variety increases a lot"
+        },
+        {
+            "startTime": 579.241,
+            "endTime": 581.461,
+            "body": "and you touched Crunchy Bridge."
+        },
+        {
+            "startTime": 581.461,
+            "endTime": 587.221,
+            "body": "So we should already add one more, set of players here, which are"
+        },
+        {
+            "startTime": 587.221,
+            "endTime": 589.271,
+            "body": "based on Kubernetes operators."
+        },
+        {
+            "startTime": 589.291,
+            "endTime": 589.501,
+            "body": "Right."
+        },
+        {
+            "startTime": 590.161,
+            "endTime": 596.176,
+            "body": "And I, like, I know Alexander Kukushkin the maintainer of Patroni not long ago,"
+        },
+        {
+            "startTime": 596.206,
+            "endTime": 603.706,
+            "body": "developed major upgrade automation for the building block of their operator."
+        },
+        {
+            "startTime": 603.711,
+            "endTime": 612.526,
+            "body": "It's called Spilo so it's like container image for very ready to use in AWS."
+        },
+        {
+            "startTime": 612.976,
+            "endTime": 617.596,
+            "body": "First of all, but not only I think, and, he managed to achieve good level of major"
+        },
+        {
+            "startTime": 617.596,
+            "endTime": 619.746,
+            "body": "upgrade automation with small downtime."
+        },
+        {
+            "startTime": 620.286,
+            "endTime": 621.966,
+            "body": "So, it's improving."
+        },
+        {
+            "startTime": 622.386,
+            "endTime": 625.596,
+            "body": "But I, I want to blame, manage services for one thing."
+        },
+        {
+            "startTime": 626.506,
+            "endTime": 631.151,
+            "body": "They usually don't provide access to look at PGDATA and at least to have,"
+        },
+        {
+            "startTime": 631.211,
+            "endTime": 633.581,
+            "body": "uh, physical replication connection."
+        },
+        {
+            "startTime": 634.361,
+            "endTime": 634.661,
+            "body": "Right."
+        },
+        {
+            "startTime": 634.901,
+            "endTime": 640.851,
+            "body": "I remember like four, four years ago or so I met the founder of"
+        },
+        {
+            "startTime": 640.881,
+            "endTime": 642.891,
+            "body": "Aiven who is now big, very big."
+        },
+        {
+            "startTime": 643.011,
+            "endTime": 645.291,
+            "body": "Uh, they raised a lot and they grow very fast."
+        },
+        {
+            "startTime": 645.901,
+            "endTime": 651.826,
+            "body": "And, I asked him like, okay, very good, you are building similar, similar"
+        },
+        {
+            "startTime": 651.826,
+            "endTime": 656.116,
+            "body": "offering to RDS, but with more flexibility and more features probably and so on,"
+        },
+        {
+            "startTime": 656.546,
+            "endTime": 660.506,
+            "body": "can you provide, physical replication connection and access to PGDATA and so on?"
+        },
+        {
+            "startTime": 660.776,
+            "endTime": 664.076,
+            "body": "He said by default, no, but if you contact support, it's possible."
+        },
+        {
+            "startTime": 664.466,
+            "endTime": 665.186,
+            "body": "Guess what?"
+        },
+        {
+            "startTime": 665.186,
+            "endTime": 668.606,
+            "body": "Uh, recently, their support answered."
+        },
+        {
+            "startTime": 668.696,
+            "endTime": 670.016,
+            "body": "Of course, no it's not possible."
+        },
+        {
+            "startTime": 670.496,
+            "endTime": 672.956,
+            "body": "So this, this whole is closed also."
+        },
+        {
+            "startTime": 673.316,
+            "endTime": 676.586,
+            "body": "And lack of physical replication connection means"
+        },
+        {
+            "startTime": 676.616,
+            "endTime": 678.356,
+            "body": "some kind of vendor lock in."
+        },
+        {
+            "startTime": 678.356,
+            "endTime": 684.39,
+            "body": "So if you want to migrate off managed service, you must use on the logical"
+        },
+        {
+            "startTime": 684.39,
+            "endTime": 691.3,
+            "body": "replication connection, which is quite tricky and complex has a lot of issues"
+        },
+        {
+            "startTime": 691.6,
+            "endTime": 694.27,
+            "body": "if you have a very heavy workload."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 695.035,
+            "endTime": 697.555,
+            "body": "And we're talking about, about big instances, right?"
+        },
+        {
+            "startTime": 697.555,
+            "endTime": 698.875,
+            "body": "Cause smaller ones."
+        },
+        {
+            "startTime": 698.875,
+            "endTime": 701.935,
+            "body": "We still have the option of, dump and restore, I guess."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 702.385,
+            "endTime": 706.19,
+            "body": "Right, but, well, what does small mean today?"
+        },
+        {
+            "startTime": 706.43,
+            "endTime": 709.7,
+            "body": "Small today, for me, it's less than one terabyte already."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 710.075,
+            "endTime": 710.315,
+            "body": "Great."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 711.17,
+            "endTime": 716.51,
+            "body": "So I would not dump, uh, like, I, I, of course like when you do logical."
+        },
+        {
+            "startTime": 717.44,
+            "endTime": 720.32,
+            "body": "Actually initialization is dump restore basically, right?"
+        },
+        {
+            "startTime": 720.32,
+            "endTime": 721.94,
+            "body": "So we need to do it anyway."
+        },
+        {
+            "startTime": 722.51,
+            "endTime": 724.88,
+            "body": "Even for 10 terabyte database, we need to do it."
+        },
+        {
+            "startTime": 724.885,
+            "endTime": 727.54,
+            "body": "And there are ways to speed it up, but, it's not fun."
+        },
+        {
+            "startTime": 728.11,
+            "endTime": 731.4,
+            "body": "I would rather prefer physical copy of files."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 732.9,
+            "endTime": 733.2,
+            "body": "Awesome."
+        },
+        {
+            "startTime": 733.23,
+            "endTime": 735.27,
+            "body": "Let's talk about upgrades another day, maybe."
+        },
+        {
+            "startTime": 735.63,
+            "endTime": 738.63,
+            "body": "Um, it feels like a whole good topic and actually I'll put it"
+        },
+        {
+            "startTime": 738.63,
+            "endTime": 741.73,
+            "body": "in the show notes, but you did a really good panel with a few people."
+        },
+        {
+            "startTime": 741.735,
+            "endTime": 743.68,
+            "body": "I think it was a Postgres Vision recently."
+        },
+        {
+            "startTime": 743.86,
+            "endTime": 744.82,
+            "body": "Um, I enjoyed that,"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 744.835,
+            "endTime": 746.84,
+            "body": "Yeah, it's interesting yesterday."
+        },
+        {
+            "startTime": 746.84,
+            "endTime": 752.42,
+            "body": "They invited me to Postgres Europe conference to talk about upgrades again."
+        },
+        {
+            "startTime": 752.42,
+            "endTime": 755.18,
+            "body": "And they also accepted database branching talk."
+        },
+        {
+            "startTime": 755.51,
+            "endTime": 760.97,
+            "body": "But I want to say once again, it's my public position that, actually I already"
+        },
+        {
+            "startTime": 760.975,
+            "endTime": 764.61,
+            "body": "booked hotel to Berlin late October I'm going to come, it's very good,"
+        },
+        {
+            "startTime": 764.85,
+            "endTime": 768.99,
+            "body": "but I ask them, do they record talks?"
+        },
+        {
+            "startTime": 769.17,
+            "endTime": 772.2,
+            "body": "Do, do they have plans to publish it later?"
+        },
+        {
+            "startTime": 772.205,
+            "endTime": 776.465,
+            "body": "if they don't I probably will not come because this is my position."
+        },
+        {
+            "startTime": 776.465,
+            "endTime": 778.655,
+            "body": "Everything should be recorded and published later."
+        },
+        {
+            "startTime": 778.865,
+            "endTime": 781.925,
+            "body": "Like I understand this is a huge conference, 500 people."
+        },
+        {
+            "startTime": 782.435,
+            "endTime": 786.185,
+            "body": "Some of them will probably come to my talk, but I want to"
+        },
+        {
+            "startTime": 786.185,
+            "endTime": 788.315,
+            "body": "have recorded session as well."
+        },
+        {
+            "startTime": 788.315,
+            "endTime": 792.005,
+            "body": "And to be able to share and refer later to my materials,"
+        },
+        {
+            "startTime": 792.065,
+            "endTime": 793.945,
+            "body": "because for me, it's a huge trip."
+        },
+        {
+            "startTime": 794.365,
+            "endTime": 798.595,
+            "body": "So that's why, like we talked today and this is good because if someone"
+        },
+        {
+            "startTime": 798.6,
+            "endTime": 802.585,
+            "body": "is interested in the comparison of managed versus non managed and"
+        },
+        {
+            "startTime": 802.645,
+            "endTime": 805.315,
+            "body": "Kubernetes, we can send a link, right?"
+        },
+        {
+            "startTime": 805.532,
+            "endTime": 808.952,
+            "body": "So, I must say all Postgres conference organizes, please"
+        },
+        {
+            "startTime": 808.957,
+            "endTime": 810.932,
+            "body": "record and publish share."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 811.727,
+            "endTime": 814.537,
+            "body": "And, uh, full disclosure, I'm not sure you knew this Nicolay, but I'm"
+        },
+        {
+            "startTime": 814.552,
+            "endTime": 816.427,
+            "body": "actually on the panel for the PGConf"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 817.142,
+            "endTime": 817.652,
+            "body": "Yes."
+        },
+        {
+            "startTime": 817.712,
+            "endTime": 817.862,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 817.862,
+            "endTime": 818.972,
+            "body": "I knew that, but I forgot."
+        },
+        {
+            "startTime": 819.002,
+            "endTime": 820.742,
+            "body": "Yes  okay."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 821.657,
+            "endTime": 825.24,
+            "body": "So yeah, I'm excited to see those, hopefully if you do come."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 825.4,
+            "endTime": 829.103,
+            "body": "So you also, can, pass my words to the organizers, right?"
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 829.583,
+            "endTime": 830.333,
+            "body": "Yeah, absolutely."
+        },
+        {
+            "startTime": 830.333,
+            "endTime": 833.273,
+            "body": "And it's possibly worth giving a quick shout out to some of the work"
+        },
+        {
+            "startTime": 833.273,
+            "endTime": 837.078,
+            "body": "you've been doing on the Postgres TV channel to publish some of these talks."
+        },
+        {
+            "startTime": 837.078,
+            "endTime": 839.628,
+            "body": "So some of these talks that were given that were not recorded in"
+        },
+        {
+            "startTime": 839.628,
+            "endTime": 843.138,
+            "body": "the past at different conferences, you've picked some of the better ones"
+        },
+        {
+            "startTime": 843.198,
+            "endTime": 846.698,
+            "body": "and, recorded them and put them on, remind me of the name of the series."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 847.428,
+            "endTime": 850.548,
+            "body": "It's it's called Postgres open talks because"
+        },
+        {
+            "startTime": 850.788,
+            "endTime": 852.108,
+            "body": "talks should be open as well."
+        },
+        {
+            "startTime": 852.108,
+            "endTime": 855.798,
+            "body": "But like the idea of that series conflicts with my position to come to"
+        },
+        {
+            "startTime": 855.798,
+            "endTime": 857.598,
+            "body": "conferences that only recorded of course."
+        },
+        {
+            "startTime": 857.628,
+            "endTime": 862.098,
+            "body": "But so if every conference starts to record and publish later and"
+        },
+        {
+            "startTime": 862.098,
+            "endTime": 864.708,
+            "body": "probably this series will be over, but I will be happy actually."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 865.518,
+            "endTime": 868.248,
+            "body": "That's a sign you really care about solving the problem isn't it."
+        },
+        {
+            "startTime": 868.248,
+            "endTime": 871.398,
+            "body": "We're taking a definite tangent here, but I had the same experience with my"
+        },
+        {
+            "startTime": 871.403,
+            "endTime": 876.508,
+            "body": "browser extension for, redirecting people on the Postgres documentation nowadays."
+        },
+        {
+            "startTime": 876.778,
+            "endTime": 879.298,
+            "body": "Yeah, well, yeah, but hopefully you won't need to soon."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 880.153,
+            "endTime": 880.243,
+            "body": "Right."
+        },
+        {
+            "startTime": 880.243,
+            "endTime": 883.063,
+            "body": "Well, actually I should stop using, right, right,"
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 883.633,
+            "endTime": 886.033,
+            "body": "So, yeah, but I'm happy because I don't, I didn't"
+        },
+        {
+            "startTime": 886.033,
+            "endTime": 887.653,
+            "body": "want this extension to exist."
+        },
+        {
+            "startTime": 887.653,
+            "endTime": 889.993,
+            "body": "I, I would much rather it worked first time."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 890.093,
+            "endTime": 892.303,
+            "body": "Yeah, Google search results are much better."
+        },
+        {
+            "startTime": 892.303,
+            "endTime": 895.813,
+            "body": "I, I mean, we, we know the problem, but maybe our audience doesn't know the"
+        },
+        {
+            "startTime": 895.813,
+            "endTime": 900.043,
+            "body": "problem is that like, until very recently, if you search something related to"
+        },
+        {
+            "startTime": 900.043,
+            "endTime": 903.703,
+            "body": "Postgres, you saw some versions up to 7.4."
+        },
+        {
+            "startTime": 903.823,
+            "endTime": 906.593,
+            "body": "So like some 7.3 and so on."
+        },
+        {
+            "startTime": 907.253,
+            "endTime": 909.113,
+            "body": "Like very, very old and it was not fun."
+        },
+        {
+            "startTime": 909.213,
+            "endTime": 914.293,
+            "body": "And people shared these links, very old thinking it's it's not old."
+        },
+        {
+            "startTime": 914.293,
+            "endTime": 917.293,
+            "body": "And so like a lot of confusion, but it, it was recently solved."
+        },
+        {
+            "startTime": 917.323,
+            "endTime": 921.793,
+            "body": "And I, I recently saw some example of not good occurrence, maybe should I should"
+        },
+        {
+            "startTime": 921.913,
+            "endTime": 927.343,
+            "body": "post it to the, the mailing list, but, uh, like 99%, it works very well right now."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 928.258,
+            "endTime": 931.167,
+            "body": "Sadly, I don't think there's much we can do on the Postgres"
+        },
+        {
+            "startTime": 931.167,
+            "endTime": 935.337,
+            "body": "side for, for specific bad examples other than let time play out."
+        },
+        {
+            "startTime": 935.397,
+            "endTime": 940.617,
+            "body": "Um, but yeah, so the, the worst thing for me was sometimes I'd forget that"
+        },
+        {
+            "startTime": 940.622,
+            "endTime": 943.767,
+            "body": "it was an old version, read it and then not realize about a feature."
+        },
+        {
+            "startTime": 943.947,
+            "endTime": 946.737,
+            "body": "Anyway, uh, sorry, probably should get back to hosting!"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 947.197,
+            "endTime": 949.777,
+            "body": "We, we we've got off topic upgrades off topic,"
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 950.007,
+            "endTime": 950.067,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 950.527,
+            "endTime": 954.437,
+            "body": "Off topic conference and off topic search results in Google."
+        },
+        {
+            "startTime": 954.737,
+            "endTime": 954.857,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 955.007,
+            "endTime": 955.367,
+            "body": "Okay."
+        },
+        {
+            "startTime": 955.637,
+            "endTime": 956.537,
+            "body": "A lot of off topics."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 957.407,
+            "endTime": 957.677,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 957.677,
+            "endTime": 964.197,
+            "body": "So let's assume we don't need an extension that we can't get on a provider, we"
+        },
+        {
+            "startTime": 964.202,
+            "endTime": 969.297,
+            "body": "don't have a really experienced DBA team, and we're not expecting to have more"
+        },
+        {
+            "startTime": 969.297,
+            "endTime": 971.367,
+            "body": "than a terabyte of data anytime soon."
+        },
+        {
+            "startTime": 971.967,
+            "endTime": 976.327,
+            "body": "What are you thinking in terms of, which, which managed services would you tend"
+        },
+        {
+            "startTime": 976.332,
+            "endTime": 978.787,
+            "body": "to lean towards, in what circumstances?"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 979.552,
+            "endTime": 983.477,
+            "body": "Well, it depends on which cloud you use, maybe you're not on."
+        },
+        {
+            "startTime": 984.602,
+            "endTime": 989.402,
+            "body": "In cloud on cloud sometimes like very, very rarely, but sometimes people"
+        },
+        {
+            "startTime": 989.402,
+            "endTime": 992.917,
+            "body": "don't use clouds, but if you are on cloud,  you probably should just"
+        },
+        {
+            "startTime": 992.917,
+            "endTime": 994.927,
+            "body": "choose the offering they provide."
+        },
+        {
+            "startTime": 995.407,
+            "endTime": 996.727,
+            "body": "But sometimes it's awful."
+        },
+        {
+            "startTime": 997.117,
+            "endTime": 1001.397,
+            "body": "Like a few years ago, I would not recommend Google Cloud SQL to anyone."
+        },
+        {
+            "startTime": 1001.397,
+            "endTime": 1007.127,
+            "body": "They had only eight, uh, knobs to tune from from almost 300 setting"
+        },
+        {
+            "startTime": 1007.277,
+            "endTime": 1012.047,
+            "body": "parameters and was not flexible, not ready to, to, you cannot tune to you."
+        },
+        {
+            "startTime": 1012.047,
+            "endTime": 1015.827,
+            "body": "Like it's not good, but I, I don't remember some other,"
+        },
+        {
+            "startTime": 1015.927,
+            "endTime": 1019.402,
+            "body": "problems , there offering had, but right now it's improving a lot."
+        },
+        {
+            "startTime": 1019.812,
+            "endTime": 1019.962,
+            "body": "So"
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1019.962,
+            "endTime": 1020.852,
+            "body": "Very quickly, right."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1021.192,
+            "endTime": 1024.732,
+            "body": "Since, since we mentioned, yeah, since we mentioned, uh, Postgres TV, we"
+        },
+        {
+            "startTime": 1024.732,
+            "endTime": 1033.067,
+            "body": "had, Ilya Kosmodemiansky and I had great guest, Hannu Krosing who was, in the past"
+        },
+        {
+            "startTime": 1033.067,
+            "endTime": 1039.702,
+            "body": "was, Skype database architect developed a lot of things in Skype, and, he talked"
+        },
+        {
+            "startTime": 1039.732,
+            "endTime": 1043.522,
+            "body": "about, vacuum issues and was great talk."
+        },
+        {
+            "startTime": 1043.522,
+            "endTime": 1044.032,
+            "body": "So if."
+        },
+        {
+            "startTime": 1044.647,
+            "endTime": 1049.297,
+            "body": "If interested in vacuum issues in Postgres, uh, go check this"
+        },
+        {
+            "startTime": 1050.197,
+            "endTime": 1051.797,
+            "body": "presentation on postgres.tv."
+        },
+        {
+            "startTime": 1052.427,
+            "endTime": 1054.857,
+            "body": "And, uh, he, he works at Google right now."
+        },
+        {
+            "startTime": 1054.917,
+            "endTime": 1059.987,
+            "body": "So cloud SQL has very, very strong experts and it's improving."
+        },
+        {
+            "startTime": 1059.987,
+            "endTime": 1062.697,
+            "body": "And they also recently released AlloyDB."
+        },
+        {
+            "startTime": 1062.782,
+            "endTime": 1062.867,
+            "body": "Right."
+        },
+        {
+            "startTime": 1062.867,
+            "endTime": 1070.207,
+            "body": "So it's like, it's very, also interesting, like among all, Postgres"
+        },
+        {
+            "startTime": 1070.502,
+            "endTime": 1073.052,
+            "body": "uh, offering, you can choose in cloud."
+        },
+        {
+            "startTime": 1073.262,
+            "endTime": 1077.882,
+            "body": "They are like almost pure Postgres, like RDS Postgres, almost pure."
+        },
+        {
+            "startTime": 1078.782,
+            "endTime": 1083.012,
+            "body": "Nobody except Amazon engineers can say, there are no patches."
+        },
+        {
+            "startTime": 1083.017,
+            "endTime": 1084.392,
+            "body": "Of course there are some patches there."
+        },
+        {
+            "startTime": 1084.662,
+            "endTime": 1090.722,
+            "body": "So, but there are also very different databases, like, uh, Aurora, which"
+        },
+        {
+            "startTime": 1091.082,
+            "endTime": 1096.122,
+            "body": "has different storage or recent NeonDB, which like open source of"
+        },
+        {
+            "startTime": 1096.122,
+            "endTime": 1098.512,
+            "body": "Aurora also with different storage."
+        },
+        {
+            "startTime": 1099.257,
+            "endTime": 1101.517,
+            "body": "Uh, so we cannot say it's already Postgres."
+        },
+        {
+            "startTime": 1101.537,
+            "endTime": 1102.747,
+            "body": "Like, it looks like Postgres."
+        },
+        {
+            "startTime": 1102.767,
+            "endTime": 1108.017,
+            "body": "It feels like Postgres, but not always, but they're also much more different."
+        },
+        {
+            "startTime": 1108.047,
+            "endTime": 1110.027,
+            "body": "Like AlloyDB, it's quite different."
+        },
+        {
+            "startTime": 1110.032,
+            "endTime": 1114.557,
+            "body": "They have interesting idea to have, uh, column store, right."
+        },
+        {
+            "startTime": 1114.562,
+            "endTime": 1115.187,
+            "body": "And memory."
+        },
+        {
+            "startTime": 1115.757,
+            "endTime": 1120.497,
+            "body": "In addition to row stores or row store converted to column store to have"
+        },
+        {
+            "startTime": 1120.497,
+            "endTime": 1125.577,
+            "body": "very fast aggregates for analytical workloads, or we have also Yugabyte."
+        },
+        {
+            "startTime": 1125.897,
+            "endTime": 1129.477,
+            "body": "Which is not Postgres at all, but kind of looks, looks like Postgres."
+        },
+        {
+            "startTime": 1129.947,
+            "endTime": 1133.787,
+            "body": "So among all these options, it's hard to choose."
+        },
+        {
+            "startTime": 1134.117,
+            "endTime": 1134.387,
+            "body": "Right?"
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1134.942,
+            "endTime": 1135.332,
+            "body": "Right."
+        },
+        {
+            "startTime": 1135.662,
+            "endTime": 1137.972,
+            "body": "I guess it depends so much on the use case."
+        },
+        {
+            "startTime": 1138.032,
+            "endTime": 1139.812,
+            "body": "And I, I think you're right."
+        },
+        {
+            "startTime": 1139.842,
+            "endTime": 1144.822,
+            "body": "I think if  you don't need anything special and you're fully committed"
+        },
+        {
+            "startTime": 1144.822,
+            "endTime": 1149.442,
+            "body": "to a single cloud provider already, it makes sense by default to go"
+        },
+        {
+            "startTime": 1149.442,
+            "endTime": 1152.412,
+            "body": "with theirs, unless, you know, you read the fine print and there's a, a"
+        },
+        {
+            "startTime": 1152.412,
+            "endTime": 1154.182,
+            "body": "really good reason not to, or go on."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1154.752,
+            "endTime": 1160.332,
+            "body": "If you, for example, on Google or Asia or I don't like, and"
+        },
+        {
+            "startTime": 1160.332,
+            "endTime": 1166.002,
+            "body": "you committed to be on this cloud, you still may think to use not their own"
+        },
+        {
+            "startTime": 1166.002,
+            "endTime": 1170.902,
+            "body": "Postgres managed service, but also, uh, offering from companies like Aiven"
+        },
+        {
+            "startTime": 1170.957,
+            "endTime": 1173.082,
+            "body": "or ScaleGrid because they work on all."
+        },
+        {
+            "startTime": 1173.262,
+            "endTime": 1174.172,
+            "body": "So you will have."
+        },
+        {
+            "startTime": 1174.702,
+            "endTime": 1179.447,
+            "body": "API and the UI are ready to work on any cloud, if you just, if you move"
+        },
+        {
+            "startTime": 1179.447,
+            "endTime": 1182.172,
+            "body": "or expand to other cloud providers."
+        },
+        {
+            "startTime": 1182.172,
+            "endTime": 1185.142,
+            "body": "So it's also interesting, but you know what we should choose,"
+        },
+        {
+            "startTime": 1185.892,
+            "endTime": 1187.242,
+            "body": "we should choose Kubernetes."
+        },
+        {
+            "startTime": 1187.692,
+            "endTime": 1192.192,
+            "body": "The only question is, I mean, Kubernetes, um, operators or"
+        },
+        {
+            "startTime": 1192.957,
+            "endTime": 1194.977,
+            "body": "products like, like StackGres."
+        },
+        {
+            "startTime": 1195.657,
+            "endTime": 1196.077,
+            "body": "Why?"
+        },
+        {
+            "startTime": 1196.557,
+            "endTime": 1200.367,
+            "body": "Like, because this is the same, like managed, but more power you have access"
+        },
+        {
+            "startTime": 1200.367,
+            "endTime": 1201.837,
+            "body": "and everything, if you need to diagnose."
+        },
+        {
+            "startTime": 1201.837,
+            "endTime": 1205.257,
+            "body": "And so on, the only question is when?"
+        },
+        {
+            "startTime": 1205.947,
+            "endTime": 1207.717,
+            "body": "Maybe not today, maybe tomorrow."
+        },
+        {
+            "startTime": 1207.717,
+            "endTime": 1208.047,
+            "body": "Right?"
+        },
+        {
+            "startTime": 1208.047,
+            "endTime": 1212.532,
+            "body": "Because still they are, they are started a few years ago and they're still very"
+        },
+        {
+            "startTime": 1212.532,
+            "endTime": 1221.562,
+            "body": "young, but I'm sure in five years, a lot of users will prefer Kubernetes under"
+        },
+        {
+            "startTime": 1221.562,
+            "endTime": 1227.062,
+            "body": "their full control, compared to, fully managed by cloud provider, uh, services."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1227.692,
+            "endTime": 1230.902,
+            "body": "Well, I think for people that are using Kubernetes themselves,"
+        },
+        {
+            "startTime": 1230.902,
+            "endTime": 1235.832,
+            "body": "which is a growing number, for their application side, I think those people,"
+        },
+        {
+            "startTime": 1235.837,
+            "endTime": 1238.892,
+            "body": "once they've built up that muscle and they, they understand it and they"
+        },
+        {
+            "startTime": 1238.892,
+            "endTime": 1242.477,
+            "body": "understand the, the sharp edges, um, Then."
+        },
+        {
+            "startTime": 1242.477,
+            "endTime": 1244.607,
+            "body": "Yeah, I think it, I think it does make a lot of sense."
+        },
+        {
+            "startTime": 1244.617,
+            "endTime": 1246.087,
+            "body": "I think there was a lot of fear."
+        },
+        {
+            "speaker": "What's it FUD",
+            "startTime": 1246.207,
+            "endTime": 1248.307,
+            "body": "fear uncertainty."
+        },
+        {
+            "startTime": 1248.607,
+            "endTime": 1248.907,
+            "body": "I dunno."
+        },
+        {
+            "startTime": 1248.907,
+            "endTime": 1249.627,
+            "body": "Is it denial?"
+        },
+        {
+            "startTime": 1249.777,
+            "endTime": 1255.687,
+            "body": "Uh, but I didn't see any good arguments against it and it does seem to really"
+        },
+        {
+            "startTime": 1255.692,
+            "endTime": 1257.847,
+            "body": "help in a few very specific ways."
+        },
+        {
+            "startTime": 1258.942,
+            "endTime": 1262.542,
+            "body": "But equally, I don't see most small companies needing it."
+        },
+        {
+            "startTime": 1262.572,
+            "endTime": 1265.695,
+            "body": "Like, I think there's like a scale where it becomes really useful when"
+        },
+        {
+            "startTime": 1265.695,
+            "endTime": 1270.225,
+            "body": "you need to provide a certain service level, um, maybe you have a really,"
+        },
+        {
+            "startTime": 1270.225,
+            "endTime": 1274.815,
+            "body": "really low tolerance for downtime or absolute zero data loss requirement."
+        },
+        {
+            "startTime": 1274.82,
+            "endTime": 1276.585,
+            "body": "And that's really a, you know, that kind of."
+        },
+        {
+            "startTime": 1277.14,
+            "endTime": 1281.28,
+            "body": "Uh, really high level thing that everyone thinks they need or want, but"
+        },
+        {
+            "startTime": 1281.46,
+            "endTime": 1286.58,
+            "body": "not everyone actually is willing to pay for maybe is the main criteria."
+        },
+        {
+            "startTime": 1286.83,
+            "endTime": 1290.84,
+            "body": "But yeah, I don't see any reason why not, but I do think it won't be self-managed."
+        },
+        {
+            "startTime": 1290.845,
+            "endTime": 1293.81,
+            "body": "I think a lot of people will then pay for somebody else to manage that"
+        },
+        {
+            "startTime": 1293.81,
+            "endTime": 1299.57,
+            "body": "for them, uh, still to not need that Kubernetes, uh, expertise in house, at"
+        },
+        {
+            "startTime": 1299.57,
+            "endTime": 1301.19,
+            "body": "least in the early days of a startup."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1301.75,
+            "endTime": 1305.205,
+            "body": "Maybe, but with, this approach, Kubernetes based, maybe"
+        },
+        {
+            "startTime": 1305.205,
+            "endTime": 1310.325,
+            "body": "you can hire a vendor of this Kubernetes, uh, product, uh, Postgres."
+        },
+        {
+            "startTime": 1310.685,
+            "endTime": 1313.415,
+            "body": "But, uh, with this approach, you can install anything."
+        },
+        {
+            "startTime": 1314.805,
+            "endTime": 1320.715,
+            "body": "You have like Postgres is very well known for its extensibility, but fully"
+        },
+        {
+            "startTime": 1320.715,
+            "endTime": 1323.235,
+            "body": "managed offering, always limits this."
+        },
+        {
+            "startTime": 1324.075,
+            "endTime": 1327.795,
+            "body": "For example, Timescale extension is available only on Timescale cloud."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1328.755,
+            "endTime": 1331.365,
+            "body": "But that's, that's due to licensing, right?"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1331.395,
+            "endTime": 1335.295,
+            "body": "Among, among managed Postgres, it's not available on RDS and, and will"
+        },
+        {
+            "startTime": 1335.295,
+            "endTime": 1340.455,
+            "body": "never be available there because Timescale thinks it's, uh, a reason to, for users to"
+        },
+        {
+            "startTime": 1340.455,
+            "endTime": 1343.195,
+            "body": "go to their cloud offering instead of RDS."
+        },
+        {
+            "startTime": 1343.74,
+            "endTime": 1348.54,
+            "body": "By the way, what do you think, uh, how successful will be this, uh, approach?"
+        },
+        {
+            "startTime": 1349.11,
+            "endTime": 1351.99,
+            "body": "Like we have some very good extension, very popular."
+        },
+        {
+            "startTime": 1352.47,
+            "endTime": 1356.27,
+            "body": "We, we will have it on only on our managed service?"
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1357.07,
+            "endTime": 1361.47,
+            "body": "So I saw, I think, the founder of OrioleDB gave a really good talk"
+        },
+        {
+            "startTime": 1361.65,
+            "endTime": 1366.915,
+            "body": "recently where he described some of some extensions are kind of normal extensions."
+        },
+        {
+            "startTime": 1366.915,
+            "endTime": 1368.385,
+            "body": "They add a little bit of function."
+        },
+        {
+            "startTime": 1368.415,
+            "endTime": 1368.685,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1368.685,
+            "endTime": 1371.475,
+            "body": "So they add a little bit of functionality to Postgres that makes it"
+        },
+        {
+            "startTime": 1371.475,
+            "endTime": 1372.825,
+            "body": "a little bit better in a certain way."
+        },
+        {
+            "startTime": 1373.035,
+            "endTime": 1375.735,
+            "body": "And he then also added a category of, yeah, I think he"
+        },
+        {
+            "startTime": 1375.735,
+            "endTime": 1377.205,
+            "body": "did call them super extensions."
+        },
+        {
+            "startTime": 1377.205,
+            "endTime": 1383.775,
+            "body": "So Citus, Timescale, I think he included Oriole, um, basically extensions that"
+        },
+        {
+            "startTime": 1383.775,
+            "endTime": 1388.155,
+            "body": "are doing so much, they're changing things really fundamentally at certain"
+        },
+        {
+            "startTime": 1388.155,
+            "endTime": 1392.46,
+            "body": "levels and actually they change it so much they can almost be considered."
+        },
+        {
+            "startTime": 1392.46,
+            "endTime": 1395.28,
+            "body": "They're not a fork because they are an extension, but they have"
+        },
+        {
+            "startTime": 1395.28,
+            "endTime": 1397.08,
+            "body": "some characteristics of a fork."
+        },
+        {
+            "startTime": 1397.08,
+            "endTime": 1399.02,
+            "body": "Where do they play nicely together?"
+        },
+        {
+            "startTime": 1399.57,
+            "endTime": 1402.89,
+            "body": "Um, how, yeah how easily can you migrate between them?"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1403.308,
+            "endTime": 1406.758,
+            "body": "It's like not fork, but different database right already."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1407.253,
+            "endTime": 1408.363,
+            "body": "Almost, yeah, exactly."
+        },
+        {
+            "startTime": 1408.363,
+            "endTime": 1409.473,
+            "body": "Almost a different database."
+        },
+        {
+            "startTime": 1409.533,
+            "endTime": 1414.723,
+            "body": "Um, so yeah, I, I think I can see why it would work for Timescale because"
+        },
+        {
+            "startTime": 1414.723,
+            "endTime": 1418.233,
+            "body": "if you really want their expertise, they are the best at supporting it."
+        },
+        {
+            "startTime": 1418.263,
+            "endTime": 1422.103,
+            "body": "And, uh, going to their cloud makes a lot of sense, but that's a really"
+        },
+        {
+            "startTime": 1422.103,
+            "endTime": 1424.473,
+            "body": "good reason for picking DIY as well."
+        },
+        {
+            "startTime": 1424.473,
+            "endTime": 1427.893,
+            "body": "If you really want the Timescale functionality and some of it, it seems"
+        },
+        {
+            "startTime": 1427.893,
+            "endTime": 1432.243,
+            "body": "incredibly good even for non-time series workloads, like think, did you see they"
+        },
+        {
+            "startTime": 1432.243,
+            "endTime": 1434.193,
+            "body": "did their skip scan implementation?"
+        },
+        {
+            "startTime": 1434.778,
+            "endTime": 1436.818,
+            "body": "That's super useful in loads of workloads."
+        },
+        {
+            "startTime": 1436.818,
+            "endTime": 1439.038,
+            "body": "So there's, there's reasons to want that."
+        },
+        {
+            "startTime": 1439.043,
+            "endTime": 1442.788,
+            "body": "And if you want it, but you aren't ready to go to Timescale as your managed service"
+        },
+        {
+            "startTime": 1442.793,
+            "endTime": 1445.648,
+            "body": "provider for some reason, you have to DIY."
+        },
+        {
+            "startTime": 1445.938,
+            "endTime": 1447.433,
+            "body": "So yeah, I do think you're right."
+        },
+        {
+            "startTime": 1447.533,
+            "endTime": 1454.658,
+            "body": "But I'm seeing actually a little bit more of a, an excitement around these services"
+        },
+        {
+            "startTime": 1454.658,
+            "endTime": 1456.668,
+            "body": "that abstract even more away from you."
+        },
+        {
+            "startTime": 1456.758,
+            "endTime": 1459.818,
+            "body": "And they come, they come with, I think, uh, limitations at the moment."
+        },
+        {
+            "startTime": 1459.823,
+            "endTime": 1465.818,
+            "body": "And they're very, very new, but services like Supabase or Neon looks exciting."
+        },
+        {
+            "startTime": 1465.818,
+            "endTime": 1469.748,
+            "body": "But, I know it's not Postgres, but on the MySQL side, PlantScale."
+        },
+        {
+            "startTime": 1470.438,
+            "endTime": 1474.718,
+            "body": "These services, I can see the excitement in the early startup CTO level."
+        },
+        {
+            "startTime": 1475.303,
+            "endTime": 1480.103,
+            "body": "They're promising them that you start with this today and we'll scale with you."
+        },
+        {
+            "startTime": 1480.413,
+            "endTime": 1485.123,
+            "body": "We can scale up, we can scale out and you don't have to handle any of that yourself."
+        },
+        {
+            "startTime": 1485.123,
+            "endTime": 1488.333,
+            "body": "You just keep talking to us like, we're your database."
+        },
+        {
+            "startTime": 1488.92,
+            "endTime": 1492.6,
+            "body": "There might be some hidden dark secrets that are, that are yet to come out of"
+        },
+        {
+            "startTime": 1492.6,
+            "endTime": 1494.55,
+            "body": "the, you know, the reality of that."
+        },
+        {
+            "startTime": 1495.045,
+            "endTime": 1498.555,
+            "body": "But it seems super compelling to me as a, as a simple option of, I"
+        },
+        {
+            "startTime": 1498.555,
+            "endTime": 1500.265,
+            "body": "don't need super complex things."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1501.008,
+            "endTime": 1504.548,
+            "body": "What do you think about security issues with the services?"
+        },
+        {
+            "startTime": 1504.553,
+            "endTime": 1508.278,
+            "body": "Because for example, if, if you are customer of Amazon"
+        },
+        {
+            "startTime": 1508.378,
+            "endTime": 1509.743,
+            "body": "you have trust with them."
+        },
+        {
+            "startTime": 1509.743,
+            "endTime": 1514.123,
+            "body": "Like they don't access your data in RDS, although they, they could, right."
+        },
+        {
+            "startTime": 1514.773,
+            "endTime": 1520.703,
+            "body": "Like it's, there is some trust, but if it's a smaller player, and they"
+        },
+        {
+            "startTime": 1520.71,
+            "endTime": 1525.633,
+            "body": "run your databases with your data inside their AWS account, for example,"
+        },
+        {
+            "startTime": 1526.293,
+            "endTime": 1528.933,
+            "body": "like how to achieve good trust here."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1529.41,
+            "endTime": 1531.3,
+            "body": "Well, I think security is a really good point."
+        },
+        {
+            "startTime": 1531.33,
+            "endTime": 1532.83,
+            "body": "I think reliability as well."
+        },
+        {
+            "startTime": 1532.86,
+            "endTime": 1535.56,
+            "body": "You know, AWS, there's two angles."
+        },
+        {
+            "startTime": 1535.59,
+            "endTime": 1539.35,
+            "body": "One, they've got a track record of good uptime, good reliability."
+        },
+        {
+            "startTime": 1539.46,
+            "endTime": 1543.57,
+            "body": "And two, if you go down or if they go down and therefore your service goes"
+        },
+        {
+            "startTime": 1543.57,
+            "endTime": 1545.7,
+            "body": "down, half the Internet's down as well."
+        },
+        {
+            "startTime": 1545.91,
+            "endTime": 1550.26,
+            "body": "So customers aren't that surprised that your service isn't running because"
+        },
+        {
+            "startTime": 1550.65,
+            "endTime": 1554.315,
+            "body": "nothing's, you know, their Spotify isn't working or their Netflix isn't working."
+        },
+        {
+            "startTime": 1554.315,
+            "endTime": 1557.155,
+            "body": "So I think there's a few things you get with these big players that"
+        },
+        {
+            "startTime": 1557.155,
+            "endTime": 1558.895,
+            "body": "people underestimate a little bit."
+        },
+        {
+            "startTime": 1559.555,
+            "endTime": 1562.225,
+            "body": "And with these new ones, they sometimes they're built on some"
+        },
+        {
+            "startTime": 1562.225,
+            "endTime": 1566.725,
+            "body": "really complex, um, infrastructure to handle some of this stuff."
+        },
+        {
+            "startTime": 1567.62,
+            "endTime": 1571.16,
+            "body": "that does, that does fail and sometimes in very spectacular ways"
+        },
+        {
+            "startTime": 1571.34,
+            "endTime": 1575.33,
+            "body": "and could, can result in a lot more downtime than the normal few minutes."
+        },
+        {
+            "startTime": 1575.33,
+            "endTime": 1578.48,
+            "body": "So I think complexity does come cost, uh, or, sorry."
+        },
+        {
+            "startTime": 1578.84,
+            "endTime": 1581.18,
+            "body": "They're, they're taking away the complexity from you, but"
+        },
+        {
+            "startTime": 1581.185,
+            "endTime": 1582.53,
+            "body": "they're adding it on their side."
+        },
+        {
+            "startTime": 1582.87,
+            "endTime": 1584.055,
+            "body": "And I, don't know."
+        },
+        {
+            "startTime": 1584.145,
+            "endTime": 1588.625,
+            "body": "I don't know that I would trust her something that needed that myself."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1588.768,
+            "endTime": 1593.418,
+            "body": "For me as a database performance expert, they add complexity because"
+        },
+        {
+            "startTime": 1593.718,
+            "endTime": 1598.578,
+            "body": "in, if I manage Postgres myself, I can install very useful extensions"
+        },
+        {
+            "startTime": 1598.608,
+            "endTime": 1602.358,
+            "body": "in addition, to pg_stat_statements, let's talk about performance, Uh,"
+        },
+        {
+            "startTime": 1602.358,
+            "endTime": 1607.758,
+            "body": "pg_stat_kcache and pg_wait_sampling, these extensions add two important"
+        },
+        {
+            "startTime": 1607.758,
+            "endTime": 1609.888,
+            "body": "dimensions to pg_stat_statements."
+        },
+        {
+            "startTime": 1609.913,
+            "endTime": 1614.953,
+            "body": "One is physical, so you can see disk I/O, pg_stat_kcache, disk I/O and CPU, even"
+        },
+        {
+            "startTime": 1615.163,
+            "endTime": 1619.843,
+            "body": "system CPU, user CPU context switches and so on, and another pg_wait_sampling,"
+        },
+        {
+            "startTime": 1620.363,
+            "endTime": 1624.743,
+            "body": "it provides similar analysis like performance insights in AWS RDS."
+        },
+        {
+            "startTime": 1625.313,
+            "endTime": 1628.493,
+            "body": "Without these two extensions, it's very hard to understand, for"
+        },
+        {
+            "startTime": 1628.498,
+            "endTime": 1634.103,
+            "body": "example, which query consumes a lot of CPU, but not very data intensive."
+        },
+        {
+            "startTime": 1634.103,
+            "endTime": 1636.563,
+            "body": "Sometimes it happens or similar things."
+        },
+        {
+            "startTime": 1637.013,
+            "endTime": 1640.258,
+            "body": "Pg_stat_statements sometimes cannot answer some questions."
+        },
+        {
+            "startTime": 1640.258,
+            "endTime": 1640.528,
+            "body": "Right."
+        },
+        {
+            "startTime": 1641.008,
+            "endTime": 1646.138,
+            "body": "And, uh, if you don't have performance insights, like, uh, like RDS has,"
+        },
+        {
+            "startTime": 1646.218,
+            "endTime": 1647.633,
+            "body": "sometimes you are very blind."
+        },
+        {
+            "startTime": 1648.713,
+            "endTime": 1654.623,
+            "body": "So, so they add complexity in terms of query analysis and"
+        },
+        {
+            "startTime": 1654.833,
+            "endTime": 1656.243,
+            "body": "performance optimization to me."
+        },
+        {
+            "startTime": 1656.963,
+            "endTime": 1661.053,
+            "body": "Because with these two extensions and proper monitoring, it makes very simple to"
+        },
+        {
+            "startTime": 1661.053,
+            "endTime": 1668.253,
+            "body": "perform top down analysis of workload and find, the worst queries . So agree or no?"
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1668.875,
+            "endTime": 1669.265,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1669.325,
+            "endTime": 1671.995,
+            "body": "Well, I think we're talking about different ends of the spectrum."
+        },
+        {
+            "startTime": 1671.995,
+            "endTime": 1674.035,
+            "body": "I like, I think maybe you're right."
+        },
+        {
+            "startTime": 1674.035,
+            "endTime": 1677.245,
+            "body": "That, that's the kind of thing that the CTO at a startup picking."
+        },
+        {
+            "startTime": 1678.085,
+            "endTime": 1683.005,
+            "body": "Um, let's say, uh, let's pick on PlanetScale, cause it's not even Postgres."
+        },
+        {
+            "startTime": 1683.335,
+            "endTime": 1685.015,
+            "body": "Let's say they pick PlanetScale today."
+        },
+        {
+            "startTime": 1686.215,
+            "endTime": 1689.695,
+            "body": "That maybe they're not aware of that kind of limitation all the way down"
+        },
+        {
+            "startTime": 1689.695,
+            "endTime": 1693.325,
+            "body": "the line or that they're completely reliant on PlanetScale's tooling."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1693.375,
+            "endTime": 1697.425,
+            "body": "I think PlanetScale is not good example because people choose"
+        },
+        {
+            "startTime": 1697.425,
+            "endTime": 1702.205,
+            "body": "PlanetScale of my, MySQL users, because they are also developers of Vitess."
+        },
+        {
+            "startTime": 1702.23,
+            "endTime": 1706.92,
+            "body": "And, if you need to build very big system that that requires sharding,"
+        },
+        {
+            "startTime": 1706.975,
+            "endTime": 1709.52,
+            "body": "it's actually almost standard defacto."
+        },
+        {
+            "startTime": 1709.64,
+            "endTime": 1712.55,
+            "body": "So you probably will go there because of that."
+        },
+        {
+            "startTime": 1712.76,
+            "endTime": 1715.69,
+            "body": "Or, or use Vitess and that's it."
+        },
+        {
+            "startTime": 1715.74,
+            "endTime": 1716.43,
+            "body": "It's interesting."
+        },
+        {
+            "startTime": 1716.7,
+            "endTime": 1720.63,
+            "body": "It's very specific example and I I'm interested in that example,"
+        },
+        {
+            "startTime": 1720.63,
+            "endTime": 1724.98,
+            "body": "but it, it will move us away from our main topic right now."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1725.603,
+            "endTime": 1729.683,
+            "body": "Well, what, um, how about, uh, Supabase then in terms of their promising"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1729.9,
+            "endTime": 1732.16,
+            "body": "for smaller projects also very specific."
+        },
+        {
+            "startTime": 1732.45,
+            "endTime": 1735.3,
+            "body": "They, they like, they do very great thing."
+        },
+        {
+            "startTime": 1735.45,
+            "endTime": 1737.93,
+            "body": "Um, but for smaller projects, mostly like,"
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1737.93,
+            "endTime": 1738.81,
+            "body": "At the moment"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1739.65,
+            "endTime": 1740.145,
+            "body": "At the moment."
+        },
+        {
+            "startTime": 1740.15,
+            "endTime": 1740.415,
+            "body": "Right."
+        },
+        {
+            "startTime": 1740.655,
+            "endTime": 1743.445,
+            "body": "But, the, their main offering is."
+        },
+        {
+            "startTime": 1744.12,
+            "endTime": 1750.75,
+            "body": "Like we provide you out of a box API authentication, uh, capabilities and"
+        },
+        {
+            "startTime": 1750.75,
+            "endTime": 1758.7,
+            "body": "this, uh, real time like, Firebase, like, uh, right think, but, but, uh,"
+        },
+        {
+            "startTime": 1759.11,
+            "endTime": 1761.54,
+            "body": "The question is like, what do you offer?"
+        },
+        {
+            "startTime": 1761.63,
+            "endTime": 1766.64,
+            "body": "If my database is 30 terabytes and I have 30,000 TPS, I need"
+        },
+        {
+            "startTime": 1766.64,
+            "endTime": 1768.85,
+            "body": "specific performance analysis tools."
+        },
+        {
+            "startTime": 1769.21,
+            "endTime": 1774.98,
+            "body": "I need, to be sure that you will survive for example, five terabytes of WAL"
+        },
+        {
+            "startTime": 1775.0,
+            "endTime": 1778.57,
+            "body": "per day, backed up properly and so on."
+        },
+        {
+            "startTime": 1778.9,
+            "endTime": 1780.28,
+            "body": "And this question is interesting."
+        },
+        {
+            "startTime": 1780.28,
+            "endTime": 1783.28,
+            "body": "I'm not sure Supabase is ready for this scale yet."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1783.658,
+            "endTime": 1786.718,
+            "body": "No, but who it, like, I'm thinking, looking through the ones"
+        },
+        {
+            "startTime": 1786.718,
+            "endTime": 1790.618,
+            "body": "I've got, I think EDB, for example, came out with a managed service"
+        },
+        {
+            "startTime": 1790.618,
+            "endTime": 1795.228,
+            "body": "recently and Crunchy, of course, both of those are Postgres consultancies"
+        },
+        {
+            "startTime": 1795.598,
+            "endTime": 1797.608,
+            "body": "turned into managed service providers."
+        },
+        {
+            "startTime": 1798.658,
+            "endTime": 1800.908,
+            "body": "Are they the, would you, would you think about those?"
+        },
+        {
+            "startTime": 1800.908,
+            "endTime": 1803.228,
+            "body": "Do you think they might have some answers to this kind of thing?"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1804.545,
+            "endTime": 1807.905,
+            "body": "I I'm very negative today for EDB."
+        },
+        {
+            "startTime": 1807.905,
+            "endTime": 1812.495,
+            "body": "I wish they, they provide better consulting still because I have couple"
+        },
+        {
+            "startTime": 1812.5,
+            "endTime": 1817.385,
+            "body": "of clients over last few years, not couple, several clients who, uh,"
+        },
+        {
+            "startTime": 1817.865,
+            "endTime": 1822.215,
+            "body": "suffered from their consulting, but it's good for me because, uh, they went to"
+        },
+        {
+            "startTime": 1822.215,
+            "endTime": 1825.485,
+            "body": "our small shop and we fixed problems."
+        },
+        {
+            "startTime": 1825.785,
+            "endTime": 1830.15,
+            "body": "So I'm, I haven't checked their managed service."
+        },
+        {
+            "startTime": 1830.69,
+            "endTime": 1831.23,
+            "body": "I don't know."
+        },
+        {
+            "startTime": 1831.68,
+            "endTime": 1833.45,
+            "body": "No, no, no, no comments here."
+        },
+        {
+            "startTime": 1833.51,
+            "endTime": 1834.26,
+            "body": "Maybe it's good."
+        },
+        {
+            "startTime": 1834.8,
+            "endTime": 1838.19,
+            "body": "But again, like, it's, it's a very difficult choice, right?"
+        },
+        {
+            "startTime": 1838.19,
+            "endTime": 1841.76,
+            "body": "So like many, many, but RDS is growing."
+        },
+        {
+            "startTime": 1841.76,
+            "endTime": 1843.62,
+            "body": "Like Google is interesting."
+        },
+        {
+            "startTime": 1843.89,
+            "endTime": 1848.055,
+            "body": "Microsoft has a power of Citus, so it's a very interesting time we live"
+        },
+        {
+            "startTime": 1848.055,
+            "endTime": 1852.375,
+            "body": "in, but again, in in few years, most people will choose Kubernetes based."
+        },
+        {
+            "startTime": 1852.375,
+            "endTime": 1852.825,
+            "body": "I think."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1853.338,
+            "endTime": 1854.328,
+            "body": "You heard it here first."
+        },
+        {
+            "startTime": 1855.258,
+            "endTime": 1857.538,
+            "body": "Um, I said you heard it here first."
+        },
+        {
+            "startTime": 1857.538,
+            "endTime": 1858.438,
+            "body": "Probably not first."
+        },
+        {
+            "startTime": 1858.558,
+            "endTime": 1859.968,
+            "body": "People have been talking about this for a while."
+        },
+        {
+            "startTime": 1860.658,
+            "endTime": 1861.078,
+            "body": "Awesome."
+        },
+        {
+            "startTime": 1861.288,
+            "endTime": 1864.768,
+            "body": "I know we could probably talk about this topic for quite a long time."
+        },
+        {
+            "startTime": 1864.928,
+            "endTime": 1867.318,
+            "body": "Is there any last things you wanted to add before we wrap up?"
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1868.778,
+            "endTime": 1876.05,
+            "body": "Uh, well, um, I think physical connection is a big limiting factor."
+        },
+        {
+            "startTime": 1876.47,
+            "endTime": 1880.09,
+            "body": "And every company who wants to deal with managed Postgres should"
+        },
+        {
+            "startTime": 1880.09,
+            "endTime": 1881.78,
+            "body": "think about this, do they need it?"
+        },
+        {
+            "startTime": 1881.84,
+            "endTime": 1885.2,
+            "body": "And also low level on diagnostics capabilities."
+        },
+        {
+            "startTime": 1885.68,
+            "endTime": 1889.72,
+            "body": "So if they're okay without it, it's a go for, for this managed service."
+        },
+        {
+            "startTime": 1890.45,
+            "endTime": 1895.995,
+            "body": "I have many clients who work on RDS and other, managed services and I"
+        },
+        {
+            "startTime": 1895.995,
+            "endTime": 1899.715,
+            "body": "like helping them as well, because sometimes it's fun to deal with."
+        },
+        {
+            "startTime": 1901.475,
+            "endTime": 1903.4,
+            "body": "Their support engineers."
+        },
+        {
+            "startTime": 1903.55,
+            "endTime": 1909.28,
+            "body": "It's sometimes it's lengthy discussions, but it's specific kind of fun actually, I"
+        },
+        {
+            "startTime": 1909.28,
+            "endTime": 1916.92,
+            "body": "would say, but in general, I think we have like, EDB are called Big Animal, right?"
+        },
+        {
+            "startTime": 1917.58,
+            "endTime": 1921.25,
+            "body": "We have huge zoo of, animals of various kinds."
+        },
+        {
+            "startTime": 1921.27,
+            "endTime": 1921.57,
+            "body": "Right."
+        },
+        {
+            "startTime": 1922.11,
+            "endTime": 1924.985,
+            "body": "And, I definitely like, the specific, uh, breed."
+        },
+        {
+            "startTime": 1925.945,
+            "endTime": 1928.135,
+            "body": "That is shaded with Kubernetes."
+        },
+        {
+            "startTime": 1928.435,
+            "endTime": 1934.075,
+            "body": "So let's probably talk about this area some sometime soon as well."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1934.665,
+            "endTime": 1935.245,
+            "body": "Sounds good."
+        },
+        {
+            "startTime": 1936.183,
+            "endTime": 1936.693,
+            "body": "Wonderful."
+        },
+        {
+            "startTime": 1936.933,
+            "endTime": 1939.063,
+            "body": "Well, thank you everyone for joining us."
+        },
+        {
+            "startTime": 1939.113,
+            "endTime": 1941.898,
+            "body": "I'm gonna put a bunch of these links in our show notes."
+        },
+        {
+            "startTime": 1942.018,
+            "endTime": 1944.868,
+            "body": "We welcome ideas, suggestions for future topics."
+        },
+        {
+            "startTime": 1944.938,
+            "endTime": 1945.238,
+            "body": "And yeah."
+        },
+        {
+            "startTime": 1945.358,
+            "endTime": 1946.198,
+            "body": "Thank you so much, Nikolay."
+        },
+        {
+            "startTime": 1946.198,
+            "endTime": 1947.338,
+            "body": "I hope you have a good week."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1948.03,
+            "endTime": 1948.39,
+            "body": "Thank you."
+        },
+        {
+            "startTime": 1948.45,
+            "endTime": 1952.08,
+            "body": "I also want to thank everyone who provided feedback to Michael."
+        },
+        {
+            "startTime": 1952.08,
+            "endTime": 1954.81,
+            "body": "Uh, and I wanted to say you can provide feedback to me as well."
+        },
+        {
+            "startTime": 1954.99,
+            "endTime": 1959.46,
+            "body": "So like, but for Michael is also good and don't forget to subscribe"
+        },
+        {
+            "startTime": 1959.465,
+            "endTime": 1964.05,
+            "body": "and also share, please share this channel, this  postgres.fm link"
+        },
+        {
+            "startTime": 1964.68,
+            "endTime": 1966.33,
+            "body": "and, and links to specific episodes."
+        },
+        {
+            "startTime": 1966.43,
+            "endTime": 1967.69,
+            "body": "This will help us to grow."
+        },
+        {
+            "startTime": 1969.16,
+            "endTime": 1969.7,
+            "body": "Thank you, Michael."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1970.353,
+            "endTime": 1970.653,
+            "body": "Take care."
+        },
+        {
+            "startTime": 1970.863,
+            "endTime": 1971.253,
+            "body": "Speak soon."
+        },
+        {
+            "startTime": 1971.393,
+            "endTime": 1971.613,
+            "body": "Bye."
+        },
+        {
+            "speaker": "Nikolay",
+            "startTime": 1971.997,
+            "endTime": 1972.267,
+            "body": "Bye."
+        }
+    ]
+}

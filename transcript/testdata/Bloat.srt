@@ -1,0 +1,3370 @@
+1
+00:00:00,060 --> 00:00:02,680
+Michael: Hello, and welcome to
+PostgresFM, a weekly show about
+
+2
+00:00:02,680 --> 00:00:03,900
+all things PostgreSQL.
+
+3
+00:00:03,900 --> 00:00:07,360
+I am Michael, founder of pgMustard,
+and today I am joined by
+
+4
+00:00:07,360 --> 00:00:10,840
+Chelsea Dole, staff software engineer
+and tech lead of the data
+
+5
+00:00:10,840 --> 00:00:15,040
+storage team at Brex, and speaker
+at several prestigious Postgres
+
+6
+00:00:15,060 --> 00:00:16,860
+conferences over the past couple
+of years.
+
+7
+00:00:16,960 --> 00:00:18,660
+Thanks so much for joining me,
+Chelsea.
+
+8
+00:00:19,280 --> 00:00:20,820
+Chelsea: Thanks so much for having
+me, Michael.
+
+9
+00:00:21,540 --> 00:00:22,040
+Michael: Wonderful.
+
+10
+00:00:22,080 --> 00:00:26,580
+Well, I have seen several of your
+talks and loved how well you've
+
+11
+00:00:26,580 --> 00:00:28,700
+explained a few concepts now.
+
+12
+00:00:28,700 --> 00:00:30,300
+One of those was bloat.
+
+13
+00:00:30,360 --> 00:00:33,080
+And looking back at our previous
+episodes, I realized we hadn't
+
+14
+00:00:33,080 --> 00:00:36,180
+actually done an episode on bloat
+itself.
+
+15
+00:00:36,400 --> 00:00:40,840
+We've done plenty that mention
+it, that are around it, but I
+
+16
+00:00:40,840 --> 00:00:44,280
+loved your explanations and I'm
+looking forward to having a chat
+
+17
+00:00:44,280 --> 00:00:48,700
+with you about what it is, how
+people can think about it, and
+
+18
+00:00:48,700 --> 00:00:50,240
+some strategies around it.
+
+19
+00:00:50,740 --> 00:00:51,220
+Chelsea: Thank you.
+
+20
+00:00:51,220 --> 00:00:55,020
+Well, as a PostgresFM loyal listener,
+I've definitely listened
+
+21
+00:00:55,020 --> 00:00:59,640
+to a couple of those bloat sphere
+conversations, let's say.
+
+22
+00:00:59,640 --> 00:01:02,300
+So it's nice to be addressing it
+more directly.
+
+23
+00:01:03,440 --> 00:01:04,180
+Michael: Yeah, awesome.
+
+24
+00:01:04,640 --> 00:01:09,080
+So in terms of where to start,
+I guess we should cover what is
+
+25
+00:01:09,080 --> 00:01:09,440
+bloat.
+
+26
+00:01:09,440 --> 00:01:11,060
+How do you think about it?
+
+27
+00:01:11,120 --> 00:01:14,780
+Chelsea: So Postgres bloat basically
+occurs as a function of
+
+28
+00:01:14,780 --> 00:01:18,820
+MVCC and it's kind of an extension
+of the autovacuum process.
+
+29
+00:01:19,320 --> 00:01:23,600
+So in MVCC, all the actions you're
+doing, inserts, updates, deletes,
+
+30
+00:01:23,800 --> 00:01:27,460
+those are all actually updates
+or editing metadata on a tuple,
+
+31
+00:01:27,520 --> 00:01:29,280
+not hard-deleting it in place.
+
+32
+00:01:29,540 --> 00:01:34,640
+This basically allows MVCC to be
+both compliant with ACID principles
+
+33
+00:01:34,640 --> 00:01:37,780
+and still fast, so it doesn't slow
+things down too much.
+
+34
+00:01:38,320 --> 00:01:42,220
+When those tuples are generally
+hard-deleted is through vacuum,
+
+35
+00:01:42,440 --> 00:01:45,780
+which runs every now and again,
+depending on your configurations
+
+36
+00:01:46,020 --> 00:01:46,680
+and autovacuum.
+
+37
+00:01:47,380 --> 00:01:50,680
+But if autovacuum can't keep up,
+and you have lots of those
+
+38
+00:01:50,680 --> 00:01:54,140
+inserts and updates and deletes,
+then you can get into a state
+
+39
+00:01:54,140 --> 00:01:58,580
+where your Postgres pages are basically
+bin-packed with a bunch
+
+40
+00:01:58,580 --> 00:02:01,260
+of dead or soft-deleted tuples.
+
+41
+00:02:01,920 --> 00:02:03,660
+And that leads to bloat.
+
+42
+00:02:03,840 --> 00:02:08,040
+So bloat is the state where you
+have these table pages that are
+
+43
+00:02:08,040 --> 00:02:12,160
+full of basically useless data
+that vacuum is hurrying to kind
+
+44
+00:02:12,160 --> 00:02:14,180
+of run around and catch up.
+
+45
+00:02:14,180 --> 00:02:17,640
+And so Postgres has to keep on
+adding new empty pages to the
+
+46
+00:02:17,640 --> 00:02:21,240
+end of your heap, which leads to
+all sorts of, I'd say, non-optimal
+
+47
+00:02:21,320 --> 00:02:21,820
+outcomes.
+
+48
+00:02:21,820 --> 00:02:23,520
+So too long, didn't read.
+
+49
+00:02:23,520 --> 00:02:26,500
+It's unoptimal tuple density in
+your pages.
+
+50
+00:02:27,380 --> 00:02:28,740
+Michael: Yeah, I really like that.
+
+51
+00:02:28,740 --> 00:02:35,560
+So if we end up in a situation
+where a large proportion of our
+
+52
+00:02:35,560 --> 00:02:40,780
+table, maybe including the indexes,
+is sparsely stored on disk,
+
+53
+00:02:41,160 --> 00:02:45,020
+that has knock-on effects and that's
+referred to as a table with
+
+54
+00:02:45,020 --> 00:02:45,920
+a lot of bloat.
+
+55
+00:02:45,920 --> 00:02:49,700
+I've thought about it in the past
+as almost the diff between
+
+56
+00:02:50,080 --> 00:02:55,680
+the table's current state and if
+we completely rebuilt that table
+
+57
+00:02:55,680 --> 00:02:56,540
+with its indexes.
+
+58
+00:02:56,680 --> 00:02:58,660
+Like the diff I think of as bloat.
+
+59
+00:02:58,660 --> 00:03:01,940
+I don't think it's the only definition
+that's acceptable because
+
+60
+00:03:02,420 --> 00:03:06,940
+of like fill factor and things
+like there are other technical
+
+61
+00:03:06,940 --> 00:03:10,580
+details but I like it because I
+think it's quite practical and
+
+62
+00:03:11,180 --> 00:03:12,780
+in terms of what it means.
+
+63
+00:03:12,980 --> 00:03:14,900
+So what but why is this a problem?
+
+64
+00:03:14,900 --> 00:03:19,220
+Like when have you seen this
+cause issues and how bad are
+
+65
+00:03:19,220 --> 00:03:19,940
+these issues?
+
+66
+00:03:20,540 --> 00:03:22,040
+Chelsea: There's a huge spectrum
+there.
+
+67
+00:03:22,040 --> 00:03:25,760
+And I would first preface by saying,
+I wouldn't call this a hot
+
+68
+00:03:25,760 --> 00:03:28,980
+take, but maybe a lukewarm take
+is that bloat is really not always
+
+69
+00:03:28,980 --> 00:03:29,640
+a problem.
+
+70
+00:03:30,360 --> 00:03:34,120
+I think that a lot of people think
+of this as this, oh God, our
+
+71
+00:03:34,120 --> 00:03:36,420
+tables are bloated, what are we
+ever going to do?
+
+72
+00:03:36,680 --> 00:03:39,560
+But there's plenty of situations
+where you have a bloated table
+
+73
+00:03:39,560 --> 00:03:43,380
+that's serviceable and you're able
+to get it to a slightly better
+
+74
+00:03:43,380 --> 00:03:45,320
+state without any drastic measures.
+
+75
+00:03:45,860 --> 00:03:49,700
+But the main issue that bloat can
+cause, which can lead to downstream
+
+76
+00:03:49,900 --> 00:03:51,900
+issues, is really increased IO.
+
+77
+00:03:52,540 --> 00:03:57,520
+And IO is sort of the grandfather
+of all these downstream issues
+
+78
+00:03:57,520 --> 00:04:00,560
+that nobody likes, like high latency
+on your reads.
+
+79
+00:04:01,160 --> 00:04:01,340
+Michael: You
+
+80
+00:04:01,340 --> 00:04:03,900
+Chelsea: know, it leads to IO because
+essentially if you think
+
+81
+00:04:03,900 --> 00:04:08,940
+of it logically, like if I have
+10 rows across 2 pages, if I
+
+82
+00:04:08,940 --> 00:04:11,520
+do a sequential scan, I've now
+scanned 2 pages.
+
+83
+00:04:11,520 --> 00:04:13,300
+That's a certain amount of IO.
+
+84
+00:04:13,580 --> 00:04:17,420
+But if I have really bad tuple
+density, I've got table bloat,
+
+85
+00:04:17,440 --> 00:04:21,140
+then maybe I'm scanning 10 rows
+or 10 tuples across 8 pages.
+
+86
+00:04:21,340 --> 00:04:24,020
+And so I'm scanning the same amount
+of data, but I just had,
+
+87
+00:04:24,020 --> 00:04:25,820
+you know, 4x the IO.
+
+88
+00:04:26,260 --> 00:04:30,600
+So that can lead to downstream
+negative effects with Reads, of
+
+89
+00:04:30,600 --> 00:04:31,060
+course.
+
+90
+00:04:31,060 --> 00:04:34,060
+And you guys have talked a couple
+of times about, you know, explain
+
+91
+00:04:34,060 --> 00:04:35,460
+buffers and things like that.
+
+92
+00:04:35,460 --> 00:04:38,480
+So that's a really good way to
+sort of see off the cuff, you
+
+93
+00:04:38,480 --> 00:04:41,140
+know, whether you're using an appropriate
+amount of IO.
+
+94
+00:04:41,140 --> 00:04:45,060
+But as I said, there are places
+where you can have, you know,
+
+95
+00:04:45,060 --> 00:04:48,460
+some amount of table bloat and
+it's not really causing an issue.
+
+96
+00:04:48,580 --> 00:04:52,060
+I would say that where I look for
+it as the biggest long-term
+
+97
+00:04:52,240 --> 00:04:56,100
+issue to solve and really address,
+is those workloads that are
+
+98
+00:04:56,100 --> 00:04:58,300
+going to be very update and delete
+heavy.
+
+99
+00:04:58,360 --> 00:05:02,600
+Having some bloat on a normal workload,
+if your users aren't
+
+100
+00:05:02,600 --> 00:05:07,340
+seeing effects on latency through
+the IO, I would sometimes just
+
+101
+00:05:07,340 --> 00:05:11,020
+say shrug, you know, the important
+thing is the end-to-end experience
+
+102
+00:05:11,540 --> 00:05:14,280
+and the long-term maintainability
+for you as a dev.
+
+103
+00:05:15,060 --> 00:05:16,160
+Michael: Yep, love that.
+
+104
+00:05:16,320 --> 00:05:17,440
+And very practical as well.
+
+105
+00:05:17,440 --> 00:05:19,980
+I've seen a couple of your talks
+on this.
+
+106
+00:05:21,260 --> 00:05:24,140
+And you mentioned IO, but you mentioned
+it quite late on.
+
+107
+00:05:24,140 --> 00:05:27,180
+I'm like, oh yeah, it is as simple
+as that really.
+
+108
+00:05:27,260 --> 00:05:29,680
+Obviously there are other bad things.
+
+109
+00:05:29,680 --> 00:05:31,400
+Like it's taking up more disk space,
+right?
+
+110
+00:05:31,400 --> 00:05:36,000
+Like it's taking up more space in
+memory, but ultimately the user
+
+111
+00:05:36,000 --> 00:05:38,860
+experience wise, that's normally
+what a lot of us are fighting
+
+112
+00:05:38,860 --> 00:05:41,080
+with, especially on busy systems.
+
+113
+00:05:42,380 --> 00:05:45,520
+So slow queries that users are
+reporting is a natural sign.
+
+114
+00:05:45,580 --> 00:05:49,540
+How do you go from that to realizing,
+oh, my problem is a bloated
+
+115
+00:05:49,540 --> 00:05:50,040
+table?
+
+116
+00:05:50,580 --> 00:05:52,320
+Chelsea: I think there's sort of
+2 paths for that.
+
+117
+00:05:52,320 --> 00:05:55,080
+In my experience, the first one is
+before you ever know what bloat
+
+118
+00:05:55,080 --> 00:05:56,820
+is, how do you discover bloat?
+
+119
+00:05:57,440 --> 00:06:01,100
+And I would say that usually the
+path is you have a really bloated
+
+120
+00:06:01,100 --> 00:06:04,900
+system and there's really no other
+explanation for it until you
+
+121
+00:06:04,900 --> 00:06:07,220
+go down those paths and try to
+figure it out.
+
+122
+00:06:07,360 --> 00:06:10,380
+For myself, just sort of going
+through how I discovered table
+
+123
+00:06:10,380 --> 00:06:13,820
+bloat, thinking back, you know,
+I've worked, I would say, in
+
+124
+00:06:13,820 --> 00:06:17,320
+Postgres at scale, at the last two companies
+I've worked at.
+
+125
+00:06:17,320 --> 00:06:21,020
+Before that, with it more as like
+a passing, just a tool I happened
+
+126
+00:06:21,020 --> 00:06:21,720
+to use.
+
+127
+00:06:22,380 --> 00:06:27,680
+And I saw it in great scale when
+I first started at Brex.
+
+128
+00:06:27,820 --> 00:06:30,540
+And the way that I actually saw
+it is that we had a developer
+
+129
+00:06:30,540 --> 00:06:31,320
+reach out.
+
+130
+00:06:31,580 --> 00:06:36,820
+And they said, hey, you know, I
+have this, let's say, 50 gigabytes
+
+131
+00:06:36,820 --> 00:06:41,320
+of tables total on this server,
+there's only one database, and
+
+132
+00:06:41,320 --> 00:06:44,480
+for some reason, we're almost running
+out of disk.
+
+133
+00:06:45,240 --> 00:06:46,920
+Why do I have so?
+
+134
+00:06:47,720 --> 00:06:49,040
+Where's all this space going?
+
+135
+00:06:49,040 --> 00:06:52,760
+Because I can see my table size
+and then remaining table space
+
+136
+00:06:52,780 --> 00:06:53,520
+on disk.
+
+137
+00:06:53,520 --> 00:06:57,040
+We use RDS on Cloud, so you're
+able to see that pretty easily.
+
+138
+00:06:58,480 --> 00:07:01,580
+I went and I said, I actually don't
+totally know.
+
+139
+00:07:02,020 --> 00:07:03,340
+Let me check this out.
+
+140
+00:07:03,900 --> 00:07:06,740
+When I went and checked it out,
+I could see that there was just
+
+141
+00:07:06,740 --> 00:07:07,760
+a ton of bloat.
+
+142
+00:07:07,820 --> 00:07:11,240
+Here, interestingly, the bloat
+was actually coming from a TOAST
+
+143
+00:07:11,240 --> 00:07:12,100
+table bloat.
+
+144
+00:07:12,660 --> 00:07:13,560
+Michael: Oh, nice.
+
+145
+00:07:13,700 --> 00:07:16,520
+Chelsea: I know, which is an interesting
+little side quest here,
+
+146
+00:07:16,520 --> 00:07:17,020
+conversationally.
+
+147
+00:07:18,620 --> 00:07:20,440
+But TOAST is just other tables.
+
+148
+00:07:21,180 --> 00:07:24,480
+The oversized attribute storage technique
+or whatever fun acronym they
+
+149
+00:07:24,480 --> 00:07:25,600
+made up with it.
+
+150
+00:07:25,600 --> 00:07:28,140
+Those are just tables under the
+hood too, so they can also get
+
+151
+00:07:28,140 --> 00:07:28,500
+Bloat.
+
+152
+00:07:28,500 --> 00:07:32,020
+So I'd say that was my first time
+needing to go through the entire
+
+153
+00:07:32,020 --> 00:07:36,680
+song and dance of bloat that needed
+to be fixed through, I would
+
+154
+00:07:36,680 --> 00:07:41,540
+say, like strong measures versus
+maybe just tinkering some little
+
+155
+00:07:41,580 --> 00:07:42,760
+stats here and there.
+
+156
+00:07:43,220 --> 00:07:48,400
+But I think that once you know
+what bloat is, it's pretty easy
+
+157
+00:07:48,400 --> 00:07:49,700
+to look out for it.
+
+158
+00:07:49,700 --> 00:07:52,580
+Operationally, there's observability
+tools and dashboards.
+
+159
+00:07:53,140 --> 00:07:54,740
+You can instrument your own.
+
+160
+00:07:54,780 --> 00:07:58,880
+I think a whole lot of DBAs have
+their own private stash or ideally
+
+161
+00:07:59,020 --> 00:08:03,340
+GitHub open source stash of fun
+queries they like to use or extensions
+
+162
+00:08:03,480 --> 00:08:04,860
+they have in their back pocket.
+
+163
+00:08:05,060 --> 00:08:07,080
+And we can dive a little more into
+those if you want.
+
+164
+00:08:07,080 --> 00:08:09,180
+But I think that there's sort of
+those 2 paths.
+
+165
+00:08:09,180 --> 00:08:11,400
+There's the path of, oh, God, what's
+going on?
+
+166
+00:08:11,400 --> 00:08:14,060
+And the path of once you've seen
+it, you can kind of pattern
+
+167
+00:08:14,060 --> 00:08:14,560
+match.
+
+168
+00:08:15,200 --> 00:08:15,880
+Michael: Yeah, nice.
+
+169
+00:08:15,880 --> 00:08:20,980
+I like the system-level like path
+in and I've all, because of
+
+170
+00:08:20,980 --> 00:08:24,940
+my background and the tool I work
+on, I see it more from the other
+
+171
+00:08:25,200 --> 00:08:29,180
+direction, so somebody looking at
+an incredibly slow read query
+
+172
+00:08:29,180 --> 00:08:32,940
+that has no right being that slow
+and using explain analyze buffers.
+
+173
+00:08:33,280 --> 00:08:37,660
+And as you mentioned, when we say
+incredibly bloated, you could
+
+174
+00:08:37,660 --> 00:08:43,820
+easily have at least before Postgres
+14, which had some great
+
+175
+00:08:43,820 --> 00:08:47,780
+optimizations in it, you could
+have an index that was 10 times
+
+176
+00:08:47,780 --> 00:08:50,600
+bigger than it needs to be.
+
+177
+00:08:50,600 --> 00:08:54,180
+If you, let's say, you rebuilt the
+index concurrently, the result
+
+178
+00:08:54,180 --> 00:08:56,080
+afterwards might be 10 times smaller.
+
+179
+00:08:56,280 --> 00:08:59,880
+So that's a significant amount
+of extra reads you might
+
+180
+00:08:59,880 --> 00:09:03,080
+be doing, especially if you're
+returning a bunch of rows.
+
+181
+00:09:03,080 --> 00:09:07,940
+So you mentioned like 8 reads instead
+of 1, but if you're looking
+
+182
+00:09:07,940 --> 00:09:11,000
+at the last thousand rows, if you're
+doing 8,000 instead of 1,000,
+
+183
+00:09:11,000 --> 00:09:12,680
+you start to notice that in latency.
+
+184
+00:09:12,720 --> 00:09:13,940
+So it's quite cool.
+
+185
+00:09:13,940 --> 00:09:18,240
+We, in fact, we used to call the
+tab bloat likelihood,
+
+186
+00:09:18,680 --> 00:09:23,140
+and I renamed it a couple of years
+ago to read efficiency, partly
+
+187
+00:09:23,140 --> 00:09:26,500
+because of your, like it goes back
+to your density question again.
+
+188
+00:09:27,740 --> 00:09:31,640
+It's not necessarily bloat, but
+it's not necessarily
+
+189
+00:09:31,640 --> 00:09:32,720
+about the likelihood of it.
+
+190
+00:09:32,720 --> 00:09:36,000
+It's more about the efficiency
+of those reads, and it might be
+
+191
+00:09:36,000 --> 00:09:39,780
+a locality issue which is somewhat
+bloat-related as well.
+
+192
+00:09:39,780 --> 00:09:41,600
+So yeah, love this.
+
+193
+00:09:41,600 --> 00:09:42,100
+Great.
+
+194
+00:09:42,580 --> 00:09:48,540
+So you mentioned, and you've spoken
+before about queries to estimate
+
+195
+00:09:48,640 --> 00:09:52,080
+and other techniques for looking
+into like getting more, maybe
+
+196
+00:09:52,080 --> 00:09:57,100
+accurate or, depending on your definition
+of accurate, measures
+
+197
+00:09:57,100 --> 00:10:02,140
+of this. What's your advice on
+minimizing this, dealing with
+
+198
+00:10:02,140 --> 00:10:02,640
+it?
+
+199
+00:10:03,280 --> 00:10:07,360
+Chelsea: Yeah, I guess the first
+thing to the measure of how
+
+200
+00:10:07,360 --> 00:10:10,680
+to identify whether you have bloat
+or how much you have and decide
+
+201
+00:10:10,680 --> 00:10:11,920
+What to do with it.
+
+202
+00:10:11,980 --> 00:10:15,060
+The first step there is really,
+again, kind of a trade-off of
+
+203
+00:10:15,060 --> 00:10:16,360
+what matters to you.
+
+204
+00:10:16,360 --> 00:10:20,740
+Does the speed and low system impact
+matter to you in this sort
+
+205
+00:10:20,740 --> 00:10:23,660
+of DBA process of figuring out
+how much bloat you have?
+
+206
+00:10:23,760 --> 00:10:28,540
+Or does accuracy of the exact percentage
+of bloat or the exact
+
+207
+00:10:28,900 --> 00:10:32,900
+tuple count and being 100% sure
+that your stats are right matter
+
+208
+00:10:32,900 --> 00:10:33,580
+to you.
+
+209
+00:10:33,700 --> 00:10:38,040
+And so again, kind of like I said
+in the discussion about how
+
+210
+00:10:38,100 --> 00:10:40,920
+bloat can kind of be okay or not
+something you really need to
+
+211
+00:10:40,920 --> 00:10:43,620
+deal with in certain situations,
+this is one where you kind of
+
+212
+00:10:43,620 --> 00:10:44,940
+get to decide your priorities.
+
+213
+00:10:45,440 --> 00:10:50,400
+If your priority is 100% accuracy,
+or I would say also, if you
+
+214
+00:10:50,400 --> 00:10:53,960
+have downtime hours on your database
+where you can easily do
+
+215
+00:10:53,960 --> 00:10:57,380
+this without any user effect, or
+if you have a small system and
+
+216
+00:10:57,380 --> 00:11:01,360
+for whatever reason, you happen
+to be bloated through your own
+
+217
+00:11:01,360 --> 00:11:04,740
+write patterns, but it's not actually
+that important, then I
+
+218
+00:11:04,740 --> 00:11:06,300
+would suggest pgstattuple.
+
+219
+00:11:06,880 --> 00:11:10,060
+pgstattuple is a Postgres contrib
+module.
+
+220
+00:11:10,760 --> 00:11:13,820
+Basically, it gives you some functions
+that you're able to run,
+
+221
+00:11:14,060 --> 00:11:18,160
+and they will basically do a sequential
+scan through a target
+
+222
+00:11:18,160 --> 00:11:21,520
+table, or I think through a target
+database if you want to run
+
+223
+00:11:21,520 --> 00:11:26,380
+all tables, and it will return
+to you the count of live dead
+
+224
+00:11:26,380 --> 00:11:31,480
+tuples, free space map stuff, as
+well as a few other statistics.
+
+225
+00:11:32,300 --> 00:11:36,860
+That one I would say is on the side
+of you have resources to spare,
+
+226
+00:11:37,080 --> 00:11:40,460
+you're not gonna impact users because
+CPU does spike during this.
+
+227
+00:11:40,460 --> 00:11:43,320
+And there's no way to get around
+the sequential scan because
+
+228
+00:11:43,320 --> 00:11:44,680
+you can't exactly index it.
+
+229
+00:11:44,680 --> 00:11:46,440
+The point is to actually look at
+the pages.
+
+230
+00:11:46,440 --> 00:11:48,620
+So it's always going to be a sequential
+scan.
+
+231
+00:11:48,840 --> 00:11:52,900
+The other option is through using,
+I would say, estimation queries.
+
+232
+00:11:53,480 --> 00:11:57,480
+And these tend to leverage internal
+tables already used by Postgres
+
+233
+00:11:57,540 --> 00:12:00,200
+or kept up to date during the Analyze
+process.
+
+234
+00:12:00,760 --> 00:12:05,680
+So these would be like pg_class
+reltuples and things like that
+
+235
+00:12:05,680 --> 00:12:09,400
+will estimate the number of live
+dead tuples you have based on
+
+236
+00:12:09,400 --> 00:12:11,140
+a sampling during Analyze.
+
+237
+00:12:11,840 --> 00:12:14,800
+So before you run anything that's
+an estimate, you do want to
+
+238
+00:12:14,800 --> 00:12:18,160
+run Analyze, you know, right before,
+but then you're able to
+
+239
+00:12:18,160 --> 00:12:21,760
+guess a proportion based on a sampling
+of your table data.
+
+240
+00:12:21,760 --> 00:12:24,560
+This is a better option, I would
+say, for really high-criticality
+
+241
+00:12:24,960 --> 00:12:27,580
+systems or extremely large tables.
+
+242
+00:12:28,180 --> 00:12:33,480
+If you have a 500-gigabyte, 800-gigabyte
+table, or even just
+
+243
+00:12:33,480 --> 00:12:37,640
+one that's 80 gigs, but is very,
+very critical for users, and maybe
+
+244
+00:12:37,640 --> 00:12:41,340
+you're already kind of medium on
+CPU, you can't stand those resources,
+
+245
+00:12:41,460 --> 00:12:45,040
+then there's really no downside
+to just using a table sample.
+
+246
+00:12:45,300 --> 00:12:47,860
+There's no reason that this number
+needs to be precise.
+
+247
+00:12:49,020 --> 00:12:51,540
+Michael: Yeah, so what is alarming?
+
+248
+00:12:51,680 --> 00:12:54,160
+Well, I guess the answer is it
+depends.
+
+249
+00:12:54,160 --> 00:12:57,740
+But you've in fact, I've rewatched
+your talk recently.
+
+250
+00:12:57,740 --> 00:12:59,220
+So I know I'm stealing from you
+there.
+
+251
+00:12:59,220 --> 00:13:01,860
+But you've got some great rules
+of thumb on what you consider
+
+252
+00:13:02,440 --> 00:13:04,780
+to be bad on the table bloat front.
+
+253
+00:13:05,320 --> 00:13:05,580
+Chelsea: Yeah.
+
+254
+00:13:05,580 --> 00:13:07,760
+Well, I don't think I could possibly
+stall, it depends.
+
+255
+00:13:07,760 --> 00:13:10,180
+Cause that's just like everybody
+in engineering should be
+
+256
+00:13:10,180 --> 00:13:15,040
+saying all the time, but you know,
+my personal rules of thumb
+
+257
+00:13:15,040 --> 00:13:20,140
+speaking just for myself is that,
+on very small tables, bloat
+
+258
+00:13:20,140 --> 00:13:21,640
+is not a problem.
+
+259
+00:13:21,760 --> 00:13:25,540
+A gigabyte, 2 gigabytes, that as
+I'm saying is very, very small.
+
+260
+00:13:25,580 --> 00:13:30,520
+Even if you would see up to 75
+percent bloat, out of vacuum we'll
+
+261
+00:13:30,520 --> 00:13:33,160
+be able to take care of this, the
+total impact on your system, there's
+
+262
+00:13:33,160 --> 00:13:36,100
+just no way that it can be high
+or significant, you know, knock
+
+263
+00:13:36,100 --> 00:13:36,600
+on wood.
+
+264
+00:13:36,600 --> 00:13:40,020
+I'm sure somebody will comment
+with some counterexample, but
+
+265
+00:13:40,020 --> 00:13:41,100
+at least in my mind.
+
+266
+00:13:41,240 --> 00:13:45,000
+Beyond that, I would say if you
+get to a 1 to 30 gigabyte range,
+
+267
+00:13:45,060 --> 00:13:47,280
+I would say 25% bloat.
+
+268
+00:13:47,280 --> 00:13:52,860
+So 25% of your total table space
+being taken by dead tuples is
+
+269
+00:13:52,960 --> 00:13:53,460
+acceptable.
+
+270
+00:13:53,940 --> 00:13:57,400
+And then as you go higher, from
+about 30 gigs, I would say you
+
+271
+00:13:57,400 --> 00:13:59,720
+want to inch that acceptability
+downwards.
+
+272
+00:14:00,400 --> 00:14:04,540
+So I would say once you get up
+to 100 gigabytes, I would aim
+
+273
+00:14:04,540 --> 00:14:08,340
+for like 18% and then I would flatline
+at about 18%.
+
+274
+00:14:09,520 --> 00:14:13,120
+1 important thing is you should
+never expect a 0% dead tuples.
+
+275
+00:14:13,460 --> 00:14:17,220
+If you completely rebuild a table
+or if you tweak every autovacuum
+
+276
+00:14:17,220 --> 00:14:20,280
+setting or you've used an extension
+and repacked it, you still
+
+277
+00:14:20,280 --> 00:14:22,620
+will have some bloat and that's
+okay.
+
+278
+00:14:24,140 --> 00:14:24,720
+Michael: Yeah, right.
+
+279
+00:14:24,720 --> 00:14:27,720
+Like unless you're gonna show off
+because you've got like an
+
+280
+00:14:27,720 --> 00:14:30,440
+append-only table with no bloat,
+but if you've got updates and
+
+281
+00:14:30,440 --> 00:14:32,680
+deletes, it's a trade-off of the
+system, right?
+
+282
+00:14:32,680 --> 00:14:35,500
+It's the trade-off for the design
+that Postgres has given us.
+
+283
+00:14:35,660 --> 00:14:37,440
+You've recommended this talk a
+few times.
+
+284
+00:14:37,440 --> 00:14:40,840
+I'm most of the way through watching
+it, but Peter Geoghegan's given
+
+285
+00:14:40,840 --> 00:14:44,640
+another great talk that is criminally
+underwatched at 200 views,
+
+286
+00:14:44,640 --> 00:14:46,080
+so I'm going to share that.
+
+287
+00:14:46,100 --> 00:14:48,960
+But he mentioned some of the trade-offs
+that Postgres is
+
+288
+00:14:48,960 --> 00:14:50,300
+making in this area.
+
+289
+00:14:50,660 --> 00:14:53,360
+So it's guaranteed, I think as
+soon as we start doing updates
+
+290
+00:14:53,360 --> 00:14:58,960
+and deletes, it's guaranteed that
+at least past a certain frequency
+
+291
+00:14:58,980 --> 00:15:01,720
+of those updates and deletes, we're
+going to have some bloat.
+
+292
+00:15:01,720 --> 00:15:03,300
+So yeah, it's a really good point.
+
+293
+00:15:03,940 --> 00:15:06,340
+Chelsea: Yeah, there's no whole way
+to avoid it.
+
+294
+00:15:06,340 --> 00:15:09,600
+It's more about mitigating the downstream
+effects and making sure you
+
+295
+00:15:09,600 --> 00:15:12,820
+don't accidentally look up and
+realize you're in a crazy situation
+
+296
+00:15:12,820 --> 00:15:14,240
+in a couple of months or years.
+
+297
+00:15:14,760 --> 00:15:18,280
+Michael: Where did, I'm curious
+though, I understand totally
+
+298
+00:15:18,380 --> 00:15:23,540
+as you get larger data
+volumes, trying to aim for a smaller
+
+299
+00:15:23,540 --> 00:15:28,160
+percentage of bloat, because like
+in real terms, that's more gigabytes
+
+300
+00:15:28,260 --> 00:15:31,040
+of bloat or more pages that could
+be being scanned through for
+
+301
+00:15:31,040 --> 00:15:32,540
+reads and things like that.
+
+302
+00:15:33,240 --> 00:15:36,900
+But did 18% come from trying to
+get it lower than that, like
+
+303
+00:15:36,900 --> 00:15:39,190
+fighting some update-heavy tables?
+
+304
+00:15:39,190 --> 00:15:42,400
+Or where, that seems quite a specific
+number to me for like a
+
+305
+00:15:42,400 --> 00:15:43,360
+rule of thumb.
+
+306
+00:15:44,320 --> 00:15:45,360
+Chelsea: Yeah, great question.
+
+307
+00:15:45,480 --> 00:15:48,060
+And actually, this is the first
+time I've been asked this question,
+
+308
+00:15:48,240 --> 00:15:49,140
+which I agree.
+
+309
+00:15:50,740 --> 00:15:55,240
+The first answer to why 18% or
+why these numbers is, as someone
+
+310
+00:15:55,240 --> 00:15:58,620
+who watches Postgres talks and
+as somebody who takes it in, I
+
+311
+00:15:58,620 --> 00:16:01,120
+have to admit, there's part of
+me that gets annoyed when nobody
+
+312
+00:16:01,120 --> 00:16:02,180
+gives real numbers.
+
+313
+00:16:03,000 --> 00:16:05,880
+I realized that it comes from the
+reality of it depends as we
+
+314
+00:16:05,880 --> 00:16:09,740
+already kind of espoused on, but
+I really wanted to provide something
+
+315
+00:16:09,780 --> 00:16:10,280
+concrete.
+
+316
+00:16:11,000 --> 00:16:14,820
+When I gave those numbers, I thought
+about my previous projects
+
+317
+00:16:15,060 --> 00:16:18,520
+and I thought about, okay, well,
+what happens if I completely
+
+318
+00:16:18,520 --> 00:16:21,980
+rebuild this table or I repack
+it and don't insert anything?
+
+319
+00:16:22,360 --> 00:16:25,940
+Usually, you would see a table bloat around 8 to 10% then still,
+
+320
+00:16:26,000 --> 00:16:29,140
+at least in my experience, because
+if you're rebuilding a table,
+
+321
+00:16:29,240 --> 00:16:32,880
+at least if you're using an extension
+like pg_repack, for example,
+
+322
+00:16:32,880 --> 00:16:37,360
+or pg_squeeze, you know, it's still
+gonna need to kind of build
+
+323
+00:16:37,360 --> 00:16:41,240
+up and write all the live data
+into it as it's rebuilding the
+
+324
+00:16:41,240 --> 00:16:42,240
+duplicate table.
+
+325
+00:16:42,260 --> 00:16:46,500
+So you're not gonna end up at like
+0% unless you, I believe,
+
+326
+00:16:46,560 --> 00:16:49,260
+I assume, unless you VACUUM FULL.
+
+327
+00:16:49,920 --> 00:16:53,940
+And so 18% came out of, I'd say,
+like opportunism of what I wanted
+
+328
+00:16:53,940 --> 00:16:58,340
+to provide, and also just on experience
+of when I started to
+
+329
+00:16:58,340 --> 00:17:02,900
+see a tipping point into performance,
+and when you start to get
+
+330
+00:17:02,900 --> 00:17:06,500
+far enough that you can't really
+recover it without rewrites.
+
+331
+00:17:07,040 --> 00:17:11,760
+So the reason I would say 18% is
+not because 20% or 25% even
+
+332
+00:17:11,760 --> 00:17:15,640
+on a large table is the end of
+the world, but because I think
+
+333
+00:17:15,640 --> 00:17:19,960
+once you start slipping into that
+more bloated table space at
+
+334
+00:17:19,960 --> 00:17:22,900
+large tables, it's harder to recover
+from.
+
+335
+00:17:22,900 --> 00:17:25,840
+And it needs more drastic measures
+than a little tuning here
+
+336
+00:17:25,840 --> 00:17:26,540
+and there.
+
+337
+00:17:26,580 --> 00:17:30,640
+And also, if you imagine you have
+a, you know, 1 terabyte table,
+
+338
+00:17:30,660 --> 00:17:34,440
+which I know that I've had before
+at companies, then if you get
+
+339
+00:17:34,440 --> 00:17:38,600
+to 20% of dead tuples, you now
+have, you know, 200 gigabytes
+
+340
+00:17:38,940 --> 00:17:40,660
+of just bloat.
+
+341
+00:17:41,440 --> 00:17:45,240
+So at scale, you know, that becomes
+money, whether you're in
+
+342
+00:17:45,240 --> 00:17:47,080
+the cloud or not, you're paying
+for that disk.
+
+343
+00:17:47,080 --> 00:17:50,000
+That's kind of another downstream
+negative effect other than
+
+344
+00:17:50,000 --> 00:17:50,500
+IO.
+
+345
+00:17:50,860 --> 00:17:55,380
+So it's kind of, it's money, it's
+personal experience, and it's
+
+346
+00:17:55,380 --> 00:17:57,660
+also just wanting to put a sticker
+and a number on something.
+
+347
+00:17:57,660 --> 00:17:59,360
+So you have a target to aim at.
+
+348
+00:17:59,760 --> 00:18:01,100
+Michael: Yeah, I really like that.
+
+349
+00:18:01,100 --> 00:18:04,840
+I agree, it's difficult without
+any real numbers, but it also
+
+350
+00:18:04,840 --> 00:18:07,560
+like you could have said 15% I probably wouldn't
+
+351
+00:18:07,560 --> 00:18:08,480
+have questioned it.
+
+352
+00:18:08,480 --> 00:18:11,180
+It's just more it's more practical.
+It's more likely to be based
+
+353
+00:18:11,180 --> 00:18:14,420
+on your real experience, which
+I liked a lot. Cool.
+
+354
+00:18:14,440 --> 00:18:18,780
+So I wanted to come back to the,
+you mentioned TOAST and the
+
+355
+00:18:18,780 --> 00:18:20,580
+acronym or probably backronym.
+
+356
+00:18:21,040 --> 00:18:23,200
+I don't know if you've got that
+phrase here.
+
+357
+00:18:23,200 --> 00:18:26,120
+That's a really fascinating case
+that I don't think I've not
+
+358
+00:18:26,120 --> 00:18:30,360
+seen, I've not spoken to anybody
+about, but it makes intuitive
+
+359
+00:18:30,360 --> 00:18:35,640
+sense because of the nature
+of TOAST, we could have potentially
+
+360
+00:18:35,740 --> 00:18:39,860
+large values across multiple pages,
+but I would have guessed
+
+361
+00:18:39,860 --> 00:18:43,320
+they would be more easily reused,
+but I'm not, but that's a total
+
+362
+00:18:43,320 --> 00:18:43,820
+guess.
+
+363
+00:18:44,060 --> 00:18:44,510
+I've yeah.
+
+364
+00:18:44,510 --> 00:18:46,760
+Do you, Do you have any more details
+on that?
+
+365
+00:18:46,760 --> 00:18:50,280
+Chelsea: Well, I'm sure I'll get
+some of this possibly wrong,
+
+366
+00:18:50,280 --> 00:18:53,420
+but I think, actually, it's surprising
+that we don't see TOAST
+
+367
+00:18:54,000 --> 00:18:56,340
+in more situations of bloat.
+
+368
+00:18:56,340 --> 00:19:00,960
+Because when you're updating a
+value in TOAST, To my knowledge,
+
+369
+00:19:01,160 --> 00:19:05,320
+it's not able to be as intelligent
+as other update methods can
+
+370
+00:19:05,320 --> 00:19:05,820
+be.
+
+371
+00:19:06,660 --> 00:19:11,400
+You're actually replacing or updating
+more often than not.
+
+372
+00:19:12,120 --> 00:19:16,220
+TOAST tables themselves, as I guess,
+a background in case anybody
+
+373
+00:19:16,220 --> 00:19:20,140
+listening is not familiar, What
+happens is if you have an extended
+
+374
+00:19:20,320 --> 00:19:23,540
+field, you know, you have extended
+and non-extended data types
+
+375
+00:19:23,540 --> 00:19:24,140
+in Postgres.
+
+376
+00:19:24,140 --> 00:19:27,540
+If you've an extended field, so
+things such as JSONB or, you
+
+377
+00:19:27,540 --> 00:19:31,980
+know, VAR cars with I think longer
+limits or byte A, then all
+
+378
+00:19:31,980 --> 00:19:36,160
+these are examples when they can
+go over the maximum single tuple
+
+379
+00:19:36,160 --> 00:19:36,660
+size.
+
+380
+00:19:36,820 --> 00:19:40,160
+If they reach that threshold, then
+Postgres will compress it
+
+381
+00:19:40,160 --> 00:19:43,740
+through some method depending on
+your Postgres version, and they'll
+
+382
+00:19:43,740 --> 00:19:46,980
+just store it in a separate table
+called TOAST table.
+
+383
+00:19:47,080 --> 00:19:50,580
+In the main table, let's say you
+have a users table, then that's
+
+384
+00:19:50,580 --> 00:19:52,940
+basically just a pointer to this
+TOAST table.
+
+385
+00:19:53,140 --> 00:19:55,960
+In the example I mentioned before
+when I ran into bloat on the
+
+386
+00:19:55,960 --> 00:19:58,680
+TOAST table, the reason you would
+see this is maybe you have
+
+387
+00:19:58,680 --> 00:20:02,960
+a small table even, it could be
+a 5 gigabyte table, but every
+
+388
+00:20:02,960 --> 00:20:06,340
+row in this is extremely large
+data types.
+
+389
+00:20:06,340 --> 00:20:08,940
+I'm sure we've all seen those tables
+where there's 5 columns
+
+390
+00:20:08,940 --> 00:20:11,980
+and each of them is like a massive
+JSONB value.
+
+391
+00:20:12,720 --> 00:20:14,540
+They could be updating those all
+the time.
+
+392
+00:20:14,540 --> 00:20:17,780
+You could be doing field updates,
+you could be doing anything.
+
+393
+00:20:18,060 --> 00:20:21,600
+And if you get up to a certain
+TPS on that, then every single
+
+394
+00:20:21,600 --> 00:20:25,240
+time you do an update, it's gonna
+be rewriting that value in
+
+395
+00:20:25,240 --> 00:20:26,300
+the toast table.
+
+396
+00:20:27,280 --> 00:20:30,800
+And Postgres does look at TOAST
+as far as I know, like just any
+
+397
+00:20:30,800 --> 00:20:31,420
+other table.
+
+398
+00:20:31,420 --> 00:20:34,460
+So autovacuum is running on it the
+same exact way.
+
+399
+00:20:34,600 --> 00:20:36,720
+You know, I could talk on partitioning
+and I kind of say the
+
+400
+00:20:36,720 --> 00:20:37,040
+same.
+
+401
+00:20:37,040 --> 00:20:39,800
+Partitioning to me is like UX.
+
+402
+00:20:40,440 --> 00:20:41,700
+It's DBA UX.
+
+403
+00:20:41,820 --> 00:20:43,260
+We see it as 1 table.
+
+404
+00:20:43,260 --> 00:20:44,760
+Postgres just sees tables.
+
+405
+00:20:45,240 --> 00:20:47,640
+And same thing with, same thing with TOAST.
+
+406
+00:20:48,300 --> 00:20:52,860
+And so, in that case, we had a small table that was just super 
+
+407
+00:20:52,860 --> 00:20:55,940
+high update for those very large fields.
+
+408
+00:20:56,740 --> 00:20:58,780
+Correct me if I'm wrong, Michael, maybe you know more about this,
+
+409
+00:20:58,780 --> 00:21:03,160
+but I think that the nature of how TOAST does those updates is
+
+410
+00:21:03,220 --> 00:21:08,860
+they're not able to do, like, I think, key-value updates in TOAST
+
+411
+00:21:08,860 --> 00:21:10,400
+fields.
+They have to always rewrite.
+
+412
+00:21:10,440 --> 00:21:11,700
+Does that sound right to you?
+
+413
+00:21:12,100 --> 00:21:15,640
+Michael: Yeah, well, it sounds like any other value in Postgres,
+
+414
+00:21:15,640 --> 00:21:19,160
+right?
+Like, it's a single entity.
+
+415
+00:21:19,520 --> 00:21:23,580
+So like, even in a large text field, without it being toasted,
+
+416
+00:21:23,680 --> 00:21:28,580
+if you had it pasted in the entirety of War and Peace and then
+
+417
+00:21:28,580 --> 00:21:32,380
+only changed 1 word, but it was all a single value, I believe
+
+418
+00:21:32,420 --> 00:21:36,060
+we'd need a new tuple with, well, bad example, because that one
+
+419
+00:21:36,060 --> 00:21:39,060
+definitely wouldn't fit in a single page, as it would be toasted.
+
+420
+00:21:40,320 --> 00:21:43,600
+But yeah, if you, let's say you took a 1-kilobyte chunk of text
+
+421
+00:21:43,600 --> 00:21:47,460
+and changed only like a few characters in it, I think it would
+
+422
+00:21:47,460 --> 00:21:48,740
+work the exact same way.
+
+423
+00:21:48,740 --> 00:21:50,040
+So, yeah.
+
+424
+00:21:50,660 --> 00:21:54,180
+Chelsea: The only caveat to that, I believe, is that when you 
+
+425
+00:21:54,180 --> 00:21:57,820
+TOAST something, toast an object, you toast it in chunks of a 
+
+426
+00:21:57,820 --> 00:21:58,760
+discrete size.
+
+427
+00:21:59,060 --> 00:22:03,220
+So, if you did toast War and Peace, then, you know, it would
+
+428
+00:22:03,220 --> 00:22:06,440
+be, you know, you would run into the tuple length issue in TOAST
+
+429
+00:22:06,440 --> 00:22:06,900
+as well.
+
+430
+00:22:06,900 --> 00:22:11,540
+TOAST doesn't have a longer, you know, maximum tuple length.
+
+431
+00:22:11,540 --> 00:22:15,140
+It's just that it will chunk it via some algorithm, compress
+
+432
+00:22:15,140 --> 00:22:18,120
+it.
+And then so War and Peace will actually be a pointer to let's
+
+433
+00:22:18,120 --> 00:22:20,520
+say 10 tuples all of them compressed. 
+
+434
+00:22:21,020 --> 00:22:25,280
+So I believe that when you edit 1 word, you know, you fix your 
+
+435
+00:22:25,280 --> 00:22:29,220
+spelling mistake, you know, Leo Tolstoy really has to go back 
+
+436
+00:22:29,220 --> 00:22:30,140
+and fix that. 
+
+437
+00:22:30,180 --> 00:22:34,720
+Then when he re-TOASTs it, then he has to recompress and re-chunk 
+
+438
+00:22:34,920 --> 00:22:37,760
+all those 10 values again, not just the one. 
+
+439
+00:22:37,760 --> 00:22:40,360
+So I think it might be, you know, we're figuring this out, really 
+
+440
+00:22:40,360 --> 00:22:43,080
+talking about it, I think it might be something that scales the 
+
+441
+00:22:43,080 --> 00:22:48,020
+issue with depending, with increased size of the object itself.
+
+442
+00:22:48,500 --> 00:22:50,900
+Michael: Yeah, I'd love to hear from anybody who has dealt with 
+
+443
+00:22:50,900 --> 00:22:53,800
+this or looked into it or written about it. 
+
+444
+00:22:53,800 --> 00:22:58,100
+Sometimes we get some quite in-depth responses, which we love. 
+
+445
+00:22:58,580 --> 00:23:03,560
+The question I guess is, let's say we've got something that's
+
+446
+00:23:03,560 --> 00:23:08,760
+spanning tens of kilobytes, so multiple pages, your 8-page example 
+
+447
+00:23:08,760 --> 00:23:09,600
+might be good.
+
+448
+00:23:10,760 --> 00:23:13,580
+And we rewrite it so we get 8 more
+pages.
+
+449
+00:23:13,580 --> 00:23:17,160
+The question is what happens to
+the 8 previous ones?
+
+450
+00:23:17,460 --> 00:23:21,840
+Once they get marked as dead and
+if they could get reused easily,
+
+451
+00:23:22,020 --> 00:23:23,320
+we shouldn't get too much bloat.
+
+452
+00:23:23,320 --> 00:23:26,180
+But if they're getting, I guess
+if autovacuum can't keep up,
+
+453
+00:23:26,180 --> 00:23:27,940
+that's when it accelerates.
+
+454
+00:23:28,320 --> 00:23:31,840
+So it would make sense in a system,
+for example, where autovacuum
+
+455
+00:23:31,960 --> 00:23:34,740
+isn't able to keep up with that
+toast table for some reason,
+
+456
+00:23:34,740 --> 00:23:37,320
+or maybe it's been disabled on
+that table.
+
+457
+00:23:38,100 --> 00:23:39,860
+Chelsea: Yeah, totally.
+
+458
+00:23:40,020 --> 00:23:43,900
+That can also be a place where
+you need to tune autovacuum max
+
+459
+00:23:43,900 --> 00:23:48,280
+workers higher, because autovacuum
+max workers defaults to 3.
+
+460
+00:23:48,520 --> 00:23:52,120
+And this doesn't really have an
+impact depending on your table
+
+461
+00:23:52,120 --> 00:23:54,660
+size, it has impact depending on
+your table count.
+
+462
+00:23:55,440 --> 00:24:00,280
+If you have, I would say, more
+than hundreds, so getting into
+
+463
+00:24:00,280 --> 00:24:04,020
+thousands of tables, that's or
+and many of them are large, maybe
+
+464
+00:24:04,020 --> 00:24:06,680
+the Autovacuum worker takes a long
+time on 1 table.
+
+465
+00:24:06,820 --> 00:24:09,880
+That's where you're going to want
+to start tuning that up, giving
+
+466
+00:24:09,880 --> 00:24:14,660
+extra resources on your server
+over to vacuum compared to servicing
+
+467
+00:24:14,700 --> 00:24:15,200
+queries.
+
+468
+00:24:15,360 --> 00:24:16,980
+I would say for the greater good.
+
+469
+00:24:17,220 --> 00:24:20,140
+Michael: Yeah, and just to be clear
+when you say like hundreds
+
+470
+00:24:20,140 --> 00:24:23,580
+of tables We're counting each partition
+as a table in that case.
+
+471
+00:24:23,860 --> 00:24:24,360
+Chelsea: Yeah
+
+472
+00:24:24,960 --> 00:24:26,540
+Michael: Yeah makes a lot of sense.
+
+473
+00:24:26,580 --> 00:24:30,360
+Cool So anything I haven't asked
+you about that I should have
+
+474
+00:24:30,360 --> 00:24:32,260
+done or any other tips for this?
+
+475
+00:24:34,160 --> 00:24:34,940
+Chelsea: Let's see.
+
+476
+00:24:36,020 --> 00:24:40,200
+I think the only thing we didn't
+get around to that I think I
+
+477
+00:24:40,200 --> 00:24:45,520
+would want to make sure I shill
+is some more details about how
+
+478
+00:24:45,520 --> 00:24:48,760
+to fix a bloated table once you
+see it.
+
+479
+00:24:49,240 --> 00:24:52,320
+So if you have discovered you have
+a bloated table, let's say
+
+480
+00:24:52,320 --> 00:24:55,920
+that you're above that metric,
+that rule of thumb, maybe well
+
+481
+00:24:55,920 --> 00:24:56,460
+above it.
+
+482
+00:24:56,460 --> 00:25:00,340
+Like I said, when I found that
+toast table, it was like 95 percent
+
+483
+00:25:00,340 --> 00:25:00,840
+bloat.
+
+484
+00:25:01,800 --> 00:25:03,020
+That explained a lot.
+
+485
+00:25:03,980 --> 00:25:07,340
+I would say that at that point,
+there's a couple routes you need
+
+486
+00:25:07,340 --> 00:25:08,140
+to go down.
+
+487
+00:25:08,860 --> 00:25:12,100
+The first is to recognize that
+bloat is caused by a combination
+
+488
+00:25:12,540 --> 00:25:16,260
+of autovacuum configuration and
+update and delete heavy workloads.
+
+489
+00:25:16,560 --> 00:25:18,240
+Just 1 of them won't get you there.
+
+490
+00:25:18,240 --> 00:25:19,300
+It's both together.
+
+491
+00:25:19,740 --> 00:25:23,000
+And so if you're only a little
+bit bloated, maybe you just kind
+
+492
+00:25:23,000 --> 00:25:26,960
+of keyed onto it via some, you
+know, observability metric or,
+
+493
+00:25:26,960 --> 00:25:30,040
+you know, warning level ping you
+got in some place or other.
+
+494
+00:25:30,060 --> 00:25:34,280
+At that point, I would recommend
+going the route of tuning your
+
+495
+00:25:34,280 --> 00:25:38,940
+autovacuum configurations, as
+well as really talking to the
+
+496
+00:25:38,940 --> 00:25:41,880
+dev team or working as a dev yourself
+to figure out whether there's
+
+497
+00:25:41,880 --> 00:25:45,880
+anything you can do to reduce the
+volume or difficulty of those
+
+498
+00:25:45,880 --> 00:25:46,980
+updates and deletes.
+
+499
+00:25:47,320 --> 00:25:51,260
+Some common anti-patterns I see
+are things like cron jobs that
+
+500
+00:25:51,260 --> 00:25:54,560
+run every day or week and delete
+a huge amount of data.
+
+501
+00:25:54,720 --> 00:25:57,700
+And they often think they're being
+helpful when in reality they
+
+502
+00:25:57,700 --> 00:26:01,240
+can be kind of degrading the quality
+and I.O.
+
+503
+00:26:01,240 --> 00:26:03,060
+Performance of that database.
+
+504
+00:26:03,660 --> 00:26:08,100
+In terms of tuning configurations,
+usually you want to go one of
+
+505
+00:26:08,100 --> 00:26:08,940
+two broad ways.
+
+506
+00:26:08,940 --> 00:26:12,880
+You either give the server more
+resources for Autovacuum through
+
+507
+00:26:12,980 --> 00:26:17,220
+Autovacuum Max Workers, or you
+tune it to run more frequently.
+
+508
+00:26:17,480 --> 00:26:20,740
+So you tune Autovacuum to actually
+run more aggressively, which
+
+509
+00:26:20,740 --> 00:26:23,720
+I generally recommend based on
+system defaults.
+
+510
+00:26:24,140 --> 00:26:27,540
+Autovacuum did get more aggressive
+in more recent versions of
+
+511
+00:26:27,540 --> 00:26:28,040
+Postgres.
+
+512
+00:26:28,780 --> 00:26:32,480
+However, it's still generally good
+to tune up like Autovacuum
+
+513
+00:26:32,480 --> 00:26:35,960
+Vacuum Scale Factor, especially
+if you have those large tables,
+
+514
+00:26:35,980 --> 00:26:40,280
+you know, defaults to only triggering
+Autovacuum when 20% of
+
+515
+00:26:40,280 --> 00:26:42,500
+your table is dead rows.
+
+516
+00:26:42,660 --> 00:26:45,560
+So, you know, that's already beyond,
+I would say, my recommended
+
+517
+00:26:45,660 --> 00:26:47,060
+18% goal.
+
+518
+00:26:47,220 --> 00:26:50,140
+So if you really wanted to trigger
+more proactively, you would
+
+519
+00:26:50,140 --> 00:26:55,280
+need to tune that down from 0.2
+to let's say like 0.1 or far
+
+520
+00:26:55,280 --> 00:26:55,520
+less.
+
+521
+00:26:55,520 --> 00:26:58,320
+You know, I see a lot of recommendations
+online that I've used
+
+522
+00:26:58,320 --> 00:27:04,000
+as a user that suggest, you know,
+every 1% or 3% of dead tuples.
+
+523
+00:27:05,140 --> 00:27:07,440
+Michael: Yeah, because for a huge
+table, that's still a lot of
+
+524
+00:27:07,440 --> 00:27:07,940
+tuples.
+
+525
+00:27:08,100 --> 00:27:10,580
+We could still be talking about
+tens of thousands, hundreds of
+
+526
+00:27:10,580 --> 00:27:12,480
+thousands, even millions of tuples.
+
+527
+00:27:12,880 --> 00:27:15,520
+Chelsea: And by the time that it's
+actually done, you could be
+
+528
+00:27:15,520 --> 00:27:17,860
+up higher than that because that's
+what triggers.
+
+529
+00:27:18,040 --> 00:27:19,700
+What if it takes hours and hours?
+
+530
+00:27:21,140 --> 00:27:21,920
+Michael: Yeah, absolutely.
+
+531
+00:27:22,640 --> 00:27:26,320
+Chelsea: If you do get really,
+really far behind, you check the
+
+532
+00:27:26,320 --> 00:27:31,060
+clock and you're up to that 90
+percent bloat table, that is a
+
+533
+00:27:31,060 --> 00:27:33,500
+good time to consider rebuilding
+the table.
+
+534
+00:27:33,580 --> 00:27:36,080
+If you can afford it, vacuum full.
+
+535
+00:27:36,500 --> 00:27:39,660
+Most people can't these days if
+it's a user-facing application,
+
+536
+00:27:39,800 --> 00:27:41,260
+so that's the reality.
+
+537
+00:27:41,360 --> 00:27:45,240
+But I always say that first because
+there are situations in which
+
+538
+00:27:45,240 --> 00:27:48,280
+you can, again, looking from the
+user perspective, and it's a
+
+539
+00:27:48,280 --> 00:27:48,980
+lot easier.
+
+540
+00:27:49,300 --> 00:27:52,580
+The other thing you could do is
+use an extension like pg_repack
+
+541
+00:27:52,840 --> 00:27:55,540
+or pg_squeeze to rewrite it.
+
+542
+00:27:55,580 --> 00:27:58,940
+And this basically creates a
+shadow table duplicate schema.
+
+543
+00:27:59,380 --> 00:28:03,600
+It will copy over all the data,
+use triggers to update all the
+
+544
+00:28:03,600 --> 00:28:05,960
+incoming data coming in from one to
+another.
+
+545
+00:28:06,220 --> 00:28:10,680
+And then once it's all caught up,
+it will within an access exclusive
+
+546
+00:28:10,840 --> 00:28:14,440
+lock on the which lasts you know
+less than a second.
+
+547
+00:28:14,960 --> 00:28:15,460
+Definitely.
+
+548
+00:28:15,980 --> 00:28:19,540
+It will basically switch the table
+names to the prod traffic
+
+549
+00:28:19,540 --> 00:28:21,180
+points towards the new table.
+
+550
+00:28:21,340 --> 00:28:23,860
+This is something that I have seen
+be flaky.
+
+551
+00:28:23,860 --> 00:28:26,940
+I wouldn't personally recommend
+automating pg_repack.
+
+552
+00:28:27,240 --> 00:28:30,600
+I've seen and heard of cases in
+various talks and just through
+
+553
+00:28:30,600 --> 00:28:33,760
+friends in the industry, people
+that try to automate pg_repack.
+
+554
+00:28:33,760 --> 00:28:37,080
+And, you know, I've seen it lead
+to a lot of incidents and issues.
+
+555
+00:28:37,740 --> 00:28:40,680
+You know, I've personally never
+run into an issue where there's
+
+556
+00:28:40,680 --> 00:28:43,860
+any data loss, because in the case
+that you just kill the PID
+
+557
+00:28:43,940 --> 00:28:46,960
+of pg_repack, for example, you
+just have some dead tables you
+
+558
+00:28:46,960 --> 00:28:48,080
+have to manually drop.
+
+559
+00:28:48,080 --> 00:28:50,800
+The duplicate ones aren't complete,
+so you use the old one.
+
+560
+00:28:50,800 --> 00:28:54,780
+But I've heard of it causing other
+issues, so I would say be careful,
+
+561
+00:28:55,320 --> 00:28:57,580
+but I wouldn't stray away from
+it totally.
+
+562
+00:28:58,660 --> 00:29:02,740
+Michael: Nice, I've always thought
+of it as like, reindexing concurrently,
+
+563
+00:29:02,880 --> 00:29:04,140
+but for the whole table.
+
+564
+00:29:05,040 --> 00:29:07,900
+Is that a reasonable comparison?
+
+565
+00:29:08,160 --> 00:29:11,980
+Or I guess it's missing some subtlety
+around potential flakiness,
+
+566
+00:29:11,980 --> 00:29:13,440
+but that can fail as well, right?
+
+567
+00:29:13,440 --> 00:29:16,560
+Like if reindexing concurrently
+fails, you can end up with some
+
+568
+00:29:16,560 --> 00:29:17,620
+invalid indexes.
+
+569
+00:29:18,240 --> 00:29:21,480
+Chelsea: I think that's a really
+good analogy, actually, mainly
+
+570
+00:29:21,480 --> 00:29:22,740
+because they're both nontransactional.
+
+571
+00:29:23,560 --> 00:29:28,780
+Because concurrently or anything
+concurrent, the thing that it's
+
+572
+00:29:28,780 --> 00:29:31,440
+an unusual move by Postgres, and
+I'm sure there was a lot of
+
+573
+00:29:31,440 --> 00:29:33,700
+discussion on the core team about
+this when they first started
+
+574
+00:29:33,700 --> 00:29:37,240
+releasing concurrent features,
+because it's a decision by the
+
+575
+00:29:37,240 --> 00:29:41,740
+core team to value the user Postgres
+experience by DBAs and applications
+
+576
+00:29:42,520 --> 00:29:44,440
+over the strict rules of MVCC.
+
+577
+00:29:45,240 --> 00:29:48,660
+Because when you create something
+index concurrently, if it fails,
+
+578
+00:29:48,660 --> 00:29:49,980
+you have the invalid index.
+
+579
+00:29:50,000 --> 00:29:52,900
+So it's not atomic, it's not able
+to roll back.
+
+580
+00:29:53,400 --> 00:29:54,720
+The same thing with pg_repack.
+
+581
+00:29:54,920 --> 00:29:58,280
+If it fails, then you have these
+invalid tables and valid indexes
+
+582
+00:29:58,380 --> 00:29:59,440
+that you need to drop.
+
+583
+00:29:59,680 --> 00:30:02,800
+If you try to rerun it, it's not
+a no-op.
+
+584
+00:30:02,800 --> 00:30:04,300
+You'll have to clean it up first.
+
+585
+00:30:04,900 --> 00:30:05,500
+Michael: Yep, cool.
+
+586
+00:30:05,500 --> 00:30:06,000
+Okay.
+
+587
+00:30:06,040 --> 00:30:06,580
+Oh, wow.
+
+588
+00:30:06,580 --> 00:30:07,380
+That's good.
+
+589
+00:30:08,100 --> 00:30:11,520
+So that's a really good point in
+terms of autovacuum and in
+
+590
+00:30:11,520 --> 00:30:15,860
+terms of repacking or vacuum full
+if you can afford the heavy
+
+591
+00:30:15,860 --> 00:30:19,540
+locks, or if your system just doesn't
+have any users at a certain
+
+592
+00:30:19,540 --> 00:30:22,600
+time of day or something like that
+right but it is, it's rare
+
+593
+00:30:22,600 --> 00:30:26,280
+but it is common enough that I
+have been caught out by not recommending
+
+594
+00:30:26,280 --> 00:30:28,640
+it a couple of times which is super
+interesting.
+
+595
+00:30:29,240 --> 00:30:32,840
+CLUSTER is in the same category
+right, like same as VACUUM FULL
+
+596
+00:30:32,840 --> 00:30:37,020
+but you get to order it by an index,
+which could be helpful for
+
+597
+00:30:37,540 --> 00:30:38,500
+like reads.
+
+598
+00:30:38,940 --> 00:30:39,440
+Definitely.
+
+599
+00:30:40,280 --> 00:30:40,780
+Cool.
+
+600
+00:30:41,720 --> 00:30:43,980
+Last, in fact, you mentioned the
+right at the beginning and I
+
+601
+00:30:43,980 --> 00:30:47,240
+had to bite my tongue not to jump
+straight on the pun because
+
+602
+00:30:47,240 --> 00:30:48,580
+that's how my brain works.
+
+603
+00:30:48,600 --> 00:30:50,580
+You mentioned having a hot take.
+
+604
+00:30:51,040 --> 00:30:54,580
+So you talked quite a lot in the
+past about access patterns.
+
+605
+00:30:55,260 --> 00:30:59,860
+And one point I loved was the idea
+of considering if you've got
+
+606
+00:30:59,860 --> 00:31:02,440
+an update or delete heavy workload
+which could be the reason
+
+607
+00:31:02,440 --> 00:31:03,500
+you're in this situation.
+
+608
+00:31:04,340 --> 00:31:06,800
+Do you even need to be doing those
+updates and deletes?
+
+609
+00:31:06,820 --> 00:31:09,640
+That's a question that doesn't
+get asked very often, and you
+
+610
+00:31:09,640 --> 00:31:10,900
+made a really good point.
+
+611
+00:31:11,400 --> 00:31:14,900
+So there's that angle that I'd
+love you to talk on if you want
+
+612
+00:31:14,900 --> 00:31:15,220
+to.
+
+613
+00:31:15,220 --> 00:31:19,460
+And there's also the hot update
+optimization we have in Postgres
+
+614
+00:31:19,480 --> 00:31:22,100
+that can be a huge help for some
+avoidings.
+
+615
+00:31:22,960 --> 00:31:26,480
+If you're aware of it, not indexing
+a certain column if you don't
+
+616
+00:31:26,480 --> 00:31:27,220
+have to.
+
+617
+00:31:27,380 --> 00:31:29,440
+There are some trade-offs there that
+might be interesting.
+
+618
+00:31:29,440 --> 00:31:31,620
+I don't know if you've got experience
+with those.
+
+619
+00:31:32,480 --> 00:31:36,240
+Chelsea: Yeah, I guess so first
+address the first part of it.
+
+620
+00:31:36,580 --> 00:31:38,940
+Glad you brought it up because
+this is definitely
+
+621
+00:31:38,940 --> 00:31:40,120
+a strong opinion of mine.
+
+622
+00:31:40,120 --> 00:31:43,240
+And I think that's something that
+comes from coming to being
+
+623
+00:31:43,260 --> 00:31:45,920
+what I would describe as somewhere
+between the liminal space
+
+624
+00:31:45,920 --> 00:31:49,860
+of a software engineer and a DBA
+through, you know, backend engineer
+
+625
+00:31:49,860 --> 00:31:52,900
+to data engineer to DBA, just,
+you know, sinking my way down
+
+626
+00:31:52,900 --> 00:31:53,580
+into infrastructure.
+
+627
+00:31:54,520 --> 00:31:57,600
+And, you know, I think that I still
+tend to think from a perspective
+
+628
+00:31:57,600 --> 00:32:00,300
+of a backend or data engineer a
+lot of the time.
+
+629
+00:32:00,300 --> 00:32:03,180
+And from that, I think that it's
+good for us to all remember
+
+630
+00:32:03,220 --> 00:32:07,540
+that so many of these access patterns
+and rights, the biggest
+
+631
+00:32:07,540 --> 00:32:11,100
+hammer you can use is to just not
+do it or to rewrite it.
+
+632
+00:32:11,140 --> 00:32:16,060
+If you're a DBA managing a couple
+or hundreds of databases, speaking
+
+633
+00:32:16,060 --> 00:32:19,700
+for myself, I'm managing the hardware
+and the high-level metrics.
+
+634
+00:32:20,220 --> 00:32:23,100
+I don't really have access or knowledge
+about talking to somebody
+
+635
+00:32:23,100 --> 00:32:24,180
+into the why.
+
+636
+00:32:24,180 --> 00:32:25,440
+Why do we have this query?
+
+637
+00:32:25,440 --> 00:32:27,420
+Why do we have this database itself?
+
+638
+00:32:27,920 --> 00:32:29,120
+What the heck's in it?
+
+639
+00:32:29,380 --> 00:32:33,260
+I think that if you really want
+to address bloat, often the best
+
+640
+00:32:33,260 --> 00:32:36,240
+thing you can do is to start a
+conversation and say, hey, what's
+
+641
+00:32:36,240 --> 00:32:37,500
+the value of this?
+
+642
+00:32:37,500 --> 00:32:38,920
+Can we simplify it?
+
+643
+00:32:38,920 --> 00:32:41,020
+Do we need to be deleting this?
+
+644
+00:32:41,180 --> 00:32:42,740
+Do we need to have this table?
+
+645
+00:32:42,740 --> 00:32:46,760
+You know, it's crazy how many times
+that I've dealt with a problem
+
+646
+00:32:46,840 --> 00:32:51,220
+that way, and I've never needed
+to delve into the more, I would
+
+647
+00:32:51,220 --> 00:32:52,540
+say, extensive measures.
+
+648
+00:32:53,300 --> 00:32:56,280
+And also, if you can, keep those
+relationships with people
+
+649
+00:32:56,280 --> 00:32:59,280
+at your organization or whoever
+you're working on a project with
+
+650
+00:32:59,440 --> 00:33:02,940
+to try to be able to let them keep
+that up by themselves.
+
+651
+00:33:02,980 --> 00:33:06,140
+You know, at my company, we've
+built some automation around let's
+
+652
+00:33:06,140 --> 00:33:09,960
+say like auto education as far
+as we can.
+
+653
+00:33:09,960 --> 00:33:13,280
+We're still working on it, but
+a way to kind of allow developers
+
+654
+00:33:13,320 --> 00:33:17,620
+to be proactively educated about
+how they're building their systems.
+
+655
+00:33:17,720 --> 00:33:21,900
+And so I think that as much that
+you can do that and just, I
+
+656
+00:33:21,900 --> 00:33:25,600
+would say, change the patterns
+from the code side is the quickest
+
+657
+00:33:25,600 --> 00:33:26,780
+way.
+That's a PR.
+
+658
+00:33:27,600 --> 00:33:27,940
+Michael: Awesome.
+
+659
+00:33:27,940 --> 00:33:29,540
+I was not expecting it to go that
+way.
+
+660
+00:33:29,540 --> 00:33:31,240
+What's this automatic education
+thing?
+
+661
+00:33:31,240 --> 00:33:32,820
+Is there anything you can share
+there?
+
+662
+00:33:33,400 --> 00:33:33,900
+Chelsea: Yeah.
+
+663
+00:33:33,960 --> 00:33:37,260
+I will mea culpa here and say
+that I wish I could say it were
+
+664
+00:33:37,260 --> 00:33:41,720
+a more, a more, you know, like
+amazing system than it probably
+
+665
+00:33:41,740 --> 00:33:46,780
+is, but we've used, for example,
+git hooks and GitHub webhooks
+
+666
+00:33:46,780 --> 00:33:50,080
+to automatically comment documentation
+that we've written on
+
+667
+00:33:50,080 --> 00:33:50,580
+PRs.
+
+668
+00:33:50,940 --> 00:33:54,280
+For example, if we see running
+a migration, we pin the migration
+
+669
+00:33:54,280 --> 00:33:58,260
+guide to your PR rather than requesting
+us as reviewers because
+
+670
+00:33:58,260 --> 00:34:01,240
+I work in an organization of larger
+than, you know, a thousand
+
+671
+00:34:01,240 --> 00:34:01,740
+people.
+
+672
+00:34:01,800 --> 00:34:05,860
+So I don't wanna be a blocker on
+your migration, I want to educate
+
+673
+00:34:05,860 --> 00:34:06,360
+you.
+
+674
+00:34:06,600 --> 00:34:07,800
+Same thing with partitioning.
+
+675
+00:34:08,100 --> 00:34:10,480
+I wrote, after we dealt with partitioning
+stuff, you may have
+
+676
+00:34:10,480 --> 00:34:13,520
+noticed that a lot of the talks
+I write are based off whatever
+
+677
+00:34:13,520 --> 00:34:15,360
+the heck I'm struggling with at
+work.
+
+678
+00:34:15,860 --> 00:34:19,960
+And so I wrote a very in-depth
+partitioning migration
+
+679
+00:34:19,960 --> 00:34:24,000
+guide, both for future people on
+my team, as well as people who
+
+680
+00:34:24,000 --> 00:34:27,240
+might want to partition and need
+to understand why, how, whether
+
+681
+00:34:27,240 --> 00:34:28,160
+it's a good idea.
+
+682
+00:34:28,780 --> 00:34:32,440
+So I think that creating documentation
+is good, but we all know
+
+683
+00:34:32,440 --> 00:34:35,140
+it falls out so quickly.
+
+684
+00:34:35,220 --> 00:34:38,040
+You change 1 thing, it's deprecated,
+you forget about it, the
+
+685
+00:34:38,040 --> 00:34:38,760
+person leaves.
+
+686
+00:34:38,760 --> 00:34:42,720
+So I think that the underappreciated
+side of it is figuring out
+
+687
+00:34:42,720 --> 00:34:46,440
+easy systems where you're auto-commenting
+it or you're pushing
+
+688
+00:34:46,440 --> 00:34:50,280
+it to people in a way that
+actually keeps it actively read.
+
+689
+00:34:51,500 --> 00:34:51,880
+Michael: Awesome.
+
+690
+00:34:51,880 --> 00:34:52,660
+Sounds great.
+
+691
+00:34:52,860 --> 00:34:56,760
+Is there anything else you'd like
+to plug or give a shout out
+
+692
+00:34:56,760 --> 00:34:57,260
+to?
+
+693
+00:34:59,660 --> 00:35:00,460
+Chelsea: Not particularly.
+
+694
+00:35:00,720 --> 00:35:07,160
+I think that I'm sort of a relative
+newbie to the Postgres community
+
+695
+00:35:07,500 --> 00:35:09,500
+being involved in the open source
+side.
+
+696
+00:35:09,620 --> 00:35:12,700
+I went to my first Postgres
+conference last year and then
+
+697
+00:35:12,700 --> 00:35:17,560
+sort of ran out it at 100 miles
+an hour ever since then, which
+
+698
+00:35:17,560 --> 00:35:19,120
+has been really fun to get involved.
+
+699
+00:35:19,120 --> 00:35:22,200
+So I guess I would just say thank
+you to all you guys for inviting
+
+700
+00:35:22,200 --> 00:35:22,540
+me in.
+
+701
+00:35:22,540 --> 00:35:25,880
+It's been a great past year being
+more involved in Postgres.
+
+702
+00:35:26,400 --> 00:35:28,080
+Michael: It's awesome to have you
+in the community.
+
+703
+00:35:28,080 --> 00:35:30,920
+I still feel new, and I feel like
+I've been here for like 5 or
+
+704
+00:35:30,920 --> 00:35:31,480
+6 years.
+
+705
+00:35:31,480 --> 00:35:33,400
+So it's awesome having you here.
+
+706
+00:35:33,400 --> 00:35:35,680
+You're a wonderful contributor
+to the community.
+
+707
+00:35:35,900 --> 00:35:36,880
+Your talks are great.
+
+708
+00:35:36,880 --> 00:35:40,840
+Please keep giving talks on issues
+you're hitting with Postgres
+
+709
+00:35:40,840 --> 00:35:44,280
+that are some of the most fascinating
+that the community can have
+
+710
+00:35:44,280 --> 00:35:47,640
+and also not common enough at conferences,
+I think, personally.
+
+711
+00:35:48,140 --> 00:35:49,340
+So, yeah, appreciate it.
+
+712
+00:35:49,340 --> 00:35:51,140
+And appreciate the real numbers
+as well.
+
+713
+00:35:51,140 --> 00:35:52,400
+So, thanks so much Chelsea.
+
+714
+00:35:53,000 --> 00:35:55,120
+Chelsea: Yeah, thank you for hosting this.
+
+715
+00:35:55,120 --> 00:35:59,120
+I listen to you guys, as many
+people do, in the car. So, you know,
+
+716
+00:36:00,620 --> 00:36:04,000
+keep me going with good things
+to read while yelling at
+
+717
+00:36:04,000 --> 00:36:05,780
+various drivers on the road.
+
+718
+00:36:06,040 --> 00:36:07,800
+Michael: Well, apologies, you're
+probably going to have to skip
+
+719
+00:36:07,800 --> 00:36:08,440
+a week.
+
+720
+00:36:08,760 --> 00:36:09,260
+Chelsea: Okay.
+
+721
+00:36:09,480 --> 00:36:09,960
+Yeah.
+Yeah.
+
+722
+00:36:09,960 --> 00:36:11,680
+Listening to my own voice is too
+hard.
+
+723
+00:36:12,500 --> 00:36:13,600
+Michael: Tell me about it.
+
+724
+00:36:13,940 --> 00:36:14,920
+Take care, Chelsea.

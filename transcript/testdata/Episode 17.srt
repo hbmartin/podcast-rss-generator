@@ -1,0 +1,2710 @@
+00:00:00.000 --> 00:00:05.000
+I think in terms of news, what would be great to kick off with is Swift Server.
+
+
+00:00:05.000 --> 00:00:10.000
+So that's the conference that you went to, was it, has it been two weeks now?
+
+
+00:00:10.000 --> 00:00:16.000
+Yes, it's been almost two weeks. We're recording on Wednesday, so it's been a week and a half at the moment.
+
+
+00:00:16.000 --> 00:00:23.000
+And yes, I did, I headed down to London for the Swift on the Server conference,
+
+
+00:00:23.000 --> 00:00:28.000
+which was the first time I've actually been to a Swift on the Server event.
+
+
+00:00:28.000 --> 00:00:34.120
+I must admit I had a great time. It was a
+
+
+00:00:34.120 --> 00:00:36.520
+really good conference. The venue was
+
+
+00:00:36.520 --> 00:00:40.800
+incredible. It was in the Science Museum
+
+
+00:00:40.800 --> 00:00:43.640
+in London and we had private use of the
+
+
+00:00:43.640 --> 00:00:46.240
+flight gallery, which is where they have
+
+
+00:00:46.240 --> 00:00:47.920
+all sorts of airplanes hung from the
+
+
+00:00:47.920 --> 00:00:49.720
+ceiling and there was a Harrier jump jet
+
+
+00:00:49.720 --> 00:00:54.000
+in there and there was a cross-section of
+
+
+00:00:54.000 --> 00:00:56.800
+a 747, which was amazing. And so we had
+
+
+00:00:54.000 --> 00:00:58.680
+that area for our lunch breaks and coffee
+
+
+00:00:58.680 --> 00:01:01.800
+and tea and that kind of stuff. And then
+
+
+00:01:01.800 --> 00:01:05.160
+for the actual conference we had the
+
+
+00:01:05.160 --> 00:01:07.720
+IMAX theater, which I've never presented
+
+
+00:01:07.720 --> 00:01:13.000
+on an IMAX screen before, so that was
+
+
+00:01:13.000 --> 00:01:15.800
+quite an experience. Was it 3D? It wasn't
+
+
+00:01:15.800 --> 00:01:18.080
+3D, and I did notice that they, because
+
+
+00:01:18.080 --> 00:01:20.960
+I was actually thinking about this before the
+
+
+00:01:20.960 --> 00:01:23.320
+talks, is that IMAX screen is so big that
+
+
+00:01:20.960 --> 00:01:23.720
+that you can't really see the edges of the screen,
+
+
+00:01:23.720 --> 00:01:24.600
+like intentionally.
+
+
+00:01:24.600 --> 00:01:27.120
+You're supposed to get this immersive experience
+
+
+00:01:27.120 --> 00:01:29.400
+of not being able to see the edges.
+
+
+00:01:29.400 --> 00:01:32.320
+And so I was hoping that they wouldn't put the slides
+
+
+00:01:32.320 --> 00:01:34.280
+full screen on the iMacs,
+
+
+00:01:34.280 --> 00:01:37.700
+because you wouldn't be able to see all the slides,
+
+
+00:01:37.700 --> 00:01:42.440
+but they were centered, but they were still enormous.
+
+
+00:01:42.440 --> 00:01:46.120
+It was the biggest screen I've ever presented on for sure.
+
+
+00:01:46.120 --> 00:01:47.400
+And that whole conference was great.
+
+
+00:01:47.400 --> 00:01:52.400
+it was really good to hear various different bits of Swift.
+
+
+00:01:52.400 --> 00:01:55.840
+I've been to a lot of Swift conferences,
+
+
+00:01:55.840 --> 00:01:58.560
+but mainly they talk about iOS development,
+
+
+00:01:58.560 --> 00:02:02.440
+Mac OS development, and it was nice to be at an event
+
+
+00:02:02.440 --> 00:02:03.760
+that was talking about server-side Swift
+
+
+00:02:03.760 --> 00:02:05.040
+that was focused on that.
+
+
+00:02:05.040 --> 00:02:05.880
+- Yeah.
+
+
+00:02:05.880 --> 00:02:08.880
+- A couple of talks that I wanted to kind of highlight,
+
+
+00:02:08.880 --> 00:02:13.880
+really, I was really impressed with Andrew Barber's talk
+
+
+00:02:14.080 --> 00:02:17.580
+on globally distributed server-side Swift.
+
+
+00:02:17.580 --> 00:02:22.840
+And he was talking about his Swift cloud product
+
+
+00:02:22.840 --> 00:02:27.840
+and running Swift code on an edge network basically.
+
+
+00:02:27.840 --> 00:02:30.720
+So not on a server that you control,
+
+
+00:02:30.720 --> 00:02:34.040
+just on a kind of managed set of,
+
+
+00:02:34.040 --> 00:02:35.440
+I guess it's called serverless, isn't it?
+
+
+00:02:35.440 --> 00:02:36.560
+That's what they call it, right?
+
+
+00:02:36.560 --> 00:02:38.480
+- Yeah, like cloud functions.
+
+
+00:02:38.480 --> 00:02:41.160
+- Yes, cloud functions or something like that.
+
+
+00:02:41.160 --> 00:02:43.960
+- Terminology is killing me with that stuff, but yeah.
+
+
+00:02:43.960 --> 00:02:45.560
+There's so much of it right here.
+
+
+00:02:45.560 --> 00:02:50.560
+And my first instinct with that talk
+
+
+00:02:50.560 --> 00:02:52.060
+was that it was very interesting,
+
+
+00:02:52.060 --> 00:02:55.400
+but that it wasn't gonna be useful for Swift Package Index.
+
+
+00:02:55.400 --> 00:02:59.300
+And then within three or four days of me getting back,
+
+
+00:02:59.300 --> 00:03:00.720
+we're using it.
+
+
+00:03:00.720 --> 00:03:03.320
+- Little did you know at the time, yes.
+
+
+00:03:03.320 --> 00:03:04.440
+- Exactly, yes.
+
+
+00:03:04.440 --> 00:03:07.360
+So I believe you're gonna talk a little bit
+
+
+00:03:07.360 --> 00:03:08.920
+about that later, Sven,
+
+
+00:03:08.920 --> 00:03:11.720
+because that's what you've been working on at the moment.
+
+
+00:03:11.720 --> 00:03:15.680
+But yeah, that was a talk that had instant impact,
+
+
+00:03:15.680 --> 00:03:17.560
+which was great.
+
+
+00:03:17.560 --> 00:03:21.360
+I also really enjoyed Matthias Pepari's talk.
+
+
+00:03:21.360 --> 00:03:26.960
+He's from Canonical, who are the people behind Ubuntu.
+
+
+00:03:26.960 --> 00:03:30.800
+And he was talking about distributing Swift
+
+
+00:03:30.800 --> 00:03:34.140
+or making Swift more easily distributable.
+
+
+00:03:34.140 --> 00:03:36.880
+At the moment, there are the Docker images
+
+
+00:03:36.880 --> 00:03:39.520
+that Apple produce, but if you want to put Swift
+
+
+00:03:39.520 --> 00:03:47.960
+onto a Linux machine, the process for that is not as simple as apt-install-swift, which
+
+
+00:03:47.960 --> 00:03:49.200
+I think it should be.
+
+
+00:03:49.200 --> 00:03:51.640
+And Matthias thought it should be as well.
+
+
+00:03:51.640 --> 00:03:59.600
+And so he was giving a talk about that, but also offering his help to get Swift to be
+
+
+00:03:59.600 --> 00:04:06.440
+as easy to install as apt-install-swift-57 or whatever.
+
+
+00:04:06.440 --> 00:04:12.080
+And that again was just, there was a really good community feel at the conference and
+
+
+00:04:12.080 --> 00:04:17.600
+to have someone from Canonical come forward and say, "We would really love to help Swift
+
+
+00:04:17.600 --> 00:04:23.180
+become a wonderful language on Linux as well," was inspiring.
+
+
+00:04:23.180 --> 00:04:25.800
+And there were lots of great talks throughout the day.
+
+
+00:04:25.800 --> 00:04:28.120
+Those are the two that kind of stood out for me.
+
+
+00:04:28.120 --> 00:04:32.900
+But it was also nice to see lots of Apple representation there at the conference.
+
+
+00:04:32.900 --> 00:04:38.740
+So there was, obviously, the sponsorship from Apple was quite unusual for this conference.
+
+
+00:04:38.740 --> 00:04:46.260
+Apple stepped up and sponsored the conference, but also they attended the conference, which
+
+
+00:04:46.260 --> 00:04:49.180
+is, if anything, even more important.
+
+
+00:04:49.180 --> 00:04:57.300
+So they had several speakers at the conference, and also they had lots of representation there
+
+
+00:04:57.300 --> 00:04:58.980
+in the audience, talking to people.
+
+
+00:04:58.980 --> 00:04:59.980
+It was great to see.
+
+
+00:04:59.980 --> 00:05:02.660
+I thought it was a whole, the whole conference was really good.
+
+
+00:05:02.660 --> 00:05:11.160
+Well, and the big announcement, right? With the foundation open sourcing and splitting up into packages was announced at the conference, wasn't it?
+
+
+00:05:11.160 --> 00:05:22.860
+Yes, that was Tony Parker who actually kicked off the conference with an announcement that Swift was going to be re-engineered as an open source Swift package.
+
+
+00:05:22.860 --> 00:05:25.860
+which of course is an enormous announcement,
+
+
+00:05:25.860 --> 00:05:28.860
+fantastic for the Swift language
+
+
+00:05:28.860 --> 00:05:32.860
+and a great step forward for Swift Analytics especially.
+
+
+00:05:32.860 --> 00:05:35.860
+Or should I say Swift on other platforms.
+
+
+00:05:35.860 --> 00:05:38.860
+Yeah, I haven't actually encountered that personally,
+
+
+00:05:38.860 --> 00:05:40.860
+the struggle with foundation,
+
+
+00:05:40.860 --> 00:05:44.860
+but it does pop up often when people are doing server-side Swift.
+
+
+00:05:44.860 --> 00:05:47.860
+I guess we don't have as much of a problem
+
+
+00:05:47.860 --> 00:05:50.860
+because size isn't really an issue,
+
+
+00:05:50.860 --> 00:05:52.860
+but especially with Wasm and stuff,
+
+
+00:05:52.860 --> 00:05:56.900
+foundation can be quite big to deploy.
+
+
+00:05:56.900 --> 00:05:59.780
+And we're not doing, I think the biggest problem
+
+
+00:05:59.780 --> 00:06:02.080
+is like foundation stuff with formatters
+
+
+00:06:02.080 --> 00:06:04.840
+and things like that, which aren't all available
+
+
+00:06:04.840 --> 00:06:08.780
+on Linux as they are on the Mac OS.
+
+
+00:06:08.780 --> 00:06:09.980
+That's the only thing I remember
+
+
+00:06:09.980 --> 00:06:12.460
+where we had trouble with foundation being different
+
+
+00:06:12.460 --> 00:06:14.900
+on Mac OS where we typically develop
+
+
+00:06:14.900 --> 00:06:17.100
+versus Linux where we deploy.
+
+
+00:06:17.100 --> 00:06:18.560
+We had a couple of issues there
+
+
+00:06:18.560 --> 00:06:23.360
+where we're trying to do a string formatter and it wasn't available.
+
+
+00:06:23.360 --> 00:06:26.640
+But yeah, that's great to hear.
+
+
+00:06:26.640 --> 00:06:28.920
+To see that move into open source,
+
+
+00:06:28.920 --> 00:06:32.520
+also being split up into smaller packages so you can pick and choose.
+
+
+00:06:32.520 --> 00:06:38.240
+And I think it's also a huge implication for uptake in Swift within Apple,
+
+
+00:06:38.240 --> 00:06:42.640
+dogfooding, having more libraries being written in Swift,
+
+
+00:06:42.640 --> 00:06:46.080
+lower level stuff being now possible to be written in Swift.
+
+
+00:06:46.080 --> 00:06:48.080
+Sounded really great.
+
+
+00:06:48.080 --> 00:06:56.360
+I think it was a very positive conference and I liked, somebody posted one of my slides from when I was talking
+
+
+00:06:56.360 --> 00:07:02.400
+and they said this was my favorite slide from the conference and it was a slide that was in my slide deck that just said
+
+
+00:07:02.400 --> 00:07:11.200
+"The future is bright" and I obviously I agree with that because I said it but I do think that the future is very bright for ServiceSide Swift.
+
+
+00:07:11.200 --> 00:07:22.000
+Yeah, and it was actually a really neat coincidence because as you were at the conference, I had started working on an improvement to our doc hosting system.
+
+
+00:07:22.000 --> 00:07:29.000
+So what we do is we upload docs to S3 and we were having some issues because doc sets can be quite large.
+
+
+00:07:29.000 --> 00:07:38.280
+And one way of fixing that, I was considering to use a Lambda function or like a Cloud function,
+
+
+00:07:38.280 --> 00:07:48.680
+it's not necessarily AWS specific, but something where we can send a zip file which then unzips it and uploads it to S3 on its own time.
+
+
+00:07:48.680 --> 00:07:58.680
+The issue we were facing that we are uploading 80,000 files, a gigabyte of data spread across 80,000 files,
+
+
+00:07:58.680 --> 00:08:04.680
+and we were having some trouble with the number of files being uploaded within the time window we have available for our builders.
+
+
+00:08:04.680 --> 00:08:16.680
+So our idea was to zip it all up, ship it somewhere and have that something deal with the intricacies of uploading that to S3 and the retries per file and all that sort of stuff.
+
+
+00:08:16.680 --> 00:08:20.680
+And that's a nice thing to do in sort of a cloud function, right?
+
+
+00:08:20.680 --> 00:08:29.180
+If that works, it's much nicer than having to deploy a machine that runs all the time when we're only doing this for like 250 packages at the moment.
+
+
+00:08:29.180 --> 00:08:29.680
+Right.
+
+
+00:08:29.680 --> 00:08:40.680
+And so I looked at AWS Lambda for that and there is the Swift AWS Lambda runtime of the package by Apple, which is really nice.
+
+
+00:08:40.680 --> 00:08:47.720
+you can get started very easily to build a Lambda, run it locally even, play around with it.
+
+
+00:08:47.720 --> 00:08:53.000
+Then comes the time, the moment of truth, when you need to deploy it.
+
+
+00:08:53.000 --> 00:09:01.400
+When it hits you, you look at AWS and think, "God, there's so many things to configure.
+
+
+00:09:01.400 --> 00:09:07.240
+How do I even start?" And there's a very nice blog post by Fabian Fett that describes it and
+
+
+00:09:07.240 --> 00:09:10.300
+and a few others, but the description is quite lengthy.
+
+
+00:09:10.300 --> 00:09:14.200
+And I thought, all right, well, let me at least look around
+
+
+00:09:14.200 --> 00:09:16.120
+if there are other ways to maybe do this,
+
+
+00:09:16.120 --> 00:09:20.520
+'cause I recall seeing some Cloud Function kind of thing
+
+
+00:09:20.520 --> 00:09:23.000
+that wasn't AWS that seemed promising
+
+
+00:09:23.000 --> 00:09:25.980
+in having a much easier way of deploying,
+
+
+00:09:25.980 --> 00:09:29.460
+and that was Swift Cloud by Andrew Barber.
+
+
+00:09:29.460 --> 00:09:33.680
+And that's also in the index, so I looked it up,
+
+
+00:09:33.680 --> 00:09:35.640
+Swift Cloud on Swift Package Index,
+
+
+00:09:35.640 --> 00:09:40.640
+And I just love when I develop stuff and actually use the index to define things.
+
+
+00:09:40.640 --> 00:09:43.640
+It's always good to use your own software, right?
+
+
+00:09:43.640 --> 00:09:45.640
+Yeah, absolutely.
+
+
+00:09:45.640 --> 00:09:48.640
+Looked it up, pulled it down, looked at the docs, very nice.
+
+
+00:09:48.640 --> 00:09:57.640
+You just create a package, write your stuff, and then there's a super simple deploy step via Swift Cloud, its web interface.
+
+
+00:09:57.640 --> 00:10:02.640
+You effectively just push your repository, and when it's connected to Swift Cloud,
+
+
+00:10:02.640 --> 00:10:08.320
+it looks at you define what branch you want to, or if you want to auto deploy and when you've set
+
+
+00:10:08.320 --> 00:10:14.640
+it like that any push gets deployed and it's available immediately and it runs, it runs your
+
+
+00:10:14.640 --> 00:10:20.720
+cloud function and I found that amazing like within five minutes I had it deployed in the cloud in a
+
+
+00:10:20.720 --> 00:10:27.280
+publicly available URL that I could use curl with and interact with and that was just amazing
+
+
+00:10:27.280 --> 00:10:28.280
+the experience.
+
+
+00:10:28.280 --> 00:10:34.000
+And I would have loved to use it but there were a couple of problems that sort of prevented
+
+
+00:10:34.000 --> 00:10:41.760
+it and we had a chat subsequently with Andrew and he recommended that for the time for what
+
+
+00:10:41.760 --> 00:10:46.280
+we are actually trying to do especially because we're talking to S3.
+
+
+00:10:46.280 --> 00:10:51.980
+Swift cloud isn't the perfect tool at the moment because then we also pay all the traffic
+
+
+00:10:51.980 --> 00:10:59.920
+into S3 when we're actually, if we upload our zip file to a Lambda, we avoid all that
+
+
+00:10:59.920 --> 00:11:03.020
+overhead of actually talking externally into S3s.
+
+
+00:11:03.020 --> 00:11:08.700
+Yeah, because it's all like the Lambda and the S3, they're all running within the same
+
+
+00:11:08.700 --> 00:11:10.120
+local network effectively.
+
+
+00:11:10.120 --> 00:11:12.940
+And so we don't pay any traffic outside that.
+
+
+00:11:12.940 --> 00:11:19.180
+So all we would have to do at that point is upload a zip file to AWS and have AWS pick
+
+
+00:11:19.180 --> 00:11:28.940
+up that zip file, unzip it onto S3 and that's a relatively simple task in terms of AWS functionality.
+
+
+00:11:28.940 --> 00:11:33.340
+And the other interesting thing is that something that's so seamless that it's very easy to
+
+
+00:11:33.340 --> 00:11:39.460
+forget about because what you're actually doing, you're not compiling a Swift executable
+
+
+00:11:39.460 --> 00:11:45.900
+on ARM or x86 with the Swift compiler, normal Swift compiler 2 chain because what you're
+
+
+00:11:45.900 --> 00:11:54.340
+actually doing in Swift cloud is using the Swift WASM tool chain to compile a WASM, I
+
+
+00:11:54.340 --> 00:12:02.780
+don't know what you call it, is it an executable that then gets deployed into a WASM runtime?
+
+
+00:12:02.780 --> 00:12:06.780
+I'm a bit hazy on how that actually works.
+
+
+00:12:06.780 --> 00:12:07.780
+Me too.
+
+
+00:12:07.780 --> 00:12:12.660
+But my understanding is this is sort of a, I think you can think of it as a VM that can
+
+
+00:12:12.660 --> 00:12:19.860
+execute these WASM binaries, which are very efficient. I mean, it's not like JavaScript
+
+
+00:12:19.860 --> 00:12:27.020
+that gets executed on the fly and sort of, what you call it?
+
+
+00:12:27.020 --> 00:12:29.020
+Just in time compiles?
+
+
+00:12:29.020 --> 00:12:35.180
+Hotspot compiled. It's an actual executable that's compiled ahead of time, in a sense.
+
+
+00:12:35.180 --> 00:12:39.940
+So it is more efficient than that, but it's also not a normal executable that you could,
+
+
+00:12:39.940 --> 00:12:45.780
+you know the same executable you would run on your ARM Mac or your x86 Mac and then would
+
+
+00:12:45.780 --> 00:12:53.720
+just ship and have run in a VM in you know an AWS Lambda or something like that.
+
+
+00:12:53.720 --> 00:12:58.700
+And the reason why that's important is and that's an issue I ran into, not every package
+
+
+00:12:58.700 --> 00:13:03.520
+you might pull in as a dependency would necessarily compile in SwiftWasm.
+
+
+00:13:03.520 --> 00:13:10.700
+So for instance, I was trying to compile SOTO in order to interact with S3 and that unfortunately
+
+
+00:13:10.700 --> 00:13:16.460
+failed because a dependency that SOTO is pulling in, don't quite recall which one it was, didn't
+
+
+00:13:16.460 --> 00:13:18.840
+actually compile on WASM.
+
+
+00:13:18.840 --> 00:13:23.080
+I think it was even some C code that didn't compile.
+
+
+00:13:23.080 --> 00:13:26.960
+There was other C code that it does compile, which is kind of amazing if you think about
+
+
+00:13:26.960 --> 00:13:27.960
+it.
+
+
+00:13:27.960 --> 00:13:29.480
+But this particular one, it didn't.
+
+
+00:13:29.480 --> 00:13:35.980
+So there's maybe an argument to be made that we have a need for an additional platform
+
+
+00:13:35.980 --> 00:13:40.880
+in the index to show what packages are/wasn't compatible.
+
+
+00:13:40.880 --> 00:13:47.840
+But it's really interesting how much you can abstract that away and not even think about
+
+
+00:13:47.840 --> 00:13:52.660
+it until the moment, you know, the moment of truth when it all bubbles up and the leaky
+
+
+00:13:52.660 --> 00:13:57.660
+the abstraction sort of fails or the abstraction leaks and you see you get a
+
+
+00:13:57.660 --> 00:14:02.180
+compile error that you're not expecting because your platform isn't quite the
+
+
+00:14:02.180 --> 00:14:05.100
+one you thought you were running against.
+
+
+00:14:05.100 --> 00:14:11.180
+I think there's an interesting conversation to be had around WASM compatibility because you're right that it would be
+
+
+00:14:11.180 --> 00:14:17.140
+really useful to be able to, in this very specific situation, to see which
+
+
+00:14:17.140 --> 00:14:21.500
+packages were compatible with WASM. But I think there's a little way to
+
+
+00:14:21.500 --> 00:14:27.820
+to go before we should actually add that to the index in terms of clarification
+
+
+00:14:27.820 --> 00:14:32.700
+and adoption of WASM itself. Because, so a lot of people, and Andrew was talking
+
+
+00:14:32.700 --> 00:14:37.100
+about this in his talk, a lot of people think of WASM as a browser technology. So
+
+
+00:14:37.100 --> 00:14:42.140
+I'm gonna run some Swift in my Safari or my Chrome and I'm gonna be
+
+
+00:14:42.140 --> 00:14:47.200
+able to write Swift to modify the HTML DOM. And of course that's not what we're
+
+
+00:14:47.200 --> 00:14:50.740
+talking about here. We're talking about running WASM as a server side through
+
+
+00:14:50.740 --> 00:14:53.480
+still through a JavaScript interpreter,
+
+
+00:14:53.480 --> 00:14:55.200
+but as a server-side process.
+
+
+00:14:55.200 --> 00:14:57.560
+And really what you're talking about there
+
+
+00:14:57.560 --> 00:15:02.200
+with compatibility is compatibility with that situation.
+
+
+00:15:02.200 --> 00:15:05.700
+And I think if we stuck anything to do with Wasm
+
+
+00:15:05.700 --> 00:15:07.620
+on the package of Bexite at the moment,
+
+
+00:15:07.620 --> 00:15:10.480
+people would assume that was a browser-based Wasm,
+
+
+00:15:10.480 --> 00:15:12.660
+which I don't believe is.
+
+
+00:15:12.660 --> 00:15:14.960
+I think we would need a separate compatibility test
+
+
+00:15:14.960 --> 00:15:16.680
+for that as I understand it.
+
+
+00:15:16.680 --> 00:15:19.120
+And so I have a feeling that this is going to need
+
+
+00:15:19.120 --> 00:15:24.120
+a little bit more time to propagate into the community.
+
+
+00:15:24.120 --> 00:15:27.360
+And if this takes off, then absolutely we should do that.
+
+
+00:15:27.360 --> 00:15:29.920
+But we're going to have to be very careful how we actually
+
+
+00:15:29.920 --> 00:15:33.120
+represent that compatibility on the matrix.
+
+
+00:15:33.120 --> 00:15:37.040
+Yeah, I think the target to test is the Wasm toolchain,
+
+
+00:15:37.040 --> 00:15:39.520
+because that's the thing that everyone would use to actually
+
+
+00:15:39.520 --> 00:15:41.520
+compile the Swift package with.
+
+
+00:15:41.520 --> 00:15:44.400
+And obviously, there also, you have to look at versioning,
+
+
+00:15:44.400 --> 00:15:48.520
+because a 5.8 Wasm Swift toolchain
+
+
+00:15:48.520 --> 00:15:53.080
+might have different behavior than SWIFT 5.9.
+
+
+00:15:53.080 --> 00:15:58.840
+But I think in that sense it's very similar to all the other flavors we're testing.
+
+
+00:15:58.840 --> 00:16:06.080
+But you're right, I mean it's just very new and I guess it's also not a very common thing
+
+
+00:16:06.080 --> 00:16:07.520
+that people would be looking for.
+
+
+00:16:07.520 --> 00:16:13.920
+So the real estate on that page is pretty precious and we don't have that many columns
+
+
+00:16:13.920 --> 00:16:15.440
+available to us.
+
+
+00:16:15.440 --> 00:16:20.120
+We have to sort of be a bit careful how many things we show there.
+
+
+00:16:20.120 --> 00:16:25.880
+Yeah, I've had some thoughts around that recently actually with how we represent that data and
+
+
+00:16:25.880 --> 00:16:30.960
+as we get more platforms, because again, something else that came up at the conference was Windows
+
+
+00:16:30.960 --> 00:16:36.220
+compatibility, which I think if we're going to tackle another platform, Windows would
+
+
+00:16:36.220 --> 00:16:39.160
+probably be the next one we'd tackle.
+
+
+00:16:39.160 --> 00:16:43.680
+And we're already getting quite tight for space in that area.
+
+
+00:16:43.680 --> 00:16:52.200
+But also, the box for iOS is the same size as the box for Windows or WASM, which is nice
+
+
+00:16:52.200 --> 00:16:58.000
+and equitable, but it doesn't represent the current reality.
+
+
+00:16:58.000 --> 00:17:02.480
+And so I think we need to maybe rethink that area of the page a little bit, because also
+
+
+00:17:02.480 --> 00:17:08.800
+the area of the page, even just for compatibility, takes up a large amount of space.
+
+
+00:17:08.800 --> 00:17:14.100
+there's a lot of quite complex information to represent in that area. So
+
+
+00:17:14.100 --> 00:17:18.200
+it's a tricky design problem but we'll maybe have a think about that
+
+
+00:17:18.200 --> 00:17:23.880
+as we go forward. Yeah I wonder if there's a some rearranging that we
+
+
+00:17:23.880 --> 00:17:30.320
+could do because I think over time our Swift version split is becoming less
+
+
+00:17:30.320 --> 00:17:33.880
+and less important. I think there'll be an upcoming big one when it's
+
+
+00:17:33.880 --> 00:17:43.240
+swift 6, but I almost wonder if it isn't at some point going to be 5.x and 6 and it's
+
+
+00:17:43.240 --> 00:17:51.400
+effectively a swift version 2 column thing that we display at least on that page maybe
+
+
+00:17:51.400 --> 00:17:57.200
+with a bit more detail in a click through where if there's even a need to split out
+
+
+00:17:57.200 --> 00:18:06.720
+5x further, it's probably not worth it on that initial page. But at least, I mean, when
+
+
+00:18:06.720 --> 00:18:13.680
+I look at stuff, the 5x are really not that important anymore. I haven't seen a package
+
+
+00:18:13.680 --> 00:18:20.960
+in a long time where that sort of compatibility made any difference in my decision.
+
+
+00:18:20.960 --> 00:18:28.040
+Me too, yeah. I think 5.6 was a big one really. I think 5.6 introduced a few things that people
+
+
+00:18:28.040 --> 00:18:33.940
+started using straight away and so I quite often see no compatibility with 5.5 and 5.4,
+
+
+00:18:33.940 --> 00:18:39.960
+but 5.6 and above is almost always. I very rarely see a difference between 5.6 and 5.7.
+
+
+00:18:39.960 --> 00:18:44.600
+Yeah, might actually be an interesting thing to query because we can and we have in the
+
+
+00:18:44.600 --> 00:18:49.400
+the past checked what packages have you know steps in there.
+
+
+00:18:49.400 --> 00:18:50.400
+Yes.
+
+
+00:18:50.400 --> 00:18:53.240
+Package would be compatible with 5.6 but not 7.
+
+
+00:18:53.240 --> 00:18:56.000
+That sort of stuff.
+
+
+00:18:56.000 --> 00:19:02.040
+So yeah and otherwise what was really nice with the, so that was actually my first experience
+
+
+00:19:02.040 --> 00:19:10.240
+working with AWS Lambdas or any sort of cloud functions and I was quite impressed with the
+
+
+00:19:10.240 --> 00:19:13.280
+quickness with which you can trigger AWS Lambdas.
+
+
+00:19:13.280 --> 00:19:18.560
+I mean, you shouldn't be surprised because it's in the marketing, but when you actually
+
+
+00:19:18.560 --> 00:19:26.400
+go into the AWS Lambda console and click on test, it just immediately executes that thing.
+
+
+00:19:26.400 --> 00:19:33.480
+And that's quite astonishing because you get billed for like 300 milliseconds of compute
+
+
+00:19:33.480 --> 00:19:35.280
+for that single function call.
+
+
+00:19:35.280 --> 00:19:39.840
+And that's kind of remarkable if you think about that, the whole mechanism.
+
+
+00:19:39.840 --> 00:19:44.880
+It is remarkable and I think
+
+
+00:19:44.880 --> 00:19:46.760
+more remarkable is that what
+
+
+00:19:46.760 --> 00:19:51.720
+you're saying is that you read some
+
+
+00:19:51.720 --> 00:19:54.240
+marketing and it was true. Well I'd say I
+
+
+00:19:54.240 --> 00:19:57.720
+didn't actively read it, I just you know
+
+
+00:19:57.720 --> 00:20:02.440
+subliminally infiltrated my brain
+
+
+00:20:02.440 --> 00:20:02.440
+I guess. That's how well that works, yeah.
+
+
+00:20:02.440 --> 00:20:08.360
+So yes, in the last couple of weeks have
+
+
+00:20:05.280 --> 00:20:10.000
+been, for you at least, a lot of cloud stuff.
+
+
+00:20:10.000 --> 00:20:16.600
+For me, I have been investigating a problem that we've had for a little while without
+
+
+00:20:16.600 --> 00:20:20.720
+Google results, and I've made some progress with it, which is good.
+
+
+00:20:20.720 --> 00:20:28.520
+So we have a situation where we have a sitemap on the website which tells Google...
+
+
+00:20:28.520 --> 00:20:33.680
+So a sitemap basically is an XML file that has a list of URLs in them, and against each
+
+
+00:20:33.680 --> 00:20:38.720
+URL you have a frequency with which you would like Google to check for changes
+
+
+00:20:38.720 --> 00:20:44.480
+on that page. And a sitemap is really important for a site like Swift package
+
+
+00:20:44.480 --> 00:20:51.040
+index because there is no one page on our site that links to all packages
+
+
+00:20:51.040 --> 00:20:57.280
+because most of what you do is through search. We need to tell Google what our
+
+
+00:20:57.280 --> 00:21:02.440
+full set of package pages is because it's not going to find them just by
+
+
+00:21:02.440 --> 00:21:06.600
+browsing, which is what it normally does. So normally it finds your site, it
+
+
+00:21:06.600 --> 00:21:10.400
+follows every link on every page, and effectively that's what it considers
+
+
+00:21:10.400 --> 00:21:14.880
+the entire surface area of your site. A side map, of course, is a list of URLs
+
+
+00:21:14.880 --> 00:21:20.360
+where you can say, if you didn't find it, here's all the URLs we would like you
+
+
+00:21:20.360 --> 00:21:26.440
+to start at. And what we do is we give Google all of the package page URLs so
+
+
+00:21:26.440 --> 00:21:31.480
+that it knows about every package, but then we let it explore from there. So
+
+
+00:21:31.480 --> 00:21:35.640
+So from there it can click on the release information
+
+
+00:21:35.640 --> 00:21:39.120
+and it can click on the build information,
+
+
+00:21:39.120 --> 00:21:41.220
+that kind of thing, and it can explore from there.
+
+
+00:21:41.220 --> 00:21:45.120
+And it has been successfully doing that so far.
+
+
+00:21:45.120 --> 00:21:47.460
+The problem we have is that it stopped doing that
+
+
+00:21:47.460 --> 00:21:51.300
+with documentation, and we're getting very inconsistent
+
+
+00:21:51.300 --> 00:21:54.400
+Google coverage on our documentation.
+
+
+00:21:54.400 --> 00:21:57.740
+So some packages have their documentation completely indexed
+
+
+00:21:57.740 --> 00:21:59.140
+and there's no problem at all.
+
+
+00:21:59.140 --> 00:22:04.580
+packages, the documentation is not even in the Google index. It's decided not to
+
+
+00:22:04.580 --> 00:22:09.860
+index that page whatsoever. And there are solutions to this where you can go into
+
+
+00:22:09.860 --> 00:22:14.100
+the Google Search console and you can say please go and index this page now.
+
+
+00:22:14.100 --> 00:22:19.740
+But I've resisted doing that because that's not a solution for the
+
+
+00:22:19.740 --> 00:22:23.620
+future. We can't have anything that relies on me logging into a web
+
+
+00:22:23.620 --> 00:22:28.300
+page and clicking a button. - There's no way for you to spend your Monday. - There's no way for
+
+
+00:22:28.300 --> 00:22:34.100
+me to spend my life. Yes, exactly. I can do less damage if I only have to do that, but
+
+
+00:22:34.100 --> 00:22:39.660
+it's certainly, there are better uses of my time, I think. So, this is the problem. I
+
+
+00:22:39.660 --> 00:22:45.540
+think what all I've done so far is describe the problem. I've figured out, I think, what
+
+
+00:22:45.540 --> 00:22:50.900
+the problem, the underlying issue is, and it's all to do with our support for versioned
+
+
+00:22:50.900 --> 00:22:57.660
+documentation. So, one thing that Google does not like is it does not like repeated information.
+
+
+00:22:57.660 --> 00:23:02.600
+So if you took somebody's website and made a clone of it and hosted it on the web, hoping
+
+
+00:23:02.600 --> 00:23:08.900
+that you would grab their Google search results, Google has lots of safeguards within it to
+
+
+00:23:08.900 --> 00:23:10.540
+stop you doing that.
+
+
+00:23:10.540 --> 00:23:17.780
+And effectively, what we're doing with our version documentation is exactly that.
+
+
+00:23:17.780 --> 00:23:23.140
+We're taking a copy of a documentation site and re-hosting it and saying, "Look, Google,
+
+
+00:23:23.140 --> 00:23:25.500
+here's another copy of this site.
+
+
+00:23:25.500 --> 00:23:30.620
+love us now. And what it actually says is it says no we won't.
+
+
+00:23:30.620 --> 00:23:36.020
+But doesn't it doesn't it realize that it's the same domain? I mean I would imagine that
+
+
+00:23:36.020 --> 00:23:38.940
+would sort of short circuit that process, no?
+
+
+00:23:38.940 --> 00:23:44.580
+It does but it's still a problem in that you're uploading two copies of this effectively.
+
+
+00:23:44.580 --> 00:23:49.280
+I mean yes between versions there will be some differences in documentation but also
+
+
+00:23:49.280 --> 00:23:55.020
+potentially no differences in documentation. So it does see this as a problem and I've
+
+
+00:23:55.020 --> 00:24:00.360
+I've confirmed that you can, in the Google Search console, you can dig into why it's
+
+
+00:24:00.360 --> 00:24:01.680
+not indexing.
+
+
+00:24:01.680 --> 00:24:06.720
+And it's not as simple as just reading the message.
+
+
+00:24:06.720 --> 00:24:12.320
+Like, there was a little bit more to the investigation than that, but I think this is the problem.
+
+
+00:24:12.320 --> 00:24:19.040
+And what it wants is it wants a canonical...so in the HTML, you can put a meta tag in the
+
+
+00:24:19.040 --> 00:24:24.100
+head and you can say this is duplicate but it's duplicate of this document and
+
+
+00:24:24.100 --> 00:24:29.780
+this document is the canonical version. And that's what we need to do
+
+
+00:24:29.780 --> 00:24:39.220
+to fix it. So what we'll do is on the as we render the documentation pages we can
+
+
+00:24:39.220 --> 00:24:43.980
+insert into the and we already do this for our style sheet and that kind of
+
+
+00:24:43.980 --> 00:24:51.300
+thing. We can insert into that head section of each page a new meta tag that says the
+
+
+00:24:51.300 --> 00:24:59.940
+latest, the canonical version of this documentation is our latest stable version of the documentation.
+
+
+00:24:59.940 --> 00:25:07.220
+And I haven't yet implemented that, but I'm pretty sure that that will be the solution
+
+
+00:25:07.220 --> 00:25:08.220
+to this problem.
+
+
+00:25:08.220 --> 00:25:14.780
+Yeah, nice. And the doc sets that actually did show up, was that perhaps because they
+
+
+00:25:14.780 --> 00:25:19.500
+were referenced in the packages readme or, you know, like externally too?
+
+
+00:25:19.500 --> 00:25:25.500
+No, so it's a little more, and this is part of what was so confusing about this problem
+
+
+00:25:25.500 --> 00:25:32.580
+is it is inconsistent. And what good, like, when you have the entire internet to index,
+
+
+00:25:32.580 --> 00:25:38.300
+Everything you do is, you do your best with it, but nothing is perfect.
+
+
+00:25:38.300 --> 00:25:43.020
+And so what Google does is sometimes it does index this stuff and sometimes it doesn't.
+
+
+00:25:43.020 --> 00:25:48.380
+I think it's partly because we've got so much duplicate stuff that at some point it just,
+
+
+00:25:48.380 --> 00:25:51.180
+it said, "Hold on a minute, there's a whole load of duplicates in here.
+
+
+00:25:51.180 --> 00:25:53.260
+I'm not going to bother indexing anymore."
+
+
+00:25:53.260 --> 00:25:57.060
+And so you end up with this situation where maybe the first things that it indexed were
+
+
+00:25:57.060 --> 00:26:01.860
+okay, but then over time it decided not to trust us quite as much.
+
+
+00:26:01.860 --> 00:26:05.220
+And that's also why we need to fix it.
+
+
+00:26:05.220 --> 00:26:08.580
+That Google robot is surprisingly human.
+
+
+00:26:08.580 --> 00:26:12.520
+I mean, if you think about it, I've spent a bit of time over the last couple of weeks
+
+
+00:26:12.520 --> 00:26:18.420
+thinking about Google, and that is such an old bit of code now, I'm sure.
+
+
+00:26:18.420 --> 00:26:21.540
+It gets constant, constant iteration.
+
+
+00:26:21.540 --> 00:26:27.900
+But for such an important job, that Google bot that crawls the web, I think there probably
+
+
+00:26:27.900 --> 00:26:33.780
+are some fascinating edge cases inside BancoBase.
+
+
+00:26:33.780 --> 00:26:40.060
+It's also completely, I'm sure nobody is able to understand the entirety of that bot.
+
+
+00:26:40.060 --> 00:26:45.540
+Oh yeah, that must be remarkable.
+
+
+00:26:45.540 --> 00:26:48.900
+Just to imagine the scope of that thing.
+
+
+00:26:48.900 --> 00:26:49.900
+Yeah.
+
+
+00:26:49.900 --> 00:26:57.140
+And also, what's always fascinated me about Google is the storage of all of that information
+
+
+00:26:57.140 --> 00:27:02.900
+so that you can, you know, if you imagine the sheer quantity of data that that search
+
+
+00:27:02.900 --> 00:27:11.020
+engine is indexing and it brings back results in 0.1 seconds, 0.01 seconds, it's remarkable
+
+
+00:27:11.020 --> 00:27:13.180
+how that piece of software works.
+
+
+00:27:13.180 --> 00:27:14.860
+Yeah, that's remarkable and scary.
+
+
+00:27:14.860 --> 00:27:18.420
+You know, for anything you do yourself, you think like, "God..."
+
+
+00:27:18.420 --> 00:27:23.100
+There are many things that Google does that I'm not a big fan of, but the underlying search
+
+
+00:27:23.100 --> 00:27:26.420
+engine technology I have nothing but absolute respect for.
+
+
+00:27:26.420 --> 00:27:31.420
+Shall we do some package recommendations?
+
+
+00:27:31.420 --> 00:27:37.420
+Yeah, let's do it. We're already half an hour in, so we probably should.
+
+
+00:27:37.420 --> 00:27:47.420
+We are, we've talked a lot today, yeah. I will kick us off this week with a package called RichTextKit by Daniel Seide.
+
+
+00:27:47.420 --> 00:27:54.940
+And this is a rich text editor that works with both UIKit, AppKit, and SwiftUI.
+
+
+00:27:54.940 --> 00:27:59.220
+And while I haven't tried it, it looks kind of interesting.
+
+
+00:27:59.220 --> 00:28:05.160
+So the most impressive thing about it is that this is a cross platform.
+
+
+00:28:05.160 --> 00:28:11.620
+And again, we're using the definition of cross platform that includes iOS and MacOS.
+
+
+00:28:11.620 --> 00:28:15.980
+This is a cross platform implementation of a rich text editor.
+
+
+00:28:15.980 --> 00:28:22.060
+So if you're building an application for both, with SwiftUI, for both Mac OS and iOS, you
+
+
+00:28:22.060 --> 00:28:26.860
+can use this package.
+
+
+00:28:26.860 --> 00:28:31.380
+And if I just click through to the documentation here, it's actually come from a commercial
+
+
+00:28:31.380 --> 00:28:32.980
+product.
+
+
+00:28:32.980 --> 00:28:38.900
+So there's a product called Aribi Writer, which it says on the documentation is out
+
+
+00:28:38.900 --> 00:28:40.300
+soon.
+
+
+00:28:40.300 --> 00:28:44.100
+If you actually go through to the website, I believe it is already out.
+
+
+00:28:44.100 --> 00:28:48.940
+So this is an application with spell checking, text to speech, and a smart keyboard is how
+
+
+00:28:48.940 --> 00:28:51.180
+they describe it.
+
+
+00:28:51.180 --> 00:28:53.620
+And this package has been extracted from that.
+
+
+00:28:53.620 --> 00:29:01.420
+So I always think that if a package has come through that has made it into a commercial
+
+
+00:29:01.420 --> 00:29:06.460
+application where the purpose of the application is to be that thing, I think that's got to
+
+
+00:29:06.460 --> 00:29:07.460
+be worth checking out.
+
+
+00:29:07.460 --> 00:29:08.460
+Yeah, definitely.
+
+
+00:29:08.460 --> 00:29:15.060
+That tells you a lot. It's going to be, because it's so central, it's going to be maintained
+
+
+00:29:15.060 --> 00:29:21.380
+and going to have a bright future ahead of it.
+
+
+00:29:21.380 --> 00:29:26.140
+And again, great documentation. The documentation is not hosted on the package in Next, but
+
+
+00:29:26.140 --> 00:29:33.740
+it is DocC documentation hosted on GitHub pages. And it looks great. I think if you're
+
+
+00:29:33.740 --> 00:29:37.720
+in the market for a rich text editor, you should at least certainly check it out.
+
+
+00:29:37.720 --> 00:29:44.220
+Yeah, in particular because my understanding is that SwiftUI probably needs something like this right now.
+
+
+00:29:44.220 --> 00:29:52.220
+I think the built-in versions aren't capable enough to cover lots of slightly extended use cases.
+
+
+00:29:52.220 --> 00:29:59.220
+You pretty quickly run into the issues where you need to wrap something and if this does it for you, that's probably really helpful.
+
+
+00:29:59.220 --> 00:30:07.680
+And also I think once you get into wrapping, then you start to progress into a single platform
+
+
+00:30:07.680 --> 00:30:09.780
+wrapper rather than a cross-platform wrapper.
+
+
+00:30:09.780 --> 00:30:15.260
+And I think what they've done there is think about this, because I'm guessing their application
+
+
+00:30:15.260 --> 00:30:17.060
+is cross-platform.
+
+
+00:30:17.060 --> 00:30:19.500
+So I think they've had to consider that from every aspect.
+
+
+00:30:19.500 --> 00:30:26.300
+So I think it's the kind of thing that, because it's in a product, it will get regular maintenance.
+
+
+00:30:26.300 --> 00:30:33.240
+And if you can leverage that to save yourself some time, I think that's great.
+
+
+00:30:33.240 --> 00:30:39.480
+And it's also worth giving that company a bit of credit for taking what is at the core
+
+
+00:30:39.480 --> 00:30:42.160
+of their commercial application and open sourcing it.
+
+
+00:30:42.160 --> 00:30:43.960
+That's always nice to see.
+
+
+00:30:43.960 --> 00:30:46.240
+Yeah, very nice.
+
+
+00:30:46.240 --> 00:30:52.640
+Right, I've got actually a set of packages that I wanted to list, and that's born out
+
+
+00:30:52.640 --> 00:31:00.040
+of my work on that documentation uploader. What I needed there to work with that is something
+
+
+00:31:00.040 --> 00:31:05.600
+to zip and unzip and I didn't want to shell out to the command line in particular. It's
+
+
+00:31:05.600 --> 00:31:10.200
+always kind of hacky plus in the Lambda that's not an option and I wanted to use it on both
+
+
+00:31:10.200 --> 00:31:15.960
+ends. So I was looking around for zip and unzip and as I said earlier it's just great
+
+
+00:31:15.960 --> 00:31:21.200
+when you can use the index. I'm always happy when I can use the index for stuff. So that
+
+
+00:31:21.200 --> 00:31:26.000
+was an opportunity plug zip in also platform called on Linux. So for people
+
+
+00:31:26.000 --> 00:31:32.480
+don't know you can actually filter in our search on a platform. So to make to
+
+
+00:31:32.480 --> 00:31:37.000
+select packages that support that platform and I knew that I needed Linux
+
+
+00:31:37.000 --> 00:31:43.040
+support. It's probably just worth focusing in on that for a second because
+
+
+00:31:43.040 --> 00:31:46.120
+that's potentially something that people haven't done with the package index is
+
+
+00:31:46.120 --> 00:31:49.760
+once you search for something you can then and there is a little bit of help
+
+
+00:31:49.760 --> 00:31:53.360
+underneath the search field after you've searched.
+
+
+00:31:53.360 --> 00:31:55.000
+But you can just say, so for example,
+
+
+00:31:55.000 --> 00:31:57.840
+I would imagine your query for this was
+
+
+00:31:57.840 --> 00:32:01.840
+zip space platform colon Linux.
+
+
+00:32:01.840 --> 00:32:04.360
+And that will filter search results
+
+
+00:32:04.360 --> 00:32:07.080
+that contain that keyword either in a tag
+
+
+00:32:07.080 --> 00:32:10.360
+or in a, sorry, in a keyword or in the description
+
+
+00:32:10.360 --> 00:32:12.160
+or in the package name.
+
+
+00:32:12.160 --> 00:32:16.160
+And then filter it by confirmed platform compatibility
+
+
+00:32:16.160 --> 00:32:17.520
+with Linux.
+
+
+00:32:17.520 --> 00:32:18.360
+- Exactly.
+
+
+00:32:19.360 --> 00:32:25.680
+Yeah and that turned up a number of results and good results.
+
+
+00:32:25.680 --> 00:32:32.240
+So for instance I zeroed in on three at the start.
+
+
+00:32:32.240 --> 00:32:42.480
+That's Zip by Roy Marlestein, Zip Foundation by Thomas Zirkling and SW Compression by Timothee
+
+
+00:32:42.480 --> 00:32:45.200
+Zolomko.
+
+
+00:32:45.200 --> 00:32:50.300
+And yeah, these were amongst the top hits.
+
+
+00:32:50.300 --> 00:32:54.840
+And then I clicked through, just describing the mechanism a bit, how I picked and how
+
+
+00:32:54.840 --> 00:32:56.800
+I chose the packages.
+
+
+00:32:56.800 --> 00:32:59.440
+And things I looked for was, you know, how long has it been around?
+
+
+00:32:59.440 --> 00:33:03.200
+And these are all, these have all been around for a long time, seven years, five years,
+
+
+00:33:03.200 --> 00:33:04.200
+six years.
+
+
+00:33:04.200 --> 00:33:11.040
+All active fairly recently, 10 months ago to even just hours ago.
+
+
+00:33:11.040 --> 00:33:12.680
+Releases also within that time span.
+
+
+00:33:12.680 --> 00:33:17.680
+So already I had three packages that were very promising.
+
+
+00:33:17.680 --> 00:33:26.240
+The first two have more than 30 contributors, even the last one, SW Compression, a bit fewer,
+
+
+00:33:26.240 --> 00:33:30.680
+that's just four contributors, but still around for six years.
+
+
+00:33:30.680 --> 00:33:35.560
+And then what I did is I tried them out in a playground just to get a feel for the API
+
+
+00:33:35.560 --> 00:33:40.960
+and I could even plug in my zip file and unzip it in the playground to see how that would
+
+
+00:33:40.960 --> 00:33:46.440
+go, what the options are on the, you know, if I need any, I don't need passwords and
+
+
+00:33:46.440 --> 00:33:47.440
+stuff.
+
+
+00:33:47.440 --> 00:33:51.280
+But it's a sort of thing that's really nice to do with just the tools that we have available
+
+
+00:33:51.280 --> 00:33:56.560
+to play around and without having to set up a package, import it and do all that.
+
+
+00:33:56.560 --> 00:34:01.080
+I could play around with the API and just choose.
+
+
+00:34:01.080 --> 00:34:05.840
+And then I picked, I ended up picking Zip by Roy Marmelstein.
+
+
+00:34:05.840 --> 00:34:14.140
+And the main reason was it's the one that can be built without any dependencies.
+
+
+00:34:14.140 --> 00:34:20.540
+Now the others don't have package dependencies per se, but they do have an OS level dependency
+
+
+00:34:20.540 --> 00:34:23.480
+on Zlib.
+
+
+00:34:23.480 --> 00:34:26.860
+So it needs to be installed on the OS side.
+
+
+00:34:26.860 --> 00:34:34.220
+So on Linux you need to have the development libset dev installed and the zip package avoids
+
+
+00:34:34.220 --> 00:34:39.900
+that by shipping the C sources for zip within the package and just build it. And that's really nice
+
+
+00:34:39.900 --> 00:34:44.780
+because then I don't need to worry about the lambda image to have that installed. It's just
+
+
+00:34:44.780 --> 00:34:50.460
+a nicer process for my use case. But yeah, it was a really nice experience to do all that,
+
+
+00:34:50.460 --> 00:34:58.940
+play around and have it ready for use. I love that story because it shows real practical use
+
+
+00:34:58.940 --> 00:35:00.860
+of the Swift Package Index.
+
+
+00:35:00.860 --> 00:35:09.140
+And the fact that you didn't just take the top package, obviously, you had a look at
+
+
+00:35:09.140 --> 00:35:18.540
+several prominent packages that were highlighted by the index and actually analyzed using the
+
+
+00:35:18.540 --> 00:35:21.540
+features that we've built, like how well-maintained is it?
+
+
+00:35:21.540 --> 00:35:23.580
+How long has it been in development?
+
+
+00:35:23.580 --> 00:35:29.260
+And you also mentioned the contributors, which we talked about last episode.
+
+
+00:35:29.260 --> 00:35:34.820
+And I also have been really appreciating having the author names right there.
+
+
+00:35:34.820 --> 00:35:39.700
+But yeah, I thought it was such a great story of just a real practical use of using the
+
+
+00:35:39.700 --> 00:35:41.220
+software that we've built.
+
+
+00:35:41.220 --> 00:35:46.620
+And I'm happy that we have a zip package that we're happy with as a result of it.
+
+
+00:35:46.620 --> 00:35:48.460
+Just think of the amount of time that saved us.
+
+
+00:35:48.460 --> 00:35:49.460
+Yeah, yeah, definitely.
+
+
+00:35:49.460 --> 00:35:55.460
+I don't think writing is an algorithm, is anything you want to be doing.
+
+
+00:35:55.460 --> 00:36:08.100
+Great. My next package recommendation is a very catchily titled DSF Quick Action Bath
+
+
+00:36:08.100 --> 00:36:17.220
+by Darren Ford. So this is, well, a little bit of background first. I think I personally
+
+
+00:36:17.220 --> 00:36:22.220
+I'm a big fan of software that has great keyboard support.
+
+
+00:36:22.220 --> 00:36:26.360
+I am a big fan of, at the moment,
+
+
+00:36:26.360 --> 00:36:27.520
+and for the last couple of years,
+
+
+00:36:27.520 --> 00:36:31.240
+my preferred keyboard navigation tool has been Raycast
+
+
+00:36:31.240 --> 00:36:33.640
+for launching applications and launching shortcuts
+
+
+00:36:33.640 --> 00:36:35.440
+and that kind of stuff.
+
+
+00:36:35.440 --> 00:36:38.480
+And what Raycast does is it brings up a window
+
+
+00:36:38.480 --> 00:36:41.560
+in the center of the screen where you can trigger that
+
+
+00:36:41.560 --> 00:36:43.440
+just like you can with Spotlight Search
+
+
+00:36:43.440 --> 00:36:45.600
+and just type something in.
+
+
+00:36:45.600 --> 00:36:51.440
+But I'm a big fan of that whole process of just bringing up some kind of keyboard input,
+
+
+00:36:51.440 --> 00:36:58.640
+spotlight type keyboard input, and being able to just type a couple of keystrokes to get something done.
+
+
+00:36:58.640 --> 00:37:12.360
+In fact, there was an application called Details Pro, which is an iPad application for designing SwiftUI user interfaces.
+
+
+00:37:12.360 --> 00:37:16.300
+It's not code-based, it's more like a design tool
+
+
+00:37:16.300 --> 00:37:19.020
+where you could build up HDACs or VSTACs
+
+
+00:37:19.020 --> 00:37:20.540
+and put buttons in and put labels in
+
+
+00:37:20.540 --> 00:37:21.680
+and that kind of stuff.
+
+
+00:37:21.680 --> 00:37:26.680
+And recently, they added a keyboard navigation type
+
+
+00:37:26.680 --> 00:37:28.520
+interface like this, where it puts a bar
+
+
+00:37:28.520 --> 00:37:30.380
+in the center of the screen.
+
+
+00:37:30.380 --> 00:37:31.920
+You type something in, so for example,
+
+
+00:37:31.920 --> 00:37:33.800
+in that application, and I know I'm going down
+
+
+00:37:33.800 --> 00:37:36.120
+a rabbit hole here, but bear with me a second.
+
+
+00:37:36.120 --> 00:37:40.880
+So let's say in this application you have a label
+
+
+00:37:40.880 --> 00:37:44.300
+and you want to take that label and wrap it in a HDAC
+
+
+00:37:44.300 --> 00:37:46.640
+because you're about to put something next to it.
+
+
+00:37:46.640 --> 00:37:48.260
+You can bring up this keyboard navigation,
+
+
+00:37:48.260 --> 00:37:50.780
+just type wrap, and it will say wrap in HDAC,
+
+
+00:37:50.780 --> 00:37:53.340
+wrap in VSTAC, and it's a really nice way,
+
+
+00:37:53.340 --> 00:37:56.340
+quick way of navigating around the application.
+
+
+00:37:56.340 --> 00:37:59.280
+Again, things like Raycast or Alfred,
+
+
+00:37:59.280 --> 00:38:01.780
+or even back in the day, Quicksilver,
+
+
+00:38:01.780 --> 00:38:03.500
+have been productivity tools
+
+
+00:38:03.500 --> 00:38:05.700
+that I've been a great fan of for many, many years.
+
+
+00:38:05.700 --> 00:38:06.820
+And of course, Spotlight, you know,
+
+
+00:38:06.820 --> 00:38:12.820
+Apple also have this within both iOS and Mac OS as a spotlight.
+
+
+00:38:12.820 --> 00:38:14.940
+Back to the plot,
+
+
+00:38:14.940 --> 00:38:20.020
+Darren Ford's package is an easy way to bring that kind of interface
+
+
+00:38:20.020 --> 00:38:22.580
+into a Mac OS application.
+
+
+00:38:22.580 --> 00:38:23.940
+So it is Mac OS specific.
+
+
+00:38:23.940 --> 00:38:30.660
+And you could very quickly build up something that has a text field where
+
+
+00:38:30.660 --> 00:38:35.540
+you can enter some text and then have a dropdown list of things that you provide
+
+
+00:38:36.260 --> 00:38:39.260
+to do actions within your application.
+
+
+00:38:39.260 --> 00:38:41.940
+And the main reason I want to recommend this
+
+
+00:38:41.940 --> 00:38:43.980
+is because I love this type of interface
+
+
+00:38:43.980 --> 00:38:45.900
+and anything that makes it easy for people
+
+
+00:38:45.900 --> 00:38:47.540
+to implement this kind of interface,
+
+
+00:38:47.540 --> 00:38:48.660
+I'm going to be a big fan of.
+
+
+00:38:48.660 --> 00:38:51.900
+- Yeah, yeah, really nice, really nice.
+
+
+00:38:51.900 --> 00:38:53.940
+I also use these extensively.
+
+
+00:38:53.940 --> 00:38:58.100
+I've actually, I've started mapping Command + P
+
+
+00:38:58.100 --> 00:39:02.740
+to those kind of command bars because I never print.
+
+
+00:39:04.100 --> 00:39:06.380
+So Xcode's quick open is command P
+
+
+00:39:06.380 --> 00:39:07.980
+because it's sort of a similar interface.
+
+
+00:39:07.980 --> 00:39:09.980
+So then I know in every app
+
+
+00:39:09.980 --> 00:39:12.280
+that has that sort of command interface,
+
+
+00:39:12.280 --> 00:39:14.480
+I just hit command P out of habit.
+
+
+00:39:14.480 --> 00:39:15.720
+- Oh, that's interesting.
+
+
+00:39:15.720 --> 00:39:18.360
+Yeah, I think this is great
+
+
+00:39:18.360 --> 00:39:20.160
+and anything that encourages people
+
+
+00:39:20.160 --> 00:39:23.560
+to think more about keyboard navigation
+
+
+00:39:23.560 --> 00:39:25.920
+in macOS applications is a good thing.
+
+
+00:39:25.920 --> 00:39:30.900
+It has AppKit and SwiftUI support, but only on macOS.
+
+
+00:39:32.200 --> 00:39:36.960
+also has great readme, good documentation, it's great.
+
+
+00:39:36.960 --> 00:39:37.800
+- Nice.
+
+
+00:39:37.800 --> 00:39:44.000
+Right, my second package is one that we
+
+
+00:39:44.000 --> 00:39:47.680
+probably mentioned before, I think you recently
+
+
+00:39:47.680 --> 00:39:51.080
+wrote about it on IOSF Weekly as well, and that's Lottie.
+
+
+00:39:51.080 --> 00:39:55.800
+But apart from it being a really nice package
+
+
+00:39:55.800 --> 00:40:00.800
+to create animations, there was a 4.0 release recently,
+
+
+00:40:01.680 --> 00:40:06.480
+like two weeks ago, I think it was just after we recorded our last episode.
+
+
+00:40:06.480 --> 00:40:10.320
+And the thing that caught my eye in that was,
+
+
+00:40:10.320 --> 00:40:13.080
+they moved, they changed how they,
+
+
+00:40:13.080 --> 00:40:15.560
+how they, where they do their rendering.
+
+
+00:40:15.560 --> 00:40:18.360
+So in versions prior to 4.0,
+
+
+00:40:18.360 --> 00:40:23.120
+they were using the CPU to run their rendering engine.
+
+
+00:40:23.120 --> 00:40:27.760
+And they've moved this to use core animation now.
+
+
+00:40:27.760 --> 00:40:29.480
+And they've been actually doing this under the hood.
+
+
+00:40:29.480 --> 00:40:45.880
+So starting from version 3.4, they had an opt-in flag where you could switch your rendering over from the CPU-based rendering over to the graphics card-based rendering, the core animation-based rendering.
+
+
+00:40:45.880 --> 00:40:53.320
+So they actually shipped this quite a while ago, but had this behind a feature flag and tested it.
+
+
+00:40:53.320 --> 00:40:57.880
+and the nice thing is this is completely API backwards compatible so you actually need
+
+
+00:40:57.880 --> 00:41:04.320
+to do nothing other than upgrading to 4.0 and the effect is quite remarkable.
+
+
+00:41:04.320 --> 00:41:10.160
+So there's a blog post and we'll have a link in the show notes that shows an example where
+
+
+00:41:10.160 --> 00:41:17.480
+the CPU utilization drops from around 15% in that example to zero, like literally zero,
+
+
+00:41:17.480 --> 00:41:22.680
+you see no effect of the animation running in instruments.
+
+
+00:41:22.680 --> 00:41:26.680
+I thought that really nice, where just upgrading a package will give you that sort of benefit.
+
+
+00:41:26.680 --> 00:41:34.080
+And that's, 15% can mean, you know, other stuff that you're doing is blocking your, you know,
+
+
+00:41:34.080 --> 00:41:38.680
+causing dropped frames and stuff, because, you know, 15% just might be a bit, you know,
+
+
+00:41:38.680 --> 00:41:41.480
+you might not have those 15% available.
+
+
+00:41:41.480 --> 00:41:45.280
+Yeah, it's a really significant performance increase.
+
+
+00:41:45.280 --> 00:41:49.480
+And to drop it so low is remarkable work.
+
+
+00:41:49.480 --> 00:41:51.480
+Yeah, yeah, really nice.
+
+
+00:41:51.480 --> 00:41:56.440
+And in particular that is, there's really just no effort required.
+
+
+00:41:56.440 --> 00:42:01.160
+Just, you know, upgrade and that's it. Fantastic. I love that.
+
+
+00:42:01.160 --> 00:42:03.240
+So you're right, I did write about this on iOS Dev Weekly,
+
+
+00:42:03.240 --> 00:42:06.840
+and one of the points that I made there again was about effort,
+
+
+00:42:06.840 --> 00:42:09.480
+not in effort in upgrading between this,
+
+
+00:42:09.480 --> 00:42:14.520
+but to be able to take a tool like Adobe After Effects,
+
+
+00:42:14.520 --> 00:42:18.520
+which is a really comprehensive animation tool,
+
+
+00:42:18.520 --> 00:42:21.760
+and also industry standard animation tool.
+
+
+00:42:21.760 --> 00:42:24.320
+So you've got an enormous pool of people
+
+
+00:42:24.320 --> 00:42:28.440
+who are skilled with creating animations in After Effects.
+
+
+00:42:28.440 --> 00:42:29.960
+And then to be able to have,
+
+
+00:42:29.960 --> 00:42:31.280
+and I know there are some limitations,
+
+
+00:42:31.280 --> 00:42:33.000
+you know, it can't do everything
+
+
+00:42:33.000 --> 00:42:34.960
+that After Effects can do, of course.
+
+
+00:42:34.960 --> 00:42:37.640
+But to be able to take vector animations,
+
+
+00:42:37.640 --> 00:42:41.120
+export them to a common format,
+
+
+00:42:41.120 --> 00:42:44.520
+and then have those able to be used in iOS apps,
+
+
+00:42:44.520 --> 00:42:46.960
+on the web, in Android apps,
+
+
+00:42:46.960 --> 00:42:53.800
+I love the idea of this because these little animations can be really effective in your
+
+
+00:42:53.800 --> 00:43:00.280
+applications user interface and to create them purely through code, of course it's possible.
+
+
+00:43:00.280 --> 00:43:02.080
+Of course it is.
+
+
+00:43:02.080 --> 00:43:08.040
+But you suddenly have a person who is not skilled with creating animations having to
+
+
+00:43:08.040 --> 00:43:13.480
+create animations and to allow people who have the skills with animations to be able
+
+
+00:43:13.480 --> 00:43:16.000
+to use their tool and then use that within your application.
+
+
+00:43:16.000 --> 00:43:19.120
+I think it's, I love everything about this package.
+
+
+00:43:19.120 --> 00:43:21.080
+- Yeah, that's a great point.
+
+
+00:43:21.080 --> 00:43:22.760
+It just makes it so much more accessible
+
+
+00:43:22.760 --> 00:43:24.840
+to create these things and spread it out, right?
+
+
+00:43:24.840 --> 00:43:26.800
+It doesn't have to funnel through,
+
+
+00:43:26.800 --> 00:43:30.280
+you know, that one person who does the coding necessarily.
+
+
+00:43:30.280 --> 00:43:33.240
+- Yeah, and even if you are doing the coding
+
+
+00:43:33.240 --> 00:43:34.920
+and you can do an animation,
+
+
+00:43:34.920 --> 00:43:38.160
+it's going to be more difficult to express
+
+
+00:43:38.160 --> 00:43:42.880
+what you were intending with just a pure animation.
+
+
+00:43:42.880 --> 00:43:44.920
+Now, animations for moving things off the screen,
+
+
+00:43:44.920 --> 00:43:48.880
+moving things on the screen, you know, hiding a piece of UI
+
+
+00:43:48.880 --> 00:43:50.680
+or bringing it back with an opacity fade
+
+
+00:43:50.680 --> 00:43:54.120
+or something like that, sure, write that in code.
+
+
+00:43:54.120 --> 00:43:56.640
+But as soon as you get into anything
+
+
+00:43:56.640 --> 00:43:58.680
+that's actually animating multiple things
+
+
+00:43:58.680 --> 00:44:00.840
+or, you know, things interacting with each other,
+
+
+00:44:00.840 --> 00:44:03.720
+I think there's a clear advantage
+
+
+00:44:03.720 --> 00:44:05.400
+to using a tool like this.
+
+
+00:44:05.400 --> 00:44:06.880
+- Or experimentation, right?
+
+
+00:44:06.880 --> 00:44:08.680
+You're not going to-- - Exactly.
+
+
+00:44:08.680 --> 00:44:10.880
+- You know, to quickly try a few things.
+
+
+00:44:10.880 --> 00:44:14.160
+I can't see that being very efficient if you code around,
+
+
+00:44:14.160 --> 00:44:16.480
+unless you randomize it.
+
+
+00:44:16.480 --> 00:44:18.880
+- It takes a long time to write good animations.
+
+
+00:44:18.880 --> 00:44:23.520
+Okay, my last one is a quick one,
+
+
+00:44:23.520 --> 00:44:26.460
+and it's by Wilhelm Hox,
+
+
+00:44:26.460 --> 00:44:28.520
+and it's called Array Builder Module.
+
+
+00:44:28.520 --> 00:44:32.520
+It uses a result builder,
+
+
+00:44:32.520 --> 00:44:33.680
+in fact, I can summarize this
+
+
+00:44:33.680 --> 00:44:35.160
+in literally one sentence.
+
+
+00:44:35.160 --> 00:44:37.380
+It uses a result builder to build arrays.
+
+
+00:44:37.380 --> 00:44:42.120
+So you can have a result builder style syntax
+
+
+00:44:42.120 --> 00:44:43.800
+like you have with SwiftUI,
+
+
+00:44:43.800 --> 00:44:46.880
+and every element that goes into that result builder
+
+
+00:44:46.880 --> 00:44:48.840
+ends up in an array.
+
+
+00:44:48.840 --> 00:44:51.160
+And there's not a lot to say about this package,
+
+
+00:44:51.160 --> 00:44:54.160
+but I thought it was worth mentioning.
+
+
+00:44:54.160 --> 00:44:55.000
+- Yeah, it's interesting.
+
+
+00:44:55.000 --> 00:44:56.380
+I saw that.
+
+
+00:44:56.380 --> 00:44:58.080
+I think it has a compelling use case
+
+
+00:44:58.080 --> 00:45:00.280
+because you might be tempted to think,
+
+
+00:45:00.280 --> 00:45:04.480
+come on, let's maybe not take result builders too far.
+
+
+00:45:04.480 --> 00:45:06.660
+But in certain scenarios,
+
+
+00:45:06.660 --> 00:45:10.020
+it makes it easier to declare an array
+
+
+00:45:10.020 --> 00:45:12.080
+where you include elements equiditionally
+
+
+00:45:12.080 --> 00:45:17.160
+and you don't want to build up a temporary array that you then modify in subsequent steps.
+
+
+00:45:17.160 --> 00:45:19.880
+So that's actually a nice use case.
+
+
+00:45:19.880 --> 00:45:22.000
+You're right and I think that's the key thing.
+
+
+00:45:22.000 --> 00:45:29.560
+And I think if there's anything to criticize about this package is that in the readme file,
+
+
+00:45:29.560 --> 00:45:33.400
+some of the examples that are in the readme file stretch what you should be doing with
+
+
+00:45:33.400 --> 00:45:35.720
+result codes a little bit.
+
+
+00:45:35.720 --> 00:45:41.600
+And I understand how that happened because you want to show off what this can do, but
+
+
+00:45:41.600 --> 00:45:53.280
+you end up with is fairly obscure, but I think there are good uses for this. And as you say,
+
+
+00:45:53.280 --> 00:45:58.760
+the conditional nature of putting elements in an array, I think, is the main use of this.
+
+
+00:45:58.760 --> 00:46:06.320
+Nice. Right, I'll be quick on my third and last one as well. This is not actually a new
+
+
+00:46:06.320 --> 00:46:16.320
+package it's a fork of Swift backtrace and I wanted to highlight that and it's by Nathan
+
+
+00:46:16.320 --> 00:46:21.760
+S. I could not find Nathan's last name it's not fully spelled out anywhere that I could
+
+
+00:46:21.760 --> 00:46:27.360
+find. So as I said it's a fork of Swift backtrace. Swift backtrace is a package that you can
+
+
+00:46:27.360 --> 00:46:32.480
+include so this is very server side Swift specific that you can include to make sure
+
+
+00:46:32.480 --> 00:46:38.880
+that if your program crashes you get a proper backtrace in your logs that you can then inspect.
+
+
+00:46:38.880 --> 00:46:44.640
+And the nice addition here is it tidies up the stacktrace you get out so it adds
+
+
+00:46:44.640 --> 00:46:50.320
+colors and splits off the path info it makes it just nicer to read. A simple addition that I
+
+
+00:46:50.320 --> 00:46:58.000
+hope might get upstreamed into the actual Swift backtrace package, but even that package isn't
+
+
+00:46:58.000 --> 00:47:02.000
+isn't going to be around forever because there's actually an effort to be made,
+
+
+00:47:02.000 --> 00:47:06.000
+as an effort being made to bring Backtrace
+
+
+00:47:06.000 --> 00:47:10.000
+support into the actual toolchain. And I hope this would also make it into
+
+
+00:47:10.000 --> 00:47:14.000
+that package, but I wanted to mention it because until that actually
+
+
+00:47:14.000 --> 00:47:18.000
+happens, Swift Backtrace is still a package that's being used in
+
+
+00:47:18.000 --> 00:47:22.000
+server-side Swift projects and that might be one you might be interested in using
+
+
+00:47:22.000 --> 00:47:26.000
+to make those a little nicer. - That's great. - So yeah, there you go.
+
+
+00:47:26.000 --> 00:47:28.280
+Swift Bacterias, a fork by Nathan S.
+
+
+00:47:28.280 --> 00:47:29.280
+Wonderful.
+
+
+00:47:29.280 --> 00:47:34.440
+Well, let's wrap it up there, shall we?
+
+
+00:47:34.440 --> 00:47:39.680
+I think the schedule over, because obviously we're heading into the holiday period at the
+
+
+00:47:39.680 --> 00:47:46.720
+moment, but I think the fact that we record on a bi-weekly schedule means that our next
+
+
+00:47:46.720 --> 00:47:53.400
+one would be released on the 5th of January, and I believe we should be okay to do that.
+
+
+00:47:53.400 --> 00:47:57.000
+So we're actually not going to take a holiday break this year.
+
+
+00:47:57.000 --> 00:47:58.560
+Exactly, yep.
+
+
+00:47:58.560 --> 00:48:01.360
+I guess see you all in the new year.
+
+
+00:48:01.360 --> 00:48:02.360
+Yeah.

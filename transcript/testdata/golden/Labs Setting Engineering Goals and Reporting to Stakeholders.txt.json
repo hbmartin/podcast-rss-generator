@@ -1,0 +1,2969 @@
+{
+    "version": "1.0.0",
+    "segments": [
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 0.0,
+            "endTime": 2.31,
+            "body": "We need to remember that less is more."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2.83,
+            "endTime": 4.78,
+            "body": "So don't come with 50 numbers."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 5.485,
+            "endTime": 7.658,
+            "body": "It's not going to work for the business discussion."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 8.307,
+            "endTime": 13.217,
+            "body": "Focus on what really matters and always show how that aligns with the business."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 13.417,
+            "endTime": 20.198,
+            "body": "So if you're talking about predictability, yeah, this project is landing on time or 90 percent of it is landing on time."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 20.198,
+            "endTime": 22.978,
+            "body": "And here's why, and here's the choices that I've made."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 23.608,
+            "endTime": 29.617,
+            "body": "That was when you start overcoming those glazed eyes of oh, some numbers on something that I don't understand."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 29.792,
+            "endTime": 33.518,
+            "body": "You're seeing success when you get, people are asking you to drill down."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 33.865,
+            "endTime": 34.164,
+            "body": "Right."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 34.164,
+            "endTime": 36.655,
+            "body": "They're asking you smart questions about the data that you're showing."
+        },
+        {
+            "speaker": "Conor Bronsdon",
+            "startTime": 37.292,
+            "endTime": 47.491,
+            "body": "Gardener just released their market guide, showing that software engineering intelligence platforms, help engineering leaders significantly improve both team productivity and value delivery."
+        },
+        {
+            "speaker": "Conor Bronsdon",
+            "startTime": 48.271,
+            "endTime": 54.212,
+            "body": "Through Gardner's in-depth analysis on the critical features of sci platforms and how they can be used to drive engineering excellence."
+        },
+        {
+            "speaker": "Conor Bronsdon",
+            "startTime": 54.491,
+            "endTime": 56.801,
+            "body": "Linear B was named as a representative vendor."
+        },
+        {
+            "speaker": "Conor Bronsdon",
+            "startTime": 57.222,
+            "endTime": 61.585,
+            "body": "And therefore we're giving away a complimentary copy of Gartner's sci market guide."
+        },
+        {
+            "speaker": "Conor Bronsdon",
+            "startTime": 61.783,
+            "endTime": 70.513,
+            "body": "Head to the link in the show notes to download your complimentary copy and learn how you can unlock the transformative potential of software engineering intelligence for your team."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 71.358,
+            "endTime": 73.028,
+            "body": "Hey, what's up, everyone?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 73.058,
+            "endTime": 77.478,
+            "body": "Welcome to another Labs episode of Dev Interrupted."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 78.138,
+            "endTime": 83.049,
+            "body": "I'm your host, Dan Lines, LinearB COO and co founder."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 83.739,
+            "endTime": 87.429,
+            "body": "And in our Labs episodes, we dive deep into data."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 88.338,
+            "endTime": 90.728,
+            "body": "And best practices that we find."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 90.789,
+            "endTime": 94.828,
+            "body": "And today we're talking engineering goals and reporting."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 95.118,
+            "endTime": 112.558,
+            "body": "So what we're going to do, we're going to unpack the data and strategies that elite engineering organizations use to set goals that drive predictable software delivery, and also how you can report on your progress to senior leadership."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 112.718,
+            "endTime": 114.269,
+            "body": "Very, very important thing to do."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 115.248,
+            "endTime": 133.949,
+            "body": "And I'm joined by a voice, who will be, I think, very familiar to many of our listeners, an expert who has helped countless organizations use goal setting to drive engineering improvement, LinearB's own CTO, Yishai Berry."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 134.269,
+            "endTime": 136.049,
+            "body": "Yishai, welcome to the pod."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 137.079,
+            "endTime": 137.658,
+            "body": "Thanks Dan."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 137.729,
+            "endTime": 138.498,
+            "body": "Great being here."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 139.688,
+            "endTime": 141.008,
+            "body": "Awesome to have you on, brother."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 141.639,
+            "endTime": 143.199,
+            "body": "We're going to dive right in."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 144.019,
+            "endTime": 149.468,
+            "body": "Our first topic in general is around goal setting in the dual mandate."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 150.368,
+            "endTime": 157.519,
+            "body": "I know our listeners are likely aware of the meanings of some of these acronyms that we're going to use here."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 157.598,
+            "endTime": 162.429,
+            "body": "There's a bunch of them, but I think they're crucial to the topic we're about to discuss."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 162.788,
+            "endTime": 177.794,
+            "body": "And so just to make sure we're aligned, I want to quickly Quickly maybe recap some of this terminology, so we'll probably talk OKRs, so OKRs, Objectives and Key Results, KPIs, Key Performance Indicators."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 177.954,
+            "endTime": 181.433,
+            "body": "These are like the most business oriented acronyms ever."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 182.213,
+            "endTime": 190.723,
+            "body": "Then we have SMART goals, S M A R T, which are Specific, Measurable, Achievable, Relevant, Time bound goals."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 191.493,
+            "endTime": 195.579,
+            "body": "So those might be some of the things that You know, some of the acronyms that we use."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 195.618,
+            "endTime": 202.938,
+            "body": "Now, one of the key things we've noticed in goal setting for engineering teams is a shift in what goals need to look like."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 202.938,
+            "endTime": 211.449,
+            "body": "So engineering leaders today have a dual mandate of both expected to be elite in operational excellence."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 211.449,
+            "endTime": 217.479,
+            "body": "So when we think of operational excellence, I almost think of this as like maybe where engineering teams started."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 217.479,
+            "endTime": 220.808,
+            "body": "It's to deliver the stuff in high quality."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 222.364,
+            "endTime": 223.653,
+            "body": "Do your engineering thing."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 223.663,
+            "endTime": 229.723,
+            "body": "We've been doing this, I don't know, 50 years now, 30 years now, ever since I was doing engineering."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 229.734,
+            "endTime": 231.313,
+            "body": "That's operational excellence."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 231.313,
+            "endTime": 233.604,
+            "body": "Like, be really good at engineering stuff."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 234.243,
+            "endTime": 238.883,
+            "body": "But the other side of it, and I think this is newer, I know it's newer."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 239.038,
+            "endTime": 242.838,
+            "body": "And I know the best engineering leaders talk to me about it all the time."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 242.838,
+            "endTime": 244.669,
+            "body": "A lot of our customers are doing this."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 244.919,
+            "endTime": 247.598,
+            "body": "It's alignment with business priorities."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 247.598,
+            "endTime": 250.588,
+            "body": "That's the second part of the dual mandate."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 250.628,
+            "endTime": 258.459,
+            "body": "And I think the reason is most organization has recognized, okay, our engineering team is like the lifeblood of the company."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 259.249,
+            "endTime": 261.168,
+            "body": "There's a product that goes along with it."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 261.168,
+            "endTime": 262.439,
+            "body": "We sell that product."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 262.439,
+            "endTime": 263.949,
+            "body": "Maybe it's a SaaS product."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 264.228,
+            "endTime": 267.559,
+            "body": "And if we're aligned on business objectives, we make more money."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 267.723,
+            "endTime": 268.954,
+            "body": "I think that's where it's coming from."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 268.954,
+            "endTime": 270.293,
+            "body": "And that's the other side of it."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 270.954,
+            "endTime": 273.213,
+            "body": "So I'm going to, that's kind of setting the table."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 273.213,
+            "endTime": 281.254,
+            "body": "So Yishai, how has that dual mandate impacted how R& D leaders need to think about goal setting?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 282.754,
+            "endTime": 283.043,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 283.043,
+            "endTime": 297.139,
+            "body": "So definitely a shift, like you said, if you, you, you go back, um, you know, when I started working in engineering management and leadership, there was always the focus of, Are we running a tight ship?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 297.228,
+            "endTime": 300.189,
+            "body": "Are we getting the most out of our developers and that spend?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 300.788,
+            "endTime": 310.108,
+            "body": "Are we, um, effective in, um, translating the, you know, the cost of having a dev team into new features?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 310.538,
+            "endTime": 311.329,
+            "body": "Velocity?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 311.668,
+            "endTime": 317.189,
+            "body": "There's a very old word in engineering management, um, but also quality."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 317.439,
+            "endTime": 321.048,
+            "body": "Are we good at what we do as a, as a, as an art, if you like?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 321.759,
+            "endTime": 346.649,
+            "body": "Um, and I think the strong engineering leaders always had the notion of being aligned with what the business needs, but it's more recent that this is surfacing as something that's measurable and something that needs to be, you know, Tied to how we set goals, how we measure our organization, ourselves, how we report to our peers to, you know, managing up."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 347.149,
+            "endTime": 353.178,
+            "body": "That is a little more recent and there's good ways to think about, are we aligned with the business?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 353.348,
+            "endTime": 354.978,
+            "body": "Are we not just running a tight ship?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 355.269,
+            "endTime": 363.598,
+            "body": "In an effective operation, we're also, um, tuned to what the business needs, which means it's, you know, this is about delighting customers."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 363.608,
+            "endTime": 373.218,
+            "body": "It's about understanding the things that move the needle for the business and for the business to grow or to take the next step in its journey."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 374.288,
+            "endTime": 379.749,
+            "body": "Um, we know software is eating the world and every company now is a software company."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 379.759,
+            "endTime": 381.678,
+            "body": "I think a lot of that shift came from that."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 382.213,
+            "endTime": 390.704,
+            "body": "It's no longer one of the departments which happens to, you know, dabble with writing code for some either internal or even a product."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 391.533,
+            "endTime": 393.684,
+            "body": "All the companies are becoming software companies."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 393.694,
+            "endTime": 396.704,
+            "body": "If you run an airline, you're a software company, right?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 397.033,
+            "endTime": 400.144,
+            "body": "If you're selling hamburgers, you're a software company."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 400.963,
+            "endTime": 409.113,
+            "body": "So, um, having the engineering department, you know, it's rapidly becoming stronger."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 409.244,
+            "endTime": 411.314,
+            "body": "More of the spend is going there."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 411.913,
+            "endTime": 421.584,
+            "body": "Decisions which used to live outside, like in IT, or even in other business processes, have become engineering, because engineering, uh, everything is software."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 421.973,
+            "endTime": 426.293,
+            "body": "So now even business processes, in many cases, are run by engineering."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 427.113,
+            "endTime": 435.884,
+            "body": "All that burden now means that we have to really focus on, are we building and investing our time and energy in the right places?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 436.329,
+            "endTime": 438.019,
+            "body": "Which is the business alignment part."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 438.769,
+            "endTime": 440.899,
+            "body": "You know what's so funny about what you were saying?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 440.899,
+            "endTime": 442.689,
+            "body": "I was thinking a lot about it."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 442.689,
+            "endTime": 443.829,
+            "body": "I think it's really smart."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 444.468,
+            "endTime": 450.999,
+            "body": "And it's almost like this dual mandate, honestly, has kinda been there forever in a sense."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 451.048,
+            "endTime": 455.908,
+            "body": "Right now, and for the forever future, it's like mandatory."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 456.139,
+            "endTime": 462.218,
+            "body": "Because of all the reasons that you said, every, every company is a software company, even if you sell hamburgers, you're a software company."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 462.288,
+            "endTime": 462.519,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 462.559,
+            "endTime": 475.119,
+            "body": "But if I think back to when I first started, even in development, very, very long time ago, the best leaders, people would say, Oh yeah, I love that person."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 475.119,
+            "endTime": 475.338,
+            "body": "Oh yeah."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 475.338,
+            "endTime": 476.509,
+            "body": "Why do you love that person?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 476.538,
+            "endTime": 481.899,
+            "body": "Well, that person can talk about when is the project going to be delivered?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 481.899,
+            "endTime": 485.088,
+            "body": "They can talk to the CEO about what the CEO's needs are."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 485.483,
+            "endTime": 489.613,
+            "body": "What are the most important things that they were almost like amazing translator."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 489.613,
+            "endTime": 496.043,
+            "body": "They had all of the engineering practices of efficiency, quality, you know, low change failure rate."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 496.204,
+            "endTime": 507.913,
+            "body": "And they had this other ability to say, okay, I know exactly what the business needs and I can talk to all of the go to market team about how my team engineering is going to hit those goals."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 508.454,
+            "endTime": 509.923,
+            "body": "Like those were the best leaders."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 510.173,
+            "endTime": 512.803,
+            "body": "Now I think it's just like mandatory to be like that."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 513.394,
+            "endTime": 514.163,
+            "body": "Would you agree?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 514.163,
+            "endTime": 516.364,
+            "body": "Like the people you think about who are like, great."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 516.703,
+            "endTime": 522.474,
+            "body": "I think it's, it's both becoming mandatory or a sign of, yeah, this is a strong leader for engineering."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 523.183,
+            "endTime": 526.244,
+            "body": "Um, it's also becoming much more explicit."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 526.663,
+            "endTime": 529.524,
+            "body": "It's not just a soft thing that you need to have."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 529.553,
+            "endTime": 538.433,
+            "body": "There's, you need to be talking about very specific, um, items and, you know, interact with the rest of the business in specific ways."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 538.433,
+            "endTime": 538.453,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 539.163,
+            "endTime": 553.688,
+            "body": "Because if you're not going to be predictable and empower the go to market side of the house Then there's a built in delay between when features and capabilities are ready and when the field can actually sell them, for example, uh, or support them."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 554.479,
+            "endTime": 557.849,
+            "body": "So it's becoming much more structured, I think."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 558.278,
+            "endTime": 558.828,
+            "body": "Yeah, you're right."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 558.828,
+            "endTime": 563.208,
+            "body": "I mean, and that I think leads us to the data and the goals."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 564.259,
+            "endTime": 565.739,
+            "body": "So now that it is."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 566.139,
+            "endTime": 569.928,
+            "body": "Mandatory, and it needs to be explicit."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 570.448,
+            "endTime": 577.793,
+            "body": "How can engineering leaders set goals that help them achieve both sides of this"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 578.775,
+            "endTime": 583.635,
+            "body": "you know, we're now taking this to a more tangible step of, okay, I need to set goals."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 585.035,
+            "endTime": 589.326,
+            "body": "Like in every business unit, I'm not going to measure everything or goal around everything."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 589.566,
+            "endTime": 590.245,
+            "body": "It's too much."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 590.916,
+            "endTime": 592.346,
+            "body": "You need to apply some focus."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 592.806,
+            "endTime": 599.306,
+            "body": "Um, realizing and understanding that the dual mandate means that, okay, I need to think about at least the two sides."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 599.336,
+            "endTime": 603.975,
+            "body": "I need goals around my operational excellence, about our productivity."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 604.755,
+            "endTime": 608.716,
+            "body": "Um, but I also have to have some goals around the business alignment."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 610.716,
+            "endTime": 619.405,
+            "body": "So, the first, like, um, you know, actionable step is make sure you have a goal on each of each side of that dual mandate."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 620.035,
+            "endTime": 624.105,
+            "body": "A goal on the business alignment part can be around your predictability."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 625.015,
+            "endTime": 633.015,
+            "body": "Am I being, like, able to deliver on promises or be predictable about delivery in a consistent way?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 634.025,
+            "endTime": 652.041,
+            "body": "It could be about, um, are we spending enough on Um, on building new value, are we able to focus enough of our efforts in building and creating new value and not just chasing, uh, putting out fires, uh, just, you know, keeping the lights on?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 652.63,
+            "endTime": 654.76,
+            "body": "Do we have enough of our spin on innovation?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 655.461,
+            "endTime": 664.311,
+            "body": "Or it could be about the key projects, the key initiatives that the business really cares about and making sure that we are investing enough in these."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 664.655,
+            "endTime": 666.946,
+            "body": "Not just in our plans, but also in actuals."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 667.836,
+            "endTime": 672.485,
+            "body": "If I needed 20 people on that project, am I actually getting 20 people on that project?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 673.306,
+            "endTime": 677.115,
+            "body": "These are the kinds of goals we can take for the business alignment side."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 677.326,
+            "endTime": 686.316,
+            "body": "And then on operational excellence, there's, things like cycle time, like understanding our, um, developer experience, our quality."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 686.676,
+            "endTime": 697.395,
+            "body": "There's a bunch of goals and metrics depending on where you are in where what's really important for you as an organization I think these things are a little easier to measure because they've been around longer."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 697.625,
+            "endTime": 705.701,
+            "body": "There's a little more And even on intuition, engineering leaders tend to gravitate to those areas."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 705.961,
+            "endTime": 709.5,
+            "body": "So, have one on each is a good starting point."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 710.15,
+            "endTime": 710.35,
+            "body": "Yeah,"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 710.35,
+            "endTime": 730.951,
+            "body": "I think what we want to do, of course, what I want to do on this pod, we have a lot of pods in Dev Interrupted that are about the DORA metrics, cycle time, change failure rate, deployment frequency, MTTR, then you have all your leading indicators, PR size, rework rate, I'm going to put it aside for a second."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 731.311,
+            "endTime": 733.51,
+            "body": "Let's talk about where the industry is going."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 734.12,
+            "endTime": 739.071,
+            "body": "And you said the one that caught my ear the most was predictability."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 739.63,
+            "endTime": 750.12,
+            "body": "When I talk to engineering leaders and what I know from my past career, the question that's always asked on the engineering leader is like, when is the thing going to be done?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 750.37,
+            "endTime": 751.15,
+            "body": "Delivered to me."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 752.041,
+            "endTime": 753.301,
+            "body": "When do I get my value?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 753.341,
+            "endTime": 757.62,
+            "body": "When do I get to close a big deal because you have this new feature that came out?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 757.62,
+            "endTime": 759.311,
+            "body": "When do I get to retain a customer?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 760.561,
+            "endTime": 765.66,
+            "body": "So if you don't mind, let's focus in on predictability."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 766.11,
+            "endTime": 772.701,
+            "body": "And one of the, you know, KPIs that we talk about at LinearB would be the planning accuracy."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 772.791,
+            "endTime": 775.461,
+            "body": "It sounds cool, and I think it's a great KPI."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 775.73,
+            "endTime": 783.431,
+            "body": "Maybe you can start there, but what are the other things that come to mind for you when you think, Delivering projects on time, predictability."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 784.27,
+            "endTime": 784.63,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 784.64,
+            "endTime": 811.115,
+            "body": "So I'll start by saying, you talk with engineering leaders and with, with business leaders, the CEOs and you know, the peers around the table, like the marketing leaders, the sales leaders, and As you look, as you look into more larger companies, larger businesses, uh, forward thinkers, they are starting to trade volume or velocity for predictability."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 811.436,
+            "endTime": 811.735,
+            "body": "Right?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 811.785,
+            "endTime": 817.145,
+            "body": "I can take a little less production, but at a better predictability."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 817.441,
+            "endTime": 817.791,
+            "body": "Right?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 817.85,
+            "endTime": 818.081,
+            "body": "Why?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 818.081,
+            "endTime": 821.441,
+            "body": "Because software is, you know, going agile."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 822.03,
+            "endTime": 825.48,
+            "body": "It's all about trying to move fast, even break things."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 826.471,
+            "endTime": 832.37,
+            "body": "Tight learning cycles, but then there's the whole surrounding part of the business that needs that predictability."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 832.9,
+            "endTime": 841.125,
+            "body": "You're not going to be able to pull up a marketing campaign and Uh, in a day, just because they release the agile software team just delivered, right?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 841.265,
+            "endTime": 842.285,
+            "body": "You have to prepare."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 842.755,
+            "endTime": 844.066,
+            "body": "You have to line up things."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 844.145,
+            "endTime": 847.816,
+            "body": "Um, not everything in the world can be as agile as software delivery."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 848.475,
+            "endTime": 850.666,
+            "body": "So predictability becomes more and more important."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 850.895,
+            "endTime": 869.296,
+            "body": "As you grow as a business, as you have more customers, uh, more varied set of customers, um, and, um, with that in mind, looking at the, the, the, Specific metrics and the specific ways you can measure and goal around predictability becomes really important."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 869.725,
+            "endTime": 873.426,
+            "body": "So, planning accuracy, you know, that's a good place to start."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 873.655,
+            "endTime": 877.566,
+            "body": "This is about understanding how we deliver sprint over sprint."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 878.316,
+            "endTime": 880.441,
+            "body": "Is our planning and delivery, are they aligned?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 880.441,
+            "endTime": 882.605,
+            "body": "Are we able to deliver what we promise?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 883.441,
+            "endTime": 888.1,
+            "body": "First to ourselves, then to our surroundings, um, on a sprint by sprint basis."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 888.431,
+            "endTime": 898.62,
+            "body": "If you're able to master that, you're on a path to being able to predictably deliver a project, which is like multi sprint, maybe a quarter, uh, a bigger chunk of work."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 899.061,
+            "endTime": 902.64,
+            "body": "And then you have, when you look at, you know, you zoom out, you look at a project."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 903.12,
+            "endTime": 909.535,
+            "body": "Now you have, um, you can talk about, How much of the project scope did I hit?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 910.296,
+            "endTime": 912.515,
+            "body": "Did I, is it getting, getting in on time?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 913.176,
+            "endTime": 915.426,
+            "body": "And it's not just about goaling and reporting."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 915.436,
+            "endTime": 921.605,
+            "body": "You can also make some decisions before the project ends to optimize what you're landing with."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 921.865,
+            "endTime": 924.086,
+            "body": "You're not always going to deliver 100 percent of everything."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 924.086,
+            "endTime": 924.596,
+            "body": "We know that."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 925.875,
+            "endTime": 929.365,
+            "body": "There is a time when you look at the data and you say, okay, I need to change something."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 930.035,
+            "endTime": 932.375,
+            "body": "Maybe give up on these scopes, some items."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 932.836,
+            "endTime": 935.405,
+            "body": "Focus my energy on the ones that are almost there."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 936.005,
+            "endTime": 945.395,
+            "body": "So, understanding the, the burn up, if you like, for a project, or for your whole, your whole delivery in a quarter or similar planning cycle."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 945.966,
+            "endTime": 955.296,
+            "body": "Making adjustments, but also tracking quarter over quarter, are we delivering enough of what we promised, enough of what we planned, in good quality."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 956.015,
+            "endTime": 958.385,
+            "body": "That would be a great goal to, to track and improve."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 959.816,
+            "endTime": 971.416,
+            "body": "I mean, you talked about kind of the maturity I would call it, of the space maybe moving from I always have like the CEO in mind'cause I have this like CEO archetype of like, just give me all the stuff."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 971.416,
+            "endTime": 972.645,
+            "body": "Like do it fast."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 972.65,
+            "endTime": 975.556,
+            "body": "Yesterday, there's, yeah, yesterday, I needed it yesterday."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 975.556,
+            "endTime": 977.535,
+            "body": "A little more maturity of like, okay."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 978.061,
+            "endTime": 983.791,
+            "body": "I value predictability because I understand my marketing team can be in sync."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 983.85,
+            "endTime": 986.681,
+            "body": "My enablement team for sales can be in sync."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 986.681,
+            "endTime": 988.36,
+            "body": "My enablement team for CS."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 989.321,
+            "endTime": 994.0,
+            "body": "The way that we go out with this product matters to me or this feature matters to me."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 994.03,
+            "endTime": 996.701,
+            "body": "Maybe you have like a Gartner interview coming, coming up."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 996.721,
+            "endTime": 1002.201,
+            "body": "The predictability matters a lot for the whole business to be in sync."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1002.99,
+            "endTime": 1005.451,
+            "body": "And we, we have this in, in our LinearB product."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1005.451,
+            "endTime": 1012.821,
+            "body": "It's like, I remember the CEO used to ask me, okay, is the project going to deliver on time?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1013.41,
+            "endTime": 1017.6,
+            "body": "And I would say, yeah, because it's like, what else can you say?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1018.551,
+            "endTime": 1021.24,
+            "body": "And then it's like, uh, like, why would you want to say no?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1021.26,
+            "endTime": 1022.791,
+            "body": "Then it's like, you have no confidence."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1022.801,
+            "endTime": 1029.33,
+            "body": "Like, yeah, it's going to deliver on time, but then it's like, yeah, but you said that last time with the last project and it was like three months late."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1029.83,
+            "endTime": 1030.82,
+            "body": "And it's like, oh yeah."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1031.24,
+            "endTime": 1032.09,
+            "body": "Sorry about that."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1032.74,
+            "endTime": 1036.07,
+            "body": "That's like a very like qualitative conversation."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1036.08,
+            "endTime": 1038.51,
+            "body": "Now, here's the new conversation."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1038.931,
+            "endTime": 1049.461,
+            "body": "You pull up, you know, our feature is called forecasting, but you pull up your for your project forecasting mod module and you say, Yeah, I do think it will be delivered on time."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1049.461,
+            "endTime": 1050.25,
+            "body": "There's some risk."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1050.25,
+            "endTime": 1051.411,
+            "body": "I want to talk to you about it."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1052.73,
+            "endTime": 1052.941,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1052.941,
+            "endTime": 1054.171,
+            "body": "Click into the project."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1054.82,
+            "endTime": 1054.98,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1054.98,
+            "endTime": 1056.28,
+            "body": "It"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1056.28,
+            "endTime": 1061.181,
+            "body": "also moves from yes, no to the project is not a monolith."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1061.191,
+            "endTime": 1062.56,
+            "body": "So there's a bunch of things."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1062.651,
+            "endTime": 1063.871,
+            "body": "These are golden."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1064.175,
+            "endTime": 1065.105,
+            "body": "These are in risk."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1065.655,
+            "endTime": 1069.675,
+            "body": "It's a yes, but, or we have to make decisions now."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1069.705,
+            "endTime": 1073.766,
+            "body": "I think it's like, yes, but, and let me show you, let me bring you in."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1074.205,
+            "endTime": 1074.786,
+            "body": "You know what?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1074.816,
+            "endTime": 1077.715,
+            "body": "The planning accuracy for this project looks good."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1077.715,
+            "endTime": 1083.105,
+            "body": "Let's say it means that the teams are able to deliver on what they say they're going to deliver."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1083.105,
+            "endTime": 1085.395,
+            "body": "I'm, I'm, I'm doing kind of a conversation."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1085.405,
+            "endTime": 1087.435,
+            "body": "Let's pretend you're my boss or the CTO."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1087.955,
+            "endTime": 1088.836,
+            "body": "I'm an engineering leader."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1089.135,
+            "endTime": 1090.746,
+            "body": "The planning accuracy looks good here."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1091.046,
+            "endTime": 1091.875,
+            "body": "So that's a good thing."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1091.875,
+            "endTime": 1092.766,
+            "body": "It's giving me confidence."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1093.76,
+            "endTime": 1097.28,
+            "body": "But there's something that is concerning me on this project."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1097.29,
+            "endTime": 1098.401,
+            "body": "And I want to show you something."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1098.401,
+            "endTime": 1100.01,
+            "body": "It's our cycle time on this project."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1100.411,
+            "endTime": 1108.56,
+            "body": "I'm seeing bottlenecks here and I'm seeing some bottlenecks because it looks like only one person is doing all of our reviews."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1108.58,
+            "endTime": 1112.191,
+            "body": "We have a, it's a senior and we have a lot of juniors on this project."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1112.211,
+            "endTime": 1117.49,
+            "body": "Now I know that this project's due in six months from now, but I want to call out this people risk to you."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1117.986,
+            "endTime": 1119.385,
+            "body": "It's a very mature conversation."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1119.415,
+            "endTime": 1121.526,
+            "body": "I'd like to add another senior to this."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1122.125,
+            "endTime": 1126.786,
+            "body": "And the reason I want to add a senior is to increase my probability to deliver on time."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1127.715,
+            "endTime": 1133.715,
+            "body": "And even better now, I know this is like futuristic stuff, but this is what we're working on with some of our customers."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1134.155,
+            "endTime": 1141.215,
+            "body": "Let me show you a Monte Carlo simulation that if we were to do this, why I think it will help us deliver on time."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1141.496,
+            "endTime": 1143.655,
+            "body": "Now I'm talking with data."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1144.155,
+            "endTime": 1145.875,
+            "body": "I'm talking with risk levels."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1145.875,
+            "endTime": 1152.395,
+            "body": "I'm talking with Simulation to the business of like, let me bring you in of what it really takes to forecast."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1152.746,
+            "endTime": 1157.705,
+            "body": "I think that's really cool and kind of like next level mature conversation."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1157.756,
+            "endTime": 1158.816,
+            "body": "What do you think about that?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1159.576,
+            "endTime": 1164.266,
+            "body": "Yeah, I really like the the ability to take this from uh, is this on time?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1164.266,
+            "endTime": 1164.486,
+            "body": "Yes."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1164.486,
+            "endTime": 1166.776,
+            "body": "No, or why isn't it on time?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1166.776,
+            "endTime": 1166.976,
+            "body": "Right."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1166.976,
+            "endTime": 1167.955,
+            "body": "That's the common question."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1167.955,
+            "endTime": 1169.076,
+            "body": "Why are you guys late?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1169.905,
+            "endTime": 1173.536,
+            "body": "You know, using data, we can move the conversation to let's, let's make some decisions."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1174.375,
+            "endTime": 1188.855,
+            "body": "It's probably not just magically create a new resource, but let's move someone from a project that is doing well and maybe has some capacity, uh, that, that they can contribute here because I have a bottleneck here."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1189.286,
+            "endTime": 1199.965,
+            "body": "The data is showing me the kind of risk that I can alleviate with moving a resource and maybe not lose so much on the other project because the signals there are different."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1201.026,
+            "endTime": 1201.296,
+            "body": "What?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1202.096,
+            "endTime": 1211.756,
+            "body": "When the conversation moves to making choices and you see the choice you see the you know the outcomes it becomes a much Much stronger conversation."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1212.256,
+            "endTime": 1219.576,
+            "body": "Okay, so let's do a little summary on the predictability side, we have some KPIs, right?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1220.076,
+            "endTime": 1221.526,
+            "body": "We have planning accuracy."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1221.776,
+            "endTime": 1222.596,
+            "body": "That's a good one."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1222.655,
+            "endTime": 1224.355,
+            "body": "We have capacity accuracy."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1224.516,
+            "endTime": 1225.236,
+            "body": "That's a good one."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1225.665,
+            "endTime": 1228.675,
+            "body": "We have project forecasting with simulations."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1228.695,
+            "endTime": 1229.756,
+            "body": "That's a good one."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1230.135,
+            "endTime": 1233.306,
+            "body": "And now imagine having that for all of your projects."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1233.465,
+            "endTime": 1235.096,
+            "body": "You see them all in one view."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1235.296,
+            "endTime": 1235.976,
+            "body": "That's awesome."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1236.615,
+            "endTime": 1239.665,
+            "body": "Now there's kind of this like what you're saying."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1240.776,
+            "endTime": 1242.855,
+            "body": "I have to make decisions of what, what to do."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1243.685,
+            "endTime": 1247.915,
+            "body": "Can you talk to us a little bit about goals around resource allocation?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1247.915,
+            "endTime": 1250.915,
+            "body": "Cause sometimes a lot of those decisions might be, ah, I don't know."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1250.915,
+            "endTime": 1253.635,
+            "body": "We just were understaffed on this project."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1253.645,
+            "endTime": 1255.256,
+            "body": "Is it really the top project?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1255.266,
+            "endTime": 1259.246,
+            "body": "I could move this one faster if we could delay this other one, but I got to shift some people."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1259.756,
+            "endTime": 1264.355,
+            "body": "Talk to me about resource allocation, investment profile, goals around that kind of stuff."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1264.935,
+            "endTime": 1270.395,
+            "body": "So both resource allocation and investment profile are ways to look at the actual spin."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1270.405,
+            "endTime": 1271.865,
+            "body": "Where is my energy going?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1272.056,
+            "endTime": 1273.526,
+            "body": "Where are my people deployed?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1274.205,
+            "endTime": 1277.816,
+            "body": "Not just in, in, on paper, on plan, but what is actually happening?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1278.576,
+            "endTime": 1291.625,
+            "body": "And I think a very common, um, cycle, and we've seen, we've all seen this, where Management sits at the beginning of the quarter, lays out a plan, allocates resources."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1291.625,
+            "endTime": 1293.945,
+            "body": "Yeah, let's take 20 people for this project."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1294.346,
+            "endTime": 1296.086,
+            "body": "Let's put this team on that project."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1296.526,
+            "endTime": 1297.516,
+            "body": "This is important for us."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1297.516,
+            "endTime": 1300.266,
+            "body": "It's a new product or a new feature."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1300.395,
+            "endTime": 1305.276,
+            "body": "Let's, um, um, concentrate some work and resources there."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1305.756,
+            "endTime": 1306.026,
+            "body": "Great."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1306.036,
+            "endTime": 1306.996,
+            "body": "The plan looks good."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1307.56,
+            "endTime": 1309.81,
+            "body": "Then reality hits, right?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1310.24,
+            "endTime": 1313.961,
+            "body": "So this 20 people project, yeah, on paper there's, they're all there."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1314.361,
+            "endTime": 1321.5,
+            "body": "But three you haven't even hired yet, two are busy, uh, with an old project that they weren't able to ramp down quickly enough."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1321.925,
+            "endTime": 1324.655,
+            "body": "Um, another one is pulled to put out fires elsewhere."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1325.056,
+            "endTime": 1326.155,
+            "body": "Reality is different."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1326.776,
+            "endTime": 1330.32,
+            "body": "And then the quarter ends and why have we missed?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1330.32,
+            "endTime": 1334.955,
+            "body": "You spend time to realize that actually we didn't have the 20 people."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1335.405,
+            "endTime": 1348.496,
+            "body": "So research allocation is a way to look at what is the actual spend across projects or initiatives or any kind of like slicing the pieces of work in your, um, dev work and course correcting."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1349.135,
+            "endTime": 1350.715,
+            "body": "Yeah, this is what is actually happening."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1350.726,
+            "endTime": 1351.715,
+            "body": "This is what we wanted."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1352.3,
+            "endTime": 1353.53,
+            "body": "We can now course correct."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1354.361,
+            "endTime": 1360.161,
+            "body": "We can help people ramp up more quickly or ramp down more quickly if a project needs that."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1360.621,
+            "endTime": 1362.191,
+            "body": "Or we realize that we have a gap."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1362.221,
+            "endTime": 1363.381,
+            "body": "Now we can make a choice."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1363.421,
+            "endTime": 1363.941,
+            "body": "Okay."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1364.23,
+            "endTime": 1365.701,
+            "body": "Reality is a bit different."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1366.371,
+            "endTime": 1374.171,
+            "body": "Let's make a choice about what to, um, you know, what to give up on, what to invest more in and so on."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1374.384,
+            "endTime": 1374.743,
+            "body": "Totally"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1374.743,
+            "endTime": 1375.423,
+            "body": "makes sense."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1375.721,
+            "endTime": 1379.721,
+            "body": "And now we can have kind of that educated conversation with the business."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1380.144,
+            "endTime": 1394.693,
+            "body": "Okay, so now that we talked about kind of both sides of the dual mandate, some of the KPIs that you can use for engineering efficiency, we have our DORA metrics, we have some leading indicators, we talked a lot on the business."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1395.479,
+            "endTime": 1398.909,
+            "body": "Alignment side, predictability, very, very important."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1399.719,
+            "endTime": 1408.368,
+            "body": "I want to ask you, in terms of actually setting goals against these KPIs, where in the org structure should I start?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1408.368,
+            "endTime": 1411.348,
+            "body": "Is it like a top down thing, a bottom up thing?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1411.348,
+            "endTime": 1413.078,
+            "body": "What are your, what are your thoughts on that?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1413.402,
+            "endTime": 1414.061,
+            "body": "That's a good one."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1414.061,
+            "endTime": 1416.051,
+            "body": "I think, uh, there's probably not one answer."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1416.58,
+            "endTime": 1420.02,
+            "body": "first of all, there's the org culture that you have to take into account."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1420.871,
+            "endTime": 1438.151,
+            "body": "Um, in some, um, respects, and I think mostly on the engineering, uh, like operational efficiency, there's a lot of sense in doing this bottoms up and letting the teams decide on which goals to take and what, like, how to tune the goals."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1438.75,
+            "endTime": 1447.83,
+            "body": "Because, uh, in many modern, um, you know, development organizations, you want to give autonomy and you have the right people that you can give autonomy."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1448.221,
+            "endTime": 1451.26,
+            "body": "The team knows how it's delivering."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1451.631,
+            "endTime": 1455.671,
+            "body": "They have, maybe even between the teams, there's a difference in how they're working."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1455.871,
+            "endTime": 1459.941,
+            "body": "Some could be using scrum, some could be using Kanban, some could be using a combination."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1460.441,
+            "endTime": 1461.381,
+            "body": "Some are building."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1462.056,
+            "endTime": 1465.945,
+            "body": "You know, SaaS front end, some are doing mobile apps."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1466.145,
+            "endTime": 1470.915,
+            "body": "So very different ways to measure and to benchmark."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1471.496,
+            "endTime": 1474.496,
+            "body": "So giving autonomy and the bottoms up approach makes a lot of sense."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1474.615,
+            "endTime": 1482.375,
+            "body": "And also very strong culture, positive of, you know, it's not like a big brother watching over your back and measuring you."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1482.556,
+            "endTime": 1485.78,
+            "body": "It's more like This is a way for you to measure yourselves and report up."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1486.861,
+            "endTime": 1491.891,
+            "body": "Um, and it still makes sense in these cases to have a top down focus."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1492.391,
+            "endTime": 1499.08,
+            "body": "Yeah, we know as a company, as a dev work, we have, we want to focus on being more efficient."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1499.5,
+            "endTime": 1507.54,
+            "body": "Let's make sure we look at cycle time top down because it's a good efficiency and bottleneck discovery kind of metric."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1508.09,
+            "endTime": 1513.23,
+            "body": "Um, if we have a quality issue or a quality, initiative going on in the company."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1513.776,
+            "endTime": 1518.066,
+            "body": "We can make that a top down and bake that together with with bottoms up."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1518.496,
+            "endTime": 1518.846,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1518.976,
+            "endTime": 1528.346,
+            "body": "On the business alignment side, I think it's typically running top down with, you know, org level or VP level and then departments or groups."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1528.826,
+            "endTime": 1532.626,
+            "body": "Aligning either to the product lines or the way the org is built."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1533.237,
+            "endTime": 1540.666,
+            "body": "Um, you want predictability to be measured across your teams or groups and then aggregate it up."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1541.237,
+            "endTime": 1542.817,
+            "body": "That makes a lot of sense coming top down."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1543.413,
+            "endTime": 1544.923,
+            "body": "it's kind of like a mix."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1544.923,
+            "endTime": 1559.128,
+            "body": "One thing that I've seen, especially with the larger organizations, Let's say you have a hundred developers plus 5, 2 50 developers, 500 developers, and then I don't know, we, I'm working with companies that have 6,000 developers."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1559.939,
+            "endTime": 1566.179,
+            "body": "I think that there does need to be something top down around standardization, I'll call it."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1566.558,
+            "endTime": 1575.288,
+            "body": "Now, of course you want bottom up adoption, but when I think of standardization, it's kind of like, here is how we're going to measure cycle time."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1575.838,
+            "endTime": 1583.298,
+            "body": "This is our standard practice of when cycle time starts versus when cycle time ends, and that's the standard for our business."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1583.878,
+            "endTime": 1587.719,
+            "body": "Here is how we're going to measure sprint planning accuracy."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1588.308,
+            "endTime": 1601.038,
+            "body": "This is, you know, how we start it either when one day into the sprint or right when the sprint So, what I've seen is when you bring these top down standards It kind of says, when do things start and stop?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1601.078,
+            "endTime": 1604.148,
+            "body": "And what do the, what are the KPIs that we care about?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1604.909,
+            "endTime": 1606.618,
+            "body": "Now, after that, we care."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1606.618,
+            "endTime": 1609.288,
+            "body": "Yeah, we care."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1609.288,
+            "endTime": 1611.159,
+            "body": "Now you have the standards."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1611.209,
+            "endTime": 1612.118,
+            "body": "We do care."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1612.868,
+            "endTime": 1617.249,
+            "body": "I think it's more go deploy this with your teams and set your goals around this."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1617.663,
+            "endTime": 1618.933,
+            "body": "Here's our high level goals."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1619.044,
+            "endTime": 1620.243,
+            "body": "You go make it happen."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1620.253,
+            "endTime": 1622.134,
+            "body": "That's where I've seen it works really well."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1622.453,
+            "endTime": 1624.523,
+            "body": "You have top down standards."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1625.034,
+            "endTime": 1632.673,
+            "body": "You say the KPIs that the company or the business unit cares about, and you give some high level guidance on the goals."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1632.673,
+            "endTime": 1634.743,
+            "body": "Now you go make it happen for your team."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1635.554,
+            "endTime": 1637.834,
+            "body": "That's, that's kind of what I've seen work really well."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1639.094,
+            "endTime": 1646.604,
+            "body": "And I think that lets the, the, the teams or the, you know, lower parts of the org focus a little on the leading indicators."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1646.949,
+            "endTime": 1650.878,
+            "body": "Sometimes on more technical, um, ways to look at the problem."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1651.159,
+            "endTime": 1660.578,
+            "body": "So you could, you're thinking about cycle time as a top down, but then for a team to improve their cycle time, they could be looking at smaller PRs."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1660.739,
+            "endTime": 1666.439,
+            "body": "They could be looking at how long does it take me to pick up a PR for reviews, a pickup time."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1666.868,
+            "endTime": 1670.838,
+            "body": "There are the ways to implement that goal are a little more detailed."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1671.163,
+            "endTime": 1674.933,
+            "body": "And another team may look at different, uh, they have different bottlenecks."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1674.943,
+            "endTime": 1678.824,
+            "body": "So they'll, they're going to take a goal around a better review process."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1678.923,
+            "endTime": 1681.104,
+            "body": "Or can I automate away some of my reviews?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1682.294,
+            "endTime": 1683.023,
+            "body": "Absolutely."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1684.423,
+            "endTime": 1703.034,
+            "body": "Now, what I want to do in the last few minutes of this pod, is talk a little bit more about the business stakeholders and what it takes for a VP of engineering, a CTO, a director of a business unit."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1704.074,
+            "endTime": 1707.423,
+            "body": "Maybe even you're communicating, you know, to the board."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1707.513,
+            "endTime": 1714.929,
+            "body": "We have, you know, You know, from LinearB board slides that you can use to communicate, you know, these KPIs."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1715.749,
+            "endTime": 1719.919,
+            "body": "But what can you tell us, maybe an overview or some tips and tricks?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1719.919,
+            "endTime": 1721.328,
+            "body": "I'm an engineering leader."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1721.729,
+            "endTime": 1723.638,
+            "body": "I'm measuring this kind of stuff."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1724.148,
+            "endTime": 1726.538,
+            "body": "How do I approach business stakeholders?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1726.538,
+            "endTime": 1727.638,
+            "body": "I've never done it before."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1727.648,
+            "endTime": 1729.038,
+            "body": "What do I, what do I do?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1729.536,
+            "endTime": 1729.766,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1729.766,
+            "endTime": 1736.726,
+            "body": "So, um, first, you know, a lot of us hit that wall where, uh, it feels like no one cares at the beginning."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1737.586,
+            "endTime": 1740.596,
+            "body": "You know, everyone is about the sales numbers and the marketing numbers."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1740.941,
+            "endTime": 1749.711,
+            "body": "They're used to seeing numbers and data in measurements for those departments, and they're used to having engineering say I think this feature is gonna land in two months."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1751.01,
+            "endTime": 1755.27,
+            "body": "That's, so there is some education, Oh, there's actually good data to look at."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1755.29,
+            "endTime": 1756.911,
+            "body": "There's actually a way to drill in."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1757.59,
+            "endTime": 1763.82,
+            "body": "Um, so come prepared to, to Not just show the data and the goals, but also explain why it matters."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1764.641,
+            "endTime": 1779.641,
+            "body": "Why cycle time matters so much, because it lets me, um, you know, learn much faster from the, the feedback that I'm getting from our customers when our new, uh, the new code hits the, um, the users."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1780.05,
+            "endTime": 1785.3,
+            "body": "Um, by reducing these bottlenecks, I can get so much more done and improve the quality."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1785.691,
+            "endTime": 1789.961,
+            "body": "So, be, like, be prepared to explain why it matters."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1790.48,
+            "endTime": 1797.27,
+            "body": "I think as engineer leaders, and many of us are engineers at heart, uh, we need to remember that less is more."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1797.79,
+            "endTime": 1800.461,
+            "body": "So don't come with, you know, 50 numbers."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1801.165,
+            "endTime": 1810.885,
+            "body": "It's not going to work for, for the business, uh, discussion, um, focus on what really matters and always show how that aligns with, with the business."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1811.086,
+            "endTime": 1817.865,
+            "body": "So if you're talking about predictability, yeah, this project is landing on time or 90 percent of it is landing on time."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1817.865,
+            "endTime": 1820.645,
+            "body": "And here's why, and here's the choices that I've made."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1821.326,
+            "endTime": 1830.776,
+            "body": "Um, I think that, that was when you start, uh, overcoming those, you know, glazed eyes of oh, some numbers on something that I don't understand."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1831.506,
+            "endTime": 1837.715,
+            "body": "You know, you, you've, you're seeing success when you get, people are asking you to drill down."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1838.726,
+            "endTime": 1839.026,
+            "body": "Right."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1839.026,
+            "endTime": 1841.516,
+            "body": "They're asking you smart questions about the data that you're showing."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1842.486,
+            "endTime": 1845.486,
+            "body": "Yeah, that, that's, that totally makes sense."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1846.56,
+            "endTime": 1850.31,
+            "body": "Especially when you start getting some of that engagement and questions."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1850.441,
+            "endTime": 1860.911,
+            "body": "I think my best tip here, what I've seen work really well, if you go to your business stakeholders and say, I'm putting a new thing on your calendar."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1861.23,
+            "endTime": 1872.52,
+            "body": "So first of all, it's repetitive and it's going to be repetitive and it's going to be called our forecasting meeting, our project forecasting meeting, and it's monthly, all you got to do is show up."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1872.52,
+            "endTime": 1874.76,
+            "body": "Now, one thing that's cool about that."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1874.76,
+            "endTime": 1875.98,
+            "body": "You may already have this."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1876.431,
+            "endTime": 1879.661,
+            "body": "You know, ceremony of a forecasting meeting, you may not."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1880.101,
+            "endTime": 1888.77,
+            "body": "So you're going to get some, if you don't, some kudos points, because those stakeholders are going to say, I definitely want to come to a project's forecasting meeting because that's what I care about."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1889.651,
+            "endTime": 1891.0,
+            "body": "Now's your opportunity."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1891.0,
+            "endTime": 1896.24,
+            "body": "You got them in that meeting to start hitting them with, is the project going to deliver on time?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1896.25,
+            "endTime": 1901.81,
+            "body": "Let me show you some of the underlying engineering metrics of cycle time or change failure rate."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1902.161,
+            "endTime": 1906.411,
+            "body": "You have the planning accuracy, and maybe you start getting some questions about that."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1907.411,
+            "endTime": 1920.5,
+            "body": "And usually what I see is if you relate it back to what they care about, which is these business deliverables, that is when you'll get, Oh, now I care about, Oh, cycle time has something to do with me getting what I want."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1920.57,
+            "endTime": 1922.101,
+            "body": "Let me ask a question about it."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1922.8,
+            "endTime": 1923.09,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1923.111,
+            "endTime": 1925.24,
+            "body": "So that would be my tip, my biggest tip."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1925.24,
+            "endTime": 1928.49,
+            "body": "Have you seen that kind of stuff work or any comments on that?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1929.81,
+            "endTime": 1930.02,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1930.02,
+            "endTime": 1935.141,
+            "body": "I think you talk about cycle time in, in, um, you know, in isolation."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1935.465,
+            "endTime": 1936.236,
+            "body": "No one cares."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1936.625,
+            "endTime": 1936.976,
+            "body": "Yeah."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1937.685,
+            "endTime": 1944.526,
+            "body": "You talk about cycle time affecting delivery of this project, which is What I need to sell more as a sales leader."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1945.316,
+            "endTime": 1954.405,
+            "body": "Now I can start relating and you'll be surprised by the kind of smart questions you get from your business peers about the data and about what it means."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1954.986,
+            "endTime": 1960.915,
+            "body": "Just like you can ask about the sales cycle and how is the sales cycle different in different segments, right?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 1961.49,
+            "endTime": 1965.431,
+            "body": "It's natural for us to drill in when we see the connection."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1965.901,
+            "endTime": 1966.921,
+            "body": "Yeah, it's so funny."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1967.09,
+            "endTime": 1971.921,
+            "body": "It's like, uh, Hey, I want to go ask for new hires for engineering."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1972.101,
+            "endTime": 1973.33,
+            "body": "The answer is always no."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1973.544,
+            "endTime": 1974.721,
+            "body": "Do more with what you have."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1974.73,
+            "endTime": 1975.83,
+            "body": "We're in an efficiency mode."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1975.971,
+            "endTime": 1983.23,
+            "body": "But if you could ever get a question that says, Oh, we're talking about the delivery of this project."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1983.911,
+            "endTime": 1986.54,
+            "body": "I'm showing you why we're probably not going to deliver."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1986.54,
+            "endTime": 1996.076,
+            "body": "It's because we have a poor cycle time due to a reviewer bottleneck and you can get your business stakeholders to say, Oh, Well, what if we had another reviewer?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1996.476,
+            "endTime": 1997.195,
+            "body": "Oh, great."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1997.526,
+            "endTime": 1998.036,
+            "body": "Perfect."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1998.056,
+            "endTime": 1998.405,
+            "body": "Yes."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 1998.796,
+            "endTime": 2000.726,
+            "body": "Cause I would love to add another reviewer."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2000.726,
+            "endTime": 2002.175,
+            "body": "Actually, I need a senior one."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2002.746,
+            "endTime": 2004.205,
+            "body": "I have a job description."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2004.205,
+            "endTime": 2006.875,
+            "body": "Should we deploy that to deliver this project on time?"
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2006.915,
+            "endTime": 2007.615,
+            "body": "That's cool."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2008.816,
+            "endTime": 2013.615,
+            "body": "Or, or even I can show you through the metrics that this project is very efficient."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2013.705,
+            "endTime": 2015.675,
+            "body": "It's already running very efficiently."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2015.685,
+            "endTime": 2020.445,
+            "body": "There's LinearB publishes industry benchmarks across all of our metrics."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2021.115,
+            "endTime": 2021.645,
+            "body": "We are."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2022.596,
+            "endTime": 2029.496,
+            "body": "actually doing very good in this project, which means if you give me more resources, there's like, they can be very effective here."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2030.036,
+            "endTime": 2034.326,
+            "body": "Another person in this project can really kill it because I've already removed a lot of the bottlenecks."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2034.526,
+            "endTime": 2034.846,
+            "body": "Yes,"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2034.855,
+            "endTime": 2037.346,
+            "body": "it's now running very effectively."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2037.596,
+            "endTime": 2039.516,
+            "body": "A new resource is going to be very effective here."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2039.526,
+            "endTime": 2041.726,
+            "body": "Let me prove to you that it will work."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2042.705,
+            "endTime": 2044.605,
+            "body": "So we're coming to the end here."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2044.736,
+            "endTime": 2049.936,
+            "body": "Could you tell us a little, so we have a CTO board report that can be used."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2050.596,
+            "endTime": 2053.076,
+            "body": "Talk to me about this CTO board report."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2053.686,
+            "endTime": 2065.436,
+            "body": "Yeah, so this is a template that, you know, you can use as a, as a starting point to put some, pull some data from LinearB or however you measure your, uh, your key goals, your KPIs."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2065.876,
+            "endTime": 2075.945,
+            "body": "And, you know, in basically two or three slides, convey the key information to, you know, the board or the staff meeting and similar."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2076.38,
+            "endTime": 2077.36,
+            "body": "Uh, Senior Leadership."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2077.88,
+            "endTime": 2080.61,
+            "body": "And we're basically splitting it into two parts."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2080.621,
+            "endTime": 2085.15,
+            "body": "One is a heartbeat of the health of the engineer organization."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2085.17,
+            "endTime": 2088.15,
+            "body": "The key, key, um, metrics, the top downs."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2088.161,
+            "endTime": 2093.981,
+            "body": "This could be cycle time and something, you know, merge frequency for developer experience."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2094.391,
+            "endTime": 2099.21,
+            "body": "Two or three metrics with a trend, with an industry benchmark."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2099.561,
+            "endTime": 2102.4,
+            "body": "Um, um, Context, so you anchor the numbers."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2102.4,
+            "endTime": 2105.271,
+            "body": "It's not just three on the, on the, on the screen."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2105.271,
+            "endTime": 2110.26,
+            "body": "It's a three, which means we're in the, I don't know, strong band of the benchmarks."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2111.181,
+            "endTime": 2113.34,
+            "body": "So, let's have everyone understand what it means."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2113.971,
+            "endTime": 2117.84,
+            "body": "And, we, we, we, uh, suggest that you take a goal."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2117.84,
+            "endTime": 2120.78,
+            "body": "You're saying, in Q1, my cycle time was three days."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2121.465,
+            "endTime": 2125.686,
+            "body": "My goal for the next quarter is to like lower it down to two and a half days."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2126.775,
+            "endTime": 2132.436,
+            "body": "By having this simple cycle of there's a number, there's a context and a trend and I'm taking a goal."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2132.826,
+            "endTime": 2138.356,
+            "body": "You are now really helping your peers and your, your managers trust you that you've, you've got this."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2138.746,
+            "endTime": 2139.726,
+            "body": "I know what I'm doing."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2140.226,
+            "endTime": 2141.576,
+            "body": "I can see where I'm going."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2142.076,
+            "endTime": 2146.545,
+            "body": "I have a plan, but I don't think they really care if it's going to be two and a half days or 2."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2146.545,
+            "endTime": 2147.295,
+            "body": "3 days."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2147.835,
+            "endTime": 2148.635,
+            "body": "You have a plan."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2148.976,
+            "endTime": 2149.896,
+            "body": "You know what you're doing."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2150.195,
+            "endTime": 2151.876,
+            "body": "They are, the confidence is there."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2152.686,
+            "endTime": 2154.436,
+            "body": "And then the second part is."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2154.925,
+            "endTime": 2157.056,
+            "body": "These are the key investments, the key projects."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2157.146,
+            "endTime": 2159.945,
+            "body": "We talked about resource allocation, so show some data."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2160.096,
+            "endTime": 2168.536,
+            "body": "There's always going to be the top three, four, five, maybe seven projects or initiatives which are what everyone thinks about."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2168.715,
+            "endTime": 2171.505,
+            "body": "They are the key, uh, investments."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2172.076,
+            "endTime": 2176.846,
+            "body": "Show the investment, show that it's aligned to, to, um, the priorities."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2177.666,
+            "endTime": 2183.496,
+            "body": "You're not overspending, uh, by, uh, you know, a big margin on an area that no one cares about."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2184.221,
+            "endTime": 2189.88,
+            "body": "You show the engineer metrics for that project, it's actually performing well, or this is where I'm focusing."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2189.88,
+            "endTime": 2195.51,
+            "body": "I'm focusing on improving my bottlenecks for this project before I'm asking for more resources."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2196.05,
+            "endTime": 2201.82,
+            "body": "So, my resource spend aligned on projects and my engineering health."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2201.891,
+            "endTime": 2205.34,
+            "body": "The two slides is all you need to really convey the message."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2205.846,
+            "endTime": 2209.706,
+            "body": "On how are we doing and start making decisions, right?"
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2209.706,
+            "endTime": 2212.226,
+            "body": "This is about staffing, about resourcing, about changes."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2213.056,
+            "endTime": 2215.476,
+            "body": "Now you can drive a really valuable conversation."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2216.815,
+            "endTime": 2218.996,
+            "body": "Yishai, thank you so much."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2219.005,
+            "endTime": 2222.545,
+            "body": "That is a super cool report."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2222.856,
+            "endTime": 2224.146,
+            "body": "It's a free report."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2224.795,
+            "endTime": 2226.405,
+            "body": "Thank you for coming on."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2226.831,
+            "endTime": 2233.46,
+            "body": "Talking to us about the dual mandate and goal setting and even more so what you said at the end."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2233.46,
+            "endTime": 2235.101,
+            "body": "It's really a career builder."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2235.9,
+            "endTime": 2241.081,
+            "body": "Trust with your peers, setting goals, visibility and transparency."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2241.601,
+            "endTime": 2243.32,
+            "body": "We love having you on the pod."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2243.32,
+            "endTime": 2244.601,
+            "body": "Thank you so much for joining."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2245.4,
+            "endTime": 2246.581,
+            "body": "Thanks Dan, as always."
+        },
+        {
+            "speaker": "Yishai Beeri",
+            "startTime": 2246.59,
+            "endTime": 2247.231,
+            "body": "This was great."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2247.641,
+            "endTime": 2250.92,
+            "body": "And you know, to everyone, thanks for tuning in."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2251.581,
+            "endTime": 2261.601,
+            "body": "If you want to dive deeper into goal setting, download our free Engineering Leader's Guide to Goals in Reporting at LinearB."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2261.65,
+            "endTime": 2263.891,
+            "body": "io slash resources."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2264.61,
+            "endTime": 2268.541,
+            "body": "Um, we'll also include that, uh, in a link in the description."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2269.081,
+            "endTime": 2271.01,
+            "body": "And everyone have a great week."
+        },
+        {
+            "speaker": "Dan Lines",
+            "startTime": 2271.601,
+            "endTime": 2272.891,
+            "body": "Talk again soon."
+        }
+    ]
+}

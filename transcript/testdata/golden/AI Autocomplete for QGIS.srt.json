@@ -1,0 +1,2920 @@
+{
+    "version": "1.0.0",
+    "segments": [
+        {
+            "startTime": 0.0,
+            "endTime": 2.0,
+            "body": "Hi,Brendan.Welcometothepodcast."
+        },
+        {
+            "startTime": 2.0,
+            "endTime": 4.0,
+            "body": "Ritrull,pleasurehavingyouwithmetoday."
+        },
+        {
+            "startTime": 4.0,
+            "endTime": 7.0,
+            "body": "YouaretheCTOandco-founderofsomethingcalled"
+        },
+        {
+            "startTime": 7.0,
+            "endTime": 11.0,
+            "body": "BuntingLabsandIwasintroducedtoyoubyan"
+        },
+        {
+            "startTime": 11.0,
+            "endTime": 14.0,
+            "body": "acquaintedtoAliceandthereasonheintroducedmetoyou"
+        },
+        {
+            "startTime": 14.0,
+            "endTime": 17.0,
+            "body": "wasbecauseofsomereallyinterestingworkyou'redoing"
+        },
+        {
+            "startTime": 17.0,
+            "endTime": 21.0,
+            "body": "aroundAIandQGISandIguesswecouldkindof"
+        },
+        {
+            "startTime": 21.0,
+            "endTime": 24.0,
+            "body": "describeitasanauto-completeforvectorizationbut"
+        },
+        {
+            "startTime": 24.0,
+            "endTime": 27.0,
+            "body": "talkmoreaboutthatlateronjustforthetimebeingperhaps"
+        },
+        {
+            "startTime": 27.0,
+            "endTime": 28.0,
+            "body": "youcouldfillinsomegapsforus."
+        },
+        {
+            "startTime": 28.0,
+            "endTime": 32.0,
+            "body": "Ithinkofusabriefintroduction.Whoareyouandwhatdoyoudo?"
+        },
+        {
+            "startTime": 32.0,
+            "endTime": 35.0,
+            "body": "Sure. Thanks for having me on the podcast by the way."
+        },
+        {
+            "startTime": 35.0,
+            "endTime": 40.0,
+            "body": "So I'm Brendan. I'm the CTO at Bunting Labs and that means"
+        },
+        {
+            "startTime": 40.0,
+            "endTime": 45.0,
+            "body": "that I have been building a AI auto-complete for QGIS for"
+        },
+        {
+            "startTime": 45.0,
+            "endTime": 51.0,
+            "body": "the past year. So I wasn't originally a GIS geospatial person."
+        },
+        {
+            "startTime": 51.0,
+            "endTime": 55.0,
+            "body": "I actually got my start kind of in open source software."
+        },
+        {
+            "startTime": 55.0,
+            "endTime": 60.0,
+            "body": "So I originally got involved with the Node.js project which is"
+        },
+        {
+            "startTime": 60.0,
+            "endTime": 65.0,
+            "body": "in open source platform for running JavaScript on servers"
+        },
+        {
+            "startTime": 65.0,
+            "endTime": 69.0,
+            "body": "normally and that's kind of where I initially"
+        },
+        {
+            "startTime": 69.0,
+            "endTime": 73.0,
+            "body": "learned to engine or software and that really gave me my"
+        },
+        {
+            "startTime": 73.0,
+            "endTime": 77.0,
+            "body": "spark in computer science and it was only later that I went to"
+        },
+        {
+            "startTime": 77.0,
+            "endTime": 81.0,
+            "body": "MIT and ended up studying physics and computer science there"
+        },
+        {
+            "startTime": 81.0,
+            "endTime": 84.0,
+            "body": "where I got more into machine learning and I think you can"
+        },
+        {
+            "startTime": 84.0,
+            "endTime": 89.0,
+            "body": "kind of see that Bunting Labs is kind of at the intersection of"
+        },
+        {
+            "startTime": 89.0,
+            "endTime": 92.0,
+            "body": "many of these different interests of mine."
+        },
+        {
+            "startTime": 92.0,
+            "endTime": 97.0,
+            "body": "So kind of my background in machine learning and specifically"
+        },
+        {
+            "startTime": 97.0,
+            "endTime": 102.0,
+            "body": "I studied Bayesian inference at MIT kind of led me to have this"
+        },
+        {
+            "startTime": 102.0,
+            "endTime": 105.0,
+            "body": "geospatial moment towards the later end of my college career."
+        },
+        {
+            "startTime": 105.0,
+            "endTime": 110.0,
+            "body": "And that's actually when I was working on a consulting project"
+        },
+        {
+            "startTime": 110.0,
+            "endTime": 115.0,
+            "body": "with a real estate developer and we were more or less"
+        },
+        {
+            "startTime": 115.0,
+            "endTime": 119.0,
+            "body": "summarizing different neighborhoods in terms of their characteristics"
+        },
+        {
+            "startTime": 119.0,
+            "endTime": 124.0,
+            "body": "with statistics and with neural networks and it's more or less"
+        },
+        {
+            "startTime": 124.0,
+            "endTime": 127.0,
+            "body": "at that moment where I realized that geospatial data is"
+        },
+        {
+            "startTime": 127.0,
+            "endTime": 130.0,
+            "body": "extremely powerful and I was kind of confused as to why other people"
+        },
+        {
+            "startTime": 130.0,
+            "endTime": 134.0,
+            "body": "weren't using geospatial data more and that really set me on this path"
+        },
+        {
+            "startTime": 134.0,
+            "endTime": 138.0,
+            "body": "to discover geospatial data and kind of the intersection"
+        },
+        {
+            "startTime": 138.0,
+            "endTime": 142.0,
+            "body": "between geospatial data and machine learning and that's kind of"
+        },
+        {
+            "startTime": 142.0,
+            "endTime": 143.0,
+            "body": "where Bunting Labs came from."
+        },
+        {
+            "startTime": 143.0,
+            "endTime": 147.0,
+            "body": "I guess the big un-unanswered question for me is why"
+        },
+        {
+            "startTime": 147.0,
+            "endTime": 150.0,
+            "body": "QGIS then? Why did you decide to build something on top of"
+        },
+        {
+            "startTime": 150.0,
+            "endTime": 151.0,
+            "body": "the platform that is QGIS?"
+        },
+        {
+            "startTime": 151.0,
+            "endTime": 155.0,
+            "body": "My familiarity has always really been with open source software."
+        },
+        {
+            "startTime": 155.0,
+            "endTime": 159.0,
+            "body": "So when I think of software that I can contribute to and"
+        },
+        {
+            "startTime": 159.0,
+            "endTime": 163.0,
+            "body": "software that I can build an ecosystem around or contribute"
+        },
+        {
+            "startTime": 163.0,
+            "endTime": 166.0,
+            "body": "to the ecosystem in I think of GitHub and I think of repositories"
+        },
+        {
+            "startTime": 166.0,
+            "endTime": 170.0,
+            "body": "that everyone can kind of see, learn from, contribute to and build"
+        },
+        {
+            "startTime": 170.0,
+            "endTime": 175.0,
+            "body": "around and so QGIS is in many ways closer to my comfort zone than"
+        },
+        {
+            "startTime": 175.0,
+            "endTime": 178.0,
+            "body": "many of the other GIS software that are available out there."
+        },
+        {
+            "startTime": 178.0,
+            "endTime": 181.0,
+            "body": "It's extremely easy to get started with so we basically built"
+        },
+        {
+            "startTime": 181.0,
+            "endTime": 186.0,
+            "body": "the first version of this plugin in about two weeks and I could"
+        },
+        {
+            "startTime": 186.0,
+            "endTime": 191.0,
+            "body": "do that by learning from all of the other open source plugins"
+        },
+        {
+            "startTime": 191.0,
+            "endTime": 195.0,
+            "body": "that are available and so QGIS is not just this one app that"
+        },
+        {
+            "startTime": 195.0,
+            "endTime": 199.0,
+            "body": "you download to your computer, it's really an ecosystem that everyone is"
+        },
+        {
+            "startTime": 199.0,
+            "endTime": 203.0,
+            "body": "contributing software to and enjoying as a result and so I think"
+        },
+        {
+            "startTime": 203.0,
+            "endTime": 206.0,
+            "body": "that's why I first got started with the QGIS plugin."
+        },
+        {
+            "startTime": 206.0,
+            "endTime": 209.0,
+            "body": "And so my next question is a two-part question."
+        },
+        {
+            "startTime": 209.0,
+            "endTime": 213.0,
+            "body": "Explain to myself and into the listness of this podcast what"
+        },
+        {
+            "startTime": 213.0,
+            "endTime": 218.0,
+            "body": "auto-complete for digitizing vectors means for you and QGIS and why"
+        },
+        {
+            "startTime": 218.0,
+            "endTime": 220.0,
+            "body": "that was a problem you wanted to solve."
+        },
+        {
+            "startTime": 220.0,
+            "endTime": 227.0,
+            "body": "So auto-complete for factorizing in QGIS or another way to kind"
+        },
+        {
+            "startTime": 227.0,
+            "endTime": 232.0,
+            "body": "of describe it is an auto-complete for tracing maps is a addition"
+        },
+        {
+            "startTime": 232.0,
+            "endTime": 238.0,
+            "body": "to the GIS pen tool and so if you are presented with raster"
+        },
+        {
+            "startTime": 238.0,
+            "endTime": 243.0,
+            "body": "imagery of some sort so if that's a satellite image of an area"
+        },
+        {
+            "startTime": 243.0,
+            "endTime": 250.0,
+            "body": "if that's a rendered PDF of some sort of construction or architecture"
+        },
+        {
+            "startTime": 250.0,
+            "endTime": 254.0,
+            "body": "asset somewhere in the world and you need to convert that into a"
+        },
+        {
+            "startTime": 254.0,
+            "endTime": 259.0,
+            "body": "vector file with a projection and some sort of like accuracy"
+        },
+        {
+            "startTime": 259.0,
+            "endTime": 263.0,
+            "body": "you would use the pen tool to digitize that into its vector"
+        },
+        {
+            "startTime": 263.0,
+            "endTime": 268.0,
+            "body": "representation and in many conversations with GIS professionals"
+        },
+        {
+            "startTime": 268.0,
+            "endTime": 273.0,
+            "body": "we found that they essentially participated in this workflow"
+        },
+        {
+            "startTime": 273.0,
+            "endTime": 277.0,
+            "body": "extremely frequently and so they would be presented with oftentimes"
+        },
+        {
+            "startTime": 277.0,
+            "endTime": 280.0,
+            "body": "a PDF that doesn't have any kind of projection with it."
+        },
+        {
+            "startTime": 280.0,
+            "endTime": 285.0,
+            "body": "They would need to do reference that PDF to oftentimes sub beta"
+        },
+        {
+            "startTime": 285.0,
+            "endTime": 289.0,
+            "body": "resolution and that's literally locating it in aerial imagery"
+        },
+        {
+            "startTime": 289.0,
+            "endTime": 292.0,
+            "body": "or maybe on an open stream app base map and adding control points"
+        },
+        {
+            "startTime": 292.0,
+            "endTime": 298.0,
+            "body": "until the raster layer perfectly lines up with its location in the real"
+        },
+        {
+            "startTime": 298.0,
+            "endTime": 301.0,
+            "body": "world and then they would get out their pen tool and digitize"
+        },
+        {
+            "startTime": 301.0,
+            "endTime": 307.0,
+            "body": "out lines, polygons, maybe even points that represent semantic"
+        },
+        {
+            "startTime": 307.0,
+            "endTime": 312.0,
+            "body": "shapes from that map and then they use that and then add metadata"
+        },
+        {
+            "startTime": 312.0,
+            "endTime": 317.0,
+            "body": "to those shapes and so it's not just lines in your local"
+        },
+        {
+            "startTime": 317.0,
+            "endTime": 322.0,
+            "body": "state plane these are buried utility lines and so you would add"
+        },
+        {
+            "startTime": 322.0,
+            "endTime": 327.0,
+            "body": "metadata of the diameter of that pipe or maybe these are"
+        },
+        {
+            "startTime": 327.0,
+            "endTime": 332.0,
+            "body": "literally painted lines on a highway and you are adding metadata"
+        },
+        {
+            "startTime": 332.0,
+            "endTime": 337.0,
+            "body": "that says these were last painted on 2014 August 2014"
+        },
+        {
+            "startTime": 337.0,
+            "endTime": 341.0,
+            "body": "and they will need to be painted again in August 2024"
+        },
+        {
+            "startTime": 341.0,
+            "endTime": 345.0,
+            "body": "and this kind of workflow where you would take rasters and then"
+        },
+        {
+            "startTime": 345.0,
+            "endTime": 350.0,
+            "body": "you would take a meaningful digital file format equivalent of"
+        },
+        {
+            "startTime": 350.0,
+            "endTime": 355.0,
+            "body": "them we saw all the time and so given my background we started"
+        },
+        {
+            "startTime": 355.0,
+            "endTime": 359.0,
+            "body": "imagining what this workflow would look like with AI and this is"
+        },
+        {
+            "startTime": 359.0,
+            "endTime": 361.0,
+            "body": "more or less the product of that."
+        },
+        {
+            "startTime": 361.0,
+            "endTime": 365.0,
+            "body": "You did a great job answering both questions with one answer"
+        },
+        {
+            "startTime": 365.0,
+            "endTime": 369.0,
+            "body": "that was brilliant. So given your skill set, your experience"
+        },
+        {
+            "startTime": 369.0,
+            "endTime": 373.0,
+            "body": "and your interests, if I was you I would be I would look at this"
+        },
+        {
+            "startTime": 373.0,
+            "endTime": 377.0,
+            "body": "convert every line that I can see in that rendered image to a"
+        },
+        {
+            "startTime": 377.0,
+            "endTime": 380.0,
+            "body": "you know a vector output instead of trying to like trace lines"
+        },
+        {
+            "startTime": 380.0,
+            "endTime": 383.0,
+            "body": "individually is that a thought that crossed your mind when"
+        },
+        {
+            "startTime": 383.0,
+            "endTime": 385.0,
+            "body": "you were thinking about solving this problem."
+        },
+        {
+            "startTime": 385.0,
+            "endTime": 390.0,
+            "body": "Yeah and I think it's really funny because my conception of how to"
+        },
+        {
+            "startTime": 390.0,
+            "endTime": 395.0,
+            "body": "solve this map digitization problem is totally different now"
+        },
+        {
+            "startTime": 395.0,
+            "endTime": 398.0,
+            "body": "than it was a year ago when I first started looking at this."
+        },
+        {
+            "startTime": 398.0,
+            "endTime": 404.0,
+            "body": "So when Michael and I decided that map digitization was a problem that we"
+        },
+        {
+            "startTime": 404.0,
+            "endTime": 409.0,
+            "body": "would tackle we basically went to the whiteboard and I threw up my design, my"
+        },
+        {
+            "startTime": 409.0,
+            "endTime": 414.0,
+            "body": "attempted solution for what digitization with AI would look like"
+        },
+        {
+            "startTime": 414.0,
+            "endTime": 420.0,
+            "body": "and I said it's probably really easy to convert an entire map into its"
+        },
+        {
+            "startTime": 420.0,
+            "endTime": 425.0,
+            "body": "vector representation. In fact there's an entire academic field dedicated to solving it."
+        },
+        {
+            "startTime": 425.0,
+            "endTime": 429.0,
+            "body": "If you go online and Google vectorization especially of images"
+        },
+        {
+            "startTime": 429.0,
+            "endTime": 433.0,
+            "body": "there's a lot of published research as to actually accomplish that task"
+        },
+        {
+            "startTime": 433.0,
+            "endTime": 439.0,
+            "body": "and I said this is a solved problem shortly and I can build this in two weeks."
+        },
+        {
+            "startTime": 439.0,
+            "endTime": 444.0,
+            "body": "I said that probably 13 or 14 months ago so I totally take that back"
+        },
+        {
+            "startTime": 444.0,
+            "endTime": 449.0,
+            "body": "and the first six months of me building this was actually very similar to"
+        },
+        {
+            "startTime": 449.0,
+            "endTime": 454.0,
+            "body": "your suggested solution. I did a literature search"
+        },
+        {
+            "startTime": 454.0,
+            "endTime": 459.0,
+            "body": "and found the best performing machine learning models for converting an"
+        },
+        {
+            "startTime": 459.0,
+            "endTime": 464.0,
+            "body": "image into its vector representation and there are some really high quality"
+        },
+        {
+            "startTime": 464.0,
+            "endTime": 469.0,
+            "body": "research available online for doing that. If you take pretty much any"
+        },
+        {
+            "startTime": 469.0,
+            "endTime": 474.0,
+            "body": "image we're talking especially like logos images of the real world"
+        },
+        {
+            "startTime": 474.0,
+            "endTime": 479.0,
+            "body": "and convert it into its vector format to your eye it looks fantastic."
+        },
+        {
+            "startTime": 479.0,
+            "endTime": 485.0,
+            "body": "It is very perfectly recreating the entire image as in SVG for example."
+        },
+        {
+            "startTime": 485.0,
+            "endTime": 490.0,
+            "body": "But when we went to kind of our original design partners and showed them this technology"
+        },
+        {
+            "startTime": 490.0,
+            "endTime": 496.0,
+            "body": "we realized that it kind of missed the mark. It's like op-re-oriented when you see a map"
+        },
+        {
+            "startTime": 496.0,
+            "endTime": 501.0,
+            "body": "it's kind of difficult to determine which of the assets in that map are"
+        },
+        {
+            "startTime": 501.0,
+            "endTime": 506.0,
+            "body": "important to have the vector representation and so we realized that if we wanted"
+        },
+        {
+            "startTime": 506.0,
+            "endTime": 512.0,
+            "body": "to productionize this we actually had to build a semantic understanding"
+        },
+        {
+            "startTime": 512.0,
+            "endTime": 516.0,
+            "body": "of all of the features in these maps and that all of a sudden was a much more"
+        },
+        {
+            "startTime": 516.0,
+            "endTime": 521.0,
+            "body": "difficult problem because that's akin to machine reading of maps and"
+        },
+        {
+            "startTime": 521.0,
+            "endTime": 526.0,
+            "body": "understanding and when we were looking at this a year ago that seemed impossible."
+        },
+        {
+            "startTime": 526.0,
+            "endTime": 531.0,
+            "body": "And even worse when you have extremely important assets that you want a"
+        },
+        {
+            "startTime": 531.0,
+            "endTime": 536.0,
+            "body": "high quality vector representation of you don't actually trust the"
+        },
+        {
+            "startTime": 536.0,
+            "endTime": 541.0,
+            "body": "output of a machine learning model on its first go. If you were to hand me a"
+        },
+        {
+            "startTime": 541.0,
+            "endTime": 545.0,
+            "body": "geotip and I handed you back a shape file you would actually load it into your"
+        },
+        {
+            "startTime": 545.0,
+            "endTime": 550.0,
+            "body": "GIS software choice and review it such that it's perfect such that it's two"
+        },
+        {
+            "startTime": 550.0,
+            "endTime": 556.0,
+            "body": "your standards and realizing that took about six months after six or seven"
+        },
+        {
+            "startTime": 556.0,
+            "endTime": 562.0,
+            "body": "months of working on that approach I actually went on a walk with Michael and"
+        },
+        {
+            "startTime": 562.0,
+            "endTime": 568.0,
+            "body": "I essentially came to the conclusion that I was not on a trajectory of success."
+        },
+        {
+            "startTime": 568.0,
+            "endTime": 573.0,
+            "body": "If I interpolated my progress out I would not be successful in one or two"
+        },
+        {
+            "startTime": 573.0,
+            "endTime": 577.0,
+            "body": "years and so I essentially had to go back to the drawing board and it was only"
+        },
+        {
+            "startTime": 577.0,
+            "endTime": 582.0,
+            "body": "then with inspiration kind of from these more recent generative AI models like"
+        },
+        {
+            "startTime": 582.0,
+            "endTime": 588.0,
+            "body": "Chat GBT did I consider an AI autocomplete this was never originally going to be a"
+        },
+        {
+            "startTime": 588.0,
+            "endTime": 593.0,
+            "body": "plug-in that you run in your desktop GIS software but we realized that that was"
+        },
+        {
+            "startTime": 593.0,
+            "endTime": 597.0,
+            "body": "actually the modality that people wanted they wanted to be able to have access"
+        },
+        {
+            "startTime": 597.0,
+            "endTime": 601.0,
+            "body": "to this and immediately review its output. I think to what you're getting it is"
+        },
+        {
+            "startTime": 601.0,
+            "endTime": 606.0,
+            "body": "they wanted to be in charge they wanted to have just increase or make me more"
+        },
+        {
+            "startTime": 606.0,
+            "endTime": 610.0,
+            "body": "efficient in the work that are more really doing in that way I will trust the"
+        },
+        {
+            "startTime": 610.0,
+            "endTime": 615.0,
+            "body": "output more. Could you talk to me a little bit about how this is different from"
+        },
+        {
+            "startTime": 615.0,
+            "endTime": 619.0,
+            "body": "segment anything for example because this is kind of like you give it an image"
+        },
+        {
+            "startTime": 619.0,
+            "endTime": 623.0,
+            "body": "and it segments everything in the image and people seem to love that and it seems"
+        },
+        {
+            "startTime": 623.0,
+            "endTime": 627.0,
+            "body": "to work really really well and this reminds me of your original approach like"
+        },
+        {
+            "startTime": 627.0,
+            "endTime": 631.0,
+            "body": "give me an image and I will vectorize the whole thing could you just explain"
+        },
+        {
+            "startTime": 631.0,
+            "endTime": 635.0,
+            "body": "to me in the list is please what why these two things are different and why"
+        },
+        {
+            "startTime": 635.0,
+            "endTime": 641.0,
+            "body": "I think that would be really helpful. So segment anything is extremely powerful"
+        },
+        {
+            "startTime": 641.0,
+            "endTime": 646.0,
+            "body": "but it's powerful in a few specific characteristics the first one is that"
+        },
+        {
+            "startTime": 646.0,
+            "endTime": 651.0,
+            "body": "it's grounded in text descriptions of what you're segmenting so if you take a"
+        },
+        {
+            "startTime": 651.0,
+            "endTime": 656.0,
+            "body": "very large satellite image for example I think the best use case for segment"
+        },
+        {
+            "startTime": 656.0,
+            "endTime": 661.0,
+            "body": "anything is really satellite and aerial and you can textually describe the"
+        },
+        {
+            "startTime": 661.0,
+            "endTime": 666.0,
+            "body": "geometry that you are extracting then I think segment anything and I believe"
+        },
+        {
+            "startTime": 666.0,
+            "endTime": 671.0,
+            "body": "segment anything geospatial the package that actually implements it specifically"
+        },
+        {
+            "startTime": 671.0,
+            "endTime": 677.0,
+            "body": "for geospatial software is probably the best thing that you have and so if you"
+        },
+        {
+            "startTime": 677.0,
+            "endTime": 682.0,
+            "body": "load drone imagery that you just took and ask it to segment out the lake boundary"
+        },
+        {
+            "startTime": 682.0,
+            "endTime": 686.0,
+            "body": "that's pretty much the best thing you can get I think where our AI auto"
+        },
+        {
+            "startTime": 686.0,
+            "endTime": 691.0,
+            "body": "complete is preferable to segment anything is especially when you are"
+        },
+        {
+            "startTime": 691.0,
+            "endTime": 696.0,
+            "body": "digitizing geometries that you have a semantic understanding of but are difficult"
+        },
+        {
+            "startTime": 696.0,
+            "endTime": 702.0,
+            "body": "to textually explain or you are digitizing lines that are difficult to"
+        },
+        {
+            "startTime": 702.0,
+            "endTime": 708.0,
+            "body": "semantically extract from that map and so for example we often see a lot of"
+        },
+        {
+            "startTime": 708.0,
+            "endTime": 712.0,
+            "body": "extremely low quality maybe there's a lot of JPEG artifacts on the map maybe"
+        },
+        {
+            "startTime": 712.0,
+            "endTime": 717.0,
+            "body": "the resolution is pretty low it was originally rendered to be really low or even"
+        },
+        {
+            "startTime": 717.0,
+            "endTime": 722.0,
+            "body": "those artifacts from the original scan those are kind of maps where segment"
+        },
+        {
+            "startTime": 722.0,
+            "endTime": 727.0,
+            "body": "anything struggles it's much more difficult to get segment anything to extract"
+        },
+        {
+            "startTime": 727.0,
+            "endTime": 734.0,
+            "body": "a line of a pressure sewer such that the line is a dashed line that has"
+        },
+        {
+            "startTime": 734.0,
+            "endTime": 739.0,
+            "body": "PS intermittently interrupting the line style whereas on the other hand our"
+        },
+        {
+            "startTime": 739.0,
+            "endTime": 743.0,
+            "body": "AI auto complete because it looks at basically the line that you have already"
+        },
+        {
+            "startTime": 743.0,
+            "endTime": 747.0,
+            "body": "started it excels at just completing it. Okay the line that you have already"
+        },
+        {
+            "startTime": 747.0,
+            "endTime": 751.0,
+            "body": "started in the same way auto complete works for fun using chat gbt for"
+        },
+        {
+            "startTime": 751.0,
+            "endTime": 755.0,
+            "body": "example some people describe it as a fancy auto complete where it says okay"
+        },
+        {
+            "startTime": 755.0,
+            "endTime": 760.0,
+            "body": "your question was this the next logical token is this in the same way we see"
+        },
+        {
+            "startTime": 760.0,
+            "endTime": 764.0,
+            "body": "it auto complete in Google docs for example it looks like you're the next"
+        },
+        {
+            "startTime": 764.0,
+            "endTime": 769.0,
+            "body": "logical word is here so when you say auto complete you mean I take my pen"
+        },
+        {
+            "startTime": 769.0,
+            "endTime": 773.0,
+            "body": "or I start tracing the line and it jumps ahead of me as is looks like you're"
+        },
+        {
+            "startTime": 773.0,
+            "endTime": 777.0,
+            "body": "going on this line here and follows it along am I correct. That's exactly"
+        },
+        {
+            "startTime": 777.0,
+            "endTime": 783.0,
+            "body": "right so the way our AI auto complete works is it's a drop in replacement"
+        },
+        {
+            "startTime": 783.0,
+            "endTime": 789.0,
+            "body": "for the panel and so if you activate our plug-in in qgis and begin digitizing"
+        },
+        {
+            "startTime": 789.0,
+            "endTime": 794.0,
+            "body": "some geometry let's say for our example it was a utility line on a"
+        },
+        {
+            "startTime": 794.0,
+            "endTime": 799.0,
+            "body": "raster map once you begin digitizing that line by drawing two segments a"
+        },
+        {
+            "startTime": 799.0,
+            "endTime": 803.0,
+            "body": "small bit of that map will be sent to our inference server and it will auto"
+        },
+        {
+            "startTime": 803.0,
+            "endTime": 808.0,
+            "body": "complete 50 of the next vertices of that line and these vertices are output"
+        },
+        {
+            "startTime": 808.0,
+            "endTime": 812.0,
+            "body": "by a neural network that we've specifically trained for this job and so"
+        },
+        {
+            "startTime": 812.0,
+            "endTime": 817.0,
+            "body": "that neural network is literally looking at the pixels that you have"
+        },
+        {
+            "startTime": 817.0,
+            "endTime": 823.0,
+            "body": "already drawn so as to predict which of the map is actually semantically this"
+        },
+        {
+            "startTime": 823.0,
+            "endTime": 829.0,
+            "body": "same feature and which of those pixels it should choose as continuing"
+        },
+        {
+            "startTime": 829.0,
+            "endTime": 834.0,
+            "body": "vertices and I've realized that this problem is actually much more complex than"
+        },
+        {
+            "startTime": 834.0,
+            "endTime": 839.0,
+            "body": "I originally imagined when you and I are talking about digitizing maps"
+        },
+        {
+            "startTime": 839.0,
+            "endTime": 845.0,
+            "body": "it's extremely broad and big and it can be difficult to imagine what those"
+        },
+        {
+            "startTime": 845.0,
+            "endTime": 850.0,
+            "body": "maps actually are but the magic in AI auto complete is not that it works on"
+        },
+        {
+            "startTime": 850.0,
+            "endTime": 855.0,
+            "body": "certain maps it's that it works on your map and so when someone uploads"
+        },
+        {
+            "startTime": 855.0,
+            "endTime": 860.0,
+            "body": "into qgis a map that our AI has never seen and yet is able to"
+        },
+        {
+            "startTime": 860.0,
+            "endTime": 865.0,
+            "body": "generalize based on the hundreds of maps that we've trained it on that"
+        },
+        {
+            "startTime": 865.0,
+            "endTime": 868.0,
+            "body": "I think is the really impressive thing."
+        },
+        {
+            "startTime": 868.0,
+            "endTime": 873.0,
+            "body": "So the I think you're the example you have on your website is amazing and one"
+        },
+        {
+            "startTime": 873.0,
+            "endTime": 877.0,
+            "body": "why I think it's amazing is that you're tracing a dash line so just to"
+        },
+        {
+            "startTime": 877.0,
+            "endTime": 881.0,
+            "body": "describe this for the list is that there's a video of yeah screen video I guess"
+        },
+        {
+            "startTime": 881.0,
+            "endTime": 885.0,
+            "body": "of you tracing or someone tracing a dash line in and QJs in which is"
+        },
+        {
+            "startTime": 885.0,
+            "endTime": 888.0,
+            "body": "incredible and you can see the auto complete working in you know being"
+        },
+        {
+            "startTime": 888.0,
+            "endTime": 893.0,
+            "body": "ahead of the pen but I think the really incredible thing is that adjacent"
+        },
+        {
+            "startTime": 893.0,
+            "endTime": 897.0,
+            "body": "to that line there is an identical line crossing over that line is"
+        },
+        {
+            "startTime": 897.0,
+            "endTime": 902.0,
+            "body": "another identical line and yet the auto complete knows that I do want"
+        },
+        {
+            "startTime": 902.0,
+            "endTime": 907.0,
+            "body": "to follow this particular one of those identical lines but to me to"
+        },
+        {
+            "startTime": 907.0,
+            "endTime": 910.0,
+            "body": "the layperson this seems like an incredibly hard problem to solve."
+        },
+        {
+            "startTime": 910.0,
+            "endTime": 915.0,
+            "body": "So I think early on I underestimated that difficulty and I'm actually"
+        },
+        {
+            "startTime": 915.0,
+            "endTime": 920.0,
+            "body": "very fortunate that my background kind of let me push through all of the"
+        },
+        {
+            "startTime": 920.0,
+            "endTime": 924.0,
+            "body": "complexities that came with solving this problem and so I think if you"
+        },
+        {
+            "startTime": 924.0,
+            "endTime": 929.0,
+            "body": "kind of follow our journey on social media it might seem as though we"
+        },
+        {
+            "startTime": 929.0,
+            "endTime": 934.0,
+            "body": "built this in a couple of weeks and all of a sudden there's AI and QJs"
+        },
+        {
+            "startTime": 934.0,
+            "endTime": 938.0,
+            "body": "but really that's a total simplification of kind of this journey I've had"
+        },
+        {
+            "startTime": 938.0,
+            "endTime": 943.0,
+            "body": "in understanding what map digitization really meant both at a"
+        },
+        {
+            "startTime": 943.0,
+            "endTime": 947.0,
+            "body": "semantic level for the people that do it professionally but also at a"
+        },
+        {
+            "startTime": 947.0,
+            "endTime": 952.0,
+            "body": "technical level and how you could teach a computer to truly learn the"
+        },
+        {
+            "startTime": 952.0,
+            "endTime": 956.0,
+            "body": "semantic features that these people are working with and can actually"
+        },
+        {
+            "startTime": 956.0,
+            "endTime": 961.0,
+            "body": "auto complete ahead of them and so to kind of dive into what is"
+        },
+        {
+            "startTime": 961.0,
+            "endTime": 965.0,
+            "body": "surprising about this I feel like I actually have a lot of you"
+        },
+        {
+            "startTime": 965.0,
+            "endTime": 969.0,
+            "body": "know as someone who's literally looked at probably a thousand different"
+        },
+        {
+            "startTime": 969.0,
+            "endTime": 974.0,
+            "body": "maps over the course of building this AI autocomplete and I've"
+        },
+        {
+            "startTime": 974.0,
+            "endTime": 979.0,
+            "body": "actually run nearly 2000 machine learning experiments to get to"
+        },
+        {
+            "startTime": 979.0,
+            "endTime": 983.0,
+            "body": "this current AI autocomplete and experiment one I promise you to"
+        },
+        {
+            "startTime": 983.0,
+            "endTime": 988.0,
+            "body": "not perform well at all and if you are actually one of our users and you"
+        },
+        {
+            "startTime": 988.0,
+            "endTime": 993.0,
+            "body": "download QJs download our plugin and try it out you are actually"
+        },
+        {
+            "startTime": 993.0,
+            "endTime": 1000.0,
+            "body": "running model 1,854 and the 1,853 models that came before that were"
+        },
+        {
+            "startTime": 1000.0,
+            "endTime": 1005.0,
+            "body": "bad in many ways but the main important thing is that they weren't"
+        },
+        {
+            "startTime": 1005.0,
+            "endTime": 1010.0,
+            "body": "able to generalize into the map that you're looking at I've realized"
+        },
+        {
+            "startTime": 1010.0,
+            "endTime": 1015.0,
+            "body": "that lines have so many semantic meaning that allows you to"
+        },
+        {
+            "startTime": 1015.0,
+            "endTime": 1020.0,
+            "body": "disambiguate between two lines say when they intersect and"
+        },
+        {
+            "startTime": 1020.0,
+            "endTime": 1023.0,
+            "body": "encoding that into the model has been pretty much the most important"
+        },
+        {
+            "startTime": 1023.0,
+            "endTime": 1028.0,
+            "body": "task that I've completed. So it hits off to you for continuing I"
+        },
+        {
+            "startTime": 1028.0,
+            "endTime": 1033.0,
+            "body": "think if I got no what do you say 800 or what 1,800 times I would"
+        },
+        {
+            "startTime": 1033.0,
+            "endTime": 1037.0,
+            "body": "be tempted to give up but you didn't. And finally you got a yes"
+        },
+        {
+            "startTime": 1037.0,
+            "endTime": 1041.0,
+            "body": "but my guess is also that I guess you were like during that process you"
+        },
+        {
+            "startTime": 1041.0,
+            "endTime": 1044.0,
+            "body": "could see that you were getting better and better and better and further"
+        },
+        {
+            "startTime": 1044.0,
+            "endTime": 1047.0,
+            "body": "closer and closer I should say to the goal so my guess is you had"
+        },
+        {
+            "startTime": 1047.0,
+            "endTime": 1050.0,
+            "body": "encouragement along the way it wasn't like hard no hard no hard no right"
+        },
+        {
+            "startTime": 1050.0,
+            "endTime": 1055.0,
+            "body": "that many times and then yes so but anyway that is incredible"
+        },
+        {
+            "startTime": 1055.0,
+            "endTime": 1059.0,
+            "body": "well done well done had talked to you but when I think about this so"
+        },
+        {
+            "startTime": 1059.0,
+            "endTime": 1063.0,
+            "body": "digitizing lines is very impressive but it's a step in the in the"
+        },
+        {
+            "startTime": 1063.0,
+            "endTime": 1066.0,
+            "body": "journey right right. Georeferencing is another part of that great"
+        },
+        {
+            "startTime": 1066.0,
+            "endTime": 1070.0,
+            "body": "way. Now I've got my lines not to not to throw any cold water not"
+        },
+        {
+            "startTime": 1070.0,
+            "endTime": 1073.0,
+            "body": "to rain on your parade or anything but now I've got my lines you've"
+        },
+        {
+            "startTime": 1073.0,
+            "endTime": 1075.0,
+            "body": "done a great job of that I've got my lines now they need to land"
+        },
+        {
+            "startTime": 1075.0,
+            "endTime": 1079.0,
+            "body": "somewhere specific on the real world in order to be useful to me and"
+        },
+        {
+            "startTime": 1079.0,
+            "endTime": 1082.0,
+            "body": "then I need to extract some metadata about those as well is"
+        },
+        {
+            "startTime": 1082.0,
+            "endTime": 1086.0,
+            "body": "the any part of this the model that you built today the experience"
+        },
+        {
+            "startTime": 1086.0,
+            "endTime": 1090.0,
+            "body": "that you've had the learnings long the way that overlap with"
+        },
+        {
+            "startTime": 1090.0,
+            "endTime": 1093.0,
+            "body": "it with maybe the next step of of Georeferencing that's a great"
+        },
+        {
+            "startTime": 1093.0,
+            "endTime": 1099.0,
+            "body": "so I've been working simultaneously on both of these models so"
+        },
+        {
+            "startTime": 1099.0,
+            "endTime": 1104.0,
+            "body": "the AI autocomplete for vectorization is something that has"
+        },
+        {
+            "startTime": 1104.0,
+            "endTime": 1110.0,
+            "body": "kind of crested this threshold of usefulness for most of its"
+        },
+        {
+            "startTime": 1110.0,
+            "endTime": 1114.0,
+            "body": "time it was not useful at all and I also have a machine"
+        },
+        {
+            "startTime": 1114.0,
+            "endTime": 1119.0,
+            "body": "learning model on my computer that can georeference maps as"
+        },
+        {
+            "startTime": 1119.0,
+            "endTime": 1123.0,
+            "body": "builds documents from architecture and construction firms you"
+        },
+        {
+            "startTime": 1123.0,
+            "endTime": 1128.0,
+            "body": "name it automatically but it hasn't yet pressed it this threshold"
+        },
+        {
+            "startTime": 1128.0,
+            "endTime": 1132.0,
+            "body": "where it can actually save someone time and it's interesting"
+        },
+        {
+            "startTime": 1132.0,
+            "endTime": 1136.0,
+            "body": "because these two problems while they're both grounded in maps"
+        },
+        {
+            "startTime": 1136.0,
+            "endTime": 1140.0,
+            "body": "they're actually totally different because the AI autocomplete is"
+        },
+        {
+            "startTime": 1140.0,
+            "endTime": 1145.0,
+            "body": "really about understanding the semantic nature of maps and"
+        },
+        {
+            "startTime": 1145.0,
+            "endTime": 1148.0,
+            "body": "the features that are depicted on them whereas georeferencing is"
+        },
+        {
+            "startTime": 1148.0,
+            "endTime": 1153.0,
+            "body": "actually a search problem when you're presented with a map that"
+        },
+        {
+            "startTime": 1153.0,
+            "endTime": 1156.0,
+            "body": "you don't know where it came from especially this is extremely"
+        },
+        {
+            "startTime": 1156.0,
+            "endTime": 1161.0,
+            "body": "common for consultants if you are basically asked to do"
+        },
+        {
+            "startTime": 1161.0,
+            "endTime": 1165.0,
+            "body": "reference this map to a sub meter accuracy you often don't know"
+        },
+        {
+            "startTime": 1165.0,
+            "endTime": 1169.0,
+            "body": "actually where it is at all and so you embark on this interesting"
+        },
+        {
+            "startTime": 1169.0,
+            "endTime": 1173.0,
+            "body": "search whether you're using Google Maps you're using"
+        },
+        {
+            "startTime": 1173.0,
+            "endTime": 1178.0,
+            "body": "Erion satellite imagery maybe open stream map and all of these"
+        },
+        {
+            "startTime": 1178.0,
+            "endTime": 1182.0,
+            "body": "other kind of data sources that can help you locate where a"
+        },
+        {
+            "startTime": 1182.0,
+            "endTime": 1186.0,
+            "body": "particular map is and the possibilities for that are like"
+        },
+        {
+            "startTime": 1186.0,
+            "endTime": 1191.0,
+            "body": "astronomical you know we're talking a chess game number of"
+        },
+        {
+            "startTime": 1191.0,
+            "endTime": 1195.0,
+            "body": "possible game positions that's comparable to the number of"
+        },
+        {
+            "startTime": 1195.0,
+            "endTime": 1200.0,
+            "body": "possible ways a map could be georeference to sub meter accuracy in"
+        },
+        {
+            "startTime": 1200.0,
+            "endTime": 1203.0,
+            "body": "the world right so it's actually extremely difficult especially"
+        },
+        {
+            "startTime": 1203.0,
+            "endTime": 1207.0,
+            "body": "when the map only has a little bit of information so if the map is"
+        },
+        {
+            "startTime": 1207.0,
+            "endTime": 1212.0,
+            "body": "just a picture of a building and two cross streets I can guarantee"
+        },
+        {
+            "startTime": 1212.0,
+            "endTime": 1216.0,
+            "body": "you there are a thousand roads in the United States with those"
+        },
+        {
+            "startTime": 1216.0,
+            "endTime": 1220.0,
+            "body": "street names and so what people actually do is they go through"
+        },
+        {
+            "startTime": 1220.0,
+            "endTime": 1224.0,
+            "body": "and page through all of these possible permutations of where"
+        },
+        {
+            "startTime": 1224.0,
+            "endTime": 1227.0,
+            "body": "this map could be and then they line up exactly where this building is"
+        },
+        {
+            "startTime": 1227.0,
+            "endTime": 1232.0,
+            "body": "and so if you imagine an AI model for georeferencing it has to do"
+        },
+        {
+            "startTime": 1232.0,
+            "endTime": 1236.0,
+            "body": "all of that plus more and so you're synthesizing all of these"
+        },
+        {
+            "startTime": 1236.0,
+            "endTime": 1240.0,
+            "body": "different datasets as to you know all of the roads in the world"
+        },
+        {
+            "startTime": 1240.0,
+            "endTime": 1246.0,
+            "body": "not just the US obviously all of the satellite imagery or even"
+        },
+        {
+            "startTime": 1246.0,
+            "endTime": 1250.0,
+            "body": "high quality high resolution aerial imagery that you can use to"
+        },
+        {
+            "startTime": 1250.0,
+            "endTime": 1255.0,
+            "body": "georeference in exact building outline or maybe even the curb on"
+        },
+        {
+            "startTime": 1255.0,
+            "endTime": 1259.0,
+            "body": "a road these are challenges that you know I've had while hand"
+        },
+        {
+            "startTime": 1259.0,
+            "endTime": 1263.0,
+            "body": "digitizing hand to referencing maps and building in AI model to"
+        },
+        {
+            "startTime": 1263.0,
+            "endTime": 1268.0,
+            "body": "do that same thing is surprisingly difficult but I think"
+        },
+        {
+            "startTime": 1268.0,
+            "endTime": 1271.0,
+            "body": "it's something that you know we'll be able to do in hopefully"
+        },
+        {
+            "startTime": 1271.0,
+            "endTime": 1276.0,
+            "body": "three months it's interesting to hear you say surprisingly"
+        },
+        {
+            "startTime": 1276.0,
+            "endTime": 1280.0,
+            "body": "difficult because no it doesn't surprise me at all especially"
+        },
+        {
+            "startTime": 1280.0,
+            "endTime": 1284.0,
+            "body": "after what you just said which makes a lot of sense but the good"
+        },
+        {
+            "startTime": 1284.0,
+            "endTime": 1287.0,
+            "body": "uses we have a bunch of filters normally on a map you have a name"
+        },
+        {
+            "startTime": 1287.0,
+            "endTime": 1290.0,
+            "body": "you might have street names you might have metadata you might"
+        },
+        {
+            "startTime": 1290.0,
+            "endTime": 1293.0,
+            "body": "have some coordinates in there you might have something like"
+        },
+        {
+            "startTime": 1293.0,
+            "endTime": 1297.0,
+            "body": "this and we can filter it down to okay I know I'm looking"
+        },
+        {
+            "startTime": 1297.0,
+            "endTime": 1301.0,
+            "body": "in this particular town or around this address just as an example"
+        },
+        {
+            "startTime": 1301.0,
+            "endTime": 1306.0,
+            "body": "and I guess to not all other datasets a great your base maps"
+        },
+        {
+            "startTime": 1306.0,
+            "endTime": 1310.0,
+            "body": "for digitizing against so if you've got a you know PDF as"
+        },
+        {
+            "startTime": 1310.0,
+            "endTime": 1315.0,
+            "body": "built of some building looking at really grainy satellite data"
+        },
+        {
+            "startTime": 1315.0,
+            "endTime": 1318.0,
+            "body": "is not going to be super helpful it's not going to get you we"
+        },
+        {
+            "startTime": 1318.0,
+            "endTime": 1322.0,
+            "body": "want to go maybe open street map would be better or another"
+        },
+        {
+            "startTime": 1322.0,
+            "endTime": 1325.0,
+            "body": "building layer would be better where we're talking about discrete"
+        },
+        {
+            "startTime": 1325.0,
+            "endTime": 1329.0,
+            "body": "objects as opposed to pixels and so we can do things to filter"
+        },
+        {
+            "startTime": 1329.0,
+            "endTime": 1333.0,
+            "body": "that down at least that that's my sort of experience is that"
+        },
+        {
+            "startTime": 1333.0,
+            "endTime": 1335.0,
+            "body": "also your experience or do you can you put some other words"
+        },
+        {
+            "startTime": 1335.0,
+            "endTime": 1338.0,
+            "body": "around that as someone who's tried to make this model and"
+        },
+        {
+            "startTime": 1338.0,
+            "endTime": 1342.0,
+            "body": "is also continuously improving it there's even more complexity"
+        },
+        {
+            "startTime": 1342.0,
+            "endTime": 1346.0,
+            "body": "than you could imagine we've done a few projects on like"
+        },
+        {
+            "startTime": 1346.0,
+            "endTime": 1351.0,
+            "body": "book to referencing maps and one of the really interesting"
+        },
+        {
+            "startTime": 1351.0,
+            "endTime": 1355.0,
+            "body": "parts of this challenge is things change over time and so"
+        },
+        {
+            "startTime": 1355.0,
+            "endTime": 1360.0,
+            "body": "we've gotten basically the equivalent of a truck load of"
+        },
+        {
+            "startTime": 1360.0,
+            "endTime": 1363.0,
+            "body": "of PDF maps and I've been asked to do your reference these"
+        },
+        {
+            "startTime": 1363.0,
+            "endTime": 1368.0,
+            "body": "and the complexity of that is like highway names change"
+        },
+        {
+            "startTime": 1368.0,
+            "endTime": 1371.0,
+            "body": "over time right road names change over time buildings disappear"
+        },
+        {
+            "startTime": 1371.0,
+            "endTime": 1375.0,
+            "body": "and appear and so when you're being at rivers like change"
+        },
+        {
+            "startTime": 1375.0,
+            "endTime": 1378.0,
+            "body": "direction as they flow and so when you're being asked to"
+        },
+        {
+            "startTime": 1378.0,
+            "endTime": 1382.0,
+            "body": "locate a map the map is actually a description of how it was"
+        },
+        {
+            "startTime": 1382.0,
+            "endTime": 1387.0,
+            "body": "at a certain place in time and so that's another complexity"
+        },
+        {
+            "startTime": 1387.0,
+            "endTime": 1390.0,
+            "body": "that you're also dealing with well yeah it's a really good point"
+        },
+        {
+            "startTime": 1390.0,
+            "endTime": 1394.0,
+            "body": "to talk about that trust me I hadn't thought about it either"
+        },
+        {
+            "startTime": 1394.0,
+            "endTime": 1397.0,
+            "body": "but you also said that you're hoping to have something working in"
+        },
+        {
+            "startTime": 1397.0,
+            "endTime": 1401.0,
+            "body": "three months time which just seems insane but what do your"
+        },
+        {
+            "startTime": 1401.0,
+            "endTime": 1404.0,
+            "body": "expectations to have working three months time what what do"
+        },
+        {
+            "startTime": 1404.0,
+            "endTime": 1407.0,
+            "body": "you think it is that that will be working and how will it work"
+        },
+        {
+            "startTime": 1407.0,
+            "endTime": 1410.0,
+            "body": "I think it's really about this threshold of human usability"
+        },
+        {
+            "startTime": 1410.0,
+            "endTime": 1414.0,
+            "body": "for an AI autocomplete we realized that the bar was"
+        },
+        {
+            "startTime": 1414.0,
+            "endTime": 1418.0,
+            "body": "that the autocompleted vertices are easy to delete in case"
+        },
+        {
+            "startTime": 1418.0,
+            "endTime": 1421.0,
+            "body": "they're wrong but easy to continue from in case that they're"
+        },
+        {
+            "startTime": 1421.0,
+            "endTime": 1424.0,
+            "body": "right so we find that a lot of our users are actually okay"
+        },
+        {
+            "startTime": 1424.0,
+            "endTime": 1429.0,
+            "body": "with mistakes because they can instantly repair them designing"
+        },
+        {
+            "startTime": 1429.0,
+            "endTime": 1432.0,
+            "body": "that into our qgs plugin has actually been a great"
+        },
+        {
+            "startTime": 1432.0,
+            "endTime": 1435.0,
+            "body": "boon for its usability and we're kind of looking for the same"
+        },
+        {
+            "startTime": 1435.0,
+            "endTime": 1439.0,
+            "body": "thing with this year referencing model it's actually of"
+        },
+        {
+            "startTime": 1439.0,
+            "endTime": 1443.0,
+            "body": "no cost to you to try and gerruffin something acknowledge"
+        },
+        {
+            "startTime": 1443.0,
+            "endTime": 1447.0,
+            "body": "even if you get an error message or acknowledge that the"
+        },
+        {
+            "startTime": 1447.0,
+            "endTime": 1450.0,
+            "body": "gerruffin is not as accurate as you wanted it and then go in"
+        },
+        {
+            "startTime": 1450.0,
+            "endTime": 1453.0,
+            "body": "there and gerruffin set yourself and so you can imagine a"
+        },
+        {
+            "startTime": 1453.0,
+            "endTime": 1456.0,
+            "body": "gerruffin sing button in your desktop GIS software where"
+        },
+        {
+            "startTime": 1456.0,
+            "endTime": 1460.0,
+            "body": "you load a raster and perhaps it doesn't have a CRS perhaps"
+        },
+        {
+            "startTime": 1460.0,
+            "endTime": 1463.0,
+            "body": "the ground control points are wrong and it automatically"
+        },
+        {
+            "startTime": 1463.0,
+            "endTime": 1468.0,
+            "body": "locates its location in the real world and aligns like"
+        },
+        {
+            "startTime": 1468.0,
+            "endTime": 1471.0,
+            "body": "rotates that image aligns it and gives you ground control"
+        },
+        {
+            "startTime": 1471.0,
+            "endTime": 1475.0,
+            "body": "points to ground it in you know in its actual location"
+        },
+        {
+            "startTime": 1475.0,
+            "endTime": 1478.0,
+            "body": "and that experiences what we're essentially trying to"
+        },
+        {
+            "startTime": 1478.0,
+            "endTime": 1481.0,
+            "body": "emulate with an a i gerruffinser wow so you would"
+        },
+        {
+            "startTime": 1481.0,
+            "endTime": 1484.0,
+            "body": "that that's a really interesting inside that they're already"
+        },
+        {
+            "startTime": 1484.0,
+            "endTime": 1487.0,
+            "body": "doing that which sounds incredible already doing that"
+        },
+        {
+            "startTime": 1487.0,
+            "endTime": 1491.0,
+            "body": "would save a ton of time for people and be a massive"
+        },
+        {
+            "startTime": 1491.0,
+            "endTime": 1495.0,
+            "body": "value add for them right and because they come into this"
+        },
+        {
+            "startTime": 1495.0,
+            "endTime": 1500.0,
+            "body": "task with the expected cost of gerruffin sing because"
+        },
+        {
+            "startTime": 1500.0,
+            "endTime": 1503.0,
+            "body": "gerruffin sing something accurately can take upwards"
+        },
+        {
+            "startTime": 1503.0,
+            "endTime": 1507.0,
+            "body": "20 minutes if I've had maps that go longer but let's let's say"
+        },
+        {
+            "startTime": 1507.0,
+            "endTime": 1511.0,
+            "body": "20 minutes as a good number because you know that it can take"
+        },
+        {
+            "startTime": 1511.0,
+            "endTime": 1514.0,
+            "body": "that long the cost of actually waiting 10 seconds to have an"
+        },
+        {
+            "startTime": 1514.0,
+            "endTime": 1518.0,
+            "body": "AI model try it first that's actually pretty good and"
+        },
+        {
+            "startTime": 1518.0,
+            "endTime": 1521.0,
+            "body": "so that's kind of what I have in mind as I go about building"
+        },
+        {
+            "startTime": 1521.0,
+            "endTime": 1525.0,
+            "body": "this model now we jump back to use it to your auto"
+        },
+        {
+            "startTime": 1525.0,
+            "endTime": 1528.0,
+            "body": "complete for a vectorization now that it that it's working"
+        },
+        {
+            "startTime": 1528.0,
+            "endTime": 1530.0,
+            "body": "you've crossed that threshold of usability that you keep"
+        },
+        {
+            "startTime": 1530.0,
+            "endTime": 1534.0,
+            "body": "it does that mean that as the person's using it and creating"
+        },
+        {
+            "startTime": 1534.0,
+            "endTime": 1538.0,
+            "body": "these results are they in a way creating labels and adding"
+        },
+        {
+            "startTime": 1538.0,
+            "endTime": 1541.0,
+            "body": "to the model as they do it yet yes this verticie was"
+        },
+        {
+            "startTime": 1541.0,
+            "endTime": 1544.0,
+            "body": "right yes this verticie was no that's wrong over here"
+        },
+        {
+            "startTime": 1544.0,
+            "endTime": 1547.0,
+            "body": "are they improving the model over time so not by default"
+        },
+        {
+            "startTime": 1547.0,
+            "endTime": 1551.0,
+            "body": "so our plugin doesn't collect any unnecessary telemetry"
+        },
+        {
+            "startTime": 1551.0,
+            "endTime": 1555.0,
+            "body": "so we obviously know when you've requested a like"
+        },
+        {
+            "startTime": 1555.0,
+            "endTime": 1558.0,
+            "body": "an auto complete but we don't track whether or not you"
+        },
+        {
+            "startTime": 1558.0,
+            "endTime": 1562.0,
+            "body": "keep that result we don't track whether or not you delete"
+        },
+        {
+            "startTime": 1562.0,
+            "endTime": 1566.0,
+            "body": "the resulting completion and we don't track whether"
+        },
+        {
+            "startTime": 1566.0,
+            "endTime": 1569.0,
+            "body": "or not you cut that completion at a particular point all"
+        },
+        {
+            "startTime": 1569.0,
+            "endTime": 1572.0,
+            "body": "these are kind of potential outcomes that could happen"
+        },
+        {
+            "startTime": 1572.0,
+            "endTime": 1576.0,
+            "body": "in the plugin and so we don't track any telemetry as to those"
+        },
+        {
+            "startTime": 1576.0,
+            "endTime": 1579.0,
+            "body": "outcomes and so we don't automatically add any"
+        },
+        {
+            "startTime": 1579.0,
+            "endTime": 1582.0,
+            "body": "maps to our training data set we do occasionally have"
+        },
+        {
+            "startTime": 1582.0,
+            "endTime": 1585.0,
+            "body": "conversations with our users where they request that we"
+        },
+        {
+            "startTime": 1585.0,
+            "endTime": 1589.0,
+            "body": "add their map storage training to set and on occasion"
+        },
+        {
+            "startTime": 1589.0,
+            "endTime": 1593.0,
+            "body": "we will go and have them hand digitized we have a GIS"
+        },
+        {
+            "startTime": 1593.0,
+            "endTime": 1596.0,
+            "body": "staff that helps us with that but by default that's not happening"
+        },
+        {
+            "startTime": 1596.0,
+            "endTime": 1599.0,
+            "body": "is that in the interests of privacy or is it because"
+        },
+        {
+            "startTime": 1599.0,
+            "endTime": 1602.0,
+            "body": "that data would not add any you know particular value"
+        },
+        {
+            "startTime": 1602.0,
+            "endTime": 1606.0,
+            "body": "to to the auto complete model in the background it is"
+        },
+        {
+            "startTime": 1606.0,
+            "endTime": 1609.0,
+            "body": "definitely in the interest of privacy yeah let's say"
+        },
+        {
+            "startTime": 1609.0,
+            "endTime": 1612.0,
+            "body": "if okay so what you're saying here is that you"
+        },
+        {
+            "startTime": 1612.0,
+            "endTime": 1615.0,
+            "body": "would be better for the model we could make a better model if we"
+        },
+        {
+            "startTime": 1615.0,
+            "endTime": 1617.0,
+            "body": "collected that data about the interest of privacy"
+        },
+        {
+            "startTime": 1617.0,
+            "endTime": 1620.0,
+            "body": "not I realize earlier on you said that these are"
+        },
+        {
+            "startTime": 1620.0,
+            "endTime": 1622.0,
+            "body": "two different problems to solve the auto complete"
+        },
+        {
+            "startTime": 1622.0,
+            "endTime": 1626.0,
+            "body": "is a you know a semantic problem and the the georeferencing is a"
+        },
+        {
+            "startTime": 1626.0,
+            "endTime": 1629.0,
+            "body": "search problem assuming that you know we didn't have to think"
+        },
+        {
+            "startTime": 1629.0,
+            "endTime": 1632.0,
+            "body": "about privacy issues here if you also collected data for"
+        },
+        {
+            "startTime": 1632.0,
+            "endTime": 1636.0,
+            "body": "that the georeferencing that people were doing could you"
+        },
+        {
+            "startTime": 1636.0,
+            "endTime": 1639.0,
+            "body": "also improve that over time I think you could I"
+        },
+        {
+            "startTime": 1639.0,
+            "endTime": 1643.0,
+            "body": "think as with most ML models that are kind of deployed"
+        },
+        {
+            "startTime": 1643.0,
+            "endTime": 1646.0,
+            "body": "on the internet seeing how it's actually being used in the real"
+        },
+        {
+            "startTime": 1646.0,
+            "endTime": 1650.0,
+            "body": "world is valuable information but at least for us we found"
+        },
+        {
+            "startTime": 1650.0,
+            "endTime": 1654.0,
+            "body": "that we can collect really high quality data without"
+        },
+        {
+            "startTime": 1654.0,
+            "endTime": 1659.0,
+            "body": "having to go into our users data and I think that's a great"
+        },
+        {
+            "startTime": 1659.0,
+            "endTime": 1662.0,
+            "body": "great that we've kind of found ourselves in in a great"
+        },
+        {
+            "startTime": 1662.0,
+            "endTime": 1666.0,
+            "body": "position to be in yeah absolutely so you sound incredibly"
+        },
+        {
+            "startTime": 1666.0,
+            "endTime": 1670.0,
+            "body": "talented and I'm an optimist so let's say in the next few"
+        },
+        {
+            "startTime": 1670.0,
+            "endTime": 1673.0,
+            "body": "hours when you've solved both these problems perfectly"
+        },
+        {
+            "startTime": 1673.0,
+            "endTime": 1676.0,
+            "body": "and you're ready to move on to one of the next steps in the"
+        },
+        {
+            "startTime": 1676.0,
+            "endTime": 1679.0,
+            "body": "process which is adding metadata now that you've solved"
+        },
+        {
+            "startTime": 1679.0,
+            "endTime": 1682.0,
+            "body": "the the auto complete problem you've got a model that"
+        },
+        {
+            "startTime": 1682.0,
+            "endTime": 1684.0,
+            "body": "works 100% of the time you've got a georeferencing model that"
+        },
+        {
+            "startTime": 1684.0,
+            "endTime": 1688.0,
+            "body": "works 100% of the time how will you start work on collecting"
+        },
+        {
+            "startTime": 1688.0,
+            "endTime": 1691.0,
+            "body": "metadata what will that look like what what will be the steps"
+        },
+        {
+            "startTime": 1691.0,
+            "endTime": 1694.0,
+            "body": "involved in the potential output the metadata is really"
+        },
+        {
+            "startTime": 1694.0,
+            "endTime": 1698.0,
+            "body": "interesting because I think it brings the semantic"
+        },
+        {
+            "startTime": 1698.0,
+            "endTime": 1702.0,
+            "body": "understanding of the map that someone is digitizing to a"
+        },
+        {
+            "startTime": 1702.0,
+            "endTime": 1706.0,
+            "body": "totally new level because when you see people extracting all"
+        },
+        {
+            "startTime": 1706.0,
+            "endTime": 1711.0,
+            "body": "the relevant metadata for a particular project really it's"
+        },
+        {
+            "startTime": 1711.0,
+            "endTime": 1715.0,
+            "body": "not at the point where you're ingesting metadata it's"
+        },
+        {
+            "startTime": 1715.0,
+            "endTime": 1718.0,
+            "body": "not about a particular map it's how the map fits into your"
+        },
+        {
+            "startTime": 1718.0,
+            "endTime": 1721.0,
+            "body": "overall project and the goal that you're trying to accomplish"
+        },
+        {
+            "startTime": 1721.0,
+            "endTime": 1725.0,
+            "body": "and so if you are doing construction in an area and you want to"
+        },
+        {
+            "startTime": 1725.0,
+            "endTime": 1729.0,
+            "body": "have a complete understanding of all the buried utility lines"
+        },
+        {
+            "startTime": 1729.0,
+            "endTime": 1733.0,
+            "body": "such that in the in the case that you need to actually dig"
+        },
+        {
+            "startTime": 1733.0,
+            "endTime": 1736.0,
+            "body": "around these and what's called daylight them which is when"
+        },
+        {
+            "startTime": 1736.0,
+            "endTime": 1739.0,
+            "body": "you dig exactly around them such that you can see them with"
+        },
+        {
+            "startTime": 1739.0,
+            "endTime": 1743.0,
+            "body": "your own eyes all of that metadata that would help you"
+        },
+        {
+            "startTime": 1743.0,
+            "endTime": 1746.0,
+            "body": "accomplish that day lighting process is actually your goal and"
+        },
+        {
+            "startTime": 1746.0,
+            "endTime": 1750.0,
+            "body": "the metadata extraction is just how you get there and so I"
+        },
+        {
+            "startTime": 1750.0,
+            "endTime": 1755.0,
+            "body": "think this is really where the application of multi-modal"
+        },
+        {
+            "startTime": 1755.0,
+            "endTime": 1759.0,
+            "body": "models can really accelerate this process it's because"
+        },
+        {
+            "startTime": 1759.0,
+            "endTime": 1764.0,
+            "body": "when we combine the intelligence that we can generate"
+        },
+        {
+            "startTime": 1764.0,
+            "endTime": 1768.0,
+            "body": "about a map along with the visual and textual data"
+        },
+        {
+            "startTime": 1768.0,
+            "endTime": 1772.0,
+            "body": "understanding that an LLM can provide it's only with"
+        },
+        {
+            "startTime": 1772.0,
+            "endTime": 1776.0,
+            "body": "that larger context that metadata extraction begins to"
+        },
+        {
+            "startTime": 1776.0,
+            "endTime": 1782.0,
+            "body": "make sense and so if you go in to gpt4 with vision or some of"
+        },
+        {
+            "startTime": 1782.0,
+            "endTime": 1785.0,
+            "body": "the other multi-modal models that are available right now"
+        },
+        {
+            "startTime": 1785.0,
+            "endTime": 1789.0,
+            "body": "and ask it to describe a particular feature in the image"
+        },
+        {
+            "startTime": 1789.0,
+            "endTime": 1793.0,
+            "body": "it is totally incapable of doing that and that's really not"
+        },
+        {
+            "startTime": 1793.0,
+            "endTime": 1797.0,
+            "body": "surprising this data is not in these models training data sets"
+        },
+        {
+            "startTime": 1797.0,
+            "endTime": 1801.0,
+            "body": "and so it's not surprising that by default you can't get"
+        },
+        {
+            "startTime": 1801.0,
+            "endTime": 1804.0,
+            "body": "this kind of behavior from these models that being said"
+        },
+        {
+            "startTime": 1804.0,
+            "endTime": 1807.0,
+            "body": "it's something that I know is possible and so I'm really"
+        },
+        {
+            "startTime": 1807.0,
+            "endTime": 1810.0,
+            "body": "excited to be a part of that future of making it."
+        },
+        {
+            "startTime": 1810.0,
+            "endTime": 1813.0,
+            "body": "Yeah I guess what I'm trying to understand is like"
+        },
+        {
+            "startTime": 1813.0,
+            "endTime": 1815.0,
+            "body": "what kinds of attributes would you be able to collect?"
+        },
+        {
+            "startTime": 1815.0,
+            "endTime": 1816.0,
+            "body": "What kinds of metadata?"
+        },
+        {
+            "startTime": 1816.0,
+            "endTime": 1820.0,
+            "body": "Because for me it would make sense that maybe you could"
+        },
+        {
+            "startTime": 1820.0,
+            "endTime": 1823.0,
+            "body": "calculate the distance of that line just as an example."
+        },
+        {
+            "startTime": 1823.0,
+            "endTime": 1826.0,
+            "body": "Maybe you could look at the color of the line that you have"
+        },
+        {
+            "startTime": 1826.0,
+            "endTime": 1829.0,
+            "body": "just auto completed and say well I know that that matches"
+        },
+        {
+            "startTime": 1829.0,
+            "endTime": 1833.0,
+            "body": "to this thing over here in the legend of my map"
+        },
+        {
+            "startTime": 1833.0,
+            "endTime": 1836.0,
+            "body": "if that's things and then there might be some data associated"
+        },
+        {
+            "startTime": 1836.0,
+            "endTime": 1840.0,
+            "body": "with that it might say water pipe, sewage pipe, I don't know"
+        },
+        {
+            "startTime": 1840.0,
+            "endTime": 1843.0,
+            "body": "gas pipe, that kind of thing that would be valuable data to have in there."
+        },
+        {
+            "startTime": 1843.0,
+            "endTime": 1845.0,
+            "body": "Maybe I've digitized other lines maybe it could say"
+        },
+        {
+            "startTime": 1845.0,
+            "endTime": 1848.0,
+            "body": "well this pipe is so close to the other pipe"
+        },
+        {
+            "startTime": 1848.0,
+            "endTime": 1853.0,
+            "body": "maybe you could start building up this database based on the metadata"
+        },
+        {
+            "startTime": 1853.0,
+            "endTime": 1856.0,
+            "body": "that you're collecting about each object based on its physical characteristics"
+        },
+        {
+            "startTime": 1856.0,
+            "endTime": 1858.0,
+            "body": "based on whatever else is in the map."
+        },
+        {
+            "startTime": 1858.0,
+            "endTime": 1861.0,
+            "body": "That is the way I would think of it but I'm sure you have other ideas."
+        },
+        {
+            "startTime": 1861.0,
+            "endTime": 1866.0,
+            "body": "So in terms of metadata that a user could probably extract"
+        },
+        {
+            "startTime": 1866.0,
+            "endTime": 1872.0,
+            "body": "from these maps automatically a really simple example is data on a legend"
+        },
+        {
+            "startTime": 1872.0,
+            "endTime": 1875.0,
+            "body": "but that's not really the exciting applications."
+        },
+        {
+            "startTime": 1875.0,
+            "endTime": 1877.0,
+            "body": "Data on a legend is like pretty easy to extract"
+        },
+        {
+            "startTime": 1877.0,
+            "endTime": 1882.0,
+            "body": "and so it's not really the level where you're saving a GIS analyst"
+        },
+        {
+            "startTime": 1882.0,
+            "endTime": 1884.0,
+            "body": "or a GIS technician a lot of time."
+        },
+        {
+            "startTime": 1884.0,
+            "endTime": 1887.0,
+            "body": "It's really about metadata that's hidden in these maps"
+        },
+        {
+            "startTime": 1887.0,
+            "endTime": 1891.0,
+            "body": "and so I'm going to continue with this subsurface utility example"
+        },
+        {
+            "startTime": 1891.0,
+            "endTime": 1893.0,
+            "body": "even though it's kind of misleading."
+        },
+        {
+            "startTime": 1893.0,
+            "endTime": 1898.0,
+            "body": "If you were to daylight barred utility lines you would do a more"
+        },
+        {
+            "startTime": 1898.0,
+            "endTime": 1901.0,
+            "body": "it would be a more complicated process to actually do that"
+        },
+        {
+            "startTime": 1901.0,
+            "endTime": 1905.0,
+            "body": "and you wouldn't do that with just QLD raster images, raster maps"
+        },
+        {
+            "startTime": 1905.0,
+            "endTime": 1908.0,
+            "body": "but hypothetically really important metadata to know"
+        },
+        {
+            "startTime": 1908.0,
+            "endTime": 1913.0,
+            "body": "if you were daylighting a particular barred utility line is actually the depth of that line"
+        },
+        {
+            "startTime": 1913.0,
+            "endTime": 1918.0,
+            "body": "and also the trait of the soil that it's buried in."
+        },
+        {
+            "startTime": 1918.0,
+            "endTime": 1922.0,
+            "body": "These are kind of important things for the construction crews to know"
+        },
+        {
+            "startTime": 1922.0,
+            "endTime": 1926.0,
+            "body": "if they were to be delicately digging around a gas line"
+        },
+        {
+            "startTime": 1926.0,
+            "endTime": 1929.0,
+            "body": "such that it wouldn't have a dangerous utility strike"
+        },
+        {
+            "startTime": 1929.0,
+            "endTime": 1933.0,
+            "body": "and so that's kind of a good example in the utility space."
+        },
+        {
+            "startTime": 1933.0,
+            "endTime": 1938.0,
+            "body": "We also have our users outside of architecture engineering construction."
+        },
+        {
+            "startTime": 1938.0,
+            "endTime": 1940.0,
+            "body": "Another good example is actually mining and geology"
+        },
+        {
+            "startTime": 1940.0,
+            "endTime": 1947.0,
+            "body": "and so if you are a geologist and you are dealing with kind of a older geologic map"
+        },
+        {
+            "startTime": 1947.0,
+            "endTime": 1951.0,
+            "body": "that describes the deposits in an area."
+        },
+        {
+            "startTime": 1951.0,
+            "endTime": 1957.0,
+            "body": "The metadata associated with those deposits can be pretty complex"
+        },
+        {
+            "startTime": 1957.0,
+            "endTime": 1961.0,
+            "body": "especially when the legend associated with that."
+        },
+        {
+            "startTime": 1961.0,
+            "endTime": 1965.0,
+            "body": "It's not even about describing a solid color region of that map"
+        },
+        {
+            "startTime": 1965.0,
+            "endTime": 1972.0,
+            "body": "but rather the matching the exact stylistic look of that polygon"
+        },
+        {
+            "startTime": 1972.0,
+            "endTime": 1975.0,
+            "body": "to a tiny little bit in the region."
+        },
+        {
+            "startTime": 1975.0,
+            "endTime": 1980.0,
+            "body": "That kind of says this is a sediment deposit of some type"
+        },
+        {
+            "startTime": 1980.0,
+            "endTime": 1984.0,
+            "body": "and so it's metadata like that that we would want to extract automatically"
+        },
+        {
+            "startTime": 1984.0,
+            "endTime": 1989.0,
+            "body": "and actually embed into shape files or geopackages such that these projects can"
+        },
+        {
+            "startTime": 1989.0,
+            "endTime": 1991.0,
+            "body": "be accomplished more quickly."
+        },
+        {
+            "startTime": 1991.0,
+            "endTime": 1996.0,
+            "body": "Well, it looks like you have got your hands full for the next little while."
+        },
+        {
+            "startTime": 1996.0,
+            "endTime": 2002.0,
+            "body": "What more generally are you surprised at the lack of AI being used in QDS for example"
+        },
+        {
+            "startTime": 2002.0,
+            "endTime": 2006.0,
+            "body": "or GIS tools and especially when we think of desktop tools?"
+        },
+        {
+            "startTime": 2006.0,
+            "endTime": 2010.0,
+            "body": "For me, this is one of the few examples that I've seen out there in the world"
+        },
+        {
+            "startTime": 2010.0,
+            "endTime": 2016.0,
+            "body": "where it's being embedded into the actual tool itself, into the GIS tool itself"
+        },
+        {
+            "startTime": 2016.0,
+            "endTime": 2019.0,
+            "body": "but maybe you've seen more, maybe you've seen less."
+        },
+        {
+            "startTime": 2019.0,
+            "endTime": 2022.0,
+            "body": "I don't know but I'd really like to hear your thoughts about that."
+        },
+        {
+            "startTime": 2022.0,
+            "endTime": 2027.0,
+            "body": "As an ML oriented person, I think there's a big gap between what is possible"
+        },
+        {
+            "startTime": 2027.0,
+            "endTime": 2031.0,
+            "body": "in desktop GIS software and what is already happening."
+        },
+        {
+            "startTime": 2031.0,
+            "endTime": 2036.0,
+            "body": "So when people see large language models like ChatGPT,"
+        },
+        {
+            "startTime": 2036.0,
+            "endTime": 2041.0,
+            "body": "GPD for a lot of the other major developments that have been happening"
+        },
+        {
+            "startTime": 2041.0,
+            "endTime": 2044.0,
+            "body": "especially in terms of video generation, audio processing,"
+        },
+        {
+            "startTime": 2044.0,
+            "endTime": 2048.0,
+            "body": "it's clear that pretty much all complex problems"
+        },
+        {
+            "startTime": 2048.0,
+            "endTime": 2054.0,
+            "body": "will eventually be solved by artificial intelligence until it relates to scarcity."
+        },
+        {
+            "startTime": 2054.0,
+            "endTime": 2059.0,
+            "body": "I think unless you're talking about material scarcity that is like literally the amount of food"
+        },
+        {
+            "startTime": 2059.0,
+            "endTime": 2065.0,
+            "body": "that's available on Earth, a lot of these problems can and will be solved by AI and ML."
+        },
+        {
+            "startTime": 2065.0,
+            "endTime": 2072.0,
+            "body": "And I think it's only because we're at the beginning of this renaissance in machine learning"
+        },
+        {
+            "startTime": 2072.0,
+            "endTime": 2077.0,
+            "body": "that we see attention to it but everyone's talking about it and nobody is implementing it."
+        },
+        {
+            "startTime": 2077.0,
+            "endTime": 2082.0,
+            "body": "I think that's the best way to kind of imagine how this renaissance is happening right now."
+        },
+        {
+            "startTime": 2082.0,
+            "endTime": 2089.0,
+            "body": "Obviously open AI and these larger AI research companies are driving most of the innovation"
+        },
+        {
+            "startTime": 2089.0,
+            "endTime": 2091.0,
+            "body": "in terms of where AI is going."
+        },
+        {
+            "startTime": 2091.0,
+            "endTime": 2095.0,
+            "body": "Meta being actually an extremely great example who created segment anything"
+        },
+        {
+            "startTime": 2095.0,
+            "endTime": 2099.0,
+            "body": "and is releasing a lot of this groundbreaking research publicly."
+        },
+        {
+            "startTime": 2099.0,
+            "endTime": 2104.0,
+            "body": "But I think most of the opportunity that exists in machine learning today"
+        },
+        {
+            "startTime": 2104.0,
+            "endTime": 2111.0,
+            "body": "is actually in building domain specific models and embedding them into professionals workflows."
+        },
+        {
+            "startTime": 2111.0,
+            "endTime": 2115.0,
+            "body": "So I think GIS is a really great example of this."
+        },
+        {
+            "startTime": 2115.0,
+            "endTime": 2123.0,
+            "body": "You can't take an LLM even if it's memorized the entirety of the QGIS documentation"
+        },
+        {
+            "startTime": 2123.0,
+            "endTime": 2126.0,
+            "body": "plus all mentions of GIS online ever."
+        },
+        {
+            "startTime": 2126.0,
+            "endTime": 2132.0,
+            "body": "That LLM will often not immediately accelerate a professionals workflow."
+        },
+        {
+            "startTime": 2132.0,
+            "endTime": 2137.0,
+            "body": "But once you understand that these large models are doing much more than generate text,"
+        },
+        {
+            "startTime": 2137.0,
+            "endTime": 2143.0,
+            "body": "they're actually generating semantic understanding of what you are asking it to do."
+        },
+        {
+            "startTime": 2143.0,
+            "endTime": 2146.0,
+            "body": "And then completing that task as a result."
+        },
+        {
+            "startTime": 2146.0,
+            "endTime": 2150.0,
+            "body": "Once you see that semantic understanding is actually what's being accomplished here,"
+        },
+        {
+            "startTime": 2150.0,
+            "endTime": 2155.0,
+            "body": "you can embed semantic understanding into all programs."
+        },
+        {
+            "startTime": 2155.0,
+            "endTime": 2159.0,
+            "body": "And that program can understand your overall task just as much as you do."
+        },
+        {
+            "startTime": 2159.0,
+            "endTime": 2164.0,
+            "body": "And I think we will see that trend more generally within GIS, within CAD,"
+        },
+        {
+            "startTime": 2164.0,
+            "endTime": 2167.0,
+            "body": "within all of these kind of desktop softwares."
+        },
+        {
+            "startTime": 2167.0,
+            "endTime": 2169.0,
+            "body": "And it's not just about text.complete."
+        },
+        {
+            "startTime": 2169.0,
+            "endTime": 2171.0,
+            "body": "It's really about augmentation."
+        },
+        {
+            "startTime": 2171.0,
+            "endTime": 2176.0,
+            "body": "If you weren't working on this problem of auto-complete with digitization of geo-referencing,"
+        },
+        {
+            "startTime": 2176.0,
+            "endTime": 2178.0,
+            "body": "automatic extraction of metadata,"
+        },
+        {
+            "startTime": 2178.0,
+            "endTime": 2184.0,
+            "body": "and thinking again about working within and on top of the QGIS platform"
+        },
+        {
+            "startTime": 2184.0,
+            "endTime": 2187.0,
+            "body": "and solving problems for geospatial professionals"
+        },
+        {
+            "startTime": 2187.0,
+            "endTime": 2191.0,
+            "body": "that were using this as the main tool, what problem would you work on?"
+        },
+        {
+            "startTime": 2191.0,
+            "endTime": 2193.0,
+            "body": "That's a great question."
+        },
+        {
+            "startTime": 2193.0,
+            "endTime": 2199.0,
+            "body": "So pretty much all of my work so far has been around mapping the built world,"
+        },
+        {
+            "startTime": 2199.0,
+            "endTime": 2201.0,
+            "body": "or even the natural world."
+        },
+        {
+            "startTime": 2201.0,
+            "endTime": 2207.0,
+            "body": "But an interesting opportunity for the geospatial world to move towards"
+        },
+        {
+            "startTime": 2207.0,
+            "endTime": 2211.0,
+            "body": "is less about mapping its current state,"
+        },
+        {
+            "startTime": 2211.0,
+            "endTime": 2214.0,
+            "body": "but more about imagining what's possible."
+        },
+        {
+            "startTime": 2214.0,
+            "endTime": 2218.0,
+            "body": "And there's a couple of examples of startups actually doing this,"
+        },
+        {
+            "startTime": 2218.0,
+            "endTime": 2223.0,
+            "body": "where you take your conception of how the world is now"
+        },
+        {
+            "startTime": 2223.0,
+            "endTime": 2228.0,
+            "body": "and pretty much synthesize a way that the world could look in the future"
+        },
+        {
+            "startTime": 2228.0,
+            "endTime": 2231.0,
+            "body": "and evaluate whether or not that version is better."
+        },
+        {
+            "startTime": 2231.0,
+            "endTime": 2235.0,
+            "body": "There are some really great advancements in how people are doing this"
+        },
+        {
+            "startTime": 2235.0,
+            "endTime": 2239.0,
+            "body": "to, for example, make the world a greener place,"
+        },
+        {
+            "startTime": 2239.0,
+            "endTime": 2247.0,
+            "body": "because geospatial software can literally find the optimal place to put a wind farm"
+        },
+        {
+            "startTime": 2247.0,
+            "endTime": 2249.0,
+            "body": "or a solar farm."
+        },
+        {
+            "startTime": 2249.0,
+            "endTime": 2252.0,
+            "body": "Once you consider all the complexity that's associated with that."
+        },
+        {
+            "startTime": 2252.0,
+            "endTime": 2256.0,
+            "body": "But I think it goes much deeper than just real estate development."
+        },
+        {
+            "startTime": 2256.0,
+            "endTime": 2260.0,
+            "body": "It's actually about evaluating ways on a map"
+        },
+        {
+            "startTime": 2260.0,
+            "endTime": 2264.0,
+            "body": "that the world is a bad place and changing that in the future."
+        },
+        {
+            "startTime": 2264.0,
+            "endTime": 2267.0,
+            "body": "And that's really magical."
+        },
+        {
+            "startTime": 2267.0,
+            "endTime": 2273.0,
+            "body": "A fun example of that is actually when you map out the street trees in a neighborhood."
+        },
+        {
+            "startTime": 2273.0,
+            "endTime": 2276.0,
+            "body": "This is especially true in the United States,"
+        },
+        {
+            "startTime": 2276.0,
+            "endTime": 2280.0,
+            "body": "where you have kind of large roads and not much shade."
+        },
+        {
+            "startTime": 2280.0,
+            "endTime": 2284.0,
+            "body": "They don't really encourage pedestrian-friendly neighborhoods."
+        },
+        {
+            "startTime": 2284.0,
+            "endTime": 2288.0,
+            "body": "But you can actually use machine learning and statistics on geospatial data"
+        },
+        {
+            "startTime": 2288.0,
+            "endTime": 2292.0,
+            "body": "to find the best spot to plant large trees"
+        },
+        {
+            "startTime": 2292.0,
+            "endTime": 2296.0,
+            "body": "and create more shade, create a better spot to walk around."
+        },
+        {
+            "startTime": 2296.0,
+            "endTime": 2299.0,
+            "body": "And basically improve the nearby residents' lives."
+        },
+        {
+            "startTime": 2299.0,
+            "endTime": 2305.0,
+            "body": "So I think if I wasn't building AI autocomplete for this geomorphencing,"
+        },
+        {
+            "startTime": 2305.0,
+            "endTime": 2308.0,
+            "body": "vectorizing and metadata extraction workflow,"
+        },
+        {
+            "startTime": 2308.0,
+            "endTime": 2310.0,
+            "body": "I would be working on changing what's actually in the map."
+        },
+        {
+            "startTime": 2310.0,
+            "endTime": 2311.0,
+            "body": "That was a great answer."
+        },
+        {
+            "startTime": 2311.0,
+            "endTime": 2315.0,
+            "body": "I think I'm going to need a few minutes to walk around the house after this interview"
+        },
+        {
+            "startTime": 2315.0,
+            "endTime": 2317.0,
+            "body": "and think about that."
+        },
+        {
+            "startTime": 2317.0,
+            "endTime": 2319.0,
+            "body": "I appreciate it. You've really given me food for thought."
+        },
+        {
+            "startTime": 2319.0,
+            "endTime": 2322.0,
+            "body": "This is also probably a great time to wrap up the conversation."
+        },
+        {
+            "startTime": 2322.0,
+            "endTime": 2324.0,
+            "body": "And thank you very much for your time."
+        },
+        {
+            "startTime": 2324.0,
+            "endTime": 2327.0,
+            "body": "It's much appreciated. And thank you very much for your work."
+        },
+        {
+            "startTime": 2327.0,
+            "endTime": 2329.0,
+            "body": "I think it's fascinating. I think it's really interesting."
+        },
+        {
+            "startTime": 2329.0,
+            "endTime": 2333.0,
+            "body": "And above all, I think it's going to be incredibly helpful to a lot of people."
+        },
+        {
+            "startTime": 2333.0,
+            "endTime": 2335.0,
+            "body": "So if people want to check out what you're doing,"
+        },
+        {
+            "startTime": 2335.0,
+            "endTime": 2337.0,
+            "body": "where is the best place to they can go?"
+        },
+        {
+            "startTime": 2337.0,
+            "endTime": 2339.0,
+            "body": "Can they reach out to you? Is there a website?"
+        },
+        {
+            "startTime": 2339.0,
+            "endTime": 2341.0,
+            "body": "What, where can we send them?"
+        },
+        {
+            "startTime": 2341.0,
+            "endTime": 2343.0,
+            "body": "Yeah, thank you, Daniel."
+        },
+        {
+            "startTime": 2343.0,
+            "endTime": 2346.0,
+            "body": "If you're interested in seeing what we're up to,"
+        },
+        {
+            "startTime": 2346.0,
+            "endTime": 2350.0,
+            "body": "you can go to our website, which is bunting labs, B-U-N-T,"
+        },
+        {
+            "startTime": 2350.0,
+            "endTime": 2356.0,
+            "body": "I-N-G, labs.com. And you can also follow us on Twitter at the same handle."
+        },
+        {
+            "startTime": 2356.0,
+            "endTime": 2359.0,
+            "body": "Yeah, thank you so much for the opportunity to share what we're up to."
+        },
+        {
+            "startTime": 2359.0,
+            "endTime": 2361.0,
+            "body": "No problem. Any time. I appreciate your work."
+        },
+        {
+            "startTime": 2361.0,
+            "endTime": 2363.0,
+            "body": "And I wish you all the best in the future."
+        },
+        {
+            "startTime": 2363.0,
+            "endTime": 2364.0,
+            "body": "Cheers."
+        },
+        {
+            "startTime": 2364.0,
+            "endTime": 2365.0,
+            "body": "Thanks."
+        }
+    ]
+}
