@@ -1,0 +1,1483 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.310
+<v Yishai Beeri>We need to remember that less is more.
+
+00:00:02.830 --> 00:00:04.780
+<v Yishai Beeri>So don't come with 50 numbers.
+
+00:00:05.485 --> 00:00:07.658
+<v Yishai Beeri>It's not going to work for the business discussion.
+
+00:00:08.307 --> 00:00:13.217
+<v Yishai Beeri>Focus on what really matters and always show how that aligns with the business.
+
+00:00:13.417 --> 00:00:20.198
+<v Yishai Beeri>So if you're talking about predictability, yeah, this project is landing on time or 90 percent of it is landing on time.
+
+00:00:20.198 --> 00:00:22.978
+<v Yishai Beeri>And here's why, and here's the choices that I've made.
+
+00:00:23.608 --> 00:00:29.617
+<v Yishai Beeri>That was when you start overcoming those glazed eyes of oh, some numbers on something that I don't understand.
+
+00:00:29.792 --> 00:00:33.518
+<v Yishai Beeri>You're seeing success when you get, people are asking you to drill down.
+
+00:00:33.865 --> 00:00:34.164
+<v Yishai Beeri>Right.
+
+00:00:34.164 --> 00:00:36.655
+<v Yishai Beeri>They're asking you smart questions about the data that you're showing.
+
+00:00:37.292 --> 00:00:47.491
+<v Conor Bronsdon>Gardener just released their market guide, showing that software engineering intelligence platforms, help engineering leaders significantly improve both team productivity and value delivery.
+
+00:00:48.271 --> 00:00:54.212
+<v Conor Bronsdon>Through Gardner's in-depth analysis on the critical features of sci platforms and how they can be used to drive engineering excellence.
+
+00:00:54.491 --> 00:00:56.801
+<v Conor Bronsdon>Linear B was named as a representative vendor.
+
+00:00:57.222 --> 00:01:01.585
+<v Conor Bronsdon>And therefore we're giving away a complimentary copy of Gartner's sci market guide.
+
+00:01:01.783 --> 00:01:10.513
+<v Conor Bronsdon>Head to the link in the show notes to download your complimentary copy and learn how you can unlock the transformative potential of software engineering intelligence for your team.
+
+00:01:11.358 --> 00:01:13.028
+<v Dan Lines>Hey, what's up, everyone?
+
+00:01:13.058 --> 00:01:17.478
+<v Dan Lines>Welcome to another Labs episode of Dev Interrupted.
+
+00:01:18.138 --> 00:01:23.049
+<v Dan Lines>I'm your host, Dan Lines, LinearB COO and co founder.
+
+00:01:23.739 --> 00:01:27.429
+<v Dan Lines>And in our Labs episodes, we dive deep into data.
+
+00:01:28.338 --> 00:01:30.728
+<v Dan Lines>And best practices that we find.
+
+00:01:30.789 --> 00:01:34.828
+<v Dan Lines>And today we're talking engineering goals and reporting.
+
+00:01:35.118 --> 00:01:52.558
+<v Dan Lines>So what we're going to do, we're going to unpack the data and strategies that elite engineering organizations use to set goals that drive predictable software delivery, and also how you can report on your progress to senior leadership.
+
+00:01:52.718 --> 00:01:54.269
+<v Dan Lines>Very, very important thing to do.
+
+00:01:55.248 --> 00:02:13.949
+<v Dan Lines>And I'm joined by a voice, who will be, I think, very familiar to many of our listeners, an expert who has helped countless organizations use goal setting to drive engineering improvement, LinearB's own CTO, Yishai Berry.
+
+00:02:14.269 --> 00:02:16.049
+<v Dan Lines>Yishai, welcome to the pod.
+
+00:02:17.079 --> 00:02:17.658
+<v Dan Lines>Thanks Dan.
+
+00:02:17.729 --> 00:02:18.498
+<v Dan Lines>Great being here.
+
+00:02:19.688 --> 00:02:21.008
+<v Dan Lines>Awesome to have you on, brother.
+
+00:02:21.639 --> 00:02:23.199
+<v Dan Lines>We're going to dive right in.
+
+00:02:24.019 --> 00:02:29.468
+<v Dan Lines>Our first topic in general is around goal setting in the dual mandate.
+
+00:02:30.368 --> 00:02:37.519
+<v Dan Lines>I know our listeners are likely aware of the meanings of some of these acronyms that we're going to use here.
+
+00:02:37.598 --> 00:02:42.429
+<v Dan Lines>There's a bunch of them, but I think they're crucial to the topic we're about to discuss.
+
+00:02:42.788 --> 00:02:57.794
+<v Dan Lines>And so just to make sure we're aligned, I want to quickly Quickly maybe recap some of this terminology, so we'll probably talk OKRs, so OKRs, Objectives and Key Results, KPIs, Key Performance Indicators.
+
+00:02:57.954 --> 00:03:01.433
+<v Dan Lines>These are like the most business oriented acronyms ever.
+
+00:03:02.213 --> 00:03:10.723
+<v Dan Lines>Then we have SMART goals, S M A R T, which are Specific, Measurable, Achievable, Relevant, Time bound goals.
+
+00:03:11.493 --> 00:03:15.579
+<v Dan Lines>So those might be some of the things that You know, some of the acronyms that we use.
+
+00:03:15.618 --> 00:03:22.938
+<v Dan Lines>Now, one of the key things we've noticed in goal setting for engineering teams is a shift in what goals need to look like.
+
+00:03:22.938 --> 00:03:31.449
+<v Dan Lines>So engineering leaders today have a dual mandate of both expected to be elite in operational excellence.
+
+00:03:31.449 --> 00:03:37.479
+<v Dan Lines>So when we think of operational excellence, I almost think of this as like maybe where engineering teams started.
+
+00:03:37.479 --> 00:03:40.808
+<v Dan Lines>It's to deliver the stuff in high quality.
+
+00:03:42.364 --> 00:03:43.653
+<v Dan Lines>Do your engineering thing.
+
+00:03:43.663 --> 00:03:49.723
+<v Dan Lines>We've been doing this, I don't know, 50 years now, 30 years now, ever since I was doing engineering.
+
+00:03:49.734 --> 00:03:51.313
+<v Dan Lines>That's operational excellence.
+
+00:03:51.313 --> 00:03:53.604
+<v Dan Lines>Like, be really good at engineering stuff.
+
+00:03:54.243 --> 00:03:58.883
+<v Dan Lines>But the other side of it, and I think this is newer, I know it's newer.
+
+00:03:59.038 --> 00:04:02.838
+<v Dan Lines>And I know the best engineering leaders talk to me about it all the time.
+
+00:04:02.838 --> 00:04:04.669
+<v Dan Lines>A lot of our customers are doing this.
+
+00:04:04.919 --> 00:04:07.598
+<v Dan Lines>It's alignment with business priorities.
+
+00:04:07.598 --> 00:04:10.588
+<v Dan Lines>That's the second part of the dual mandate.
+
+00:04:10.628 --> 00:04:18.459
+<v Dan Lines>And I think the reason is most organization has recognized, okay, our engineering team is like the lifeblood of the company.
+
+00:04:19.249 --> 00:04:21.168
+<v Dan Lines>There's a product that goes along with it.
+
+00:04:21.168 --> 00:04:22.439
+<v Dan Lines>We sell that product.
+
+00:04:22.439 --> 00:04:23.949
+<v Dan Lines>Maybe it's a SaaS product.
+
+00:04:24.228 --> 00:04:27.559
+<v Dan Lines>And if we're aligned on business objectives, we make more money.
+
+00:04:27.723 --> 00:04:28.954
+<v Dan Lines>I think that's where it's coming from.
+
+00:04:28.954 --> 00:04:30.293
+<v Dan Lines>And that's the other side of it.
+
+00:04:30.954 --> 00:04:33.213
+<v Dan Lines>So I'm going to, that's kind of setting the table.
+
+00:04:33.213 --> 00:04:41.254
+<v Dan Lines>So Yishai, how has that dual mandate impacted how R& D leaders need to think about goal setting?
+
+00:04:42.754 --> 00:04:43.043
+<v Yishai Beeri>Yeah.
+
+00:04:43.043 --> 00:04:57.139
+<v Yishai Beeri>So definitely a shift, like you said, if you, you, you go back, um, you know, when I started working in engineering management and leadership, there was always the focus of, Are we running a tight ship?
+
+00:04:57.228 --> 00:05:00.189
+<v Yishai Beeri>Are we getting the most out of our developers and that spend?
+
+00:05:00.788 --> 00:05:10.108
+<v Yishai Beeri>Are we, um, effective in, um, translating the, you know, the cost of having a dev team into new features?
+
+00:05:10.538 --> 00:05:11.329
+<v Yishai Beeri>Velocity?
+
+00:05:11.668 --> 00:05:17.189
+<v Yishai Beeri>There's a very old word in engineering management, um, but also quality.
+
+00:05:17.439 --> 00:05:21.048
+<v Yishai Beeri>Are we good at what we do as a, as a, as an art, if you like?
+
+00:05:21.759 --> 00:05:46.649
+<v Yishai Beeri>Um, and I think the strong engineering leaders always had the notion of being aligned with what the business needs, but it's more recent that this is surfacing as something that's measurable and something that needs to be, you know, Tied to how we set goals, how we measure our organization, ourselves, how we report to our peers to, you know, managing up.
+
+00:05:47.149 --> 00:05:53.178
+<v Yishai Beeri>That is a little more recent and there's good ways to think about, are we aligned with the business?
+
+00:05:53.348 --> 00:05:54.978
+<v Yishai Beeri>Are we not just running a tight ship?
+
+00:05:55.269 --> 00:06:03.598
+<v Yishai Beeri>In an effective operation, we're also, um, tuned to what the business needs, which means it's, you know, this is about delighting customers.
+
+00:06:03.608 --> 00:06:13.218
+<v Yishai Beeri>It's about understanding the things that move the needle for the business and for the business to grow or to take the next step in its journey.
+
+00:06:14.288 --> 00:06:19.749
+<v Yishai Beeri>Um, we know software is eating the world and every company now is a software company.
+
+00:06:19.759 --> 00:06:21.678
+<v Yishai Beeri>I think a lot of that shift came from that.
+
+00:06:22.213 --> 00:06:30.704
+<v Yishai Beeri>It's no longer one of the departments which happens to, you know, dabble with writing code for some either internal or even a product.
+
+00:06:31.533 --> 00:06:33.684
+<v Yishai Beeri>All the companies are becoming software companies.
+
+00:06:33.694 --> 00:06:36.704
+<v Yishai Beeri>If you run an airline, you're a software company, right?
+
+00:06:37.033 --> 00:06:40.144
+<v Yishai Beeri>If you're selling hamburgers, you're a software company.
+
+00:06:40.963 --> 00:06:49.113
+<v Yishai Beeri>So, um, having the engineering department, you know, it's rapidly becoming stronger.
+
+00:06:49.244 --> 00:06:51.314
+<v Yishai Beeri>More of the spend is going there.
+
+00:06:51.913 --> 00:07:01.584
+<v Yishai Beeri>Decisions which used to live outside, like in IT, or even in other business processes, have become engineering, because engineering, uh, everything is software.
+
+00:07:01.973 --> 00:07:06.293
+<v Yishai Beeri>So now even business processes, in many cases, are run by engineering.
+
+00:07:07.113 --> 00:07:15.884
+<v Yishai Beeri>All that burden now means that we have to really focus on, are we building and investing our time and energy in the right places?
+
+00:07:16.329 --> 00:07:18.019
+<v Yishai Beeri>Which is the business alignment part.
+
+00:07:18.769 --> 00:07:20.899
+<v Dan Lines>You know what's so funny about what you were saying?
+
+00:07:20.899 --> 00:07:22.689
+<v Dan Lines>I was thinking a lot about it.
+
+00:07:22.689 --> 00:07:23.829
+<v Dan Lines>I think it's really smart.
+
+00:07:24.468 --> 00:07:30.999
+<v Dan Lines>And it's almost like this dual mandate, honestly, has kinda been there forever in a sense.
+
+00:07:31.048 --> 00:07:35.908
+<v Dan Lines>Right now, and for the forever future, it's like mandatory.
+
+00:07:36.139 --> 00:07:42.218
+<v Dan Lines>Because of all the reasons that you said, every, every company is a software company, even if you sell hamburgers, you're a software company.
+
+00:07:42.288 --> 00:07:42.519
+<v Dan Lines>Yeah.
+
+00:07:42.559 --> 00:07:55.119
+<v Dan Lines>But if I think back to when I first started, even in development, very, very long time ago, the best leaders, people would say, Oh yeah, I love that person.
+
+00:07:55.119 --> 00:07:55.338
+<v Dan Lines>Oh yeah.
+
+00:07:55.338 --> 00:07:56.509
+<v Dan Lines>Why do you love that person?
+
+00:07:56.538 --> 00:08:01.899
+<v Dan Lines>Well, that person can talk about when is the project going to be delivered?
+
+00:08:01.899 --> 00:08:05.088
+<v Dan Lines>They can talk to the CEO about what the CEO's needs are.
+
+00:08:05.483 --> 00:08:09.613
+<v Dan Lines>What are the most important things that they were almost like amazing translator.
+
+00:08:09.613 --> 00:08:16.043
+<v Dan Lines>They had all of the engineering practices of efficiency, quality, you know, low change failure rate.
+
+00:08:16.204 --> 00:08:27.913
+<v Dan Lines>And they had this other ability to say, okay, I know exactly what the business needs and I can talk to all of the go to market team about how my team engineering is going to hit those goals.
+
+00:08:28.454 --> 00:08:29.923
+<v Dan Lines>Like those were the best leaders.
+
+00:08:30.173 --> 00:08:32.803
+<v Dan Lines>Now I think it's just like mandatory to be like that.
+
+00:08:33.394 --> 00:08:34.163
+<v Dan Lines>Would you agree?
+
+00:08:34.163 --> 00:08:36.364
+<v Dan Lines>Like the people you think about who are like, great.
+
+00:08:36.703 --> 00:08:42.474
+<v Yishai Beeri>I think it's, it's both becoming mandatory or a sign of, yeah, this is a strong leader for engineering.
+
+00:08:43.183 --> 00:08:46.244
+<v Yishai Beeri>Um, it's also becoming much more explicit.
+
+00:08:46.663 --> 00:08:49.524
+<v Yishai Beeri>It's not just a soft thing that you need to have.
+
+00:08:49.553 --> 00:08:58.433
+<v Yishai Beeri>There's, you need to be talking about very specific, um, items and, you know, interact with the rest of the business in specific ways.
+
+00:08:58.433 --> 00:08:58.453
+<v Yishai Beeri>Yeah.
+
+00:08:59.163 --> 00:09:13.688
+<v Yishai Beeri>Because if you're not going to be predictable and empower the go to market side of the house Then there's a built in delay between when features and capabilities are ready and when the field can actually sell them, for example, uh, or support them.
+
+00:09:14.479 --> 00:09:17.849
+<v Yishai Beeri>So it's becoming much more structured, I think.
+
+00:09:18.278 --> 00:09:18.828
+<v Dan Lines>Yeah, you're right.
+
+00:09:18.828 --> 00:09:23.208
+<v Dan Lines>I mean, and that I think leads us to the data and the goals.
+
+00:09:24.259 --> 00:09:25.739
+<v Dan Lines>So now that it is.
+
+00:09:26.139 --> 00:09:29.928
+<v Dan Lines>Mandatory, and it needs to be explicit.
+
+00:09:30.448 --> 00:09:37.793
+<v Dan Lines>How can engineering leaders set goals that help them achieve both sides of this
+
+00:09:38.775 --> 00:09:43.635
+<v Yishai Beeri>you know, we're now taking this to a more tangible step of, okay, I need to set goals.
+
+00:09:45.035 --> 00:09:49.326
+<v Yishai Beeri>Like in every business unit, I'm not going to measure everything or goal around everything.
+
+00:09:49.566 --> 00:09:50.245
+<v Yishai Beeri>It's too much.
+
+00:09:50.916 --> 00:09:52.346
+<v Yishai Beeri>You need to apply some focus.
+
+00:09:52.806 --> 00:09:59.306
+<v Yishai Beeri>Um, realizing and understanding that the dual mandate means that, okay, I need to think about at least the two sides.
+
+00:09:59.336 --> 00:10:03.975
+<v Yishai Beeri>I need goals around my operational excellence, about our productivity.
+
+00:10:04.755 --> 00:10:08.716
+<v Yishai Beeri>Um, but I also have to have some goals around the business alignment.
+
+00:10:10.716 --> 00:10:19.405
+<v Yishai Beeri>So, the first, like, um, you know, actionable step is make sure you have a goal on each of each side of that dual mandate.
+
+00:10:20.035 --> 00:10:24.105
+<v Yishai Beeri>A goal on the business alignment part can be around your predictability.
+
+00:10:25.015 --> 00:10:33.015
+<v Yishai Beeri>Am I being, like, able to deliver on promises or be predictable about delivery in a consistent way?
+
+00:10:34.025 --> 00:10:52.041
+<v Yishai Beeri>It could be about, um, are we spending enough on Um, on building new value, are we able to focus enough of our efforts in building and creating new value and not just chasing, uh, putting out fires, uh, just, you know, keeping the lights on?
+
+00:10:52.630 --> 00:10:54.760
+<v Yishai Beeri>Do we have enough of our spin on innovation?
+
+00:10:55.461 --> 00:11:04.311
+<v Yishai Beeri>Or it could be about the key projects, the key initiatives that the business really cares about and making sure that we are investing enough in these.
+
+00:11:04.655 --> 00:11:06.946
+<v Yishai Beeri>Not just in our plans, but also in actuals.
+
+00:11:07.836 --> 00:11:12.485
+<v Yishai Beeri>If I needed 20 people on that project, am I actually getting 20 people on that project?
+
+00:11:13.306 --> 00:11:17.115
+<v Yishai Beeri>These are the kinds of goals we can take for the business alignment side.
+
+00:11:17.326 --> 00:11:26.316
+<v Yishai Beeri>And then on operational excellence, there's, things like cycle time, like understanding our, um, developer experience, our quality.
+
+00:11:26.676 --> 00:11:37.395
+<v Yishai Beeri>There's a bunch of goals and metrics depending on where you are in where what's really important for you as an organization I think these things are a little easier to measure because they've been around longer.
+
+00:11:37.625 --> 00:11:45.701
+<v Yishai Beeri>There's a little more And even on intuition, engineering leaders tend to gravitate to those areas.
+
+00:11:45.961 --> 00:11:49.500
+<v Yishai Beeri>So, have one on each is a good starting point.
+
+00:11:50.150 --> 00:11:50.350
+<v Yishai Beeri>Yeah,
+
+00:11:50.350 --> 00:12:10.951
+<v Dan Lines>I think what we want to do, of course, what I want to do on this pod, we have a lot of pods in Dev Interrupted that are about the DORA metrics, cycle time, change failure rate, deployment frequency, MTTR, then you have all your leading indicators, PR size, rework rate, I'm going to put it aside for a second.
+
+00:12:11.311 --> 00:12:13.510
+<v Dan Lines>Let's talk about where the industry is going.
+
+00:12:14.120 --> 00:12:19.071
+<v Dan Lines>And you said the one that caught my ear the most was predictability.
+
+00:12:19.630 --> 00:12:30.120
+<v Dan Lines>When I talk to engineering leaders and what I know from my past career, the question that's always asked on the engineering leader is like, when is the thing going to be done?
+
+00:12:30.370 --> 00:12:31.150
+<v Dan Lines>Delivered to me.
+
+00:12:32.041 --> 00:12:33.301
+<v Dan Lines>When do I get my value?
+
+00:12:33.341 --> 00:12:37.620
+<v Dan Lines>When do I get to close a big deal because you have this new feature that came out?
+
+00:12:37.620 --> 00:12:39.311
+<v Dan Lines>When do I get to retain a customer?
+
+00:12:40.561 --> 00:12:45.660
+<v Dan Lines>So if you don't mind, let's focus in on predictability.
+
+00:12:46.110 --> 00:12:52.701
+<v Dan Lines>And one of the, you know, KPIs that we talk about at LinearB would be the planning accuracy.
+
+00:12:52.791 --> 00:12:55.461
+<v Dan Lines>It sounds cool, and I think it's a great KPI.
+
+00:12:55.730 --> 00:13:03.431
+<v Dan Lines>Maybe you can start there, but what are the other things that come to mind for you when you think, Delivering projects on time, predictability.
+
+00:13:04.270 --> 00:13:04.630
+<v Yishai Beeri>Yeah.
+
+00:13:04.640 --> 00:13:31.115
+<v Yishai Beeri>So I'll start by saying, you talk with engineering leaders and with, with business leaders, the CEOs and you know, the peers around the table, like the marketing leaders, the sales leaders, and As you look, as you look into more larger companies, larger businesses, uh, forward thinkers, they are starting to trade volume or velocity for predictability.
+
+00:13:31.436 --> 00:13:31.735
+<v Yishai Beeri>Right?
+
+00:13:31.785 --> 00:13:37.145
+<v Yishai Beeri>I can take a little less production, but at a better predictability.
+
+00:13:37.441 --> 00:13:37.791
+<v Yishai Beeri>Right?
+
+00:13:37.850 --> 00:13:38.081
+<v Yishai Beeri>Why?
+
+00:13:38.081 --> 00:13:41.441
+<v Yishai Beeri>Because software is, you know, going agile.
+
+00:13:42.030 --> 00:13:45.480
+<v Yishai Beeri>It's all about trying to move fast, even break things.
+
+00:13:46.471 --> 00:13:52.370
+<v Yishai Beeri>Tight learning cycles, but then there's the whole surrounding part of the business that needs that predictability.
+
+00:13:52.900 --> 00:14:01.125
+<v Yishai Beeri>You're not going to be able to pull up a marketing campaign and Uh, in a day, just because they release the agile software team just delivered, right?
+
+00:14:01.265 --> 00:14:02.285
+<v Yishai Beeri>You have to prepare.
+
+00:14:02.755 --> 00:14:04.066
+<v Yishai Beeri>You have to line up things.
+
+00:14:04.145 --> 00:14:07.816
+<v Yishai Beeri>Um, not everything in the world can be as agile as software delivery.
+
+00:14:08.475 --> 00:14:10.666
+<v Yishai Beeri>So predictability becomes more and more important.
+
+00:14:10.895 --> 00:14:29.296
+<v Yishai Beeri>As you grow as a business, as you have more customers, uh, more varied set of customers, um, and, um, with that in mind, looking at the, the, the, Specific metrics and the specific ways you can measure and goal around predictability becomes really important.
+
+00:14:29.725 --> 00:14:33.426
+<v Yishai Beeri>So, planning accuracy, you know, that's a good place to start.
+
+00:14:33.655 --> 00:14:37.566
+<v Yishai Beeri>This is about understanding how we deliver sprint over sprint.
+
+00:14:38.316 --> 00:14:40.441
+<v Yishai Beeri>Is our planning and delivery, are they aligned?
+
+00:14:40.441 --> 00:14:42.605
+<v Yishai Beeri>Are we able to deliver what we promise?
+
+00:14:43.441 --> 00:14:48.100
+<v Yishai Beeri>First to ourselves, then to our surroundings, um, on a sprint by sprint basis.
+
+00:14:48.431 --> 00:14:58.620
+<v Yishai Beeri>If you're able to master that, you're on a path to being able to predictably deliver a project, which is like multi sprint, maybe a quarter, uh, a bigger chunk of work.
+
+00:14:59.061 --> 00:15:02.640
+<v Yishai Beeri>And then you have, when you look at, you know, you zoom out, you look at a project.
+
+00:15:03.120 --> 00:15:09.535
+<v Yishai Beeri>Now you have, um, you can talk about, How much of the project scope did I hit?
+
+00:15:10.296 --> 00:15:12.515
+<v Yishai Beeri>Did I, is it getting, getting in on time?
+
+00:15:13.176 --> 00:15:15.426
+<v Yishai Beeri>And it's not just about goaling and reporting.
+
+00:15:15.436 --> 00:15:21.605
+<v Yishai Beeri>You can also make some decisions before the project ends to optimize what you're landing with.
+
+00:15:21.865 --> 00:15:24.086
+<v Yishai Beeri>You're not always going to deliver 100 percent of everything.
+
+00:15:24.086 --> 00:15:24.596
+<v Yishai Beeri>We know that.
+
+00:15:25.875 --> 00:15:29.365
+<v Yishai Beeri>There is a time when you look at the data and you say, okay, I need to change something.
+
+00:15:30.035 --> 00:15:32.375
+<v Yishai Beeri>Maybe give up on these scopes, some items.
+
+00:15:32.836 --> 00:15:35.405
+<v Yishai Beeri>Focus my energy on the ones that are almost there.
+
+00:15:36.005 --> 00:15:45.395
+<v Yishai Beeri>So, understanding the, the burn up, if you like, for a project, or for your whole, your whole delivery in a quarter or similar planning cycle.
+
+00:15:45.966 --> 00:15:55.296
+<v Yishai Beeri>Making adjustments, but also tracking quarter over quarter, are we delivering enough of what we promised, enough of what we planned, in good quality.
+
+00:15:56.015 --> 00:15:58.385
+<v Yishai Beeri>That would be a great goal to, to track and improve.
+
+00:15:59.816 --> 00:16:11.416
+<v Dan Lines>I mean, you talked about kind of the maturity I would call it, of the space maybe moving from I always have like the CEO in mind'cause I have this like CEO archetype of like, just give me all the stuff.
+
+00:16:11.416 --> 00:16:12.645
+<v Dan Lines>Like do it fast.
+
+00:16:12.650 --> 00:16:15.556
+<v Dan Lines>Yesterday, there's, yeah, yesterday, I needed it yesterday.
+
+00:16:15.556 --> 00:16:17.535
+<v Dan Lines>A little more maturity of like, okay.
+
+00:16:18.061 --> 00:16:23.791
+<v Dan Lines>I value predictability because I understand my marketing team can be in sync.
+
+00:16:23.850 --> 00:16:26.681
+<v Dan Lines>My enablement team for sales can be in sync.
+
+00:16:26.681 --> 00:16:28.360
+<v Dan Lines>My enablement team for CS.
+
+00:16:29.321 --> 00:16:34.000
+<v Dan Lines>The way that we go out with this product matters to me or this feature matters to me.
+
+00:16:34.030 --> 00:16:36.701
+<v Dan Lines>Maybe you have like a Gartner interview coming, coming up.
+
+00:16:36.721 --> 00:16:42.201
+<v Dan Lines>The predictability matters a lot for the whole business to be in sync.
+
+00:16:42.990 --> 00:16:45.451
+<v Dan Lines>And we, we have this in, in our LinearB product.
+
+00:16:45.451 --> 00:16:52.821
+<v Dan Lines>It's like, I remember the CEO used to ask me, okay, is the project going to deliver on time?
+
+00:16:53.410 --> 00:16:57.600
+<v Dan Lines>And I would say, yeah, because it's like, what else can you say?
+
+00:16:58.551 --> 00:17:01.240
+<v Dan Lines>And then it's like, uh, like, why would you want to say no?
+
+00:17:01.260 --> 00:17:02.791
+<v Dan Lines>Then it's like, you have no confidence.
+
+00:17:02.801 --> 00:17:09.330
+<v Dan Lines>Like, yeah, it's going to deliver on time, but then it's like, yeah, but you said that last time with the last project and it was like three months late.
+
+00:17:09.830 --> 00:17:10.820
+<v Dan Lines>And it's like, oh yeah.
+
+00:17:11.240 --> 00:17:12.090
+<v Dan Lines>Sorry about that.
+
+00:17:12.740 --> 00:17:16.070
+<v Dan Lines>That's like a very like qualitative conversation.
+
+00:17:16.080 --> 00:17:18.510
+<v Dan Lines>Now, here's the new conversation.
+
+00:17:18.931 --> 00:17:29.461
+<v Dan Lines>You pull up, you know, our feature is called forecasting, but you pull up your for your project forecasting mod module and you say, Yeah, I do think it will be delivered on time.
+
+00:17:29.461 --> 00:17:30.250
+<v Dan Lines>There's some risk.
+
+00:17:30.250 --> 00:17:31.411
+<v Dan Lines>I want to talk to you about it.
+
+00:17:32.730 --> 00:17:32.941
+<v Dan Lines>Yeah.
+
+00:17:32.941 --> 00:17:34.171
+<v Dan Lines>Click into the project.
+
+00:17:34.820 --> 00:17:34.980
+<v Dan Lines>Yeah.
+
+00:17:34.980 --> 00:17:36.280
+<v Dan Lines>It
+
+00:17:36.280 --> 00:17:41.181
+<v Yishai Beeri>also moves from yes, no to the project is not a monolith.
+
+00:17:41.191 --> 00:17:42.560
+<v Yishai Beeri>So there's a bunch of things.
+
+00:17:42.651 --> 00:17:43.871
+<v Yishai Beeri>These are golden.
+
+00:17:44.175 --> 00:17:45.105
+<v Yishai Beeri>These are in risk.
+
+00:17:45.655 --> 00:17:49.675
+<v Yishai Beeri>It's a yes, but, or we have to make decisions now.
+
+00:17:49.705 --> 00:17:53.766
+<v Dan Lines>I think it's like, yes, but, and let me show you, let me bring you in.
+
+00:17:54.205 --> 00:17:54.786
+<v Dan Lines>You know what?
+
+00:17:54.816 --> 00:17:57.715
+<v Dan Lines>The planning accuracy for this project looks good.
+
+00:17:57.715 --> 00:18:03.105
+<v Dan Lines>Let's say it means that the teams are able to deliver on what they say they're going to deliver.
+
+00:18:03.105 --> 00:18:05.395
+<v Dan Lines>I'm, I'm, I'm doing kind of a conversation.
+
+00:18:05.405 --> 00:18:07.435
+<v Dan Lines>Let's pretend you're my boss or the CTO.
+
+00:18:07.955 --> 00:18:08.836
+<v Dan Lines>I'm an engineering leader.
+
+00:18:09.135 --> 00:18:10.746
+<v Dan Lines>The planning accuracy looks good here.
+
+00:18:11.046 --> 00:18:11.875
+<v Dan Lines>So that's a good thing.
+
+00:18:11.875 --> 00:18:12.766
+<v Dan Lines>It's giving me confidence.
+
+00:18:13.760 --> 00:18:17.280
+<v Dan Lines>But there's something that is concerning me on this project.
+
+00:18:17.290 --> 00:18:18.401
+<v Dan Lines>And I want to show you something.
+
+00:18:18.401 --> 00:18:20.010
+<v Dan Lines>It's our cycle time on this project.
+
+00:18:20.411 --> 00:18:28.560
+<v Dan Lines>I'm seeing bottlenecks here and I'm seeing some bottlenecks because it looks like only one person is doing all of our reviews.
+
+00:18:28.580 --> 00:18:32.191
+<v Dan Lines>We have a, it's a senior and we have a lot of juniors on this project.
+
+00:18:32.211 --> 00:18:37.490
+<v Dan Lines>Now I know that this project's due in six months from now, but I want to call out this people risk to you.
+
+00:18:37.986 --> 00:18:39.385
+<v Dan Lines>It's a very mature conversation.
+
+00:18:39.415 --> 00:18:41.526
+<v Dan Lines>I'd like to add another senior to this.
+
+00:18:42.125 --> 00:18:46.786
+<v Dan Lines>And the reason I want to add a senior is to increase my probability to deliver on time.
+
+00:18:47.715 --> 00:18:53.715
+<v Dan Lines>And even better now, I know this is like futuristic stuff, but this is what we're working on with some of our customers.
+
+00:18:54.155 --> 00:19:01.215
+<v Dan Lines>Let me show you a Monte Carlo simulation that if we were to do this, why I think it will help us deliver on time.
+
+00:19:01.496 --> 00:19:03.655
+<v Dan Lines>Now I'm talking with data.
+
+00:19:04.155 --> 00:19:05.875
+<v Dan Lines>I'm talking with risk levels.
+
+00:19:05.875 --> 00:19:12.395
+<v Dan Lines>I'm talking with Simulation to the business of like, let me bring you in of what it really takes to forecast.
+
+00:19:12.746 --> 00:19:17.705
+<v Dan Lines>I think that's really cool and kind of like next level mature conversation.
+
+00:19:17.756 --> 00:19:18.816
+<v Dan Lines>What do you think about that?
+
+00:19:19.576 --> 00:19:24.266
+<v Yishai Beeri>Yeah, I really like the the ability to take this from uh, is this on time?
+
+00:19:24.266 --> 00:19:24.486
+<v Yishai Beeri>Yes.
+
+00:19:24.486 --> 00:19:26.776
+<v Yishai Beeri>No, or why isn't it on time?
+
+00:19:26.776 --> 00:19:26.976
+<v Yishai Beeri>Right.
+
+00:19:26.976 --> 00:19:27.955
+<v Yishai Beeri>That's the common question.
+
+00:19:27.955 --> 00:19:29.076
+<v Yishai Beeri>Why are you guys late?
+
+00:19:29.905 --> 00:19:33.536
+<v Yishai Beeri>You know, using data, we can move the conversation to let's, let's make some decisions.
+
+00:19:34.375 --> 00:19:48.855
+<v Yishai Beeri>It's probably not just magically create a new resource, but let's move someone from a project that is doing well and maybe has some capacity, uh, that, that they can contribute here because I have a bottleneck here.
+
+00:19:49.286 --> 00:19:59.965
+<v Yishai Beeri>The data is showing me the kind of risk that I can alleviate with moving a resource and maybe not lose so much on the other project because the signals there are different.
+
+00:20:01.026 --> 00:20:01.296
+<v Yishai Beeri>What?
+
+00:20:02.096 --> 00:20:11.756
+<v Yishai Beeri>When the conversation moves to making choices and you see the choice you see the you know the outcomes it becomes a much Much stronger conversation.
+
+00:20:12.256 --> 00:20:19.576
+<v Dan Lines>Okay, so let's do a little summary on the predictability side, we have some KPIs, right?
+
+00:20:20.076 --> 00:20:21.526
+<v Dan Lines>We have planning accuracy.
+
+00:20:21.776 --> 00:20:22.596
+<v Dan Lines>That's a good one.
+
+00:20:22.655 --> 00:20:24.355
+<v Dan Lines>We have capacity accuracy.
+
+00:20:24.516 --> 00:20:25.236
+<v Dan Lines>That's a good one.
+
+00:20:25.665 --> 00:20:28.675
+<v Dan Lines>We have project forecasting with simulations.
+
+00:20:28.695 --> 00:20:29.756
+<v Dan Lines>That's a good one.
+
+00:20:30.135 --> 00:20:33.306
+<v Dan Lines>And now imagine having that for all of your projects.
+
+00:20:33.465 --> 00:20:35.096
+<v Dan Lines>You see them all in one view.
+
+00:20:35.296 --> 00:20:35.976
+<v Dan Lines>That's awesome.
+
+00:20:36.615 --> 00:20:39.665
+<v Dan Lines>Now there's kind of this like what you're saying.
+
+00:20:40.776 --> 00:20:42.855
+<v Dan Lines>I have to make decisions of what, what to do.
+
+00:20:43.685 --> 00:20:47.915
+<v Dan Lines>Can you talk to us a little bit about goals around resource allocation?
+
+00:20:47.915 --> 00:20:50.915
+<v Dan Lines>Cause sometimes a lot of those decisions might be, ah, I don't know.
+
+00:20:50.915 --> 00:20:53.635
+<v Dan Lines>We just were understaffed on this project.
+
+00:20:53.645 --> 00:20:55.256
+<v Dan Lines>Is it really the top project?
+
+00:20:55.266 --> 00:20:59.246
+<v Dan Lines>I could move this one faster if we could delay this other one, but I got to shift some people.
+
+00:20:59.756 --> 00:21:04.355
+<v Dan Lines>Talk to me about resource allocation, investment profile, goals around that kind of stuff.
+
+00:21:04.935 --> 00:21:10.395
+<v Yishai Beeri>So both resource allocation and investment profile are ways to look at the actual spin.
+
+00:21:10.405 --> 00:21:11.865
+<v Yishai Beeri>Where is my energy going?
+
+00:21:12.056 --> 00:21:13.526
+<v Yishai Beeri>Where are my people deployed?
+
+00:21:14.205 --> 00:21:17.816
+<v Yishai Beeri>Not just in, in, on paper, on plan, but what is actually happening?
+
+00:21:18.576 --> 00:21:31.625
+<v Yishai Beeri>And I think a very common, um, cycle, and we've seen, we've all seen this, where Management sits at the beginning of the quarter, lays out a plan, allocates resources.
+
+00:21:31.625 --> 00:21:33.945
+<v Yishai Beeri>Yeah, let's take 20 people for this project.
+
+00:21:34.346 --> 00:21:36.086
+<v Yishai Beeri>Let's put this team on that project.
+
+00:21:36.526 --> 00:21:37.516
+<v Yishai Beeri>This is important for us.
+
+00:21:37.516 --> 00:21:40.266
+<v Yishai Beeri>It's a new product or a new feature.
+
+00:21:40.395 --> 00:21:45.276
+<v Yishai Beeri>Let's, um, um, concentrate some work and resources there.
+
+00:21:45.756 --> 00:21:46.026
+<v Yishai Beeri>Great.
+
+00:21:46.036 --> 00:21:46.996
+<v Yishai Beeri>The plan looks good.
+
+00:21:47.560 --> 00:21:49.810
+<v Yishai Beeri>Then reality hits, right?
+
+00:21:50.240 --> 00:21:53.961
+<v Yishai Beeri>So this 20 people project, yeah, on paper there's, they're all there.
+
+00:21:54.361 --> 00:22:01.500
+<v Yishai Beeri>But three you haven't even hired yet, two are busy, uh, with an old project that they weren't able to ramp down quickly enough.
+
+00:22:01.925 --> 00:22:04.655
+<v Yishai Beeri>Um, another one is pulled to put out fires elsewhere.
+
+00:22:05.056 --> 00:22:06.155
+<v Yishai Beeri>Reality is different.
+
+00:22:06.776 --> 00:22:10.320
+<v Yishai Beeri>And then the quarter ends and why have we missed?
+
+00:22:10.320 --> 00:22:14.955
+<v Yishai Beeri>You spend time to realize that actually we didn't have the 20 people.
+
+00:22:15.405 --> 00:22:28.496
+<v Yishai Beeri>So research allocation is a way to look at what is the actual spend across projects or initiatives or any kind of like slicing the pieces of work in your, um, dev work and course correcting.
+
+00:22:29.135 --> 00:22:30.715
+<v Yishai Beeri>Yeah, this is what is actually happening.
+
+00:22:30.726 --> 00:22:31.715
+<v Yishai Beeri>This is what we wanted.
+
+00:22:32.300 --> 00:22:33.530
+<v Yishai Beeri>We can now course correct.
+
+00:22:34.361 --> 00:22:40.161
+<v Yishai Beeri>We can help people ramp up more quickly or ramp down more quickly if a project needs that.
+
+00:22:40.621 --> 00:22:42.191
+<v Yishai Beeri>Or we realize that we have a gap.
+
+00:22:42.221 --> 00:22:43.381
+<v Yishai Beeri>Now we can make a choice.
+
+00:22:43.421 --> 00:22:43.941
+<v Yishai Beeri>Okay.
+
+00:22:44.230 --> 00:22:45.701
+<v Yishai Beeri>Reality is a bit different.
+
+00:22:46.371 --> 00:22:54.171
+<v Yishai Beeri>Let's make a choice about what to, um, you know, what to give up on, what to invest more in and so on.
+
+00:22:54.384 --> 00:22:54.743
+<v Yishai Beeri>Totally
+
+00:22:54.743 --> 00:22:55.423
+<v Dan Lines>makes sense.
+
+00:22:55.721 --> 00:22:59.721
+<v Dan Lines>And now we can have kind of that educated conversation with the business.
+
+00:23:00.144 --> 00:23:14.693
+<v Dan Lines>Okay, so now that we talked about kind of both sides of the dual mandate, some of the KPIs that you can use for engineering efficiency, we have our DORA metrics, we have some leading indicators, we talked a lot on the business.
+
+00:23:15.479 --> 00:23:18.909
+<v Dan Lines>Alignment side, predictability, very, very important.
+
+00:23:19.719 --> 00:23:28.368
+<v Dan Lines>I want to ask you, in terms of actually setting goals against these KPIs, where in the org structure should I start?
+
+00:23:28.368 --> 00:23:31.348
+<v Dan Lines>Is it like a top down thing, a bottom up thing?
+
+00:23:31.348 --> 00:23:33.078
+<v Dan Lines>What are your, what are your thoughts on that?
+
+00:23:33.402 --> 00:23:34.061
+<v Yishai Beeri>That's a good one.
+
+00:23:34.061 --> 00:23:36.051
+<v Yishai Beeri>I think, uh, there's probably not one answer.
+
+00:23:36.580 --> 00:23:40.020
+<v Yishai Beeri>first of all, there's the org culture that you have to take into account.
+
+00:23:40.871 --> 00:23:58.151
+<v Yishai Beeri>Um, in some, um, respects, and I think mostly on the engineering, uh, like operational efficiency, there's a lot of sense in doing this bottoms up and letting the teams decide on which goals to take and what, like, how to tune the goals.
+
+00:23:58.750 --> 00:24:07.830
+<v Yishai Beeri>Because, uh, in many modern, um, you know, development organizations, you want to give autonomy and you have the right people that you can give autonomy.
+
+00:24:08.221 --> 00:24:11.260
+<v Yishai Beeri>The team knows how it's delivering.
+
+00:24:11.631 --> 00:24:15.671
+<v Yishai Beeri>They have, maybe even between the teams, there's a difference in how they're working.
+
+00:24:15.871 --> 00:24:19.941
+<v Yishai Beeri>Some could be using scrum, some could be using Kanban, some could be using a combination.
+
+00:24:20.441 --> 00:24:21.381
+<v Yishai Beeri>Some are building.
+
+00:24:22.056 --> 00:24:25.945
+<v Yishai Beeri>You know, SaaS front end, some are doing mobile apps.
+
+00:24:26.145 --> 00:24:30.915
+<v Yishai Beeri>So very different ways to measure and to benchmark.
+
+00:24:31.496 --> 00:24:34.496
+<v Yishai Beeri>So giving autonomy and the bottoms up approach makes a lot of sense.
+
+00:24:34.615 --> 00:24:42.375
+<v Yishai Beeri>And also very strong culture, positive of, you know, it's not like a big brother watching over your back and measuring you.
+
+00:24:42.556 --> 00:24:45.780
+<v Yishai Beeri>It's more like This is a way for you to measure yourselves and report up.
+
+00:24:46.861 --> 00:24:51.891
+<v Yishai Beeri>Um, and it still makes sense in these cases to have a top down focus.
+
+00:24:52.391 --> 00:24:59.080
+<v Yishai Beeri>Yeah, we know as a company, as a dev work, we have, we want to focus on being more efficient.
+
+00:24:59.500 --> 00:25:07.540
+<v Yishai Beeri>Let's make sure we look at cycle time top down because it's a good efficiency and bottleneck discovery kind of metric.
+
+00:25:08.090 --> 00:25:13.230
+<v Yishai Beeri>Um, if we have a quality issue or a quality, initiative going on in the company.
+
+00:25:13.776 --> 00:25:18.066
+<v Yishai Beeri>We can make that a top down and bake that together with with bottoms up.
+
+00:25:18.496 --> 00:25:18.846
+<v Yishai Beeri>Yeah.
+
+00:25:18.976 --> 00:25:28.346
+<v Yishai Beeri>On the business alignment side, I think it's typically running top down with, you know, org level or VP level and then departments or groups.
+
+00:25:28.826 --> 00:25:32.626
+<v Yishai Beeri>Aligning either to the product lines or the way the org is built.
+
+00:25:33.237 --> 00:25:40.666
+<v Yishai Beeri>Um, you want predictability to be measured across your teams or groups and then aggregate it up.
+
+00:25:41.237 --> 00:25:42.817
+<v Yishai Beeri>That makes a lot of sense coming top down.
+
+00:25:43.413 --> 00:25:44.923
+<v Dan Lines>it's kind of like a mix.
+
+00:25:44.923 --> 00:25:59.128
+<v Dan Lines>One thing that I've seen, especially with the larger organizations, Let's say you have a hundred developers plus 5, 2 50 developers, 500 developers, and then I don't know, we, I'm working with companies that have 6,000 developers.
+
+00:25:59.939 --> 00:26:06.179
+<v Dan Lines>I think that there does need to be something top down around standardization, I'll call it.
+
+00:26:06.558 --> 00:26:15.288
+<v Dan Lines>Now, of course you want bottom up adoption, but when I think of standardization, it's kind of like, here is how we're going to measure cycle time.
+
+00:26:15.838 --> 00:26:23.298
+<v Dan Lines>This is our standard practice of when cycle time starts versus when cycle time ends, and that's the standard for our business.
+
+00:26:23.878 --> 00:26:27.719
+<v Dan Lines>Here is how we're going to measure sprint planning accuracy.
+
+00:26:28.308 --> 00:26:41.038
+<v Dan Lines>This is, you know, how we start it either when one day into the sprint or right when the sprint So, what I've seen is when you bring these top down standards It kind of says, when do things start and stop?
+
+00:26:41.078 --> 00:26:44.148
+<v Dan Lines>And what do the, what are the KPIs that we care about?
+
+00:26:44.909 --> 00:26:46.618
+<v Dan Lines>Now, after that, we care.
+
+00:26:46.618 --> 00:26:49.288
+<v Dan Lines>Yeah, we care.
+
+00:26:49.288 --> 00:26:51.159
+<v Dan Lines>Now you have the standards.
+
+00:26:51.209 --> 00:26:52.118
+<v Dan Lines>We do care.
+
+00:26:52.868 --> 00:26:57.249
+<v Dan Lines>I think it's more go deploy this with your teams and set your goals around this.
+
+00:26:57.663 --> 00:26:58.933
+<v Dan Lines>Here's our high level goals.
+
+00:26:59.044 --> 00:27:00.243
+<v Dan Lines>You go make it happen.
+
+00:27:00.253 --> 00:27:02.134
+<v Dan Lines>That's where I've seen it works really well.
+
+00:27:02.453 --> 00:27:04.523
+<v Dan Lines>You have top down standards.
+
+00:27:05.034 --> 00:27:12.673
+<v Dan Lines>You say the KPIs that the company or the business unit cares about, and you give some high level guidance on the goals.
+
+00:27:12.673 --> 00:27:14.743
+<v Dan Lines>Now you go make it happen for your team.
+
+00:27:15.554 --> 00:27:17.834
+<v Dan Lines>That's, that's kind of what I've seen work really well.
+
+00:27:19.094 --> 00:27:26.604
+<v Yishai Beeri>And I think that lets the, the, the teams or the, you know, lower parts of the org focus a little on the leading indicators.
+
+00:27:26.949 --> 00:27:30.878
+<v Yishai Beeri>Sometimes on more technical, um, ways to look at the problem.
+
+00:27:31.159 --> 00:27:40.578
+<v Yishai Beeri>So you could, you're thinking about cycle time as a top down, but then for a team to improve their cycle time, they could be looking at smaller PRs.
+
+00:27:40.739 --> 00:27:46.439
+<v Yishai Beeri>They could be looking at how long does it take me to pick up a PR for reviews, a pickup time.
+
+00:27:46.868 --> 00:27:50.838
+<v Yishai Beeri>There are the ways to implement that goal are a little more detailed.
+
+00:27:51.163 --> 00:27:54.933
+<v Yishai Beeri>And another team may look at different, uh, they have different bottlenecks.
+
+00:27:54.943 --> 00:27:58.824
+<v Yishai Beeri>So they'll, they're going to take a goal around a better review process.
+
+00:27:58.923 --> 00:28:01.104
+<v Yishai Beeri>Or can I automate away some of my reviews?
+
+00:28:02.294 --> 00:28:03.023
+<v Dan Lines>Absolutely.
+
+00:28:04.423 --> 00:28:23.034
+<v Dan Lines>Now, what I want to do in the last few minutes of this pod, is talk a little bit more about the business stakeholders and what it takes for a VP of engineering, a CTO, a director of a business unit.
+
+00:28:24.074 --> 00:28:27.423
+<v Dan Lines>Maybe even you're communicating, you know, to the board.
+
+00:28:27.513 --> 00:28:34.929
+<v Dan Lines>We have, you know, You know, from LinearB board slides that you can use to communicate, you know, these KPIs.
+
+00:28:35.749 --> 00:28:39.919
+<v Dan Lines>But what can you tell us, maybe an overview or some tips and tricks?
+
+00:28:39.919 --> 00:28:41.328
+<v Dan Lines>I'm an engineering leader.
+
+00:28:41.729 --> 00:28:43.638
+<v Dan Lines>I'm measuring this kind of stuff.
+
+00:28:44.148 --> 00:28:46.538
+<v Dan Lines>How do I approach business stakeholders?
+
+00:28:46.538 --> 00:28:47.638
+<v Dan Lines>I've never done it before.
+
+00:28:47.648 --> 00:28:49.038
+<v Dan Lines>What do I, what do I do?
+
+00:28:49.536 --> 00:28:49.766
+<v Yishai Beeri>Yeah.
+
+00:28:49.766 --> 00:28:56.726
+<v Yishai Beeri>So, um, first, you know, a lot of us hit that wall where, uh, it feels like no one cares at the beginning.
+
+00:28:57.586 --> 00:29:00.596
+<v Yishai Beeri>You know, everyone is about the sales numbers and the marketing numbers.
+
+00:29:00.941 --> 00:29:09.711
+<v Yishai Beeri>They're used to seeing numbers and data in measurements for those departments, and they're used to having engineering say I think this feature is gonna land in two months.
+
+00:29:11.010 --> 00:29:15.270
+<v Yishai Beeri>That's, so there is some education, Oh, there's actually good data to look at.
+
+00:29:15.290 --> 00:29:16.911
+<v Yishai Beeri>There's actually a way to drill in.
+
+00:29:17.590 --> 00:29:23.820
+<v Yishai Beeri>Um, so come prepared to, to Not just show the data and the goals, but also explain why it matters.
+
+00:29:24.641 --> 00:29:39.641
+<v Yishai Beeri>Why cycle time matters so much, because it lets me, um, you know, learn much faster from the, the feedback that I'm getting from our customers when our new, uh, the new code hits the, um, the users.
+
+00:29:40.050 --> 00:29:45.300
+<v Yishai Beeri>Um, by reducing these bottlenecks, I can get so much more done and improve the quality.
+
+00:29:45.691 --> 00:29:49.961
+<v Yishai Beeri>So, be, like, be prepared to explain why it matters.
+
+00:29:50.480 --> 00:29:57.270
+<v Yishai Beeri>I think as engineer leaders, and many of us are engineers at heart, uh, we need to remember that less is more.
+
+00:29:57.790 --> 00:30:00.461
+<v Yishai Beeri>So don't come with, you know, 50 numbers.
+
+00:30:01.165 --> 00:30:10.885
+<v Yishai Beeri>It's not going to work for, for the business, uh, discussion, um, focus on what really matters and always show how that aligns with, with the business.
+
+00:30:11.086 --> 00:30:17.865
+<v Yishai Beeri>So if you're talking about predictability, yeah, this project is landing on time or 90 percent of it is landing on time.
+
+00:30:17.865 --> 00:30:20.645
+<v Yishai Beeri>And here's why, and here's the choices that I've made.
+
+00:30:21.326 --> 00:30:30.776
+<v Yishai Beeri>Um, I think that, that was when you start, uh, overcoming those, you know, glazed eyes of oh, some numbers on something that I don't understand.
+
+00:30:31.506 --> 00:30:37.715
+<v Yishai Beeri>You know, you, you've, you're seeing success when you get, people are asking you to drill down.
+
+00:30:38.726 --> 00:30:39.026
+<v Yishai Beeri>Right.
+
+00:30:39.026 --> 00:30:41.516
+<v Yishai Beeri>They're asking you smart questions about the data that you're showing.
+
+00:30:42.486 --> 00:30:45.486
+<v Dan Lines>Yeah, that, that's, that totally makes sense.
+
+00:30:46.560 --> 00:30:50.310
+<v Dan Lines>Especially when you start getting some of that engagement and questions.
+
+00:30:50.441 --> 00:31:00.911
+<v Dan Lines>I think my best tip here, what I've seen work really well, if you go to your business stakeholders and say, I'm putting a new thing on your calendar.
+
+00:31:01.230 --> 00:31:12.520
+<v Dan Lines>So first of all, it's repetitive and it's going to be repetitive and it's going to be called our forecasting meeting, our project forecasting meeting, and it's monthly, all you got to do is show up.
+
+00:31:12.520 --> 00:31:14.760
+<v Dan Lines>Now, one thing that's cool about that.
+
+00:31:14.760 --> 00:31:15.980
+<v Dan Lines>You may already have this.
+
+00:31:16.431 --> 00:31:19.661
+<v Dan Lines>You know, ceremony of a forecasting meeting, you may not.
+
+00:31:20.101 --> 00:31:28.770
+<v Dan Lines>So you're going to get some, if you don't, some kudos points, because those stakeholders are going to say, I definitely want to come to a project's forecasting meeting because that's what I care about.
+
+00:31:29.651 --> 00:31:31.000
+<v Dan Lines>Now's your opportunity.
+
+00:31:31.000 --> 00:31:36.240
+<v Dan Lines>You got them in that meeting to start hitting them with, is the project going to deliver on time?
+
+00:31:36.250 --> 00:31:41.810
+<v Dan Lines>Let me show you some of the underlying engineering metrics of cycle time or change failure rate.
+
+00:31:42.161 --> 00:31:46.411
+<v Dan Lines>You have the planning accuracy, and maybe you start getting some questions about that.
+
+00:31:47.411 --> 00:32:00.500
+<v Dan Lines>And usually what I see is if you relate it back to what they care about, which is these business deliverables, that is when you'll get, Oh, now I care about, Oh, cycle time has something to do with me getting what I want.
+
+00:32:00.570 --> 00:32:02.101
+<v Dan Lines>Let me ask a question about it.
+
+00:32:02.800 --> 00:32:03.090
+<v Dan Lines>Yeah.
+
+00:32:03.111 --> 00:32:05.240
+<v Dan Lines>So that would be my tip, my biggest tip.
+
+00:32:05.240 --> 00:32:08.490
+<v Dan Lines>Have you seen that kind of stuff work or any comments on that?
+
+00:32:09.810 --> 00:32:10.020
+<v Yishai Beeri>Yeah.
+
+00:32:10.020 --> 00:32:15.141
+<v Yishai Beeri>I think you talk about cycle time in, in, um, you know, in isolation.
+
+00:32:15.465 --> 00:32:16.236
+<v Yishai Beeri>No one cares.
+
+00:32:16.625 --> 00:32:16.976
+<v Dan Lines>Yeah.
+
+00:32:17.685 --> 00:32:24.526
+<v Yishai Beeri>You talk about cycle time affecting delivery of this project, which is What I need to sell more as a sales leader.
+
+00:32:25.316 --> 00:32:34.405
+<v Yishai Beeri>Now I can start relating and you'll be surprised by the kind of smart questions you get from your business peers about the data and about what it means.
+
+00:32:34.986 --> 00:32:40.915
+<v Yishai Beeri>Just like you can ask about the sales cycle and how is the sales cycle different in different segments, right?
+
+00:32:41.490 --> 00:32:45.431
+<v Yishai Beeri>It's natural for us to drill in when we see the connection.
+
+00:32:45.901 --> 00:32:46.921
+<v Dan Lines>Yeah, it's so funny.
+
+00:32:47.090 --> 00:32:51.921
+<v Dan Lines>It's like, uh, Hey, I want to go ask for new hires for engineering.
+
+00:32:52.101 --> 00:32:53.330
+<v Dan Lines>The answer is always no.
+
+00:32:53.544 --> 00:32:54.721
+<v Dan Lines>Do more with what you have.
+
+00:32:54.730 --> 00:32:55.830
+<v Dan Lines>We're in an efficiency mode.
+
+00:32:55.971 --> 00:33:03.230
+<v Dan Lines>But if you could ever get a question that says, Oh, we're talking about the delivery of this project.
+
+00:33:03.911 --> 00:33:06.540
+<v Dan Lines>I'm showing you why we're probably not going to deliver.
+
+00:33:06.540 --> 00:33:16.076
+<v Dan Lines>It's because we have a poor cycle time due to a reviewer bottleneck and you can get your business stakeholders to say, Oh, Well, what if we had another reviewer?
+
+00:33:16.476 --> 00:33:17.195
+<v Dan Lines>Oh, great.
+
+00:33:17.526 --> 00:33:18.036
+<v Dan Lines>Perfect.
+
+00:33:18.056 --> 00:33:18.405
+<v Dan Lines>Yes.
+
+00:33:18.796 --> 00:33:20.726
+<v Dan Lines>Cause I would love to add another reviewer.
+
+00:33:20.726 --> 00:33:22.175
+<v Dan Lines>Actually, I need a senior one.
+
+00:33:22.746 --> 00:33:24.205
+<v Dan Lines>I have a job description.
+
+00:33:24.205 --> 00:33:26.875
+<v Dan Lines>Should we deploy that to deliver this project on time?
+
+00:33:26.915 --> 00:33:27.615
+<v Dan Lines>That's cool.
+
+00:33:28.816 --> 00:33:33.615
+<v Yishai Beeri>Or, or even I can show you through the metrics that this project is very efficient.
+
+00:33:33.705 --> 00:33:35.675
+<v Yishai Beeri>It's already running very efficiently.
+
+00:33:35.685 --> 00:33:40.445
+<v Yishai Beeri>There's LinearB publishes industry benchmarks across all of our metrics.
+
+00:33:41.115 --> 00:33:41.645
+<v Yishai Beeri>We are.
+
+00:33:42.596 --> 00:33:49.496
+<v Yishai Beeri>actually doing very good in this project, which means if you give me more resources, there's like, they can be very effective here.
+
+00:33:50.036 --> 00:33:54.326
+<v Yishai Beeri>Another person in this project can really kill it because I've already removed a lot of the bottlenecks.
+
+00:33:54.526 --> 00:33:54.846
+<v Dan Lines>Yes,
+
+00:33:54.855 --> 00:33:57.346
+<v Yishai Beeri>it's now running very effectively.
+
+00:33:57.596 --> 00:33:59.516
+<v Yishai Beeri>A new resource is going to be very effective here.
+
+00:33:59.526 --> 00:34:01.726
+<v Dan Lines>Let me prove to you that it will work.
+
+00:34:02.705 --> 00:34:04.605
+<v Dan Lines>So we're coming to the end here.
+
+00:34:04.736 --> 00:34:09.936
+<v Dan Lines>Could you tell us a little, so we have a CTO board report that can be used.
+
+00:34:10.596 --> 00:34:13.076
+<v Dan Lines>Talk to me about this CTO board report.
+
+00:34:13.686 --> 00:34:25.436
+<v Yishai Beeri>Yeah, so this is a template that, you know, you can use as a, as a starting point to put some, pull some data from LinearB or however you measure your, uh, your key goals, your KPIs.
+
+00:34:25.876 --> 00:34:35.945
+<v Yishai Beeri>And, you know, in basically two or three slides, convey the key information to, you know, the board or the staff meeting and similar.
+
+00:34:36.380 --> 00:34:37.360
+<v Yishai Beeri>Uh, Senior Leadership.
+
+00:34:37.880 --> 00:34:40.610
+<v Yishai Beeri>And we're basically splitting it into two parts.
+
+00:34:40.621 --> 00:34:45.150
+<v Yishai Beeri>One is a heartbeat of the health of the engineer organization.
+
+00:34:45.170 --> 00:34:48.150
+<v Yishai Beeri>The key, key, um, metrics, the top downs.
+
+00:34:48.161 --> 00:34:53.981
+<v Yishai Beeri>This could be cycle time and something, you know, merge frequency for developer experience.
+
+00:34:54.391 --> 00:34:59.210
+<v Yishai Beeri>Two or three metrics with a trend, with an industry benchmark.
+
+00:34:59.561 --> 00:35:02.400
+<v Yishai Beeri>Um, um, Context, so you anchor the numbers.
+
+00:35:02.400 --> 00:35:05.271
+<v Yishai Beeri>It's not just three on the, on the, on the screen.
+
+00:35:05.271 --> 00:35:10.260
+<v Yishai Beeri>It's a three, which means we're in the, I don't know, strong band of the benchmarks.
+
+00:35:11.181 --> 00:35:13.340
+<v Yishai Beeri>So, let's have everyone understand what it means.
+
+00:35:13.971 --> 00:35:17.840
+<v Yishai Beeri>And, we, we, we, uh, suggest that you take a goal.
+
+00:35:17.840 --> 00:35:20.780
+<v Yishai Beeri>You're saying, in Q1, my cycle time was three days.
+
+00:35:21.465 --> 00:35:25.686
+<v Yishai Beeri>My goal for the next quarter is to like lower it down to two and a half days.
+
+00:35:26.775 --> 00:35:32.436
+<v Yishai Beeri>By having this simple cycle of there's a number, there's a context and a trend and I'm taking a goal.
+
+00:35:32.826 --> 00:35:38.356
+<v Yishai Beeri>You are now really helping your peers and your, your managers trust you that you've, you've got this.
+
+00:35:38.746 --> 00:35:39.726
+<v Yishai Beeri>I know what I'm doing.
+
+00:35:40.226 --> 00:35:41.576
+<v Yishai Beeri>I can see where I'm going.
+
+00:35:42.076 --> 00:35:46.545
+<v Yishai Beeri>I have a plan, but I don't think they really care if it's going to be two and a half days or 2.
+
+00:35:46.545 --> 00:35:47.295
+<v Yishai Beeri>3 days.
+
+00:35:47.835 --> 00:35:48.635
+<v Yishai Beeri>You have a plan.
+
+00:35:48.976 --> 00:35:49.896
+<v Yishai Beeri>You know what you're doing.
+
+00:35:50.195 --> 00:35:51.876
+<v Yishai Beeri>They are, the confidence is there.
+
+00:35:52.686 --> 00:35:54.436
+<v Yishai Beeri>And then the second part is.
+
+00:35:54.925 --> 00:35:57.056
+<v Yishai Beeri>These are the key investments, the key projects.
+
+00:35:57.146 --> 00:35:59.945
+<v Yishai Beeri>We talked about resource allocation, so show some data.
+
+00:36:00.096 --> 00:36:08.536
+<v Yishai Beeri>There's always going to be the top three, four, five, maybe seven projects or initiatives which are what everyone thinks about.
+
+00:36:08.715 --> 00:36:11.505
+<v Yishai Beeri>They are the key, uh, investments.
+
+00:36:12.076 --> 00:36:16.846
+<v Yishai Beeri>Show the investment, show that it's aligned to, to, um, the priorities.
+
+00:36:17.666 --> 00:36:23.496
+<v Yishai Beeri>You're not overspending, uh, by, uh, you know, a big margin on an area that no one cares about.
+
+00:36:24.221 --> 00:36:29.880
+<v Yishai Beeri>You show the engineer metrics for that project, it's actually performing well, or this is where I'm focusing.
+
+00:36:29.880 --> 00:36:35.510
+<v Yishai Beeri>I'm focusing on improving my bottlenecks for this project before I'm asking for more resources.
+
+00:36:36.050 --> 00:36:41.820
+<v Yishai Beeri>So, my resource spend aligned on projects and my engineering health.
+
+00:36:41.891 --> 00:36:45.340
+<v Yishai Beeri>The two slides is all you need to really convey the message.
+
+00:36:45.846 --> 00:36:49.706
+<v Yishai Beeri>On how are we doing and start making decisions, right?
+
+00:36:49.706 --> 00:36:52.226
+<v Yishai Beeri>This is about staffing, about resourcing, about changes.
+
+00:36:53.056 --> 00:36:55.476
+<v Yishai Beeri>Now you can drive a really valuable conversation.
+
+00:36:56.815 --> 00:36:58.996
+<v Dan Lines>Yishai, thank you so much.
+
+00:36:59.005 --> 00:37:02.545
+<v Dan Lines>That is a super cool report.
+
+00:37:02.856 --> 00:37:04.146
+<v Dan Lines>It's a free report.
+
+00:37:04.795 --> 00:37:06.405
+<v Dan Lines>Thank you for coming on.
+
+00:37:06.831 --> 00:37:13.460
+<v Dan Lines>Talking to us about the dual mandate and goal setting and even more so what you said at the end.
+
+00:37:13.460 --> 00:37:15.101
+<v Dan Lines>It's really a career builder.
+
+00:37:15.900 --> 00:37:21.081
+<v Dan Lines>Trust with your peers, setting goals, visibility and transparency.
+
+00:37:21.601 --> 00:37:23.320
+<v Dan Lines>We love having you on the pod.
+
+00:37:23.320 --> 00:37:24.601
+<v Dan Lines>Thank you so much for joining.
+
+00:37:25.400 --> 00:37:26.581
+<v Yishai Beeri>Thanks Dan, as always.
+
+00:37:26.590 --> 00:37:27.231
+<v Yishai Beeri>This was great.
+
+00:37:27.641 --> 00:37:30.920
+<v Dan Lines>And you know, to everyone, thanks for tuning in.
+
+00:37:31.581 --> 00:37:41.601
+<v Dan Lines>If you want to dive deeper into goal setting, download our free Engineering Leader's Guide to Goals in Reporting at LinearB.
+
+00:37:41.650 --> 00:37:43.891
+<v Dan Lines>io slash resources.
+
+00:37:44.610 --> 00:37:48.541
+<v Dan Lines>Um, we'll also include that, uh, in a link in the description.
+
+00:37:49.081 --> 00:37:51.010
+<v Dan Lines>And everyone have a great week.
+
+00:37:51.601 --> 00:37:52.891
+<v Dan Lines>Talk again soon.

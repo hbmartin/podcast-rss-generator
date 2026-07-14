@@ -1,0 +1,3395 @@
+{
+    "version": "1.0.0",
+    "segments": [
+        {
+            "startTime": 0.0,
+            "endTime": 5.0,
+            "body": "I think in terms of news, what would be great to kick off with is Swift Server."
+        },
+        {
+            "startTime": 5.0,
+            "endTime": 10.0,
+            "body": "So that's the conference that you went to, was it, has it been two weeks now?"
+        },
+        {
+            "startTime": 10.0,
+            "endTime": 16.0,
+            "body": "Yes, it's been almost two weeks. We're recording on Wednesday, so it's been a week and a half at the moment."
+        },
+        {
+            "startTime": 16.0,
+            "endTime": 23.0,
+            "body": "And yes, I did, I headed down to London for the Swift on the Server conference,"
+        },
+        {
+            "startTime": 23.0,
+            "endTime": 28.0,
+            "body": "which was the first time I've actually been to a Swift on the Server event."
+        },
+        {
+            "startTime": 28.0,
+            "endTime": 34.12,
+            "body": "I must admit I had a great time. It was a"
+        },
+        {
+            "startTime": 34.12,
+            "endTime": 36.52,
+            "body": "really good conference. The venue was"
+        },
+        {
+            "startTime": 36.52,
+            "endTime": 40.8,
+            "body": "incredible. It was in the Science Museum"
+        },
+        {
+            "startTime": 40.8,
+            "endTime": 43.64,
+            "body": "in London and we had private use of the"
+        },
+        {
+            "startTime": 43.64,
+            "endTime": 46.24,
+            "body": "flight gallery, which is where they have"
+        },
+        {
+            "startTime": 46.24,
+            "endTime": 47.92,
+            "body": "all sorts of airplanes hung from the"
+        },
+        {
+            "startTime": 47.92,
+            "endTime": 49.72,
+            "body": "ceiling and there was a Harrier jump jet"
+        },
+        {
+            "startTime": 49.72,
+            "endTime": 54.0,
+            "body": "in there and there was a cross-section of"
+        },
+        {
+            "startTime": 54.0,
+            "endTime": 56.8,
+            "body": "a 747, which was amazing. And so we had"
+        },
+        {
+            "startTime": 54.0,
+            "endTime": 58.68,
+            "body": "that area for our lunch breaks and coffee"
+        },
+        {
+            "startTime": 58.68,
+            "endTime": 61.8,
+            "body": "and tea and that kind of stuff. And then"
+        },
+        {
+            "startTime": 61.8,
+            "endTime": 65.16,
+            "body": "for the actual conference we had the"
+        },
+        {
+            "startTime": 65.16,
+            "endTime": 67.72,
+            "body": "IMAX theater, which I've never presented"
+        },
+        {
+            "startTime": 67.72,
+            "endTime": 73.0,
+            "body": "on an IMAX screen before, so that was"
+        },
+        {
+            "startTime": 73.0,
+            "endTime": 75.8,
+            "body": "quite an experience. Was it 3D? It wasn't"
+        },
+        {
+            "startTime": 75.8,
+            "endTime": 78.08,
+            "body": "3D, and I did notice that they, because"
+        },
+        {
+            "startTime": 78.08,
+            "endTime": 80.96,
+            "body": "I was actually thinking about this before the"
+        },
+        {
+            "startTime": 80.96,
+            "endTime": 83.32,
+            "body": "talks, is that IMAX screen is so big that"
+        },
+        {
+            "startTime": 80.96,
+            "endTime": 83.72,
+            "body": "that you can't really see the edges of the screen,"
+        },
+        {
+            "startTime": 83.72,
+            "endTime": 84.6,
+            "body": "like intentionally."
+        },
+        {
+            "startTime": 84.6,
+            "endTime": 87.12,
+            "body": "You're supposed to get this immersive experience"
+        },
+        {
+            "startTime": 87.12,
+            "endTime": 89.4,
+            "body": "of not being able to see the edges."
+        },
+        {
+            "startTime": 89.4,
+            "endTime": 92.32,
+            "body": "And so I was hoping that they wouldn't put the slides"
+        },
+        {
+            "startTime": 92.32,
+            "endTime": 94.28,
+            "body": "full screen on the iMacs,"
+        },
+        {
+            "startTime": 94.28,
+            "endTime": 97.7,
+            "body": "because you wouldn't be able to see all the slides,"
+        },
+        {
+            "startTime": 97.7,
+            "endTime": 102.44,
+            "body": "but they were centered, but they were still enormous."
+        },
+        {
+            "startTime": 102.44,
+            "endTime": 106.12,
+            "body": "It was the biggest screen I've ever presented on for sure."
+        },
+        {
+            "startTime": 106.12,
+            "endTime": 107.4,
+            "body": "And that whole conference was great."
+        },
+        {
+            "startTime": 107.4,
+            "endTime": 112.4,
+            "body": "it was really good to hear various different bits of Swift."
+        },
+        {
+            "startTime": 112.4,
+            "endTime": 115.84,
+            "body": "I've been to a lot of Swift conferences,"
+        },
+        {
+            "startTime": 115.84,
+            "endTime": 118.56,
+            "body": "but mainly they talk about iOS development,"
+        },
+        {
+            "startTime": 118.56,
+            "endTime": 122.44,
+            "body": "Mac OS development, and it was nice to be at an event"
+        },
+        {
+            "startTime": 122.44,
+            "endTime": 123.76,
+            "body": "that was talking about server-side Swift"
+        },
+        {
+            "startTime": 123.76,
+            "endTime": 125.04,
+            "body": "that was focused on that."
+        },
+        {
+            "startTime": 125.04,
+            "endTime": 125.88,
+            "body": "- Yeah."
+        },
+        {
+            "startTime": 125.88,
+            "endTime": 128.88,
+            "body": "- A couple of talks that I wanted to kind of highlight,"
+        },
+        {
+            "startTime": 128.88,
+            "endTime": 133.88,
+            "body": "really, I was really impressed with Andrew Barber's talk"
+        },
+        {
+            "startTime": 134.08,
+            "endTime": 137.58,
+            "body": "on globally distributed server-side Swift."
+        },
+        {
+            "startTime": 137.58,
+            "endTime": 142.84,
+            "body": "And he was talking about his Swift cloud product"
+        },
+        {
+            "startTime": 142.84,
+            "endTime": 147.84,
+            "body": "and running Swift code on an edge network basically."
+        },
+        {
+            "startTime": 147.84,
+            "endTime": 150.72,
+            "body": "So not on a server that you control,"
+        },
+        {
+            "startTime": 150.72,
+            "endTime": 154.04,
+            "body": "just on a kind of managed set of,"
+        },
+        {
+            "startTime": 154.04,
+            "endTime": 155.44,
+            "body": "I guess it's called serverless, isn't it?"
+        },
+        {
+            "startTime": 155.44,
+            "endTime": 156.56,
+            "body": "That's what they call it, right?"
+        },
+        {
+            "startTime": 156.56,
+            "endTime": 158.48,
+            "body": "- Yeah, like cloud functions."
+        },
+        {
+            "startTime": 158.48,
+            "endTime": 161.16,
+            "body": "- Yes, cloud functions or something like that."
+        },
+        {
+            "startTime": 161.16,
+            "endTime": 163.96,
+            "body": "- Terminology is killing me with that stuff, but yeah."
+        },
+        {
+            "startTime": 163.96,
+            "endTime": 165.56,
+            "body": "There's so much of it right here."
+        },
+        {
+            "startTime": 165.56,
+            "endTime": 170.56,
+            "body": "And my first instinct with that talk"
+        },
+        {
+            "startTime": 170.56,
+            "endTime": 172.06,
+            "body": "was that it was very interesting,"
+        },
+        {
+            "startTime": 172.06,
+            "endTime": 175.4,
+            "body": "but that it wasn't gonna be useful for Swift Package Index."
+        },
+        {
+            "startTime": 175.4,
+            "endTime": 179.3,
+            "body": "And then within three or four days of me getting back,"
+        },
+        {
+            "startTime": 179.3,
+            "endTime": 180.72,
+            "body": "we're using it."
+        },
+        {
+            "startTime": 180.72,
+            "endTime": 183.32,
+            "body": "- Little did you know at the time, yes."
+        },
+        {
+            "startTime": 183.32,
+            "endTime": 184.44,
+            "body": "- Exactly, yes."
+        },
+        {
+            "startTime": 184.44,
+            "endTime": 187.36,
+            "body": "So I believe you're gonna talk a little bit"
+        },
+        {
+            "startTime": 187.36,
+            "endTime": 188.92,
+            "body": "about that later, Sven,"
+        },
+        {
+            "startTime": 188.92,
+            "endTime": 191.72,
+            "body": "because that's what you've been working on at the moment."
+        },
+        {
+            "startTime": 191.72,
+            "endTime": 195.68,
+            "body": "But yeah, that was a talk that had instant impact,"
+        },
+        {
+            "startTime": 195.68,
+            "endTime": 197.56,
+            "body": "which was great."
+        },
+        {
+            "startTime": 197.56,
+            "endTime": 201.36,
+            "body": "I also really enjoyed Matthias Pepari's talk."
+        },
+        {
+            "startTime": 201.36,
+            "endTime": 206.96,
+            "body": "He's from Canonical, who are the people behind Ubuntu."
+        },
+        {
+            "startTime": 206.96,
+            "endTime": 210.8,
+            "body": "And he was talking about distributing Swift"
+        },
+        {
+            "startTime": 210.8,
+            "endTime": 214.14,
+            "body": "or making Swift more easily distributable."
+        },
+        {
+            "startTime": 214.14,
+            "endTime": 216.88,
+            "body": "At the moment, there are the Docker images"
+        },
+        {
+            "startTime": 216.88,
+            "endTime": 219.52,
+            "body": "that Apple produce, but if you want to put Swift"
+        },
+        {
+            "startTime": 219.52,
+            "endTime": 227.96,
+            "body": "onto a Linux machine, the process for that is not as simple as apt-install-swift, which"
+        },
+        {
+            "startTime": 227.96,
+            "endTime": 229.2,
+            "body": "I think it should be."
+        },
+        {
+            "startTime": 229.2,
+            "endTime": 231.64,
+            "body": "And Matthias thought it should be as well."
+        },
+        {
+            "startTime": 231.64,
+            "endTime": 239.6,
+            "body": "And so he was giving a talk about that, but also offering his help to get Swift to be"
+        },
+        {
+            "startTime": 239.6,
+            "endTime": 246.44,
+            "body": "as easy to install as apt-install-swift-57 or whatever."
+        },
+        {
+            "startTime": 246.44,
+            "endTime": 252.08,
+            "body": "And that again was just, there was a really good community feel at the conference and"
+        },
+        {
+            "startTime": 252.08,
+            "endTime": 257.6,
+            "body": "to have someone from Canonical come forward and say, \"We would really love to help Swift"
+        },
+        {
+            "startTime": 257.6,
+            "endTime": 263.18,
+            "body": "become a wonderful language on Linux as well,\" was inspiring."
+        },
+        {
+            "startTime": 263.18,
+            "endTime": 265.8,
+            "body": "And there were lots of great talks throughout the day."
+        },
+        {
+            "startTime": 265.8,
+            "endTime": 268.12,
+            "body": "Those are the two that kind of stood out for me."
+        },
+        {
+            "startTime": 268.12,
+            "endTime": 272.9,
+            "body": "But it was also nice to see lots of Apple representation there at the conference."
+        },
+        {
+            "startTime": 272.9,
+            "endTime": 278.74,
+            "body": "So there was, obviously, the sponsorship from Apple was quite unusual for this conference."
+        },
+        {
+            "startTime": 278.74,
+            "endTime": 286.26,
+            "body": "Apple stepped up and sponsored the conference, but also they attended the conference, which"
+        },
+        {
+            "startTime": 286.26,
+            "endTime": 289.18,
+            "body": "is, if anything, even more important."
+        },
+        {
+            "startTime": 289.18,
+            "endTime": 297.3,
+            "body": "So they had several speakers at the conference, and also they had lots of representation there"
+        },
+        {
+            "startTime": 297.3,
+            "endTime": 298.98,
+            "body": "in the audience, talking to people."
+        },
+        {
+            "startTime": 298.98,
+            "endTime": 299.98,
+            "body": "It was great to see."
+        },
+        {
+            "startTime": 299.98,
+            "endTime": 302.66,
+            "body": "I thought it was a whole, the whole conference was really good."
+        },
+        {
+            "startTime": 302.66,
+            "endTime": 311.16,
+            "body": "Well, and the big announcement, right? With the foundation open sourcing and splitting up into packages was announced at the conference, wasn't it?"
+        },
+        {
+            "startTime": 311.16,
+            "endTime": 322.86,
+            "body": "Yes, that was Tony Parker who actually kicked off the conference with an announcement that Swift was going to be re-engineered as an open source Swift package."
+        },
+        {
+            "startTime": 322.86,
+            "endTime": 325.86,
+            "body": "which of course is an enormous announcement,"
+        },
+        {
+            "startTime": 325.86,
+            "endTime": 328.86,
+            "body": "fantastic for the Swift language"
+        },
+        {
+            "startTime": 328.86,
+            "endTime": 332.86,
+            "body": "and a great step forward for Swift Analytics especially."
+        },
+        {
+            "startTime": 332.86,
+            "endTime": 335.86,
+            "body": "Or should I say Swift on other platforms."
+        },
+        {
+            "startTime": 335.86,
+            "endTime": 338.86,
+            "body": "Yeah, I haven't actually encountered that personally,"
+        },
+        {
+            "startTime": 338.86,
+            "endTime": 340.86,
+            "body": "the struggle with foundation,"
+        },
+        {
+            "startTime": 340.86,
+            "endTime": 344.86,
+            "body": "but it does pop up often when people are doing server-side Swift."
+        },
+        {
+            "startTime": 344.86,
+            "endTime": 347.86,
+            "body": "I guess we don't have as much of a problem"
+        },
+        {
+            "startTime": 347.86,
+            "endTime": 350.86,
+            "body": "because size isn't really an issue,"
+        },
+        {
+            "startTime": 350.86,
+            "endTime": 352.86,
+            "body": "but especially with Wasm and stuff,"
+        },
+        {
+            "startTime": 352.86,
+            "endTime": 356.9,
+            "body": "foundation can be quite big to deploy."
+        },
+        {
+            "startTime": 356.9,
+            "endTime": 359.78,
+            "body": "And we're not doing, I think the biggest problem"
+        },
+        {
+            "startTime": 359.78,
+            "endTime": 362.08,
+            "body": "is like foundation stuff with formatters"
+        },
+        {
+            "startTime": 362.08,
+            "endTime": 364.84,
+            "body": "and things like that, which aren't all available"
+        },
+        {
+            "startTime": 364.84,
+            "endTime": 368.78,
+            "body": "on Linux as they are on the Mac OS."
+        },
+        {
+            "startTime": 368.78,
+            "endTime": 369.98,
+            "body": "That's the only thing I remember"
+        },
+        {
+            "startTime": 369.98,
+            "endTime": 372.46,
+            "body": "where we had trouble with foundation being different"
+        },
+        {
+            "startTime": 372.46,
+            "endTime": 374.9,
+            "body": "on Mac OS where we typically develop"
+        },
+        {
+            "startTime": 374.9,
+            "endTime": 377.1,
+            "body": "versus Linux where we deploy."
+        },
+        {
+            "startTime": 377.1,
+            "endTime": 378.56,
+            "body": "We had a couple of issues there"
+        },
+        {
+            "startTime": 378.56,
+            "endTime": 383.36,
+            "body": "where we're trying to do a string formatter and it wasn't available."
+        },
+        {
+            "startTime": 383.36,
+            "endTime": 386.64,
+            "body": "But yeah, that's great to hear."
+        },
+        {
+            "startTime": 386.64,
+            "endTime": 388.92,
+            "body": "To see that move into open source,"
+        },
+        {
+            "startTime": 388.92,
+            "endTime": 392.52,
+            "body": "also being split up into smaller packages so you can pick and choose."
+        },
+        {
+            "startTime": 392.52,
+            "endTime": 398.24,
+            "body": "And I think it's also a huge implication for uptake in Swift within Apple,"
+        },
+        {
+            "startTime": 398.24,
+            "endTime": 402.64,
+            "body": "dogfooding, having more libraries being written in Swift,"
+        },
+        {
+            "startTime": 402.64,
+            "endTime": 406.08,
+            "body": "lower level stuff being now possible to be written in Swift."
+        },
+        {
+            "startTime": 406.08,
+            "endTime": 408.08,
+            "body": "Sounded really great."
+        },
+        {
+            "startTime": 408.08,
+            "endTime": 416.36,
+            "body": "I think it was a very positive conference and I liked, somebody posted one of my slides from when I was talking"
+        },
+        {
+            "startTime": 416.36,
+            "endTime": 422.4,
+            "body": "and they said this was my favorite slide from the conference and it was a slide that was in my slide deck that just said"
+        },
+        {
+            "startTime": 422.4,
+            "endTime": 431.2,
+            "body": "\"The future is bright\" and I obviously I agree with that because I said it but I do think that the future is very bright for ServiceSide Swift."
+        },
+        {
+            "startTime": 431.2,
+            "endTime": 442.0,
+            "body": "Yeah, and it was actually a really neat coincidence because as you were at the conference, I had started working on an improvement to our doc hosting system."
+        },
+        {
+            "startTime": 442.0,
+            "endTime": 449.0,
+            "body": "So what we do is we upload docs to S3 and we were having some issues because doc sets can be quite large."
+        },
+        {
+            "startTime": 449.0,
+            "endTime": 458.28,
+            "body": "And one way of fixing that, I was considering to use a Lambda function or like a Cloud function,"
+        },
+        {
+            "startTime": 458.28,
+            "endTime": 468.68,
+            "body": "it's not necessarily AWS specific, but something where we can send a zip file which then unzips it and uploads it to S3 on its own time."
+        },
+        {
+            "startTime": 468.68,
+            "endTime": 478.68,
+            "body": "The issue we were facing that we are uploading 80,000 files, a gigabyte of data spread across 80,000 files,"
+        },
+        {
+            "startTime": 478.68,
+            "endTime": 484.68,
+            "body": "and we were having some trouble with the number of files being uploaded within the time window we have available for our builders."
+        },
+        {
+            "startTime": 484.68,
+            "endTime": 496.68,
+            "body": "So our idea was to zip it all up, ship it somewhere and have that something deal with the intricacies of uploading that to S3 and the retries per file and all that sort of stuff."
+        },
+        {
+            "startTime": 496.68,
+            "endTime": 500.68,
+            "body": "And that's a nice thing to do in sort of a cloud function, right?"
+        },
+        {
+            "startTime": 500.68,
+            "endTime": 509.18,
+            "body": "If that works, it's much nicer than having to deploy a machine that runs all the time when we're only doing this for like 250 packages at the moment."
+        },
+        {
+            "startTime": 509.18,
+            "endTime": 509.68,
+            "body": "Right."
+        },
+        {
+            "startTime": 509.68,
+            "endTime": 520.68,
+            "body": "And so I looked at AWS Lambda for that and there is the Swift AWS Lambda runtime of the package by Apple, which is really nice."
+        },
+        {
+            "startTime": 520.68,
+            "endTime": 527.72,
+            "body": "you can get started very easily to build a Lambda, run it locally even, play around with it."
+        },
+        {
+            "startTime": 527.72,
+            "endTime": 533.0,
+            "body": "Then comes the time, the moment of truth, when you need to deploy it."
+        },
+        {
+            "startTime": 533.0,
+            "endTime": 541.4,
+            "body": "When it hits you, you look at AWS and think, \"God, there's so many things to configure."
+        },
+        {
+            "startTime": 541.4,
+            "endTime": 547.24,
+            "body": "How do I even start?\" And there's a very nice blog post by Fabian Fett that describes it and"
+        },
+        {
+            "startTime": 547.24,
+            "endTime": 550.3,
+            "body": "and a few others, but the description is quite lengthy."
+        },
+        {
+            "startTime": 550.3,
+            "endTime": 554.2,
+            "body": "And I thought, all right, well, let me at least look around"
+        },
+        {
+            "startTime": 554.2,
+            "endTime": 556.12,
+            "body": "if there are other ways to maybe do this,"
+        },
+        {
+            "startTime": 556.12,
+            "endTime": 560.52,
+            "body": "'cause I recall seeing some Cloud Function kind of thing"
+        },
+        {
+            "startTime": 560.52,
+            "endTime": 563.0,
+            "body": "that wasn't AWS that seemed promising"
+        },
+        {
+            "startTime": 563.0,
+            "endTime": 565.98,
+            "body": "in having a much easier way of deploying,"
+        },
+        {
+            "startTime": 565.98,
+            "endTime": 569.46,
+            "body": "and that was Swift Cloud by Andrew Barber."
+        },
+        {
+            "startTime": 569.46,
+            "endTime": 573.68,
+            "body": "And that's also in the index, so I looked it up,"
+        },
+        {
+            "startTime": 573.68,
+            "endTime": 575.64,
+            "body": "Swift Cloud on Swift Package Index,"
+        },
+        {
+            "startTime": 575.64,
+            "endTime": 580.64,
+            "body": "And I just love when I develop stuff and actually use the index to define things."
+        },
+        {
+            "startTime": 580.64,
+            "endTime": 583.64,
+            "body": "It's always good to use your own software, right?"
+        },
+        {
+            "startTime": 583.64,
+            "endTime": 585.64,
+            "body": "Yeah, absolutely."
+        },
+        {
+            "startTime": 585.64,
+            "endTime": 588.64,
+            "body": "Looked it up, pulled it down, looked at the docs, very nice."
+        },
+        {
+            "startTime": 588.64,
+            "endTime": 597.64,
+            "body": "You just create a package, write your stuff, and then there's a super simple deploy step via Swift Cloud, its web interface."
+        },
+        {
+            "startTime": 597.64,
+            "endTime": 602.64,
+            "body": "You effectively just push your repository, and when it's connected to Swift Cloud,"
+        },
+        {
+            "startTime": 602.64,
+            "endTime": 608.32,
+            "body": "it looks at you define what branch you want to, or if you want to auto deploy and when you've set"
+        },
+        {
+            "startTime": 608.32,
+            "endTime": 614.64,
+            "body": "it like that any push gets deployed and it's available immediately and it runs, it runs your"
+        },
+        {
+            "startTime": 614.64,
+            "endTime": 620.72,
+            "body": "cloud function and I found that amazing like within five minutes I had it deployed in the cloud in a"
+        },
+        {
+            "startTime": 620.72,
+            "endTime": 627.28,
+            "body": "publicly available URL that I could use curl with and interact with and that was just amazing"
+        },
+        {
+            "startTime": 627.28,
+            "endTime": 628.28,
+            "body": "the experience."
+        },
+        {
+            "startTime": 628.28,
+            "endTime": 634.0,
+            "body": "And I would have loved to use it but there were a couple of problems that sort of prevented"
+        },
+        {
+            "startTime": 634.0,
+            "endTime": 641.76,
+            "body": "it and we had a chat subsequently with Andrew and he recommended that for the time for what"
+        },
+        {
+            "startTime": 641.76,
+            "endTime": 646.28,
+            "body": "we are actually trying to do especially because we're talking to S3."
+        },
+        {
+            "startTime": 646.28,
+            "endTime": 651.98,
+            "body": "Swift cloud isn't the perfect tool at the moment because then we also pay all the traffic"
+        },
+        {
+            "startTime": 651.98,
+            "endTime": 659.92,
+            "body": "into S3 when we're actually, if we upload our zip file to a Lambda, we avoid all that"
+        },
+        {
+            "startTime": 659.92,
+            "endTime": 663.02,
+            "body": "overhead of actually talking externally into S3s."
+        },
+        {
+            "startTime": 663.02,
+            "endTime": 668.7,
+            "body": "Yeah, because it's all like the Lambda and the S3, they're all running within the same"
+        },
+        {
+            "startTime": 668.7,
+            "endTime": 670.12,
+            "body": "local network effectively."
+        },
+        {
+            "startTime": 670.12,
+            "endTime": 672.94,
+            "body": "And so we don't pay any traffic outside that."
+        },
+        {
+            "startTime": 672.94,
+            "endTime": 679.18,
+            "body": "So all we would have to do at that point is upload a zip file to AWS and have AWS pick"
+        },
+        {
+            "startTime": 679.18,
+            "endTime": 688.94,
+            "body": "up that zip file, unzip it onto S3 and that's a relatively simple task in terms of AWS functionality."
+        },
+        {
+            "startTime": 688.94,
+            "endTime": 693.34,
+            "body": "And the other interesting thing is that something that's so seamless that it's very easy to"
+        },
+        {
+            "startTime": 693.34,
+            "endTime": 699.46,
+            "body": "forget about because what you're actually doing, you're not compiling a Swift executable"
+        },
+        {
+            "startTime": 699.46,
+            "endTime": 705.9,
+            "body": "on ARM or x86 with the Swift compiler, normal Swift compiler 2 chain because what you're"
+        },
+        {
+            "startTime": 705.9,
+            "endTime": 714.34,
+            "body": "actually doing in Swift cloud is using the Swift WASM tool chain to compile a WASM, I"
+        },
+        {
+            "startTime": 714.34,
+            "endTime": 722.78,
+            "body": "don't know what you call it, is it an executable that then gets deployed into a WASM runtime?"
+        },
+        {
+            "startTime": 722.78,
+            "endTime": 726.78,
+            "body": "I'm a bit hazy on how that actually works."
+        },
+        {
+            "startTime": 726.78,
+            "endTime": 727.78,
+            "body": "Me too."
+        },
+        {
+            "startTime": 727.78,
+            "endTime": 732.66,
+            "body": "But my understanding is this is sort of a, I think you can think of it as a VM that can"
+        },
+        {
+            "startTime": 732.66,
+            "endTime": 739.86,
+            "body": "execute these WASM binaries, which are very efficient. I mean, it's not like JavaScript"
+        },
+        {
+            "startTime": 739.86,
+            "endTime": 747.02,
+            "body": "that gets executed on the fly and sort of, what you call it?"
+        },
+        {
+            "startTime": 747.02,
+            "endTime": 749.02,
+            "body": "Just in time compiles?"
+        },
+        {
+            "startTime": 749.02,
+            "endTime": 755.18,
+            "body": "Hotspot compiled. It's an actual executable that's compiled ahead of time, in a sense."
+        },
+        {
+            "startTime": 755.18,
+            "endTime": 759.94,
+            "body": "So it is more efficient than that, but it's also not a normal executable that you could,"
+        },
+        {
+            "startTime": 759.94,
+            "endTime": 765.78,
+            "body": "you know the same executable you would run on your ARM Mac or your x86 Mac and then would"
+        },
+        {
+            "startTime": 765.78,
+            "endTime": 773.72,
+            "body": "just ship and have run in a VM in you know an AWS Lambda or something like that."
+        },
+        {
+            "startTime": 773.72,
+            "endTime": 778.7,
+            "body": "And the reason why that's important is and that's an issue I ran into, not every package"
+        },
+        {
+            "startTime": 778.7,
+            "endTime": 783.52,
+            "body": "you might pull in as a dependency would necessarily compile in SwiftWasm."
+        },
+        {
+            "startTime": 783.52,
+            "endTime": 790.7,
+            "body": "So for instance, I was trying to compile SOTO in order to interact with S3 and that unfortunately"
+        },
+        {
+            "startTime": 790.7,
+            "endTime": 796.46,
+            "body": "failed because a dependency that SOTO is pulling in, don't quite recall which one it was, didn't"
+        },
+        {
+            "startTime": 796.46,
+            "endTime": 798.84,
+            "body": "actually compile on WASM."
+        },
+        {
+            "startTime": 798.84,
+            "endTime": 803.08,
+            "body": "I think it was even some C code that didn't compile."
+        },
+        {
+            "startTime": 803.08,
+            "endTime": 806.96,
+            "body": "There was other C code that it does compile, which is kind of amazing if you think about"
+        },
+        {
+            "startTime": 806.96,
+            "endTime": 807.96,
+            "body": "it."
+        },
+        {
+            "startTime": 807.96,
+            "endTime": 809.48,
+            "body": "But this particular one, it didn't."
+        },
+        {
+            "startTime": 809.48,
+            "endTime": 815.98,
+            "body": "So there's maybe an argument to be made that we have a need for an additional platform"
+        },
+        {
+            "startTime": 815.98,
+            "endTime": 820.88,
+            "body": "in the index to show what packages are/wasn't compatible."
+        },
+        {
+            "startTime": 820.88,
+            "endTime": 827.84,
+            "body": "But it's really interesting how much you can abstract that away and not even think about"
+        },
+        {
+            "startTime": 827.84,
+            "endTime": 832.66,
+            "body": "it until the moment, you know, the moment of truth when it all bubbles up and the leaky"
+        },
+        {
+            "startTime": 832.66,
+            "endTime": 837.66,
+            "body": "the abstraction sort of fails or the abstraction leaks and you see you get a"
+        },
+        {
+            "startTime": 837.66,
+            "endTime": 842.18,
+            "body": "compile error that you're not expecting because your platform isn't quite the"
+        },
+        {
+            "startTime": 842.18,
+            "endTime": 845.1,
+            "body": "one you thought you were running against."
+        },
+        {
+            "startTime": 845.1,
+            "endTime": 851.18,
+            "body": "I think there's an interesting conversation to be had around WASM compatibility because you're right that it would be"
+        },
+        {
+            "startTime": 851.18,
+            "endTime": 857.14,
+            "body": "really useful to be able to, in this very specific situation, to see which"
+        },
+        {
+            "startTime": 857.14,
+            "endTime": 861.5,
+            "body": "packages were compatible with WASM. But I think there's a little way to"
+        },
+        {
+            "startTime": 861.5,
+            "endTime": 867.82,
+            "body": "to go before we should actually add that to the index in terms of clarification"
+        },
+        {
+            "startTime": 867.82,
+            "endTime": 872.7,
+            "body": "and adoption of WASM itself. Because, so a lot of people, and Andrew was talking"
+        },
+        {
+            "startTime": 872.7,
+            "endTime": 877.1,
+            "body": "about this in his talk, a lot of people think of WASM as a browser technology. So"
+        },
+        {
+            "startTime": 877.1,
+            "endTime": 882.14,
+            "body": "I'm gonna run some Swift in my Safari or my Chrome and I'm gonna be"
+        },
+        {
+            "startTime": 882.14,
+            "endTime": 887.2,
+            "body": "able to write Swift to modify the HTML DOM. And of course that's not what we're"
+        },
+        {
+            "startTime": 887.2,
+            "endTime": 890.74,
+            "body": "talking about here. We're talking about running WASM as a server side through"
+        },
+        {
+            "startTime": 890.74,
+            "endTime": 893.48,
+            "body": "still through a JavaScript interpreter,"
+        },
+        {
+            "startTime": 893.48,
+            "endTime": 895.2,
+            "body": "but as a server-side process."
+        },
+        {
+            "startTime": 895.2,
+            "endTime": 897.56,
+            "body": "And really what you're talking about there"
+        },
+        {
+            "startTime": 897.56,
+            "endTime": 902.2,
+            "body": "with compatibility is compatibility with that situation."
+        },
+        {
+            "startTime": 902.2,
+            "endTime": 905.7,
+            "body": "And I think if we stuck anything to do with Wasm"
+        },
+        {
+            "startTime": 905.7,
+            "endTime": 907.62,
+            "body": "on the package of Bexite at the moment,"
+        },
+        {
+            "startTime": 907.62,
+            "endTime": 910.48,
+            "body": "people would assume that was a browser-based Wasm,"
+        },
+        {
+            "startTime": 910.48,
+            "endTime": 912.66,
+            "body": "which I don't believe is."
+        },
+        {
+            "startTime": 912.66,
+            "endTime": 914.96,
+            "body": "I think we would need a separate compatibility test"
+        },
+        {
+            "startTime": 914.96,
+            "endTime": 916.68,
+            "body": "for that as I understand it."
+        },
+        {
+            "startTime": 916.68,
+            "endTime": 919.12,
+            "body": "And so I have a feeling that this is going to need"
+        },
+        {
+            "startTime": 919.12,
+            "endTime": 924.12,
+            "body": "a little bit more time to propagate into the community."
+        },
+        {
+            "startTime": 924.12,
+            "endTime": 927.36,
+            "body": "And if this takes off, then absolutely we should do that."
+        },
+        {
+            "startTime": 927.36,
+            "endTime": 929.92,
+            "body": "But we're going to have to be very careful how we actually"
+        },
+        {
+            "startTime": 929.92,
+            "endTime": 933.12,
+            "body": "represent that compatibility on the matrix."
+        },
+        {
+            "startTime": 933.12,
+            "endTime": 937.04,
+            "body": "Yeah, I think the target to test is the Wasm toolchain,"
+        },
+        {
+            "startTime": 937.04,
+            "endTime": 939.52,
+            "body": "because that's the thing that everyone would use to actually"
+        },
+        {
+            "startTime": 939.52,
+            "endTime": 941.52,
+            "body": "compile the Swift package with."
+        },
+        {
+            "startTime": 941.52,
+            "endTime": 944.4,
+            "body": "And obviously, there also, you have to look at versioning,"
+        },
+        {
+            "startTime": 944.4,
+            "endTime": 948.52,
+            "body": "because a 5.8 Wasm Swift toolchain"
+        },
+        {
+            "startTime": 948.52,
+            "endTime": 953.08,
+            "body": "might have different behavior than SWIFT 5.9."
+        },
+        {
+            "startTime": 953.08,
+            "endTime": 958.84,
+            "body": "But I think in that sense it's very similar to all the other flavors we're testing."
+        },
+        {
+            "startTime": 958.84,
+            "endTime": 966.08,
+            "body": "But you're right, I mean it's just very new and I guess it's also not a very common thing"
+        },
+        {
+            "startTime": 966.08,
+            "endTime": 967.52,
+            "body": "that people would be looking for."
+        },
+        {
+            "startTime": 967.52,
+            "endTime": 973.92,
+            "body": "So the real estate on that page is pretty precious and we don't have that many columns"
+        },
+        {
+            "startTime": 973.92,
+            "endTime": 975.44,
+            "body": "available to us."
+        },
+        {
+            "startTime": 975.44,
+            "endTime": 980.12,
+            "body": "We have to sort of be a bit careful how many things we show there."
+        },
+        {
+            "startTime": 980.12,
+            "endTime": 985.88,
+            "body": "Yeah, I've had some thoughts around that recently actually with how we represent that data and"
+        },
+        {
+            "startTime": 985.88,
+            "endTime": 990.96,
+            "body": "as we get more platforms, because again, something else that came up at the conference was Windows"
+        },
+        {
+            "startTime": 990.96,
+            "endTime": 996.22,
+            "body": "compatibility, which I think if we're going to tackle another platform, Windows would"
+        },
+        {
+            "startTime": 996.22,
+            "endTime": 999.16,
+            "body": "probably be the next one we'd tackle."
+        },
+        {
+            "startTime": 999.16,
+            "endTime": 1003.68,
+            "body": "And we're already getting quite tight for space in that area."
+        },
+        {
+            "startTime": 1003.68,
+            "endTime": 1012.2,
+            "body": "But also, the box for iOS is the same size as the box for Windows or WASM, which is nice"
+        },
+        {
+            "startTime": 1012.2,
+            "endTime": 1018.0,
+            "body": "and equitable, but it doesn't represent the current reality."
+        },
+        {
+            "startTime": 1018.0,
+            "endTime": 1022.48,
+            "body": "And so I think we need to maybe rethink that area of the page a little bit, because also"
+        },
+        {
+            "startTime": 1022.48,
+            "endTime": 1028.8,
+            "body": "the area of the page, even just for compatibility, takes up a large amount of space."
+        },
+        {
+            "startTime": 1028.8,
+            "endTime": 1034.1,
+            "body": "there's a lot of quite complex information to represent in that area. So"
+        },
+        {
+            "startTime": 1034.1,
+            "endTime": 1038.2,
+            "body": "it's a tricky design problem but we'll maybe have a think about that"
+        },
+        {
+            "startTime": 1038.2,
+            "endTime": 1043.88,
+            "body": "as we go forward. Yeah I wonder if there's a some rearranging that we"
+        },
+        {
+            "startTime": 1043.88,
+            "endTime": 1050.32,
+            "body": "could do because I think over time our Swift version split is becoming less"
+        },
+        {
+            "startTime": 1050.32,
+            "endTime": 1053.88,
+            "body": "and less important. I think there'll be an upcoming big one when it's"
+        },
+        {
+            "startTime": 1053.88,
+            "endTime": 1063.24,
+            "body": "swift 6, but I almost wonder if it isn't at some point going to be 5.x and 6 and it's"
+        },
+        {
+            "startTime": 1063.24,
+            "endTime": 1071.4,
+            "body": "effectively a swift version 2 column thing that we display at least on that page maybe"
+        },
+        {
+            "startTime": 1071.4,
+            "endTime": 1077.2,
+            "body": "with a bit more detail in a click through where if there's even a need to split out"
+        },
+        {
+            "startTime": 1077.2,
+            "endTime": 1086.72,
+            "body": "5x further, it's probably not worth it on that initial page. But at least, I mean, when"
+        },
+        {
+            "startTime": 1086.72,
+            "endTime": 1093.68,
+            "body": "I look at stuff, the 5x are really not that important anymore. I haven't seen a package"
+        },
+        {
+            "startTime": 1093.68,
+            "endTime": 1100.96,
+            "body": "in a long time where that sort of compatibility made any difference in my decision."
+        },
+        {
+            "startTime": 1100.96,
+            "endTime": 1108.04,
+            "body": "Me too, yeah. I think 5.6 was a big one really. I think 5.6 introduced a few things that people"
+        },
+        {
+            "startTime": 1108.04,
+            "endTime": 1113.94,
+            "body": "started using straight away and so I quite often see no compatibility with 5.5 and 5.4,"
+        },
+        {
+            "startTime": 1113.94,
+            "endTime": 1119.96,
+            "body": "but 5.6 and above is almost always. I very rarely see a difference between 5.6 and 5.7."
+        },
+        {
+            "startTime": 1119.96,
+            "endTime": 1124.6,
+            "body": "Yeah, might actually be an interesting thing to query because we can and we have in the"
+        },
+        {
+            "startTime": 1124.6,
+            "endTime": 1129.4,
+            "body": "the past checked what packages have you know steps in there."
+        },
+        {
+            "startTime": 1129.4,
+            "endTime": 1130.4,
+            "body": "Yes."
+        },
+        {
+            "startTime": 1130.4,
+            "endTime": 1133.24,
+            "body": "Package would be compatible with 5.6 but not 7."
+        },
+        {
+            "startTime": 1133.24,
+            "endTime": 1136.0,
+            "body": "That sort of stuff."
+        },
+        {
+            "startTime": 1136.0,
+            "endTime": 1142.04,
+            "body": "So yeah and otherwise what was really nice with the, so that was actually my first experience"
+        },
+        {
+            "startTime": 1142.04,
+            "endTime": 1150.24,
+            "body": "working with AWS Lambdas or any sort of cloud functions and I was quite impressed with the"
+        },
+        {
+            "startTime": 1150.24,
+            "endTime": 1153.28,
+            "body": "quickness with which you can trigger AWS Lambdas."
+        },
+        {
+            "startTime": 1153.28,
+            "endTime": 1158.56,
+            "body": "I mean, you shouldn't be surprised because it's in the marketing, but when you actually"
+        },
+        {
+            "startTime": 1158.56,
+            "endTime": 1166.4,
+            "body": "go into the AWS Lambda console and click on test, it just immediately executes that thing."
+        },
+        {
+            "startTime": 1166.4,
+            "endTime": 1173.48,
+            "body": "And that's quite astonishing because you get billed for like 300 milliseconds of compute"
+        },
+        {
+            "startTime": 1173.48,
+            "endTime": 1175.28,
+            "body": "for that single function call."
+        },
+        {
+            "startTime": 1175.28,
+            "endTime": 1179.84,
+            "body": "And that's kind of remarkable if you think about that, the whole mechanism."
+        },
+        {
+            "startTime": 1179.84,
+            "endTime": 1184.88,
+            "body": "It is remarkable and I think"
+        },
+        {
+            "startTime": 1184.88,
+            "endTime": 1186.76,
+            "body": "more remarkable is that what"
+        },
+        {
+            "startTime": 1186.76,
+            "endTime": 1191.72,
+            "body": "you're saying is that you read some"
+        },
+        {
+            "startTime": 1191.72,
+            "endTime": 1194.24,
+            "body": "marketing and it was true. Well I'd say I"
+        },
+        {
+            "startTime": 1194.24,
+            "endTime": 1197.72,
+            "body": "didn't actively read it, I just you know"
+        },
+        {
+            "startTime": 1197.72,
+            "endTime": 1202.44,
+            "body": "subliminally infiltrated my brain"
+        },
+        {
+            "startTime": 1202.44,
+            "endTime": 1202.44,
+            "body": "I guess. That's how well that works, yeah."
+        },
+        {
+            "startTime": 1202.44,
+            "endTime": 1208.36,
+            "body": "So yes, in the last couple of weeks have"
+        },
+        {
+            "startTime": 1205.28,
+            "endTime": 1210.0,
+            "body": "been, for you at least, a lot of cloud stuff."
+        },
+        {
+            "startTime": 1210.0,
+            "endTime": 1216.6,
+            "body": "For me, I have been investigating a problem that we've had for a little while without"
+        },
+        {
+            "startTime": 1216.6,
+            "endTime": 1220.72,
+            "body": "Google results, and I've made some progress with it, which is good."
+        },
+        {
+            "startTime": 1220.72,
+            "endTime": 1228.52,
+            "body": "So we have a situation where we have a sitemap on the website which tells Google..."
+        },
+        {
+            "startTime": 1228.52,
+            "endTime": 1233.68,
+            "body": "So a sitemap basically is an XML file that has a list of URLs in them, and against each"
+        },
+        {
+            "startTime": 1233.68,
+            "endTime": 1238.72,
+            "body": "URL you have a frequency with which you would like Google to check for changes"
+        },
+        {
+            "startTime": 1238.72,
+            "endTime": 1244.48,
+            "body": "on that page. And a sitemap is really important for a site like Swift package"
+        },
+        {
+            "startTime": 1244.48,
+            "endTime": 1251.04,
+            "body": "index because there is no one page on our site that links to all packages"
+        },
+        {
+            "startTime": 1251.04,
+            "endTime": 1257.28,
+            "body": "because most of what you do is through search. We need to tell Google what our"
+        },
+        {
+            "startTime": 1257.28,
+            "endTime": 1262.44,
+            "body": "full set of package pages is because it's not going to find them just by"
+        },
+        {
+            "startTime": 1262.44,
+            "endTime": 1266.6,
+            "body": "browsing, which is what it normally does. So normally it finds your site, it"
+        },
+        {
+            "startTime": 1266.6,
+            "endTime": 1270.4,
+            "body": "follows every link on every page, and effectively that's what it considers"
+        },
+        {
+            "startTime": 1270.4,
+            "endTime": 1274.88,
+            "body": "the entire surface area of your site. A side map, of course, is a list of URLs"
+        },
+        {
+            "startTime": 1274.88,
+            "endTime": 1280.36,
+            "body": "where you can say, if you didn't find it, here's all the URLs we would like you"
+        },
+        {
+            "startTime": 1280.36,
+            "endTime": 1286.44,
+            "body": "to start at. And what we do is we give Google all of the package page URLs so"
+        },
+        {
+            "startTime": 1286.44,
+            "endTime": 1291.48,
+            "body": "that it knows about every package, but then we let it explore from there. So"
+        },
+        {
+            "startTime": 1291.48,
+            "endTime": 1295.64,
+            "body": "So from there it can click on the release information"
+        },
+        {
+            "startTime": 1295.64,
+            "endTime": 1299.12,
+            "body": "and it can click on the build information,"
+        },
+        {
+            "startTime": 1299.12,
+            "endTime": 1301.22,
+            "body": "that kind of thing, and it can explore from there."
+        },
+        {
+            "startTime": 1301.22,
+            "endTime": 1305.12,
+            "body": "And it has been successfully doing that so far."
+        },
+        {
+            "startTime": 1305.12,
+            "endTime": 1307.46,
+            "body": "The problem we have is that it stopped doing that"
+        },
+        {
+            "startTime": 1307.46,
+            "endTime": 1311.3,
+            "body": "with documentation, and we're getting very inconsistent"
+        },
+        {
+            "startTime": 1311.3,
+            "endTime": 1314.4,
+            "body": "Google coverage on our documentation."
+        },
+        {
+            "startTime": 1314.4,
+            "endTime": 1317.74,
+            "body": "So some packages have their documentation completely indexed"
+        },
+        {
+            "startTime": 1317.74,
+            "endTime": 1319.14,
+            "body": "and there's no problem at all."
+        },
+        {
+            "startTime": 1319.14,
+            "endTime": 1324.58,
+            "body": "packages, the documentation is not even in the Google index. It's decided not to"
+        },
+        {
+            "startTime": 1324.58,
+            "endTime": 1329.86,
+            "body": "index that page whatsoever. And there are solutions to this where you can go into"
+        },
+        {
+            "startTime": 1329.86,
+            "endTime": 1334.1,
+            "body": "the Google Search console and you can say please go and index this page now."
+        },
+        {
+            "startTime": 1334.1,
+            "endTime": 1339.74,
+            "body": "But I've resisted doing that because that's not a solution for the"
+        },
+        {
+            "startTime": 1339.74,
+            "endTime": 1343.62,
+            "body": "future. We can't have anything that relies on me logging into a web"
+        },
+        {
+            "startTime": 1343.62,
+            "endTime": 1348.3,
+            "body": "page and clicking a button. - There's no way for you to spend your Monday. - There's no way for"
+        },
+        {
+            "startTime": 1348.3,
+            "endTime": 1354.1,
+            "body": "me to spend my life. Yes, exactly. I can do less damage if I only have to do that, but"
+        },
+        {
+            "startTime": 1354.1,
+            "endTime": 1359.66,
+            "body": "it's certainly, there are better uses of my time, I think. So, this is the problem. I"
+        },
+        {
+            "startTime": 1359.66,
+            "endTime": 1365.54,
+            "body": "think what all I've done so far is describe the problem. I've figured out, I think, what"
+        },
+        {
+            "startTime": 1365.54,
+            "endTime": 1370.9,
+            "body": "the problem, the underlying issue is, and it's all to do with our support for versioned"
+        },
+        {
+            "startTime": 1370.9,
+            "endTime": 1377.66,
+            "body": "documentation. So, one thing that Google does not like is it does not like repeated information."
+        },
+        {
+            "startTime": 1377.66,
+            "endTime": 1382.6,
+            "body": "So if you took somebody's website and made a clone of it and hosted it on the web, hoping"
+        },
+        {
+            "startTime": 1382.6,
+            "endTime": 1388.9,
+            "body": "that you would grab their Google search results, Google has lots of safeguards within it to"
+        },
+        {
+            "startTime": 1388.9,
+            "endTime": 1390.54,
+            "body": "stop you doing that."
+        },
+        {
+            "startTime": 1390.54,
+            "endTime": 1397.78,
+            "body": "And effectively, what we're doing with our version documentation is exactly that."
+        },
+        {
+            "startTime": 1397.78,
+            "endTime": 1403.14,
+            "body": "We're taking a copy of a documentation site and re-hosting it and saying, \"Look, Google,"
+        },
+        {
+            "startTime": 1403.14,
+            "endTime": 1405.5,
+            "body": "here's another copy of this site."
+        },
+        {
+            "startTime": 1405.5,
+            "endTime": 1410.62,
+            "body": "love us now. And what it actually says is it says no we won't."
+        },
+        {
+            "startTime": 1410.62,
+            "endTime": 1416.02,
+            "body": "But doesn't it doesn't it realize that it's the same domain? I mean I would imagine that"
+        },
+        {
+            "startTime": 1416.02,
+            "endTime": 1418.94,
+            "body": "would sort of short circuit that process, no?"
+        },
+        {
+            "startTime": 1418.94,
+            "endTime": 1424.58,
+            "body": "It does but it's still a problem in that you're uploading two copies of this effectively."
+        },
+        {
+            "startTime": 1424.58,
+            "endTime": 1429.28,
+            "body": "I mean yes between versions there will be some differences in documentation but also"
+        },
+        {
+            "startTime": 1429.28,
+            "endTime": 1435.02,
+            "body": "potentially no differences in documentation. So it does see this as a problem and I've"
+        },
+        {
+            "startTime": 1435.02,
+            "endTime": 1440.36,
+            "body": "I've confirmed that you can, in the Google Search console, you can dig into why it's"
+        },
+        {
+            "startTime": 1440.36,
+            "endTime": 1441.68,
+            "body": "not indexing."
+        },
+        {
+            "startTime": 1441.68,
+            "endTime": 1446.72,
+            "body": "And it's not as simple as just reading the message."
+        },
+        {
+            "startTime": 1446.72,
+            "endTime": 1452.32,
+            "body": "Like, there was a little bit more to the investigation than that, but I think this is the problem."
+        },
+        {
+            "startTime": 1452.32,
+            "endTime": 1459.04,
+            "body": "And what it wants is it wants a canonical...so in the HTML, you can put a meta tag in the"
+        },
+        {
+            "startTime": 1459.04,
+            "endTime": 1464.1,
+            "body": "head and you can say this is duplicate but it's duplicate of this document and"
+        },
+        {
+            "startTime": 1464.1,
+            "endTime": 1469.78,
+            "body": "this document is the canonical version. And that's what we need to do"
+        },
+        {
+            "startTime": 1469.78,
+            "endTime": 1479.22,
+            "body": "to fix it. So what we'll do is on the as we render the documentation pages we can"
+        },
+        {
+            "startTime": 1479.22,
+            "endTime": 1483.98,
+            "body": "insert into the and we already do this for our style sheet and that kind of"
+        },
+        {
+            "startTime": 1483.98,
+            "endTime": 1491.3,
+            "body": "thing. We can insert into that head section of each page a new meta tag that says the"
+        },
+        {
+            "startTime": 1491.3,
+            "endTime": 1499.94,
+            "body": "latest, the canonical version of this documentation is our latest stable version of the documentation."
+        },
+        {
+            "startTime": 1499.94,
+            "endTime": 1507.22,
+            "body": "And I haven't yet implemented that, but I'm pretty sure that that will be the solution"
+        },
+        {
+            "startTime": 1507.22,
+            "endTime": 1508.22,
+            "body": "to this problem."
+        },
+        {
+            "startTime": 1508.22,
+            "endTime": 1514.78,
+            "body": "Yeah, nice. And the doc sets that actually did show up, was that perhaps because they"
+        },
+        {
+            "startTime": 1514.78,
+            "endTime": 1519.5,
+            "body": "were referenced in the packages readme or, you know, like externally too?"
+        },
+        {
+            "startTime": 1519.5,
+            "endTime": 1525.5,
+            "body": "No, so it's a little more, and this is part of what was so confusing about this problem"
+        },
+        {
+            "startTime": 1525.5,
+            "endTime": 1532.58,
+            "body": "is it is inconsistent. And what good, like, when you have the entire internet to index,"
+        },
+        {
+            "startTime": 1532.58,
+            "endTime": 1538.3,
+            "body": "Everything you do is, you do your best with it, but nothing is perfect."
+        },
+        {
+            "startTime": 1538.3,
+            "endTime": 1543.02,
+            "body": "And so what Google does is sometimes it does index this stuff and sometimes it doesn't."
+        },
+        {
+            "startTime": 1543.02,
+            "endTime": 1548.38,
+            "body": "I think it's partly because we've got so much duplicate stuff that at some point it just,"
+        },
+        {
+            "startTime": 1548.38,
+            "endTime": 1551.18,
+            "body": "it said, \"Hold on a minute, there's a whole load of duplicates in here."
+        },
+        {
+            "startTime": 1551.18,
+            "endTime": 1553.26,
+            "body": "I'm not going to bother indexing anymore.\""
+        },
+        {
+            "startTime": 1553.26,
+            "endTime": 1557.06,
+            "body": "And so you end up with this situation where maybe the first things that it indexed were"
+        },
+        {
+            "startTime": 1557.06,
+            "endTime": 1561.86,
+            "body": "okay, but then over time it decided not to trust us quite as much."
+        },
+        {
+            "startTime": 1561.86,
+            "endTime": 1565.22,
+            "body": "And that's also why we need to fix it."
+        },
+        {
+            "startTime": 1565.22,
+            "endTime": 1568.58,
+            "body": "That Google robot is surprisingly human."
+        },
+        {
+            "startTime": 1568.58,
+            "endTime": 1572.52,
+            "body": "I mean, if you think about it, I've spent a bit of time over the last couple of weeks"
+        },
+        {
+            "startTime": 1572.52,
+            "endTime": 1578.42,
+            "body": "thinking about Google, and that is such an old bit of code now, I'm sure."
+        },
+        {
+            "startTime": 1578.42,
+            "endTime": 1581.54,
+            "body": "It gets constant, constant iteration."
+        },
+        {
+            "startTime": 1581.54,
+            "endTime": 1587.9,
+            "body": "But for such an important job, that Google bot that crawls the web, I think there probably"
+        },
+        {
+            "startTime": 1587.9,
+            "endTime": 1593.78,
+            "body": "are some fascinating edge cases inside BancoBase."
+        },
+        {
+            "startTime": 1593.78,
+            "endTime": 1600.06,
+            "body": "It's also completely, I'm sure nobody is able to understand the entirety of that bot."
+        },
+        {
+            "startTime": 1600.06,
+            "endTime": 1605.54,
+            "body": "Oh yeah, that must be remarkable."
+        },
+        {
+            "startTime": 1605.54,
+            "endTime": 1608.9,
+            "body": "Just to imagine the scope of that thing."
+        },
+        {
+            "startTime": 1608.9,
+            "endTime": 1609.9,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 1609.9,
+            "endTime": 1617.14,
+            "body": "And also, what's always fascinated me about Google is the storage of all of that information"
+        },
+        {
+            "startTime": 1617.14,
+            "endTime": 1622.9,
+            "body": "so that you can, you know, if you imagine the sheer quantity of data that that search"
+        },
+        {
+            "startTime": 1622.9,
+            "endTime": 1631.02,
+            "body": "engine is indexing and it brings back results in 0.1 seconds, 0.01 seconds, it's remarkable"
+        },
+        {
+            "startTime": 1631.02,
+            "endTime": 1633.18,
+            "body": "how that piece of software works."
+        },
+        {
+            "startTime": 1633.18,
+            "endTime": 1634.86,
+            "body": "Yeah, that's remarkable and scary."
+        },
+        {
+            "startTime": 1634.86,
+            "endTime": 1638.42,
+            "body": "You know, for anything you do yourself, you think like, \"God...\""
+        },
+        {
+            "startTime": 1638.42,
+            "endTime": 1643.1,
+            "body": "There are many things that Google does that I'm not a big fan of, but the underlying search"
+        },
+        {
+            "startTime": 1643.1,
+            "endTime": 1646.42,
+            "body": "engine technology I have nothing but absolute respect for."
+        },
+        {
+            "startTime": 1646.42,
+            "endTime": 1651.42,
+            "body": "Shall we do some package recommendations?"
+        },
+        {
+            "startTime": 1651.42,
+            "endTime": 1657.42,
+            "body": "Yeah, let's do it. We're already half an hour in, so we probably should."
+        },
+        {
+            "startTime": 1657.42,
+            "endTime": 1667.42,
+            "body": "We are, we've talked a lot today, yeah. I will kick us off this week with a package called RichTextKit by Daniel Seide."
+        },
+        {
+            "startTime": 1667.42,
+            "endTime": 1674.94,
+            "body": "And this is a rich text editor that works with both UIKit, AppKit, and SwiftUI."
+        },
+        {
+            "startTime": 1674.94,
+            "endTime": 1679.22,
+            "body": "And while I haven't tried it, it looks kind of interesting."
+        },
+        {
+            "startTime": 1679.22,
+            "endTime": 1685.16,
+            "body": "So the most impressive thing about it is that this is a cross platform."
+        },
+        {
+            "startTime": 1685.16,
+            "endTime": 1691.62,
+            "body": "And again, we're using the definition of cross platform that includes iOS and MacOS."
+        },
+        {
+            "startTime": 1691.62,
+            "endTime": 1695.98,
+            "body": "This is a cross platform implementation of a rich text editor."
+        },
+        {
+            "startTime": 1695.98,
+            "endTime": 1702.06,
+            "body": "So if you're building an application for both, with SwiftUI, for both Mac OS and iOS, you"
+        },
+        {
+            "startTime": 1702.06,
+            "endTime": 1706.86,
+            "body": "can use this package."
+        },
+        {
+            "startTime": 1706.86,
+            "endTime": 1711.38,
+            "body": "And if I just click through to the documentation here, it's actually come from a commercial"
+        },
+        {
+            "startTime": 1711.38,
+            "endTime": 1712.98,
+            "body": "product."
+        },
+        {
+            "startTime": 1712.98,
+            "endTime": 1718.9,
+            "body": "So there's a product called Aribi Writer, which it says on the documentation is out"
+        },
+        {
+            "startTime": 1718.9,
+            "endTime": 1720.3,
+            "body": "soon."
+        },
+        {
+            "startTime": 1720.3,
+            "endTime": 1724.1,
+            "body": "If you actually go through to the website, I believe it is already out."
+        },
+        {
+            "startTime": 1724.1,
+            "endTime": 1728.94,
+            "body": "So this is an application with spell checking, text to speech, and a smart keyboard is how"
+        },
+        {
+            "startTime": 1728.94,
+            "endTime": 1731.18,
+            "body": "they describe it."
+        },
+        {
+            "startTime": 1731.18,
+            "endTime": 1733.62,
+            "body": "And this package has been extracted from that."
+        },
+        {
+            "startTime": 1733.62,
+            "endTime": 1741.42,
+            "body": "So I always think that if a package has come through that has made it into a commercial"
+        },
+        {
+            "startTime": 1741.42,
+            "endTime": 1746.46,
+            "body": "application where the purpose of the application is to be that thing, I think that's got to"
+        },
+        {
+            "startTime": 1746.46,
+            "endTime": 1747.46,
+            "body": "be worth checking out."
+        },
+        {
+            "startTime": 1747.46,
+            "endTime": 1748.46,
+            "body": "Yeah, definitely."
+        },
+        {
+            "startTime": 1748.46,
+            "endTime": 1755.06,
+            "body": "That tells you a lot. It's going to be, because it's so central, it's going to be maintained"
+        },
+        {
+            "startTime": 1755.06,
+            "endTime": 1761.38,
+            "body": "and going to have a bright future ahead of it."
+        },
+        {
+            "startTime": 1761.38,
+            "endTime": 1766.14,
+            "body": "And again, great documentation. The documentation is not hosted on the package in Next, but"
+        },
+        {
+            "startTime": 1766.14,
+            "endTime": 1773.74,
+            "body": "it is DocC documentation hosted on GitHub pages. And it looks great. I think if you're"
+        },
+        {
+            "startTime": 1773.74,
+            "endTime": 1777.72,
+            "body": "in the market for a rich text editor, you should at least certainly check it out."
+        },
+        {
+            "startTime": 1777.72,
+            "endTime": 1784.22,
+            "body": "Yeah, in particular because my understanding is that SwiftUI probably needs something like this right now."
+        },
+        {
+            "startTime": 1784.22,
+            "endTime": 1792.22,
+            "body": "I think the built-in versions aren't capable enough to cover lots of slightly extended use cases."
+        },
+        {
+            "startTime": 1792.22,
+            "endTime": 1799.22,
+            "body": "You pretty quickly run into the issues where you need to wrap something and if this does it for you, that's probably really helpful."
+        },
+        {
+            "startTime": 1799.22,
+            "endTime": 1807.68,
+            "body": "And also I think once you get into wrapping, then you start to progress into a single platform"
+        },
+        {
+            "startTime": 1807.68,
+            "endTime": 1809.78,
+            "body": "wrapper rather than a cross-platform wrapper."
+        },
+        {
+            "startTime": 1809.78,
+            "endTime": 1815.26,
+            "body": "And I think what they've done there is think about this, because I'm guessing their application"
+        },
+        {
+            "startTime": 1815.26,
+            "endTime": 1817.06,
+            "body": "is cross-platform."
+        },
+        {
+            "startTime": 1817.06,
+            "endTime": 1819.5,
+            "body": "So I think they've had to consider that from every aspect."
+        },
+        {
+            "startTime": 1819.5,
+            "endTime": 1826.3,
+            "body": "So I think it's the kind of thing that, because it's in a product, it will get regular maintenance."
+        },
+        {
+            "startTime": 1826.3,
+            "endTime": 1833.24,
+            "body": "And if you can leverage that to save yourself some time, I think that's great."
+        },
+        {
+            "startTime": 1833.24,
+            "endTime": 1839.48,
+            "body": "And it's also worth giving that company a bit of credit for taking what is at the core"
+        },
+        {
+            "startTime": 1839.48,
+            "endTime": 1842.16,
+            "body": "of their commercial application and open sourcing it."
+        },
+        {
+            "startTime": 1842.16,
+            "endTime": 1843.96,
+            "body": "That's always nice to see."
+        },
+        {
+            "startTime": 1843.96,
+            "endTime": 1846.24,
+            "body": "Yeah, very nice."
+        },
+        {
+            "startTime": 1846.24,
+            "endTime": 1852.64,
+            "body": "Right, I've got actually a set of packages that I wanted to list, and that's born out"
+        },
+        {
+            "startTime": 1852.64,
+            "endTime": 1860.04,
+            "body": "of my work on that documentation uploader. What I needed there to work with that is something"
+        },
+        {
+            "startTime": 1860.04,
+            "endTime": 1865.6,
+            "body": "to zip and unzip and I didn't want to shell out to the command line in particular. It's"
+        },
+        {
+            "startTime": 1865.6,
+            "endTime": 1870.2,
+            "body": "always kind of hacky plus in the Lambda that's not an option and I wanted to use it on both"
+        },
+        {
+            "startTime": 1870.2,
+            "endTime": 1875.96,
+            "body": "ends. So I was looking around for zip and unzip and as I said earlier it's just great"
+        },
+        {
+            "startTime": 1875.96,
+            "endTime": 1881.2,
+            "body": "when you can use the index. I'm always happy when I can use the index for stuff. So that"
+        },
+        {
+            "startTime": 1881.2,
+            "endTime": 1886.0,
+            "body": "was an opportunity plug zip in also platform called on Linux. So for people"
+        },
+        {
+            "startTime": 1886.0,
+            "endTime": 1892.48,
+            "body": "don't know you can actually filter in our search on a platform. So to make to"
+        },
+        {
+            "startTime": 1892.48,
+            "endTime": 1897.0,
+            "body": "select packages that support that platform and I knew that I needed Linux"
+        },
+        {
+            "startTime": 1897.0,
+            "endTime": 1903.04,
+            "body": "support. It's probably just worth focusing in on that for a second because"
+        },
+        {
+            "startTime": 1903.04,
+            "endTime": 1906.12,
+            "body": "that's potentially something that people haven't done with the package index is"
+        },
+        {
+            "startTime": 1906.12,
+            "endTime": 1909.76,
+            "body": "once you search for something you can then and there is a little bit of help"
+        },
+        {
+            "startTime": 1909.76,
+            "endTime": 1913.36,
+            "body": "underneath the search field after you've searched."
+        },
+        {
+            "startTime": 1913.36,
+            "endTime": 1915.0,
+            "body": "But you can just say, so for example,"
+        },
+        {
+            "startTime": 1915.0,
+            "endTime": 1917.84,
+            "body": "I would imagine your query for this was"
+        },
+        {
+            "startTime": 1917.84,
+            "endTime": 1921.84,
+            "body": "zip space platform colon Linux."
+        },
+        {
+            "startTime": 1921.84,
+            "endTime": 1924.36,
+            "body": "And that will filter search results"
+        },
+        {
+            "startTime": 1924.36,
+            "endTime": 1927.08,
+            "body": "that contain that keyword either in a tag"
+        },
+        {
+            "startTime": 1927.08,
+            "endTime": 1930.36,
+            "body": "or in a, sorry, in a keyword or in the description"
+        },
+        {
+            "startTime": 1930.36,
+            "endTime": 1932.16,
+            "body": "or in the package name."
+        },
+        {
+            "startTime": 1932.16,
+            "endTime": 1936.16,
+            "body": "And then filter it by confirmed platform compatibility"
+        },
+        {
+            "startTime": 1936.16,
+            "endTime": 1937.52,
+            "body": "with Linux."
+        },
+        {
+            "startTime": 1937.52,
+            "endTime": 1938.36,
+            "body": "- Exactly."
+        },
+        {
+            "startTime": 1939.36,
+            "endTime": 1945.68,
+            "body": "Yeah and that turned up a number of results and good results."
+        },
+        {
+            "startTime": 1945.68,
+            "endTime": 1952.24,
+            "body": "So for instance I zeroed in on three at the start."
+        },
+        {
+            "startTime": 1952.24,
+            "endTime": 1962.48,
+            "body": "That's Zip by Roy Marlestein, Zip Foundation by Thomas Zirkling and SW Compression by Timothee"
+        },
+        {
+            "startTime": 1962.48,
+            "endTime": 1965.2,
+            "body": "Zolomko."
+        },
+        {
+            "startTime": 1965.2,
+            "endTime": 1970.3,
+            "body": "And yeah, these were amongst the top hits."
+        },
+        {
+            "startTime": 1970.3,
+            "endTime": 1974.84,
+            "body": "And then I clicked through, just describing the mechanism a bit, how I picked and how"
+        },
+        {
+            "startTime": 1974.84,
+            "endTime": 1976.8,
+            "body": "I chose the packages."
+        },
+        {
+            "startTime": 1976.8,
+            "endTime": 1979.44,
+            "body": "And things I looked for was, you know, how long has it been around?"
+        },
+        {
+            "startTime": 1979.44,
+            "endTime": 1983.2,
+            "body": "And these are all, these have all been around for a long time, seven years, five years,"
+        },
+        {
+            "startTime": 1983.2,
+            "endTime": 1984.2,
+            "body": "six years."
+        },
+        {
+            "startTime": 1984.2,
+            "endTime": 1991.04,
+            "body": "All active fairly recently, 10 months ago to even just hours ago."
+        },
+        {
+            "startTime": 1991.04,
+            "endTime": 1992.68,
+            "body": "Releases also within that time span."
+        },
+        {
+            "startTime": 1992.68,
+            "endTime": 1997.68,
+            "body": "So already I had three packages that were very promising."
+        },
+        {
+            "startTime": 1997.68,
+            "endTime": 2006.24,
+            "body": "The first two have more than 30 contributors, even the last one, SW Compression, a bit fewer,"
+        },
+        {
+            "startTime": 2006.24,
+            "endTime": 2010.68,
+            "body": "that's just four contributors, but still around for six years."
+        },
+        {
+            "startTime": 2010.68,
+            "endTime": 2015.56,
+            "body": "And then what I did is I tried them out in a playground just to get a feel for the API"
+        },
+        {
+            "startTime": 2015.56,
+            "endTime": 2020.96,
+            "body": "and I could even plug in my zip file and unzip it in the playground to see how that would"
+        },
+        {
+            "startTime": 2020.96,
+            "endTime": 2026.44,
+            "body": "go, what the options are on the, you know, if I need any, I don't need passwords and"
+        },
+        {
+            "startTime": 2026.44,
+            "endTime": 2027.44,
+            "body": "stuff."
+        },
+        {
+            "startTime": 2027.44,
+            "endTime": 2031.28,
+            "body": "But it's a sort of thing that's really nice to do with just the tools that we have available"
+        },
+        {
+            "startTime": 2031.28,
+            "endTime": 2036.56,
+            "body": "to play around and without having to set up a package, import it and do all that."
+        },
+        {
+            "startTime": 2036.56,
+            "endTime": 2041.08,
+            "body": "I could play around with the API and just choose."
+        },
+        {
+            "startTime": 2041.08,
+            "endTime": 2045.84,
+            "body": "And then I picked, I ended up picking Zip by Roy Marmelstein."
+        },
+        {
+            "startTime": 2045.84,
+            "endTime": 2054.14,
+            "body": "And the main reason was it's the one that can be built without any dependencies."
+        },
+        {
+            "startTime": 2054.14,
+            "endTime": 2060.54,
+            "body": "Now the others don't have package dependencies per se, but they do have an OS level dependency"
+        },
+        {
+            "startTime": 2060.54,
+            "endTime": 2063.48,
+            "body": "on Zlib."
+        },
+        {
+            "startTime": 2063.48,
+            "endTime": 2066.86,
+            "body": "So it needs to be installed on the OS side."
+        },
+        {
+            "startTime": 2066.86,
+            "endTime": 2074.22,
+            "body": "So on Linux you need to have the development libset dev installed and the zip package avoids"
+        },
+        {
+            "startTime": 2074.22,
+            "endTime": 2079.9,
+            "body": "that by shipping the C sources for zip within the package and just build it. And that's really nice"
+        },
+        {
+            "startTime": 2079.9,
+            "endTime": 2084.78,
+            "body": "because then I don't need to worry about the lambda image to have that installed. It's just"
+        },
+        {
+            "startTime": 2084.78,
+            "endTime": 2090.46,
+            "body": "a nicer process for my use case. But yeah, it was a really nice experience to do all that,"
+        },
+        {
+            "startTime": 2090.46,
+            "endTime": 2098.94,
+            "body": "play around and have it ready for use. I love that story because it shows real practical use"
+        },
+        {
+            "startTime": 2098.94,
+            "endTime": 2100.86,
+            "body": "of the Swift Package Index."
+        },
+        {
+            "startTime": 2100.86,
+            "endTime": 2109.14,
+            "body": "And the fact that you didn't just take the top package, obviously, you had a look at"
+        },
+        {
+            "startTime": 2109.14,
+            "endTime": 2118.54,
+            "body": "several prominent packages that were highlighted by the index and actually analyzed using the"
+        },
+        {
+            "startTime": 2118.54,
+            "endTime": 2121.54,
+            "body": "features that we've built, like how well-maintained is it?"
+        },
+        {
+            "startTime": 2121.54,
+            "endTime": 2123.58,
+            "body": "How long has it been in development?"
+        },
+        {
+            "startTime": 2123.58,
+            "endTime": 2129.26,
+            "body": "And you also mentioned the contributors, which we talked about last episode."
+        },
+        {
+            "startTime": 2129.26,
+            "endTime": 2134.82,
+            "body": "And I also have been really appreciating having the author names right there."
+        },
+        {
+            "startTime": 2134.82,
+            "endTime": 2139.7,
+            "body": "But yeah, I thought it was such a great story of just a real practical use of using the"
+        },
+        {
+            "startTime": 2139.7,
+            "endTime": 2141.22,
+            "body": "software that we've built."
+        },
+        {
+            "startTime": 2141.22,
+            "endTime": 2146.62,
+            "body": "And I'm happy that we have a zip package that we're happy with as a result of it."
+        },
+        {
+            "startTime": 2146.62,
+            "endTime": 2148.46,
+            "body": "Just think of the amount of time that saved us."
+        },
+        {
+            "startTime": 2148.46,
+            "endTime": 2149.46,
+            "body": "Yeah, yeah, definitely."
+        },
+        {
+            "startTime": 2149.46,
+            "endTime": 2155.46,
+            "body": "I don't think writing is an algorithm, is anything you want to be doing."
+        },
+        {
+            "startTime": 2155.46,
+            "endTime": 2168.1,
+            "body": "Great. My next package recommendation is a very catchily titled DSF Quick Action Bath"
+        },
+        {
+            "startTime": 2168.1,
+            "endTime": 2177.22,
+            "body": "by Darren Ford. So this is, well, a little bit of background first. I think I personally"
+        },
+        {
+            "startTime": 2177.22,
+            "endTime": 2182.22,
+            "body": "I'm a big fan of software that has great keyboard support."
+        },
+        {
+            "startTime": 2182.22,
+            "endTime": 2186.36,
+            "body": "I am a big fan of, at the moment,"
+        },
+        {
+            "startTime": 2186.36,
+            "endTime": 2187.52,
+            "body": "and for the last couple of years,"
+        },
+        {
+            "startTime": 2187.52,
+            "endTime": 2191.24,
+            "body": "my preferred keyboard navigation tool has been Raycast"
+        },
+        {
+            "startTime": 2191.24,
+            "endTime": 2193.64,
+            "body": "for launching applications and launching shortcuts"
+        },
+        {
+            "startTime": 2193.64,
+            "endTime": 2195.44,
+            "body": "and that kind of stuff."
+        },
+        {
+            "startTime": 2195.44,
+            "endTime": 2198.48,
+            "body": "And what Raycast does is it brings up a window"
+        },
+        {
+            "startTime": 2198.48,
+            "endTime": 2201.56,
+            "body": "in the center of the screen where you can trigger that"
+        },
+        {
+            "startTime": 2201.56,
+            "endTime": 2203.44,
+            "body": "just like you can with Spotlight Search"
+        },
+        {
+            "startTime": 2203.44,
+            "endTime": 2205.6,
+            "body": "and just type something in."
+        },
+        {
+            "startTime": 2205.6,
+            "endTime": 2211.44,
+            "body": "But I'm a big fan of that whole process of just bringing up some kind of keyboard input,"
+        },
+        {
+            "startTime": 2211.44,
+            "endTime": 2218.64,
+            "body": "spotlight type keyboard input, and being able to just type a couple of keystrokes to get something done."
+        },
+        {
+            "startTime": 2218.64,
+            "endTime": 2232.36,
+            "body": "In fact, there was an application called Details Pro, which is an iPad application for designing SwiftUI user interfaces."
+        },
+        {
+            "startTime": 2232.36,
+            "endTime": 2236.3,
+            "body": "It's not code-based, it's more like a design tool"
+        },
+        {
+            "startTime": 2236.3,
+            "endTime": 2239.02,
+            "body": "where you could build up HDACs or VSTACs"
+        },
+        {
+            "startTime": 2239.02,
+            "endTime": 2240.54,
+            "body": "and put buttons in and put labels in"
+        },
+        {
+            "startTime": 2240.54,
+            "endTime": 2241.68,
+            "body": "and that kind of stuff."
+        },
+        {
+            "startTime": 2241.68,
+            "endTime": 2246.68,
+            "body": "And recently, they added a keyboard navigation type"
+        },
+        {
+            "startTime": 2246.68,
+            "endTime": 2248.52,
+            "body": "interface like this, where it puts a bar"
+        },
+        {
+            "startTime": 2248.52,
+            "endTime": 2250.38,
+            "body": "in the center of the screen."
+        },
+        {
+            "startTime": 2250.38,
+            "endTime": 2251.92,
+            "body": "You type something in, so for example,"
+        },
+        {
+            "startTime": 2251.92,
+            "endTime": 2253.8,
+            "body": "in that application, and I know I'm going down"
+        },
+        {
+            "startTime": 2253.8,
+            "endTime": 2256.12,
+            "body": "a rabbit hole here, but bear with me a second."
+        },
+        {
+            "startTime": 2256.12,
+            "endTime": 2260.88,
+            "body": "So let's say in this application you have a label"
+        },
+        {
+            "startTime": 2260.88,
+            "endTime": 2264.3,
+            "body": "and you want to take that label and wrap it in a HDAC"
+        },
+        {
+            "startTime": 2264.3,
+            "endTime": 2266.64,
+            "body": "because you're about to put something next to it."
+        },
+        {
+            "startTime": 2266.64,
+            "endTime": 2268.26,
+            "body": "You can bring up this keyboard navigation,"
+        },
+        {
+            "startTime": 2268.26,
+            "endTime": 2270.78,
+            "body": "just type wrap, and it will say wrap in HDAC,"
+        },
+        {
+            "startTime": 2270.78,
+            "endTime": 2273.34,
+            "body": "wrap in VSTAC, and it's a really nice way,"
+        },
+        {
+            "startTime": 2273.34,
+            "endTime": 2276.34,
+            "body": "quick way of navigating around the application."
+        },
+        {
+            "startTime": 2276.34,
+            "endTime": 2279.28,
+            "body": "Again, things like Raycast or Alfred,"
+        },
+        {
+            "startTime": 2279.28,
+            "endTime": 2281.78,
+            "body": "or even back in the day, Quicksilver,"
+        },
+        {
+            "startTime": 2281.78,
+            "endTime": 2283.5,
+            "body": "have been productivity tools"
+        },
+        {
+            "startTime": 2283.5,
+            "endTime": 2285.7,
+            "body": "that I've been a great fan of for many, many years."
+        },
+        {
+            "startTime": 2285.7,
+            "endTime": 2286.82,
+            "body": "And of course, Spotlight, you know,"
+        },
+        {
+            "startTime": 2286.82,
+            "endTime": 2292.82,
+            "body": "Apple also have this within both iOS and Mac OS as a spotlight."
+        },
+        {
+            "startTime": 2292.82,
+            "endTime": 2294.94,
+            "body": "Back to the plot,"
+        },
+        {
+            "startTime": 2294.94,
+            "endTime": 2300.02,
+            "body": "Darren Ford's package is an easy way to bring that kind of interface"
+        },
+        {
+            "startTime": 2300.02,
+            "endTime": 2302.58,
+            "body": "into a Mac OS application."
+        },
+        {
+            "startTime": 2302.58,
+            "endTime": 2303.94,
+            "body": "So it is Mac OS specific."
+        },
+        {
+            "startTime": 2303.94,
+            "endTime": 2310.66,
+            "body": "And you could very quickly build up something that has a text field where"
+        },
+        {
+            "startTime": 2310.66,
+            "endTime": 2315.54,
+            "body": "you can enter some text and then have a dropdown list of things that you provide"
+        },
+        {
+            "startTime": 2316.26,
+            "endTime": 2319.26,
+            "body": "to do actions within your application."
+        },
+        {
+            "startTime": 2319.26,
+            "endTime": 2321.94,
+            "body": "And the main reason I want to recommend this"
+        },
+        {
+            "startTime": 2321.94,
+            "endTime": 2323.98,
+            "body": "is because I love this type of interface"
+        },
+        {
+            "startTime": 2323.98,
+            "endTime": 2325.9,
+            "body": "and anything that makes it easy for people"
+        },
+        {
+            "startTime": 2325.9,
+            "endTime": 2327.54,
+            "body": "to implement this kind of interface,"
+        },
+        {
+            "startTime": 2327.54,
+            "endTime": 2328.66,
+            "body": "I'm going to be a big fan of."
+        },
+        {
+            "startTime": 2328.66,
+            "endTime": 2331.9,
+            "body": "- Yeah, yeah, really nice, really nice."
+        },
+        {
+            "startTime": 2331.9,
+            "endTime": 2333.94,
+            "body": "I also use these extensively."
+        },
+        {
+            "startTime": 2333.94,
+            "endTime": 2338.1,
+            "body": "I've actually, I've started mapping Command + P"
+        },
+        {
+            "startTime": 2338.1,
+            "endTime": 2342.74,
+            "body": "to those kind of command bars because I never print."
+        },
+        {
+            "startTime": 2344.1,
+            "endTime": 2346.38,
+            "body": "So Xcode's quick open is command P"
+        },
+        {
+            "startTime": 2346.38,
+            "endTime": 2347.98,
+            "body": "because it's sort of a similar interface."
+        },
+        {
+            "startTime": 2347.98,
+            "endTime": 2349.98,
+            "body": "So then I know in every app"
+        },
+        {
+            "startTime": 2349.98,
+            "endTime": 2352.28,
+            "body": "that has that sort of command interface,"
+        },
+        {
+            "startTime": 2352.28,
+            "endTime": 2354.48,
+            "body": "I just hit command P out of habit."
+        },
+        {
+            "startTime": 2354.48,
+            "endTime": 2355.72,
+            "body": "- Oh, that's interesting."
+        },
+        {
+            "startTime": 2355.72,
+            "endTime": 2358.36,
+            "body": "Yeah, I think this is great"
+        },
+        {
+            "startTime": 2358.36,
+            "endTime": 2360.16,
+            "body": "and anything that encourages people"
+        },
+        {
+            "startTime": 2360.16,
+            "endTime": 2363.56,
+            "body": "to think more about keyboard navigation"
+        },
+        {
+            "startTime": 2363.56,
+            "endTime": 2365.92,
+            "body": "in macOS applications is a good thing."
+        },
+        {
+            "startTime": 2365.92,
+            "endTime": 2370.9,
+            "body": "It has AppKit and SwiftUI support, but only on macOS."
+        },
+        {
+            "startTime": 2372.2,
+            "endTime": 2376.96,
+            "body": "also has great readme, good documentation, it's great."
+        },
+        {
+            "startTime": 2376.96,
+            "endTime": 2377.8,
+            "body": "- Nice."
+        },
+        {
+            "startTime": 2377.8,
+            "endTime": 2384.0,
+            "body": "Right, my second package is one that we"
+        },
+        {
+            "startTime": 2384.0,
+            "endTime": 2387.68,
+            "body": "probably mentioned before, I think you recently"
+        },
+        {
+            "startTime": 2387.68,
+            "endTime": 2391.08,
+            "body": "wrote about it on IOSF Weekly as well, and that's Lottie."
+        },
+        {
+            "startTime": 2391.08,
+            "endTime": 2395.8,
+            "body": "But apart from it being a really nice package"
+        },
+        {
+            "startTime": 2395.8,
+            "endTime": 2400.8,
+            "body": "to create animations, there was a 4.0 release recently,"
+        },
+        {
+            "startTime": 2401.68,
+            "endTime": 2406.48,
+            "body": "like two weeks ago, I think it was just after we recorded our last episode."
+        },
+        {
+            "startTime": 2406.48,
+            "endTime": 2410.32,
+            "body": "And the thing that caught my eye in that was,"
+        },
+        {
+            "startTime": 2410.32,
+            "endTime": 2413.08,
+            "body": "they moved, they changed how they,"
+        },
+        {
+            "startTime": 2413.08,
+            "endTime": 2415.56,
+            "body": "how they, where they do their rendering."
+        },
+        {
+            "startTime": 2415.56,
+            "endTime": 2418.36,
+            "body": "So in versions prior to 4.0,"
+        },
+        {
+            "startTime": 2418.36,
+            "endTime": 2423.12,
+            "body": "they were using the CPU to run their rendering engine."
+        },
+        {
+            "startTime": 2423.12,
+            "endTime": 2427.76,
+            "body": "And they've moved this to use core animation now."
+        },
+        {
+            "startTime": 2427.76,
+            "endTime": 2429.48,
+            "body": "And they've been actually doing this under the hood."
+        },
+        {
+            "startTime": 2429.48,
+            "endTime": 2445.88,
+            "body": "So starting from version 3.4, they had an opt-in flag where you could switch your rendering over from the CPU-based rendering over to the graphics card-based rendering, the core animation-based rendering."
+        },
+        {
+            "startTime": 2445.88,
+            "endTime": 2453.32,
+            "body": "So they actually shipped this quite a while ago, but had this behind a feature flag and tested it."
+        },
+        {
+            "startTime": 2453.32,
+            "endTime": 2457.88,
+            "body": "and the nice thing is this is completely API backwards compatible so you actually need"
+        },
+        {
+            "startTime": 2457.88,
+            "endTime": 2464.32,
+            "body": "to do nothing other than upgrading to 4.0 and the effect is quite remarkable."
+        },
+        {
+            "startTime": 2464.32,
+            "endTime": 2470.16,
+            "body": "So there's a blog post and we'll have a link in the show notes that shows an example where"
+        },
+        {
+            "startTime": 2470.16,
+            "endTime": 2477.48,
+            "body": "the CPU utilization drops from around 15% in that example to zero, like literally zero,"
+        },
+        {
+            "startTime": 2477.48,
+            "endTime": 2482.68,
+            "body": "you see no effect of the animation running in instruments."
+        },
+        {
+            "startTime": 2482.68,
+            "endTime": 2486.68,
+            "body": "I thought that really nice, where just upgrading a package will give you that sort of benefit."
+        },
+        {
+            "startTime": 2486.68,
+            "endTime": 2494.08,
+            "body": "And that's, 15% can mean, you know, other stuff that you're doing is blocking your, you know,"
+        },
+        {
+            "startTime": 2494.08,
+            "endTime": 2498.68,
+            "body": "causing dropped frames and stuff, because, you know, 15% just might be a bit, you know,"
+        },
+        {
+            "startTime": 2498.68,
+            "endTime": 2501.48,
+            "body": "you might not have those 15% available."
+        },
+        {
+            "startTime": 2501.48,
+            "endTime": 2505.28,
+            "body": "Yeah, it's a really significant performance increase."
+        },
+        {
+            "startTime": 2505.28,
+            "endTime": 2509.48,
+            "body": "And to drop it so low is remarkable work."
+        },
+        {
+            "startTime": 2509.48,
+            "endTime": 2511.48,
+            "body": "Yeah, yeah, really nice."
+        },
+        {
+            "startTime": 2511.48,
+            "endTime": 2516.44,
+            "body": "And in particular that is, there's really just no effort required."
+        },
+        {
+            "startTime": 2516.44,
+            "endTime": 2521.16,
+            "body": "Just, you know, upgrade and that's it. Fantastic. I love that."
+        },
+        {
+            "startTime": 2521.16,
+            "endTime": 2523.24,
+            "body": "So you're right, I did write about this on iOS Dev Weekly,"
+        },
+        {
+            "startTime": 2523.24,
+            "endTime": 2526.84,
+            "body": "and one of the points that I made there again was about effort,"
+        },
+        {
+            "startTime": 2526.84,
+            "endTime": 2529.48,
+            "body": "not in effort in upgrading between this,"
+        },
+        {
+            "startTime": 2529.48,
+            "endTime": 2534.52,
+            "body": "but to be able to take a tool like Adobe After Effects,"
+        },
+        {
+            "startTime": 2534.52,
+            "endTime": 2538.52,
+            "body": "which is a really comprehensive animation tool,"
+        },
+        {
+            "startTime": 2538.52,
+            "endTime": 2541.76,
+            "body": "and also industry standard animation tool."
+        },
+        {
+            "startTime": 2541.76,
+            "endTime": 2544.32,
+            "body": "So you've got an enormous pool of people"
+        },
+        {
+            "startTime": 2544.32,
+            "endTime": 2548.44,
+            "body": "who are skilled with creating animations in After Effects."
+        },
+        {
+            "startTime": 2548.44,
+            "endTime": 2549.96,
+            "body": "And then to be able to have,"
+        },
+        {
+            "startTime": 2549.96,
+            "endTime": 2551.28,
+            "body": "and I know there are some limitations,"
+        },
+        {
+            "startTime": 2551.28,
+            "endTime": 2553.0,
+            "body": "you know, it can't do everything"
+        },
+        {
+            "startTime": 2553.0,
+            "endTime": 2554.96,
+            "body": "that After Effects can do, of course."
+        },
+        {
+            "startTime": 2554.96,
+            "endTime": 2557.64,
+            "body": "But to be able to take vector animations,"
+        },
+        {
+            "startTime": 2557.64,
+            "endTime": 2561.12,
+            "body": "export them to a common format,"
+        },
+        {
+            "startTime": 2561.12,
+            "endTime": 2564.52,
+            "body": "and then have those able to be used in iOS apps,"
+        },
+        {
+            "startTime": 2564.52,
+            "endTime": 2566.96,
+            "body": "on the web, in Android apps,"
+        },
+        {
+            "startTime": 2566.96,
+            "endTime": 2573.8,
+            "body": "I love the idea of this because these little animations can be really effective in your"
+        },
+        {
+            "startTime": 2573.8,
+            "endTime": 2580.28,
+            "body": "applications user interface and to create them purely through code, of course it's possible."
+        },
+        {
+            "startTime": 2580.28,
+            "endTime": 2582.08,
+            "body": "Of course it is."
+        },
+        {
+            "startTime": 2582.08,
+            "endTime": 2588.04,
+            "body": "But you suddenly have a person who is not skilled with creating animations having to"
+        },
+        {
+            "startTime": 2588.04,
+            "endTime": 2593.48,
+            "body": "create animations and to allow people who have the skills with animations to be able"
+        },
+        {
+            "startTime": 2593.48,
+            "endTime": 2596.0,
+            "body": "to use their tool and then use that within your application."
+        },
+        {
+            "startTime": 2596.0,
+            "endTime": 2599.12,
+            "body": "I think it's, I love everything about this package."
+        },
+        {
+            "startTime": 2599.12,
+            "endTime": 2601.08,
+            "body": "- Yeah, that's a great point."
+        },
+        {
+            "startTime": 2601.08,
+            "endTime": 2602.76,
+            "body": "It just makes it so much more accessible"
+        },
+        {
+            "startTime": 2602.76,
+            "endTime": 2604.84,
+            "body": "to create these things and spread it out, right?"
+        },
+        {
+            "startTime": 2604.84,
+            "endTime": 2606.8,
+            "body": "It doesn't have to funnel through,"
+        },
+        {
+            "startTime": 2606.8,
+            "endTime": 2610.28,
+            "body": "you know, that one person who does the coding necessarily."
+        },
+        {
+            "startTime": 2610.28,
+            "endTime": 2613.24,
+            "body": "- Yeah, and even if you are doing the coding"
+        },
+        {
+            "startTime": 2613.24,
+            "endTime": 2614.92,
+            "body": "and you can do an animation,"
+        },
+        {
+            "startTime": 2614.92,
+            "endTime": 2618.16,
+            "body": "it's going to be more difficult to express"
+        },
+        {
+            "startTime": 2618.16,
+            "endTime": 2622.88,
+            "body": "what you were intending with just a pure animation."
+        },
+        {
+            "startTime": 2622.88,
+            "endTime": 2624.92,
+            "body": "Now, animations for moving things off the screen,"
+        },
+        {
+            "startTime": 2624.92,
+            "endTime": 2628.88,
+            "body": "moving things on the screen, you know, hiding a piece of UI"
+        },
+        {
+            "startTime": 2628.88,
+            "endTime": 2630.68,
+            "body": "or bringing it back with an opacity fade"
+        },
+        {
+            "startTime": 2630.68,
+            "endTime": 2634.12,
+            "body": "or something like that, sure, write that in code."
+        },
+        {
+            "startTime": 2634.12,
+            "endTime": 2636.64,
+            "body": "But as soon as you get into anything"
+        },
+        {
+            "startTime": 2636.64,
+            "endTime": 2638.68,
+            "body": "that's actually animating multiple things"
+        },
+        {
+            "startTime": 2638.68,
+            "endTime": 2640.84,
+            "body": "or, you know, things interacting with each other,"
+        },
+        {
+            "startTime": 2640.84,
+            "endTime": 2643.72,
+            "body": "I think there's a clear advantage"
+        },
+        {
+            "startTime": 2643.72,
+            "endTime": 2645.4,
+            "body": "to using a tool like this."
+        },
+        {
+            "startTime": 2645.4,
+            "endTime": 2646.88,
+            "body": "- Or experimentation, right?"
+        },
+        {
+            "startTime": 2646.88,
+            "endTime": 2648.68,
+            "body": "You're not going to-- - Exactly."
+        },
+        {
+            "startTime": 2648.68,
+            "endTime": 2650.88,
+            "body": "- You know, to quickly try a few things."
+        },
+        {
+            "startTime": 2650.88,
+            "endTime": 2654.16,
+            "body": "I can't see that being very efficient if you code around,"
+        },
+        {
+            "startTime": 2654.16,
+            "endTime": 2656.48,
+            "body": "unless you randomize it."
+        },
+        {
+            "startTime": 2656.48,
+            "endTime": 2658.88,
+            "body": "- It takes a long time to write good animations."
+        },
+        {
+            "startTime": 2658.88,
+            "endTime": 2663.52,
+            "body": "Okay, my last one is a quick one,"
+        },
+        {
+            "startTime": 2663.52,
+            "endTime": 2666.46,
+            "body": "and it's by Wilhelm Hox,"
+        },
+        {
+            "startTime": 2666.46,
+            "endTime": 2668.52,
+            "body": "and it's called Array Builder Module."
+        },
+        {
+            "startTime": 2668.52,
+            "endTime": 2672.52,
+            "body": "It uses a result builder,"
+        },
+        {
+            "startTime": 2672.52,
+            "endTime": 2673.68,
+            "body": "in fact, I can summarize this"
+        },
+        {
+            "startTime": 2673.68,
+            "endTime": 2675.16,
+            "body": "in literally one sentence."
+        },
+        {
+            "startTime": 2675.16,
+            "endTime": 2677.38,
+            "body": "It uses a result builder to build arrays."
+        },
+        {
+            "startTime": 2677.38,
+            "endTime": 2682.12,
+            "body": "So you can have a result builder style syntax"
+        },
+        {
+            "startTime": 2682.12,
+            "endTime": 2683.8,
+            "body": "like you have with SwiftUI,"
+        },
+        {
+            "startTime": 2683.8,
+            "endTime": 2686.88,
+            "body": "and every element that goes into that result builder"
+        },
+        {
+            "startTime": 2686.88,
+            "endTime": 2688.84,
+            "body": "ends up in an array."
+        },
+        {
+            "startTime": 2688.84,
+            "endTime": 2691.16,
+            "body": "And there's not a lot to say about this package,"
+        },
+        {
+            "startTime": 2691.16,
+            "endTime": 2694.16,
+            "body": "but I thought it was worth mentioning."
+        },
+        {
+            "startTime": 2694.16,
+            "endTime": 2695.0,
+            "body": "- Yeah, it's interesting."
+        },
+        {
+            "startTime": 2695.0,
+            "endTime": 2696.38,
+            "body": "I saw that."
+        },
+        {
+            "startTime": 2696.38,
+            "endTime": 2698.08,
+            "body": "I think it has a compelling use case"
+        },
+        {
+            "startTime": 2698.08,
+            "endTime": 2700.28,
+            "body": "because you might be tempted to think,"
+        },
+        {
+            "startTime": 2700.28,
+            "endTime": 2704.48,
+            "body": "come on, let's maybe not take result builders too far."
+        },
+        {
+            "startTime": 2704.48,
+            "endTime": 2706.66,
+            "body": "But in certain scenarios,"
+        },
+        {
+            "startTime": 2706.66,
+            "endTime": 2710.02,
+            "body": "it makes it easier to declare an array"
+        },
+        {
+            "startTime": 2710.02,
+            "endTime": 2712.08,
+            "body": "where you include elements equiditionally"
+        },
+        {
+            "startTime": 2712.08,
+            "endTime": 2717.16,
+            "body": "and you don't want to build up a temporary array that you then modify in subsequent steps."
+        },
+        {
+            "startTime": 2717.16,
+            "endTime": 2719.88,
+            "body": "So that's actually a nice use case."
+        },
+        {
+            "startTime": 2719.88,
+            "endTime": 2722.0,
+            "body": "You're right and I think that's the key thing."
+        },
+        {
+            "startTime": 2722.0,
+            "endTime": 2729.56,
+            "body": "And I think if there's anything to criticize about this package is that in the readme file,"
+        },
+        {
+            "startTime": 2729.56,
+            "endTime": 2733.4,
+            "body": "some of the examples that are in the readme file stretch what you should be doing with"
+        },
+        {
+            "startTime": 2733.4,
+            "endTime": 2735.72,
+            "body": "result codes a little bit."
+        },
+        {
+            "startTime": 2735.72,
+            "endTime": 2741.6,
+            "body": "And I understand how that happened because you want to show off what this can do, but"
+        },
+        {
+            "startTime": 2741.6,
+            "endTime": 2753.28,
+            "body": "you end up with is fairly obscure, but I think there are good uses for this. And as you say,"
+        },
+        {
+            "startTime": 2753.28,
+            "endTime": 2758.76,
+            "body": "the conditional nature of putting elements in an array, I think, is the main use of this."
+        },
+        {
+            "startTime": 2758.76,
+            "endTime": 2766.32,
+            "body": "Nice. Right, I'll be quick on my third and last one as well. This is not actually a new"
+        },
+        {
+            "startTime": 2766.32,
+            "endTime": 2776.32,
+            "body": "package it's a fork of Swift backtrace and I wanted to highlight that and it's by Nathan"
+        },
+        {
+            "startTime": 2776.32,
+            "endTime": 2781.76,
+            "body": "S. I could not find Nathan's last name it's not fully spelled out anywhere that I could"
+        },
+        {
+            "startTime": 2781.76,
+            "endTime": 2787.36,
+            "body": "find. So as I said it's a fork of Swift backtrace. Swift backtrace is a package that you can"
+        },
+        {
+            "startTime": 2787.36,
+            "endTime": 2792.48,
+            "body": "include so this is very server side Swift specific that you can include to make sure"
+        },
+        {
+            "startTime": 2792.48,
+            "endTime": 2798.88,
+            "body": "that if your program crashes you get a proper backtrace in your logs that you can then inspect."
+        },
+        {
+            "startTime": 2798.88,
+            "endTime": 2804.64,
+            "body": "And the nice addition here is it tidies up the stacktrace you get out so it adds"
+        },
+        {
+            "startTime": 2804.64,
+            "endTime": 2810.32,
+            "body": "colors and splits off the path info it makes it just nicer to read. A simple addition that I"
+        },
+        {
+            "startTime": 2810.32,
+            "endTime": 2818.0,
+            "body": "hope might get upstreamed into the actual Swift backtrace package, but even that package isn't"
+        },
+        {
+            "startTime": 2818.0,
+            "endTime": 2822.0,
+            "body": "isn't going to be around forever because there's actually an effort to be made,"
+        },
+        {
+            "startTime": 2822.0,
+            "endTime": 2826.0,
+            "body": "as an effort being made to bring Backtrace"
+        },
+        {
+            "startTime": 2826.0,
+            "endTime": 2830.0,
+            "body": "support into the actual toolchain. And I hope this would also make it into"
+        },
+        {
+            "startTime": 2830.0,
+            "endTime": 2834.0,
+            "body": "that package, but I wanted to mention it because until that actually"
+        },
+        {
+            "startTime": 2834.0,
+            "endTime": 2838.0,
+            "body": "happens, Swift Backtrace is still a package that's being used in"
+        },
+        {
+            "startTime": 2838.0,
+            "endTime": 2842.0,
+            "body": "server-side Swift projects and that might be one you might be interested in using"
+        },
+        {
+            "startTime": 2842.0,
+            "endTime": 2846.0,
+            "body": "to make those a little nicer. - That's great. - So yeah, there you go."
+        },
+        {
+            "startTime": 2846.0,
+            "endTime": 2848.28,
+            "body": "Swift Bacterias, a fork by Nathan S."
+        },
+        {
+            "startTime": 2848.28,
+            "endTime": 2849.28,
+            "body": "Wonderful."
+        },
+        {
+            "startTime": 2849.28,
+            "endTime": 2854.44,
+            "body": "Well, let's wrap it up there, shall we?"
+        },
+        {
+            "startTime": 2854.44,
+            "endTime": 2859.68,
+            "body": "I think the schedule over, because obviously we're heading into the holiday period at the"
+        },
+        {
+            "startTime": 2859.68,
+            "endTime": 2866.72,
+            "body": "moment, but I think the fact that we record on a bi-weekly schedule means that our next"
+        },
+        {
+            "startTime": 2866.72,
+            "endTime": 2873.4,
+            "body": "one would be released on the 5th of January, and I believe we should be okay to do that."
+        },
+        {
+            "startTime": 2873.4,
+            "endTime": 2877.0,
+            "body": "So we're actually not going to take a holiday break this year."
+        },
+        {
+            "startTime": 2877.0,
+            "endTime": 2878.56,
+            "body": "Exactly, yep."
+        },
+        {
+            "startTime": 2878.56,
+            "endTime": 2881.36,
+            "body": "I guess see you all in the new year."
+        },
+        {
+            "startTime": 2881.36,
+            "endTime": 2882.36,
+            "body": "Yeah."
+        }
+    ]
+}

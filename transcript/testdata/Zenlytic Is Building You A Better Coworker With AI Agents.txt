@@ -1,0 +1,2910 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:15.359
+ Hello, and welcome to the Data Engineering Podcast, the show about modern data management.
+
+2
+00:00:16.420 --> 00:00:21.899
+ This episode is supported by Code Comments, an original podcast from Red Hat. As someone who
+
+3
+00:00:21.899 --> 00:00:30.039
+ listens to the Data Engineering Podcast, you know that the road from tool selection to production readiness is anything but smooth or straight. In Code Comments, host
+
+4
+00:00:30.039 --> 00:00:34.960
+ Jamie Parker, Red Hatter and experienced engineer, shares the journey of technologists from across
+
+5
+00:00:34.960 --> 00:00:39.579
+ the industry and their hard-won lessons in implementing new technologies. I listened to
+
+6
+00:00:39.579 --> 00:00:43.659
+ the recent episode, Transforming Your Database, and appreciated the valuable advice on how to
+
+7
+00:00:43.659 --> 00:00:48.439
+ approach the selection and integration of new databases and applications and the impact on team dynamics.
+
+8
+00:00:49.479 --> 00:00:52.719
+ There are three seasons of great episodes and new ones landing everywhere you listen
+
+9
+00:00:52.719 --> 00:00:53.420
+ to podcasts.
+
+10
+00:00:53.840 --> 00:00:58.420
+ Search for Code Comments in your podcast player or go to dataengineeringpodcast.com slash
+
+11
+00:00:58.420 --> 00:00:59.979
+ Code Comments today to subscribe.
+
+12
+00:01:00.420 --> 00:01:02.600
+ My thanks to the team at Code Comments for their support.
+
+13
+00:01:02.799 --> 00:01:07.280
+ Your host is Tobias Macy, and today I'm interviewing Ryan Jansen and Paul Blankley
+
+14
+00:01:07.280 --> 00:01:11.939
+ about their experiences building AI-powered data agents for interacting with your data at Zenlytics.
+
+15
+00:01:12.159 --> 00:01:14.019
+ So, Ryan, can you start by introducing yourself?
+
+16
+00:01:15.019 --> 00:01:19.319
+ Yeah, so I am the CEO of Zenlytic and one of the two co-founders,
+
+17
+00:01:19.480 --> 00:01:23.280
+ but Paul's really the brains behind the operation, so I'll let him introduce himself better.
+
+18
+00:01:24.280 --> 00:01:28.799
+ Yep, Ryan's too kind. I'm Paul, I'm Ryan's co-founder and the CTO of Zenlytic, and yeah,
+
+19
+00:01:28.859 --> 00:01:30.540
+ really excited to be chatting today.
+
+20
+00:01:31.480 --> 00:01:35.299
+ And going back to you, Ryan, do you remember how you first got started working in data
+
+21
+00:01:35.299 --> 00:01:35.819
+ and AI?
+
+22
+00:01:36.540 --> 00:01:41.439
+ So I've always been a big nerd, and I was an engineer at the start of my career. I actually
+
+23
+00:01:41.439 --> 00:01:45.879
+ became an investor for a long time. And the fund that I was actually
+
+24
+00:01:45.879 --> 00:01:50.780
+ starting or looking at when I decided to leave the fund was at the time called a big data fund.
+
+25
+00:01:51.519 --> 00:01:56.700
+ And I was doing the research for this fund and I kind of saw how far the hardware had come since
+
+26
+00:01:56.700 --> 00:02:02.340
+ I was an engineer and the capabilities of data analytics. And I was just so amazed by not only
+
+27
+00:02:02.340 --> 00:02:06.799
+ how far it had come, but also that it seemed to be accelerating.
+
+28
+00:02:07.319 --> 00:02:11.419
+ And I knew then that I couldn't just be an investor in this tech and I had to participate.
+
+29
+00:02:12.039 --> 00:02:16.719
+ And that was years ago. But today, I guess we'd call that AI. And I've been pretty much heavily
+
+30
+00:02:16.719 --> 00:02:21.039
+ involved in the data stack ever since. So I guess it's more of a just passion for the space than
+
+31
+00:02:21.039 --> 00:02:33.159
+ anything else. And Paul, do you remember your introduction to data and AI? Oh, yeah. My first ever real job was I worked on Roche's math team. Roche is a big
+
+32
+00:02:33.159 --> 00:02:37.580
+ pharmaceutical company. I worked on the team that built the algorithms that run their blood glucose
+
+33
+00:02:37.580 --> 00:02:44.599
+ meters. And I remember, you know, the thing itself looks really simple, but it is incredible how many
+
+34
+00:02:44.599 --> 00:02:46.120
+ and the diversity
+
+35
+00:02:46.120 --> 00:02:49.460
+ of the different algorithms they have that actually need to work together to actually
+
+36
+00:02:49.460 --> 00:02:53.240
+ make that work. And I was like, this is incredible. It's like really good technology
+
+37
+00:02:53.240 --> 00:02:57.960
+ is indistinguishable from magic. And I was like, this stuff is amazing. And I wanted to go and
+
+38
+00:02:57.960 --> 00:03:01.860
+ learn more about it. So went off to grad school. And that's actually where Ryan and I met.
+
+39
+00:03:02.680 --> 00:03:06.879
+ So we studied in grad school right when
+
+40
+00:03:06.879 --> 00:03:10.960
+ Transformers was first coming out. So it was in 2017, right when Google released the Attention
+
+41
+00:03:10.960 --> 00:03:16.060
+ is All You Need paper. And we actually had a class where the professor was kind of like,
+
+42
+00:03:16.120 --> 00:03:21.300
+ hey, we're going to talk about this other stuff. But this new NLP paper came out that kind of
+
+43
+00:03:21.300 --> 00:03:30.219
+ changes everything. So we're just going to talk about about that and it was a really cool time to be to be studying not not the robots in disguise transformers because that would
+
+44
+00:03:30.219 --> 00:03:38.360
+ have put you at the 1980s yep that's true i um i am i'm not quite that old so it had to be the the
+
+45
+00:03:38.360 --> 00:03:50.979
+ google bert and gpt3 precursor transformers oh i'm old enough to remember the original transformers and the AI winter between the two as well. Absolutely. And got to say, by the way, thanks for having us on
+
+46
+00:03:50.979 --> 00:03:55.340
+ again. This is, I think the only podcast that Paul and I have ever been on twice. And it's such a
+
+47
+00:03:55.340 --> 00:03:59.960
+ pleasure to come back as well, because this is, you know, one of our very favorite podcasts in
+
+48
+00:03:59.960 --> 00:04:10.139
+ the entire data space. So thanks again so much for hosting us. Absolutely. And thank you for coming back. And I'm glad you've enjoyed it. And so to that note, I'll also mention, as you said, you've
+
+49
+00:04:10.139 --> 00:04:13.599
+ been on before. So I'll add a link in the show notes to your previous appearance so that we don't
+
+50
+00:04:13.599 --> 00:04:17.480
+ have to go all the way into the history of Zenlytic and what it is and how it works. And instead,
+
+51
+00:04:17.540 --> 00:04:22.180
+ we can carry forward with what you're doing now. So for people who didn't listen to that yet or who
+
+52
+00:04:22.180 --> 00:04:32.379
+ haven't paused and gone back to that and then come back to it here, can you just give a quick overview about what Zenlytic is and then move into the role that AI is playing in your platform as of today?
+
+53
+00:04:33.800 --> 00:04:34.480
+ Yeah, absolutely.
+
+54
+00:04:34.740 --> 00:04:41.079
+ Zenlytic is a business intelligence platform that uses the power of large language models to make self-service a reality.
+
+55
+00:04:41.079 --> 00:04:48.339
+ We like to say we're the world's first self-serve BI platform, which is a little bit cheeky because BI tools have been saying this for a really long time.
+
+56
+00:04:48.939 --> 00:04:54.360
+ We think this time it actually is different because large language models provide an interface that
+
+57
+00:04:54.360 --> 00:04:59.779
+ can actually comprehend what people are saying and have the sort of back and forth you need to
+
+58
+00:04:59.779 --> 00:05:05.600
+ make that work. And we'll talk about that a lot today as we get into sort of how we work with this data
+
+59
+00:05:05.600 --> 00:05:10.959
+ agent. But the core thing we do is we have all the normal BI features for the dashboarding,
+
+60
+00:05:11.079 --> 00:05:15.639
+ stuff like that. But the real exciting thing is that at the core of it, we have a data agent
+
+61
+00:05:15.639 --> 00:05:21.160
+ that's able to effectively use the whole tool for you and kind of be an analyst that just helps you
+
+62
+00:05:21.160 --> 00:05:24.439
+ with all the questions you have about your data and helps steer you in the right direction,
+
+63
+00:05:24.439 --> 00:05:25.800
+ even if you don't know where stuff is.
+
+64
+00:05:26.899 --> 00:05:32.980
+ The interesting differentiator there too, I think, is that you're starting with the
+
+65
+00:05:32.980 --> 00:05:39.800
+ conversational approach being the de facto mode of interacting with the platform, whereas
+
+66
+00:05:39.800 --> 00:05:45.319
+ there are a number of business intelligence platforms that are bolting AI onto the experience
+
+67
+00:05:45.319 --> 00:05:51.199
+ with a foundational capability of being able to interact with SQL engines, write SQL,
+
+68
+00:05:51.620 --> 00:05:55.920
+ or in the case of Looker, write something that's sort of like SQL and then generate SQL from that
+
+69
+00:05:55.920 --> 00:06:01.439
+ and have all these charts. And then from there, as an afterthought, or maybe not an afterthought,
+
+70
+00:06:01.560 --> 00:06:07.759
+ but as a second order concern, having AI provide this conversational interface,
+
+71
+00:06:07.860 --> 00:06:08.680
+ either for just saying,
+
+72
+00:06:08.980 --> 00:06:09.980
+ what are the charts that I have?
+
+73
+00:06:09.980 --> 00:06:11.800
+ Or maybe even being able to generate charts.
+
+74
+00:06:11.959 --> 00:06:13.379
+ But I'm just curious what you see
+
+75
+00:06:13.379 --> 00:06:17.560
+ as the fundamental shift in AI
+
+76
+00:06:17.560 --> 00:06:20.879
+ being the first class concern of the platform
+
+77
+00:06:20.879 --> 00:06:24.399
+ as opposed to a bolt on after the fact
+
+78
+00:06:24.399 --> 00:06:25.899
+ and some of the ways that that transforms
+
+79
+00:06:25.899 --> 00:06:27.699
+ the overall end-user experience?
+
+80
+00:06:29.459 --> 00:06:30.560
+ Yeah, great question.
+
+81
+00:06:31.060 --> 00:06:36.420
+ That is absolutely correct that we consider this to be the principal use case of the platform.
+
+82
+00:06:36.740 --> 00:06:39.019
+ And that extends to more than just the UI, though.
+
+83
+00:06:39.079 --> 00:06:43.980
+ So I think it actually requires us to rethink a lot of things about how a BI platform is
+
+84
+00:06:43.980 --> 00:06:47.620
+ built, all the way down to how the data model works, for instance.
+
+85
+00:06:47.620 --> 00:06:57.439
+ And how you think about, like you said, there's a very principled discussion there around text-to-SQL versus data model-based LLM modeling.
+
+86
+00:06:57.699 --> 00:06:59.699
+ And there's been a lot of discussion around that.
+
+87
+00:06:59.980 --> 00:07:02.560
+ And we fall very firmly in the latter camp.
+
+88
+00:07:03.139 --> 00:07:06.560
+ But yeah, basically, we had to build this thing from the ground up with the intent of
+
+89
+00:07:06.560 --> 00:07:08.060
+ making it work for LLMs.
+
+90
+00:07:08.560 --> 00:07:10.360
+ That doesn't mean that it's not a fully featured platform.
+
+91
+00:07:10.579 --> 00:07:15.040
+ We have all of the sort of best in class sort of business intelligence stuff in there.
+
+92
+00:07:15.120 --> 00:07:18.560
+ We built that out before we even built out the LLM functionality fully.
+
+93
+00:07:18.939 --> 00:07:24.639
+ But all of those things have been built to integrate seamlessly with a data agent so
+
+94
+00:07:24.639 --> 00:07:25.100
+ that they
+
+95
+00:07:25.100 --> 00:07:26.379
+ can sort of feed into each other.
+
+96
+00:07:26.740 --> 00:07:31.319
+ And to give you an example of that, of course, we have a great dashboard experience, but
+
+97
+00:07:31.319 --> 00:07:34.259
+ those dashboards are integrated in each direction with the data agents.
+
+98
+00:07:34.560 --> 00:07:40.120
+ So in the dashboard to chat paradigm, you could actually go and sort of take any dashboard
+
+99
+00:07:40.120 --> 00:07:43.779
+ tile, ask a question from here and be instantly interrogating that in chat.
+
+100
+00:07:44.379 --> 00:07:48.600
+ Or vice versa, the agent is able to search across your dashboards, actually create new
+
+101
+00:07:48.600 --> 00:07:51.040
+ dashboards, understands a lot about the existing data assets.
+
+102
+00:07:51.319 --> 00:07:57.139
+ So I guess our philosophy there is that you have to have a tight coupling of all of the
+
+103
+00:07:57.139 --> 00:08:00.639
+ various ways that one would want to use the tool, and they'd have to all agree.
+
+104
+00:08:00.759 --> 00:08:03.160
+ And that's why we think it makes sense to have this in one platform.
+
+105
+00:08:03.459 --> 00:08:08.680
+ If this is sort of fragmented across multiple tools, we all know the challenges with getting
+
+106
+00:08:08.680 --> 00:08:12.980
+ those tools to agree on the single source of truth and what the data actually is.
+
+107
+00:08:13.459 --> 00:08:19.839
+ We all know that a self-serve user needs training, doesn't want to log into multiple platforms,
+
+108
+00:08:19.839 --> 00:08:24.120
+ doesn't want to learn multiple platforms. So there's lots of reasons why it makes sense to
+
+109
+00:08:24.120 --> 00:08:25.540
+ unify this into one experience.
+
+110
+00:08:26.079 --> 00:08:26.899
+ But yes, absolutely.
+
+111
+00:08:27.220 --> 00:08:30.800
+ That whole experience was sort of built with LLMs in mind.
+
+112
+00:08:31.100 --> 00:08:32.960
+ And I think the extension of that is that
+
+113
+00:08:32.960 --> 00:08:35.179
+ we're not afraid to look different
+
+114
+00:08:35.179 --> 00:08:37.620
+ from a conventional BI platform.
+
+115
+00:08:37.919 --> 00:08:39.519
+ And something we believe is that
+
+116
+00:08:39.519 --> 00:08:41.139
+ probably things are going to look differently,
+
+117
+00:08:41.620 --> 00:08:43.120
+ say two, three years from now,
+
+118
+00:08:43.539 --> 00:08:50.139
+ in terms of how you interact with your data than they do today. And we expect a lot of innovations and a lot of different software
+
+119
+00:08:50.139 --> 00:08:56.240
+ verticals because of AI. But I think in particular, we're willing to go and make this tool look
+
+120
+00:08:56.240 --> 00:09:00.519
+ different to make sure that it delivers an elegant, intuitive experience for the self-serve user.
+
+121
+00:09:01.620 --> 00:09:06.179
+ The one thing I'd add to that too, is that a big distinction that we think about is that
+
+122
+00:09:06.179 --> 00:09:11.220
+ all the kind of incumbents, like you said, will be bolting on AI stuff and they'll be kind of
+
+123
+00:09:11.220 --> 00:09:15.299
+ like helpful co-pilots. They'll help you change colors on line charts. Those are all great and
+
+124
+00:09:15.299 --> 00:09:19.399
+ helpful features. The difference is that we are really building a data agent, something that's
+
+125
+00:09:19.399 --> 00:09:23.820
+ not just going to be a co-pilot, but more like a co-worker. You can delegate a task, tell it to go
+
+126
+00:09:23.820 --> 00:09:29.740
+ build a dashboard for you, tell it you need to allocate some more budget and you're not sure where to start and
+
+127
+00:09:29.740 --> 00:09:33.659
+ have it sort of coach you through it. This is what we've got. This is what you can look at.
+
+128
+00:09:34.059 --> 00:09:38.379
+ So it's really about that co-worker versus co-pilot, especially on the long-term view of
+
+129
+00:09:38.379 --> 00:09:43.960
+ things. Yeah. And I definitely want to dig more into that distinction of data agent versus chat
+
+130
+00:09:43.960 --> 00:09:45.639
+ bot. But before we go too far
+
+131
+00:09:45.639 --> 00:09:52.519
+ down that path, I'm interested in an overview of what you see as being the key stages and
+
+132
+00:09:52.519 --> 00:09:59.799
+ transitional events in your overall AI journey, and some of the ways that the drastic and fast
+
+133
+00:09:59.799 --> 00:10:05.759
+ moving change in the industry has influenced your overall trajectory?
+
+134
+00:10:07.200 --> 00:10:07.539
+ Yeah, that is a great question.
+
+135
+00:10:13.539 --> 00:10:13.720
+ And I think, you know, the drastic and fast moving changes mean that you have to be really,
+
+136
+00:10:15.139 --> 00:10:15.279
+ really dynamic when building these things.
+
+137
+00:10:19.600 --> 00:10:20.179
+ And our architecture as a result has changed pretty dramatically since we first built it.
+
+138
+00:10:24.139 --> 00:10:29.460
+ You know, as the capabilities of the models get higher, the things that are fundamentally possible with them just change. And you need to like change the architecture and the tools you
+
+139
+00:10:29.460 --> 00:10:34.399
+ build around the models as a result. So we've had, you know, already, I think three distinct times
+
+140
+00:10:34.399 --> 00:10:39.799
+ that we've had to basically like rebuild it kind of. Yeah, definitely very fast moving. And it's
+
+141
+00:10:39.799 --> 00:10:43.080
+ really important to stay up to date too, because it moves so fast. If you're not staying up to
+
+142
+00:10:43.080 --> 00:10:48.000
+ date with it, you're going to fall behind quickly. It's been a really interesting journey for us because when
+
+143
+00:10:48.000 --> 00:10:53.860
+ we started building this, it was before GPT 3.5 existed or whatever sort of a modern large
+
+144
+00:10:53.860 --> 00:10:59.179
+ language model is. But at the time we were using like the early, early versions of that. So like,
+
+145
+00:10:59.419 --> 00:11:03.559
+ you know, open source models like Google's BERT, for instance, and this is the land before time,
+
+146
+00:11:03.559 --> 00:11:11.919
+ but they had some basic language understanding capabilities. And I'd say a general sort of progression for us is that those
+
+147
+00:11:11.919 --> 00:11:16.320
+ early, early models had, we had to put a lot of guardrails in. We had to really limit what the
+
+148
+00:11:16.320 --> 00:11:21.259
+ models are capable of doing basically. And then over time, as the models became more performant,
+
+149
+00:11:21.559 --> 00:11:24.820
+ we could take some of those guardrails off and that allowed us to be more flexible, more powerful.
+
+150
+00:11:27.320 --> 00:11:32.120
+ We were constantly rethinking the architecture as we were doing that to make sure that it worked really, really well. But it's a little bit like the, there's a famous
+
+151
+00:11:32.120 --> 00:11:37.539
+ paper called The Bitter Lesson by Richard Sutton that talks about how, you know, it's better to
+
+152
+00:11:37.539 --> 00:11:42.259
+ let machine learning models do the flexible stuff, basically, instead of trying to hard code things
+
+153
+00:11:42.259 --> 00:11:47.539
+ around it. That can give you like a short term burst, but like long run, it's like the models, the performance of the model
+
+154
+00:11:47.539 --> 00:11:51.799
+ will be dictated by the growth of the model capabilities, I guess. And then it's kind of
+
+155
+00:11:51.799 --> 00:11:55.799
+ interesting, because it's like, along that progression, you also have to ask yourself,
+
+156
+00:11:56.039 --> 00:12:01.480
+ what's not going to change? You know, what's going to stay the same? And one good example of that is
+
+157
+00:12:01.480 --> 00:12:09.899
+ what I mentioned earlier, which is, you know, using text-to-SQL versus using sort of some sort of data model powered paradigm for the LLMs.
+
+158
+00:12:10.639 --> 00:12:14.840
+ And, you know, we have a strong belief that that is not going to change for the foreseeable
+
+159
+00:12:14.840 --> 00:12:15.179
+ future.
+
+160
+00:12:15.360 --> 00:12:18.080
+ I don't think text-to-SQL is going to get bitter lessened.
+
+161
+00:12:18.340 --> 00:12:22.919
+ I think that you can debate about the accuracy, for instance, and maybe we could see models
+
+162
+00:12:22.919 --> 00:12:28.960
+ getting good enough in the future that, you know, Texas SQL is possible. But even if that's the case,
+
+163
+00:12:29.759 --> 00:12:34.159
+ there's still other issues around it. First and foremost, data governance and security is really,
+
+164
+00:12:34.159 --> 00:12:38.000
+ really difficult with those sorts of models. Secondly, it's really difficult to give those
+
+165
+00:12:38.000 --> 00:12:42.720
+ models enough context to really answer the question. So let's assume we can make a Texas
+
+166
+00:12:42.720 --> 00:12:45.279
+ SQL algorithm that's superhuman. Let's say it's as good of a SQL writer as Paul is., if you, let's, let's assume we could make a Texas SQL algorithm that's superhuman.
+
+167
+00:12:45.279 --> 00:12:48.200
+ Let's, let's say it's as good of a SQL writer as Paul is.
+
+168
+00:12:48.379 --> 00:12:56.580
+ And, you know, if you were to take Paul and drop him into a random data warehouse and say, tell us our conversion rate without any context, he'd probably get it wrong too.
+
+169
+00:12:57.019 --> 00:12:57.179
+ Right.
+
+170
+00:12:57.279 --> 00:13:03.740
+ So, you know, you can eventually start building in context layers and things like that, but that eventually starts to look a lot like some sort of data model anyways.
+
+171
+00:13:04.039 --> 00:13:08.419
+ So it's, it's been interesting to sort of, you know, really pay attention to, we have to work at a fast
+
+172
+00:13:08.419 --> 00:13:11.139
+ moving environment, but we're also paying attention to the things that won't change.
+
+173
+00:13:11.960 --> 00:13:15.519
+ Absolutely. That's definitely one of the lessons that keeps getting reinforced
+
+174
+00:13:15.519 --> 00:13:20.500
+ throughout my career and in conversation with a lot of other people is that if you focus on
+
+175
+00:13:20.500 --> 00:13:26.059
+ the fundamentals, that will carry you much farther than if you try to chase after
+
+176
+00:13:26.059 --> 00:13:31.340
+ the new shiny thing, because you're never going to understand how it works, why it works the way
+
+177
+00:13:31.340 --> 00:13:37.320
+ it does, how to apply it properly if you don't have that foundational knowledge of the core
+
+178
+00:13:37.320 --> 00:13:48.440
+ computer science principles, systems design, systems architecture. Yeah, totally. And in your mad dash journey through the land of AI, I'm curious,
+
+179
+00:13:48.580 --> 00:13:53.580
+ what are some of the dead ends that you've run into and some of the challenges that still persist
+
+180
+00:13:53.580 --> 00:13:58.360
+ now as you have gone through these generational shifts in the language model capabilities?
+
+181
+00:13:59.340 --> 00:14:06.139
+ So, I mean, there's many. So I'll just give little a little sampling one that i think is a is a common
+
+182
+00:14:06.139 --> 00:14:12.740
+ one that we sort of had to really learn from is that whenever you try to nest the large language
+
+183
+00:14:12.740 --> 00:14:16.440
+ models so it's like you have you know we have an agent which basically means there's one at the top
+
+184
+00:14:16.440 --> 00:14:20.879
+ that sort of makes decisions and use these different tools whenever you have it use a tool
+
+185
+00:14:20.879 --> 00:14:26.320
+ that also has a large language model in it, it pretty much never works.
+
+186
+00:14:27.279 --> 00:14:32.639
+ It always seems like a good idea, but really there's just fundamental differences in context
+
+187
+00:14:32.639 --> 00:14:37.700
+ of what the kind of sub-agent knows. And that it just kind of doesn't work really as a result.
+
+188
+00:14:38.240 --> 00:14:45.500
+ It just doesn't feel good as a human using it. So that's definitely one of them. And there are many. The other thing that I think is
+
+189
+00:14:45.500 --> 00:14:51.320
+ talked about a lot more is a lot of these systems have a fundamental search problem.
+
+190
+00:14:52.059 --> 00:14:56.539
+ I think we do a pretty good job at that now, but that's one of the areas that,
+
+191
+00:14:56.740 --> 00:15:02.320
+ you know, it seems like it's just straightforward. You're going to ask an AI and it knows stuff. And
+
+192
+00:15:02.320 --> 00:15:08.000
+ it's like, well, how does it know stuff? It has to search some very large corp of information to be able to know the right
+
+193
+00:15:08.000 --> 00:15:12.379
+ context at the right time. And that itself is also a hard problem that you have to solve when
+
+194
+00:15:12.379 --> 00:15:16.679
+ we're building these systems. So that's one that if someone is thinking about building a system
+
+195
+00:15:16.679 --> 00:15:19.840
+ like that, think long and hard about how you're actually going to do the search piece of it,
+
+196
+00:15:19.879 --> 00:15:23.899
+ because that part is really important too. Yeah. And more generally think long and hard
+
+197
+00:15:23.899 --> 00:15:25.440
+ about how you will help
+
+198
+00:15:25.440 --> 00:15:26.879
+ the model deal with ambiguity.
+
+199
+00:15:27.360 --> 00:15:30.600
+ I'd say a lot of the things in the re in the, one of the big jumps from demo
+
+200
+00:15:30.600 --> 00:15:35.120
+ land to the real world is that literally a hundred percent of the people that are
+
+201
+00:15:35.120 --> 00:15:39.360
+ using this sort of technology in the real world, they have lots of ambiguous,
+
+202
+00:15:39.360 --> 00:15:42.860
+ slightly overlapping definitions in their data, and sometimes it's hard
+
+203
+00:15:42.860 --> 00:15:44.419
+ for a human to navigate that as well.
+
+204
+00:15:44.659 --> 00:15:48.059
+ But that's something that actually is, is very difficult for LLM to do.
+
+205
+00:15:48.659 --> 00:15:52.740
+ Other interesting one, which comes up over and over again in many domains,
+
+206
+00:15:53.220 --> 00:15:58.779
+ is that LLMs have not yet gotten great at long-term planning. So there's a fundamental
+
+207
+00:15:58.779 --> 00:16:03.539
+ problem with LLMs that they just kind of add the next token based on the previous tokens. And
+
+208
+00:16:03.539 --> 00:16:06.460
+ as those sort of keep going forward,
+
+209
+00:16:07.019 --> 00:16:10.080
+ tiny errors in those little token choices can compound over time
+
+210
+00:16:10.080 --> 00:16:13.679
+ to lead to a very wide range of results if you're doing something,
+
+211
+00:16:14.100 --> 00:16:15.879
+ if you're looking for the far ahead in the future.
+
+212
+00:16:16.039 --> 00:16:17.259
+ If you're writing something with lots of tokens,
+
+213
+00:16:17.759 --> 00:16:20.639
+ which means looking ahead far in the future means writing lots of tokens,
+
+214
+00:16:21.200 --> 00:16:22.659
+ you can get a lot of that drift happening
+
+215
+00:16:22.659 --> 00:16:25.240
+ that can lead to undesirable outputs,
+
+216
+00:16:25.299 --> 00:16:29.960
+ basically. So it's hard to make them look really, really far ahead. That's actually one of the ways
+
+217
+00:16:29.960 --> 00:16:35.639
+ where data agents can come in and help self-correct that. Digging into that data agent concept,
+
+218
+00:16:36.120 --> 00:16:42.240
+ I'm curious if you can provide a little bit more color as to what that term signifies,
+
+219
+00:16:42.240 --> 00:16:47.039
+ both from a semantic perspective, but also from the technological
+
+220
+00:16:47.039 --> 00:16:54.340
+ requirements to be able to build and support that type of functionality, particularly in comparison
+
+221
+00:16:54.340 --> 00:16:58.980
+ with the chatbot interfaces that people have grown to be very accustomed to in the past couple of
+
+222
+00:16:58.980 --> 00:17:05.740
+ years. Yeah, for sure. The big difference, the way I see it, is that a chatbot is tokens in,
+
+223
+00:17:05.839 --> 00:17:09.980
+ tokens out. It's kind of an open-loop system where you specify an input, it gives you an output.
+
+224
+00:17:10.460 --> 00:17:12.859
+ That's what leads to those sort of long-term planning issues, for instance.
+
+225
+00:17:13.259 --> 00:17:19.019
+ What a chatbot does differently is that it's actually usually an architecture of a number
+
+226
+00:17:19.019 --> 00:17:24.940
+ of LLM calls that's chained together in a closed-loop way, is how I'd fundamentally describe
+
+227
+00:17:24.940 --> 00:17:25.220
+ that. It's a I'd fundamentally describe that.
+
+228
+00:17:25.980 --> 00:17:27.799
+ It's a little bit like, so, you know, like I said,
+
+229
+00:17:27.819 --> 00:17:29.319
+ before I was an investor, I was an engineer,
+
+230
+00:17:29.880 --> 00:17:32.420
+ and I have a double E by education, electrical engineer.
+
+231
+00:17:32.900 --> 00:17:34.259
+ And when I was studying double E,
+
+232
+00:17:34.359 --> 00:17:36.640
+ everyone was crazy about these things called PID loops.
+
+233
+00:17:36.900 --> 00:17:38.420
+ I don't know if you all have heard of PID loops before.
+
+234
+00:17:39.240 --> 00:17:42.920
+ PID loops are the things that keep airplane autopilot,
+
+235
+00:17:42.920 --> 00:17:45.660
+ like, stable, or they're the things that keep thermostats,
+
+236
+00:17:45.779 --> 00:17:50.099
+ that make thermostats work. It's just one little closed loop feedback. And it's a very simple
+
+237
+00:17:50.099 --> 00:17:56.140
+ thing. When I was going to school in the early 2000s, this was kind of a new thing, but they're
+
+238
+00:17:56.140 --> 00:18:00.579
+ very, very powerful. They unlock a lot of what was kind of almost like AI at the time.
+
+239
+00:18:01.200 --> 00:18:07.940
+ What does that mean for data agents and for LLMs in general? What it means is that
+
+240
+00:18:07.940 --> 00:18:13.359
+ what the LLM will do is it will actually build a plan at the start, and it will actually execute
+
+241
+00:18:13.359 --> 00:18:18.299
+ those step by step. And every step along the way, it will pause and reflect and say, okay, wait,
+
+242
+00:18:18.400 --> 00:18:22.680
+ did I achieve this step well? Do I need to change the plan at all? Do I need to go back and revisit
+
+243
+00:18:22.680 --> 00:18:25.319
+ earlier steps? And it'll sequentially go all the way through that.
+
+244
+00:18:25.440 --> 00:18:29.039
+ And once it's assessed that it's actually completed the task, it will again sort of
+
+245
+00:18:29.039 --> 00:18:33.619
+ look at the whole chain of tasks in a way and say, all right, did I achieve what I set
+
+246
+00:18:33.619 --> 00:18:34.720
+ out to do in the first place?
+
+247
+00:18:34.960 --> 00:18:37.420
+ And if it's no, then they can go back and iterate, for instance.
+
+248
+00:18:37.960 --> 00:18:41.799
+ You know, that basic architecture allows for lots of other really interesting things.
+
+249
+00:18:42.779 --> 00:18:45.160
+ You know, it allows for tool usage, for instance.
+
+250
+00:18:45.359 --> 00:18:47.359
+ So generally data agents are given
+
+251
+00:18:47.359 --> 00:18:49.039
+ sort of a toolkit of things that they can do
+
+252
+00:18:49.039 --> 00:18:50.700
+ in their universe that provides them feedback.
+
+253
+00:18:51.140 --> 00:18:52.960
+ And as they progress through these steps,
+
+254
+00:18:52.960 --> 00:18:55.019
+ they choose the most appropriate tool for the job.
+
+255
+00:18:55.240 --> 00:18:56.119
+ And that tool could be anything.
+
+256
+00:18:56.259 --> 00:18:58.079
+ So like in the context of Zoe, our analyst,
+
+257
+00:18:58.079 --> 00:19:01.539
+ that tool, you know, writing a semantic query
+
+258
+00:19:01.539 --> 00:19:02.400
+ could be a tool.
+
+259
+00:19:02.859 --> 00:19:05.079
+ Or clarifying an ambiguous question could be a tool.
+
+260
+00:19:05.500 --> 00:19:09.779
+ In this paradigm, asking someone for help is actually a tool for the agent.
+
+261
+00:19:10.460 --> 00:19:14.259
+ And the agent will actually go through, build a plan, use those tools, and iterate on that
+
+262
+00:19:14.259 --> 00:19:18.779
+ feedback in a closed-loop way, which keeps it on track and consistent all the way through.
+
+263
+00:19:19.779 --> 00:19:21.119
+ Is there anything else you'd add there, Paul?
+
+264
+00:19:21.859 --> 00:19:28.220
+ Yeah, I think the sort of TLDR is that agents plan ahead while chatbots react.
+
+265
+00:19:28.779 --> 00:19:29.880
+ Agents use tools.
+
+266
+00:19:30.039 --> 00:19:32.279
+ Chatbots are just, like Ryan said, tokens in, tokens out.
+
+267
+00:19:32.400 --> 00:19:33.099
+ Just write text.
+
+268
+00:19:33.519 --> 00:19:37.220
+ And agents can iterate, which is really important, especially in data.
+
+269
+00:19:37.319 --> 00:19:41.160
+ Because if you've ever answered a lot of these questions, you'll go make an assumption about
+
+270
+00:19:41.160 --> 00:19:48.759
+ how something works, run a query, get that thing back and be like, okay, well, I guess I didn't understand how that thing works. Make a change, try again.
+
+271
+00:19:49.099 --> 00:19:53.420
+ And then you sort of iterate yourself to finding the actual solution. Agents are able to do that
+
+272
+00:19:53.420 --> 00:19:59.200
+ as well, where a chatbot would just create the query and be like, here you go. So the agent
+
+273
+00:19:59.200 --> 00:20:04.759
+ harness gives you a lot of abilities for it to feel more like talking to a person because it's
+
+274
+00:20:04.759 --> 00:20:05.279
+ able to correct its mistakes just like a person because it's able to correct
+
+275
+00:20:05.279 --> 00:20:10.799
+ its mistakes just like a person is. And the neat thing is that agents are kind of the next big
+
+276
+00:20:10.799 --> 00:20:16.279
+ thing. I think the next big step in LLM research and the history of it is actually right when some
+
+277
+00:20:16.279 --> 00:20:20.539
+ of the really great models first started coming out last year, people experimented and were really
+
+278
+00:20:20.539 --> 00:20:26.599
+ excited about agents. And you might've heard of auto GPPT or BabyAGI and these are some of the very first sort of agents.
+
+279
+00:20:27.240 --> 00:20:28.779
+ And those, you know, kind of like,
+
+280
+00:20:28.880 --> 00:20:30.779
+ they couldn't make them go all the way basically.
+
+281
+00:20:30.779 --> 00:20:33.200
+ And they kind of fell out of like, out of hype or whatever.
+
+282
+00:20:33.420 --> 00:20:34.819
+ And people kind of moved on
+
+283
+00:20:34.819 --> 00:20:36.640
+ and they started experimenting with other things.
+
+284
+00:20:36.640 --> 00:20:38.880
+ And there was kind of like a mini agent winter
+
+285
+00:20:38.880 --> 00:20:40.539
+ through most of last year.
+
+286
+00:20:41.079 --> 00:20:42.880
+ We, you know, we kind of stuck at it.
+
+287
+00:20:42.900 --> 00:20:44.380
+ I think we might have an easier problem
+
+288
+00:20:44.380 --> 00:20:49.240
+ than a generalized agent because we have a narrow domain problem, but we just kept using architecture like that
+
+289
+00:20:49.240 --> 00:20:54.859
+ and plugging away and it works well for us. But then sort of interestingly to our surprise,
+
+290
+00:20:54.960 --> 00:20:59.940
+ to everyone's surprise, these agentic architectures started becoming more popular and more
+
+291
+00:20:59.940 --> 00:21:09.900
+ performant again, even over the last few months. And, you know, a good example of that would have been devin.ai as a software writing agent, for instance. And, you know, I think now we've reached
+
+292
+00:21:09.900 --> 00:21:15.680
+ a point where people have proven that these agents actually outperform basic chatbots. So like a GPT
+
+293
+00:21:15.680 --> 00:21:22.460
+ 3.5 with an agent architecture can generally outperform GPT-4 on most benchmarks with vanilla
+
+294
+00:21:22.460 --> 00:21:28.119
+ tokens in tokens out. You know, Andrew Ng says that like, you could see GPT-4 on most benchmarks with vanilla tokens in, tokens out. You know, Andrew Ng says that, like, you could see GPT-5 level quality performance today.
+
+295
+00:21:28.519 --> 00:21:29.880
+ It's just GPT-4 with an agent.
+
+296
+00:21:30.039 --> 00:21:31.200
+ He's kind of extending that analogy.
+
+297
+00:21:32.079 --> 00:21:36.200
+ So I think the world is kind of really waking up to the fact that this is the right way
+
+298
+00:21:36.200 --> 00:21:37.220
+ to work with these tools.
+
+299
+00:21:37.779 --> 00:21:40.819
+ And I suspect that we'll be seeing a lot more deployment of that going forward.
+
+300
+00:21:40.960 --> 00:21:48.240
+ I know if I was starting some sort of AI powered software tool right now, you know, I would, whatever it would be, I absolutely would be using an agentic architecture
+
+301
+00:21:48.240 --> 00:21:57.500
+ for it. Data lakes are notoriously complex. For data engineers who battle to build and scale high
+
+302
+00:21:57.500 --> 00:22:02.359
+ quality data workflows on the data lake, Starburst is an end-to-end data lakehouse platform built on
+
+303
+00:22:02.359 --> 00:22:10.160
+ Trino, the query engine Apache Iceberg was designed for. Starburst has complete support for all table formats including Apache Iceberg,
+
+304
+00:22:10.299 --> 00:22:16.160
+ Hive, and Delta Lake. And Starburst is trusted by teams of all sizes, including Comcast and DoorDash.
+
+305
+00:22:16.779 --> 00:22:21.240
+ Want to see Starburst in action? Go to dataengineeringpodcast.com slash starburst
+
+306
+00:22:21.240 --> 00:22:38.940
+ today and get $500 in credits to try Starburst Galaxy, the easiest and being able to have the AI model have this feedback loop,
+
+307
+00:22:38.940 --> 00:22:44.099
+ understand the contextual elements of the conversation that it is engaged in,
+
+308
+00:22:44.519 --> 00:22:47.279
+ understanding the goals of the task that it is engaged in, understanding the goals of the task
+
+309
+00:22:47.279 --> 00:22:52.180
+ that has been assigned. I'm wondering if you can talk to some of the supporting infrastructure
+
+310
+00:22:52.180 --> 00:23:00.460
+ that's necessary to be able to allow these very flighty, if you will, models to have the
+
+311
+00:23:00.460 --> 00:23:06.000
+ appropriate context and the appropriate semantic reasoning to be able to carry on these
+
+312
+00:23:06.000 --> 00:23:12.460
+ longer interchanges and actually achieve the stated goal? Yeah, that's a great question.
+
+313
+00:23:12.740 --> 00:23:18.180
+ There's a lot of different components to that architecture as well. So it's like the search
+
+314
+00:23:18.180 --> 00:23:24.660
+ component to be able to give it the right context at the right time. It's curating the tools very
+
+315
+00:23:24.660 --> 00:23:26.960
+ well. So those tools are like atomic and
+
+316
+00:23:26.960 --> 00:23:31.619
+ they're, you know, it's clear to it what they're going to do every time. And then one of the really
+
+317
+00:23:31.619 --> 00:23:37.920
+ important aspects is the feedback loop itself. It's like, how do you give it feedback when it's
+
+318
+00:23:37.920 --> 00:23:43.299
+ made a mistake in a way that's really easy for it to understand and keep it on, on mission,
+
+319
+00:23:43.519 --> 00:23:46.880
+ kind of. That's a harness that we've had to develop internally.
+
+320
+00:23:47.539 --> 00:23:49.619
+ And it's been where we've spent a lot of time
+
+321
+00:23:49.619 --> 00:23:52.400
+ to really be able to increase performance in the agent
+
+322
+00:23:52.400 --> 00:23:55.500
+ is how we've been able to have that feedback step
+
+323
+00:23:55.500 --> 00:23:57.420
+ and let it sort of self-correct.
+
+324
+00:23:58.640 --> 00:24:00.819
+ One thing that's become increasingly clear
+
+325
+00:24:00.819 --> 00:24:02.920
+ over the past year, a year ago,
+
+326
+00:24:02.960 --> 00:24:03.839
+ I think everyone was saying,
+
+327
+00:24:03.920 --> 00:24:04.880
+ who can build the best model?
+
+328
+00:24:08.920 --> 00:24:13.559
+ And there's a wide range of sort of quality of models as well. You know, if you had OpenAI leading the pack, and then there's a number of various levels of quality
+
+329
+00:24:13.559 --> 00:24:21.299
+ beneath that. Fast forward to today, and we have a number of different models that are all kind of
+
+330
+00:24:21.299 --> 00:24:28.640
+ comparable in terms of their capabilities. And, you know And if you take an off-the-shelf model from OpenAI or Gemini or Clot,
+
+331
+00:24:28.859 --> 00:24:33.180
+ they all have really high-quality models that perform more or less the same.
+
+332
+00:24:33.180 --> 00:24:36.880
+ And I think people are realizing that the current architecture
+
+333
+00:24:36.880 --> 00:24:39.579
+ is kind of reaching the top of the S-curve.
+
+334
+00:24:39.960 --> 00:24:42.480
+ The compute itself is somewhat commoditized,
+
+335
+00:24:42.539 --> 00:24:50.000
+ and people are starting to realize that the really standout performance from LLMs is going to come from two things, really. First,
+
+336
+00:24:50.000 --> 00:24:54.640
+ from the right sort of harnesses that can use and interact with these models. And secondly,
+
+337
+00:24:54.640 --> 00:24:58.799
+ is the right sort of interfaces to make it elegant and easy to use. So it's really
+
+338
+00:24:58.799 --> 00:25:01.440
+ the application layer is where the innovation is happening now.
+
+339
+00:25:02.480 --> 00:25:11.359
+ Yeah. And one thing I'd add to that too, is that you kind of know if you have a good architecture, if every time OpenAI or Anthropic
+
+340
+00:25:11.359 --> 00:25:15.359
+ releases something, you're thinking, oh yeah, if they make it better, this is going to be a huge
+
+341
+00:25:15.359 --> 00:25:21.380
+ boost. If you're worried about their model improvements killing your business, then you
+
+342
+00:25:21.380 --> 00:25:34.940
+ probably don't have the right structure around it. The other element of AI and data agents that you mentioned earlier is the concept of the appropriate data model and domain model
+
+343
+00:25:34.940 --> 00:25:45.480
+ so that the agent has the appropriate search space for being able to appropriately understand the nature of the request and in the business intelligence space in
+
+344
+00:25:45.480 --> 00:25:50.640
+ particular understand the semantics of the data that it has been tasked with querying
+
+345
+00:25:50.640 --> 00:25:58.859
+ one of the primary interfaces for providing context to models has been the outgrowth of
+
+346
+00:25:58.859 --> 00:26:03.220
+ retrieval augmented generation where you have to generate these embeddings for being able to put
+
+347
+00:26:03.220 --> 00:26:05.480
+ this into a vector search space you don't necessarily want to have to generate these embeddings for being able to put this into a vector search space.
+
+348
+00:26:10.019 --> 00:26:10.500
+ You don't necessarily want to have to embed all of your data because that can get very expensive.
+
+349
+00:26:17.000 --> 00:26:23.180
+ And I'm wondering if you can just talk to some of the ways that you're thinking about the types of modeling and how to provide that context, as well as how to reduce the burden on end users
+
+350
+00:26:23.180 --> 00:26:26.640
+ for being able to feed the appropriate context to the agent
+
+351
+00:26:26.640 --> 00:26:33.640
+ to be able to get the appropriate requests back? Yeah, that's a great question. The way we handle
+
+352
+00:26:33.640 --> 00:26:39.819
+ it now is that the semantics are defined along with the actual definitions of the metrics.
+
+353
+00:26:40.319 --> 00:26:45.500
+ So you can add context on how to use a table or a view.
+
+354
+00:26:45.720 --> 00:26:49.339
+ You can add context on when to use this revenue metric instead of that one.
+
+355
+00:26:49.579 --> 00:26:52.400
+ And all of that gets shown to the model.
+
+356
+00:26:52.940 --> 00:26:57.240
+ And then the model is able to make pretty sophisticated decisions on when to choose
+
+357
+00:26:57.240 --> 00:27:01.000
+ one versus the other, because it has that context that's internal to your business.
+
+358
+00:27:01.000 --> 00:27:09.039
+ So when you ask it a question, it actually sort of knows the business context around what the metrics mean, what the tables mean and how to use them.
+
+359
+00:27:09.420 --> 00:27:14.440
+ So, and then actually serving that context to the model involves, uh, not just the vectors,
+
+360
+00:27:14.440 --> 00:27:19.099
+ but also, you know, like sort of traditional like keyword search as well. A hybrid model we found
+
+361
+00:27:19.099 --> 00:27:24.619
+ works, works best. Yeah. Uh, all of this functionality is wrapped up together in,
+
+362
+00:27:24.619 --> 00:27:26.480
+ in analytics cognitive layer.
+
+363
+00:27:26.480 --> 00:27:31.359
+ And what the cognitive layer is, is an evolution of the semantic layer. And I guess recently
+
+364
+00:27:31.359 --> 00:27:35.920
+ popularized by Looker, but it's been around for 30 years or something like that. And what the
+
+365
+00:27:35.920 --> 00:27:40.160
+ cognitive layer does is it takes all of that semantic layer functionality where you can encode
+
+366
+00:27:40.960 --> 00:27:46.720
+ metrics in a sort of YAML, SQL kind of way. It takes all of that functionality,
+
+367
+00:27:47.160 --> 00:27:52.319
+ but then it also adds in all of this necessary agentic LLM harness, all these things we've been
+
+368
+00:27:52.319 --> 00:27:56.980
+ talking about. So adding in those search capabilities, adding in special ways to have
+
+369
+00:27:56.980 --> 00:28:02.359
+ feedback loops, both hidden feedback loops, as well as publicly with the end user to make a data
+
+370
+00:28:02.359 --> 00:28:08.339
+ agent paradigm really, really effective. And those things all get combined together in a really elegant way inside the cognitive
+
+371
+00:28:08.339 --> 00:28:08.700
+ layer.
+
+372
+00:28:09.380 --> 00:28:12.440
+ And that's also where the context is captured.
+
+373
+00:28:12.599 --> 00:28:16.720
+ And that's, you know, it understands the nature of the various metrics you're using and what
+
+374
+00:28:16.720 --> 00:28:17.880
+ sort of dimensions you slice them by.
+
+375
+00:28:18.000 --> 00:28:21.240
+ And all the business context is encoded inside that layer as well.
+
+376
+00:28:22.720 --> 00:28:27.440
+ One of the other interesting aspects of the current state of AI
+
+377
+00:28:27.440 --> 00:28:33.680
+ in this point in time, both in industry and in the kind of society at large, is that there's a
+
+378
+00:28:33.680 --> 00:28:38.420
+ high degree of variability in terms of the either levels of skepticism among some people or
+
+379
+00:28:38.420 --> 00:28:44.660
+ enthusiasm and misplaced attributions of skill on the other end of the spectrum. And I'm curious
+
+380
+00:28:44.660 --> 00:28:45.519
+ what you have seen as some of the spectrum. And I'm curious what you have
+
+381
+00:28:45.519 --> 00:28:51.119
+ seen as some of the aspects of customer education that have been necessary to help them understand
+
+382
+00:28:51.119 --> 00:28:57.319
+ the realities of what AI can and can't do and some of the skepticism that maybe they do need
+
+383
+00:28:57.319 --> 00:29:03.099
+ to bring to bear in those interactions. Yeah, definitely. I think there's plenty
+
+384
+00:29:03.099 --> 00:29:05.460
+ examples in both directions. I think a good
+
+385
+00:29:05.460 --> 00:29:11.920
+ way to start is that there are some people who have just unbelievably high expectations for what
+
+386
+00:29:11.920 --> 00:29:17.839
+ it's able to do. They'll come in and they'll say like, hey, so show me my revenue last week and
+
+387
+00:29:17.839 --> 00:29:23.480
+ compare that to the average of all my competitors. And you're like, we can't go and get your
+
+388
+00:29:23.480 --> 00:29:25.660
+ competitor's revenue information.
+
+389
+00:29:26.900 --> 00:29:27.779
+ Nobody can really do that.
+
+390
+00:29:29.519 --> 00:29:29.579
+ But it's like some people come in with like,
+
+391
+00:29:31.759 --> 00:29:32.339
+ oh, it's going to magically find my competitor's revenue for me.
+
+392
+00:29:34.559 --> 00:29:34.640
+ So it's like you definitely have to caveat kind of,
+
+393
+00:29:36.440 --> 00:29:36.519
+ this is just the data that you have.
+
+394
+00:29:38.119 --> 00:29:38.200
+ If you don't have this data, it's going to tell you,
+
+395
+00:29:40.279 --> 00:29:41.380
+ hey, we don't have this data.
+
+396
+00:29:43.740 --> 00:29:43.799
+ And then there's also like the product side of it.
+
+397
+00:29:45.980 --> 00:29:46.400
+ Like how can we sort of do a better job,
+
+398
+00:29:51.440 --> 00:29:56.180
+ not just us whenever we onboard people to temper their expectations, but also make the product interpretable. So it's like, the first thing is just like a human, it's not going to be perfect.
+
+399
+00:29:56.180 --> 00:30:00.720
+ There's going to be times where, you know, you ask for the last three months, it understands that
+
+400
+00:30:00.720 --> 00:30:08.740
+ as like the rolling last three months, instead of like the last three full complete months. There's a lot of sort of situations where it might not do exactly what you
+
+401
+00:30:08.740 --> 00:30:13.140
+ think it's going to do. And that's why the cognitive layer gives us the ability to show you
+
+402
+00:30:13.140 --> 00:30:18.259
+ graphically, like in the UI, you know, this is the date range it chose. And since those are all
+
+403
+00:30:18.259 --> 00:30:23.900
+ inputs and then the SQL gets compiled, it can never lie about that. So you can all, you always
+
+404
+00:30:23.900 --> 00:30:25.559
+ have this ability to audit it without having to look at SQL, which means that, you know, it can never lie about that. So you can always have this ability to audit it without
+
+405
+00:30:25.559 --> 00:30:29.519
+ having to look at SQL, which means that, you know, it's going to, you ask it to go pull revenue,
+
+406
+00:30:29.619 --> 00:30:34.160
+ you'll see it pulls net instead of gross, and you can swap those if you want to swap them.
+
+407
+00:30:34.420 --> 00:30:39.819
+ Because it will, you know, clarify, make some assumptions. And having that interpretability
+
+408
+00:30:39.819 --> 00:30:45.920
+ piece is really important in terms of being able to close the gap on between what you asked for
+
+409
+00:30:45.920 --> 00:30:51.420
+ and what it kind of understood. Yeah. Paul's keyword there is audit,
+
+410
+00:30:51.539 --> 00:30:56.160
+ which I think is really important because I think a lot of people, even building LL applications,
+
+411
+00:30:56.160 --> 00:31:03.160
+ have not fully internalized this yet, which is the LLM needs to give you feedback at a level
+
+412
+00:31:03.160 --> 00:31:09.720
+ that you can understand. And I think that's where a lot of these sort of, you know, divergences or expectations
+
+413
+00:31:09.720 --> 00:31:13.299
+ come from is people think the LLM will do everything for them.
+
+414
+00:31:13.539 --> 00:31:17.339
+ I like to think of it more as like a supervisory kind of, you know, you're the supervisor of
+
+415
+00:31:17.339 --> 00:31:20.720
+ the LLM and you ask it for things and it gives you an output and you can review and, you
+
+416
+00:31:20.720 --> 00:31:22.079
+ know, just keep iterating from there.
+
+417
+00:31:22.759 --> 00:31:25.680
+ And a great example, if you take, you if you take OpenAI Code Interpreter,
+
+418
+00:31:26.420 --> 00:31:30.960
+ that's a notebook. It's generating Python and people will go on there and they'll ask questions
+
+419
+00:31:30.960 --> 00:31:35.400
+ and they'll write pretty good Python for them. But that Python still makes mistakes. And if you're
+
+420
+00:31:35.400 --> 00:31:40.119
+ not a great Python developer yourself, it's really hard for you to catch where it goes wrong in
+
+421
+00:31:40.119 --> 00:31:47.099
+ sometimes very dangerous ways. So a big part of the way that we approach this is that that level of feedback for the self-serve user
+
+422
+00:31:47.099 --> 00:31:49.119
+ is in a language they can understand.
+
+423
+00:31:49.240 --> 00:31:51.319
+ It's speaking the metrics and slices and filters
+
+424
+00:31:51.319 --> 00:31:52.819
+ in a very understandable way,
+
+425
+00:31:53.200 --> 00:31:55.279
+ the same way that they're used to in a BI platform.
+
+426
+00:31:56.279 --> 00:31:57.500
+ And then other side I'd say is true.
+
+427
+00:31:57.579 --> 00:31:59.759
+ We get the skeptics and we get the over-enthusiastic people,
+
+428
+00:31:59.900 --> 00:32:01.000
+ but it's actually funny.
+
+429
+00:32:01.000 --> 00:32:03.880
+ I think it's easy to deal with the skeptics
+
+430
+00:32:03.880 --> 00:32:09.720
+ because we get them on a product demo and I think the product demo speaks for itself, frankly. I think
+
+431
+00:32:09.720 --> 00:32:13.779
+ that people see the capabilities and they realize that it's not all smoke and mirrors at that point.
+
+432
+00:32:15.140 --> 00:32:19.859
+ In your space of business intelligence, where the information that you're giving back to people
+
+433
+00:32:19.859 --> 00:32:26.599
+ is likely to lead to some sort of decision, whether that's in terms of roadmap or a product
+
+434
+00:32:26.599 --> 00:32:32.019
+ purchase or the ways that you're thinking about allocation of revenue or income.
+
+435
+00:32:32.759 --> 00:32:36.299
+ And also the fact that AIs can often get things wrong.
+
+436
+00:32:36.400 --> 00:32:38.960
+ You pointed out that it only has your data to work from.
+
+437
+00:32:39.059 --> 00:32:42.019
+ So there's a certain amount of guardrails built in automatically.
+
+438
+00:32:42.339 --> 00:32:49.960
+ But as everyone who has been in this industry long enough knows, it's very easy to lie with data. And so I'm curious how you've approached some of that
+
+439
+00:32:49.960 --> 00:32:55.960
+ guidance in decision making, as well as providing appropriate caveats to the end user to say,
+
+440
+00:32:56.119 --> 00:33:00.660
+ this is what we've come back with. This is how we think this is interpretable,
+
+441
+00:33:00.660 --> 00:33:03.980
+ but maybe don't go ahead and write out that check quite yet.
+
+442
+00:33:03.980 --> 00:33:05.059
+ interpretable, but maybe don't go ahead and write out that check quite yet.
+
+443
+00:33:11.900 --> 00:33:12.420
+ Yeah. A big piece of that is the part kind of right when it's about to answer your question,
+
+444
+00:33:17.839 --> 00:33:22.279
+ where it's going to kind of, just like a really good human does, is it tells you what it understood you as saying and what it's going to do as a result. That part right there solves a lot of
+
+445
+00:33:22.279 --> 00:33:26.980
+ the problems because a lot of the times, you know, a good human will do that. And then the person will stop them right there and say, Oh, wait a
+
+446
+00:33:26.980 --> 00:33:32.420
+ minute. Nope. I meant this thing instead of that thing. Just that explaining part really helps kind
+
+447
+00:33:32.420 --> 00:33:36.859
+ of make sure things are on track and you're, you know, in the same kind of headspace or universe
+
+448
+00:33:36.859 --> 00:33:40.920
+ as the person asking the question. And then the other one really is leaning on the, that
+
+449
+00:33:40.920 --> 00:33:46.160
+ interpretability piece, being able to just hover over and see, okay, it picked this metric from here.
+
+450
+00:33:46.599 --> 00:33:47.859
+ Because one of the advantages we have
+
+451
+00:33:47.859 --> 00:33:50.559
+ is since we have the full BI platform available,
+
+452
+00:33:50.700 --> 00:33:52.039
+ people see stuff on dashboards.
+
+453
+00:33:52.200 --> 00:33:53.180
+ They're like, oh yeah, I know.
+
+454
+00:33:53.380 --> 00:33:55.380
+ I see that metric on all my kind of main dashboards.
+
+455
+00:33:55.920 --> 00:33:57.440
+ That's the one I was looking for.
+
+456
+00:33:57.880 --> 00:33:59.420
+ And they are able to kind of understand
+
+457
+00:33:59.420 --> 00:34:01.700
+ how what they ask for relates to what they see
+
+458
+00:34:01.700 --> 00:34:03.880
+ on a day-to-day basis on the dashboards.
+
+459
+00:34:04.579 --> 00:34:09.119
+ Yeah, even an extension of that is the chatbot will even suggest those dashboards if there are
+
+460
+00:34:09.119 --> 00:34:10.480
+ pre-built data assets available.
+
+461
+00:34:10.800 --> 00:34:14.199
+ You start asking questions and they're like, you know, I can answer this, but do you want
+
+462
+00:34:14.199 --> 00:34:15.820
+ to look at the dashboard that your team has already built?
+
+463
+00:34:15.820 --> 00:34:19.800
+ So it actually promotes the human activity over the chatbot answer first.
+
+464
+00:34:20.519 --> 00:34:31.420
+ And I think generally speaking, this is one of those things where that application layer comes into play. And a lot of the solutions to these problems are not going to be building better models, they're going to be building better interfaces.
+
+465
+00:34:32.599 --> 00:34:45.920
+ For that UI element, another challenge in the business intelligence space is understanding what is an appropriate visualization to use for a particular set of data and the axes along which it is being represented.
+
+466
+00:34:46.340 --> 00:34:51.219
+ And I'm curious what you see as maybe some of the potential of multimodality in the AI
+
+467
+00:34:51.219 --> 00:34:56.440
+ models to be able to address some of that challenge of what visualization do I want
+
+468
+00:34:56.440 --> 00:35:00.559
+ to present and what is that actually going to convey to the person or how confusing is
+
+469
+00:35:00.559 --> 00:35:02.800
+ this going to be because there are 10,000 colors?
+
+470
+00:35:03.960 --> 00:35:04.400
+ Oh, totally.
+
+471
+00:35:06.619 --> 00:35:11.239
+ That's why we have the system right now, I think works generally pretty well is we have sort of like a deterministic,
+
+472
+00:35:11.460 --> 00:35:15.820
+ hey, you know, it's this, like these dimensions with these categories, with this many categories,
+
+473
+00:35:15.820 --> 00:35:21.179
+ this is like, you know, the best way to visualize it. That's like the first step always. And then
+
+474
+00:35:21.179 --> 00:35:25.400
+ the person can ask for whatever they want. And they can ask for whatever they want and they can ask for whatever they want.
+
+475
+00:35:25.480 --> 00:35:30.659
+ If they want to make the entire thing, just shades of green, they can do that and it will do it for
+
+476
+00:35:30.659 --> 00:35:35.420
+ them. So it definitely can go off the rails in terms of you ask for a visualization that doesn't
+
+477
+00:35:35.420 --> 00:35:43.099
+ make sense. It will get it for you. But we have a pretty good setup for getting, it will default
+
+478
+00:35:43.099 --> 00:35:45.099
+ pick a visualization that makes sense for you. And then
+
+479
+00:35:45.099 --> 00:35:48.880
+ if you want to go from there, you can go wherever you want to go from there.
+
+480
+00:35:49.880 --> 00:35:53.820
+ Yeah. And the other philosophy, our philosophy here takes a page foot at a Tufty's book. And
+
+481
+00:35:53.820 --> 00:35:59.619
+ I think that in a word, I'd say we just try to be boring. It doesn't lead to the, you know,
+
+482
+00:35:59.619 --> 00:36:02.940
+ the craziest visualizations or anything like that. You're going to see a lot of bar plots,
+
+483
+00:36:03.000 --> 00:36:10.579
+ a lot of line plots, a lot of basic tables, but at the end of the day, it kills me inside. I love sexy database, but
+
+484
+00:36:10.579 --> 00:36:14.840
+ at the end of the day, it conveys the information they're looking for most effectively.
+
+485
+00:36:15.960 --> 00:36:23.659
+ And in your experience of building Zenlytic and continually investing in the AI capabilities and
+
+486
+00:36:23.659 --> 00:36:26.039
+ this data agent functionality, what are some of
+
+487
+00:36:26.039 --> 00:36:30.320
+ the most interesting or innovative or unexpected ways that you've seen that feature set used?
+
+488
+00:36:31.440 --> 00:36:35.960
+ That's one of the coolest things about building stuff with AI is that you see it used in ways
+
+489
+00:36:35.960 --> 00:36:42.539
+ that you really, really did not expect. Like we had one customer use it and they were like,
+
+490
+00:36:42.599 --> 00:36:45.440
+ okay, you know, show me the top 10 accounts by like, you
+
+491
+00:36:45.440 --> 00:36:49.380
+ know, most amount that they owe us in the last three months or something like that. I want to
+
+492
+00:36:49.380 --> 00:36:53.059
+ see all the uninvoiced accounts. And we were like, okay, that makes sense. And then they were like,
+
+493
+00:36:53.519 --> 00:36:59.139
+ draft emails using the invoice details of all of these accounts, asking for them to pay the money
+
+494
+00:36:59.139 --> 00:37:03.480
+ and don't be, you know, too aggressive, but you know, be firm. And then it just like went through
+
+495
+00:37:03.480 --> 00:37:09.659
+ and got all the, you know, invoice details for everything and like drafted the emails for them. And I was like, that's,
+
+496
+00:37:09.739 --> 00:37:15.599
+ that's pretty crazy. I did not expect that to be how people would use it. So we see, we see a lot
+
+497
+00:37:15.599 --> 00:37:21.079
+ around the unstructured text data. Yeah. That's the other fun thing too, is, uh, what I would call
+
+498
+00:37:21.079 --> 00:37:25.760
+ the, the journey into semi-structured into semi-structured data.
+
+499
+00:37:29.000 --> 00:37:29.039
+ And we see people actually kind of like work around this right now,
+
+500
+00:37:32.619 --> 00:37:32.719
+ which is interesting, where they will take textual data,
+
+501
+00:37:35.860 --> 00:37:36.159
+ they'll take news articles, they'll take white papers or whatever,
+
+502
+00:37:38.840 --> 00:37:39.099
+ and they'll store them inside of a data warehouse.
+
+503
+00:37:42.179 --> 00:37:42.460
+ So they can use the chatbot to go and not only access that,
+
+504
+00:37:44.239 --> 00:37:44.880
+ but also manipulate the text in one step.
+
+505
+00:37:47.760 --> 00:37:48.480
+ And I think it's cool that we're actually starting to see the lines blurring a little bit.
+
+506
+00:37:52.880 --> 00:37:57.760
+ That's a good example of semi-structured. You can go all the way to full unstructured. I think one of the weird things about working in our industry is that the nature of data has sort of changed.
+
+507
+00:37:58.320 --> 00:38:02.400
+ And like two years ago, data would have been a table or it would have been a spreadsheet or
+
+508
+00:38:02.400 --> 00:38:10.059
+ something like that. And now data can be a PDF or a set of meeting notes or a YouTube video. Those are all data now.
+
+509
+00:38:10.679 --> 00:38:14.739
+ So we're really excited about what the future is going to bring. And we're fully prepared to,
+
+510
+00:38:14.739 --> 00:38:21.000
+ you know, embrace that future of the broader definition of data. Let me put it that way.
+
+511
+00:38:22.179 --> 00:38:27.579
+ In that line of your example, Paul, of being able to draft those emails, it also brought
+
+512
+00:38:27.579 --> 00:38:33.679
+ to mind the earlier notes of what differentiates a data agent from a chatbot is the fact that
+
+513
+00:38:33.679 --> 00:38:36.500
+ it has access to tools and understands how to use them.
+
+514
+00:38:36.920 --> 00:38:42.099
+ I'm wondering what you see as some of the future evolution of the tools that are in
+
+515
+00:38:42.099 --> 00:38:50.280
+ the toolbox for that agent and some of the ways that you're thinking about the interfaces that you might expose so that other people can plug new tools in that
+
+516
+00:38:50.280 --> 00:38:56.860
+ you didn't think of yet? Yeah, that is a great question. I think this is something that all BI
+
+517
+00:38:56.860 --> 00:39:00.940
+ tools have tried to do at some point and never really successfully. I don't know if you remember
+
+518
+00:39:00.940 --> 00:39:05.199
+ Looker's Action Hub. Good idea. It's just hard to make that actually work in practice.
+
+519
+00:39:10.000 --> 00:39:11.019
+ I think it's finally possible to make those things work with large language models.
+
+520
+00:39:14.699 --> 00:39:18.840
+ We don't, like, you know, I don't have the perfect idea of exactly how that's going to look, but, you know, I can definitely see a world where you're like, hey, you know,
+
+521
+00:39:18.900 --> 00:39:21.159
+ how should I be adjusting spend for this campaign?
+
+522
+00:39:21.320 --> 00:39:22.500
+ And it's like, well, this is how it's done.
+
+523
+00:39:22.579 --> 00:39:23.780
+ This is how other campaigns have done.
+
+524
+00:39:24.039 --> 00:39:26.880
+ I'd recommend, you know, adjusting it up a little bit because it's doing well.
+
+525
+00:39:27.219 --> 00:39:30.679
+ You'd say, great, go do that for me. OAuth screen pops up. You're like, yep,
+
+526
+00:39:31.079 --> 00:39:35.199
+ log in Facebook. There you go. It took the action for me. I can definitely see a world where that's,
+
+527
+00:39:35.199 --> 00:39:47.159
+ that's the case. And it's limited not by its integrations with things as so much as it's limited by like, what OAuth do you have for your internal tools?
+
+528
+00:39:47.880 --> 00:39:54.079
+ Um, and that's possible. Like, I mean, what I described is really complicated to create,
+
+529
+00:39:54.239 --> 00:39:58.320
+ right. But it's actually possible now for the first time with large language models. And I
+
+530
+00:39:58.320 --> 00:40:04.199
+ think as they get better and more consistent and people, you know, use ChatGPT, ask it to browse
+
+531
+00:40:04.199 --> 00:40:05.260
+ the web for them and just kind of
+
+532
+00:40:05.260 --> 00:40:10.239
+ trust that it did a reasonably good job of summarizing that, you know, webpage. As trust
+
+533
+00:40:10.239 --> 00:40:14.880
+ builds to any underlying models, then people will be more comfortable saying, yeah, go and adjust
+
+534
+00:40:14.880 --> 00:40:20.920
+ the spend for this campaign for me. A great example of that actually is,
+
+535
+00:40:21.820 --> 00:40:26.139
+ you know, as Paul said, it's challenging, but but versions of that exist today, right? And if you
+
+536
+00:40:26.139 --> 00:40:34.539
+ look at how OpenAI characterizes GPTs, the GPT store and their earlier API for it, that API was
+
+537
+00:40:34.539 --> 00:40:38.159
+ expressed in natural language. So you wouldn't actually go and say, hey, make a token request
+
+538
+00:40:38.159 --> 00:40:44.300
+ to HubSpot to pull XYZ in a JSON. You'd just say, get ourselves from HubSpot. And that would
+
+539
+00:40:44.300 --> 00:40:47.739
+ actually use the necessary API docs in HubSpot to go and connect and
+
+540
+00:40:47.739 --> 00:40:51.340
+ make that request, even though it's characterized in natural language.
+
+541
+00:40:52.119 --> 00:40:57.639
+ So yeah, I think one of the big bottlenecks to those application stores really blossoming
+
+542
+00:40:57.639 --> 00:41:00.079
+ is that those connections are hard to build and maintain.
+
+543
+00:41:00.659 --> 00:41:05.119
+ So if we can make that more elegantly, it opens up a whole new world of possibilities
+
+544
+00:41:05.119 --> 00:41:13.400
+ and so in your experience of building zenlytic working very closely in this ai ecosystem what
+
+545
+00:41:13.400 --> 00:41:16.739
+ are some of the most interesting or unexpected or challenging lessons that you've each learned
+
+546
+00:41:16.739 --> 00:41:24.820
+ in the process i think i think one of the big ones is it's like just how many mistakes you
+
+547
+00:41:24.820 --> 00:41:25.880
+ have to make to like figure
+
+548
+00:41:25.880 --> 00:41:26.300
+ it out.
+
+549
+00:41:26.400 --> 00:41:29.099
+ All this stuff is, is just bleeding edge.
+
+550
+00:41:29.099 --> 00:41:33.519
+ Like you're kind of off the map for, you know, how do you evaluate these systems?
+
+551
+00:41:33.519 --> 00:41:36.199
+ Cause they do different things every time.
+
+552
+00:41:36.199 --> 00:41:37.739
+ Basically, how do you make them consistent?
+
+553
+00:41:37.739 --> 00:41:41.340
+ Because again, they do different things, you know, they're non-deterministic.
+
+554
+00:41:41.659 --> 00:41:45.500
+ There's a lot of stuff that we've had to build and figure out internally.
+
+555
+00:41:46.639 --> 00:41:49.500
+ And part of that too is that one of the big differences
+
+556
+00:41:49.500 --> 00:41:53.860
+ is that before, if you show a demo of something,
+
+557
+00:41:53.920 --> 00:41:55.539
+ it means you can pretty much do it at scale.
+
+558
+00:41:55.679 --> 00:41:56.639
+ You just pay Amazon more money.
+
+559
+00:41:57.320 --> 00:42:00.320
+ But that kind of turns on its head with AI.
+
+560
+00:42:00.579 --> 00:42:02.059
+ Everyone can kind of show the same demo,
+
+561
+00:42:02.179 --> 00:42:03.000
+ but the real question is,
+
+562
+00:42:03.099 --> 00:42:09.940
+ can you actually do it for a real data warehouse or whatever your actual problem domain is? Being able to go from
+
+563
+00:42:09.940 --> 00:42:15.639
+ showing a good demo to actually working well on real data warehouses for production use cases is
+
+564
+00:42:15.639 --> 00:42:20.800
+ a really big jump. And we've had to do a lot of engineering to be able to get there.
+
+565
+00:42:21.280 --> 00:42:26.519
+ So definitely surprising the difference between how easy it is to do a
+
+566
+00:42:26.519 --> 00:42:32.280
+ demo versus how hard it is to make this work really in production. Yeah. Yeah. The tech is
+
+567
+00:42:32.280 --> 00:42:37.159
+ deceptively hard. It's, it's the kind of thing, uh, I mean, it's, it's funny. Paul talks about,
+
+568
+00:42:37.239 --> 00:42:41.400
+ Hey, you, you, you, you know, we're off the map here. And I remember my journey was like at the
+
+569
+00:42:41.400 --> 00:42:45.480
+ start of all this amazingly fast developments happening
+
+570
+00:42:45.480 --> 00:42:46.559
+ in AI.
+
+571
+00:42:46.559 --> 00:42:49.460
+ First, you're excited and you're like, this is great.
+
+572
+00:42:49.460 --> 00:42:50.460
+ We're off the map.
+
+573
+00:42:50.460 --> 00:42:51.460
+ This is all brand new technology.
+
+574
+00:42:51.460 --> 00:42:53.500
+ And then very quickly realize like, this is terrible.
+
+575
+00:42:53.500 --> 00:42:55.280
+ We're off the map.
+
+576
+00:42:55.280 --> 00:42:58.239
+ There's really no known paradigm for working with this tech.
+
+577
+00:42:58.239 --> 00:43:06.860
+ And AI is especially dangerous for that because it makes it look like it could be easy. And I think there's a really
+
+578
+00:43:06.860 --> 00:43:12.780
+ common misconception with a lot of people that you just kind of throw an API in somewhere and
+
+579
+00:43:12.780 --> 00:43:17.380
+ you're calling LLM and suddenly that just sprinkles little star emojis over the whole product,
+
+580
+00:43:17.460 --> 00:43:24.420
+ basically. But this is a fundamentally new way of interacting with computers. And there's no
+
+581
+00:43:24.420 --> 00:43:26.059
+ rulebook for it. There's no playbook.
+
+582
+00:43:26.699 --> 00:43:29.440
+ And yeah, you really have to build everything from the ground up. You have to build tooling
+
+583
+00:43:29.440 --> 00:43:35.960
+ from the ground up. You have to build methodologies from the ground up. And I think people don't
+
+584
+00:43:35.960 --> 00:43:45.559
+ realize how difficult of a problem space it is. And what I mean by that is you, you have, when, when you add something like, you know, textual inputs to a
+
+585
+00:43:45.559 --> 00:43:52.079
+ product, you added an unconstrained input space. And, you know, in our case, in many cases,
+
+586
+00:43:52.480 --> 00:43:57.480
+ there's also generally an unconstrained output space. And in our case, there's a huge sort of
+
+587
+00:43:57.480 --> 00:44:02.139
+ range of different types of data in the middle of those two, you know, from input to output.
+
+588
+00:44:03.039 --> 00:44:05.400
+ And when you're, when you're building a space like that
+
+589
+00:44:05.400 --> 00:44:08.900
+ it's it's it's actually very hard to build a product that can capture those unconstrained
+
+590
+00:44:08.900 --> 00:44:15.219
+ but like capture all of that at one spot so uh i would say that it has been pretty awesome
+
+591
+00:44:15.219 --> 00:44:20.219
+ learning experience and i feel like we've had to you know be very very creative along the way to
+
+592
+00:44:20.219 --> 00:44:26.539
+ invent a lot of the stuff that we've done but uh it's been a lot of fun too. Yeah, really been a rewarding experience too.
+
+593
+00:44:27.280 --> 00:44:28.940
+ And not to mention all of the time
+
+594
+00:44:28.940 --> 00:44:31.000
+ you've had to spend hunting down GPUs
+
+595
+00:44:31.000 --> 00:44:32.219
+ so that you can actually run the inference.
+
+596
+00:44:34.219 --> 00:44:36.099
+ Well, there might be LPUs soon.
+
+597
+00:44:36.340 --> 00:44:38.139
+ We'll see how well Grok does.
+
+598
+00:44:40.480 --> 00:44:43.420
+ Yeah, that I guess is another point of curiosity
+
+599
+00:44:43.420 --> 00:45:12.019
+ is what you've seen as the scalability in terms of cost for actually being able to run this inference, particularly given that there's going to be highly bursty workloads, given the nature of your end user experience, where maybe somebody is having an hour long conversation with their chatbot and somebody else just has a single one-off back and forth. And just the way that you think about the overall cost of executing a model for inference and how to
+
+600
+00:45:12.019 --> 00:45:17.940
+ reduce the overall load on the system so that you're offloading that work as quickly as possible
+
+601
+00:45:17.940 --> 00:46:05.179
+ to some of the lower resource models. Yeah, that's a really good question. I think from our perspective, it definitely matters, but it matters less because we are a B2B product, which means that we also charge a lot more money. We were not making like 15 cents on each user. And what that means is that we have more budget to make the highest comprehension, biggest and best model in as many use cases as we can because it's got to work flawlessly and people are willing to pay for it if they will genuinely have a really good experience with it. So definitely index more on like maximize experience, not at all costs, but,
+
+602
+00:46:05.179 --> 00:46:10.539
+ but even if costs are high, it's better to have costs high and a great experience than cost lower
+
+603
+00:46:10.539 --> 00:46:15.719
+ and a meh experience. Yeah. Highest quality of model and just large numbers of tokens. So,
+
+604
+00:46:15.820 --> 00:46:20.840
+ I mean, agentic approaches take more tokens and like in our case, for example, before Zoe,
+
+605
+00:46:20.940 --> 00:46:25.719
+ the chat bot ever replies to your question. She's already had extensive conversations
+
+606
+00:46:25.719 --> 00:46:27.940
+ with the cognitive layer back and forth under the hood
+
+607
+00:46:27.940 --> 00:46:29.139
+ and then goes and has the conversation.
+
+608
+00:46:29.340 --> 00:46:33.059
+ So, you know, we definitely take the gold-plated approach,
+
+609
+00:46:33.199 --> 00:46:35.780
+ but I'm not that worried about it.
+
+610
+00:46:35.840 --> 00:46:39.019
+ And not only because, you know, we're a SaaS product,
+
+611
+00:46:39.260 --> 00:46:40.980
+ but also because those costs
+
+612
+00:46:40.980 --> 00:46:42.860
+ have been decreasing dramatically, right?
+
+613
+00:46:42.940 --> 00:46:45.199
+ And even we just saw
+
+614
+00:46:45.199 --> 00:46:49.539
+ GPT-4 will get released and that slashed the cost of high performance models in half. And,
+
+615
+00:46:49.659 --> 00:46:53.539
+ you know, we see an order of magnitude change every 12 months or something, and it just keeps
+
+616
+00:46:53.539 --> 00:46:57.579
+ getting cheaper and cheaper. And, you know, I think that it's going to become essentially free
+
+617
+00:46:57.579 --> 00:47:03.659
+ before too long. It reminds me a lot of, I always compare the AI era to the mobile era,
+
+618
+00:47:03.880 --> 00:47:09.000
+ because that's like the last big wave that I could think of. But it reminds me a lot of, I compare, I always compare the AI era to the mobile era because I, uh, that's like the last big wave that I could think of, but it reminds me a lot of at the start of the mobile
+
+619
+00:47:09.000 --> 00:47:12.860
+ era, they had this kind of, you probably forgotten, but they had this optimized kind of internet,
+
+620
+00:47:12.860 --> 00:47:17.039
+ right. Where there's like, you know, low, low res images. Yeah, that's right. Exactly. The
+
+621
+00:47:17.039 --> 00:47:21.599
+ mobile web, because it was too expensive to get data into a phone and, you know, it was really
+
+622
+00:47:21.599 --> 00:47:27.199
+ expensive at the time. And, you know, that feels like a silly consideration now. And like, you don't even think about that, but, you know, I think
+
+623
+00:47:27.199 --> 00:47:32.659
+ we'll probably see the same transition happen with LLMs as well. Yep. No, I, I very much remember
+
+624
+00:47:32.659 --> 00:47:37.559
+ mobile web and reading books about how to write your HTML so that it will render on a mobile phone.
+
+625
+00:47:37.559 --> 00:47:43.179
+ And then HTML5 was the new amazing thing. And now it's just background noise. Yeah, totally.
+
+626
+00:47:41.480 --> 00:47:42.039
+ and now it's just background noise.
+
+627
+00:47:43.159 --> 00:47:44.300
+ Yeah, totally.
+
+628
+00:47:45.000 --> 00:47:45.960
+ A hundred percent.
+
+629
+00:47:51.099 --> 00:47:53.980
+ And so for people who are building systems and products, what are the cases where an AI agent is the wrong choice
+
+630
+00:47:53.980 --> 00:47:56.079
+ and it's just too much time and energy invested
+
+631
+00:47:56.079 --> 00:47:57.320
+ for not enough return?
+
+632
+00:47:58.460 --> 00:48:01.340
+ I think it's not just that the return might not be high,
+
+633
+00:48:01.460 --> 00:48:03.739
+ it's that it might just not make sense in your application.
+
+634
+00:48:04.340 --> 00:48:09.380
+ Like I think a good example is a tool I use every single day, which is GitHub Copilot. It's amazing.
+
+635
+00:48:09.559 --> 00:48:14.039
+ You just, you know, type a few lines. It offers to complete them for you. It's great. It's not a,
+
+636
+00:48:14.119 --> 00:48:19.440
+ it's not an agent and nor should it be. It's very helpful as just like get some general context
+
+637
+00:48:19.440 --> 00:48:23.760
+ about where you are, what code you've been looking at, sees the rest of your file, offers you a very
+
+638
+00:48:23.760 --> 00:48:29.079
+ reasonable completion. That's a great product that should not be an AI agent. There's plenty of other products
+
+639
+00:48:29.079 --> 00:48:34.219
+ out there like that. So I would say it's really about what kind of products you're building and
+
+640
+00:48:34.219 --> 00:48:41.239
+ building a good experience for the user. And as you continue to build and evolve your product
+
+641
+00:48:41.239 --> 00:48:45.880
+ and your platform and keep pace with the AI ecosystem, what are some of the things you
+
+642
+00:48:45.880 --> 00:48:50.179
+ have planned for the near to medium term or any particular projects or problem areas you're
+
+643
+00:48:50.179 --> 00:48:56.599
+ excited to explore? I think the biggest one for us is we've seen, like we talked about earlier,
+
+644
+00:48:56.699 --> 00:49:02.179
+ a lot of people using unstructured data, whether they're sticking news articles in Snowflake,
+
+645
+00:49:02.579 --> 00:49:05.119
+ you know, or like reading invoice details and having a draft
+
+646
+00:49:05.119 --> 00:49:10.300
+ emails. We've seen a lot of people ask about more textual data. So I think a big thing that we're
+
+647
+00:49:10.300 --> 00:49:15.480
+ thinking about, and we're going to be, you know, improving a lot is the product experience working
+
+648
+00:49:15.480 --> 00:49:21.280
+ on text data. Because that's one thing that, like Ryan said, it's changed the definition of data,
+
+649
+00:49:21.280 --> 00:49:25.179
+ more people are expecting it to be able to not just sum up some
+
+650
+00:49:25.179 --> 00:49:30.639
+ values in a transactions table, but also to actually understand documents and what's going
+
+651
+00:49:30.639 --> 00:49:36.159
+ on in their business. Yeah, plus one to that. And I would say maybe this is a very near-term
+
+652
+00:49:36.159 --> 00:49:39.679
+ future plan for us because it's in the product today. But one thing that I'm personally very
+
+653
+00:49:39.679 --> 00:49:48.260
+ excited about is adding in advanced analytics capabilities to Z analytics. So those are new tools for the
+
+654
+00:49:48.260 --> 00:49:53.360
+ data agent, for the chatbot. And you see kind of two halves of this market right now, right? You
+
+655
+00:49:53.360 --> 00:49:58.000
+ see the BI platforms, they're kind of bolting on these agents for retrieving data or the chatbots
+
+656
+00:49:58.000 --> 00:50:04.019
+ for retrieving data. And you see a lot of these chatbot-only tools that are focused on writing
+
+657
+00:50:04.019 --> 00:50:05.599
+ notebooks. And Code Interpreter is one
+
+658
+00:50:05.599 --> 00:50:10.159
+ of them, but there's all these tools for writing analytics when you upload a CSV.
+
+659
+00:50:11.360 --> 00:50:14.480
+ It feels strange to me that those are two separate things, and that should be an end-to-end
+
+660
+00:50:14.480 --> 00:50:21.360
+ workflow. And now in Tenlytic, you can actually pull governed data from the BI tool, and that will
+
+661
+00:50:21.360 --> 00:50:25.179
+ be directly used with the advanced analytics tool to write
+
+662
+00:50:25.179 --> 00:50:30.800
+ Python against it and produce an end-to-end result. I don't think it's not that far off.
+
+663
+00:50:30.880 --> 00:50:34.360
+ I mean, this is kind of like running now, but it's something that we're really excited about.
+
+664
+00:50:35.239 --> 00:50:43.079
+ Are there any other aspects of this concept of data agents and AI agents and the ways that you
+
+665
+00:50:43.079 --> 00:50:46.519
+ are applying that functionality to Zenlytic and
+
+666
+00:50:46.519 --> 00:50:49.820
+ the overall space of business intelligence that we didn't discuss yet that you'd like to cover
+
+667
+00:50:49.820 --> 00:50:55.619
+ before we close out the show? No, I think that's pretty much everything. The main TLDR is that
+
+668
+00:50:55.619 --> 00:51:01.639
+ we're really working to make this a co-worker for you. Someone that you can delegate some tasks to,
+
+669
+00:51:01.900 --> 00:51:05.579
+ have it just go off, accomplish the things you need, give you the information you need to make good decisions.
+
+670
+00:51:06.300 --> 00:51:08.119
+ That's what we're laser focused on doing.
+
+671
+00:51:08.920 --> 00:51:09.019
+ Yeah.
+
+672
+00:51:09.300 --> 00:51:10.579
+ I would just say the only thing is
+
+673
+00:51:10.579 --> 00:51:11.880
+ I'd like to extend an open invitation
+
+674
+00:51:11.880 --> 00:51:14.420
+ to anyone to geek out about this technology.
+
+675
+00:51:14.619 --> 00:51:17.360
+ If you are building with this,
+
+676
+00:51:17.539 --> 00:51:18.840
+ I mean, my recommendations would be first,
+
+677
+00:51:19.280 --> 00:51:22.500
+ I wouldn't start an AI project in 2024
+
+678
+00:51:22.500 --> 00:51:24.280
+ without making it a data agent project.
+
+679
+00:51:24.639 --> 00:51:25.960
+ Then I think the secret to making
+
+680
+00:51:25.960 --> 00:51:31.960
+ data agents work well is providing a really great environment for them to do their job in. I think
+
+681
+00:51:31.960 --> 00:51:35.699
+ are two of the takeaways on how to make these work. But if anyone wants to chat more about that,
+
+682
+00:51:35.980 --> 00:51:41.139
+ please hit us up. All right. Well, for anybody who does want to follow up on that offer and keep
+
+683
+00:51:41.139 --> 00:51:44.699
+ track of the work that you and your teams are doing, I'll have you add your preferred contact
+
+684
+00:51:44.699 --> 00:51:48.679
+ information to the show notes. And as the final question, I'd like to get
+
+685
+00:51:48.679 --> 00:51:53.019
+ your perspective on what you see as being the biggest gap in the tooling or technology that's
+
+686
+00:51:53.019 --> 00:52:00.380
+ available for data management. And I'll also say, or AI today. I think I'll give two quick ones.
+
+687
+00:52:00.800 --> 00:52:05.420
+ On AI, it's mostly about the evaluations of the models. It's probably, it's mostly about like the evaluations of the models. Like
+
+688
+00:52:05.420 --> 00:52:09.940
+ it's very difficult to evaluate non-deterministic things. And that's, that's a big gap in the
+
+689
+00:52:09.940 --> 00:52:13.500
+ tooling right now. Like there's some, you know, early products that are starting to do a good
+
+690
+00:52:13.500 --> 00:52:19.199
+ job at it, but definitely, definitely a big gap on the AI side is in the evaluations on the data
+
+691
+00:52:19.199 --> 00:52:24.659
+ side. I think there's a really exciting advantage, like a really exciting product to be built, uh,
+
+692
+00:52:24.659 --> 00:52:25.519
+ in the, in the like transformation layer, because there's a lot of gr like a really exciting product to be built uh in the in the like
+
+693
+00:52:25.519 --> 00:52:30.320
+ transformation layer because there's a lot of grungy work in data transformation if you've done
+
+694
+00:52:30.320 --> 00:52:34.480
+ that before like it's just you know you're you're pulling information you're like why is this order
+
+695
+00:52:34.480 --> 00:52:38.880
+ id not showing up in this table but it's showing up in the previous one is it a timing thing is it
+
+696
+00:52:38.880 --> 00:52:42.800
+ you know some other filter that's being applied like there's just so much grungy work of like
+
+697
+00:52:42.800 --> 00:52:50.139
+ running the very same query with slightly different order IDs over and over and over again, pushing that work off to a data
+
+698
+00:52:50.139 --> 00:52:55.260
+ agent to let it just iterate on that and then come back and be like, this is why I think the thing is
+
+699
+00:52:55.260 --> 00:52:59.659
+ not present. That would be, that would be incredible. So I think that's, that's a big
+
+700
+00:52:59.659 --> 00:53:03.840
+ opportunity that I'm sure the big, you know, transformation providers are all working on,
+
+701
+00:53:03.980 --> 00:53:05.199
+ but that's a really exciting one.
+
+702
+00:53:06.159 --> 00:53:06.760
+ All right.
+
+703
+00:53:06.860 --> 00:53:08.840
+ Well, thank you both for taking the time today
+
+704
+00:53:08.840 --> 00:53:10.340
+ to join me and share the work
+
+705
+00:53:10.340 --> 00:53:11.539
+ that you've been doing at Zenlytic
+
+706
+00:53:11.539 --> 00:53:14.719
+ and your experiences of building these AI agents.
+
+707
+00:53:14.880 --> 00:53:16.519
+ It's definitely a very interesting space.
+
+708
+00:53:16.639 --> 00:53:17.719
+ It's great to hear people
+
+709
+00:53:17.719 --> 00:53:19.599
+ who are pushing the forefront of that.
+
+710
+00:53:19.739 --> 00:53:21.159
+ So I appreciate all the time and energy
+
+711
+00:53:21.159 --> 00:53:22.539
+ that you're both putting into
+
+712
+00:53:22.539 --> 00:53:24.179
+ making business intelligence
+
+713
+00:53:24.179 --> 00:53:25.679
+ a more self-serve experience.
+
+714
+00:53:26.059 --> 00:53:27.219
+ And I hope you enjoy the rest of your day.
+
+715
+00:53:27.900 --> 00:53:28.559
+ Thanks, Tobias.
+
+716
+00:53:28.639 --> 00:53:29.320
+ Thanks for having us on.
+
+717
+00:53:29.739 --> 00:53:30.480
+ Thanks a ton, Tobias.
+
+718
+00:53:30.639 --> 00:53:31.219
+ Been a pleasure.
+
+719
+00:53:37.860 --> 00:53:38.860
+ Thank you for listening.
+
+720
+00:53:39.320 --> 00:53:43.760
+ Don't forget to check out our other shows, Podcast.init, which covers the Python language,
+
+721
+00:53:43.760 --> 00:53:46.519
+ its community, and the innovative ways it is being used.
+
+722
+00:53:46.739 --> 00:53:51.380
+ And the Machine Learning Podcast, which helps you go from idea to production with machine learning.
+
+723
+00:53:51.840 --> 00:53:58.000
+ Visit the site at dataengineeringpodcast.com to subscribe to the show, sign up for the mailing list, and read the show notes.
+
+724
+00:53:58.480 --> 00:54:01.880
+ And if you've learned something or tried out a project from the show, then tell us about it.
+
+725
+00:54:02.420 --> 00:54:05.260
+ Email hosts at dataengineeringpodcast.com
+
+726
+00:54:05.260 --> 00:54:09.440
+ with your story. And to help other people find the show, please leave a review on Apple
+
+727
+00:54:09.440 --> 00:54:11.440
+ Podcasts and tell your friends and coworkers.
+

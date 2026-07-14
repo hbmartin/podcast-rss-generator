@@ -92,6 +92,9 @@ linters:
       - path: podcast_internals_test\.go
         linters:
           - testpackage
+      - path: _internals_test\.go
+        linters:
+          - testpackage
 
 formatters:
   enable:

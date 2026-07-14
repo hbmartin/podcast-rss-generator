@@ -1,0 +1,660 @@
+{
+    "version": "1.0.0",
+    "segments": [
+        {
+            "speaker": "Speaker",
+            "startTime": 0,
+            "body": "Now for something completely different. Frank is in Raleigh speaking at"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 4,
+            "body": "OpenShift Commons gathering. In this livestream,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 7,
+            "body": "we see Frank dressed in his dapper suit and his streaming"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 11,
+            "body": "skills put to the test. Frank has quite the"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 14,
+            "body": "agenda with a demo to deliver, a panel to moderate, and a"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 18,
+            "body": "sneaky plan to snag some unsuspecting interviewees."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 22,
+            "body": "We're certainly in for a treat."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 29,
+            "body": "Hello. Good morning. Good afternoon. Good evening."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 32,
+            "body": "Depending on where where you are on the planet. My name"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 36,
+            "body": "is Frank Lavinia. And before the"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 39,
+            "body": "captions, which I can't seem to there we"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 43,
+            "body": "go. My name is Frank Lavinia,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 46,
+            "body": "and I am streaming live,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 51,
+            "body": "from OpenShift Commons in Raleigh. We"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 54,
+            "body": "haven't started yet. Beautiful venue at"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 58,
+            "body": "Raleigh. About a block Block and a half from the Red"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 62,
+            "body": "Hat headquarters. They call it the tower, because it's a"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 66,
+            "body": "tall office building. And, Raleigh's a cool city with a"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 69,
+            "body": "cool little downtown, and"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 73,
+            "body": "you see kind of the Little city market"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 77,
+            "body": "type thing going on. This apparently used to be a big, little,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 81,
+            "body": "big, little, market hall. Now it's an"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 84,
+            "body": "event space. And, as I walk through"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 88,
+            "body": "here, you can kind of appreciate the architecture."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 91,
+            "body": "So This is my 1st OpenShift commons"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 95,
+            "body": "gathering. Relatively speaking, I'm kinda new"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 99,
+            "body": "to the, open source community."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 105,
+            "body": "And, yeah, I'm really looking forward to this."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 108,
+            "body": "First one, I'm actually gonna be 1st, delivering a demo"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 112,
+            "body": "and then moderating a panel, and then maybe I can sneak away"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 116,
+            "body": "and get some people to kinda talk on, on camera."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 120,
+            "body": "And then if, there's the nice,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 124,
+            "body": "registration booth. I think it's gonna start up in, like, half an"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 128,
+            "body": "hour. And, here's kind of"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 131,
+            "body": "the the main park in Raleigh."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 135,
+            "body": "Oh, there's an IMAX there."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 139,
+            "body": "And there's a children's museum and stuff. One of these days, they come back down"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 143,
+            "body": "with the kids. Every time I've been to Raleigh, it's for work. Actually,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 147,
+            "body": "Two times it's been for Holly. This"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 150,
+            "body": "time this time, I,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 154,
+            "body": "I drove down, because last time I was here, I guess, like, a JFK"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 158,
+            "body": "for, like, 8 hours. And JFK"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 162,
+            "body": "Airport is not my favorite airport at all. Just I'll just drop that there."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 167,
+            "body": "And it's actually a 5 hour drive. 4 and a half, 5 hour drive,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 171,
+            "body": "from from where I live. So I was like, you know what? Plus,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 175,
+            "body": "I had a lot of, a lot of craziness. A lot of commitments going on"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 178,
+            "body": "in, in Chateau, Lavinia."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 183,
+            "body": "But, Yeah. It's it's been good."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 188,
+            "body": "We're basically doing kind of planning meetings. Got to meet a lot of people in"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 191,
+            "body": "person, that I have only seen online. So"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 195,
+            "body": "that's always good. I'm gonna catch up with my manager today."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 198,
+            "body": "So I'm gonna be, like I said, monitoring a panel"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 202,
+            "body": "On AI open source. And I think it's really you"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 206,
+            "body": "know, most people who follow me here,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 210,
+            "body": "are probably in the strongly in the Microsoft ecosystem. And a lot"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 214,
+            "body": "of people, they say, Frank, what happened to you? You're not You got a lot"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 217,
+            "body": "of Microsoft centric stuff anymore. And I said that's not true. You just don't see"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 220,
+            "body": "it. I am still a Microsoft AI MVP."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 224,
+            "body": "I have access to a lot of the cool toys, I presented at a"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 228,
+            "body": "community event in Ruston, with the OpenAI, day,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 233,
+            "body": "back in August. Some silver and plug in to that community."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 236,
+            "body": "It's just that open source,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 243,
+            "body": "AI is open source dominates the AI. Right? If you look at"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 246,
+            "body": "it all up, by and large, it is primarily an open"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 250,
+            "body": "source story. And I apologize for the camera shaking, but"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 254,
+            "body": "I couldn't, didn't have time to practice with"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 257,
+            "body": "my stable self stabilizing, selfie stick."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 261,
+            "body": "So I figured I'd just do it the old fashioned way."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 266,
+            "body": "But open source is really dominating this field. And I"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 270,
+            "body": "think that's by and large a good thing. It's not a great thing. And"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 274,
+            "body": "part of that is is just the transparency, the openness,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 278,
+            "body": "and the, community driven"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 282,
+            "body": "nature of it is, 1, not only is the power of innovation, but I"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 286,
+            "body": "think it also engenders a lot more trust in, say, a closed source"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 289,
+            "body": "system. Elon Musk is, clearly has more money than"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 293,
+            "body": "me. Arguably, he might have better sense of humor than"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 296,
+            "body": "me, But he has commented on how OpenAI"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 301,
+            "body": "isn't, was a nonprofit that was dedicated to openness. And now"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 305,
+            "body": "it's really neither. Now whatever you think of him,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 309,
+            "body": "you know, that doesn't change the fact that there's a kernel of truth"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 312,
+            "body": "there. And when I say kernel, right, when I when I first"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 316,
+            "body": "joined Red Hat, a lot of my former Microsoft colleagues, they were like, why are"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 320,
+            "body": "you leaving? What you were doing? Writing a little phone code? No. No. No. No."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 323,
+            "body": "No. No. No. I'm still working on AI. They I think some of"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 327,
+            "body": "them actually wanted to schedule an intervention."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 332,
+            "body": "To make sure hey. I got my first comment. And this is the part where"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 335,
+            "body": "I don't need my glasses. And it's my brother from another"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 339,
+            "body": "mother. Am I causing trouble?"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 344,
+            "body": "Not yet. Still kinda early. Go for the bow tie."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 348,
+            "body": "Yeah. An epic breakdown. Yeah. I"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 352,
+            "body": "might I might, I might go for the bow tie next time. So I think"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 356,
+            "body": "that the joke is that whenever there's a panel on, like, In"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 359,
+            "body": "DC or C SPAN if you don't live in DC."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 364,
+            "body": "The the the one with the bow tie is always the troublemaker and sometimes that's"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 367,
+            "body": "the moderator. I think they're chosen on purpose. So"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 371,
+            "body": "I'm not sure if it's a compliment. Yeah. I've been chosen to moderate"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 375,
+            "body": "a panel. But I'll be doing a demo Oh, and,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 380,
+            "body": "you know, basically kinda how this, how OpenShift AI works."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 384,
+            "body": "And, Oh, yeah. My car's in trouble. That's awesome. Go"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 388,
+            "body": "for the bow tie. Yeah. I think I shall. I think I"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 391,
+            "body": "shall. Given that this is, I didn't wanna"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 395,
+            "body": "go too far out, so I have, like, a little suit, going"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 399,
+            "body": "on. That's not a little. But, Yeah. So I'm"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 403,
+            "body": "I'm really looking forward to this. Looks like if the weather holds, there'll be some"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 406,
+            "body": "outdoor dining, outdoor catering stuff. Really pretty space."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 410,
+            "body": "Really pretty event space. Raleigh is a cool"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 413,
+            "body": "little town. And,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 418,
+            "body": "Frank, I didn't just buy a house last year."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 422,
+            "body": "You just moved to it. But I just bought a house last year, so"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 427,
+            "body": "That option, kids, is on the table. Because I don't wanna put my"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 431,
+            "body": "kids through it. Like, I don't let the school transition and stuff like that. So"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 434,
+            "body": "but it's a cool little place. It's a cool place."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 438,
+            "body": "Alright. So we wanna go back in. I'm gonna turn down the volume of my"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 442,
+            "body": "voice a bit. And,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 447,
+            "body": "there we go. There's the whole event."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 451,
+            "body": "And, So if you're in the wrong area,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 455,
+            "body": "stop by. I think it's happening tomorrow. They're doing workshops."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 458,
+            "body": "And, today"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 462,
+            "body": "Is the presentation part of it. So with that, I'm gonna"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 466,
+            "body": "grab myself a cup of coffee, and,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 473,
+            "body": "check it out. And I have to say, I saw this"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 476,
+            "body": "online the other day where, like, the best track of any is the hall"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 480,
+            "body": "track. Right? All the conversations you hear in the hallway. I love he picked it"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 484,
+            "body": "up, but I heard a guy kinda talking about his opinion on, public cloud"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 487,
+            "body": "versus private cloud. Very interesting. So I'm looking forward to"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 491,
+            "body": "see what they're gonna discuss today. And,"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 497,
+            "body": "We'll see the stage."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 500,
+            "body": "And if you're in Raleigh, you're wrong, it's not"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 504,
+            "body": "I believe we've got a session to sleep. And, come on. Check it"
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 508,
+            "body": "out. I'm gonna get myself a cup of coffee and be ready for the show."
+        },
+        {
+            "speaker": "Speaker",
+            "startTime": 511,
+            "body": "Thanks. And you"
+        }
+    ]
+}

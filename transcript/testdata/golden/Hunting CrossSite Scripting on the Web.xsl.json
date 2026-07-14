@@ -1,0 +1,780 @@
+{
+    "version": "1.0.0",
+    "segments": [
+        {
+            "startTime": 0.82,
+            "endTime": 1.66,
+            "body": "Welcome to"
+        },
+        {
+            "startTime": 1.66,
+            "endTime": 27.07,
+            "body": "\"The Open Source Way\". This is our podcast series, SAP's podcast series, about the difference that open source can be. And in each episode, we'll talk with experts about open source and why they do it the open-source way. I'm your host, Karsten Hohage, and in this episode, I'm going to talk to Thomas Barber about \"Foxhound\". Hi Thomas, nice to have you here."
+        },
+        {
+            "startTime": 27.21,
+            "endTime": 27.29,
+            "body": "Hi,"
+        },
+        {
+            "startTime": 27.36,
+            "endTime": 29.67,
+            "body": "Karsten. Yeah, it's great to be here. Thanks for having me."
+        },
+        {
+            "startTime": 29.68,
+            "endTime": 30.01,
+            "body": "Well,"
+        },
+        {
+            "startTime": 30.01,
+            "endTime": 67.72,
+            "body": "let's see who we have here. Thomas Barber is a security research expert since 2019 who specializes in web security. His background is pretty impressive. He's got a PhD in Particle Physics, and among other places that involved a time at the CERN, the C, E, R, N. So, for us computer people, where one could say, the web was born in 1992, where they discovered, or still trying to discover the Higgs Boson."
+        },
+        {
+            "startTime": 67.87,
+            "endTime": 68.52,
+            "body": "Discovered,"
+        },
+        {
+            "startTime": 68.52,
+            "endTime": 68.79,
+            "body": "yeah."
+        },
+        {
+            "startTime": 68.84,
+            "endTime": 69.95,
+            "body": "Discovered."
+        },
+        {
+            "startTime": 69.95,
+            "endTime": 94.79,
+            "body": "That's it. Okay, probably looking for some other interesting god particles, there still, right? And his professional interest is in software and automotive and in security. And his first programming experiences, Thomas says, was with computer games in BASIC. Thomas, how does one get from computer games in BASIC to particle physics?"
+        },
+        {
+            "startTime": 95.11,
+            "endTime": 95.32,
+            "body": "Well"
+        },
+        {
+            "startTime": 95.32,
+            "endTime": 143.56,
+            "body": "actually, there's quite a lot of computing involved at CERN, and in particle physics. So, a lot of my research in my PhD wasn't just sitting down and thinking about new particles. It was a lot of coding and programming . Either to write code to drive the detector, and to read out all of this data from the detector . Or to analyze the data that we got trying to put it together and trying to understand it. So, there is a lot of coding involved there. And I think as part of my PhD I kind of, at some point, realized that that part of it, the programming part and thinking about how these computer programs work, was, for me, sort of even more interesting than the physics side of it."
+        },
+        {
+            "startTime": 144.1,
+            "endTime": 145.03,
+            "body": "Okay. And"
+        },
+        {
+            "startTime": 145.25,
+            "endTime": 161.8,
+            "body": "is there any similarity in, I don't know, trying to catch the particle while it's trying to escape reality again within a fraction of a second, that I can't express a number of zeros probably, and trying to catch the intruder or something in the security space?"
+        },
+        {
+            "startTime": 162.22,
+            "endTime": 162.55,
+            "body": "Yeah,"
+        },
+        {
+            "startTime": 162.73,
+            "endTime": 200.02,
+            "body": "the worlds are kind of a bit far apart but the methodology, like the scientific techniques that you use, are in principle the same, right. So, setting up an experiment you have a hypothesis, you create your experiment to test that hypothesis, go and do your experiments, and analyze the data, and present the data in a way that other people can understand it. A lot of that is very similar, and I find I kind of keep coming back to those techniques which are used in a completely different field, but in computer science, in security, to create the studies and do the research that we're doing today."
+        },
+        {
+            "startTime": 200.24,
+            "endTime": 200.72,
+            "body": "Okay,"
+        },
+        {
+            "startTime": 200.72,
+            "endTime": 209.03,
+            "body": "great. Before you ask me how I came from geology to working for SAP, let's maybe get to the specific subject of the day better."
+        },
+        {
+            "startTime": 209.03,
+            "endTime": 209.48,
+            "body": "Yep."
+        },
+        {
+            "startTime": 209.48,
+            "endTime": 210.29,
+            "body": "So,"
+        },
+        {
+            "startTime": 210.5,
+            "endTime": 218.9,
+            "body": "what is \"Foxhound\"? Maybe the function or, I don't know, purpose or what is it?"
+        },
+        {
+            "startTime": 218.93,
+            "endTime": 219.66,
+            "body": "Yeah"
+        },
+        {
+            "startTime": 219.66,
+            "endTime": 322.25,
+            "body": "so, project \"Foxhound\" is, it's a fork of the Firefox browser. So, Firefox I think everyone knows. And what we've done with it is we've instrumented it, so we've modified it in certain ways to enable you to use it to detect security vulnerabilities in websites. And the vulnerability in particular that we're looking at is called cross-site scripting . And what cross-site scripting can do, or if you have a website with this vulnerability, so some flaw in the code, like a bug in the code; it actually means that an attacker can execute their own code, like they can choose to execute some code in your browser. So, we all love these sorts of phishing email trainings that come around all the time. But that's one example where, if you get sent a phishing email with a link in it, the link itself might be to a legitimate website. But because it's a website with this cross-site scripting vulnerability it means that the hacker can then pin something to the link, they can put in their own code at the end of the link and execute their code in your browser . And what they can do with that is then they can steal credentials, so they can like access your cookie information like login details. Another example I've seen is installing a keylogger, so that can basically track what you're typing into your keyboard. So, that gets then sent to the attacker as well, and of course this would be pretty bad."
+        },
+        {
+            "startTime": 322.7,
+            "endTime": 323.24,
+            "body": "What I"
+        },
+        {
+            "startTime": 323.24,
+            "endTime": 331.91,
+            "body": "just learned is, that in the phishing email, I shouldn't only check if the main domain the link goes to is legitimate but also what comes after, right?"
+        },
+        {
+            "startTime": 331.91,
+            "endTime": 332.3,
+            "body": "Yes. Yeah,"
+        },
+        {
+            "startTime": 332.31,
+            "endTime": 334.64,
+            "body": "exactly. So, that would be the piece where you can put this."
+        },
+        {
+            "startTime": 334.64,
+            "endTime": 335.26,
+            "body": "So okay,"
+        },
+        {
+            "startTime": 335.29,
+            "endTime": 350.44,
+            "body": "\"Foxhound\" is a branch of Firefox that is specialized to seek out such vulnerabilities. How is it distributed? Is that source or is it binaries?"
+        },
+        {
+            "startTime": 350.5,
+            "endTime": 350.92,
+            "body": "Yeah so,"
+        },
+        {
+            "startTime": 350.92,
+            "endTime": 440.17,
+            "body": "at the moment we are just distributing the source code. So, one of the challenges we had, even at the source code stage, was because Firefox is a web browser it contains actually implementations of cryptographic functionality. So, like its own implementations to do encryption and decryption which your browser uses, for example, with https to make a secure connection to a server . And like coming sort of to the open-source process, if you're trying to release something or distribute something with cryptography that has additional implications in terms of export compliance. So, you have to get this special Export Control Classification Number, this ECCN, before you're allowed to release the source code to the public. But one sort of positive effect of that, even though you need all of this kind of compliance, it was already built into the SAP, like the open-source process. So, that was kind of all in place. We had to kind of get the process started, talk to the right people, the export control group. So, we kind of followed that through and managed to get it released. As far as I know, if you're distributing binaries that contain cryptographic protocols, like as would be the case here, I think there's even additional challenges on top of that."
+        },
+        {
+            "startTime": 440.47,
+            "endTime": 440.83,
+            "body": "I guess"
+        },
+        {
+            "startTime": 440.83,
+            "endTime": 449.08,
+            "body": "you probably then couldn't do that open source anymore. When you're distributing the source code, it's probably easier to exclude the cryptographic part, right?"
+        },
+        {
+            "startTime": 449.24,
+            "endTime": 449.63,
+            "body": "So, the"
+        },
+        {
+            "startTime": 449.63,
+            "endTime": 458.33,
+            "body": "cryptographic part is still in there, but I think there's some additional restrictions. It would be something nice to do, maybe something for the future to look at."
+        },
+        {
+            "startTime": 458.38,
+            "endTime": 458.65,
+            "body": "Let's"
+        },
+        {
+            "startTime": 458.65,
+            "endTime": 475.93,
+            "body": "maybe not dwell on that for too long, because we don't have export control mechanisms in the open-source world as our main topic here, although that is interesting, of course. How did \"Foxhound\" come to life as an open-source project anyway?"
+        },
+        {
+            "startTime": 476.14,
+            "endTime": 476.71,
+            "body": "Yeah so,"
+        },
+        {
+            "startTime": 476.71,
+            "endTime": 555.94,
+            "body": "the line of research that we've been doing to detect the dangerous data flows, which can lead to cross-site scripting, for example . That line of research actually has a long history in the research group, SAP Security Research group. And it was sort of pioneered as a technique by, actually by my predecessor, by Martin Johns. And his study did use this technology. It was now ten years ago, in 2013, to actually visit popular websites, I think up to something like 10,000 of the most popular websites. You can visit them, you can run this technique on them, and they actually discovered that these kinds of vulnerabilities are present in around 10% of websites in the world. So, this was a sort of surprising number. So yeah, that was sort of the study that started it off, and since then we've done a number of follow-ups related to that. So, looking at things like, if these data flows are also using storage mechanisms like cookies in the browser, if they're like looking at how the prevalence of this vulnerability has changed over time. So, if the problem is getting worse or getting better, and looking at defense mechanisms as well."
+        },
+        {
+            "startTime": 556.11,
+            "endTime": 556.35,
+            "body": "I'm"
+        },
+        {
+            "startTime": 556.35,
+            "endTime": 584.94,
+            "body": "actually not all too surprised by the 10%. After somebody told me how some password mechanisms, even for websites that supposedly have a login, how easily some of these are tricked by some simple sending them an equals true statement, kind of thing, with a too easy password programming there. Anyway, how about \"Foxhound\"? Was that open source from the start, or did it start as some closed project?"
+        },
+        {
+            "startTime": 585.41,
+            "endTime": 585.88,
+            "body": "Yeah, I"
+        },
+        {
+            "startTime": 585.95,
+            "endTime": 590.72,
+            "body": "said it was starting off as an internal research tool, if you like."
+        },
+        {
+            "startTime": 590.72,
+            "endTime": 591.14,
+            "body": "Okay."
+        },
+        {
+            "startTime": 591.23,
+            "endTime": 592.1,
+            "body": "And"
+        },
+        {
+            "startTime": 592.73,
+            "endTime": 628.01,
+            "body": "kind of, when I started in the role, I kind of saw we'd been developing this code, and we wanted to collaborate together with the university to carry on the research, and decided then there's a lot of, kind of, overhead in order to set up this research collaboration. We went through all of the process to do that, but in the end decided it would be a lot easier if we could just point them to the code and say: 'Look, here's the code that we've been working on. Why don't you try it out yourselves, and collaborate on it together?'"
+        },
+        {
+            "startTime": 628.54,
+            "endTime": 629.5,
+            "body": "Maybe if"
+        },
+        {
+            "startTime": 629.5,
+            "endTime": 644.26,
+            "body": "you just said it's a cooperation with universities, I would have had to ask you, how does that collaboration work? Now, I don't have to ask you because it's simply an open-source project and you just simply need to point them to it, and then they can work with it, right?"
+        },
+        {
+            "startTime": 644.48,
+            "endTime": 644.66,
+            "body": "Yeah,"
+        },
+        {
+            "startTime": 644.66,
+            "endTime": 659.69,
+            "body": "exactly. Yeah so, we've got like a number of different ways where we can collaborate with universities in a sort of a more formal framework . But we notice it makes it a lot easier to just point them towards the repository, and to try it out."
+        },
+        {
+            "startTime": 659.82,
+            "endTime": 660.42,
+            "body": "Right, and"
+        },
+        {
+            "startTime": 660.42,
+            "endTime": 673.95,
+            "body": "guess the age that you encounter at universities, at least when we talk about students, is probably more fascinated by open-source projects than by setting up a 25 page collaboration contract with someone like SAP, or Microsoft, or whoever, right?"
+        },
+        {
+            "startTime": 673.95,
+            "endTime": 673.96,
+            "body": "Yes."
+        },
+        {
+            "startTime": 673.96,
+            "endTime": 674.19,
+            "body": "Yeah, definitely."
+        },
+        {
+            "startTime": 674.58,
+            "endTime": 675.01,
+            "body": "Okay, I"
+        },
+        {
+            "startTime": 675.01,
+            "endTime": 675.21,
+            "body": "see."
+        },
+        {
+            "startTime": 675.93,
+            "endTime": 676.0,
+            "body": "Yeah, not"
+        },
+        {
+            "startTime": 676.0,
+            "endTime": 676.71,
+            "body": "just for the students."
+        },
+        {
+            "startTime": 676.8,
+            "endTime": 677.49,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 677.49,
+            "endTime": 677.5,
+            "body": "Some of"
+        },
+        {
+            "startTime": 677.5,
+            "endTime": 678.21,
+            "body": "the older people as well."
+        },
+        {
+            "startTime": 681.0,
+            "endTime": 681.96,
+            "body": "Yeah. So,"
+        },
+        {
+            "startTime": 681.96,
+            "endTime": 686.85,
+            "body": "in the end, it was that ease of collaboration that made the open-source decision, or anything else?"
+        },
+        {
+            "startTime": 687.78,
+            "endTime": 688.05,
+            "body": "I'd say"
+        },
+        {
+            "startTime": 688.05,
+            "endTime": 763.86,
+            "body": "that was the main driver, definitely . Because it's a bit to do with the unique position of the SAP Security Research Group that we're doing this industrial research, we want to collaborate with academia, so we're sort of bridging this gap between industrial, like academic research and SAP products, if you like. So, we're kind of a foot in both worlds and kind of, yeah I guess, bridging that gap, and with this open-source project was one of the main motivators. So like, easing this collaboration was one main factor . I was just going to mention that actually this open science is actually becoming more and more of a requirement in the academic world. So, now if you publish a paper, it's not just: 'Okay, you publish a paper. Here are the results.' There's actually a lot of focus coming now onto, you submit your paper, but you also submit some artifacts together with that paper. So, this could be code, it could also be results. And the idea there is that you're trying to make your results more reproducible. It sort of gives more weight to those results and allows others to then build on top of them. So, having an open-source project is really a benefit."
+        },
+        {
+            "startTime": 764.0,
+            "endTime": 764.36,
+            "body": "I guess"
+        },
+        {
+            "startTime": 764.36,
+            "endTime": 801.14,
+            "body": "one can relate to that, particularly when one comes from particle physics, because any results that are being published from that world are, of course, in need of heavy confirmation by others, who will look at all the numbers and all the number crunching that has been done to derive at the results, right? Anyway, that is your perspective now on the collaboration. Unfortunately, for time reasons, we couldn't have anyone from the university with us today. But would you happen to have feedback from the academia side, from the university side, how they see projects like that or particularly \"Foxhound\"?"
+        },
+        {
+            "startTime": 802.01,
+            "endTime": 802.65,
+            "body": "Yeah so,"
+        },
+        {
+            "startTime": 803.67,
+            "endTime": 869.22,
+            "body": "I actually talked to one of the PhD students at the University of Braunschweig. So, this is one of the universities we do a lot of collaboration with, and he gave a couple of pointers. And like I touched on this whole making a project open source, it kind of gives more weight to the project. If you kind of make it open source it means: Okay, you're kind of showing everyone, showing the world, this is what we used, go ahead and try it out yourself. It sort of gives more weight to the results. And also, a bit like making the ease of collaboration. It's also easier for them to onboard new students. So, if they have like a master's student, for example, who would like to start working on something related to project \"Foxhound\", it's much easier if you can just give them the link and say: 'Here it is, try it out, try out the code, download it', or whatever. Rather than saying: 'Okay, first you need to talk to Tom. We need to get a contract. We need to check whether it's okay. He needs to...'"
+        },
+        {
+            "startTime": 869.22,
+            "endTime": 869.42,
+            "body": "To sign"
+        },
+        {
+            "startTime": 869.42,
+            "endTime": 871.46,
+            "body": "the non-disclosure agreement."
+        },
+        {
+            "startTime": 871.67,
+            "endTime": 872.15,
+            "body": "Exactly."
+        },
+        {
+            "startTime": 872.15,
+            "endTime": 873.02,
+            "body": "Exactly, yeah."
+        },
+        {
+            "startTime": 873.02,
+            "endTime": 873.68,
+            "body": "And if"
+        },
+        {
+            "startTime": 873.71,
+            "endTime": 878.36,
+            "body": "you don't follow through on the non-disclosure, we're going to sue you for everything you have."
+        },
+        {
+            "startTime": 878.36,
+            "endTime": 878.64,
+            "body": "Yeah,"
+        },
+        {
+            "startTime": 878.64,
+            "endTime": 881.72,
+            "body": "that might put you off as a master's student, right?"
+        },
+        {
+            "startTime": 882.46,
+            "endTime": 883.32,
+            "body": "Right"
+        },
+        {
+            "startTime": 883.32,
+            "endTime": 890.86,
+            "body": "so, is that the only issue, basically? Did that solve it all? Or were there any other challenges to make the project fly?"
+        },
+        {
+            "startTime": 890.91,
+            "endTime": 891.32,
+            "body": "Yeah,"
+        },
+        {
+            "startTime": 891.32,
+            "endTime": 1024.53,
+            "body": "there were a lot of challenges. So, like the biggest one was the fact that Firefox, which we're based on, is such a huge project. I mean, it's a massive code base. I think it's probably like rivals, I don't know, the Linux kernel is one of the biggest like open-source projects. And I kind of checked just before the recording and there's something like 10 million lines of code in the Firefox codebase . And the release branch, you can go and look at it on GitHub, has over 900,000 commits. And what's funny, when I was trying to transfer over or push the original commit to the open-source repository, it wouldn't go in one, like in one push. I had to do it in chunks. And there you could see the history of the browser evolving over the years as I kind of pushed these chunks, and you could even see like the history back to '98 when Firefox was still Netscape with the first commit to the browser, had some message: 'Free the lizard .', when Firefox was still this Mozilla kind of dinosaur character. So, it's really like a big project, there's kind of a technical challenge in maintaining that code and just for the sheer size of it. But again, coming back to the open-source process part, there's also a lot of different code coming from different places. So, I think there's something like 130 different open-source licenses inside Firefox. So, not just instances of a certain license, but 130 different actual licenses. And so, also in the open-source process at SAP there was obviously a part which deals with this. And to kind of go through, evaluate all of those licenses, make sure that the outgoing license which we release \"Foxhound\" under is compatible with all of those, like checking the legal process was also a bit of a challenge. I think I kind of gave the colleagues in open source kind of a good workout with this one."
+        },
+        {
+            "startTime": 1025.42,
+            "endTime": 1026.11,
+            "body": "I think"
+        },
+        {
+            "startTime": 1026.11,
+            "endTime": 1054.64,
+            "body": "we could even point back to a couple of other episodes in this podcast series where we talked about different licenses, and even for license type scanners and so on. I didn't prepare well enough, otherwise I could tell you when these were broadcast. I don't know offhand, but I know we talked about this subject. Let's get back to \"Foxhound\", though. The community, is that pretty lively? Or is that a niche project? How much traffic do you see?"
+        },
+        {
+            "startTime": 1054.83,
+            "endTime": 1055.77,
+            "body": "Yeah so,"
+        },
+        {
+            "startTime": 1055.77,
+            "endTime": 1107.19,
+            "body": "we're slowly trying to build a community. I mean the tool, like I mentioned, it's not the easiest one maybe to get started with. So, we've got something like 50 stars on GitHub and over ten forks. It's mostly research collaborations, like I said . But it has allowed us to start off those collaborations. So, apart from the original project with University of Braunschweig, we've also had contact with other universities and student projects with, for example, Karlsruher Institute of Technology. And we've got some work ongoing at the moment with the Helmholtz Center for Information Security, so CISPA . And there we're trying to expand the browser to look for different types of vulnerabilities. So, not just cross-site scripting but other classes of vulnerability."
+        },
+        {
+            "startTime": 1107.19,
+            "endTime": 1107.63,
+            "body": "Such"
+        },
+        {
+            "startTime": 1107.63,
+            "endTime": 1108.2,
+            "body": "as?"
+        },
+        {
+            "startTime": 1108.25,
+            "endTime": 1108.64,
+            "body": "So,"
+        },
+        {
+            "startTime": 1108.64,
+            "endTime": 1135.13,
+            "body": "there's other things like, it's called cross-site request forgery. So, it's similar but you don't execute code in the user's browser but you kind of you trick their browser into performing actions for you. So, you can for example, I don't know, you can force the user's browser to delete records in a database or perform actions on behalf of an attacker."
+        },
+        {
+            "startTime": 1135.16,
+            "endTime": 1135.64,
+            "body": "Okay."
+        },
+        {
+            "startTime": 1135.64,
+            "endTime": 1155.02,
+            "body": "And as the question actually was, the community how lively it is and so on. Do you have any big players active in it? Or is it a couple of people, well SAP of course is a big player, sorry. Any other big players, but SAP, active in the community?"
+        },
+        {
+            "startTime": 1155.89,
+            "endTime": 1156.22,
+            "body": "Well, we"
+        },
+        {
+            "startTime": 1156.22,
+            "endTime": 1178.81,
+            "body": "did have, actually, a pull request a few weeks ago from an email address, at least, from someone from Google. It was quite a small change, like correcting some typos somewhere, but at least it shows that there's people aware of the project and looking into it. So, maybe it's kind of stoking interest in other places."
+        },
+        {
+            "startTime": 1179.11,
+            "endTime": 1179.68,
+            "body": "Watching"
+        },
+        {
+            "startTime": 1179.68,
+            "endTime": 1185.53,
+            "body": "the competition ? Because it's a Firefox branch and they're protecting their Chrome, of course."
+        },
+        {
+            "startTime": 1185.53,
+            "endTime": 1186.02,
+            "body": "Possibly."
+        },
+        {
+            "startTime": 1186.02,
+            "endTime": 1186.83,
+            "body": "Possibly."
+        },
+        {
+            "startTime": 1186.83,
+            "endTime": 1187.06,
+            "body": "Who knows"
+        },
+        {
+            "startTime": 1187.63,
+            "endTime": 1194.86,
+            "body": ". Anyway, how about uses ? In like, beyond the research collaboration of developing it."
+        },
+        {
+            "startTime": 1195.61,
+            "endTime": 1196.0,
+            "body": "Yeah so,"
+        },
+        {
+            "startTime": 1196.0,
+            "endTime": 1235.21,
+            "body": "there's a couple of places like within SAP where we're looking at trying to deploy it and turn it a bit more from a simple research tool into more of a security testing, not product, but kind of an open-source tool for security testing. And we actually had the security validation team at SAP who do penetration testing, security testing, on products before they're shipped. They actually found an example of this cross-site scripting bug, which commercial tools were not able to find. I was quite proud of this that we outperformed some of the commercial tools."
+        },
+        {
+            "startTime": 1235.77,
+            "endTime": 1236.01,
+            "body": "That's"
+        },
+        {
+            "startTime": 1236.01,
+            "endTime": 1246.96,
+            "body": "actually one of the benchmarks, right? I mean, there's tons of tools around that will find, I don't know, 80%, 90%, 95. And your tool is good as soon as it finds something the others don't, right?"
+        },
+        {
+            "startTime": 1247.04,
+            "endTime": 1247.62,
+            "body": "Exactly,"
+        },
+        {
+            "startTime": 1247.62,
+            "endTime": 1249.65,
+            "body": "yeah. Yeah so, this would be really nice."
+        },
+        {
+            "startTime": 1249.65,
+            "endTime": 1250.03,
+            "body": "Doesn't"
+        },
+        {
+            "startTime": 1250.03,
+            "endTime": 1257.92,
+            "body": "necessarily find everything that the others find, but your tool is worth its while as soon as it finds something that nobody else has found, I guess."
+        },
+        {
+            "startTime": 1257.94,
+            "endTime": 1258.62,
+            "body": "Exactly,"
+        },
+        {
+            "startTime": 1258.62,
+            "endTime": 1258.81,
+            "body": "yeah."
+        },
+        {
+            "startTime": 1259.57,
+            "endTime": 1259.84,
+            "body": "Yeah. And"
+        },
+        {
+            "startTime": 1259.84,
+            "endTime": 1269.98,
+            "body": "beyond within SAP, that you were just talking about, are there any outside SAP integrations, use cases or collaborations, beyond the universities, whatever?"
+        },
+        {
+            "startTime": 1270.18,
+            "endTime": 1270.8,
+            "body": "Yeah like,"
+        },
+        {
+            "startTime": 1270.81,
+            "endTime": 1311.97,
+            "body": "one of the things we're trying to do is integrate what we've been doing in project \"Foxhound\" with another tool called \"Playwright\". It's an open-source tool from Microsoft, and it enables you to automate browser actions. So, instead of opening a browser by hand and putting in a URL and clicking around, you can actually like script this, with a piece of JavaScript, to perform those actions for you. So, that's something we've done and we've actually like aligned the releases of \"Foxhound\" now with the corresponding commit for Firefox so that you can do this integration with \"Playwright\" pretty seamlessly."
+        },
+        {
+            "startTime": 1312.3,
+            "endTime": 1312.84,
+            "body": "Okay, so"
+        },
+        {
+            "startTime": 1312.84,
+            "endTime": 1330.48,
+            "body": "here's a Microsoft project that is interested. And actually, follow up to that of course always is: Would that be specifically needing \"Foxhound\" ? Or could they also do this with Firefox as it is in the main branch?"
+        },
+        {
+            "startTime": 1331.7,
+            "endTime": 1332.51,
+            "body": "So, what"
+        },
+        {
+            "startTime": 1332.66,
+            "endTime": 1352.1,
+            "body": "we actually do is, the patches that are provided are already for Firefox. So, Microsoft they'll make some small changes to the browser to enable their automation framework to run. And we take those patches and then apply them to \" Foxhound\". So, that's how we're doing that integration."
+        },
+        {
+            "startTime": 1352.68,
+            "endTime": 1353.43,
+            "body": "And"
+        },
+        {
+            "startTime": 1353.67,
+            "endTime": 1359.58,
+            "body": "apart from the \"Playwright\" thing, are there more projects like it on the horizon?"
+        },
+        {
+            "startTime": 1360.2,
+            "endTime": 1361.16,
+            "body": "Yeah"
+        },
+        {
+            "startTime": 1361.16,
+            "endTime": 1417.41,
+            "body": "so, one of the things we're looking at is expanding beyond just using \"Foxhound\" for security, but also use it to detect like privacy issues with websites. So, there are some websites, if you visit them, they collect different attributes about, like from your browser. So, this could be things just like the screen height, the screen width, information about which browser version you're using. And on their own these things seem pretty benign, but if you collect enough of these attributes, you can actually build up a unique fingerprint of that browser and use it to track individual people across the web. So, what we're trying to do is see whether we can use the same technology but apply it to this privacy space to detect those kind of fingerprinting activities."
+        },
+        {
+            "startTime": 1417.94,
+            "endTime": 1418.57,
+            "body": "Okay,"
+        },
+        {
+            "startTime": 1418.72,
+            "endTime": 1434.47,
+            "body": "that sounds like one of the things that could even, sometimes be of even more interest . At least from this particular German perspective, where we are very worried about our data privacy and data protection, sometimes seems more than the rest of the world."
+        },
+        {
+            "startTime": 1434.54,
+            "endTime": 1434.7,
+            "body": "Yeah,"
+        },
+        {
+            "startTime": 1434.78,
+            "endTime": 1437.48,
+            "body": "yeah. It's definitely, with GDPR that's very relevant to that."
+        },
+        {
+            "startTime": 1438.08,
+            "endTime": 1438.89,
+            "body": "Now,"
+        },
+        {
+            "startTime": 1438.92,
+            "endTime": 1451.67,
+            "body": "this being a project that lives off contributions, of course. Are there any wishes, who should still join? Or contributions you're like waiting for."
+        },
+        {
+            "startTime": 1452.59,
+            "endTime": 1452.95,
+            "body": "Yeah,"
+        },
+        {
+            "startTime": 1452.95,
+            "endTime": 1502.78,
+            "body": "there's always a big to-do list with all of these projects. One thing that I've wanted to do for a long time is, to actually get support for more operating systems. So, we've got builds for Linux, I think the Windows build should still be working. It would be really nice to have someone to do the build for a Mac as well . So, to run on as many platforms as possible. And there's also some technical things, like we're trying to push for more stability, to integrate with some other testing tools . Making sure that the changes that we make don't actually impact the performance or the accuracy of the engine, so the thing which is doing the JavaScript interpreting is still compliant with all of the standards there, that we've not kind of broken something inadvertently along the way."
+        },
+        {
+            "startTime": 1503.47,
+            "endTime": 1503.8,
+            "body": "Okay."
+        },
+        {
+            "startTime": 1503.8,
+            "endTime": 1506.62,
+            "body": "That's the main thing? Or anything else?"
+        },
+        {
+            "startTime": 1506.89,
+            "endTime": 1507.28,
+            "body": "Yeah,"
+        },
+        {
+            "startTime": 1507.28,
+            "endTime": 1542.32,
+            "body": "there's a few other things. So, we'd also like to expand like the, a bit the accuracy. So, we're currently just instrumenting these string data types in the browser. So, they're the ones which are most relevant for security. And it would be interesting to expand it to other data types, so like JavaScript objects or to numbers. This would be something which would be useful to do. And yeah also, some sort of better integration into the internal workings of the JavaScript engine and Firefox itself, a bit better."
+        },
+        {
+            "startTime": 1542.39,
+            "endTime": 1543.02,
+            "body": "Okay, then"
+        },
+        {
+            "startTime": 1543.02,
+            "endTime": 1567.2,
+            "body": "let me do the commercial break part. You've heard Thomas Barber what is needed in the \"Foxhound\" project. So, if you have good C++ code experience, and if you are willing to work in a complex and sometimes frustrating, yet very rewarding project, and if you think the web is part of our everyday life, and you want to understand better how browsers work; join \"Foxhound\". Was that about the way I should have said it?"
+        },
+        {
+            "startTime": 1567.4,
+            "endTime": 1567.44,
+            "body": "Yeah, I"
+        },
+        {
+            "startTime": 1567.44,
+            "endTime": 1567.59,
+            "body": "couldn't have put it better myself."
+        },
+        {
+            "startTime": 1569.84,
+            "endTime": 1570.14,
+            "body": "Okay. We"
+        },
+        {
+            "startTime": 1570.14,
+            "endTime": 1594.14,
+            "body": "didn't plan this. I just figured that we do this as a commercial break before we come to the famous before last question . If someone has felt addressed by what you and I just said right before, where should they go to find information? Of course, you always have the GitHub repo. Is there anything beyond that?"
+        },
+        {
+            "startTime": 1595.32,
+            "endTime": 1595.68,
+            "body": "I'd say"
+        },
+        {
+            "startTime": 1595.69,
+            "endTime": 1641.58,
+            "body": "the GitHub repository is the main place to contribute. So, it's under the SAP organization and then it's project minus \"Foxhound\". So yeah, to kind of raise awareness, if you want to, have a, try it out; you can leave a star with us on GitHub. Try checking out the code, building it and running it. I'd say if you get that far then you're kind of already enthusiastic enough to contribute. Have a look at the to-do's, the open issues, there's a list there of things . Even if there's nothing that you think is, kind of, really suiting you but you have some cool ideas, then also feel free to kind of leave a message there, reach out to us if you're interested in collaborating."
+        },
+        {
+            "startTime": 1641.81,
+            "endTime": 1642.38,
+            "body": "Okay so,"
+        },
+        {
+            "startTime": 1642.38,
+            "endTime": 1647.69,
+            "body": "it's mainly on GitHub. There is no accompanying YouTube channel yet or anything like that, right?"
+        },
+        {
+            "startTime": 1647.69,
+            "endTime": 1648.04,
+            "body": "Yeah. No,"
+        },
+        {
+            "startTime": 1648.04,
+            "endTime": 1652.28,
+            "body": "not yet. Maybe as a follow-up to this, I'll start doing some YouTube."
+        },
+        {
+            "startTime": 1652.88,
+            "endTime": 1653.6,
+            "body": "Then,"
+        },
+        {
+            "startTime": 1653.6,
+            "endTime": 1664.76,
+            "body": "last question: What are the, some people call it, key takeaways. What are the three to four main things, in very short, that you want everyone to remember from this episode?"
+        },
+        {
+            "startTime": 1665.19,
+            "endTime": 1665.85,
+            "body": "Yeah so,"
+        },
+        {
+            "startTime": 1665.85,
+            "endTime": 1730.32,
+            "body": "the biggest thing is, I think for me, to, that may maybe a bit cheesy, but to thank the open-source team at SAP. So, this was a big project . You could see like whenever I had calls with them that you'd open the video and then they'd kind of realize what we were talking about and that it was such a big project, and their faces would all kind of drop. So a big, big thank you for them. In the end, this open-source process really worked, even with such a complex product. The second thing is, yeah, that web security is important. We use web applications so much in modern life, and having secure web applications is really like key to making that whole ecosystem work. And project \"Foxhound\" can help to keep those applications secure. And the last thing, the third point I'd say is, if you are interested in security in a frustrating, enormous code bases, then don't be afraid to get involved. Contribute, reach out if you have some ideas."
+        },
+        {
+            "startTime": 1730.73,
+            "endTime": 1731.24,
+            "body": "Okay."
+        },
+        {
+            "startTime": 1731.27,
+            "endTime": 1735.83,
+            "body": "Thank you very much, Thomas. Thanks for being our guest today. It was nice to have you here."
+        },
+        {
+            "startTime": 1735.86,
+            "endTime": 1736.04,
+            "body": "Yeah,"
+        },
+        {
+            "startTime": 1736.04,
+            "endTime": 1737.66,
+            "body": "thank you very much for having me, Karsten."
+        },
+        {
+            "startTime": 1738.77,
+            "endTime": 1739.37,
+            "body": "And then"
+        },
+        {
+            "startTime": 1739.4,
+            "endTime": 1766.55,
+            "body": "thanks everyone out there who listened to \"The Open Source Way\". If you enjoyed this episode, please share it and don't miss the next one. We usually publish every last Wednesday of the month, and you'll find us on openSAP and in all those places where you find your other podcasts . Either the mainstream apps that you know, or some of the, themselves, open-source podcast apps. Thanks again and bye bye."
+        }
+    ]
+}

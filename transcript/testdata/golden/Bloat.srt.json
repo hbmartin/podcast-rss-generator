@@ -1,0 +1,3674 @@
+{
+    "version": "1.0.0",
+    "segments": [
+        {
+            "speaker": "Michael",
+            "startTime": 0.06,
+            "endTime": 2.68,
+            "body": "Hello, and welcome to PostgresFM, a weekly show about"
+        },
+        {
+            "startTime": 2.68,
+            "endTime": 3.9,
+            "body": "all things PostgreSQL."
+        },
+        {
+            "startTime": 3.9,
+            "endTime": 7.36,
+            "body": "I am Michael, founder of pgMustard, and today I am joined by"
+        },
+        {
+            "startTime": 7.36,
+            "endTime": 10.84,
+            "body": "Chelsea Dole, staff software engineer and tech lead of the data"
+        },
+        {
+            "startTime": 10.84,
+            "endTime": 15.04,
+            "body": "storage team at Brex, and speaker at several prestigious Postgres"
+        },
+        {
+            "startTime": 15.06,
+            "endTime": 16.86,
+            "body": "conferences over the past couple of years."
+        },
+        {
+            "startTime": 16.96,
+            "endTime": 18.66,
+            "body": "Thanks so much for joining me, Chelsea."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 19.28,
+            "endTime": 20.82,
+            "body": "Thanks so much for having me, Michael."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 21.54,
+            "endTime": 22.04,
+            "body": "Wonderful."
+        },
+        {
+            "startTime": 22.08,
+            "endTime": 26.58,
+            "body": "Well, I have seen several of your talks and loved how well you've"
+        },
+        {
+            "startTime": 26.58,
+            "endTime": 28.7,
+            "body": "explained a few concepts now."
+        },
+        {
+            "startTime": 28.7,
+            "endTime": 30.3,
+            "body": "One of those was bloat."
+        },
+        {
+            "startTime": 30.36,
+            "endTime": 33.08,
+            "body": "And looking back at our previous episodes, I realized we hadn't"
+        },
+        {
+            "startTime": 33.08,
+            "endTime": 36.18,
+            "body": "actually done an episode on bloat itself."
+        },
+        {
+            "startTime": 36.4,
+            "endTime": 40.84,
+            "body": "We've done plenty that mention it, that are around it, but I"
+        },
+        {
+            "startTime": 40.84,
+            "endTime": 44.28,
+            "body": "loved your explanations and I'm looking forward to having a chat"
+        },
+        {
+            "startTime": 44.28,
+            "endTime": 48.7,
+            "body": "with you about what it is, how people can think about it, and"
+        },
+        {
+            "startTime": 48.7,
+            "endTime": 50.24,
+            "body": "some strategies around it."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 50.74,
+            "endTime": 51.22,
+            "body": "Thank you."
+        },
+        {
+            "startTime": 51.22,
+            "endTime": 55.02,
+            "body": "Well, as a PostgresFM loyal listener, I've definitely listened"
+        },
+        {
+            "startTime": 55.02,
+            "endTime": 59.64,
+            "body": "to a couple of those bloat sphere conversations, let's say."
+        },
+        {
+            "startTime": 59.64,
+            "endTime": 62.3,
+            "body": "So it's nice to be addressing it more directly."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 63.44,
+            "endTime": 64.18,
+            "body": "Yeah, awesome."
+        },
+        {
+            "startTime": 64.64,
+            "endTime": 69.08,
+            "body": "So in terms of where to start, I guess we should cover what is"
+        },
+        {
+            "startTime": 69.08,
+            "endTime": 69.44,
+            "body": "bloat."
+        },
+        {
+            "startTime": 69.44,
+            "endTime": 71.06,
+            "body": "How do you think about it?"
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 71.12,
+            "endTime": 74.78,
+            "body": "So Postgres bloat basically occurs as a function of"
+        },
+        {
+            "startTime": 74.78,
+            "endTime": 78.82,
+            "body": "MVCC and it's kind of an extension of the autovacuum process."
+        },
+        {
+            "startTime": 79.32,
+            "endTime": 83.6,
+            "body": "So in MVCC, all the actions you're doing, inserts, updates, deletes,"
+        },
+        {
+            "startTime": 83.8,
+            "endTime": 87.46,
+            "body": "those are all actually updates or editing metadata on a tuple,"
+        },
+        {
+            "startTime": 87.52,
+            "endTime": 89.28,
+            "body": "not hard-deleting it in place."
+        },
+        {
+            "startTime": 89.54,
+            "endTime": 94.64,
+            "body": "This basically allows MVCC to be both compliant with ACID principles"
+        },
+        {
+            "startTime": 94.64,
+            "endTime": 97.78,
+            "body": "and still fast, so it doesn't slow things down too much."
+        },
+        {
+            "startTime": 98.32,
+            "endTime": 102.22,
+            "body": "When those tuples are generally hard-deleted is through vacuum,"
+        },
+        {
+            "startTime": 102.44,
+            "endTime": 105.78,
+            "body": "which runs every now and again, depending on your configurations"
+        },
+        {
+            "startTime": 106.02,
+            "endTime": 106.68,
+            "body": "and autovacuum."
+        },
+        {
+            "startTime": 107.38,
+            "endTime": 110.68,
+            "body": "But if autovacuum can't keep up, and you have lots of those"
+        },
+        {
+            "startTime": 110.68,
+            "endTime": 114.14,
+            "body": "inserts and updates and deletes, then you can get into a state"
+        },
+        {
+            "startTime": 114.14,
+            "endTime": 118.58,
+            "body": "where your Postgres pages are basically bin-packed with a bunch"
+        },
+        {
+            "startTime": 118.58,
+            "endTime": 121.26,
+            "body": "of dead or soft-deleted tuples."
+        },
+        {
+            "startTime": 121.92,
+            "endTime": 123.66,
+            "body": "And that leads to bloat."
+        },
+        {
+            "startTime": 123.84,
+            "endTime": 128.04,
+            "body": "So bloat is the state where you have these table pages that are"
+        },
+        {
+            "startTime": 128.04,
+            "endTime": 132.16,
+            "body": "full of basically useless data that vacuum is hurrying to kind"
+        },
+        {
+            "startTime": 132.16,
+            "endTime": 134.18,
+            "body": "of run around and catch up."
+        },
+        {
+            "startTime": 134.18,
+            "endTime": 137.64,
+            "body": "And so Postgres has to keep on adding new empty pages to the"
+        },
+        {
+            "startTime": 137.64,
+            "endTime": 141.24,
+            "body": "end of your heap, which leads to all sorts of, I'd say, non-optimal"
+        },
+        {
+            "startTime": 141.32,
+            "endTime": 141.82,
+            "body": "outcomes."
+        },
+        {
+            "startTime": 141.82,
+            "endTime": 143.52,
+            "body": "So too long, didn't read."
+        },
+        {
+            "startTime": 143.52,
+            "endTime": 146.5,
+            "body": "It's unoptimal tuple density in your pages."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 147.38,
+            "endTime": 148.74,
+            "body": "Yeah, I really like that."
+        },
+        {
+            "startTime": 148.74,
+            "endTime": 155.56,
+            "body": "So if we end up in a situation where a large proportion of our"
+        },
+        {
+            "startTime": 155.56,
+            "endTime": 160.78,
+            "body": "table, maybe including the indexes, is sparsely stored on disk,"
+        },
+        {
+            "startTime": 161.16,
+            "endTime": 165.02,
+            "body": "that has knock-on effects and that's referred to as a table with"
+        },
+        {
+            "startTime": 165.02,
+            "endTime": 165.92,
+            "body": "a lot of bloat."
+        },
+        {
+            "startTime": 165.92,
+            "endTime": 169.7,
+            "body": "I've thought about it in the past as almost the diff between"
+        },
+        {
+            "startTime": 170.08,
+            "endTime": 175.68,
+            "body": "the table's current state and if we completely rebuilt that table"
+        },
+        {
+            "startTime": 175.68,
+            "endTime": 176.54,
+            "body": "with its indexes."
+        },
+        {
+            "startTime": 176.68,
+            "endTime": 178.66,
+            "body": "Like the diff I think of as bloat."
+        },
+        {
+            "startTime": 178.66,
+            "endTime": 181.94,
+            "body": "I don't think it's the only definition that's acceptable because"
+        },
+        {
+            "startTime": 182.42,
+            "endTime": 186.94,
+            "body": "of like fill factor and things like there are other technical"
+        },
+        {
+            "startTime": 186.94,
+            "endTime": 190.58,
+            "body": "details but I like it because I think it's quite practical and"
+        },
+        {
+            "startTime": 191.18,
+            "endTime": 192.78,
+            "body": "in terms of what it means."
+        },
+        {
+            "startTime": 192.98,
+            "endTime": 194.9,
+            "body": "So what but why is this a problem?"
+        },
+        {
+            "startTime": 194.9,
+            "endTime": 199.22,
+            "body": "Like when have you seen this cause issues and how bad are"
+        },
+        {
+            "startTime": 199.22,
+            "endTime": 199.94,
+            "body": "these issues?"
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 200.54,
+            "endTime": 202.04,
+            "body": "There's a huge spectrum there."
+        },
+        {
+            "startTime": 202.04,
+            "endTime": 205.76,
+            "body": "And I would first preface by saying, I wouldn't call this a hot"
+        },
+        {
+            "startTime": 205.76,
+            "endTime": 208.98,
+            "body": "take, but maybe a lukewarm take is that bloat is really not always"
+        },
+        {
+            "startTime": 208.98,
+            "endTime": 209.64,
+            "body": "a problem."
+        },
+        {
+            "startTime": 210.36,
+            "endTime": 214.12,
+            "body": "I think that a lot of people think of this as this, oh God, our"
+        },
+        {
+            "startTime": 214.12,
+            "endTime": 216.42,
+            "body": "tables are bloated, what are we ever going to do?"
+        },
+        {
+            "startTime": 216.68,
+            "endTime": 219.56,
+            "body": "But there's plenty of situations where you have a bloated table"
+        },
+        {
+            "startTime": 219.56,
+            "endTime": 223.38,
+            "body": "that's serviceable and you're able to get it to a slightly better"
+        },
+        {
+            "startTime": 223.38,
+            "endTime": 225.32,
+            "body": "state without any drastic measures."
+        },
+        {
+            "startTime": 225.86,
+            "endTime": 229.7,
+            "body": "But the main issue that bloat can cause, which can lead to downstream"
+        },
+        {
+            "startTime": 229.9,
+            "endTime": 231.9,
+            "body": "issues, is really increased IO."
+        },
+        {
+            "startTime": 232.54,
+            "endTime": 237.52,
+            "body": "And IO is sort of the grandfather of all these downstream issues"
+        },
+        {
+            "startTime": 237.52,
+            "endTime": 240.56,
+            "body": "that nobody likes, like high latency on your reads."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 241.16,
+            "endTime": 241.34,
+            "body": "You"
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 241.34,
+            "endTime": 243.9,
+            "body": "know, it leads to IO because essentially if you think"
+        },
+        {
+            "startTime": 243.9,
+            "endTime": 248.94,
+            "body": "of it logically, like if I have 10 rows across 2 pages, if I"
+        },
+        {
+            "startTime": 248.94,
+            "endTime": 251.52,
+            "body": "do a sequential scan, I've now scanned 2 pages."
+        },
+        {
+            "startTime": 251.52,
+            "endTime": 253.3,
+            "body": "That's a certain amount of IO."
+        },
+        {
+            "startTime": 253.58,
+            "endTime": 257.42,
+            "body": "But if I have really bad tuple density, I've got table bloat,"
+        },
+        {
+            "startTime": 257.44,
+            "endTime": 261.14,
+            "body": "then maybe I'm scanning 10 rows or 10 tuples across 8 pages."
+        },
+        {
+            "startTime": 261.34,
+            "endTime": 264.02,
+            "body": "And so I'm scanning the same amount of data, but I just had,"
+        },
+        {
+            "startTime": 264.02,
+            "endTime": 265.82,
+            "body": "you know, 4x the IO."
+        },
+        {
+            "startTime": 266.26,
+            "endTime": 270.6,
+            "body": "So that can lead to downstream negative effects with Reads, of"
+        },
+        {
+            "startTime": 270.6,
+            "endTime": 271.06,
+            "body": "course."
+        },
+        {
+            "startTime": 271.06,
+            "endTime": 274.06,
+            "body": "And you guys have talked a couple of times about, you know, explain"
+        },
+        {
+            "startTime": 274.06,
+            "endTime": 275.46,
+            "body": "buffers and things like that."
+        },
+        {
+            "startTime": 275.46,
+            "endTime": 278.48,
+            "body": "So that's a really good way to sort of see off the cuff, you"
+        },
+        {
+            "startTime": 278.48,
+            "endTime": 281.14,
+            "body": "know, whether you're using an appropriate amount of IO."
+        },
+        {
+            "startTime": 281.14,
+            "endTime": 285.06,
+            "body": "But as I said, there are places where you can have, you know,"
+        },
+        {
+            "startTime": 285.06,
+            "endTime": 288.46,
+            "body": "some amount of table bloat and it's not really causing an issue."
+        },
+        {
+            "startTime": 288.58,
+            "endTime": 292.06,
+            "body": "I would say that where I look for it as the biggest long-term"
+        },
+        {
+            "startTime": 292.24,
+            "endTime": 296.1,
+            "body": "issue to solve and really address, is those workloads that are"
+        },
+        {
+            "startTime": 296.1,
+            "endTime": 298.3,
+            "body": "going to be very update and delete heavy."
+        },
+        {
+            "startTime": 298.36,
+            "endTime": 302.6,
+            "body": "Having some bloat on a normal workload, if your users aren't"
+        },
+        {
+            "startTime": 302.6,
+            "endTime": 307.34,
+            "body": "seeing effects on latency through the IO, I would sometimes just"
+        },
+        {
+            "startTime": 307.34,
+            "endTime": 311.02,
+            "body": "say shrug, you know, the important thing is the end-to-end experience"
+        },
+        {
+            "startTime": 311.54,
+            "endTime": 314.28,
+            "body": "and the long-term maintainability for you as a dev."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 315.06,
+            "endTime": 316.16,
+            "body": "Yep, love that."
+        },
+        {
+            "startTime": 316.32,
+            "endTime": 317.44,
+            "body": "And very practical as well."
+        },
+        {
+            "startTime": 317.44,
+            "endTime": 319.98,
+            "body": "I've seen a couple of your talks on this."
+        },
+        {
+            "startTime": 321.26,
+            "endTime": 324.14,
+            "body": "And you mentioned IO, but you mentioned it quite late on."
+        },
+        {
+            "startTime": 324.14,
+            "endTime": 327.18,
+            "body": "I'm like, oh yeah, it is as simple as that really."
+        },
+        {
+            "startTime": 327.26,
+            "endTime": 329.68,
+            "body": "Obviously there are other bad things."
+        },
+        {
+            "startTime": 329.68,
+            "endTime": 331.4,
+            "body": "Like it's taking up more disk space, right?"
+        },
+        {
+            "startTime": 331.4,
+            "endTime": 336.0,
+            "body": "Like it's taking up more space in memory, but ultimately the user"
+        },
+        {
+            "startTime": 336.0,
+            "endTime": 338.86,
+            "body": "experience wise, that's normally what a lot of us are fighting"
+        },
+        {
+            "startTime": 338.86,
+            "endTime": 341.08,
+            "body": "with, especially on busy systems."
+        },
+        {
+            "startTime": 342.38,
+            "endTime": 345.52,
+            "body": "So slow queries that users are reporting is a natural sign."
+        },
+        {
+            "startTime": 345.58,
+            "endTime": 349.54,
+            "body": "How do you go from that to realizing, oh, my problem is a bloated"
+        },
+        {
+            "startTime": 349.54,
+            "endTime": 350.04,
+            "body": "table?"
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 350.58,
+            "endTime": 352.32,
+            "body": "I think there's sort of 2 paths for that."
+        },
+        {
+            "startTime": 352.32,
+            "endTime": 355.08,
+            "body": "In my experience, the first one is before you ever know what bloat"
+        },
+        {
+            "startTime": 355.08,
+            "endTime": 356.82,
+            "body": "is, how do you discover bloat?"
+        },
+        {
+            "startTime": 357.44,
+            "endTime": 361.1,
+            "body": "And I would say that usually the path is you have a really bloated"
+        },
+        {
+            "startTime": 361.1,
+            "endTime": 364.9,
+            "body": "system and there's really no other explanation for it until you"
+        },
+        {
+            "startTime": 364.9,
+            "endTime": 367.22,
+            "body": "go down those paths and try to figure it out."
+        },
+        {
+            "startTime": 367.36,
+            "endTime": 370.38,
+            "body": "For myself, just sort of going through how I discovered table"
+        },
+        {
+            "startTime": 370.38,
+            "endTime": 373.82,
+            "body": "bloat, thinking back, you know, I've worked, I would say, in"
+        },
+        {
+            "startTime": 373.82,
+            "endTime": 377.32,
+            "body": "Postgres at scale, at the last two companies I've worked at."
+        },
+        {
+            "startTime": 377.32,
+            "endTime": 381.02,
+            "body": "Before that, with it more as like a passing, just a tool I happened"
+        },
+        {
+            "startTime": 381.02,
+            "endTime": 381.72,
+            "body": "to use."
+        },
+        {
+            "startTime": 382.38,
+            "endTime": 387.68,
+            "body": "And I saw it in great scale when I first started at Brex."
+        },
+        {
+            "startTime": 387.82,
+            "endTime": 390.54,
+            "body": "And the way that I actually saw it is that we had a developer"
+        },
+        {
+            "startTime": 390.54,
+            "endTime": 391.32,
+            "body": "reach out."
+        },
+        {
+            "startTime": 391.58,
+            "endTime": 396.82,
+            "body": "And they said, hey, you know, I have this, let's say, 50 gigabytes"
+        },
+        {
+            "startTime": 396.82,
+            "endTime": 401.32,
+            "body": "of tables total on this server, there's only one database, and"
+        },
+        {
+            "startTime": 401.32,
+            "endTime": 404.48,
+            "body": "for some reason, we're almost running out of disk."
+        },
+        {
+            "startTime": 405.24,
+            "endTime": 406.92,
+            "body": "Why do I have so?"
+        },
+        {
+            "startTime": 407.72,
+            "endTime": 409.04,
+            "body": "Where's all this space going?"
+        },
+        {
+            "startTime": 409.04,
+            "endTime": 412.76,
+            "body": "Because I can see my table size and then remaining table space"
+        },
+        {
+            "startTime": 412.78,
+            "endTime": 413.52,
+            "body": "on disk."
+        },
+        {
+            "startTime": 413.52,
+            "endTime": 417.04,
+            "body": "We use RDS on Cloud, so you're able to see that pretty easily."
+        },
+        {
+            "startTime": 418.48,
+            "endTime": 421.58,
+            "body": "I went and I said, I actually don't totally know."
+        },
+        {
+            "startTime": 422.02,
+            "endTime": 423.34,
+            "body": "Let me check this out."
+        },
+        {
+            "startTime": 423.9,
+            "endTime": 426.74,
+            "body": "When I went and checked it out, I could see that there was just"
+        },
+        {
+            "startTime": 426.74,
+            "endTime": 427.76,
+            "body": "a ton of bloat."
+        },
+        {
+            "startTime": 427.82,
+            "endTime": 431.24,
+            "body": "Here, interestingly, the bloat was actually coming from a TOAST"
+        },
+        {
+            "startTime": 431.24,
+            "endTime": 432.1,
+            "body": "table bloat."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 432.66,
+            "endTime": 433.56,
+            "body": "Oh, nice."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 433.7,
+            "endTime": 436.52,
+            "body": "I know, which is an interesting little side quest here,"
+        },
+        {
+            "startTime": 436.52,
+            "endTime": 437.02,
+            "body": "conversationally."
+        },
+        {
+            "startTime": 438.62,
+            "endTime": 440.44,
+            "body": "But TOAST is just other tables."
+        },
+        {
+            "startTime": 441.18,
+            "endTime": 444.48,
+            "body": "The oversized attribute storage technique or whatever fun acronym they"
+        },
+        {
+            "startTime": 444.48,
+            "endTime": 445.6,
+            "body": "made up with it."
+        },
+        {
+            "startTime": 445.6,
+            "endTime": 448.14,
+            "body": "Those are just tables under the hood too, so they can also get"
+        },
+        {
+            "startTime": 448.14,
+            "endTime": 448.5,
+            "body": "Bloat."
+        },
+        {
+            "startTime": 448.5,
+            "endTime": 452.02,
+            "body": "So I'd say that was my first time needing to go through the entire"
+        },
+        {
+            "startTime": 452.02,
+            "endTime": 456.68,
+            "body": "song and dance of bloat that needed to be fixed through, I would"
+        },
+        {
+            "startTime": 456.68,
+            "endTime": 461.54,
+            "body": "say, like strong measures versus maybe just tinkering some little"
+        },
+        {
+            "startTime": 461.58,
+            "endTime": 462.76,
+            "body": "stats here and there."
+        },
+        {
+            "startTime": 463.22,
+            "endTime": 468.4,
+            "body": "But I think that once you know what bloat is, it's pretty easy"
+        },
+        {
+            "startTime": 468.4,
+            "endTime": 469.7,
+            "body": "to look out for it."
+        },
+        {
+            "startTime": 469.7,
+            "endTime": 472.58,
+            "body": "Operationally, there's observability tools and dashboards."
+        },
+        {
+            "startTime": 473.14,
+            "endTime": 474.74,
+            "body": "You can instrument your own."
+        },
+        {
+            "startTime": 474.78,
+            "endTime": 478.88,
+            "body": "I think a whole lot of DBAs have their own private stash or ideally"
+        },
+        {
+            "startTime": 479.02,
+            "endTime": 483.34,
+            "body": "GitHub open source stash of fun queries they like to use or extensions"
+        },
+        {
+            "startTime": 483.48,
+            "endTime": 484.86,
+            "body": "they have in their back pocket."
+        },
+        {
+            "startTime": 485.06,
+            "endTime": 487.08,
+            "body": "And we can dive a little more into those if you want."
+        },
+        {
+            "startTime": 487.08,
+            "endTime": 489.18,
+            "body": "But I think that there's sort of those 2 paths."
+        },
+        {
+            "startTime": 489.18,
+            "endTime": 491.4,
+            "body": "There's the path of, oh, God, what's going on?"
+        },
+        {
+            "startTime": 491.4,
+            "endTime": 494.06,
+            "body": "And the path of once you've seen it, you can kind of pattern"
+        },
+        {
+            "startTime": 494.06,
+            "endTime": 494.56,
+            "body": "match."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 495.2,
+            "endTime": 495.88,
+            "body": "Yeah, nice."
+        },
+        {
+            "startTime": 495.88,
+            "endTime": 500.98,
+            "body": "I like the system-level like path in and I've all, because of"
+        },
+        {
+            "startTime": 500.98,
+            "endTime": 504.94,
+            "body": "my background and the tool I work on, I see it more from the other"
+        },
+        {
+            "startTime": 505.2,
+            "endTime": 509.18,
+            "body": "direction, so somebody looking at an incredibly slow read query"
+        },
+        {
+            "startTime": 509.18,
+            "endTime": 512.94,
+            "body": "that has no right being that slow and using explain analyze buffers."
+        },
+        {
+            "startTime": 513.28,
+            "endTime": 517.66,
+            "body": "And as you mentioned, when we say incredibly bloated, you could"
+        },
+        {
+            "startTime": 517.66,
+            "endTime": 523.82,
+            "body": "easily have at least before Postgres 14, which had some great"
+        },
+        {
+            "startTime": 523.82,
+            "endTime": 527.78,
+            "body": "optimizations in it, you could have an index that was 10 times"
+        },
+        {
+            "startTime": 527.78,
+            "endTime": 530.6,
+            "body": "bigger than it needs to be."
+        },
+        {
+            "startTime": 530.6,
+            "endTime": 534.18,
+            "body": "If you, let's say, you rebuilt the index concurrently, the result"
+        },
+        {
+            "startTime": 534.18,
+            "endTime": 536.08,
+            "body": "afterwards might be 10 times smaller."
+        },
+        {
+            "startTime": 536.28,
+            "endTime": 539.88,
+            "body": "So that's a significant amount of extra reads you might"
+        },
+        {
+            "startTime": 539.88,
+            "endTime": 543.08,
+            "body": "be doing, especially if you're returning a bunch of rows."
+        },
+        {
+            "startTime": 543.08,
+            "endTime": 547.94,
+            "body": "So you mentioned like 8 reads instead of 1, but if you're looking"
+        },
+        {
+            "startTime": 547.94,
+            "endTime": 551.0,
+            "body": "at the last thousand rows, if you're doing 8,000 instead of 1,000,"
+        },
+        {
+            "startTime": 551.0,
+            "endTime": 552.68,
+            "body": "you start to notice that in latency."
+        },
+        {
+            "startTime": 552.72,
+            "endTime": 553.94,
+            "body": "So it's quite cool."
+        },
+        {
+            "startTime": 553.94,
+            "endTime": 558.24,
+            "body": "We, in fact, we used to call the tab bloat likelihood,"
+        },
+        {
+            "startTime": 558.68,
+            "endTime": 563.14,
+            "body": "and I renamed it a couple of years ago to read efficiency, partly"
+        },
+        {
+            "startTime": 563.14,
+            "endTime": 566.5,
+            "body": "because of your, like it goes back to your density question again."
+        },
+        {
+            "startTime": 567.74,
+            "endTime": 571.64,
+            "body": "It's not necessarily bloat, but it's not necessarily"
+        },
+        {
+            "startTime": 571.64,
+            "endTime": 572.72,
+            "body": "about the likelihood of it."
+        },
+        {
+            "startTime": 572.72,
+            "endTime": 576.0,
+            "body": "It's more about the efficiency of those reads, and it might be"
+        },
+        {
+            "startTime": 576.0,
+            "endTime": 579.78,
+            "body": "a locality issue which is somewhat bloat-related as well."
+        },
+        {
+            "startTime": 579.78,
+            "endTime": 581.6,
+            "body": "So yeah, love this."
+        },
+        {
+            "startTime": 581.6,
+            "endTime": 582.1,
+            "body": "Great."
+        },
+        {
+            "startTime": 582.58,
+            "endTime": 588.54,
+            "body": "So you mentioned, and you've spoken before about queries to estimate"
+        },
+        {
+            "startTime": 588.64,
+            "endTime": 592.08,
+            "body": "and other techniques for looking into like getting more, maybe"
+        },
+        {
+            "startTime": 592.08,
+            "endTime": 597.1,
+            "body": "accurate or, depending on your definition of accurate, measures"
+        },
+        {
+            "startTime": 597.1,
+            "endTime": 602.14,
+            "body": "of this. What's your advice on minimizing this, dealing with"
+        },
+        {
+            "startTime": 602.14,
+            "endTime": 602.64,
+            "body": "it?"
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 603.28,
+            "endTime": 607.36,
+            "body": "Yeah, I guess the first thing to the measure of how"
+        },
+        {
+            "startTime": 607.36,
+            "endTime": 610.68,
+            "body": "to identify whether you have bloat or how much you have and decide"
+        },
+        {
+            "startTime": 610.68,
+            "endTime": 611.92,
+            "body": "What to do with it."
+        },
+        {
+            "startTime": 611.98,
+            "endTime": 615.06,
+            "body": "The first step there is really, again, kind of a trade-off of"
+        },
+        {
+            "startTime": 615.06,
+            "endTime": 616.36,
+            "body": "what matters to you."
+        },
+        {
+            "startTime": 616.36,
+            "endTime": 620.74,
+            "body": "Does the speed and low system impact matter to you in this sort"
+        },
+        {
+            "startTime": 620.74,
+            "endTime": 623.66,
+            "body": "of DBA process of figuring out how much bloat you have?"
+        },
+        {
+            "startTime": 623.76,
+            "endTime": 628.54,
+            "body": "Or does accuracy of the exact percentage of bloat or the exact"
+        },
+        {
+            "startTime": 628.9,
+            "endTime": 632.9,
+            "body": "tuple count and being 100% sure that your stats are right matter"
+        },
+        {
+            "startTime": 632.9,
+            "endTime": 633.58,
+            "body": "to you."
+        },
+        {
+            "startTime": 633.7,
+            "endTime": 638.04,
+            "body": "And so again, kind of like I said in the discussion about how"
+        },
+        {
+            "startTime": 638.1,
+            "endTime": 640.92,
+            "body": "bloat can kind of be okay or not something you really need to"
+        },
+        {
+            "startTime": 640.92,
+            "endTime": 643.62,
+            "body": "deal with in certain situations, this is one where you kind of"
+        },
+        {
+            "startTime": 643.62,
+            "endTime": 644.94,
+            "body": "get to decide your priorities."
+        },
+        {
+            "startTime": 645.44,
+            "endTime": 650.4,
+            "body": "If your priority is 100% accuracy, or I would say also, if you"
+        },
+        {
+            "startTime": 650.4,
+            "endTime": 653.96,
+            "body": "have downtime hours on your database where you can easily do"
+        },
+        {
+            "startTime": 653.96,
+            "endTime": 657.38,
+            "body": "this without any user effect, or if you have a small system and"
+        },
+        {
+            "startTime": 657.38,
+            "endTime": 661.36,
+            "body": "for whatever reason, you happen to be bloated through your own"
+        },
+        {
+            "startTime": 661.36,
+            "endTime": 664.74,
+            "body": "write patterns, but it's not actually that important, then I"
+        },
+        {
+            "startTime": 664.74,
+            "endTime": 666.3,
+            "body": "would suggest pgstattuple."
+        },
+        {
+            "startTime": 666.88,
+            "endTime": 670.06,
+            "body": "pgstattuple is a Postgres contrib module."
+        },
+        {
+            "startTime": 670.76,
+            "endTime": 673.82,
+            "body": "Basically, it gives you some functions that you're able to run,"
+        },
+        {
+            "startTime": 674.06,
+            "endTime": 678.16,
+            "body": "and they will basically do a sequential scan through a target"
+        },
+        {
+            "startTime": 678.16,
+            "endTime": 681.52,
+            "body": "table, or I think through a target database if you want to run"
+        },
+        {
+            "startTime": 681.52,
+            "endTime": 686.38,
+            "body": "all tables, and it will return to you the count of live dead"
+        },
+        {
+            "startTime": 686.38,
+            "endTime": 691.48,
+            "body": "tuples, free space map stuff, as well as a few other statistics."
+        },
+        {
+            "startTime": 692.3,
+            "endTime": 696.86,
+            "body": "That one I would say is on the side of you have resources to spare,"
+        },
+        {
+            "startTime": 697.08,
+            "endTime": 700.46,
+            "body": "you're not gonna impact users because CPU does spike during this."
+        },
+        {
+            "startTime": 700.46,
+            "endTime": 703.32,
+            "body": "And there's no way to get around the sequential scan because"
+        },
+        {
+            "startTime": 703.32,
+            "endTime": 704.68,
+            "body": "you can't exactly index it."
+        },
+        {
+            "startTime": 704.68,
+            "endTime": 706.44,
+            "body": "The point is to actually look at the pages."
+        },
+        {
+            "startTime": 706.44,
+            "endTime": 708.62,
+            "body": "So it's always going to be a sequential scan."
+        },
+        {
+            "startTime": 708.84,
+            "endTime": 712.9,
+            "body": "The other option is through using, I would say, estimation queries."
+        },
+        {
+            "startTime": 713.48,
+            "endTime": 717.48,
+            "body": "And these tend to leverage internal tables already used by Postgres"
+        },
+        {
+            "startTime": 717.54,
+            "endTime": 720.2,
+            "body": "or kept up to date during the Analyze process."
+        },
+        {
+            "startTime": 720.76,
+            "endTime": 725.68,
+            "body": "So these would be like pg_class reltuples and things like that"
+        },
+        {
+            "startTime": 725.68,
+            "endTime": 729.4,
+            "body": "will estimate the number of live dead tuples you have based on"
+        },
+        {
+            "startTime": 729.4,
+            "endTime": 731.14,
+            "body": "a sampling during Analyze."
+        },
+        {
+            "startTime": 731.84,
+            "endTime": 734.8,
+            "body": "So before you run anything that's an estimate, you do want to"
+        },
+        {
+            "startTime": 734.8,
+            "endTime": 738.16,
+            "body": "run Analyze, you know, right before, but then you're able to"
+        },
+        {
+            "startTime": 738.16,
+            "endTime": 741.76,
+            "body": "guess a proportion based on a sampling of your table data."
+        },
+        {
+            "startTime": 741.76,
+            "endTime": 744.56,
+            "body": "This is a better option, I would say, for really high-criticality"
+        },
+        {
+            "startTime": 744.96,
+            "endTime": 747.58,
+            "body": "systems or extremely large tables."
+        },
+        {
+            "startTime": 748.18,
+            "endTime": 753.48,
+            "body": "If you have a 500-gigabyte, 800-gigabyte table, or even just"
+        },
+        {
+            "startTime": 753.48,
+            "endTime": 757.64,
+            "body": "one that's 80 gigs, but is very, very critical for users, and maybe"
+        },
+        {
+            "startTime": 757.64,
+            "endTime": 761.34,
+            "body": "you're already kind of medium on CPU, you can't stand those resources,"
+        },
+        {
+            "startTime": 761.46,
+            "endTime": 765.04,
+            "body": "then there's really no downside to just using a table sample."
+        },
+        {
+            "startTime": 765.3,
+            "endTime": 767.86,
+            "body": "There's no reason that this number needs to be precise."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 769.02,
+            "endTime": 771.54,
+            "body": "Yeah, so what is alarming?"
+        },
+        {
+            "startTime": 771.68,
+            "endTime": 774.16,
+            "body": "Well, I guess the answer is it depends."
+        },
+        {
+            "startTime": 774.16,
+            "endTime": 777.74,
+            "body": "But you've in fact, I've rewatched your talk recently."
+        },
+        {
+            "startTime": 777.74,
+            "endTime": 779.22,
+            "body": "So I know I'm stealing from you there."
+        },
+        {
+            "startTime": 779.22,
+            "endTime": 781.86,
+            "body": "But you've got some great rules of thumb on what you consider"
+        },
+        {
+            "startTime": 782.44,
+            "endTime": 784.78,
+            "body": "to be bad on the table bloat front."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 785.32,
+            "endTime": 785.58,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 785.58,
+            "endTime": 787.76,
+            "body": "Well, I don't think I could possibly stall, it depends."
+        },
+        {
+            "startTime": 787.76,
+            "endTime": 790.18,
+            "body": "Cause that's just like everybody in engineering should be"
+        },
+        {
+            "startTime": 790.18,
+            "endTime": 795.04,
+            "body": "saying all the time, but you know, my personal rules of thumb"
+        },
+        {
+            "startTime": 795.04,
+            "endTime": 800.14,
+            "body": "speaking just for myself is that, on very small tables, bloat"
+        },
+        {
+            "startTime": 800.14,
+            "endTime": 801.64,
+            "body": "is not a problem."
+        },
+        {
+            "startTime": 801.76,
+            "endTime": 805.54,
+            "body": "A gigabyte, 2 gigabytes, that as I'm saying is very, very small."
+        },
+        {
+            "startTime": 805.58,
+            "endTime": 810.52,
+            "body": "Even if you would see up to 75 percent bloat, out of vacuum we'll"
+        },
+        {
+            "startTime": 810.52,
+            "endTime": 813.16,
+            "body": "be able to take care of this, the total impact on your system, there's"
+        },
+        {
+            "startTime": 813.16,
+            "endTime": 816.1,
+            "body": "just no way that it can be high or significant, you know, knock"
+        },
+        {
+            "startTime": 816.1,
+            "endTime": 816.6,
+            "body": "on wood."
+        },
+        {
+            "startTime": 816.6,
+            "endTime": 820.02,
+            "body": "I'm sure somebody will comment with some counterexample, but"
+        },
+        {
+            "startTime": 820.02,
+            "endTime": 821.1,
+            "body": "at least in my mind."
+        },
+        {
+            "startTime": 821.24,
+            "endTime": 825.0,
+            "body": "Beyond that, I would say if you get to a 1 to 30 gigabyte range,"
+        },
+        {
+            "startTime": 825.06,
+            "endTime": 827.28,
+            "body": "I would say 25% bloat."
+        },
+        {
+            "startTime": 827.28,
+            "endTime": 832.86,
+            "body": "So 25% of your total table space being taken by dead tuples is"
+        },
+        {
+            "startTime": 832.96,
+            "endTime": 833.46,
+            "body": "acceptable."
+        },
+        {
+            "startTime": 833.94,
+            "endTime": 837.4,
+            "body": "And then as you go higher, from about 30 gigs, I would say you"
+        },
+        {
+            "startTime": 837.4,
+            "endTime": 839.72,
+            "body": "want to inch that acceptability downwards."
+        },
+        {
+            "startTime": 840.4,
+            "endTime": 844.54,
+            "body": "So I would say once you get up to 100 gigabytes, I would aim"
+        },
+        {
+            "startTime": 844.54,
+            "endTime": 848.34,
+            "body": "for like 18% and then I would flatline at about 18%."
+        },
+        {
+            "startTime": 849.52,
+            "endTime": 853.12,
+            "body": "1 important thing is you should never expect a 0% dead tuples."
+        },
+        {
+            "startTime": 853.46,
+            "endTime": 857.22,
+            "body": "If you completely rebuild a table or if you tweak every autovacuum"
+        },
+        {
+            "startTime": 857.22,
+            "endTime": 860.28,
+            "body": "setting or you've used an extension and repacked it, you still"
+        },
+        {
+            "startTime": 860.28,
+            "endTime": 862.62,
+            "body": "will have some bloat and that's okay."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 864.14,
+            "endTime": 864.72,
+            "body": "Yeah, right."
+        },
+        {
+            "startTime": 864.72,
+            "endTime": 867.72,
+            "body": "Like unless you're gonna show off because you've got like an"
+        },
+        {
+            "startTime": 867.72,
+            "endTime": 870.44,
+            "body": "append-only table with no bloat, but if you've got updates and"
+        },
+        {
+            "startTime": 870.44,
+            "endTime": 872.68,
+            "body": "deletes, it's a trade-off of the system, right?"
+        },
+        {
+            "startTime": 872.68,
+            "endTime": 875.5,
+            "body": "It's the trade-off for the design that Postgres has given us."
+        },
+        {
+            "startTime": 875.66,
+            "endTime": 877.44,
+            "body": "You've recommended this talk a few times."
+        },
+        {
+            "startTime": 877.44,
+            "endTime": 880.84,
+            "body": "I'm most of the way through watching it, but Peter Geoghegan's given"
+        },
+        {
+            "startTime": 880.84,
+            "endTime": 884.64,
+            "body": "another great talk that is criminally underwatched at 200 views,"
+        },
+        {
+            "startTime": 884.64,
+            "endTime": 886.08,
+            "body": "so I'm going to share that."
+        },
+        {
+            "startTime": 886.1,
+            "endTime": 888.96,
+            "body": "But he mentioned some of the trade-offs that Postgres is"
+        },
+        {
+            "startTime": 888.96,
+            "endTime": 890.3,
+            "body": "making in this area."
+        },
+        {
+            "startTime": 890.66,
+            "endTime": 893.36,
+            "body": "So it's guaranteed, I think as soon as we start doing updates"
+        },
+        {
+            "startTime": 893.36,
+            "endTime": 898.96,
+            "body": "and deletes, it's guaranteed that at least past a certain frequency"
+        },
+        {
+            "startTime": 898.98,
+            "endTime": 901.72,
+            "body": "of those updates and deletes, we're going to have some bloat."
+        },
+        {
+            "startTime": 901.72,
+            "endTime": 903.3,
+            "body": "So yeah, it's a really good point."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 903.94,
+            "endTime": 906.34,
+            "body": "Yeah, there's no whole way to avoid it."
+        },
+        {
+            "startTime": 906.34,
+            "endTime": 909.6,
+            "body": "It's more about mitigating the downstream effects and making sure you"
+        },
+        {
+            "startTime": 909.6,
+            "endTime": 912.82,
+            "body": "don't accidentally look up and realize you're in a crazy situation"
+        },
+        {
+            "startTime": 912.82,
+            "endTime": 914.24,
+            "body": "in a couple of months or years."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 914.76,
+            "endTime": 918.28,
+            "body": "Where did, I'm curious though, I understand totally"
+        },
+        {
+            "startTime": 918.38,
+            "endTime": 923.54,
+            "body": "as you get larger data volumes, trying to aim for a smaller"
+        },
+        {
+            "startTime": 923.54,
+            "endTime": 928.16,
+            "body": "percentage of bloat, because like in real terms, that's more gigabytes"
+        },
+        {
+            "startTime": 928.26,
+            "endTime": 931.04,
+            "body": "of bloat or more pages that could be being scanned through for"
+        },
+        {
+            "startTime": 931.04,
+            "endTime": 932.54,
+            "body": "reads and things like that."
+        },
+        {
+            "startTime": 933.24,
+            "endTime": 936.9,
+            "body": "But did 18% come from trying to get it lower than that, like"
+        },
+        {
+            "startTime": 936.9,
+            "endTime": 939.19,
+            "body": "fighting some update-heavy tables?"
+        },
+        {
+            "startTime": 939.19,
+            "endTime": 942.4,
+            "body": "Or where, that seems quite a specific number to me for like a"
+        },
+        {
+            "startTime": 942.4,
+            "endTime": 943.36,
+            "body": "rule of thumb."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 944.32,
+            "endTime": 945.36,
+            "body": "Yeah, great question."
+        },
+        {
+            "startTime": 945.48,
+            "endTime": 948.06,
+            "body": "And actually, this is the first time I've been asked this question,"
+        },
+        {
+            "startTime": 948.24,
+            "endTime": 949.14,
+            "body": "which I agree."
+        },
+        {
+            "startTime": 950.74,
+            "endTime": 955.24,
+            "body": "The first answer to why 18% or why these numbers is, as someone"
+        },
+        {
+            "startTime": 955.24,
+            "endTime": 958.62,
+            "body": "who watches Postgres talks and as somebody who takes it in, I"
+        },
+        {
+            "startTime": 958.62,
+            "endTime": 961.12,
+            "body": "have to admit, there's part of me that gets annoyed when nobody"
+        },
+        {
+            "startTime": 961.12,
+            "endTime": 962.18,
+            "body": "gives real numbers."
+        },
+        {
+            "startTime": 963.0,
+            "endTime": 965.88,
+            "body": "I realized that it comes from the reality of it depends as we"
+        },
+        {
+            "startTime": 965.88,
+            "endTime": 969.74,
+            "body": "already kind of espoused on, but I really wanted to provide something"
+        },
+        {
+            "startTime": 969.78,
+            "endTime": 970.28,
+            "body": "concrete."
+        },
+        {
+            "startTime": 971.0,
+            "endTime": 974.82,
+            "body": "When I gave those numbers, I thought about my previous projects"
+        },
+        {
+            "startTime": 975.06,
+            "endTime": 978.52,
+            "body": "and I thought about, okay, well, what happens if I completely"
+        },
+        {
+            "startTime": 978.52,
+            "endTime": 981.98,
+            "body": "rebuild this table or I repack it and don't insert anything?"
+        },
+        {
+            "startTime": 982.36,
+            "endTime": 985.94,
+            "body": "Usually, you would see a table bloat around 8 to 10% then still,"
+        },
+        {
+            "startTime": 986.0,
+            "endTime": 989.14,
+            "body": "at least in my experience, because if you're rebuilding a table,"
+        },
+        {
+            "startTime": 989.24,
+            "endTime": 992.88,
+            "body": "at least if you're using an extension like pg_repack, for example,"
+        },
+        {
+            "startTime": 992.88,
+            "endTime": 997.36,
+            "body": "or pg_squeeze, you know, it's still gonna need to kind of build"
+        },
+        {
+            "startTime": 997.36,
+            "endTime": 1001.24,
+            "body": "up and write all the live data into it as it's rebuilding the"
+        },
+        {
+            "startTime": 1001.24,
+            "endTime": 1002.24,
+            "body": "duplicate table."
+        },
+        {
+            "startTime": 1002.26,
+            "endTime": 1006.5,
+            "body": "So you're not gonna end up at like 0% unless you, I believe,"
+        },
+        {
+            "startTime": 1006.56,
+            "endTime": 1009.26,
+            "body": "I assume, unless you VACUUM FULL."
+        },
+        {
+            "startTime": 1009.92,
+            "endTime": 1013.94,
+            "body": "And so 18% came out of, I'd say, like opportunism of what I wanted"
+        },
+        {
+            "startTime": 1013.94,
+            "endTime": 1018.34,
+            "body": "to provide, and also just on experience of when I started to"
+        },
+        {
+            "startTime": 1018.34,
+            "endTime": 1022.9,
+            "body": "see a tipping point into performance, and when you start to get"
+        },
+        {
+            "startTime": 1022.9,
+            "endTime": 1026.5,
+            "body": "far enough that you can't really recover it without rewrites."
+        },
+        {
+            "startTime": 1027.04,
+            "endTime": 1031.76,
+            "body": "So the reason I would say 18% is not because 20% or 25% even"
+        },
+        {
+            "startTime": 1031.76,
+            "endTime": 1035.64,
+            "body": "on a large table is the end of the world, but because I think"
+        },
+        {
+            "startTime": 1035.64,
+            "endTime": 1039.96,
+            "body": "once you start slipping into that more bloated table space at"
+        },
+        {
+            "startTime": 1039.96,
+            "endTime": 1042.9,
+            "body": "large tables, it's harder to recover from."
+        },
+        {
+            "startTime": 1042.9,
+            "endTime": 1045.84,
+            "body": "And it needs more drastic measures than a little tuning here"
+        },
+        {
+            "startTime": 1045.84,
+            "endTime": 1046.54,
+            "body": "and there."
+        },
+        {
+            "startTime": 1046.58,
+            "endTime": 1050.64,
+            "body": "And also, if you imagine you have a, you know, 1 terabyte table,"
+        },
+        {
+            "startTime": 1050.66,
+            "endTime": 1054.44,
+            "body": "which I know that I've had before at companies, then if you get"
+        },
+        {
+            "startTime": 1054.44,
+            "endTime": 1058.6,
+            "body": "to 20% of dead tuples, you now have, you know, 200 gigabytes"
+        },
+        {
+            "startTime": 1058.94,
+            "endTime": 1060.66,
+            "body": "of just bloat."
+        },
+        {
+            "startTime": 1061.44,
+            "endTime": 1065.24,
+            "body": "So at scale, you know, that becomes money, whether you're in"
+        },
+        {
+            "startTime": 1065.24,
+            "endTime": 1067.08,
+            "body": "the cloud or not, you're paying for that disk."
+        },
+        {
+            "startTime": 1067.08,
+            "endTime": 1070.0,
+            "body": "That's kind of another downstream negative effect other than"
+        },
+        {
+            "startTime": 1070.0,
+            "endTime": 1070.5,
+            "body": "IO."
+        },
+        {
+            "startTime": 1070.86,
+            "endTime": 1075.38,
+            "body": "So it's kind of, it's money, it's personal experience, and it's"
+        },
+        {
+            "startTime": 1075.38,
+            "endTime": 1077.66,
+            "body": "also just wanting to put a sticker and a number on something."
+        },
+        {
+            "startTime": 1077.66,
+            "endTime": 1079.36,
+            "body": "So you have a target to aim at."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1079.76,
+            "endTime": 1081.1,
+            "body": "Yeah, I really like that."
+        },
+        {
+            "startTime": 1081.1,
+            "endTime": 1084.84,
+            "body": "I agree, it's difficult without any real numbers, but it also"
+        },
+        {
+            "startTime": 1084.84,
+            "endTime": 1087.56,
+            "body": "like you could have said 15% I probably wouldn't"
+        },
+        {
+            "startTime": 1087.56,
+            "endTime": 1088.48,
+            "body": "have questioned it."
+        },
+        {
+            "startTime": 1088.48,
+            "endTime": 1091.18,
+            "body": "It's just more it's more practical. It's more likely to be based"
+        },
+        {
+            "startTime": 1091.18,
+            "endTime": 1094.42,
+            "body": "on your real experience, which I liked a lot. Cool."
+        },
+        {
+            "startTime": 1094.44,
+            "endTime": 1098.78,
+            "body": "So I wanted to come back to the, you mentioned TOAST and the"
+        },
+        {
+            "startTime": 1098.78,
+            "endTime": 1100.58,
+            "body": "acronym or probably backronym."
+        },
+        {
+            "startTime": 1101.04,
+            "endTime": 1103.2,
+            "body": "I don't know if you've got that phrase here."
+        },
+        {
+            "startTime": 1103.2,
+            "endTime": 1106.12,
+            "body": "That's a really fascinating case that I don't think I've not"
+        },
+        {
+            "startTime": 1106.12,
+            "endTime": 1110.36,
+            "body": "seen, I've not spoken to anybody about, but it makes intuitive"
+        },
+        {
+            "startTime": 1110.36,
+            "endTime": 1115.64,
+            "body": "sense because of the nature of TOAST, we could have potentially"
+        },
+        {
+            "startTime": 1115.74,
+            "endTime": 1119.86,
+            "body": "large values across multiple pages, but I would have guessed"
+        },
+        {
+            "startTime": 1119.86,
+            "endTime": 1123.32,
+            "body": "they would be more easily reused, but I'm not, but that's a total"
+        },
+        {
+            "startTime": 1123.32,
+            "endTime": 1123.82,
+            "body": "guess."
+        },
+        {
+            "startTime": 1124.06,
+            "endTime": 1124.51,
+            "body": "I've yeah."
+        },
+        {
+            "startTime": 1124.51,
+            "endTime": 1126.76,
+            "body": "Do you, Do you have any more details on that?"
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 1126.76,
+            "endTime": 1130.28,
+            "body": "Well, I'm sure I'll get some of this possibly wrong,"
+        },
+        {
+            "startTime": 1130.28,
+            "endTime": 1133.42,
+            "body": "but I think, actually, it's surprising that we don't see TOAST"
+        },
+        {
+            "startTime": 1134.0,
+            "endTime": 1136.34,
+            "body": "in more situations of bloat."
+        },
+        {
+            "startTime": 1136.34,
+            "endTime": 1140.96,
+            "body": "Because when you're updating a value in TOAST, To my knowledge,"
+        },
+        {
+            "startTime": 1141.16,
+            "endTime": 1145.32,
+            "body": "it's not able to be as intelligent as other update methods can"
+        },
+        {
+            "startTime": 1145.32,
+            "endTime": 1145.82,
+            "body": "be."
+        },
+        {
+            "startTime": 1146.66,
+            "endTime": 1151.4,
+            "body": "You're actually replacing or updating more often than not."
+        },
+        {
+            "startTime": 1152.12,
+            "endTime": 1156.22,
+            "body": "TOAST tables themselves, as I guess, a background in case anybody"
+        },
+        {
+            "startTime": 1156.22,
+            "endTime": 1160.14,
+            "body": "listening is not familiar, What happens is if you have an extended"
+        },
+        {
+            "startTime": 1160.32,
+            "endTime": 1163.54,
+            "body": "field, you know, you have extended and non-extended data types"
+        },
+        {
+            "startTime": 1163.54,
+            "endTime": 1164.14,
+            "body": "in Postgres."
+        },
+        {
+            "startTime": 1164.14,
+            "endTime": 1167.54,
+            "body": "If you've an extended field, so things such as JSONB or, you"
+        },
+        {
+            "startTime": 1167.54,
+            "endTime": 1171.98,
+            "body": "know, VAR cars with I think longer limits or byte A, then all"
+        },
+        {
+            "startTime": 1171.98,
+            "endTime": 1176.16,
+            "body": "these are examples when they can go over the maximum single tuple"
+        },
+        {
+            "startTime": 1176.16,
+            "endTime": 1176.66,
+            "body": "size."
+        },
+        {
+            "startTime": 1176.82,
+            "endTime": 1180.16,
+            "body": "If they reach that threshold, then Postgres will compress it"
+        },
+        {
+            "startTime": 1180.16,
+            "endTime": 1183.74,
+            "body": "through some method depending on your Postgres version, and they'll"
+        },
+        {
+            "startTime": 1183.74,
+            "endTime": 1186.98,
+            "body": "just store it in a separate table called TOAST table."
+        },
+        {
+            "startTime": 1187.08,
+            "endTime": 1190.58,
+            "body": "In the main table, let's say you have a users table, then that's"
+        },
+        {
+            "startTime": 1190.58,
+            "endTime": 1192.94,
+            "body": "basically just a pointer to this TOAST table."
+        },
+        {
+            "startTime": 1193.14,
+            "endTime": 1195.96,
+            "body": "In the example I mentioned before when I ran into bloat on the"
+        },
+        {
+            "startTime": 1195.96,
+            "endTime": 1198.68,
+            "body": "TOAST table, the reason you would see this is maybe you have"
+        },
+        {
+            "startTime": 1198.68,
+            "endTime": 1202.96,
+            "body": "a small table even, it could be a 5 gigabyte table, but every"
+        },
+        {
+            "startTime": 1202.96,
+            "endTime": 1206.34,
+            "body": "row in this is extremely large data types."
+        },
+        {
+            "startTime": 1206.34,
+            "endTime": 1208.94,
+            "body": "I'm sure we've all seen those tables where there's 5 columns"
+        },
+        {
+            "startTime": 1208.94,
+            "endTime": 1211.98,
+            "body": "and each of them is like a massive JSONB value."
+        },
+        {
+            "startTime": 1212.72,
+            "endTime": 1214.54,
+            "body": "They could be updating those all the time."
+        },
+        {
+            "startTime": 1214.54,
+            "endTime": 1217.78,
+            "body": "You could be doing field updates, you could be doing anything."
+        },
+        {
+            "startTime": 1218.06,
+            "endTime": 1221.6,
+            "body": "And if you get up to a certain TPS on that, then every single"
+        },
+        {
+            "startTime": 1221.6,
+            "endTime": 1225.24,
+            "body": "time you do an update, it's gonna be rewriting that value in"
+        },
+        {
+            "startTime": 1225.24,
+            "endTime": 1226.3,
+            "body": "the toast table."
+        },
+        {
+            "startTime": 1227.28,
+            "endTime": 1230.8,
+            "body": "And Postgres does look at TOAST as far as I know, like just any"
+        },
+        {
+            "startTime": 1230.8,
+            "endTime": 1231.42,
+            "body": "other table."
+        },
+        {
+            "startTime": 1231.42,
+            "endTime": 1234.46,
+            "body": "So autovacuum is running on it the same exact way."
+        },
+        {
+            "startTime": 1234.6,
+            "endTime": 1236.72,
+            "body": "You know, I could talk on partitioning and I kind of say the"
+        },
+        {
+            "startTime": 1236.72,
+            "endTime": 1237.04,
+            "body": "same."
+        },
+        {
+            "startTime": 1237.04,
+            "endTime": 1239.8,
+            "body": "Partitioning to me is like UX."
+        },
+        {
+            "startTime": 1240.44,
+            "endTime": 1241.7,
+            "body": "It's DBA UX."
+        },
+        {
+            "startTime": 1241.82,
+            "endTime": 1243.26,
+            "body": "We see it as 1 table."
+        },
+        {
+            "startTime": 1243.26,
+            "endTime": 1244.76,
+            "body": "Postgres just sees tables."
+        },
+        {
+            "startTime": 1245.24,
+            "endTime": 1247.64,
+            "body": "And same thing with, same thing with TOAST."
+        },
+        {
+            "startTime": 1248.3,
+            "endTime": 1252.86,
+            "body": "And so, in that case, we had a small table that was just super"
+        },
+        {
+            "startTime": 1252.86,
+            "endTime": 1255.94,
+            "body": "high update for those very large fields."
+        },
+        {
+            "startTime": 1256.74,
+            "endTime": 1258.78,
+            "body": "Correct me if I'm wrong, Michael, maybe you know more about this,"
+        },
+        {
+            "startTime": 1258.78,
+            "endTime": 1263.16,
+            "body": "but I think that the nature of how TOAST does those updates is"
+        },
+        {
+            "startTime": 1263.22,
+            "endTime": 1268.86,
+            "body": "they're not able to do, like, I think, key-value updates in TOAST"
+        },
+        {
+            "startTime": 1268.86,
+            "endTime": 1270.4,
+            "body": "fields. They have to always rewrite."
+        },
+        {
+            "startTime": 1270.44,
+            "endTime": 1271.7,
+            "body": "Does that sound right to you?"
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1272.1,
+            "endTime": 1275.64,
+            "body": "Yeah, well, it sounds like any other value in Postgres,"
+        },
+        {
+            "startTime": 1275.64,
+            "endTime": 1279.16,
+            "body": "right? Like, it's a single entity."
+        },
+        {
+            "startTime": 1279.52,
+            "endTime": 1283.58,
+            "body": "So like, even in a large text field, without it being toasted,"
+        },
+        {
+            "startTime": 1283.68,
+            "endTime": 1288.58,
+            "body": "if you had it pasted in the entirety of War and Peace and then"
+        },
+        {
+            "startTime": 1288.58,
+            "endTime": 1292.38,
+            "body": "only changed 1 word, but it was all a single value, I believe"
+        },
+        {
+            "startTime": 1292.42,
+            "endTime": 1296.06,
+            "body": "we'd need a new tuple with, well, bad example, because that one"
+        },
+        {
+            "startTime": 1296.06,
+            "endTime": 1299.06,
+            "body": "definitely wouldn't fit in a single page, as it would be toasted."
+        },
+        {
+            "startTime": 1300.32,
+            "endTime": 1303.6,
+            "body": "But yeah, if you, let's say you took a 1-kilobyte chunk of text"
+        },
+        {
+            "startTime": 1303.6,
+            "endTime": 1307.46,
+            "body": "and changed only like a few characters in it, I think it would"
+        },
+        {
+            "startTime": 1307.46,
+            "endTime": 1308.74,
+            "body": "work the exact same way."
+        },
+        {
+            "startTime": 1308.74,
+            "endTime": 1310.04,
+            "body": "So, yeah."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 1310.66,
+            "endTime": 1314.18,
+            "body": "The only caveat to that, I believe, is that when you"
+        },
+        {
+            "startTime": 1314.18,
+            "endTime": 1317.82,
+            "body": "TOAST something, toast an object, you toast it in chunks of a"
+        },
+        {
+            "startTime": 1317.82,
+            "endTime": 1318.76,
+            "body": "discrete size."
+        },
+        {
+            "startTime": 1319.06,
+            "endTime": 1323.22,
+            "body": "So, if you did toast War and Peace, then, you know, it would"
+        },
+        {
+            "startTime": 1323.22,
+            "endTime": 1326.44,
+            "body": "be, you know, you would run into the tuple length issue in TOAST"
+        },
+        {
+            "startTime": 1326.44,
+            "endTime": 1326.9,
+            "body": "as well."
+        },
+        {
+            "startTime": 1326.9,
+            "endTime": 1331.54,
+            "body": "TOAST doesn't have a longer, you know, maximum tuple length."
+        },
+        {
+            "startTime": 1331.54,
+            "endTime": 1335.14,
+            "body": "It's just that it will chunk it via some algorithm, compress"
+        },
+        {
+            "startTime": 1335.14,
+            "endTime": 1338.12,
+            "body": "it. And then so War and Peace will actually be a pointer to let's"
+        },
+        {
+            "startTime": 1338.12,
+            "endTime": 1340.52,
+            "body": "say 10 tuples all of them compressed."
+        },
+        {
+            "startTime": 1341.02,
+            "endTime": 1345.28,
+            "body": "So I believe that when you edit 1 word, you know, you fix your"
+        },
+        {
+            "startTime": 1345.28,
+            "endTime": 1349.22,
+            "body": "spelling mistake, you know, Leo Tolstoy really has to go back"
+        },
+        {
+            "startTime": 1349.22,
+            "endTime": 1350.14,
+            "body": "and fix that."
+        },
+        {
+            "startTime": 1350.18,
+            "endTime": 1354.72,
+            "body": "Then when he re-TOASTs it, then he has to recompress and re-chunk"
+        },
+        {
+            "startTime": 1354.92,
+            "endTime": 1357.76,
+            "body": "all those 10 values again, not just the one."
+        },
+        {
+            "startTime": 1357.76,
+            "endTime": 1360.36,
+            "body": "So I think it might be, you know, we're figuring this out, really"
+        },
+        {
+            "startTime": 1360.36,
+            "endTime": 1363.08,
+            "body": "talking about it, I think it might be something that scales the"
+        },
+        {
+            "startTime": 1363.08,
+            "endTime": 1368.02,
+            "body": "issue with depending, with increased size of the object itself."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1368.5,
+            "endTime": 1370.9,
+            "body": "Yeah, I'd love to hear from anybody who has dealt with"
+        },
+        {
+            "startTime": 1370.9,
+            "endTime": 1373.8,
+            "body": "this or looked into it or written about it."
+        },
+        {
+            "startTime": 1373.8,
+            "endTime": 1378.1,
+            "body": "Sometimes we get some quite in-depth responses, which we love."
+        },
+        {
+            "startTime": 1378.58,
+            "endTime": 1383.56,
+            "body": "The question I guess is, let's say we've got something that's"
+        },
+        {
+            "startTime": 1383.56,
+            "endTime": 1388.76,
+            "body": "spanning tens of kilobytes, so multiple pages, your 8-page example"
+        },
+        {
+            "startTime": 1388.76,
+            "endTime": 1389.6,
+            "body": "might be good."
+        },
+        {
+            "startTime": 1390.76,
+            "endTime": 1393.58,
+            "body": "And we rewrite it so we get 8 more pages."
+        },
+        {
+            "startTime": 1393.58,
+            "endTime": 1397.16,
+            "body": "The question is what happens to the 8 previous ones?"
+        },
+        {
+            "startTime": 1397.46,
+            "endTime": 1401.84,
+            "body": "Once they get marked as dead and if they could get reused easily,"
+        },
+        {
+            "startTime": 1402.02,
+            "endTime": 1403.32,
+            "body": "we shouldn't get too much bloat."
+        },
+        {
+            "startTime": 1403.32,
+            "endTime": 1406.18,
+            "body": "But if they're getting, I guess if autovacuum can't keep up,"
+        },
+        {
+            "startTime": 1406.18,
+            "endTime": 1407.94,
+            "body": "that's when it accelerates."
+        },
+        {
+            "startTime": 1408.32,
+            "endTime": 1411.84,
+            "body": "So it would make sense in a system, for example, where autovacuum"
+        },
+        {
+            "startTime": 1411.96,
+            "endTime": 1414.74,
+            "body": "isn't able to keep up with that toast table for some reason,"
+        },
+        {
+            "startTime": 1414.74,
+            "endTime": 1417.32,
+            "body": "or maybe it's been disabled on that table."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 1418.1,
+            "endTime": 1419.86,
+            "body": "Yeah, totally."
+        },
+        {
+            "startTime": 1420.02,
+            "endTime": 1423.9,
+            "body": "That can also be a place where you need to tune autovacuum max"
+        },
+        {
+            "startTime": 1423.9,
+            "endTime": 1428.28,
+            "body": "workers higher, because autovacuum max workers defaults to 3."
+        },
+        {
+            "startTime": 1428.52,
+            "endTime": 1432.12,
+            "body": "And this doesn't really have an impact depending on your table"
+        },
+        {
+            "startTime": 1432.12,
+            "endTime": 1434.66,
+            "body": "size, it has impact depending on your table count."
+        },
+        {
+            "startTime": 1435.44,
+            "endTime": 1440.28,
+            "body": "If you have, I would say, more than hundreds, so getting into"
+        },
+        {
+            "startTime": 1440.28,
+            "endTime": 1444.02,
+            "body": "thousands of tables, that's or and many of them are large, maybe"
+        },
+        {
+            "startTime": 1444.02,
+            "endTime": 1446.68,
+            "body": "the Autovacuum worker takes a long time on 1 table."
+        },
+        {
+            "startTime": 1446.82,
+            "endTime": 1449.88,
+            "body": "That's where you're going to want to start tuning that up, giving"
+        },
+        {
+            "startTime": 1449.88,
+            "endTime": 1454.66,
+            "body": "extra resources on your server over to vacuum compared to servicing"
+        },
+        {
+            "startTime": 1454.7,
+            "endTime": 1455.2,
+            "body": "queries."
+        },
+        {
+            "startTime": 1455.36,
+            "endTime": 1456.98,
+            "body": "I would say for the greater good."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1457.22,
+            "endTime": 1460.14,
+            "body": "Yeah, and just to be clear when you say like hundreds"
+        },
+        {
+            "startTime": 1460.14,
+            "endTime": 1463.58,
+            "body": "of tables We're counting each partition as a table in that case."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 1463.86,
+            "endTime": 1464.36,
+            "body": "Yeah"
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1464.96,
+            "endTime": 1466.54,
+            "body": "Yeah makes a lot of sense."
+        },
+        {
+            "startTime": 1466.58,
+            "endTime": 1470.36,
+            "body": "Cool So anything I haven't asked you about that I should have"
+        },
+        {
+            "startTime": 1470.36,
+            "endTime": 1472.26,
+            "body": "done or any other tips for this?"
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 1474.16,
+            "endTime": 1474.94,
+            "body": "Let's see."
+        },
+        {
+            "startTime": 1476.02,
+            "endTime": 1480.2,
+            "body": "I think the only thing we didn't get around to that I think I"
+        },
+        {
+            "startTime": 1480.2,
+            "endTime": 1485.52,
+            "body": "would want to make sure I shill is some more details about how"
+        },
+        {
+            "startTime": 1485.52,
+            "endTime": 1488.76,
+            "body": "to fix a bloated table once you see it."
+        },
+        {
+            "startTime": 1489.24,
+            "endTime": 1492.32,
+            "body": "So if you have discovered you have a bloated table, let's say"
+        },
+        {
+            "startTime": 1492.32,
+            "endTime": 1495.92,
+            "body": "that you're above that metric, that rule of thumb, maybe well"
+        },
+        {
+            "startTime": 1495.92,
+            "endTime": 1496.46,
+            "body": "above it."
+        },
+        {
+            "startTime": 1496.46,
+            "endTime": 1500.34,
+            "body": "Like I said, when I found that toast table, it was like 95 percent"
+        },
+        {
+            "startTime": 1500.34,
+            "endTime": 1500.84,
+            "body": "bloat."
+        },
+        {
+            "startTime": 1501.8,
+            "endTime": 1503.02,
+            "body": "That explained a lot."
+        },
+        {
+            "startTime": 1503.98,
+            "endTime": 1507.34,
+            "body": "I would say that at that point, there's a couple routes you need"
+        },
+        {
+            "startTime": 1507.34,
+            "endTime": 1508.14,
+            "body": "to go down."
+        },
+        {
+            "startTime": 1508.86,
+            "endTime": 1512.1,
+            "body": "The first is to recognize that bloat is caused by a combination"
+        },
+        {
+            "startTime": 1512.54,
+            "endTime": 1516.26,
+            "body": "of autovacuum configuration and update and delete heavy workloads."
+        },
+        {
+            "startTime": 1516.56,
+            "endTime": 1518.24,
+            "body": "Just 1 of them won't get you there."
+        },
+        {
+            "startTime": 1518.24,
+            "endTime": 1519.3,
+            "body": "It's both together."
+        },
+        {
+            "startTime": 1519.74,
+            "endTime": 1523.0,
+            "body": "And so if you're only a little bit bloated, maybe you just kind"
+        },
+        {
+            "startTime": 1523.0,
+            "endTime": 1526.96,
+            "body": "of keyed onto it via some, you know, observability metric or,"
+        },
+        {
+            "startTime": 1526.96,
+            "endTime": 1530.04,
+            "body": "you know, warning level ping you got in some place or other."
+        },
+        {
+            "startTime": 1530.06,
+            "endTime": 1534.28,
+            "body": "At that point, I would recommend going the route of tuning your"
+        },
+        {
+            "startTime": 1534.28,
+            "endTime": 1538.94,
+            "body": "autovacuum configurations, as well as really talking to the"
+        },
+        {
+            "startTime": 1538.94,
+            "endTime": 1541.88,
+            "body": "dev team or working as a dev yourself to figure out whether there's"
+        },
+        {
+            "startTime": 1541.88,
+            "endTime": 1545.88,
+            "body": "anything you can do to reduce the volume or difficulty of those"
+        },
+        {
+            "startTime": 1545.88,
+            "endTime": 1546.98,
+            "body": "updates and deletes."
+        },
+        {
+            "startTime": 1547.32,
+            "endTime": 1551.26,
+            "body": "Some common anti-patterns I see are things like cron jobs that"
+        },
+        {
+            "startTime": 1551.26,
+            "endTime": 1554.56,
+            "body": "run every day or week and delete a huge amount of data."
+        },
+        {
+            "startTime": 1554.72,
+            "endTime": 1557.7,
+            "body": "And they often think they're being helpful when in reality they"
+        },
+        {
+            "startTime": 1557.7,
+            "endTime": 1561.24,
+            "body": "can be kind of degrading the quality and I.O."
+        },
+        {
+            "startTime": 1561.24,
+            "endTime": 1563.06,
+            "body": "Performance of that database."
+        },
+        {
+            "startTime": 1563.66,
+            "endTime": 1568.1,
+            "body": "In terms of tuning configurations, usually you want to go one of"
+        },
+        {
+            "startTime": 1568.1,
+            "endTime": 1568.94,
+            "body": "two broad ways."
+        },
+        {
+            "startTime": 1568.94,
+            "endTime": 1572.88,
+            "body": "You either give the server more resources for Autovacuum through"
+        },
+        {
+            "startTime": 1572.98,
+            "endTime": 1577.22,
+            "body": "Autovacuum Max Workers, or you tune it to run more frequently."
+        },
+        {
+            "startTime": 1577.48,
+            "endTime": 1580.74,
+            "body": "So you tune Autovacuum to actually run more aggressively, which"
+        },
+        {
+            "startTime": 1580.74,
+            "endTime": 1583.72,
+            "body": "I generally recommend based on system defaults."
+        },
+        {
+            "startTime": 1584.14,
+            "endTime": 1587.54,
+            "body": "Autovacuum did get more aggressive in more recent versions of"
+        },
+        {
+            "startTime": 1587.54,
+            "endTime": 1588.04,
+            "body": "Postgres."
+        },
+        {
+            "startTime": 1588.78,
+            "endTime": 1592.48,
+            "body": "However, it's still generally good to tune up like Autovacuum"
+        },
+        {
+            "startTime": 1592.48,
+            "endTime": 1595.96,
+            "body": "Vacuum Scale Factor, especially if you have those large tables,"
+        },
+        {
+            "startTime": 1595.98,
+            "endTime": 1600.28,
+            "body": "you know, defaults to only triggering Autovacuum when 20% of"
+        },
+        {
+            "startTime": 1600.28,
+            "endTime": 1602.5,
+            "body": "your table is dead rows."
+        },
+        {
+            "startTime": 1602.66,
+            "endTime": 1605.56,
+            "body": "So, you know, that's already beyond, I would say, my recommended"
+        },
+        {
+            "startTime": 1605.66,
+            "endTime": 1607.06,
+            "body": "18% goal."
+        },
+        {
+            "startTime": 1607.22,
+            "endTime": 1610.14,
+            "body": "So if you really wanted to trigger more proactively, you would"
+        },
+        {
+            "startTime": 1610.14,
+            "endTime": 1615.28,
+            "body": "need to tune that down from 0.2 to let's say like 0.1 or far"
+        },
+        {
+            "startTime": 1615.28,
+            "endTime": 1615.52,
+            "body": "less."
+        },
+        {
+            "startTime": 1615.52,
+            "endTime": 1618.32,
+            "body": "You know, I see a lot of recommendations online that I've used"
+        },
+        {
+            "startTime": 1618.32,
+            "endTime": 1624.0,
+            "body": "as a user that suggest, you know, every 1% or 3% of dead tuples."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1625.14,
+            "endTime": 1627.44,
+            "body": "Yeah, because for a huge table, that's still a lot of"
+        },
+        {
+            "startTime": 1627.44,
+            "endTime": 1627.94,
+            "body": "tuples."
+        },
+        {
+            "startTime": 1628.1,
+            "endTime": 1630.58,
+            "body": "We could still be talking about tens of thousands, hundreds of"
+        },
+        {
+            "startTime": 1630.58,
+            "endTime": 1632.48,
+            "body": "thousands, even millions of tuples."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 1632.88,
+            "endTime": 1635.52,
+            "body": "And by the time that it's actually done, you could be"
+        },
+        {
+            "startTime": 1635.52,
+            "endTime": 1637.86,
+            "body": "up higher than that because that's what triggers."
+        },
+        {
+            "startTime": 1638.04,
+            "endTime": 1639.7,
+            "body": "What if it takes hours and hours?"
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1641.14,
+            "endTime": 1641.92,
+            "body": "Yeah, absolutely."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 1642.64,
+            "endTime": 1646.32,
+            "body": "If you do get really, really far behind, you check the"
+        },
+        {
+            "startTime": 1646.32,
+            "endTime": 1651.06,
+            "body": "clock and you're up to that 90 percent bloat table, that is a"
+        },
+        {
+            "startTime": 1651.06,
+            "endTime": 1653.5,
+            "body": "good time to consider rebuilding the table."
+        },
+        {
+            "startTime": 1653.58,
+            "endTime": 1656.08,
+            "body": "If you can afford it, vacuum full."
+        },
+        {
+            "startTime": 1656.5,
+            "endTime": 1659.66,
+            "body": "Most people can't these days if it's a user-facing application,"
+        },
+        {
+            "startTime": 1659.8,
+            "endTime": 1661.26,
+            "body": "so that's the reality."
+        },
+        {
+            "startTime": 1661.36,
+            "endTime": 1665.24,
+            "body": "But I always say that first because there are situations in which"
+        },
+        {
+            "startTime": 1665.24,
+            "endTime": 1668.28,
+            "body": "you can, again, looking from the user perspective, and it's a"
+        },
+        {
+            "startTime": 1668.28,
+            "endTime": 1668.98,
+            "body": "lot easier."
+        },
+        {
+            "startTime": 1669.3,
+            "endTime": 1672.58,
+            "body": "The other thing you could do is use an extension like pg_repack"
+        },
+        {
+            "startTime": 1672.84,
+            "endTime": 1675.54,
+            "body": "or pg_squeeze to rewrite it."
+        },
+        {
+            "startTime": 1675.58,
+            "endTime": 1678.94,
+            "body": "And this basically creates a shadow table duplicate schema."
+        },
+        {
+            "startTime": 1679.38,
+            "endTime": 1683.6,
+            "body": "It will copy over all the data, use triggers to update all the"
+        },
+        {
+            "startTime": 1683.6,
+            "endTime": 1685.96,
+            "body": "incoming data coming in from one to another."
+        },
+        {
+            "startTime": 1686.22,
+            "endTime": 1690.68,
+            "body": "And then once it's all caught up, it will within an access exclusive"
+        },
+        {
+            "startTime": 1690.84,
+            "endTime": 1694.44,
+            "body": "lock on the which lasts you know less than a second."
+        },
+        {
+            "startTime": 1694.96,
+            "endTime": 1695.46,
+            "body": "Definitely."
+        },
+        {
+            "startTime": 1695.98,
+            "endTime": 1699.54,
+            "body": "It will basically switch the table names to the prod traffic"
+        },
+        {
+            "startTime": 1699.54,
+            "endTime": 1701.18,
+            "body": "points towards the new table."
+        },
+        {
+            "startTime": 1701.34,
+            "endTime": 1703.86,
+            "body": "This is something that I have seen be flaky."
+        },
+        {
+            "startTime": 1703.86,
+            "endTime": 1706.94,
+            "body": "I wouldn't personally recommend automating pg_repack."
+        },
+        {
+            "startTime": 1707.24,
+            "endTime": 1710.6,
+            "body": "I've seen and heard of cases in various talks and just through"
+        },
+        {
+            "startTime": 1710.6,
+            "endTime": 1713.76,
+            "body": "friends in the industry, people that try to automate pg_repack."
+        },
+        {
+            "startTime": 1713.76,
+            "endTime": 1717.08,
+            "body": "And, you know, I've seen it lead to a lot of incidents and issues."
+        },
+        {
+            "startTime": 1717.74,
+            "endTime": 1720.68,
+            "body": "You know, I've personally never run into an issue where there's"
+        },
+        {
+            "startTime": 1720.68,
+            "endTime": 1723.86,
+            "body": "any data loss, because in the case that you just kill the PID"
+        },
+        {
+            "startTime": 1723.94,
+            "endTime": 1726.96,
+            "body": "of pg_repack, for example, you just have some dead tables you"
+        },
+        {
+            "startTime": 1726.96,
+            "endTime": 1728.08,
+            "body": "have to manually drop."
+        },
+        {
+            "startTime": 1728.08,
+            "endTime": 1730.8,
+            "body": "The duplicate ones aren't complete, so you use the old one."
+        },
+        {
+            "startTime": 1730.8,
+            "endTime": 1734.78,
+            "body": "But I've heard of it causing other issues, so I would say be careful,"
+        },
+        {
+            "startTime": 1735.32,
+            "endTime": 1737.58,
+            "body": "but I wouldn't stray away from it totally."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1738.66,
+            "endTime": 1742.74,
+            "body": "Nice, I've always thought of it as like, reindexing concurrently,"
+        },
+        {
+            "startTime": 1742.88,
+            "endTime": 1744.14,
+            "body": "but for the whole table."
+        },
+        {
+            "startTime": 1745.04,
+            "endTime": 1747.9,
+            "body": "Is that a reasonable comparison?"
+        },
+        {
+            "startTime": 1748.16,
+            "endTime": 1751.98,
+            "body": "Or I guess it's missing some subtlety around potential flakiness,"
+        },
+        {
+            "startTime": 1751.98,
+            "endTime": 1753.44,
+            "body": "but that can fail as well, right?"
+        },
+        {
+            "startTime": 1753.44,
+            "endTime": 1756.56,
+            "body": "Like if reindexing concurrently fails, you can end up with some"
+        },
+        {
+            "startTime": 1756.56,
+            "endTime": 1757.62,
+            "body": "invalid indexes."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 1758.24,
+            "endTime": 1761.48,
+            "body": "I think that's a really good analogy, actually, mainly"
+        },
+        {
+            "startTime": 1761.48,
+            "endTime": 1762.74,
+            "body": "because they're both nontransactional."
+        },
+        {
+            "startTime": 1763.56,
+            "endTime": 1768.78,
+            "body": "Because concurrently or anything concurrent, the thing that it's"
+        },
+        {
+            "startTime": 1768.78,
+            "endTime": 1771.44,
+            "body": "an unusual move by Postgres, and I'm sure there was a lot of"
+        },
+        {
+            "startTime": 1771.44,
+            "endTime": 1773.7,
+            "body": "discussion on the core team about this when they first started"
+        },
+        {
+            "startTime": 1773.7,
+            "endTime": 1777.24,
+            "body": "releasing concurrent features, because it's a decision by the"
+        },
+        {
+            "startTime": 1777.24,
+            "endTime": 1781.74,
+            "body": "core team to value the user Postgres experience by DBAs and applications"
+        },
+        {
+            "startTime": 1782.52,
+            "endTime": 1784.44,
+            "body": "over the strict rules of MVCC."
+        },
+        {
+            "startTime": 1785.24,
+            "endTime": 1788.66,
+            "body": "Because when you create something index concurrently, if it fails,"
+        },
+        {
+            "startTime": 1788.66,
+            "endTime": 1789.98,
+            "body": "you have the invalid index."
+        },
+        {
+            "startTime": 1790.0,
+            "endTime": 1792.9,
+            "body": "So it's not atomic, it's not able to roll back."
+        },
+        {
+            "startTime": 1793.4,
+            "endTime": 1794.72,
+            "body": "The same thing with pg_repack."
+        },
+        {
+            "startTime": 1794.92,
+            "endTime": 1798.28,
+            "body": "If it fails, then you have these invalid tables and valid indexes"
+        },
+        {
+            "startTime": 1798.38,
+            "endTime": 1799.44,
+            "body": "that you need to drop."
+        },
+        {
+            "startTime": 1799.68,
+            "endTime": 1802.8,
+            "body": "If you try to rerun it, it's not a no-op."
+        },
+        {
+            "startTime": 1802.8,
+            "endTime": 1804.3,
+            "body": "You'll have to clean it up first."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 1804.9,
+            "endTime": 1805.5,
+            "body": "Yep, cool."
+        },
+        {
+            "startTime": 1805.5,
+            "endTime": 1806.0,
+            "body": "Okay."
+        },
+        {
+            "startTime": 1806.04,
+            "endTime": 1806.58,
+            "body": "Oh, wow."
+        },
+        {
+            "startTime": 1806.58,
+            "endTime": 1807.38,
+            "body": "That's good."
+        },
+        {
+            "startTime": 1808.1,
+            "endTime": 1811.52,
+            "body": "So that's a really good point in terms of autovacuum and in"
+        },
+        {
+            "startTime": 1811.52,
+            "endTime": 1815.86,
+            "body": "terms of repacking or vacuum full if you can afford the heavy"
+        },
+        {
+            "startTime": 1815.86,
+            "endTime": 1819.54,
+            "body": "locks, or if your system just doesn't have any users at a certain"
+        },
+        {
+            "startTime": 1819.54,
+            "endTime": 1822.6,
+            "body": "time of day or something like that right but it is, it's rare"
+        },
+        {
+            "startTime": 1822.6,
+            "endTime": 1826.28,
+            "body": "but it is common enough that I have been caught out by not recommending"
+        },
+        {
+            "startTime": 1826.28,
+            "endTime": 1828.64,
+            "body": "it a couple of times which is super interesting."
+        },
+        {
+            "startTime": 1829.24,
+            "endTime": 1832.84,
+            "body": "CLUSTER is in the same category right, like same as VACUUM FULL"
+        },
+        {
+            "startTime": 1832.84,
+            "endTime": 1837.02,
+            "body": "but you get to order it by an index, which could be helpful for"
+        },
+        {
+            "startTime": 1837.54,
+            "endTime": 1838.5,
+            "body": "like reads."
+        },
+        {
+            "startTime": 1838.94,
+            "endTime": 1839.44,
+            "body": "Definitely."
+        },
+        {
+            "startTime": 1840.28,
+            "endTime": 1840.78,
+            "body": "Cool."
+        },
+        {
+            "startTime": 1841.72,
+            "endTime": 1843.98,
+            "body": "Last, in fact, you mentioned the right at the beginning and I"
+        },
+        {
+            "startTime": 1843.98,
+            "endTime": 1847.24,
+            "body": "had to bite my tongue not to jump straight on the pun because"
+        },
+        {
+            "startTime": 1847.24,
+            "endTime": 1848.58,
+            "body": "that's how my brain works."
+        },
+        {
+            "startTime": 1848.6,
+            "endTime": 1850.58,
+            "body": "You mentioned having a hot take."
+        },
+        {
+            "startTime": 1851.04,
+            "endTime": 1854.58,
+            "body": "So you talked quite a lot in the past about access patterns."
+        },
+        {
+            "startTime": 1855.26,
+            "endTime": 1859.86,
+            "body": "And one point I loved was the idea of considering if you've got"
+        },
+        {
+            "startTime": 1859.86,
+            "endTime": 1862.44,
+            "body": "an update or delete heavy workload which could be the reason"
+        },
+        {
+            "startTime": 1862.44,
+            "endTime": 1863.5,
+            "body": "you're in this situation."
+        },
+        {
+            "startTime": 1864.34,
+            "endTime": 1866.8,
+            "body": "Do you even need to be doing those updates and deletes?"
+        },
+        {
+            "startTime": 1866.82,
+            "endTime": 1869.64,
+            "body": "That's a question that doesn't get asked very often, and you"
+        },
+        {
+            "startTime": 1869.64,
+            "endTime": 1870.9,
+            "body": "made a really good point."
+        },
+        {
+            "startTime": 1871.4,
+            "endTime": 1874.9,
+            "body": "So there's that angle that I'd love you to talk on if you want"
+        },
+        {
+            "startTime": 1874.9,
+            "endTime": 1875.22,
+            "body": "to."
+        },
+        {
+            "startTime": 1875.22,
+            "endTime": 1879.46,
+            "body": "And there's also the hot update optimization we have in Postgres"
+        },
+        {
+            "startTime": 1879.48,
+            "endTime": 1882.1,
+            "body": "that can be a huge help for some avoidings."
+        },
+        {
+            "startTime": 1882.96,
+            "endTime": 1886.48,
+            "body": "If you're aware of it, not indexing a certain column if you don't"
+        },
+        {
+            "startTime": 1886.48,
+            "endTime": 1887.22,
+            "body": "have to."
+        },
+        {
+            "startTime": 1887.38,
+            "endTime": 1889.44,
+            "body": "There are some trade-offs there that might be interesting."
+        },
+        {
+            "startTime": 1889.44,
+            "endTime": 1891.62,
+            "body": "I don't know if you've got experience with those."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 1892.48,
+            "endTime": 1896.24,
+            "body": "Yeah, I guess so first address the first part of it."
+        },
+        {
+            "startTime": 1896.58,
+            "endTime": 1898.94,
+            "body": "Glad you brought it up because this is definitely"
+        },
+        {
+            "startTime": 1898.94,
+            "endTime": 1900.12,
+            "body": "a strong opinion of mine."
+        },
+        {
+            "startTime": 1900.12,
+            "endTime": 1903.24,
+            "body": "And I think that's something that comes from coming to being"
+        },
+        {
+            "startTime": 1903.26,
+            "endTime": 1905.92,
+            "body": "what I would describe as somewhere between the liminal space"
+        },
+        {
+            "startTime": 1905.92,
+            "endTime": 1909.86,
+            "body": "of a software engineer and a DBA through, you know, backend engineer"
+        },
+        {
+            "startTime": 1909.86,
+            "endTime": 1912.9,
+            "body": "to data engineer to DBA, just, you know, sinking my way down"
+        },
+        {
+            "startTime": 1912.9,
+            "endTime": 1913.58,
+            "body": "into infrastructure."
+        },
+        {
+            "startTime": 1914.52,
+            "endTime": 1917.6,
+            "body": "And, you know, I think that I still tend to think from a perspective"
+        },
+        {
+            "startTime": 1917.6,
+            "endTime": 1920.3,
+            "body": "of a backend or data engineer a lot of the time."
+        },
+        {
+            "startTime": 1920.3,
+            "endTime": 1923.18,
+            "body": "And from that, I think that it's good for us to all remember"
+        },
+        {
+            "startTime": 1923.22,
+            "endTime": 1927.54,
+            "body": "that so many of these access patterns and rights, the biggest"
+        },
+        {
+            "startTime": 1927.54,
+            "endTime": 1931.1,
+            "body": "hammer you can use is to just not do it or to rewrite it."
+        },
+        {
+            "startTime": 1931.14,
+            "endTime": 1936.06,
+            "body": "If you're a DBA managing a couple or hundreds of databases, speaking"
+        },
+        {
+            "startTime": 1936.06,
+            "endTime": 1939.7,
+            "body": "for myself, I'm managing the hardware and the high-level metrics."
+        },
+        {
+            "startTime": 1940.22,
+            "endTime": 1943.1,
+            "body": "I don't really have access or knowledge about talking to somebody"
+        },
+        {
+            "startTime": 1943.1,
+            "endTime": 1944.18,
+            "body": "into the why."
+        },
+        {
+            "startTime": 1944.18,
+            "endTime": 1945.44,
+            "body": "Why do we have this query?"
+        },
+        {
+            "startTime": 1945.44,
+            "endTime": 1947.42,
+            "body": "Why do we have this database itself?"
+        },
+        {
+            "startTime": 1947.92,
+            "endTime": 1949.12,
+            "body": "What the heck's in it?"
+        },
+        {
+            "startTime": 1949.38,
+            "endTime": 1953.26,
+            "body": "I think that if you really want to address bloat, often the best"
+        },
+        {
+            "startTime": 1953.26,
+            "endTime": 1956.24,
+            "body": "thing you can do is to start a conversation and say, hey, what's"
+        },
+        {
+            "startTime": 1956.24,
+            "endTime": 1957.5,
+            "body": "the value of this?"
+        },
+        {
+            "startTime": 1957.5,
+            "endTime": 1958.92,
+            "body": "Can we simplify it?"
+        },
+        {
+            "startTime": 1958.92,
+            "endTime": 1961.02,
+            "body": "Do we need to be deleting this?"
+        },
+        {
+            "startTime": 1961.18,
+            "endTime": 1962.74,
+            "body": "Do we need to have this table?"
+        },
+        {
+            "startTime": 1962.74,
+            "endTime": 1966.76,
+            "body": "You know, it's crazy how many times that I've dealt with a problem"
+        },
+        {
+            "startTime": 1966.84,
+            "endTime": 1971.22,
+            "body": "that way, and I've never needed to delve into the more, I would"
+        },
+        {
+            "startTime": 1971.22,
+            "endTime": 1972.54,
+            "body": "say, extensive measures."
+        },
+        {
+            "startTime": 1973.3,
+            "endTime": 1976.28,
+            "body": "And also, if you can, keep those relationships with people"
+        },
+        {
+            "startTime": 1976.28,
+            "endTime": 1979.28,
+            "body": "at your organization or whoever you're working on a project with"
+        },
+        {
+            "startTime": 1979.44,
+            "endTime": 1982.94,
+            "body": "to try to be able to let them keep that up by themselves."
+        },
+        {
+            "startTime": 1982.98,
+            "endTime": 1986.14,
+            "body": "You know, at my company, we've built some automation around let's"
+        },
+        {
+            "startTime": 1986.14,
+            "endTime": 1989.96,
+            "body": "say like auto education as far as we can."
+        },
+        {
+            "startTime": 1989.96,
+            "endTime": 1993.28,
+            "body": "We're still working on it, but a way to kind of allow developers"
+        },
+        {
+            "startTime": 1993.32,
+            "endTime": 1997.62,
+            "body": "to be proactively educated about how they're building their systems."
+        },
+        {
+            "startTime": 1997.72,
+            "endTime": 2001.9,
+            "body": "And so I think that as much that you can do that and just, I"
+        },
+        {
+            "startTime": 2001.9,
+            "endTime": 2005.6,
+            "body": "would say, change the patterns from the code side is the quickest"
+        },
+        {
+            "startTime": 2005.6,
+            "endTime": 2006.78,
+            "body": "way. That's a PR."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 2007.6,
+            "endTime": 2007.94,
+            "body": "Awesome."
+        },
+        {
+            "startTime": 2007.94,
+            "endTime": 2009.54,
+            "body": "I was not expecting it to go that way."
+        },
+        {
+            "startTime": 2009.54,
+            "endTime": 2011.24,
+            "body": "What's this automatic education thing?"
+        },
+        {
+            "startTime": 2011.24,
+            "endTime": 2012.82,
+            "body": "Is there anything you can share there?"
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 2013.4,
+            "endTime": 2013.9,
+            "body": "Yeah."
+        },
+        {
+            "startTime": 2013.96,
+            "endTime": 2017.26,
+            "body": "I will mea culpa here and say that I wish I could say it were"
+        },
+        {
+            "startTime": 2017.26,
+            "endTime": 2021.72,
+            "body": "a more, a more, you know, like amazing system than it probably"
+        },
+        {
+            "startTime": 2021.74,
+            "endTime": 2026.78,
+            "body": "is, but we've used, for example, git hooks and GitHub webhooks"
+        },
+        {
+            "startTime": 2026.78,
+            "endTime": 2030.08,
+            "body": "to automatically comment documentation that we've written on"
+        },
+        {
+            "startTime": 2030.08,
+            "endTime": 2030.58,
+            "body": "PRs."
+        },
+        {
+            "startTime": 2030.94,
+            "endTime": 2034.28,
+            "body": "For example, if we see running a migration, we pin the migration"
+        },
+        {
+            "startTime": 2034.28,
+            "endTime": 2038.26,
+            "body": "guide to your PR rather than requesting us as reviewers because"
+        },
+        {
+            "startTime": 2038.26,
+            "endTime": 2041.24,
+            "body": "I work in an organization of larger than, you know, a thousand"
+        },
+        {
+            "startTime": 2041.24,
+            "endTime": 2041.74,
+            "body": "people."
+        },
+        {
+            "startTime": 2041.8,
+            "endTime": 2045.86,
+            "body": "So I don't wanna be a blocker on your migration, I want to educate"
+        },
+        {
+            "startTime": 2045.86,
+            "endTime": 2046.36,
+            "body": "you."
+        },
+        {
+            "startTime": 2046.6,
+            "endTime": 2047.8,
+            "body": "Same thing with partitioning."
+        },
+        {
+            "startTime": 2048.1,
+            "endTime": 2050.48,
+            "body": "I wrote, after we dealt with partitioning stuff, you may have"
+        },
+        {
+            "startTime": 2050.48,
+            "endTime": 2053.52,
+            "body": "noticed that a lot of the talks I write are based off whatever"
+        },
+        {
+            "startTime": 2053.52,
+            "endTime": 2055.36,
+            "body": "the heck I'm struggling with at work."
+        },
+        {
+            "startTime": 2055.86,
+            "endTime": 2059.96,
+            "body": "And so I wrote a very in-depth partitioning migration"
+        },
+        {
+            "startTime": 2059.96,
+            "endTime": 2064.0,
+            "body": "guide, both for future people on my team, as well as people who"
+        },
+        {
+            "startTime": 2064.0,
+            "endTime": 2067.24,
+            "body": "might want to partition and need to understand why, how, whether"
+        },
+        {
+            "startTime": 2067.24,
+            "endTime": 2068.16,
+            "body": "it's a good idea."
+        },
+        {
+            "startTime": 2068.78,
+            "endTime": 2072.44,
+            "body": "So I think that creating documentation is good, but we all know"
+        },
+        {
+            "startTime": 2072.44,
+            "endTime": 2075.14,
+            "body": "it falls out so quickly."
+        },
+        {
+            "startTime": 2075.22,
+            "endTime": 2078.04,
+            "body": "You change 1 thing, it's deprecated, you forget about it, the"
+        },
+        {
+            "startTime": 2078.04,
+            "endTime": 2078.76,
+            "body": "person leaves."
+        },
+        {
+            "startTime": 2078.76,
+            "endTime": 2082.72,
+            "body": "So I think that the underappreciated side of it is figuring out"
+        },
+        {
+            "startTime": 2082.72,
+            "endTime": 2086.44,
+            "body": "easy systems where you're auto-commenting it or you're pushing"
+        },
+        {
+            "startTime": 2086.44,
+            "endTime": 2090.28,
+            "body": "it to people in a way that actually keeps it actively read."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 2091.5,
+            "endTime": 2091.88,
+            "body": "Awesome."
+        },
+        {
+            "startTime": 2091.88,
+            "endTime": 2092.66,
+            "body": "Sounds great."
+        },
+        {
+            "startTime": 2092.86,
+            "endTime": 2096.76,
+            "body": "Is there anything else you'd like to plug or give a shout out"
+        },
+        {
+            "startTime": 2096.76,
+            "endTime": 2097.26,
+            "body": "to?"
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 2099.66,
+            "endTime": 2100.46,
+            "body": "Not particularly."
+        },
+        {
+            "startTime": 2100.72,
+            "endTime": 2107.16,
+            "body": "I think that I'm sort of a relative newbie to the Postgres community"
+        },
+        {
+            "startTime": 2107.5,
+            "endTime": 2109.5,
+            "body": "being involved in the open source side."
+        },
+        {
+            "startTime": 2109.62,
+            "endTime": 2112.7,
+            "body": "I went to my first Postgres conference last year and then"
+        },
+        {
+            "startTime": 2112.7,
+            "endTime": 2117.56,
+            "body": "sort of ran out it at 100 miles an hour ever since then, which"
+        },
+        {
+            "startTime": 2117.56,
+            "endTime": 2119.12,
+            "body": "has been really fun to get involved."
+        },
+        {
+            "startTime": 2119.12,
+            "endTime": 2122.2,
+            "body": "So I guess I would just say thank you to all you guys for inviting"
+        },
+        {
+            "startTime": 2122.2,
+            "endTime": 2122.54,
+            "body": "me in."
+        },
+        {
+            "startTime": 2122.54,
+            "endTime": 2125.88,
+            "body": "It's been a great past year being more involved in Postgres."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 2126.4,
+            "endTime": 2128.08,
+            "body": "It's awesome to have you in the community."
+        },
+        {
+            "startTime": 2128.08,
+            "endTime": 2130.92,
+            "body": "I still feel new, and I feel like I've been here for like 5 or"
+        },
+        {
+            "startTime": 2130.92,
+            "endTime": 2131.48,
+            "body": "6 years."
+        },
+        {
+            "startTime": 2131.48,
+            "endTime": 2133.4,
+            "body": "So it's awesome having you here."
+        },
+        {
+            "startTime": 2133.4,
+            "endTime": 2135.68,
+            "body": "You're a wonderful contributor to the community."
+        },
+        {
+            "startTime": 2135.9,
+            "endTime": 2136.88,
+            "body": "Your talks are great."
+        },
+        {
+            "startTime": 2136.88,
+            "endTime": 2140.84,
+            "body": "Please keep giving talks on issues you're hitting with Postgres"
+        },
+        {
+            "startTime": 2140.84,
+            "endTime": 2144.28,
+            "body": "that are some of the most fascinating that the community can have"
+        },
+        {
+            "startTime": 2144.28,
+            "endTime": 2147.64,
+            "body": "and also not common enough at conferences, I think, personally."
+        },
+        {
+            "startTime": 2148.14,
+            "endTime": 2149.34,
+            "body": "So, yeah, appreciate it."
+        },
+        {
+            "startTime": 2149.34,
+            "endTime": 2151.14,
+            "body": "And appreciate the real numbers as well."
+        },
+        {
+            "startTime": 2151.14,
+            "endTime": 2152.4,
+            "body": "So, thanks so much Chelsea."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 2153.0,
+            "endTime": 2155.12,
+            "body": "Yeah, thank you for hosting this."
+        },
+        {
+            "startTime": 2155.12,
+            "endTime": 2159.12,
+            "body": "I listen to you guys, as many people do, in the car. So, you know,"
+        },
+        {
+            "startTime": 2160.62,
+            "endTime": 2164.0,
+            "body": "keep me going with good things to read while yelling at"
+        },
+        {
+            "startTime": 2164.0,
+            "endTime": 2165.78,
+            "body": "various drivers on the road."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 2166.04,
+            "endTime": 2167.8,
+            "body": "Well, apologies, you're probably going to have to skip"
+        },
+        {
+            "startTime": 2167.8,
+            "endTime": 2168.44,
+            "body": "a week."
+        },
+        {
+            "speaker": "Chelsea",
+            "startTime": 2168.76,
+            "endTime": 2169.26,
+            "body": "Okay."
+        },
+        {
+            "startTime": 2169.48,
+            "endTime": 2169.96,
+            "body": "Yeah. Yeah."
+        },
+        {
+            "startTime": 2169.96,
+            "endTime": 2171.68,
+            "body": "Listening to my own voice is too hard."
+        },
+        {
+            "speaker": "Michael",
+            "startTime": 2172.5,
+            "endTime": 2173.6,
+            "body": "Tell me about it."
+        },
+        {
+            "startTime": 2173.94,
+            "endTime": 2174.92,
+            "body": "Take care, Chelsea."
+        }
+    ]
+}
