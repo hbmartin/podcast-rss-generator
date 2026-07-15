@@ -2,15 +2,12 @@
 
 All notable changes to this project are documented here.
 
-## Unreleased
+## v2.1.0
 
 - Add `transcript` subpackage: convert podcast transcripts from SRT, WebVTT,
   Podlove simple-transcripts XML, HTML, and PodcastIndex JSON into
   PodcastIndex transcript JSON, individually or in bulk. Ported from
   [podcast-transcript-convert](https://github.com/hbmartin/podcast-transcript-convert).
-- Add `transcript/overcastdb` subpackage: read transcript paths and episode
-  metadata from an overcast-to-sqlite database (isolated so the pure-Go
-  SQLite driver is only pulled in by consumers that use it).
 - Add `chapters` subpackage: extract and transform podcast chapters between
   PodcastIndex (PCI) chapters, Podlove Simple Chapters (PSC), description
   timestamp embeds, and ID3v2 CHAP frames. Ported from

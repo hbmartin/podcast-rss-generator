@@ -73,3 +73,25 @@ func TestBulkConvertDuplicateSourcesDoNotCrash(t *testing.T) {
 	}
 	assert.Equal(t, []string{transcriptFile, transcriptFile}, sources)
 }
+
+func TestBulkConvertMissingSourceRecordedAsFailure(t *testing.T) {
+	t.Parallel()
+	dir := t.TempDir()
+	source := filepath.Join(dir, "in")
+	require.NoError(t, os.Mkdir(source, 0o750))
+	missing := filepath.Join(source, "missing.vtt")
+	dest := filepath.Join(dir, "out")
+
+	lister := func(directory string, ignore []string) ([]string, error) {
+		assert.Equal(t, source, directory)
+		assert.Empty(t, ignore)
+		return []string{missing}, nil
+	}
+
+	summary, err := BulkConvert(context.Background(), source, dest, withFileLister(lister))
+	require.NoError(t, err)
+	assert.Empty(t, summary.Converted)
+	require.Len(t, summary.Failed, 1)
+	assert.Equal(t, missing, summary.Failed[0].Source)
+	assert.NoFileExists(t, filepath.Join(dest, "missing.json"))
+}
