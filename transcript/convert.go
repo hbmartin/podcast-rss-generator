@@ -2,7 +2,6 @@ package transcript
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -13,9 +12,6 @@ import (
 
 // dirPerm is the permission for directories created during bulk conversion.
 const dirPerm = 0o750
-
-// errNoDBLister reports a ".db" source path with no DBLister configured.
-var errNoDBLister = errors.New("no DB lister configured")
 
 // converterFunc converts a source transcript file to a destination JSON file,
 // merging optional metadata.
@@ -63,19 +59,11 @@ type ConversionSummary struct {
 	DryRun    bool
 }
 
-// DBLister lists transcript file paths and per-file metadata from a database
-// (for example an overcast-to-sqlite database). It is injected so the core
-// package carries no database dependency.
-type DBLister interface {
-	ListFiles(ctx context.Context, dbPath string, ignore []string) (paths []string, metadata map[string]map[string]string, err error)
-}
-
 // bulkConfig holds resolved BulkConvert options.
 type bulkConfig struct {
 	ignore     []string
 	overwrite  bool
 	dryRun     bool
-	dbLister   DBLister
 	fileLister func(directory string, ignore []string) ([]string, error)
 }
 
@@ -95,11 +83,6 @@ func WithOverwrite() BulkOption {
 // WithDryRun reports what would be converted without writing any files.
 func WithDryRun() BulkOption {
 	return func(c *bulkConfig) { c.dryRun = true }
-}
-
-// WithDBLister supplies a DBLister used when the source path ends in ".db".
-func WithDBLister(lister DBLister) BulkOption {
-	return func(c *bulkConfig) { c.dbLister = lister }
 }
 
 // withFileLister overrides directory listing (used in tests).
@@ -126,9 +109,8 @@ type job struct {
 }
 
 // BulkConvert converts every transcript under transcriptPath to PodcastIndex
-// JSON. transcriptPath may be a directory of transcripts or, when a DBLister is
-// configured with WithDBLister, a database (a path ending in ".db"). Conversion
-// errors are collected per file rather than aborting the whole run.
+// JSON. transcriptPath is a directory of transcripts. Conversion errors are
+// collected per file rather than aborting the whole run.
 func BulkConvert(
 	ctx context.Context,
 	transcriptPath, destinationPath string,
@@ -139,7 +121,7 @@ func BulkConvert(
 		opt(&cfg)
 	}
 
-	filePaths, metadatas, sourceRoot, err := listSources(ctx, transcriptPath, &cfg)
+	filePaths, err := cfg.fileLister(transcriptPath, cfg.ignore)
 	if err != nil {
 		return nil, err
 	}
@@ -147,7 +129,7 @@ func BulkConvert(
 	grouped := IdentifyFileTypes(ctx, filePaths)
 	summary := &ConversionSummary{DryRun: cfg.dryRun, Unknown: grouped[FileTypeUnknown]}
 
-	jobs := buildJobs(grouped, destinationPath, sourceRoot)
+	jobs := buildJobs(grouped, destinationPath, transcriptPath)
 	pending := planJobs(jobs, cfg.overwrite, summary)
 
 	if cfg.dryRun {
@@ -156,26 +138,8 @@ func BulkConvert(
 		}
 		return summary, nil
 	}
-	runJobs(pending, metadatas, summary)
+	runJobs(pending, summary)
 	return summary, nil
-}
-
-// listSources resolves the source file paths, per-file metadata, and source
-// root for a BulkConvert run.
-func listSources(
-	ctx context.Context,
-	transcriptPath string,
-	cfg *bulkConfig,
-) (paths []string, metadata map[string]map[string]string, sourceRoot string, err error) {
-	if strings.HasSuffix(transcriptPath, ".db") {
-		if cfg.dbLister == nil {
-			return nil, nil, "", fmt.Errorf("%w for %s", errNoDBLister, transcriptPath)
-		}
-		paths, metadata, err = cfg.dbLister.ListFiles(ctx, transcriptPath, cfg.ignore)
-		return paths, metadata, "", err
-	}
-	paths, err = cfg.fileLister(transcriptPath, cfg.ignore)
-	return paths, map[string]map[string]string{}, transcriptPath, err
 }
 
 // buildJobs pairs every known-format file with its converter and unique
@@ -217,7 +181,7 @@ func planJobs(jobs []job, overwrite bool, summary *ConversionSummary) []job {
 
 // runJobs converts the pending jobs concurrently and records outcomes on the
 // summary, preserving job order.
-func runJobs(pending []job, metadatas map[string]map[string]string, summary *ConversionSummary) {
+func runJobs(pending []job, summary *ConversionSummary) {
 	if len(pending) == 0 {
 		return
 	}
@@ -231,7 +195,7 @@ func runJobs(pending []job, metadatas map[string]map[string]string, summary *Con
 			defer wg.Done()
 			defer func() { <-sem }()
 			j := pending[i]
-			results[i] = runConversion(j.converter, j.source, j.destination, metadatas[j.source])
+			results[i] = runConversion(j.converter, j.source, j.destination)
 		}()
 	}
 	wg.Wait()
@@ -245,11 +209,11 @@ func runJobs(pending []job, metadatas map[string]map[string]string, summary *Con
 	}
 }
 
-func runConversion(converter converterFunc, source, destination string, metadata map[string]string) error {
+func runConversion(converter converterFunc, source, destination string) error {
 	if err := os.MkdirAll(filepath.Dir(destination), dirPerm); err != nil {
 		return err
 	}
-	return converter(source, destination, metadata)
+	return converter(source, destination, nil)
 }
 
 // destinationPath maps a source file to a destination JSON path, mirroring the

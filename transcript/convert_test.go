@@ -87,37 +87,6 @@ func TestBulkConvertRecordsInvalidJSONAsFailure(t *testing.T) {
 	assert.NoFileExists(t, filepath.Join(dest, "bad.json"))
 }
 
-func TestBulkConvertRecordsMissingVTTAsFailure(t *testing.T) {
-	t.Parallel()
-	dir := t.TempDir()
-	missing := filepath.Join(dir, "missing.vtt")
-	dbPath := filepath.Join(dir, "overcast.db")
-	dest := filepath.Join(dir, "out")
-
-	lister := &capturingDBLister{paths: []string{missing}}
-	summary, err := transcript.BulkConvert(context.Background(), dbPath, dest, transcript.WithDBLister(lister))
-	require.NoError(t, err)
-	assert.Equal(t, dbPath, lister.gotDBPath)
-	assert.Empty(t, lister.gotIgnore)
-	assert.Empty(t, summary.Converted)
-	assert.Equal(t, []string{missing}, failedSources(summary))
-	assert.Empty(t, jsonFilesUnder(t, dest))
-}
-
-// jsonFilesUnder returns every .json file under dir (recursively).
-func jsonFilesUnder(t *testing.T, dir string) []string {
-	t.Helper()
-	var found []string
-	err := filepath.WalkDir(dir, func(path string, d os.DirEntry, walkErr error) error {
-		if walkErr == nil && !d.IsDir() && filepath.Ext(path) == ".json" {
-			found = append(found, path)
-		}
-		return nil
-	})
-	require.NoError(t, err)
-	return found
-}
-
 func TestBulkConvertSkipsExistingUnlessOverwrite(t *testing.T) {
 	t.Parallel()
 	dir := t.TempDir()
@@ -169,24 +138,6 @@ func TestBulkConvertIgnoreList(t *testing.T) {
 		transcript.WithIgnore([]string{"skipme.srt"}))
 	require.NoError(t, err)
 	assert.Equal(t, []string{filepath.Join(source, "ep.srt")}, convertedSources(summary))
-}
-
-// capturingDBLister is a fake transcript.DBLister for BulkConvert tests.
-type capturingDBLister struct {
-	paths     []string
-	metadata  map[string]map[string]string
-	gotDBPath string
-	gotIgnore []string
-}
-
-func (l *capturingDBLister) ListFiles(
-	_ context.Context,
-	dbPath string,
-	ignore []string,
-) ([]string, map[string]map[string]string, error) {
-	l.gotDBPath = dbPath
-	l.gotIgnore = ignore
-	return l.paths, l.metadata, nil
 }
 
 func convertedSources(summary *transcript.ConversionSummary) []string {
