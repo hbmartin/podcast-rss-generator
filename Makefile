@@ -1,17 +1,43 @@
 SHELL = /bin/bash
 
-GITHUB_REPO:=eduncan911/podcast
+GITHUB_REPO := hbmartin/podcast-rss-generator
+MODULE := github.com/$(GITHUB_REPO)/v2
+
+.PHONY: build test cover lint fmt vet tidy clean README
+
+build:
+	go build ./...
+
+test:
+	go test -race ./...
+
+cover:
+	go test -coverprofile=profile.out ./...
+	go tool cover -func=profile.out
+
+lint:
+	golangci-lint run
+
+fmt:
+	go fmt ./...
+
+vet:
+	go vet ./...
+
+tidy:
+	go mod tidy
+	go mod vendor
 
 README:
-	godoc2ghmd -play -ex -verify_import_links=0 github.com/$(GITHUB_REPO) > README.md.tmp
-	echo "[![GoDoc](https://godoc.org/github.com/$(GITHUB_REPO)?status.svg)](https://godoc.org/github.com/$(GITHUB_REPO))" > README.md	
-	echo "[![Build Status](https://github.com/$(GITHUB_REPO)/workflows/go-cicd/badge.svg)](https://github.com/$(GITHUB_REPO)/actions?workflow=go-cicd)" >> README.md
-	echo "[![Coverage Status](https://coveralls.io/repos/github/$(GITHUB_REPO)/badge.svg?branch=master)](https://coveralls.io/github/$(GITHUB_REPO)?branch=master)" >> README.md
-	echo "[![Go Report Card](https://goreportcard.com/badge/github.com/$(GITHUB_REPO))](https://goreportcard.com/report/github.com/$(GITHUB_REPO))" >> README.md
-	echo "[![MIT License](https://img.shields.io/npm/l/mediaelement.svg)](https://eduncan911.mit-license.org/)" >> README.md
+	godoc2ghmd -play -ex -verify_import_links=0 $(MODULE) > README.md.tmp
+	echo "[![Go Reference](https://pkg.go.dev/badge/$(MODULE).svg)](https://pkg.go.dev/$(MODULE))" > README.md
+	echo "[![CI](https://github.com/$(GITHUB_REPO)/actions/workflows/ci.yml/badge.svg)](https://github.com/$(GITHUB_REPO)/actions/workflows/ci.yml)" >> README.md
+	echo "[![codecov](https://codecov.io/gh/$(GITHUB_REPO)/branch/master/graph/badge.svg)](https://codecov.io/gh/$(GITHUB_REPO))" >> README.md
+	echo "[![Go Report Card](https://goreportcard.com/badge/$(MODULE))](https://goreportcard.com/report/$(MODULE))" >> README.md
+	echo "[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)" >> README.md
 	echo  >>README.md
 	cat README.md.tmp >> README.md
 	rm README.md.tmp
 
 clean:
-	rm -rf corpus crashers suppressions workdir podcast-fuzz.zip
+	rm -rf corpus crashers suppressions workdir podcast-fuzz.zip profile.out coverage.txt

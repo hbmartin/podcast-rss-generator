@@ -4,22 +4,26 @@ on:
     tags:
       - 'v*.*.*'
 
-# This will force a go mod to update its cache when a tag is created.
+# Warm the Go module proxy / checksum database when a version tag is created
+# so the release appears on pkg.go.dev promptly. This is a v2+ module, so the
+# module path carries a /v2 suffix (semantic import versioning).
+
+permissions:
+  contents: read
 
 jobs:
   publish-tag:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@v1
-    - name: Grab latest Tag from Git
-      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-    - name: Debug Vars
-      run: |
-        echo "RELEASE_VERSION=${RELEASE_VERSION}"
-        echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}"
-        echo "https://sum.golang.org/lookup/github.com/${GITHUB_REPOSITORY}@${RELEASE_VERSION}"
-    - name: Publish Tag to Go Mod
-      shell: bash
-      run: |
-        curl https://sum.golang.org/lookup/github.com/${GITHUB_REPOSITORY}@${RELEASE_VERSION}
+      - name: Grab tag from Git
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: Debug vars
+        run: |
+          echo "RELEASE_VERSION=${RELEASE_VERSION}"
+          echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}"
+          echo "https://proxy.golang.org/github.com/${GITHUB_REPOSITORY}/v2/@v/${RELEASE_VERSION}.info"
+      - name: Warm Go module proxy
+        shell: bash
+        run: |
+          curl -fsSL "https://proxy.golang.org/github.com/${GITHUB_REPOSITORY}/v2/@v/${RELEASE_VERSION}.info"
+          curl -fsSL "https://sum.golang.org/lookup/github.com/${GITHUB_REPOSITORY}/v2@${RELEASE_VERSION}"

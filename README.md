@@ -1,21 +1,21 @@
-[![GoDoc](https://godoc.org/github.com/eduncan911/podcast?status.svg)](https://godoc.org/github.com/eduncan911/podcast)
-[![Build Status](https://github.com/eduncan911/podcast/workflows/go-cicd/badge.svg)](https://github.com/eduncan911/podcast/actions?workflow=go-cicd)
-[![Coverage Status](https://coveralls.io/repos/github/eduncan911/podcast/badge.svg?branch=master)](https://coveralls.io/github/eduncan911/podcast?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/eduncan911/podcast)](https://goreportcard.com/report/github.com/eduncan911/podcast)
-[![MIT License](https://img.shields.io/npm/l/mediaelement.svg)](https://eduncan911.mit-license.org/)
+[![Go Reference](https://pkg.go.dev/badge/github.com/hbmartin/podcast-rss-generator/v2.svg)](https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2)
+[![CI](https://github.com/hbmartin/podcast-rss-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/hbmartin/podcast-rss-generator/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/hbmartin/podcast-rss-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/hbmartin/podcast-rss-generator)
+[![Go Report Card](https://goreportcard.com/badge/github.com/hbmartin/podcast-rss-generator/v2)](https://goreportcard.com/report/github.com/hbmartin/podcast-rss-generator/v2)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 # podcast
 Package podcast generates a fully compliant iTunes and RSS 2.0 podcast feed
 for GoLang using a simple API.
 
-Full documentation with detailed examples located at <a href="https://godoc.org/github.com/eduncan911/podcast">https://godoc.org/github.com/eduncan911/podcast</a>
+Full documentation with detailed examples located at <a href="https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2">https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2</a>
 
 ### Usage
 To use, `go get` and `import` the package like your typical GoLang library.
 
-	$ go get -u github.com/eduncan911/podcast
+	$ go get github.com/hbmartin/podcast-rss-generator/v2
 	
-	import "github.com/eduncan911/podcast"
+	import "github.com/hbmartin/podcast-rss-generator/v2"
 
 The API exposes a number of method receivers on structs that implements the
 logic required to comply with the specifications and ensure a compliant feed.
@@ -25,27 +25,20 @@ Notably, the `Podcast.AddItem` function performs most
 of the heavy lifting by taking the `Item` input and performing
 validation, overrides and duplicate setters through the feed.
 
-Full detailed Examples of the API are at <a href="https://godoc.org/github.com/eduncan911/podcast">https://godoc.org/github.com/eduncan911/podcast</a>.
+Full detailed Examples of the API are at <a href="https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2">https://pkg.go.dev/github.com/hbmartin/podcast-rss-generator/v2</a>.
 
 ### Go Modules
-This library is supported on GoLang 1.7 and higher.
+This library requires Go 1.21 or higher and is a Go module. Import it at the
+`/v2` module path shown above (semantic import versioning). Dependencies are
+also vendored in the `vendor/` folder.
 
-We have implemented Go Modules support and the CI pipeline shows it working with
-new installs, tested with Go 1.13.  To keep 1.7 compatibility, we use
-`go mod vendor` to maintain the `vendor/` folder for older 1.7 and later runtimes.
-
-If either runtime has an issue, please create an Issue and I will address.
+If you hit a problem on a supported runtime, please open an Issue.
 
 ### Extensibility
-For version 1.x, you are not restricted in having full control over your feeds.
-You may choose to skip the API methods and instead use the structs directly.  The
-fields have been grouped by RSS 2.0 and iTunes fields with iTunes specific fields
-all prefixed with the letter `I`.
-
-However, do note that the 2.x version currently in progress will break this
-extensibility and enforce API methods going forward. This is to ensure that the feed
-can both be marshalled, and unmarshalled back and forth (current 1.x branch can only
-be unmarshalled - hence the work for 2.x).
+You are not restricted in having full control over your feeds. You may choose to
+skip the API methods and instead use the structs directly.  The fields have been
+grouped by RSS 2.0 and iTunes fields with iTunes specific fields all prefixed with
+the letter `I`.
 
 ### Fuzzing Inputs
 `go-fuzz` has been added in 1.4.1, covering all exported API methods.  They have been
@@ -57,8 +50,8 @@ of the inputs.
 
 	go get -u github.com/dvyukov/go-fuzz/go-fuzz
 	go get -u github.com/dvyukov/go-fuzz/go-fuzz-build
-	go get -u github.com/eduncan911/podcast
-	cd $GOPATH/src/github.com/eduncan911/podcast
+	go get github.com/hbmartin/podcast-rss-generator/v2
+	cd $GOPATH/src/github.com/hbmartin/podcast-rss-generator
 	go-fuzz-build
 	go-fuzz -func FuzzPodcastAddItem
 
@@ -75,27 +68,24 @@ To obtain a list of available funcs to pass, just run `go-fuzz` without any para
 If you do find an issue, please raise an issue immediately and I will quickly address.
 
 ### Roadmap
-The 1.x branch is now mostly in maintenance mode, open to PRs.  This means no
-more planned features on the 1.x feature branch is expected. With the success of 6
-iTunes-accepted podcasts I have published with this library, and with the feedback from
-the community, the 1.x releases are now considered stable.
-
-The 2.x branch's primary focus is to allow for bi-direction marshalling both ways.
-Currently, the 1.x branch only allows unmarshalling to a serial feed.  An attempt to marshall
-a serialized feed back into a Podcast form will error or not work correctly.  Note that while
-the 2.x branch is targeted to remain backwards compatible, it is true if using the public
-API funcs to set parameters only.  Several of the underlying public fields are being removed
-in order to accommodate the marshalling of serialized data.  Therefore, a version 2.x is denoted
-for this release.
+This is a maintained fork of the original `github.com/eduncan911/podcast`
+library. The core feed-generation API is stable and considered production-ready.
+Contributions are welcome via PRs.
 
 ### Versioning
-We use SemVer versioning schema.  You can rest assured that pulling 1.x branches will
-remain backwards compatible now and into the future.
-
-However, the new 2.x branch, while keeping the same API, is expected break those that
-bypass the API methods and use the underlying public properties instead.
+We follow SemVer. This library is published as a v2 Go module (the `/v2` import
+path), which reflects the new module location under this fork. The public API is
+compatible with the original 1.x releases, so existing call sites work unchanged
+after updating the import path.
 
 ### Release Notes
+v2.0.0
+
+	* Republish as a maintained fork at github.com/hbmartin/podcast-rss-generator (/v2 module path).
+	* Modernize CI: build/test/vet/lint on Go 1.21+ across Linux, macOS and Windows.
+	* Remove unrelated application build/release tooling; publish as a Go module via tags.
+	* Public feed-generation API unchanged from 1.x.
+
 v1.4.2
 
 	* Slim down Go Modules for consumers (#32)
@@ -235,7 +225,7 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
 	//     <title>eduncan911 Podcasts</title>
 	//     <link>http://eduncan911.com/</link>
 	//     <description>An example Podcast</description>
-	//     <generator>go podcast v1.3.1 (github.com/eduncan911/podcast)</generator>
+	//     <generator>go podcast v2.0.0 (github.com/hbmartin/podcast-rss-generator)</generator>
 	//     <language>en-us</language>
 	//     <lastBuildDate>Mon, 06 Feb 2017 08:21:52 +0000</lastBuildDate>
 	//     <managingEditor>me@janedoe.com (Jane Doe)</managingEditor>
@@ -333,7 +323,7 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
 	//     <title>Sample Podcasts</title>
 	//     <link>http://example.com/</link>
 	//     <description>An example Podcast</description>
-	//     <generator>go podcast v1.3.1 (github.com/eduncan911/podcast)</generator>
+	//     <generator>go podcast v2.0.0 (github.com/hbmartin/podcast-rss-generator)</generator>
 	//     <language>en-us</language>
 	//     <lastBuildDate>Mon, 06 Feb 2017 08:21:52 +0000</lastBuildDate>
 	//     <managingEditor>jane.doe@example.com (Jane Doe)</managingEditor>
@@ -1206,7 +1196,7 @@ p := podcast.New(
 	//     <title>eduncan911 Podcasts</title>
 	//     <link>http://eduncan911.com/</link>
 	//     <description>An example Podcast</description>
-	//     <generator>go podcast v1.3.1 (github.com/eduncan911/podcast)</generator>
+	//     <generator>go podcast v2.0.0 (github.com/hbmartin/podcast-rss-generator)</generator>
 	//     <language>en-us</language>
 	//     <lastBuildDate>Mon, 06 Feb 2017 08:21:52 +0000</lastBuildDate>
 	//     <managingEditor>me@janedoe.com (Jane Doe)</managingEditor>
